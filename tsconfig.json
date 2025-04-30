@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "ESNext", // or "ES2020", "ES2022", etc.
+    "moduleResolution": "node",
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["*"]
+    }
+  },
+
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "coverage",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ]
+}
