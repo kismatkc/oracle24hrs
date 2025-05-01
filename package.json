@@ -21,14 +21,17 @@
   "description": "",
   "dependencies": {
     "@types/axios": "^0.14.4",
-    "@types/cors": "^2.8.17",
     "axios": "^1.9.0",
     "cors": "^2.8.5",
+    "csv-parser": "^3.2.0",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "form-data": "^4.0.2",
+    "ioredis": "^5.6.1",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
     "nodemon": "^3.1.10",
     "pm2": "^6.0.5",

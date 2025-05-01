@@ -8,10 +8,6 @@ module.exports = {
       instances: 1,
       exec_mode: "fork",
       watch: false,
-      env: {
-        PORT: 3000,
-        NODE_ENV: "development",
-      },
     },
     {
       name: "scraper",
@@ -20,10 +16,6 @@ module.exports = {
       instances: 1,
       exec_mode: "fork",
       watch: false,
-      env: {
-        PORT: 3001,
-        NODE_ENV: "development",
-      },
     },
     {
       name: "shifts",
@@ -32,10 +24,6 @@ module.exports = {
       instances: 1,
       exec_mode: "fork",
       watch: false,
-      env: {
-        PORT: 3002,
-        NODE_ENV: "development",
-      },
     },
   ],
 };

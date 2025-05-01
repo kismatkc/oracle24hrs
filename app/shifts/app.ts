@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 app.use(CORS());
 app.use(json());
-const PORT = process.env.PORT; // Corrected environment variable
+const PORT = process.env.PORT_shifts; // Corrected environment variable
 
 if (!PORT) {
   throw new Error("Please provide a valid port");
