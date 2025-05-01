@@ -17,7 +17,7 @@ if (!PORT) {
 // app.use("/", getTtcAlerts);
 console.log("Shifts routes");
 
-app.use("/shifts", async (req, res) => {
+app.use("/", async (req, res) => {
   res.send("Shifts");
 });
 

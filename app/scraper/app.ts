@@ -17,7 +17,7 @@ if (!PORT) {
 // app.use("/", getTtcAlerts);
 console.log("Scraper");
 
-app.use("/scraper", async (req, res) => {
+app.use("/", async (req, res) => {
   res.send("Scraper");
 });
 
