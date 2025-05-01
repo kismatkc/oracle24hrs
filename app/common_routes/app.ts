@@ -2,15 +2,14 @@ import express, { json } from "express";
 import CORS from "cors";
 
 import dotenv from "dotenv";
-import test from "./controllers/test.ts";
 
 dotenv.config();
 
 const app = express();
 app.use(CORS());
 app.use(json());
-const PORT = 4000; // Corrected environment variable
-test();
+const PORT = process.env.PORT; // Corrected environment variable
+
 if (!PORT) {
   throw new Error("Please provide a valid port");
 }
