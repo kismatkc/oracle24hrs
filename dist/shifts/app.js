@@ -5,15 +5,15 @@ dotenv.config();
 const app = express();
 app.use(CORS());
 app.use(json());
-const PORT = process.env.PORT; // Corrected environment variable
+const PORT = 3000; // Corrected environment variable
 if (!PORT) {
-  throw new Error("Please provide a valid port");
+    throw new Error("Please provide a valid port");
 }
 // app.use("/", getTtcAlerts);
-
+console.log("Shifts routes");
 app.use("/shifts", async (req, res) => {
-  res.send("Shifts");
+    res.send("Shifts");
 });
 app.listen(PORT, () => {
-  console.log("Listening on port", PORT);
+    console.log("Listening on port", PORT);
 });
