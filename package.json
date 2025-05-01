@@ -4,15 +4,33 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon"
+    "start_common": "nodemon --config app/common_routes/nodemon.json",
+    "start_scraper": "nodemon --config app/scraper/nodemon.json",
+    "start_shifts": "nodemon --config app/shifts/nodemon.json",
+    "build": "tsc -p tsconfig.build.json ; node fix-imports.js",
+    "start": "pm2 delete all && pm2 start ecosystem.config.cjs",
+    "stop": "pm2 stop ecosystem.config.cjs",
+    "restart": "pm2 restart ecosystem.config.cjs",
+    "logs": "pm2 logs",
+    "monit": "pm2 monit",
+    "status": "  pm2 status"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@types/axios": "^0.14.4",
+    "@types/cors": "^2.8.17",
+    "axios": "^1.9.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "ts-node": "^10.9.2",
+    "pm2": "^6.0.5",
     "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2"
   }
 }
