@@ -2,5 +2,5 @@
   "watch": ["app/shifts"],
   "ext": "ts",
 
-  "exec": "TS_NODE_TRANSPILE_ONLY=true node --loader ts-node/esm app/shifts/app.ts"
+  "exec": "TS_NODE_TRANSPILE_ONLY=true node --require ./doppler-development.cjs --loader ts-node/esm -- app/shifts/app.ts"
 }

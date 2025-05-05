@@ -2,5 +2,5 @@
   "watch": ["app/common_routes"],
   "ext": "ts",
 
-  "exec": "TS_NODE_TRANSPILE_ONLY=true node --loader ts-node/esm app/common_routes/app.ts"
+  "exec": "TS_NODE_TRANSPILE_ONLY=true node --require ./doppler-development.cjs --loader ts-node/esm -- app/common_routes/app.ts"
 }

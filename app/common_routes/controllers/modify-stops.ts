@@ -6,7 +6,6 @@ const router = express.Router();
 async function modifyStops(req: Request, res: Response) {
   try {
     const stops = req.body.stops;
-    console.log(stops);
 
     const response = await Redis.set("stops", stops);
     res.status(200).json({

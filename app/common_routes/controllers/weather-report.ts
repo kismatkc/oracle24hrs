@@ -83,7 +83,6 @@ async function getWeatherData(lat: number, lon: number): Promise<result> {
 async function fetchWeatherForecast(req: Request, res: Response) {
   try {
     const { lat, long } = req.body;
-    console.log(lat, long);
 
     // Parse and validate inputs
     const latNum = Number(parseFloat(lat as string));
