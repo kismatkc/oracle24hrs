@@ -1,5 +1,6 @@
 import express, { json } from "express";
 import CORS from "cors";
+import getTtcAlerts from "../scraper/controllers/ttc-alerts.js";
 import dotenv from "dotenv";
 dotenv.config();
 const app = express();
@@ -9,8 +10,7 @@ const PORT = process.env.PORT_SCRAPER; // Corrected environment variable
 if (!PORT) {
     throw new Error("Please provide a valid port");
 }
-// app.use("/", getTtcAlerts);
-console.log("Scraper");
+app.use("/", getTtcAlerts);
 app.use("/", async (req, res) => {
     res.send("Scraper");
 });
