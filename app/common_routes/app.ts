@@ -6,7 +6,6 @@ import getTtcTimes from "./controllers/ttc-times.ts";
 import weatherReport from "./controllers/weather-report.ts";
 import wordBreakdown from "./controllers/word-breakdown.ts";
 import dotenv from "dotenv";
-import getTtcAlerts from "./controllers/ttc-alerts.ts";
 
 dotenv.config();
 
@@ -23,7 +22,6 @@ app.use("/", streaks);
 app.use("/", getTtcTimes);
 app.use("/", weatherReport);
 app.use("/", wordBreakdown);
-app.use("/", getTtcAlerts);
 
 app.use("/", async (req, res) => {
   res.send("Common routes");

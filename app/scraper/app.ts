@@ -1,5 +1,6 @@
 import express, { json } from "express";
 import CORS from "cors";
+import getTtcAlerts from "../scraper/controllers/ttc-alerts.ts";
 
 import dotenv from "dotenv";
 
@@ -14,8 +15,7 @@ if (!PORT) {
   throw new Error("Please provide a valid port");
 }
 
-// app.use("/", getTtcAlerts);
-console.log("Scraper");
+app.use("/", getTtcAlerts);
 
 app.use("/", async (req, res) => {
   res.send("Scraper");

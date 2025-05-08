@@ -1,15 +1,13 @@
 import express, { Request, Response } from "express";
-import { chromium } from "playwright";
+import { getBrowser } from "../playright.ts";
 
 const router = express.Router();
 
 async function getTtcAlerts(req: Request, res: Response) {
-  let browser = null;
+  let context = null;
   try {
-    browser = await chromium.launch({
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    });
-    const context = await browser.newContext();
+    const browser = await getBrowser();
+    context = await browser.newContext();
     const page = await context.newPage();
     await page.goto("https://www.ttc.ca/service-alerts", {
       waitUntil: "networkidle",
@@ -29,9 +27,9 @@ async function getTtcAlerts(req: Request, res: Response) {
   } catch (error) {
     res.status(200).json({ error });
   } finally {
-    if (browser) {
+    if (context) {
       try {
-        await browser.close();
+        await context.close();
       } catch (error) {
         console.error("Error closing browser:", error);
       }
