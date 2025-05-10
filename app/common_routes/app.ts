@@ -5,6 +5,8 @@ import streaks from "./controllers/streaks.ts";
 import getTtcTimes from "./controllers/ttc-times.ts";
 import weatherReport from "./controllers/weather-report.ts";
 import wordBreakdown from "./controllers/word-breakdown.ts";
+import setLastfrenchTopic from "./controllers/set-last-french-topic.ts";
+import getLastfrenchTopic from "./controllers/get-last-french-topic.ts";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -22,6 +24,8 @@ app.use("/", streaks);
 app.use("/", getTtcTimes);
 app.use("/", weatherReport);
 app.use("/", wordBreakdown);
+app.use("/", setLastfrenchTopic);
+app.use("/", getLastfrenchTopic);
 
 app.use("/", async (req, res) => {
   res.send("Common routes");
