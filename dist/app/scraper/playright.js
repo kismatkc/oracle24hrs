@@ -5,8 +5,8 @@ let restartTimer = null;
 const startBrowser = async () => {
     try {
         browserInstance = await chromium.launch({
-            // headless: process.env.ENVIRONMENT === "development" ? false : true,
-            headless: true,
+            headless: process.env.ENVIRONMENT === "development" ? false : true,
+            // headless: true,
         });
         console.log("Browser started successfully");
     }
@@ -87,4 +87,4 @@ startBrowser().catch((error) => {
 // Enable periodic restarts by default (every 24 hours)
 enablePeriodicRestart();
 // Export the public API
-export { getBrowser, closeBrowser, restartBrowser, enablePeriodicRestart, disablePeriodicRestart, };
+export { getBrowser, closeBrowser, restartBrowser, enablePeriodicRestart, disablePeriodicRestart, chromium, };

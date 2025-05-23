@@ -7,8 +7,8 @@ let restartTimer: NodeJS.Timeout | null = null;
 const startBrowser = async (): Promise<void> => {
   try {
     browserInstance = await chromium.launch({
-      // headless: process.env.ENVIRONMENT === "development" ? false : true,
-      headless: true,
+      headless: process.env.ENVIRONMENT === "development" ? false : true,
+      // headless: true,
     });
     console.log("Browser started successfully");
   } catch (error) {
@@ -108,4 +108,5 @@ export {
   restartBrowser,
   enablePeriodicRestart,
   disablePeriodicRestart,
+  chromium,
 };
