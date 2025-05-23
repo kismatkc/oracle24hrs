@@ -7,6 +7,7 @@ import weatherReport from "./controllers/weather-report.js";
 import wordBreakdown from "./controllers/word-breakdown.js";
 import setLastfrenchTopic from "./controllers/set-last-french-topic.js";
 import getLastfrenchTopic from "./controllers/get-last-french-topic.js";
+import downloadMp3 from "./controllers/download-mp3.js";
 import dotenv from "dotenv";
 dotenv.config();
 const app = express();
@@ -23,6 +24,7 @@ app.use("/", weatherReport);
 app.use("/", wordBreakdown);
 app.use("/", setLastfrenchTopic);
 app.use("/", getLastfrenchTopic);
+app.use("/", downloadMp3);
 app.use("/", async (req, res) => {
     res.send("Common routes");
 });

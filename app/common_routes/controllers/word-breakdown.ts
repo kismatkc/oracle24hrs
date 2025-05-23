@@ -40,6 +40,8 @@ function getPhenome(word) {
 async function getWordBreakdown(req: Request, res: Response) {
   try {
     const word = req.params.word;
+    console.log(`Word: ${word}`);
+
     const breakdown = await getPhenome(word);
 
     res.status(200).json({
@@ -54,4 +56,5 @@ async function getWordBreakdown(req: Request, res: Response) {
 }
 
 router.get("/get-word-breakdown/:word", getWordBreakdown);
+
 export default router;

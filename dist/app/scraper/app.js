@@ -1,6 +1,7 @@
 import express, { json } from "express";
 import CORS from "cors";
 import getTtcAlerts from "../scraper/controllers/ttc-alerts.js";
+import getSongLyrisc from "../scraper/controllers/scrape-lyrisc.js";
 import dotenv from "dotenv";
 dotenv.config();
 const app = express();
@@ -11,6 +12,7 @@ if (!PORT) {
     throw new Error("Please provide a valid port");
 }
 app.use("/", getTtcAlerts);
+app.use("/", getSongLyrisc);
 app.use("/", async (req, res) => {
     res.send("Scraper");
 });

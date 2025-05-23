@@ -113,4 +113,5 @@ async function fetchBusStops(req: Request, res: Response) {
 }
 
 router.get("/bus-times", fetchBusStops);
+
 export default router;

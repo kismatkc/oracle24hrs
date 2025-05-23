@@ -1,6 +1,7 @@
 import express, { json } from "express";
 import CORS from "cors";
 import getTtcAlerts from "../scraper/controllers/ttc-alerts.ts";
+import getSongLyrisc from "../scraper/controllers/scrape-lyrisc.ts";
 
 import dotenv from "dotenv";
 
@@ -16,6 +17,7 @@ if (!PORT) {
 }
 
 app.use("/", getTtcAlerts);
+app.use("/", getSongLyrisc);
 
 app.use("/", async (req, res) => {
   res.send("Scraper");

@@ -37,6 +37,7 @@ function getPhenome(word) {
 async function getWordBreakdown(req, res) {
     try {
         const word = req.params.word;
+        console.log(`Word: ${word}`);
         const breakdown = await getPhenome(word);
         res.status(200).json({
             success: true,

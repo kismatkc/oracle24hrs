@@ -5,6 +5,7 @@ let restartTimer = null;
 const startBrowser = async () => {
     try {
         browserInstance = await chromium.launch({
+            // headless: process.env.ENVIRONMENT === "development" ? false : true,
             headless: true,
         });
         console.log("Browser started successfully");
