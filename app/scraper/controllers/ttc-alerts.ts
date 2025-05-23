@@ -5,6 +5,7 @@ const router = express.Router();
 
 async function getTtcAlerts(req: Request, res: Response) {
   let context = null;
+
   try {
     const browser = await getBrowser();
     context = await browser.newContext();
