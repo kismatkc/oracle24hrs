@@ -3,48 +3,8 @@ import express from "express";
 import ytdl from "@distube/ytdl-core";
 import { spawn } from "child_process";
 import { v4 } from "uuid";
+const cookiesFilePath = "./cookies.txt"; // <--- CHANGE THIS
 const router = express.Router();
-// async function getAudioBuffer(url: string): Promise<Buffer> {
-//   return new Promise((resolve, reject) => {
-//     const chunks = [];
-//     let streamStarted = false;
-//     // Add timeout
-//     const timeout = setTimeout(() => {
-//       if (!streamStarted) {
-//         reject(new Error("ytdl stream timeout - no data received"));
-//       }
-//     }, 15000); // 15 seconds timeout
-//     const audioStream = ytdl(url, {
-//       filter: "audioonly",
-//       quality: "highestaudio",
-//       requestOptions: {
-//         headers: {
-//           "User-Agent":
-//             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
-//         },
-//       },
-//     });
-//     audioStream
-//       .on("data", (chunk) => {
-//         if (!streamStarted) {
-//           streamStarted = true;
-//           clearTimeout(timeout);
-//           console.log("ytdl stream started, first chunk received");
-//         }
-//         chunks.push(chunk);
-//       })
-//       .on("end", () => {
-//         clearTimeout(timeout);
-//         console.log(`ytdl stream ended, total chunks: ${chunks.length}`);
-//         resolve(Buffer.concat(chunks));
-//       })
-//       .on("error", (err) => {
-//         clearTimeout(timeout);
-//         console.error("ytdl stream error:", err);
-//         reject(err);
-//       });
-//   });
-// }
 async function getAudioBuffer(url) {
     console.log(`[yt-dlp] Starting audio download for: ${url}`);
     return new Promise((resolve, reject) => {
@@ -58,6 +18,8 @@ async function getAudioBuffer(url) {
             "-x", // Extract audio only
             "--audio-format",
             "mp3", // Convert to MP3
+            "--cookies",
+            cookiesFilePath, // Path to cookies file
             "-o",
             "-", // Output to stdout
         ];
