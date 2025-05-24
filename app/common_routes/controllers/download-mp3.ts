@@ -126,7 +126,7 @@ const router = express.Router();
 //   });
 // }
 
-// async function getAudioBuffer(url: string): Promise<Buffer> {
+// async function getAudioBufferMain(url: string): Promise<Buffer> {
 //   return new Promise((resolve, reject) => {
 //     const chunks = [];
 //     let streamStarted = false;
@@ -171,60 +171,66 @@ const router = express.Router();
 //   });
 // }
 
-async function getAudioBuffer(url: string): Promise<Buffer> {
-  return new Promise((resolve, reject) => {
-    const chunks: Buffer[] = [];
-    let streamStarted = false;
+function extractVideoId(url) {
+  const match = url.match(/v=([^&]+)/);
+  return match ? match[1] : null;
+}
 
+// Function to get audio buffer from a single URL
+async function fetchAudioBuffer(url) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
     const proc = spawn("yt-dlp", [
-      "--proxy",
-      "socks5://127.0.0.1:9050",
-      "--user-agent",
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
       "-o",
-      "-",
+      "-", // Output to stdout
       "--format",
-      "bestaudio",
+      "bestaudio/best", // Get highest quality audio
       url,
     ]);
 
-    const timeout = setTimeout(() => {
-      if (!streamStarted) {
-        proc.kill();
-        reject(new Error("yt-dlp stream timeout - no data received"));
-      }
-    }, 15000); // 15 seconds timeout
-
-    proc.stdout.on("data", (chunk) => {
-      if (!streamStarted) {
-        streamStarted = true;
-        clearTimeout(timeout);
-        console.log("yt-dlp stream started, first chunk received");
-      }
-      chunks.push(chunk);
-    });
-
-    proc.stderr.on("data", (data) => {
-      console.error(`yt-dlp stderr: ${data}`);
-    });
-
-    proc.on("error", (err) => {
-      clearTimeout(timeout);
-      reject(err);
-    });
-
+    proc.stdout.on("data", (chunk) => chunks.push(chunk));
+    proc.stderr.on("data", (data) => console.error(`Error: ${data}`));
+    proc.on("error", (err) => reject(err));
     proc.on("exit", (code) => {
-      clearTimeout(timeout);
-      if (code === 0) {
-        console.log(
-          `yt-dlp process exited successfully, total chunks: ${chunks.length}`
-        );
-        resolve(Buffer.concat(chunks));
-      } else {
-        reject(new Error(`yt-dlp exited with code ${code}`));
-      }
+      if (code === 0) resolve(Buffer.concat(chunks));
+      else reject(new Error(`yt-dlp failed with code ${code}`));
     });
   });
+}
+
+// Main function to get audio buffer from multiple sources
+async function getAudioBuffer(url): Promise<any> {
+  const videoId = extractVideoId(url);
+  const sources = [
+    // { name: "YouTube", url },
+    {
+      name: "Invidious1",
+      url: `https://invidious.snopyta.org/watch?v=${videoId}`,
+    },
+    {
+      name: "Invidious2",
+      url: `https://invidious.kavin.rocks/watch?v=${videoId}`,
+    },
+    { name: "Piped1", url: `https://piped.kavin.rocks/watch?v=${videoId}` },
+    { name: "Piped2", url: `https://piped.video/watch?v=${videoId}` },
+  ];
+
+  for (const source of sources) {
+    console.log(`Trying ${source.name}: ${source.url}`);
+    // Skip YouTube if videoId is not present
+
+    if (source.name !== "YouTube" && !videoId) continue;
+    console.log(`Trying ${source.name}: ${source.url}`);
+    try {
+      // const buffer = await fetchAudioBuffer(source.url);
+      const buffer = await fetchAudioBuffer(source.url);
+      console.log(`Success with ${source.name}`);
+      return buffer;
+    } catch (error) {
+      console.error(`${source.name} failed: ${error.message}`);
+    }
+  }
+  throw new Error("All sources failed to retrieve audio buffer");
 }
 function convertToWav(audioBuffer: Buffer): Promise<Buffer> {
   return new Promise((resolve, reject) => {
@@ -274,6 +280,7 @@ function convertToWav(audioBuffer: Buffer): Promise<Buffer> {
 async function getMp3(req: Request, res: Response) {
   try {
     const { url } = req.params;
+    console.log("fired");
 
     if (!url || !ytdl.validateURL(url)) {
       res.status(400).json({
@@ -285,11 +292,15 @@ async function getMp3(req: Request, res: Response) {
     const wavBuffer = await convertToWav(audioBuffer);
     const base64Data = wavBuffer.toString("base64");
 
-    const audioInfo = await ytdl.getBasicInfo(url);
+    // const audioInfo = await ytdl.getBasicInfo(url);
+    // const {
+    //   title,
+    //   author: { name },
+    // } = audioInfo.videoDetails;
     const {
       title,
       author: { name },
-    } = audioInfo.videoDetails;
+    } = { title: "Sample Title", author: { name: "Sample Author" } };
 
     // Send the buffer directly
     res
