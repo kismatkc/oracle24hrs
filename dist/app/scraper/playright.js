@@ -1,4 +1,11 @@
 import { chromium } from "playwright";
+// const INV_BASE = "https://yewtu.be/api/v1";
+// async function fetchAudioStreams(videoId) {
+//   const res = await axios.get(`${INV_BASE}/videos/${videoId}`);
+//   const { adaptiveFormats } = await res.data;
+//   return adaptiveFormats.filter((f) => f.mimeType.startsWith("audio/"));
+// }
+// console.log(await fetchAudioStreams("mZQH8CPQ-wo"));
 // Private state
 let browserInstance = null;
 let restartTimer = null;

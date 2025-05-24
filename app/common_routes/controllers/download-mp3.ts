@@ -4,125 +4,224 @@ import ytdl from "@distube/ytdl-core";
 
 import { spawn } from "child_process";
 import { v4 } from "uuid";
-const cookiesFilePath = "./cookies.txt"; // <--- CHANGE THIS
 
 const router = express.Router();
 
-async function getAudioBuffer(url: string): Promise<Buffer> {
-  console.log(`[yt-dlp] Starting audio download for: ${url}`);
+// async function getAudioBuffer(url: string): Promise<Buffer> {
+//   console.log(`[yt-dlp] Starting audio download for: ${url}`);
 
+//   return new Promise((resolve, reject) => {
+//     const chunks: Buffer[] = [];
+
+//     // Command arguments for yt-dlp
+//     const args = [
+//       url,
+//       "-f",
+//       "bestaudio", // Format: best audio available
+//       "--no-warnings", // Suppress warnings
+//       "-x", // Extract audio only
+//       "--audio-format",
+//       "mp3", // Convert to MP3
+
+//       "-o",
+//       "-", // Output to stdout
+//     ];
+
+//     // Spawn the yt-dlp process
+//     const ytdlpProcess = spawn("yt-dlp", args, {
+//       stdio: ["ignore", "pipe", "pipe"], // stdin ignored, stdout and stderr piped
+//     });
+
+//     let streamStarted = false;
+//     let stderrOutput = "";
+
+//     // Set up timeout
+//     const timeout = setTimeout(() => {
+//       console.error(
+//         "[yt-dlp] Error: Stream timeout - no data received in 15 seconds."
+//       );
+//       ytdlpProcess.kill("SIGTERM");
+//       reject(new Error("yt-dlp stream timeout - no data received"));
+//     }, 15000);
+
+//     // Handle stdout (the actual audio data)
+//     ytdlpProcess.stdout.on("data", (chunk: Buffer) => {
+//       if (!streamStarted) {
+//         streamStarted = true;
+//         clearTimeout(timeout);
+//         console.log("[yt-dlp] Stream started, first chunk received.");
+//       }
+//       chunks.push(chunk);
+//     });
+
+//     ytdlpProcess.stdout.on("end", () => {
+//       clearTimeout(timeout);
+//       console.log(`[yt-dlp] Stream ended, total chunks: ${chunks.length}`);
+
+//       if (chunks.length === 0) {
+//         return reject(
+//           new Error(
+//             `Stream ended but no data was received. Error: ${stderrOutput}`
+//           )
+//         );
+//       }
+
+//       resolve(Buffer.concat(chunks));
+//     });
+
+//     ytdlpProcess.stdout.on("error", (err) => {
+//       clearTimeout(timeout);
+//       console.error("[yt-dlp] Stdout error:", err);
+//       reject(err);
+//     });
+
+//     // Handle stderr (error messages and progress info)
+//     ytdlpProcess.stderr.on("data", (chunk: Buffer) => {
+//       stderrOutput += chunk.toString();
+//       // You can also log progress here if needed
+//       // console.log("[yt-dlp] Progress:", chunk.toString().trim());
+//     });
+
+//     ytdlpProcess.stderr.on("error", (err) => {
+//       console.error("[yt-dlp] Stderr error:", err);
+//     });
+
+//     // Handle process exit
+//     ytdlpProcess.on("close", (code) => {
+//       clearTimeout(timeout);
+
+//       if (code !== 0) {
+//         console.error(`[yt-dlp] Process exited with code ${code}`);
+//         console.error(`[yt-dlp] Error output: ${stderrOutput}`);
+//         reject(
+//           new Error(`yt-dlp failed with exit code ${code}: ${stderrOutput}`)
+//         );
+//       }
+
+//       // If code is 0 but we have no data, something went wrong
+//       if (code === 0 && chunks.length === 0) {
+//         reject(
+//           new Error(
+//             `yt-dlp succeeded but no audio data received: ${stderrOutput}`
+//           )
+//         );
+//       }
+//     });
+
+//     // Handle process errors (e.g., binary not found)
+//     ytdlpProcess.on("error", (err) => {
+//       clearTimeout(timeout);
+//       console.error("[yt-dlp] Process error:", err);
+
+//       if (err.message.includes("ENOENT")) {
+//         reject(
+//           new Error(
+//             "yt-dlp binary not found. Make sure it's installed and in your PATH."
+//           )
+//         );
+//       } else {
+//         reject(err);
+//       }
+//     });
+//   });
+// }
+
+// async function getAudioBuffer(url: string): Promise<Buffer> {
+//   return new Promise((resolve, reject) => {
+//     const chunks = [];
+//     let streamStarted = false;
+
+//     // Add timeout
+//     const timeout = setTimeout(() => {
+//       if (!streamStarted) {
+//         reject(new Error("ytdl stream timeout - no data received"));
+//       }
+//     }, 15000); // 15 seconds timeout
+
+//     const audioStream = ytdl(url, {
+//       filter: "audioonly",
+//       quality: "highestaudio",
+//       requestOptions: {
+//         headers: {
+//           "User-Agent":
+//             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+//         },
+//       },
+//     });
+
+//     audioStream
+//       .on("data", (chunk) => {
+//         if (!streamStarted) {
+//           streamStarted = true;
+//           clearTimeout(timeout);
+//           console.log("ytdl stream started, first chunk received");
+//         }
+//         chunks.push(chunk);
+//       })
+//       .on("end", () => {
+//         clearTimeout(timeout);
+//         console.log(`ytdl stream ended, total chunks: ${chunks.length}`);
+//         resolve(Buffer.concat(chunks));
+//       })
+//       .on("error", (err) => {
+//         clearTimeout(timeout);
+//         console.error("ytdl stream error:", err);
+//         reject(err);
+//       });
+//   });
+// }
+
+async function getAudioBuffer(url: string): Promise<Buffer> {
   return new Promise((resolve, reject) => {
     const chunks: Buffer[] = [];
-
-    // Command arguments for yt-dlp
-    const args = [
-      url,
-      "-f",
-      "bestaudio", // Format: best audio available
-      "--no-warnings", // Suppress warnings
-      "-x", // Extract audio only
-      "--audio-format",
-      "mp3", // Convert to MP3
-      "--cookies",
-      cookiesFilePath, // Path to cookies file
-      "-o",
-      "-", // Output to stdout
-    ];
-
-    // Spawn the yt-dlp process
-    const ytdlpProcess = spawn("yt-dlp", args, {
-      stdio: ["ignore", "pipe", "pipe"], // stdin ignored, stdout and stderr piped
-    });
-
     let streamStarted = false;
-    let stderrOutput = "";
 
-    // Set up timeout
+    const proc = spawn("yt-dlp", [
+      "--proxy",
+      "socks5://127.0.0.1:9050",
+      "--user-agent",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+      "-o",
+      "-",
+      "--format",
+      "bestaudio",
+      url,
+    ]);
+
     const timeout = setTimeout(() => {
-      console.error(
-        "[yt-dlp] Error: Stream timeout - no data received in 15 seconds."
-      );
-      ytdlpProcess.kill("SIGTERM");
-      reject(new Error("yt-dlp stream timeout - no data received"));
-    }, 15000);
+      if (!streamStarted) {
+        proc.kill();
+        reject(new Error("yt-dlp stream timeout - no data received"));
+      }
+    }, 15000); // 15 seconds timeout
 
-    // Handle stdout (the actual audio data)
-    ytdlpProcess.stdout.on("data", (chunk: Buffer) => {
+    proc.stdout.on("data", (chunk) => {
       if (!streamStarted) {
         streamStarted = true;
         clearTimeout(timeout);
-        console.log("[yt-dlp] Stream started, first chunk received.");
+        console.log("yt-dlp stream started, first chunk received");
       }
       chunks.push(chunk);
     });
 
-    ytdlpProcess.stdout.on("end", () => {
-      clearTimeout(timeout);
-      console.log(`[yt-dlp] Stream ended, total chunks: ${chunks.length}`);
-
-      if (chunks.length === 0) {
-        return reject(
-          new Error(
-            `Stream ended but no data was received. Error: ${stderrOutput}`
-          )
-        );
-      }
-
-      resolve(Buffer.concat(chunks));
+    proc.stderr.on("data", (data) => {
+      console.error(`yt-dlp stderr: ${data}`);
     });
 
-    ytdlpProcess.stdout.on("error", (err) => {
+    proc.on("error", (err) => {
       clearTimeout(timeout);
-      console.error("[yt-dlp] Stdout error:", err);
       reject(err);
     });
 
-    // Handle stderr (error messages and progress info)
-    ytdlpProcess.stderr.on("data", (chunk: Buffer) => {
-      stderrOutput += chunk.toString();
-      // You can also log progress here if needed
-      // console.log("[yt-dlp] Progress:", chunk.toString().trim());
-    });
-
-    ytdlpProcess.stderr.on("error", (err) => {
-      console.error("[yt-dlp] Stderr error:", err);
-    });
-
-    // Handle process exit
-    ytdlpProcess.on("close", (code) => {
+    proc.on("exit", (code) => {
       clearTimeout(timeout);
-
-      if (code !== 0) {
-        console.error(`[yt-dlp] Process exited with code ${code}`);
-        console.error(`[yt-dlp] Error output: ${stderrOutput}`);
-        reject(
-          new Error(`yt-dlp failed with exit code ${code}: ${stderrOutput}`)
+      if (code === 0) {
+        console.log(
+          `yt-dlp process exited successfully, total chunks: ${chunks.length}`
         );
-      }
-
-      // If code is 0 but we have no data, something went wrong
-      if (code === 0 && chunks.length === 0) {
-        reject(
-          new Error(
-            `yt-dlp succeeded but no audio data received: ${stderrOutput}`
-          )
-        );
-      }
-    });
-
-    // Handle process errors (e.g., binary not found)
-    ytdlpProcess.on("error", (err) => {
-      clearTimeout(timeout);
-      console.error("[yt-dlp] Process error:", err);
-
-      if (err.message.includes("ENOENT")) {
-        reject(
-          new Error(
-            "yt-dlp binary not found. Make sure it's installed and in your PATH."
-          )
-        );
+        resolve(Buffer.concat(chunks));
       } else {
-        reject(err);
+        reject(new Error(`yt-dlp exited with code ${code}`));
       }
     });
   });
