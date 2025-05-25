@@ -47,7 +47,10 @@ async function downloadMp3(req: Request, res: Response) {
 
   try {
     /* -------- validate URL -------------------------------------------- */
-    const videoUrl = decodeURIComponent(req.params.url || "").trim();
+    // const videoUrl = decodeURIComponent(req.params.url || "").trim();
+    const videoUrl = req.params.url;
+    console.log("videoUrl", videoUrl);
+
     if (!/^https?:\/\//i.test(videoUrl)) throw new Error("Invalid video URL");
 
     const browser = await getBrowser();
