@@ -3,6 +3,7 @@ import { BrowserContext } from "playwright";
 import { spawn } from "node:child_process";
 import { once } from "node:events";
 import { getBrowser } from "../playright.ts";
+import { randomUUID } from "node:crypto";
 
 const router = express.Router();
 const HARD_TIMEOUT = 1000 * 120; // 2 min
@@ -102,7 +103,7 @@ async function downloadMp3(req: Request, res: Response) {
     const wav64 = (await mp3ToWav(mp3Buf)).toString("base64");
 
     clearTimeout(killer);
-    res.json({ base64Buffer: wav64, title, author });
+    res.json({ base64Buffer: wav64, title, author, id: randomUUID() });
   } catch (err: any) {
     clearTimeout(killer);
     await ctxMeta?.close().catch(() => null);
