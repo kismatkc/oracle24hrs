@@ -2,6 +2,7 @@ import express from "express";
 import { spawn } from "node:child_process";
 import { once } from "node:events";
 import { getBrowser } from "../playright.js";
+import { randomUUID } from "node:crypto";
 const router = express.Router();
 const HARD_TIMEOUT = 1000 * 120; // 2 min
 /* ---------------- helpers --------------------------------------------- */
@@ -81,7 +82,7 @@ async function downloadMp3(req, res) {
         /* ===== 3.  CONVERT → WAV, ENCODE ================================= */
         const wav64 = (await mp3ToWav(mp3Buf)).toString("base64");
         clearTimeout(killer);
-        res.json({ base64Buffer: wav64, title, author });
+        res.json({ base64Buffer: wav64, title, author, id: randomUUID() });
     }
     catch (err) {
         clearTimeout(killer);
