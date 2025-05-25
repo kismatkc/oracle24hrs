@@ -3,6 +3,7 @@ import CORS from "cors";
 import getTtcAlerts from "../scraper/controllers/ttc-alerts.js";
 import getSongLyrisc from "../scraper/controllers/scrape-lyrisc.js";
 import getYoutubeCookie from "../scraper/controllers/get-youtube-cookies.js";
+import downloadMp3 from "../scraper/controllers/download-mp3.js";
 import dotenv from "dotenv";
 dotenv.config();
 const app = express();
@@ -15,6 +16,7 @@ if (!PORT) {
 app.use("/", getTtcAlerts);
 app.use("/", getSongLyrisc);
 app.use("/", getYoutubeCookie);
+app.use("/", downloadMp3);
 app.use("/", async (req, res) => {
     res.send("Scraper");
 });
