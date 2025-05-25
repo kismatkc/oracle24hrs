@@ -3,6 +3,7 @@ import CORS from "cors";
 import getTtcAlerts from "../scraper/controllers/ttc-alerts.ts";
 import getSongLyrisc from "../scraper/controllers/scrape-lyrisc.ts";
 import getYoutubeCookie from "../scraper/controllers/get-youtube-cookies.ts";
+import downloadMp3 from "../scraper/controllers/download-mp3.ts";
 
 import dotenv from "dotenv";
 
@@ -20,6 +21,7 @@ if (!PORT) {
 app.use("/", getTtcAlerts);
 app.use("/", getSongLyrisc);
 app.use("/", getYoutubeCookie);
+app.use("/", downloadMp3);
 
 app.use("/", async (req, res) => {
   res.send("Scraper");
