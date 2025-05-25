@@ -40,10 +40,8 @@ async function downloadMp3(req, res) {
         res.status(504).json({ error: "Timed out" });
     }, HARD_TIMEOUT);
     try {
-        /* -------- validate URL -------------------------------------------- */
-        // const videoUrl = decodeURIComponent(req.params.url || "").trim();
-        const videoUrl = req.params.url;
-        console.log("videoUrl", videoUrl);
+        const videoUrl = req.query.url;
+        console.log(JSON.stringify(videoUrl, null, 2));
         if (!/^https?:\/\//i.test(videoUrl))
             throw new Error("Invalid video URL");
         const browser = await getBrowser();
@@ -93,5 +91,5 @@ async function downloadMp3(req, res) {
         res.status(500).json({ error: err.message });
     }
 }
-router.get("/download-mp3/:url", downloadMp3);
+router.get("/download-mp3", downloadMp3);
 export default router;

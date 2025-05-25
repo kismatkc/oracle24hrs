@@ -18,6 +18,7 @@ app.use("/", getSongLyrisc);
 app.use("/", getYoutubeCookie);
 app.use("/", downloadMp3);
 app.use("/", async (req, res) => {
+    console.log(req.url);
     res.send("Scraper");
 });
 app.listen(PORT, () => {
