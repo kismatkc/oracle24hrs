@@ -4,7 +4,6 @@ import modifyStops from "./controllers/modify-stops.js";
 import streaks from "./controllers/streaks.js";
 import getTtcTimes from "./controllers/ttc-times.js";
 import weatherReport from "./controllers/weather-report.js";
-import wordBreakdown from "./controllers/word-breakdown.js";
 import setLastfrenchTopic from "./controllers/set-last-french-topic.js";
 import getLastfrenchTopic from "./controllers/get-last-french-topic.js";
 import dotenv from "dotenv";
@@ -20,7 +19,6 @@ app.use("/", modifyStops);
 app.use("/", streaks);
 app.use("/", getTtcTimes);
 app.use("/", weatherReport);
-app.use("/", wordBreakdown);
 app.use("/", setLastfrenchTopic);
 app.use("/", getLastfrenchTopic);
 app.use("/", async (req, res) => {

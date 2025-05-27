@@ -1,6 +1,4 @@
 import express from "express";
-import { spawn } from "node:child_process";
-import { once } from "node:events";
 import { getBrowser } from "../playright.js";
 import { randomUUID } from "node:crypto";
 const router = express.Router();
@@ -12,24 +10,24 @@ const streamToBuffer = async (r) => {
         chunks.push(c);
     return Buffer.concat(chunks);
 };
-const mp3ToWav = async (mp3) => {
-    const ff = spawn("ffmpeg", [
-        "-i",
-        "pipe:0",
-        "-f",
-        "wav",
-        "pipe:1",
-        "-loglevel",
-        "error",
-    ]);
-    ff.stdin.write(mp3);
-    ff.stdin.end();
-    const [wav] = await Promise.all([
-        streamToBuffer(ff.stdout),
-        once(ff, "close"),
-    ]);
-    return wav;
-};
+// const mp3ToWav = async (mp3: Buffer) => {
+//   const ff = spawn("ffmpeg", [
+//     "-i",
+//     "pipe:0",
+//     "-f",
+//     "wav",
+//     "pipe:1",
+//     "-loglevel",
+//     "error",
+//   ]);
+//   ff.stdin.write(mp3);
+//   ff.stdin.end();
+//   const [wav] = await Promise.all([
+//     streamToBuffer(ff.stdout),
+//     once(ff, "close"),
+//   ]);
+//   return wav;
+// };
 /* ---------------- controller ------------------------------------------ */
 async function downloadMp3(req, res) {
     let ctxMeta = null;
@@ -76,13 +74,13 @@ async function downloadMp3(req, res) {
         const dlEvt = p.waitForEvent("download");
         await p.locator('xpath=//button[.="Download"] | //a[.="Download"]').click();
         const dl = await dlEvt;
-        const mp3Buf = await streamToBuffer(await dl.createReadStream());
+        const mp3Buf = (await streamToBuffer(await dl.createReadStream())).toString("base64");
         await dl.delete(); // no file persists
         await ctxDl.close(); // wipe temp profile
         /* ===== 3.  CONVERT → WAV, ENCODE ================================= */
-        const wav64 = (await mp3ToWav(mp3Buf)).toString("base64");
+        // const wav64 = (await mp3ToWav(mp3Buf)).toString("base64");
         clearTimeout(killer);
-        res.json({ base64Buffer: wav64, title, author, id: randomUUID() });
+        res.json({ base64Buffer: mp3Buf, title, author, id: randomUUID() });
     }
     catch (err) {
         clearTimeout(killer);
