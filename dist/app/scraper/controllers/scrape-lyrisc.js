@@ -230,14 +230,14 @@ const extractLyricsFromReadability = (jsonResponse) => {
 };
 async function getGoogleSearchFirstResult(query) {
     try {
-        const modifiedQuery = `${query} song lyrics`;
+        const modifiedQuery = `${query} lyrics with chords`;
         const response = await axios.get("https://www.googleapis.com/customsearch/v1", {
             params: {
                 key: process.env.GOOGLE_NOBILLING_API_KEY_2,
                 cx: process.env.SEARCHENGINE_ID_2,
                 q: modifiedQuery,
-                num: 10,
-                siteSearch: "youtube.com reddit.com spotify.com facebook.com instagram.com dailymotion.com wikipedia.org",
+                num: 8,
+                siteSearch: "youtube.com reddit.com spotify.com facebook.com instagram.com dailymotion.com wikipedia.org quora.com",
                 siteSearchFilter: "e", // 'e' means exclude both YouTube and Reddit
             },
         });
@@ -285,17 +285,16 @@ async function scrapeLyrisc(req, res) {
         }
     }, globalTimeout);
     try {
-        const songName = req.params.songName.toLowerCase();
+        const { songName, linkIndex } = req.query;
         const browser = await getBrowser();
         context = await browser.newContext();
         const page = await context.newPage();
         // Fetch search results
-        const results = await getGoogleSearchFirstResult(songName);
+        const results = await getGoogleSearchFirstResult(songName.toLowerCase());
         if (!results || results.length === 0) {
             throw new Error("No search results found for the song");
         }
-        // Use the first result instead of the second
-        const url = results[0].link;
+        const url = results[Number(linkIndex)].link;
         // Navigate and wait for full content load
         await page.goto(url, { waitUntil: "domcontentloaded" });
         // Get the HTML and log a snippet for debugging
@@ -334,5 +333,5 @@ async function scrapeLyrisc(req, res) {
         }
     }
 }
-router.get("/scrape-lyrics/:songName", scrapeLyrisc);
+router.get("/scrape-lyrics", scrapeLyrisc);
 export default router;
