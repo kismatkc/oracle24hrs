@@ -1,93 +1,103 @@
 import express from "express";
-import { getBrowser } from "../playright.js";
 import { randomUUID } from "node:crypto";
-const router = express.Router();
-const HARD_TIMEOUT = 1000 * 120; // 2 min
-/* ---------------- helpers --------------------------------------------- */
-const streamToBuffer = async (r) => {
-    const chunks = [];
-    for await (const c of r)
-        chunks.push(c);
-    return Buffer.concat(chunks);
+import axios from "axios";
+import { getBrowser } from "../playright.js";
+/* ---------- progress store ---------- */
+const progress = {};
+const setP = (id, p) => {
+    progress[id] = p;
+    console.log("[setP]", id, p);
 };
-// const mp3ToWav = async (mp3: Buffer) => {
-//   const ff = spawn("ffmpeg", [
-//     "-i",
-//     "pipe:0",
-//     "-f",
-//     "wav",
-//     "pipe:1",
-//     "-loglevel",
-//     "error",
-//   ]);
-//   ff.stdin.write(mp3);
-//   ff.stdin.end();
-//   const [wav] = await Promise.all([
-//     streamToBuffer(ff.stdout),
-//     once(ff, "close"),
-//   ]);
-//   return wav;
-// };
-/* ---------------- controller ------------------------------------------ */
+const router = express.Router();
+const HARD_TIMEOUT = 1000 * 180;
+/* ---------- helpers ---------- */
+async function streamToBuffer(r, totalBytes, onChunk) {
+    const chunks = [];
+    let read = 0;
+    for await (const c of r) {
+        chunks.push(c);
+        read += c.length;
+        if (totalBytes)
+            onChunk(read / totalBytes);
+    }
+    return Buffer.concat(chunks);
+}
+/* ---------- controller ---------- */
 async function downloadMp3(req, res) {
+    const id = req.query.id || randomUUID();
+    console.log("[dl] new request id", id, "url", req.query.url);
     let ctxMeta = null;
     let ctxDl = null;
     const killer = setTimeout(() => {
         ctxMeta?.close().catch(() => null);
         ctxDl?.close().catch(() => null);
+        setP(id, 1);
         res.status(504).json({ error: "Timed out" });
     }, HARD_TIMEOUT);
     try {
         const videoUrl = req.query.url;
-        console.log(JSON.stringify(videoUrl, null, 2));
         if (!/^https?:\/\//i.test(videoUrl))
-            throw new Error("Invalid video URL");
+            throw new Error("Invalid URL");
         const browser = await getBrowser();
-        /* ===== 1.  METADATA  ============================================= */
+        /* 1. metadata */
+        setP(id, 0.05);
         ctxMeta = await browser.newContext();
         const pMeta = await ctxMeta.newPage();
-        await pMeta.goto("https://mattw.io/youtube-metadata/", {
-            waitUntil: "domcontentloaded",
-        });
+        await pMeta.goto("https://mattw.io/youtube-metadata/");
         await pMeta.fill("#value", videoUrl);
-        // NEW ➜ click the Submit button, then wait for <pre> JSON
-        const submitBtn = pMeta.locator("#submit");
         await Promise.all([
-            submitBtn.click(),
+            pMeta.locator("#submit").click(),
             pMeta.waitForSelector("pre", { timeout: 15000 }),
         ]);
         const raw = await pMeta.$eval("pre", (el) => el.textContent || "{}");
         const meta = JSON.parse(raw);
         const title = meta.title ?? meta.localized?.title ?? "";
         const author = meta.channelTitle ?? "";
-        await ctxMeta.close(); // done with metadata
-        /* ===== 2.  DOWNLOAD MP3 ========================================== */
+        await ctxMeta.close();
+        setP(id, 0.15);
+        /* 2. convert / download */
         ctxDl = await browser.newContext({ acceptDownloads: true });
         const p = await ctxDl.newPage();
-        await p.goto("https://ytmp3.cc/5Hcs/", { waitUntil: "domcontentloaded" });
+        await p.goto("https://ytmp3.cc/5Hcs/");
         await p.fill("#v", videoUrl);
-        const convert = p.getByRole("button", { name: "Convert", exact: true });
         await Promise.all([
-            convert.click(),
+            p.getByRole("button", { name: "Convert", exact: true }).click(),
             p.waitForSelector('xpath=//button[normalize-space()="Download"] | //a[normalize-space()="Download"]', { timeout: 110000 }),
         ]);
+        setP(id, 0.4);
         const dlEvt = p.waitForEvent("download");
         await p.locator('xpath=//button[.="Download"] | //a[.="Download"]').click();
         const dl = await dlEvt;
-        const mp3Buf = (await streamToBuffer(await dl.createReadStream())).toString("base64");
-        await dl.delete(); // no file persists
-        await ctxDl.close(); // wipe temp profile
-        /* ===== 3.  CONVERT → WAV, ENCODE ================================= */
-        // const wav64 = (await mp3ToWav(mp3Buf)).toString("base64");
+        let total = 0;
+        try {
+            const head = await axios.head(dl.url());
+            total = Number(head.headers["content-length"] ?? 0);
+        }
+        catch (err) {
+            console.log("[dl] HEAD failed", err);
+        }
+        const mp3Buf = (await streamToBuffer(await dl.createReadStream(), total, (f) => setP(id, 0.4 + f * 0.55))).toString("base64");
+        await dl.delete();
+        await ctxDl.close();
         clearTimeout(killer);
-        res.json({ base64Buffer: mp3Buf, title, author, id: randomUUID() });
+        setP(id, 1);
+        console.log("[dl] finished id", id);
+        res.json({ base64Buffer: mp3Buf, title, author, id });
     }
     catch (err) {
         clearTimeout(killer);
+        setP(id, 1);
         await ctxMeta?.close().catch(() => null);
         await ctxDl?.close().catch(() => null);
+        console.log("[dl] error", err);
         res.status(500).json({ error: err.message });
     }
 }
+/* ---------- progress endpoint ---------- */
+router.get("/progress/:id", (req, res) => {
+    const val = progress[req.params.id] ?? 0;
+    console.log("[progress] id", req.params.id, "->", val);
+    res.json({ progress: val });
+});
 router.get("/download-mp3", downloadMp3);
 export default router;
