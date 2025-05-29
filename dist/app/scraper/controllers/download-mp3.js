@@ -1,6 +1,5 @@
 import express from "express";
 import { randomUUID } from "node:crypto";
-import axios from "axios";
 import { getBrowser } from "../playright.js";
 /* ---------- progress store ---------- */
 const progress = {};
@@ -11,14 +10,14 @@ const setP = (id, p) => {
 const router = express.Router();
 const HARD_TIMEOUT = 1000 * 180;
 /* ---------- helpers ---------- */
-async function streamToBuffer(r, totalBytes, onChunk) {
+async function streamToBuffer(r, onChunk) {
     const chunks = [];
     let read = 0;
     for await (const c of r) {
         chunks.push(c);
         read += c.length;
-        if (totalBytes)
-            onChunk(read / totalBytes);
+        // Simple progress based on bytes read (estimate 10MB max)
+        onChunk(Math.min(0.95, read / (1024 * 1024 * 10)));
     }
     return Buffer.concat(chunks);
 }
@@ -68,15 +67,8 @@ async function downloadMp3(req, res) {
         const dlEvt = p.waitForEvent("download");
         await p.locator('xpath=//button[.="Download"] | //a[.="Download"]').click();
         const dl = await dlEvt;
-        let total = 0;
-        try {
-            const head = await axios.head(dl.url());
-            total = Number(head.headers["content-length"] ?? 0);
-        }
-        catch (err) {
-            console.log("[dl] HEAD failed", err);
-        }
-        const mp3Buf = (await streamToBuffer(await dl.createReadStream(), total, (f) => setP(id, 0.4 + f * 0.55))).toString("base64");
+        // No HEAD request - just stream directly
+        const mp3Buf = (await streamToBuffer(await dl.createReadStream(), (f) => setP(id, 0.4 + f * 0.55))).toString("base64");
         await dl.delete();
         await ctxDl.close();
         clearTimeout(killer);
