@@ -6,7 +6,6 @@ module.exports = {
       script: "dist/app/common_routes/app.js",
       interpreter: "node",
       node_args: "-r ./doppler-production.cjs",
-
       instances: 1,
       exec_mode: "fork",
       watch: false,

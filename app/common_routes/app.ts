@@ -8,6 +8,7 @@ import getTtcTimes from "./controllers/ttc-times.ts";
 import weatherReport from "./controllers/weather-report.ts";
 import setLastfrenchTopic from "./controllers/set-last-french-topic.ts";
 import getLastfrenchTopic from "./controllers/get-last-french-topic.ts";
+import uploadMuisc from "./controllers/upload-muisc.ts";
 
 import dotenv from "dotenv";
 
@@ -34,6 +35,7 @@ app.use("/", getTtcTimes);
 app.use("/", weatherReport);
 app.use("/", setLastfrenchTopic);
 app.use("/", getLastfrenchTopic);
+app.use("/", uploadMuisc);
 
 /* ---------- PM2 restart‑all via GET ---------- */
 app.get(`/restart/${RESTART_SECRET}`, (req, res) => {

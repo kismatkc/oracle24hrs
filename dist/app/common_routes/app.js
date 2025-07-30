@@ -7,6 +7,7 @@ import getTtcTimes from "./controllers/ttc-times.js";
 import weatherReport from "./controllers/weather-report.js";
 import setLastfrenchTopic from "./controllers/set-last-french-topic.js";
 import getLastfrenchTopic from "./controllers/get-last-french-topic.js";
+import uploadMuisc from "./controllers/upload-muisc.js";
 import dotenv from "dotenv";
 dotenv.config();
 const app = express();
@@ -26,6 +27,7 @@ app.use("/", getTtcTimes);
 app.use("/", weatherReport);
 app.use("/", setLastfrenchTopic);
 app.use("/", getLastfrenchTopic);
+app.use("/", uploadMuisc);
 /* ---------- PM2 restart‑all via GET ---------- */
 app.get(`/restart/${RESTART_SECRET}`, (req, res) => {
     res.json({ message: "Restarting all PM2 processes…" });
