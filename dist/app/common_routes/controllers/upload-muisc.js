@@ -20,7 +20,7 @@ router.use("/separated", express.static(SEPARATED_DIR, {
 // Multer: write uploads to disk
 const upload = multer({
     dest: UPLOADS_DIR,
-    limits: { fileSize: 200 * 1024 * 1024 }, // 200 MB
+    // limits: { fileSize: 200 * 1024 * 1024 }, // 200 MB
     fileFilter: (_req, file, cb) => {
         if (!file.mimetype.startsWith("audio/")) {
             return cb(new Error("Only audio files allowed"));
@@ -72,6 +72,7 @@ function runDemucs(inputPath, basename) {
 // Main handler
 async function handleUpload(req, res) {
     try {
+        console.log("request received");
         const file = req.file;
         if (!file) {
             res.status(400).json({
