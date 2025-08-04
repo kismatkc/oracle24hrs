@@ -1,25 +1,19 @@
-// // src/server/routes/test-upload-music.ts
 // import express, { NextFunction, Request, Response } from "express";
 // import multer from "multer";
 // import path from "path";
 // import fs from "fs";
-// import { spawn } from "child_process";
+// import { demucsQueue } from "../queues/demucs.queue.js";
+// // import { spawn } from "child_process";                    // (old) not needed once we enqueue
 // const router = express.Router();
-// const TEN_MIN = 10 * 60 * 1000; // 600 000 ms
+// const TEN_MIN = 10 * 60 * 1000; // 10 minutes in ms
 // function longTimeout(_req: Request, res: Response, next: NextFunction) {
-//   // Give Node 10 min of inactivity on the socket
 //   res.setTimeout(TEN_MIN);
-//   // If you also want to allow 10 min for the client to finish uploading:
-//   // _req.setTimeout(TEN_MIN);
 //   next();
 // }
-// // ──────────────────────────────────────────────
-// // Ensure folders exist
 // const SEPARATED_DIR = path.join(process.cwd(), "separated");
 // const UPLOADS_DIR = path.join(process.cwd(), "uploads");
 // fs.mkdirSync(SEPARATED_DIR, { recursive: true });
 // fs.mkdirSync(UPLOADS_DIR, { recursive: true });
-// // Serve stems statically at /separated/*
 // router.use(
 //   "/separated",
 //   express.static(SEPARATED_DIR, {
@@ -28,335 +22,215 @@
 //     lastModified: true,
 //   })
 // );
-// // Multer: write uploads to disk
 // const upload = multer({
 //   dest: UPLOADS_DIR,
-//   // limits: { fileSize: 200 * 1024 * 1024 }, // 200 MB
 //   fileFilter: (_req, file, cb) => {
 //     if (!file.mimetype.startsWith("audio/")) {
-//       return cb(new Error("Only audio files allowed"));
+//        cb(new Error("Only audio files allowed"));
 //     }
 //     cb(null, true);
 //   },
 // });
-// // Run Demucs (CLI) and resolve URLs
-// // function runDemucs(
-// //   inputPath: string,
-// //   basename: string
-// // ): Promise<{
-// //   vocalsUrl: string;
-// //   accompanimentUrl: string;
-// // }> {
-// //   return new Promise((resolve, reject) => {
-// //     const model = "mdx_q";
-// //     // Point to venv bin dir (adjust if yours is elsewhere)
-// //     const VENV_BIN = path.join(process.env.HOME || "", "demucs_env", "bin");
-// //     const DEMUCS_BIN = process.env.DEMUCS_BIN || "demucs";
-// //     const args = [
-// //       "-d",
-// //       "cpu",
-// //       "-n",
-// //       model,
-// //       "--two-stems=vocals",
-// //       "-j",
-// //       "1",
-// //       "--overlap",
-// //       "0",
-// //       inputPath,
-// //     ];
-// //     const proc = spawn(DEMUCS_BIN, args, {
-// //       cwd: process.cwd(),
-// //       env: { ...process.env, PATH: `${VENV_BIN}:${process.env.PATH}` },
-// //     });
-// //     proc.on("error", (err) => reject(err)); // ← important to prevent crashes
-// //     proc.stdout.on("data", (d) => process.stdout.write(d));
-// //     proc.stderr.on("data", (d) => process.stderr.write(d));
-// //     proc.on("close", (code) => {
-// //       try {
-// //         fs.unlinkSync(inputPath);
-// //       } catch {}
-// //       if (code !== 0)
-// //         return reject(new Error(`Demucs exited with code ${code}`));
-// //       const stemBase = `/separated/${model}/${basename}`;
-// //       resolve({
-// //         vocalsUrl: `${stemBase}/vocals.wav`,
-// //         accompanimentUrl: `${stemBase}/no_vocals.wav`,
-// //       });
-// //     });
-// //   });
-// // }
-// // Run Demucs (CLI) and resolve URLs
-// function runDemucs(
-//   inputPath: string,
-//   basename: string
-// ): Promise<{
-//   vocalsUrl: string;
-//   accompanimentUrl: string;
-// }> {
-//   return new Promise((resolve, reject) => {
-//     const model = "mdx_q";
-//     // Point to venv bin dir (adjust if yours is elsewhere)
-//     const VENV_BIN = path.join(process.env.HOME || "", "demucs_env", "bin");
-//     const DEMUCS_BIN = process.env.DEMUCS_BIN || "demucs";
-//     const args = [
-//       "-d",
-//       "cpu",
-//       "-n",
-//       model,
-//       "--two-stems=vocals",
-//       "-j",
-//       "1",
-//       "--overlap",
-//       "0",
-//       inputPath,
-//     ];
-//     const proc = spawn(DEMUCS_BIN, args, {
-//       cwd: process.cwd(),
-//       env: { ...process.env, PATH: `${VENV_BIN}:${process.env.PATH}` },
-//     });
-//     /* ───── GRANULAR PROGRESS LOGGER ───── */
-//     let lastPct = -1; // remember last printed %
-//     const logProgress = (chunk: Buffer) => {
-//       const txt = chunk.toString();
-//       // tqdm writes to stderr: " 35%|███▌      | …"
-//       const m = txt.match(/(\d{1,3})%/); // grab first percentage in line
-//       if (m) {
-//         const pct = Number(m[1]);
-//         if (!Number.isNaN(pct) && pct !== lastPct) {
-//           lastPct = pct;
-//           // Print every 2 % (adjust granularity here)
-//           if (pct % 2 === 0 || pct === 100) {
-//             console.log(`[demucs] progress: ${pct}%`);
-//           }
-//         }
-//       }
-//     };
-//     proc.stdout.on("data", (d) => process.stdout.write(d)); // optional
-//     proc.stderr.on("data", (d) => {
-//       process.stderr.write(d); // keep original bar
-//       logProgress(d); // and log clean %
-//     });
-//     proc.on("error", (err) => reject(err)); // prevents crashes
-//     proc.on("close", (code) => {
-//       try {
-//         fs.unlinkSync(inputPath);
-//       } catch {}
-//       if (code !== 0)
-//         return reject(new Error(`Demucs exited with code ${code}`));
-//       const stemBase = `/separated/${model}/${basename}`;
-//       resolve({
-//         vocalsUrl: `${stemBase}/vocals.wav`,
-//         accompanimentUrl: `${stemBase}/no_vocals.wav`,
-//       });
-//     });
-//   });
-// }
-// // Main handler
-// async function handleUpload(req: Request, res: Response) {
-//   try {
-//     console.log("request received");
-//     const file = (req as any).file as
-//       | { originalname: string; size: number; filename: string; path: string }
-//       | undefined;
-//     if (!file) {
-//       res.status(400).json({
-//         success: false,
-//         message: "No music file received. Field name must be 'file'.",
-//       });
-//       return;
-//     }
-//     console.log(`[upload_music] ${file.originalname} -> ${file.size} bytes`);
-//     const basename = file.filename; // Multer's random name
-//     const { vocalsUrl, accompanimentUrl } = await runDemucs(
-//       file.path,
-//       basename
-//     );
-//     res.status(200).json({
-//       success: true,
-//       size: file.size,
-//       originalName: file.originalname,
-//       vocalsUrl,
-//       accompanimentUrl,
-//     });
-//     return;
-//   } catch (err) {
-//     console.error("[upload_music] error:", err);
-//     res.status(500).json({ success: false });
-//     return;
-//   }
-// }
-// // router.post(
-// //   "/upload_music",
-// //   longTimeout, // <── added
-// //   upload.single("file"), // existing
-// //   handleUpload // existing
-// // );
-// // export default router;
-// // put this just above `router.post("/upload_music", …)`
-// // a tiny helper you can reuse
-// async function purgeSeparatedDir() {
-//   try {
-//     //  fs.rm(SEPARATED_DIR, { recursive: true, force: true });
-//     fs.rm(SEPARATED_DIR, { recursive: true });
-//     // Demucs will recreate the folder structure automatically
-//   } catch (err) {
-//     console.warn("[demucs] failed to purge separated dir:", err);
-//   }
-// }
+// /**
+//  * POST /upload_music
+//  * - Uploads file to disk (multer).
+//  * - ENQUEUES a Demucs job and returns jobId (non-blocking).
+//  */
 // router.post(
 //   "/upload_music",
 //   longTimeout,
-//   async (req, res, next) => {
-//     await purgeSeparatedDir(); // <── wipe it *before* we even parse the file
-//     next();
-//   },
+//   // (Removed the global purge call to avoid breaking concurrent jobs)   // [ADD] Explain: keep stems of others
 //   upload.single("file"),
-//   handleUpload
+//   async (req: Request, res: Response) => {
+//     try {
+//       const file = (req as any).file as
+//         | { originalname: string; size: number; filename: string; path: string }
+//         | undefined;
+//       console.log(
+//         "[upload_music] received file:",
+//         file?.originalname,
+//         file?.size
+//       );
+//       if (!file) {
+//         res.status(400).json({
+//           success: false,
+//           message: "No music file received. Field name must be 'file'.",
+//         });
+//       }
+//       const basename = file.filename; // [ADD] Unique dir Demucs uses for output
+//       const job = await demucsQueue.add("separate", {
+//         // [ADD] Push job to BullMQ
+//         inputPath: file.path, // [ADD] Path of uploaded file
+//         basename, // [ADD] Used to build stem URLs
+//       });
+//       res.status(200).json({
+//         // [ADD] Non-blocking response
+//         success: true,
+//         jobId: job.id, // [ADD] Client will poll with this
+//         originalName: file.originalname,
+//         size: file.size,
+//       });
+//     } catch (err) {
+//       console.error("[upload_music] enqueue error:", err);
+//       res.status(500).json({ success: false });
+//     }
+//   }
 // );
+// /**
+//  * GET /job/:id/status
+//  * - Polling endpoint for progress and final result.
+//  */
+// router.get("/job/:id/status", async (req: Request, res: Response) => {
+//   // [ADD] New endpoint
+//   try {
+//     const job = await demucsQueue.getJob(req.params.id); // [ADD] Load job by id
+//     if (!job) res.status(404).json({ state: "not_found" }); // [ADD] Unknown id
+//     const state = await job.getState(); // [ADD] waiting | active | completed | failed
+//     const progress = (job.progress as number) || 0; // [ADD] 0..100 from worker
+//     if (state === "completed") {
+//       // [ADD] Include result when done
+//       res.json({ state, progress, result: job.returnvalue });
+//     }
+//     if (state === "failed") {
+//       res.json({ state, progress, failedReason: job.failedReason });
+//     }
+//     res.json({ state, progress }); // [ADD] Running states
+//   } catch (e) {
+//     console.error("[job status] error:", e);
+//     res.status(500).json({ state: "error" });
+//   }
+// });
 // export default router;
 import express from "express";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
-import { spawn } from "child_process";
+import { demucsQueue } from "../queues/demucs.queue.js";
 const router = express.Router();
 const TEN_MIN = 10 * 60 * 1000; // 10 minutes in ms
-/**
- * Extend socket inactivity timeout for upload route
- */
 function longTimeout(_req, res, next) {
-    res.setTimeout(TEN_MIN); // allow 10 min of inactivity
+    res.setTimeout(TEN_MIN);
     next();
 }
-// Paths for uploads and separated stems
 const SEPARATED_DIR = path.join(process.cwd(), "separated");
 const UPLOADS_DIR = path.join(process.cwd(), "uploads");
-/**
- * Remove previous separation output synchronously
- */
-function purgeSeparatedDir() {
-    try {
-        // rmSync recursive+force acts like `rm -rf`
-        fs.rmSync(SEPARATED_DIR, { recursive: true, force: true });
-    }
-    catch (_err) {
-        // ignore errors
-    }
-}
-// Ensure folders exist
 fs.mkdirSync(SEPARATED_DIR, { recursive: true });
 fs.mkdirSync(UPLOADS_DIR, { recursive: true });
-// Serve static stems
 router.use("/separated", express.static(SEPARATED_DIR, {
     maxAge: "1h",
     etag: true,
     lastModified: true,
 }));
-// Multer configuration for file uploads
 const upload = multer({
     dest: UPLOADS_DIR,
     fileFilter: (_req, file, cb) => {
         if (!file.mimetype.startsWith("audio/")) {
-            return cb(new Error("Only audio files allowed"));
+            cb(new Error("Only audio files allowed"));
         }
         cb(null, true);
     },
 });
 /**
- * Run Demucs CLI and resolve URLs, with granular progress logging
+ * POST /upload_music
+ * Uploads file, enqueues job, returns jobId.
  */
-function runDemucs(inputPath, basename) {
-    return new Promise((resolve, reject) => {
-        const model = "mdx_q";
-        const VENV_BIN = path.join(process.env.HOME || "", "demucs_env", "bin");
-        const DEMUCS_BIN = process.env.DEMUCS_BIN || "demucs";
-        const args = [
-            "-d",
-            "cpu",
-            "-n",
-            model,
-            "--two-stems=vocals",
-            "-j",
-            "1",
-            "--overlap",
-            "0",
-            inputPath,
-        ];
-        const proc = spawn(DEMUCS_BIN, args, {
-            cwd: process.cwd(),
-            env: { ...process.env, PATH: `${VENV_BIN}:${process.env.PATH}` },
-        });
-        let lastPct = -1;
-        const logProgress = (buf) => {
-            const txt = buf.toString();
-            const m = txt.match(/(\d{1,3})%/);
-            if (m) {
-                const pct = Number(m[1]);
-                if (!Number.isNaN(pct) &&
-                    pct !== lastPct &&
-                    (pct % 2 === 0 || pct === 100)) {
-                    lastPct = pct;
-                    console.log(`[demucs] progress: ${pct}%`);
-                }
-            }
-        };
-        proc.stdout.on("data", (d) => process.stdout.write(d));
-        proc.stderr.on("data", (d) => {
-            process.stderr.write(d);
-            logProgress(d);
-        });
-        proc.on("error", (err) => reject(err));
-        proc.on("close", (code) => {
-            try {
-                fs.unlinkSync(inputPath);
-            }
-            catch { }
-            if (code !== 0) {
-                return reject(new Error(`Demucs exited with code ${code}`));
-            }
-            const stemBase = `/separated/${model}/${basename}`;
-            resolve({
-                vocalsUrl: `${stemBase}/vocals.wav`,
-                accompanimentUrl: `${stemBase}/no_vocals.wav`,
-            });
-        });
-    });
-}
-/**
- * Main upload handler
- */
-async function handleUpload(req, res) {
+router.post("/upload_music", longTimeout, upload.single("file"), async (req, res) => {
     try {
-        console.log("request received");
         const file = req.file;
+        console.log("[upload_music] received file:", file?.originalname, file?.size);
         if (!file) {
             res.status(400).json({
                 success: false,
                 message: "No music file received. Field name must be 'file'.",
             });
-            return;
         }
-        console.log(`[upload_music] ${file.originalname} -> ${file.size} bytes`);
         const basename = file.filename;
-        const { vocalsUrl, accompanimentUrl } = await runDemucs(file.path, basename);
+        const job = await demucsQueue.add("separate", {
+            inputPath: file.path,
+            basename,
+        });
         res.status(200).json({
             success: true,
-            size: file.size,
+            jobId: job.id,
             originalName: file.originalname,
-            vocalsUrl,
-            accompanimentUrl,
+            size: file.size,
         });
-        return;
     }
     catch (err) {
-        console.error("[upload_music] error:", err);
+        console.error("[upload_music] enqueue error:", err);
         res.status(500).json({ success: false });
-        return;
     }
-}
-// POST /upload_music: apply timeouts, purge old stems, then multer + handler
-router.post("/upload_music", longTimeout, (req, _res, next) => {
-    purgeSeparatedDir();
-    next();
-}, upload.single("file"), handleUpload);
+});
+/**
+ * GET /job/:id/status
+ * Polling endpoint for progress and final result.
+ */
+router.get("/job/:id/status", async (req, res) => {
+    try {
+        const job = await demucsQueue.getJob(req.params.id);
+        if (!job)
+            res.status(404).json({ state: "not_found" });
+        const state = await job.getState(); // waiting | active | completed | failed
+        const progress = job.progress || 0;
+        if (state === "completed") {
+            res.json({ state, progress, result: job.returnvalue });
+        }
+        if (state === "failed") {
+            res.json({ state, progress, failedReason: job.failedReason });
+        }
+        res.json({ state, progress });
+    }
+    catch (e) {
+        console.error("[job status] error:", e);
+        res.status(500).json({ state: "error" });
+    }
+});
+/**
+ * POST /job/:id/cleanup
+ * Client calls this immediately after caching the files.
+ * Deletes the separated folder and (if still present) the original upload file.
+ */
+router.post("/job/:id/cleanup", async (req, res) => {
+    try {
+        const job = await demucsQueue.getJob(req.params.id);
+        if (!job)
+            res.status(404).json({ success: false, message: "not_found" });
+        const state = await job.getState();
+        if (state !== "completed") {
+            res.status(409).json({ success: false, message: "not_completed" });
+        }
+        const ret = job.returnvalue;
+        // delete separated dir immediately
+        if (ret?.sepDir) {
+            try {
+                fs.rmSync(ret.sepDir, { recursive: true, force: true });
+            }
+            catch (e) {
+                console.warn("[cleanup] failed to remove sepDir:", e);
+            }
+        }
+        // In case the upload file still exists for any reason, try to remove by basename
+        // (Demucs worker already unlinks, so this is just a best-effort fallback)
+        try {
+            const basename = (ret?.vocalsUrl || "").split("/").at(-2); // mdx_q/<basename>/vocals.wav
+            if (basename) {
+                const maybeUploadPath = path.join(UPLOADS_DIR, basename);
+                if (fs.existsSync(maybeUploadPath)) {
+                    fs.rmSync(maybeUploadPath, { recursive: true, force: true });
+                }
+            }
+        }
+        catch { }
+        // Optionally: remove job immediately from Redis metadata
+        try {
+            await job.remove();
+        }
+        catch { }
+        res.json({ success: true });
+    }
+    catch (e) {
+        console.error("[job cleanup] error:", e);
+        res.status(500).json({ success: false });
+    }
+});
 export default router;

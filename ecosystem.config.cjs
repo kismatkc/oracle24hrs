@@ -30,5 +30,14 @@ module.exports = {
       exec_mode: "fork",
       watch: false,
     },
+    {
+      name: "demucs_worker", // [ADD] Dedicated worker process
+      script: "dist/app/common_routes/workers/demucs.worker.js", // [ADD] Run compiled worker file
+      interpreter: "node", // [ADD] Same Node runtime
+      node_args: "-r ./doppler-production.cjs", // [ADD] Load Doppler env (Upstash URL, etc.)
+      instances: 1, // [ADD] One worker per host (CPU bound)
+      exec_mode: "fork", // [ADD] Simple single instance
+      watch: false, // [ADD] No watch in production
+    },
   ],
 };
