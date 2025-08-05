@@ -18,7 +18,12 @@ if (!PORT) {
 /* ---------- configuration ---------- */
 const RESTART_SECRET = "Mohan9869868880"; // secret path segment
 /* ---------- middleware ---------- */
-app.use(CORS());
+// app.use(CORS());
+app.use(CORS({
+    origin: "*", // allow any origin
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+}));
 app.use(json());
 /* ---------- functional routes ---------- */
 app.use("/", modifyStops);
