@@ -1,10 +1,10 @@
 import express from "express";
-import { Redis } from "../../../lib/reddis.js";
+import { RedisClient } from "../../../lib/reddis.js";
 const router = express.Router();
 async function modifyStops(req, res) {
     try {
         const stops = req.body.stops;
-        const response = await Redis.set("stops", stops);
+        const response = await RedisClient.set("stops", stops);
         res.status(200).json({
             success: true,
         });

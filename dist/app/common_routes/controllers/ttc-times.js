@@ -1,6 +1,6 @@
 import express from "express";
 import axios from "axios";
-import { Redis } from "../../../lib/reddis.js";
+import { RedisClient as Redis } from "../../../lib/reddis.js";
 const router = express.Router();
 function getAllBusDetails(bus) {
     // Handle the case where predictions is an object instead of an array

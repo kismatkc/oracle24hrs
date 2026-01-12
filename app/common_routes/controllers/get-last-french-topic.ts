@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { Redis } from "../../../lib/reddis.ts";
+import { RedisClient as Redis } from "../../../lib/reddis.ts";
 
 const router = express.Router();
 

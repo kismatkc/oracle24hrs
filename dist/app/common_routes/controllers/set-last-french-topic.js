@@ -1,5 +1,5 @@
 import express from "express";
-import { Redis } from "../../../lib/reddis.js";
+import { RedisClient as Redis } from "../../../lib/reddis.js";
 const router = express.Router();
 async function setLastFrenchTopic(req, res) {
     try {

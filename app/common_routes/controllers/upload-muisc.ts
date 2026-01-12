@@ -1,3 +1,6 @@
+// app/common_routes/controllers/upload-muisc.ts
+
+
 import express, { NextFunction, Request, Response } from "express";
 import multer from "multer";
 import path from "path";
@@ -5,156 +8,373 @@ import fs from "fs";
 import { demucsQueue } from "../queues/demucs.queue.ts";
 
 const router = express.Router();
-const TEN_MIN = 10 * 60 * 1000; // 10 minutes in ms
 
+/* timeouts */
+const TEN_MIN = 10 * 60 * 1000;
 function longTimeout(_req: Request, res: Response, next: NextFunction) {
   res.setTimeout(TEN_MIN);
   next();
 }
 
-const SEPARATED_DIR = path.join(process.cwd(), "separated");
-const UPLOADS_DIR = path.join(process.cwd(), "uploads");
-fs.mkdirSync(SEPARATED_DIR, { recursive: true });
-fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+/* filesystem */
+const ROOT = process.cwd();
+const SEPARATED_DIR = path.join(ROOT, "separated");
+const UPLOADS_DIR = path.join(ROOT, "uploads");
+for (const d of [SEPARATED_DIR, UPLOADS_DIR]) {
+  fs.mkdirSync(d, { mode: 0o770, recursive: true });
+}
 
+/* static */
 router.use(
   "/separated",
-  express.static(SEPARATED_DIR, {
-    maxAge: "1h",
-    etag: true,
-    lastModified: true,
-  })
+  express.static(SEPARATED_DIR, { maxAge: "1h", etag: true, lastModified: true })
 );
 
+/* upload */
 const upload = multer({
   dest: UPLOADS_DIR,
-  fileFilter: (_req, file, cb) => {
-    if (!file.mimetype.startsWith("audio/")) {
-      cb(new Error("Only audio files allowed"));
-    }
-    cb(null, true);
-  },
+  fileFilter: (_req, file, cb) =>
+    file.mimetype.startsWith("audio/")
+      ? cb(null, true)
+      : cb(new Error("Only audio files allowed")),
 });
 
-/**
- * POST /upload_music
- * Uploads file, enqueues job, returns jobId.
- */
-router.post(
-  "/upload_music",
-  longTimeout,
-  upload.single("file"),
-  async (req: Request, res: Response) => {
-    try {
-      const file = (req as any).file as
-        | { originalname: string; size: number; filename: string; path: string }
-        | undefined;
+/* optional Redis ledger */
+let Redis: any = null;
+try {
+  const { BullRedis } = require("../lib/bullRedis.ts");
+  Redis = BullRedis;
+} catch {}
+const META_TTL_SEC = 60 * 60 * 24 * 3; // 3 days
+const THREE_DAYS_MS = 1000 * 60 * 60 * 24 * 3;
+const key = (id: string) => `stems:${id}:meta`;
+async function ledgerSet(id: string, obj: Record<string, string | number | boolean>) {
+  if (!Redis) return;
+  await Redis.hset(
+    key(id),
+    Object.fromEntries(Object.entries(obj).map(([k, v]) => [k, String(v)]))
+  );
+  await Redis.expire(key(id), META_TTL_SEC);
+}
+async function ledgerGet(id: string): Promise<Record<string, string>> {
+  if (!Redis) return {};
+  try {
+    return await Redis.hgetall(key(id));
+  } catch {
+    return {};
+  }
+}
 
-      console.log(
-        "[upload_music] received file:",
-        file?.originalname,
-        file?.size
-      );
+/* helpers */
+function absUrl(req: Request, maybePath?: string) {
+  if (!maybePath) return;
+  if (/^https?:\/\//i.test(maybePath)) return maybePath;
+  const xfProto = (req.headers["x-forwarded-proto"] as string | undefined)?.split(",")[0];
+  const proto = xfProto?.trim() || (req.protocol || "https");
+  const host = req.get("host") || "localhost:3000";
+  const p = maybePath.startsWith("/") ? maybePath : `/${maybePath}`;
+  return `${proto}://${host}${p}`;
+}
 
-      if (!file) {
-        res.status(400).json({
-          success: false,
-          message: "No music file received. Field name must be 'file'.",
-        });
+function findStemFiles(dir: string) {
+  try {
+    const files = fs.readdirSync(dir);
+    const pick = (prefixes: string[]) =>
+      files
+        .filter((f) => prefixes.some((p) => f.toLowerCase().startsWith(`${p.toLowerCase()}.`)))
+        .sort((a, b) => {
+          const pref = [".m4a", ".mp3", ".wav", ".aac", ".caf"];
+          return pref.indexOf(path.extname(a).toLowerCase()) - pref.indexOf(path.extname(b).toLowerCase());
+        })[0];
+    return {
+      vocals: pick(["vocals", "voice"]),
+      accomp: pick(["no_vocals", "accompaniment", "instrumental", "other"]),
+    };
+  } catch {
+    return {};
+  }
+}
+function sepDirFromAnyUrl(url?: string) {
+  if (!url) return;
+  try {
+    const pathname = url.startsWith("http") ? new URL(url).pathname : url;
+    const parts = pathname.split("/").filter(Boolean);
+    if (parts[0] !== "separated" || parts.length < 3) return;
+    const folder = parts.slice(1, -1).join("/");
+    return path.join(SEPARATED_DIR, folder);
+  } catch {
+    return;
+  }
+}
+function sepDirFromBasename(b?: string) {
+  if (!b) return;
+  const direct = path.join(SEPARATED_DIR, b);
+  if (fs.existsSync(direct) && fs.statSync(direct).isDirectory()) return direct;
+  try {
+    for (const ent of fs.readdirSync(SEPARATED_DIR, { withFileTypes: true })) {
+      if (!ent.isDirectory()) continue;
+      const cand = path.join(SEPARATED_DIR, ent.name, b);
+      if (fs.existsSync(cand) && fs.statSync(cand).isDirectory()) return cand;
+    }
+  } catch {}
+  return;
+}
+function urlsFromSepDir(req: Request, sepDir?: string) {
+  if (!sepDir) return {};
+  const { vocals, accomp } = findStemFiles(sepDir);
+  const rel = path.relative(SEPARATED_DIR, sepDir).replace(/\\/g, "/");
+  const vocalsUrl = vocals ? absUrl(req, `/separated/${rel}/${vocals}`) : undefined;
+  const accompanimentUrl = accomp ? absUrl(req, `/separated/${rel}/${accomp}`) : undefined;
+  return { vocalsUrl, accompanimentUrl, instrumentalUrl: accompanimentUrl };
+}
+async function resolveSepDir(job: any, ret?: any) {
+  let dir =
+    ret?.sepDir ||
+    sepDirFromAnyUrl(ret?.vocalsUrl) ||
+    sepDirFromAnyUrl(ret?.accompanimentUrl) ||
+    sepDirFromAnyUrl(ret?.instrumentalUrl);
+  if (dir) return dir;
+  const candidates = Array.from(
+    new Set([job?.id, job?.data?.basename, job?.data?.originalBasename].filter(Boolean))
+  ) as string[];
+  for (const b of candidates) {
+    const d = sepDirFromBasename(b);
+    if (d) return d;
+  }
+  return;
+}
+async function gather(req: Request, idOrJob: string | any) {
+  const job = typeof idOrJob === "string" ? await demucsQueue.getJob(idOrJob) : idOrJob;
+  let state: string = "not_found";
+  let progress = 0;
+  if (job) {
+    state = await job.getState();
+    progress = (job.progress as number) || 0;
+  }
+
+  const ret = job?.returnvalue || {};
+  const sepDir =
+    (await resolveSepDir(job, ret)) ||
+    sepDirFromBasename(typeof idOrJob === "string" ? idOrJob : undefined);
+
+  const urls = urlsFromSepDir(req, sepDir);
+  const vocals = urls.vocalsUrl || absUrl(req, ret.vocalsUrl);
+  const accomp = urls.accompanimentUrl || absUrl(req, ret.accompanimentUrl || ret.instrumentalUrl);
+  const ready = !!(vocals && accomp);
+
+  return {
+    state: ready ? "completed" : state,
+    progress: ready ? 100 : progress,
+    ready,
+    result: {
+      vocalsUrl: vocals,
+      accompanimentUrl: accomp,
+      instrumentalUrl: accomp,
+      sepDir,
+    },
+  };
+}
+
+/* sweeper (3 days) */
+setInterval(() => {
+  try {
+    const sweep = (dir: string) => {
+      if (!fs.existsSync(dir)) return;
+      for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
+        const p = path.join(dir, ent.name);
+        try {
+          const st = fs.statSync(p);
+          const old = Date.now() - st.mtimeMs > THREE_DAYS_MS;
+          if (ent.isDirectory()) {
+            old ? fs.rmSync(p, { recursive: true, force: true }) : sweep(p);
+          } else if (old) fs.rmSync(p, { force: true });
+        } catch {}
       }
+    };
+    sweep(SEPARATED_DIR);
+    sweep(UPLOADS_DIR);
+  } catch {}
+}, 60 * 60 * 1000);
 
-      const basename = file.filename;
-      const job = await demucsQueue.add("separate", {
+/* routes */
+router.post("/upload_music", longTimeout, upload.single("file"), async (req, res) => {
+  try {
+    const file = (req as any).file as
+      | { originalname: string; size: number; filename: string; path: string }
+      | undefined;
+    if (!file)  res.status(400).json({ success: false, message: "Field 'file' is required." });
+
+    const songId = (req.body?.songId as string | undefined)?.trim();
+    const basename = songId || file.filename;
+
+    const job = await demucsQueue.add(
+      "separate",
+      {
         inputPath: file.path,
         basename,
-      });
-
-      res.status(200).json({
-        success: true,
-        jobId: job.id,
+        originalBasename: file.filename,
         originalName: file.originalname,
-        size: file.size,
-      });
-    } catch (err) {
-      console.error("[upload_music] enqueue error:", err);
-      res.status(500).json({ success: false });
-    }
-  }
-);
+        uploadedAt: Date.now(),
+      },
+      songId ? { jobId: basename } : undefined
+    );
 
-/**
- * GET /job/:id/status
- * Polling endpoint for progress and final result.
- */
-router.get("/job/:id/status", async (req: Request, res: Response) => {
-  try {
-    const job = await demucsQueue.getJob(req.params.id);
-    if (!job) res.status(404).json({ state: "not_found" });
+    const now = Date.now();
+    await ledgerSet(basename, {
+      status: "enqueued",
+      available: 0,
+      uploadedAt: now,
+      progress: 1,
+      expiresAt: now + THREE_DAYS_MS,
+      originalName: file.originalname,
+      size: file.size,
+    });
 
-    const state = await job.getState(); // waiting | active | completed | failed
-    const progress = (job.progress as number) || 0;
-
-    if (state === "completed") {
-      res.json({ state, progress, result: job.returnvalue });
-    }
-    if (state === "failed") {
-      res.json({ state, progress, failedReason: job.failedReason });
-    }
-    res.json({ state, progress });
+    res.json({ success: true, jobId: job.id, originalName: file.originalname, size: file.size });
   } catch (e) {
-    console.error("[job status] error:", e);
-    res.status(500).json({ state: "error" });
+    console.error("[upload_music] error:", e);
+    res.status(500).json({ success: false });
   }
 });
 
-/**
- * POST /job/:id/cleanup
- * Client calls this immediately after caching the files.
- * Deletes the separated folder and (if still present) the original upload file.
- */
-router.post("/job/:id/cleanup", async (req: Request, res: Response) => {
+router.get("/stems/:id/state", async (req, res) => {
   try {
-    const job = await demucsQueue.getJob(req.params.id);
-    if (!job) res.status(404).json({ success: false, message: "not_found" });
+    const id = req.params.id;
+    const info = await gather(req, id);
+    const meta = await ledgerGet(id);
 
-    const state = await job.getState();
-    if (state !== "completed") {
-      res.status(409).json({ success: false, message: "not_completed" });
+    // default availability (Redis off ⇒ equals "ready")
+    let available = info.ready;
+    let expiresAt: number | null = null;
+
+    if (meta && Object.keys(meta).length) {
+      const stillValid = !meta.expiresAt || Date.now() < Number(meta.expiresAt);
+      available = meta.available === "1" && stillValid;
+      expiresAt = meta.expiresAt ? Number(meta.expiresAt) : null;
     }
 
-    const ret = job.returnvalue as
-      | { sepDir?: string; vocalsUrl?: string; accompanimentUrl?: string }
-      | undefined;
+    // auto-flip to available if files are on disk
+    if (info.ready && !available) {
+      const now = Date.now();
+      const r = (info.result || {}) as any;
+      expiresAt = now + THREE_DAYS_MS;
+      await ledgerSet(id, {
+        status: "completed",
+        progress: 100,
+        available: 1,
+        readyAt: now,
+        expiresAt,
+        vocalsUrl: r.vocalsUrl || "",
+        accompanimentUrl: r.accompanimentUrl || r.instrumentalUrl || "",
+        instrumentalUrl: r.instrumentalUrl || r.accompanimentUrl || "",
+      });
+      available = true;
+    } else {
+      await ledgerSet(id, {
+        status: info.ready ? "completed" : info.state || "pending",
+        progress: info.progress ?? 0,
+        available: available ? 1 : 0,
+      });
+    }
 
-    // delete separated dir immediately
-    if (ret?.sepDir) {
+    res.json({
+      state: info.state,
+      progress: info.progress ?? 0,
+      ready: !!info.ready,
+      available,
+      expiresAt,
+    });
+  } catch (e) {
+    console.error("[stems state] error:", e);
+    res.status(500).json({ state: "error", ready: false, available: false });
+  }
+});
+
+router.get("/stems/:id/result", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const info = await gather(req, id);
+    const meta = await ledgerGet(id);
+    const isAvailable = meta?.available === "1" && (!meta.expiresAt || Date.now() < Number(meta.expiresAt));
+
+    if (info.ready && isAvailable) {
+      res.json({
+        ready: true,
+        ...(info.result as any),
+        available: true,
+        expiresAt: meta?.expiresAt ? Number(meta.expiresAt) : null,
+      });
+      return;
+    }
+
+    if (info.ready && !isAvailable) {
+      const now = Date.now();
+      const urls = (info.result || {}) as any;
+      await ledgerSet(id, {
+        available: 1,
+        readyAt: now,
+        expiresAt: now + THREE_DAYS_MS,
+        vocalsUrl: urls.vocalsUrl || "",
+        accompanimentUrl: urls.accompanimentUrl || urls.instrumentalUrl || "",
+        instrumentalUrl: urls.instrumentalUrl || urls.accompanimentUrl || "",
+        status: "completed",
+      });
+      res.json({ ready: true, ...(urls as any), available: true, expiresAt: now + THREE_DAYS_MS });
+      return;
+    }
+
+    res.json({
+      ready: false,
+      available: false,
+      expiresAt: meta?.expiresAt ? Number(meta.expiresAt) : null,
+    });
+  } catch (e) {
+    console.error("[stems result] error:", e);
+    res.status(500).json({ ready: false, available: false });
+  }
+});
+
+router.post("/stems/:id/cleanup", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const job = await demucsQueue.getJob(id);
+
+    const removeFiles = (sepDir?: string, uploadPath?: string) => {
+      if (sepDir) {
+        try {
+          fs.rmSync(sepDir, { recursive: true, force: true });
+        } catch {}
+      }
+      if (uploadPath && fs.existsSync(uploadPath)) {
+        try {
+          fs.rmSync(uploadPath, { force: true });
+        } catch {}
+      }
+    };
+
+    if (job) {
+      const state = await job.getState();
+      if (state !== "completed")
+         res.status(409).json({ success: false, message: "not_completed" });
+
+      const ret = job.returnvalue || {};
+      const sepDir = await resolveSepDir(job, ret);
+      const uploadPath: string | undefined = job.data?.inputPath;
+      removeFiles(sepDir, uploadPath);
       try {
-        fs.rmSync(ret.sepDir, { recursive: true, force: true });
-      } catch (e) {
-        console.warn("[cleanup] failed to remove sepDir:", e);
-      }
+        await job.remove();
+      } catch {}
+    } else {
+      const sepDir = sepDirFromBasename(id);
+      const uploadPath = path.join(UPLOADS_DIR, id);
+      removeFiles(sepDir, uploadPath);
     }
 
-    // In case the upload file still exists for any reason, try to remove by basename
-    // (Demucs worker already unlinks, so this is just a best-effort fallback)
-    try {
-      const basename = (ret?.vocalsUrl || "").split("/").at(-2); // mdx_q/<basename>/vocals.wav
-      if (basename) {
-        const maybeUploadPath = path.join(UPLOADS_DIR, basename);
-        if (fs.existsSync(maybeUploadPath)) {
-          fs.rmSync(maybeUploadPath, { recursive: true, force: true });
-        }
-      }
-    } catch {}
-
-    // Optionally: remove job immediately from Redis metadata
-    try {
-      await job.remove();
-    } catch {}
-
+    const now = Date.now();
+    await ledgerSet(id, { status: "cleaned", available: 0, downloadedAt: now, cleanedUpAt: now, progress: 0 });
     res.json({ success: true });
   } catch (e) {
-    console.error("[job cleanup] error:", e);
+    console.error("[stems cleanup] error:", e);
     res.status(500).json({ success: false });
   }
 });
