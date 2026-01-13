@@ -1,0 +1,117 @@
+2026-01-13T21:08:49: Browser will restart every 24 hours
+2026-01-13T21:08:50: OPTIONS  /.*/
+2026-01-13T21:08:50: [33mPOST[39m     /~/upload
+2026-01-13T21:08:50: [32mGET[39m      /~/stems/:id/state
+2026-01-13T21:08:50: [32mGET[39m      /~/stems/:id/result
+2026-01-13T21:08:50: [33mPOST[39m     /~/stems/:id/cleanup
+2026-01-13T21:08:50: [32mGET[39m      /~/progress/:id
+2026-01-13T21:08:50: [32mGET[39m      /~/download-mp3
+2026-01-13T21:08:50: [32mGET[39m      /~/scrape-lyrics
+2026-01-13T21:08:50: [32mGET[39m      /~/scrape-news
+2026-01-13T21:08:50: [32mGET[39m      /restart/Mohan9869868880
+2026-01-13T21:08:50: Music API listening on port 3000
+2026-01-13T21:08:50: Browser started successfully
+2026-01-13T21:14:00: OPTIONS  /.*/
+2026-01-13T21:14:00: [33mPOST[39m     /~/upload
+2026-01-13T21:14:00: [32mGET[39m      /~/stems/:id/state
+2026-01-13T21:14:00: [32mGET[39m      /~/stems/:id/result
+2026-01-13T21:14:00: [33mPOST[39m     /~/stems/:id/cleanup
+2026-01-13T21:14:00: [32mGET[39m      /~/progress/:id
+2026-01-13T21:14:00: [32mGET[39m      /~/download-mp3
+2026-01-13T21:14:00: [32mGET[39m      /~/scrape-lyrics
+2026-01-13T21:14:00: [32mGET[39m      /~/scrape-news
+2026-01-13T21:14:00: [32mGET[39m      /restart/Mohan9869868880
+2026-01-13T21:14:00: Music API listening on port 3000
+2026-01-13T21:24:55: 
+2026-01-13T21:24:55: ──────── REQUEST ────────
+2026-01-13T21:24:55: scraper > songName: albatross
+2026-01-13T21:24:55: scraper > linkIndex (raw): 0
+2026-01-13T21:24:55: 
+2026-01-13T21:24:55: ──────── GOOGLE SEARCH ────────
+2026-01-13T21:24:55: scraper > Searching Google for: albatross
+2026-01-13T21:24:55: scraper > Final query sent: "albatross lyrics and chords"
+2026-01-13T21:24:56: scraper > Google returned 8 results
+2026-01-13T21:24:56: scraper > Chosen URL: https://tabs.ultimate-guitar.com/tab/taylor-swift/the-albatross-chords-5233518
+2026-01-13T21:24:56: 
+2026-01-13T21:24:56: ──────── NAVIGATE ────────
+2026-01-13T21:24:57: scraper > page.goto done. Final URL: https://tabs.ultimate-guitar.com/tab/taylor-swift/the-albatross-chords-5233518
+2026-01-13T21:25:09: scraper > networkidle wait skipped/timeout
+2026-01-13T21:25:09: 
+2026-01-13T21:25:09: ──────── READABILITY ────────
+2026-01-13T21:25:09: scraper > isProbablyReaderable: true
+2026-01-13T21:25:10: 
+2026-01-13T21:25:10: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-13T21:25:10: 
+2026-01-13T21:25:10: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-13T21:25:10: 
+2026-01-13T21:25:10: ──────── RESULT ────────
+2026-01-13T21:25:10: scraper > Total lines: 49
+2026-01-13T21:26:06: [dl] new request id mkd3py1o-on0fms8t url https://youtu.be/0yZcDeVsj_Y?si=boWiuAJ8j7hZzFVt
+2026-01-13T21:26:06: [setP] mkd3py1o-on0fms8t 0.05
+2026-01-13T21:26:07: [progress] id mkd3py1o-on0fms8t -> 0.05
+2026-01-13T21:26:08: [progress] id mkd3py1o-on0fms8t -> 0.05
+2026-01-13T21:26:09: [progress] id mkd3py1o-on0fms8t -> 0.05
+2026-01-13T21:26:10: [setP] mkd3py1o-on0fms8t 0.15
+2026-01-13T21:26:10: [dl] Starting yt-dlp audio download...
+2026-01-13T21:26:10: [yt-dlp] Running command: yt-dlp --proxy http://10.8.0.2:3128 --user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 -f bestaudio/best -x --audio-format mp3 --audio-quality 0 --no-playlist --no-warnings --no-progress -o /tmp/audio_1768339570412_zo0zvck.mp3 https://youtu.be/0yZcDeVsj_Y?si=boWiuAJ8j7hZzFVt
+2026-01-13T21:26:10: [progress] id mkd3py1o-on0fms8t -> 0.15
+2026-01-13T21:26:11: [progress] id mkd3py1o-on0fms8t -> 0.15
+2026-01-13T21:26:12: [progress] id mkd3py1o-on0fms8t -> 0.15
+2026-01-13T21:26:13: [progress] id mkd3py1o-on0fms8t -> 0.15
+2026-01-13T21:26:14: [progress] id mkd3py1o-on0fms8t -> 0.15
+2026-01-13T21:26:15: [progress] id mkd3py1o-on0fms8t -> 0.15
+2026-01-13T21:26:16: [progress] id mkd3py1o-on0fms8t -> 0.15
+2026-01-13T21:26:17: [progress] id mkd3py1o-on0fms8t -> 0.15
+2026-01-13T21:26:18: [progress] id mkd3py1o-on0fms8t -> 0.15
+2026-01-13T21:26:19: [progress] id mkd3py1o-on0fms8t -> 0.15
+2026-01-13T21:26:20: [progress] id mkd3py1o-on0fms8t -> 0.15
+2026-01-13T21:26:21: [yt-dlp] Successfully downloaded audio file, size: 488709 bytes
+2026-01-13T21:26:21: [yt-dlp] Valid ID3 header detected
+2026-01-13T21:26:21: [setP] mkd3py1o-on0fms8t 1
+2026-01-13T21:26:21: [progress] id mkd3py1o-on0fms8t -> 1
+2026-01-13T21:26:39: 
+2026-01-13T21:26:39: ──────── REQUEST ────────
+2026-01-13T21:26:39: scraper > songName: 30 Second Timer
+2026-01-13T21:26:39: scraper > linkIndex (raw): 0
+2026-01-13T21:26:39: 
+2026-01-13T21:26:39: ──────── GOOGLE SEARCH ────────
+2026-01-13T21:26:39: scraper > Searching Google for: 30 second timer
+2026-01-13T21:26:39: scraper > Final query sent: "30 second timer lyrics and chords"
+2026-01-13T21:26:39: scraper > Google returned 8 results
+2026-01-13T21:26:39: scraper > Chosen URL: https://apps.apple.com/us/app/guitar-tuner-easy-tune-chords/id838981369
+2026-01-13T21:26:39: 
+2026-01-13T21:26:39: ──────── NAVIGATE ────────
+2026-01-13T21:26:40: scraper > page.goto done. Final URL: https://apps.apple.com/us/app/guitar-tuner-easy-tune-chords/id838981369
+2026-01-13T21:26:42: 
+2026-01-13T21:26:42: ──────── READABILITY ────────
+2026-01-13T21:26:42: scraper > isProbablyReaderable: true
+2026-01-13T21:26:42: 
+2026-01-13T21:26:42: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-13T21:26:42: 
+2026-01-13T21:26:42: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-13T21:26:42: 
+2026-01-13T21:26:42: ──────── RESULT ────────
+2026-01-13T21:26:42: scraper > Total lines: 94
+2026-01-13T21:26:45: 
+2026-01-13T21:26:45: ──────── REQUEST ────────
+2026-01-13T21:26:45: scraper > songName: 30 Second Timer
+2026-01-13T21:26:45: scraper > linkIndex (raw): 0
+2026-01-13T21:26:45: 
+2026-01-13T21:26:45: ──────── GOOGLE SEARCH ────────
+2026-01-13T21:26:45: scraper > Searching Google for: 30 second timer
+2026-01-13T21:26:45: scraper > Final query sent: "30 second timer lyrics and chords"
+2026-01-13T21:26:45: scraper > Google returned 8 results
+2026-01-13T21:26:45: scraper > Chosen URL: https://apps.apple.com/us/app/guitar-tuner-easy-tune-chords/id838981369
+2026-01-13T21:26:45: 
+2026-01-13T21:26:45: ──────── NAVIGATE ────────
+2026-01-13T21:26:46: scraper > page.goto done. Final URL: https://apps.apple.com/us/app/guitar-tuner-easy-tune-chords/id838981369
+2026-01-13T21:26:47: 
+2026-01-13T21:26:47: ──────── READABILITY ────────
+2026-01-13T21:26:47: scraper > isProbablyReaderable: true
+2026-01-13T21:26:48: 
+2026-01-13T21:26:48: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-13T21:26:48: 
+2026-01-13T21:26:48: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-13T21:26:48: 
+2026-01-13T21:26:48: ──────── RESULT ────────
+2026-01-13T21:26:48: scraper > Total lines: 94

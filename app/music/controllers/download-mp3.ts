@@ -1,9 +1,8 @@
-// app/scraper/controllers/download-mp3.ts
+// app/music/controllers/download-mp3.ts
 
 import express, { Request, Response } from "express";
 import { randomUUID } from "node:crypto";
 import { spawn, ChildProcess } from "node:child_process";
-import { ReadStream } from "node:fs";
 import * as fs from "node:fs";
 
 // Type definitions
@@ -50,7 +49,7 @@ interface VideoIdPattern {
   groupIndex: number;
 }
 
-// Constants - Use proxy configuration to match scrape-lyrics setup
+// Constants
 const COMMON_ARGS: readonly string[] = [
   "--proxy",
   "http://10.8.0.2:3128",
@@ -58,11 +57,10 @@ const COMMON_ARGS: readonly string[] = [
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 ] as const;
 
-const HARD_TIMEOUT: number = 1000 * 180; // 3 minutes
-const MAX_ASSUMED_SIZE: number = 1024 * 1024 * 20; // 20MB
-const MIN_VALID_AUDIO_SIZE: number = 1024; // 1KB
+const HARD_TIMEOUT: number = 1000 * 180;
+const MAX_ASSUMED_SIZE: number = 1024 * 1024 * 20;
+const MIN_VALID_AUDIO_SIZE: number = 1024;
 
-// Progress store
 const progress: ProgressStore = {};
 
 const setP = (id: string, p: number): void => {
@@ -71,8 +69,6 @@ const setP = (id: string, p: number): void => {
 };
 
 const router = express.Router();
-
-/* ---------- Type-safe helpers ---------- */
 
 async function streamToBuffer(
   r: NodeJS.ReadableStream,
@@ -87,7 +83,6 @@ async function streamToBuffer(
     read += buf.length;
     
     if (onChunk) {
-      // Simple progress based on bytes read
       const progressFraction = Math.min(0.95, read / MAX_ASSUMED_SIZE);
       onChunk(progressFraction);
     }
@@ -95,8 +90,6 @@ async function streamToBuffer(
   
   return Buffer.concat(chunks);
 }
-
-/* ---------- Video ID extraction ---------- */
 
 function extractVideoId(url: string): string {
   const patterns: VideoIdPattern[] = [
@@ -119,8 +112,6 @@ function extractVideoId(url: string): string {
   
   return "";
 }
-
-/* ---------- Fallback metadata generation ---------- */
 
 function generateFallbackMetadata(videoUrl: string): ExtractedMetadata {
   const videoId: string = extractVideoId(videoUrl);
@@ -152,8 +143,6 @@ function generateFallbackMetadata(videoUrl: string): ExtractedMetadata {
   };
 }
 
-/* ---------- Audio file validation ---------- */
-
 interface AudioHeader {
   isValid: boolean;
   format: 'mp3' | 'id3' | 'unknown';
@@ -168,20 +157,16 @@ function validateAudioHeader(buffer: Buffer): AudioHeader {
   const header = buffer.slice(0, 3);
   const bytes = Array.from(header);
   
-  // Check for MP3 frame sync
   if (header[0] === 0xFF && (header[1] & 0xE0) === 0xE0) {
     return { isValid: true, format: 'mp3', bytes };
   }
   
-  // Check for ID3 header
   if (header[0] === 0x49 && header[1] === 0x44 && header[2] === 0x33) {
     return { isValid: true, format: 'id3', bytes };
   }
   
   return { isValid: false, format: 'unknown', bytes };
 }
-
-/* ---------- yt-dlp helpers ---------- */
 
 function runYtDlpJson(videoUrl: string): Promise<YtDlpMetadata> {
   return new Promise((resolve, reject) => {
@@ -222,7 +207,6 @@ function runYtDlpAudio(
   onProgress: (f: number) => void
 ): Promise<Buffer> {
   return new Promise((resolve, reject) => {
-    // Use a temporary file instead of stdout to avoid corruption
     const tempFile: string = `/tmp/audio_${Date.now()}_${Math.random().toString(36).substring(7)}.mp3`;
     
     const args: string[] = [
@@ -230,11 +214,11 @@ function runYtDlpAudio(
       "-f", "bestaudio/best",
       "-x",
       "--audio-format", "mp3",
-      "--audio-quality", "0",  // Best quality
+      "--audio-quality", "0",
       "--no-playlist",
-      "--no-warnings",         // Reduce stderr noise
-      "--no-progress",         // We'll track our own progress
-      "-o", tempFile,          // Output to temp file instead of stdout
+      "--no-warnings",
+      "--no-progress",
+      "-o", tempFile,
       videoUrl
     ];
 
@@ -248,7 +232,6 @@ function runYtDlpAudio(
       const text: string = d.toString();
       errText += text;
 
-      // Parse progress like: [download]  42.3% ...
       const progressMatch = text.match(/\[download\]\s+([0-9.]+)%/);
       if (progressMatch && progressMatch[1]) {
         const pct: number = parseFloat(progressMatch[1]);
@@ -274,31 +257,21 @@ function runYtDlpAudio(
       }
       
       try {
-        // Read the downloaded file
         const fileBuffer: Buffer = fs.readFileSync(tempFile);
-        
-        // Clean up temp file
         fs.unlinkSync(tempFile);
         
         console.log("[yt-dlp] Successfully downloaded audio file, size:", fileBuffer.length, "bytes");
         
-        // Verify it's actually an MP3 file
         if (fileBuffer.length < MIN_VALID_AUDIO_SIZE) {
           throw new Error("Downloaded file is too small to be valid audio");
         }
         
-        // Check for MP3 header
         const headerValidation: AudioHeader = validateAudioHeader(fileBuffer);
         
         if (headerValidation.isValid) {
           console.log(`[yt-dlp] Valid ${headerValidation.format.toUpperCase()} header detected`);
         } else {
           console.warn("[yt-dlp] Warning: Unexpected file header, but proceeding anyway");
-          console.warn("[yt-dlp] First 16 bytes:", 
-            Array.from(fileBuffer.slice(0, 16))
-              .map(b => b.toString(16).padStart(2, '0'))
-              .join(' ')
-          );
         }
         
         resolve(fileBuffer);
@@ -310,8 +283,6 @@ function runYtDlpAudio(
     });
   });
 }
-
-/* ---------- Main controller ---------- */
 
 async function downloadMp3(req: Request, res: Response<DownloadResponse | ErrorResponse>): Promise<void> {
   const id: string = (req.query.id as string) || randomUUID();
@@ -336,51 +307,24 @@ async function downloadMp3(req: Request, res: Response<DownloadResponse | ErrorR
     let title: string = "";
     let author: string = "";
 
-    /* 1. metadata via yt-dlp */
     setP(id, 0.05);
     try {
       const meta: YtDlpMetadata = await runYtDlpJson(videoUrl);
-
-      // Extract metadata with proper null checks
-      title = meta.title || 
-              meta.fulltitle || 
-              meta.playlist_title || 
-              "";
-      
-      author = meta.uploader || 
-               meta.channel || 
-               meta.uploader_id || 
-               "";
-
-      console.log("[dl] Extracted metadata from yt-dlp:", {
-        title: title.substring(0, 50) + (title.length > 50 ? "..." : ""),
-        author: author.substring(0, 30) + (author.length > 30 ? "..." : "")
-      });
+      title = meta.title || meta.fulltitle || meta.playlist_title || "";
+      author = meta.uploader || meta.channel || meta.uploader_id || "";
     } catch (e) {
       const error = e as Error;
       console.log("[dl] Metadata via yt-dlp failed:", error.message);
     }
 
-    // Fallback metadata if needed
     if (!title || !author) {
       const fallback: ExtractedMetadata = generateFallbackMetadata(videoUrl);
-      const originalTitle: string = title;
-      const originalAuthor: string = author;
-
       title = title || fallback.title;
       author = author || fallback.author;
-
-      console.log("[dl] Using fallback metadata:", {
-        originalTitle,
-        originalAuthor,
-        finalTitle: title,
-        finalAuthor: author
-      });
     }
 
     setP(id, 0.15);
 
-    /* 2. download / convert via yt-dlp */
     console.log("[dl] Starting yt-dlp audio download...");
     const audioBuf: Buffer = await runYtDlpAudio(videoUrl, (f: number) =>
       setP(id, 0.15 + f * 0.8)
@@ -391,12 +335,6 @@ async function downloadMp3(req: Request, res: Response<DownloadResponse | ErrorR
     clearTimeout(killer);
     setP(id, 1);
 
-    console.log(
-      "[dl] Download complete, buffer size:",
-      base64Buffer.length
-    );
-
-    // Type-safe response
     const response: DownloadResponse = {
       base64Buffer,
       title,
@@ -412,38 +350,19 @@ async function downloadMp3(req: Request, res: Response<DownloadResponse | ErrorR
     const error = err as Error;
     console.log("[dl] error", error.message, error.stack);
     
-    const errorResponse: ErrorResponse = {
-      error: error.message
-    };
-    
-    res.status(500).json(errorResponse);
+    res.status(500).json({ error: error.message });
   }
 }
 
-/* ---------- Progress endpoint ---------- */
 function getProgress(req: Request, res: Response<ProgressResponse>): void {
   const id: string = req.params.id;
   const val: number = progress[id] ?? 0;
   
   console.log("[progress] id", id, "->", val);
-  
-  const response: ProgressResponse = {
-    progress: val
-  };
-  
-  res.json(response);
+  res.json({ progress: val });
 }
 
-// Route definitions with proper typing
 router.get("/progress/:id", getProgress);
 router.get("/download-mp3", downloadMp3);
 
 export default router;
-export type { 
-  YtDlpMetadata, 
-  ExtractedMetadata, 
-  DownloadResponse, 
-  ErrorResponse, 
-  ProgressResponse,
-  AudioHeader
-};

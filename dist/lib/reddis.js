@@ -1,7 +1,3 @@
-// lib/reddis.ts
-// const connectionString = process.env.REDDIS_CONNECTIONSTRING;
-// //@ts-ignore
-// export const Redis = new RedisClient(connectionString);
 // redis.ts
 import Redis from "ioredis";
 /**

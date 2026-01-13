@@ -1,5 +1,4 @@
-
-
+// app/music/workers/demucs.worker.ts
 import path from "path";
 import fs from "fs";
 import { spawn } from "child_process";
@@ -11,25 +10,22 @@ const SEPARATED_DIR = path.join(ROOT, "separated");
 fs.mkdirSync(SEPARATED_DIR, { recursive: true });
 
 type Result = {
-  vocalsUrl: string;        // may be .m4a after transcode
-  accompanimentUrl: string; // may be .m4a after transcode
-  sepDir: string;           // absolute output dir
+  vocalsUrl: string;
+  accompanimentUrl: string;
+  sepDir: string;
 };
 
 const model = "mdx_q";
 
-/* resolve ffmpeg if present */
 function resolveFfmpeg(): string {
   if (process.env.FFMPEG_BIN) return process.env.FFMPEG_BIN;
   try {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const inst = require("@ffmpeg-installer/ffmpeg");
     if (inst?.path) return inst.path as string;
   } catch {}
   return "ffmpeg";
 }
 
-/** run a process and resolve/reject on exit */
 function runProc(cmd: string, args: string[], cwd?: string, env?: NodeJS.ProcessEnv) {
   return new Promise<void>((resolve, reject) => {
     const p = spawn(cmd, args, { cwd, env });
@@ -38,19 +34,17 @@ function runProc(cmd: string, args: string[], cwd?: string, env?: NodeJS.Process
   });
 }
 
-/** Transcode WAV -> M4A (AAC). If ffmpeg missing, returns false. */
 async function transcodeToM4A(inputWav: string, outM4a: string): Promise<boolean> {
   const ffmpeg = resolveFfmpeg();
   try {
     await runProc(ffmpeg, ["-version"]);
   } catch {
-    return false; // ffmpeg not available, keep WAV
+    return false;
   }
   await runProc(ffmpeg, ["-y", "-i", inputWav, "-c:a", "aac", "-b:a", "192k", outM4a]);
   return fs.existsSync(outM4a) && fs.statSync(outM4a).size > 0;
 }
 
-/** Run Demucs; force output into SEPARATED_DIR and stream % progress. */
 async function runDemucs(
   canonicalInputPath: string,
   onProgress: (p: number) => Promise<void>
@@ -73,7 +67,7 @@ async function runDemucs(
     "--overlap",
     "0",
     "-o",
-    SEPARATED_DIR, // <— force output root
+    SEPARATED_DIR,
     canonicalInputPath,
   ];
 
@@ -101,19 +95,17 @@ async function runDemucs(
   });
 }
 
-/** Worker: copy upload → <basename>.<ext>, run demucs, transcode, return URLs */
 export const demucsWorker = new Worker(
   "demucs",
   async (job: Job) => {
     const { inputPath, basename } = job.data as { inputPath: string; basename: string };
 
-    // Canonicalize the uploaded file name so demucs will output to <basename>/
     const srcExt = path.extname(inputPath) || ".mp3";
     const canonicalInput = path.join(path.dirname(inputPath), `${basename}${srcExt}`);
 
     try {
       if (canonicalInput !== inputPath) {
-        fs.copyFileSync(inputPath, canonicalInput); // keep original around; we’ll clean up both
+        fs.copyFileSync(inputPath, canonicalInput);
       }
     } catch (e) {
       throw new Error(`Failed to prepare input file: ${(e as Error).message}`);
@@ -121,7 +113,6 @@ export const demucsWorker = new Worker(
 
     await runDemucs(canonicalInput, async (p) => job.updateProgress(p));
 
-    // demucs now outputs to: SEPARATED_DIR/<model>/<basename>/
     const sepDir = path.join(SEPARATED_DIR, model, basename);
     const stemBase = `/separated/${model}/${basename}`;
 
@@ -134,7 +125,6 @@ export const demucsWorker = new Worker(
     let accompUrl = `${stemBase}/no_vocals.wav`;
 
     try {
-      // Transcode where possible, then delete the source WAV to avoid confusion
       if (fs.existsSync(wavVocals)) {
         const ok = await transcodeToM4A(wavVocals, m4aVocals);
         if (ok) {
@@ -150,7 +140,6 @@ export const demucsWorker = new Worker(
         }
       }
     } finally {
-      // Clean original upload(s)
       try { fs.unlinkSync(inputPath); } catch {}
       if (canonicalInput !== inputPath) {
         try { fs.unlinkSync(canonicalInput); } catch {}

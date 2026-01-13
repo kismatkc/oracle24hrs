@@ -1,22 +1,15 @@
-// app/scraper/controllers/scrape-lyrisc.ts
+// app/music/controllers/scrape-lyrics.ts
 
 import express, { Request, Response } from "express";
-import { getBrowser } from "../playright.ts";
+import { getBrowser } from "../lib/playright.ts";
 import { BrowserContext } from "playwright";
 import axios from "axios";
 import { Readability, isProbablyReaderable } from "@mozilla/readability";
 import { JSDOM } from "jsdom";
 
-
 const router = express.Router();
 
-
-/** 15 seconds hard guard */
 const globalTimeout = 1000 * 15;
-
-
-/* ───────────────────────────── Utilities / Debug ───────────────────────────── */
-
 
 const mask = (val?: string) => {
   if (!val) return "(empty)";
@@ -24,17 +17,11 @@ const mask = (val?: string) => {
   return `${val.slice(0, 4)}****${val.slice(-4)}`;
 };
 
-
 const preview = (s: string, max = 160) =>
   s.length > max ? s.slice(0, max) + "…" : s;
 
-
 const logDivider = (label: string) =>
   console.log(`\n──────── ${label} ────────`);
-
-
-/* ───────────────────────────── Lyric extraction ───────────────────────────── */
-
 
 const extractLyricsFromReadability = (jsonResponse: any): string[] => {
   const { content: htmlContent } = jsonResponse ?? {};
@@ -44,50 +31,26 @@ const extractLyricsFromReadability = (jsonResponse: any): string[] => {
   return extractLyricsFromHtml(htmlContent);
 };
 
-
 const extractLyricsFromHtml = (html: string): string[] => {
   const dom = new JSDOM(html);
   const { document, Node } = dom.window;
-
 
   const rootNode =
     document.querySelector("#readability-page-1") ||
     document.body ||
     document.documentElement;
 
-
   if (!rootNode) {
     throw new Error("Could not find valid root node in HTML content");
   }
 
-
   const lines: string[] = [];
   let currentBuffer = "";
 
-
   const blockElements = new Set([
-    "P",
-    "DIV",
-    "BLOCKQUOTE",
-    "LI",
-    "UL",
-    "OL",
-    "H1",
-    "H2",
-    "H3",
-    "H4",
-    "H5",
-    "H6",
-    "SECTION",
-    "ARTICLE",
-    "HEADER",
-    "FOOTER",
-    "MAIN",
-    "ASIDE",
-    "NAV",
-    "PRE",
+    "P", "DIV", "BLOCKQUOTE", "LI", "UL", "OL", "H1", "H2", "H3", "H4", "H5", "H6",
+    "SECTION", "ARTICLE", "HEADER", "FOOTER", "MAIN", "ASIDE", "NAV", "PRE",
   ]);
-
 
   const flushBuffer = (): void => {
     if (currentBuffer.trim()) {
@@ -96,14 +59,12 @@ const extractLyricsFromHtml = (html: string): string[] => {
     }
   };
 
-
   const traverseNode = (node: Node): void => {
     if (node.nodeType === Node.TEXT_NODE) {
       currentBuffer += node.textContent || "";
     } else if (node.nodeType === Node.ELEMENT_NODE) {
       const element = node as Element;
       const tagName = element.tagName.toUpperCase();
-
 
       if (tagName === "BR") {
         flushBuffer();
@@ -124,16 +85,12 @@ const extractLyricsFromHtml = (html: string): string[] => {
     }
   };
 
-
   traverseNode(rootNode as unknown as Node);
   flushBuffer();
 
-
-  // collapse consecutive blanks to max 1
   const cleanLines = lines.reduce<string[]>((acc, line) => {
     const trimmedLine = line.trim();
     const lastLine = acc[acc.length - 1];
-
 
     if (trimmedLine === "") {
       if (lastLine && lastLine !== "") acc.push("");
@@ -141,10 +98,8 @@ const extractLyricsFromHtml = (html: string): string[] => {
       acc.push(trimmedLine);
     }
 
-
     return acc;
   }, []);
-
 
   const refinedLines = cleanLines.reduce<string[]>((acc, line) => {
     if (line === "") {
@@ -160,31 +115,15 @@ const extractLyricsFromHtml = (html: string): string[] => {
     return acc;
   }, []);
 
-
   return refinedLines;
 };
-
-
-/* ───────────────────────────── Google Search ───────────────────────────── */
-
 
 async function getGoogleSearchFirstResult(query: string) {
   try {
     console.log(`scraper > Searching Google for: ${query}`);
-    console.log(
-      `scraper > Using API Key: ${mask(process.env.GOOGLE_NOBILLING_API_KEY)}`
-    );
-
 
     const modifiedQuery = `${query} lyrics and chords`;
     console.log(`scraper > Final query sent: "${modifiedQuery}"`);
-    console.log(
-      `scraper > Using GOOGLE_NOBILLING_API_KEY_2: ${mask(process.env.GOOGLE_NOBILLING_API_KEY_2)}`
-    );
-    console.log(
-      `scraper > Using SEARCHENGINE_ID_2: ${process.env.SEARCHENGINE_ID_2 || "(empty)"}`
-    );
-
 
     const response = await axios.get(
       "https://www.googleapis.com/customsearch/v1",
@@ -202,18 +141,10 @@ async function getGoogleSearchFirstResult(query: string) {
       }
     );
 
-
     const results = response.data.items || [];
     console.log(`scraper > Google returned ${results.length} results`);
-    results.slice(0, 8).forEach((r: any, i: number) =>
-      console.log(
-        `scraper > [${i}] ${preview(r.title || "")} :: ${preview(r.link || "", 120)}`
-      )
-    );
-
 
     if (results.length === 0) return [];
-
 
     const sortedResults = results.sort((a: any, b: any) => {
       const titleA = (a.title || "").toLowerCase();
@@ -227,8 +158,6 @@ async function getGoogleSearchFirstResult(query: string) {
       return scoreB - scoreA;
     });
 
-
-    console.log("scraper > Sorted by (lyrics/chords) score.");
     return sortedResults;
   } catch (error: any) {
     console.log(
@@ -239,14 +168,9 @@ async function getGoogleSearchFirstResult(query: string) {
   }
 }
 
-
-/* ───────────────────────────── Route ───────────────────────────── */
-
-
 async function scrapeLyrisc(req: Request, res: Response) {
   let context: BrowserContext | null = null;
   let responded = false;
-
 
   const safeRespond = (status: number, payload: any) => {
     if (responded) return;
@@ -258,7 +182,6 @@ async function scrapeLyrisc(req: Request, res: Response) {
     }
   };
 
-
   const timeoutId = setTimeout(() => {
     console.warn("scraper > Timeout hit. Closing context and returning fallback.");
     if (context) {
@@ -269,23 +192,19 @@ async function scrapeLyrisc(req: Request, res: Response) {
     safeRespond(200, { status: 200, message: "Lyrics not found", data: {} });
   }, globalTimeout);
 
-
   try {
     const { songName, linkIndex } = req.query as {
       songName: string;
       linkIndex: string;
     };
 
-
     logDivider("REQUEST");
     console.log("scraper > songName:", songName);
     console.log("scraper > linkIndex (raw):", linkIndex);
 
-
     if (!songName || !songName.trim()) {
       throw new Error("Missing required parameter: songName");
     }
-
 
     const browser = await getBrowser();
     context = await browser.newContext({
@@ -297,14 +216,11 @@ async function scrapeLyrisc(req: Request, res: Response) {
     });
     const page = await context.newPage();
 
-
-    // Fetch search results
     logDivider("GOOGLE SEARCH");
     const results = await getGoogleSearchFirstResult(songName.toLowerCase());
     if (!results || results.length === 0) {
       throw new Error("No search results found for the song");
     }
-
 
     const idx = Number.isFinite(Number(linkIndex)) ? Number(linkIndex) : 0;
     const chosen = results[idx];
@@ -312,11 +228,8 @@ async function scrapeLyrisc(req: Request, res: Response) {
       throw new Error(`linkIndex ${linkIndex} is out of range (max ${results.length - 1})`);
     }
 
-
     const url = chosen.link;
     console.log("scraper > Chosen URL:", url);
-    console.log("scraper > Chosen Title:", chosen.title);
-
 
     logDivider("NAVIGATE");
     const navResp = await page.goto(url, {
@@ -324,60 +237,41 @@ async function scrapeLyrisc(req: Request, res: Response) {
       timeout: 20_000,
     });
     console.log("scraper > page.goto done. Final URL:", page.url());
-    console.log("scraper > HTTP status:", navResp?.status());
 
-
-    // Let dynamic content load more fully
     await page.waitForLoadState("networkidle", { timeout: 12_000 }).catch(() => {
       console.log("scraper > networkidle wait skipped/timeout");
     });
 
-
     const title = await page.title();
-    console.log("scraper > Page title:", title);
-
-
-    // Snapshot the HTML
     const pageHtml = await page.content();
-    console.log("scraper > HTML length:", pageHtml.length);
-
 
     logDivider("READABILITY");
     let lyrics: string[] = [];
     let readabilityTried = false;
     let readabilityUseful = false;
 
-
     try {
       const dom = new JSDOM(pageHtml, { url: page.url() });
       const doc = dom.window.document;
 
-
       const probablyReadable = isProbablyReaderable(doc);
       console.log("scraper > isProbablyReaderable:", probablyReadable);
-
 
       readabilityTried = true;
       const reader = new Readability(doc);
       const result = reader.parse();
 
-
       if (result) {
-        console.log("scraper > Readability parse OK. content length:", result.content?.length || 0);
         try {
           lyrics = extractLyricsFromReadability(result);
           readabilityUseful = lyrics.length > 0;
-          console.log("scraper > Lines from Readability:", lyrics.length);
         } catch (e) {
           console.log("scraper > extractLyricsFromReadability error:", (e as Error).message);
         }
-      } else {
-        console.warn("scraper > Readability returned null (no article-like content).");
       }
     } catch (e) {
       console.warn("scraper > Readability step threw:", (e as Error).message);
     }
-
 
     logDivider("FALLBACK #1 (DENSE BLOCK)");
     if (!lyrics.length) {
@@ -385,21 +279,17 @@ async function scrapeLyrisc(req: Request, res: Response) {
         const blockTags = new Set(["DIV", "SECTION", "ARTICLE", "MAIN", "P", "TD"]);
         let best: { el: Element; score: number } | null = null;
 
-
         const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT);
         while (walker.nextNode()) {
           const el = walker.currentNode as Element;
           if (!blockTags.has(el.tagName)) continue;
 
-
           const text = (el.textContent || "").trim();
           if (!text) continue;
-
 
           const brs = el.querySelectorAll("br").length;
           const lines = text.split(/\n+/).map((x) => x.trim()).filter(Boolean);
           const shortLines = lines.filter((l) => l.length <= 120).length;
-
 
           const score = brs * 3 + shortLines + Math.min(text.length / 50, 40);
           if (!best || score > best.score) best = { el, score };
@@ -407,23 +297,13 @@ async function scrapeLyrisc(req: Request, res: Response) {
         return best?.el?.innerHTML || "";
       });
 
-
-      console.log("scraper > Dense block HTML length:", denseInner?.length || 0);
-
-
       if (denseInner) {
         try {
           const lines = extractLyricsFromHtml(denseInner);
-          console.log("scraper > Dense block lines:", lines.length);
           if (lines.length) lyrics = lines;
-        } catch (e) {
-          console.log("scraper > Dense block extraction error:", (e as Error).message);
-        }
-      } else {
-        console.log("scraper > No dense block candidate found.");
+        } catch (e) {}
       }
     }
-
 
     logDivider("FALLBACK #2 (SITE-AWARE)");
     if (!lyrics.length) {
@@ -435,10 +315,8 @@ async function scrapeLyrisc(req: Request, res: Response) {
             .join("<br/>");
         }
 
-
         const lc = document.querySelector(".lyric-body, .lyrics-body");
         if (lc) return (lc as HTMLElement).innerHTML;
-
 
         const azColumn = document.querySelector(".col-xs-12.col-lg-8.text-center");
         if (azColumn) {
@@ -448,40 +326,23 @@ async function scrapeLyrisc(req: Request, res: Response) {
           if (guess) return (guess as HTMLElement).innerHTML;
         }
 
-
         return "";
       });
-
-
-      console.log("scraper > Site-aware HTML length:", siteHtml?.length || 0);
-
 
       if (siteHtml) {
         try {
           const lines = extractLyricsFromHtml(siteHtml);
-          console.log("scraper > Site-aware lines:", lines.length);
           if (lines.length) lyrics = lines;
-        } catch (e) {
-          console.log("scraper > Site-aware extraction error:", (e as Error).message);
-        }
-      } else {
-        console.log("scraper > No site-aware content matched.");
+        } catch (e) {}
       }
     }
 
-
     logDivider("RESULT");
-    console.log("scraper > Used Readability:", readabilityTried, "Useful:", readabilityUseful);
-    console.log("scraper > Final URL:", page.url());
     console.log("scraper > Total lines:", lyrics.length);
-    console.log("scraper > Preview:", preview(lyrics.join(" | "), 300));
-
 
     clearTimeout(timeoutId);
 
-
     if (!lyrics.length) {
-      console.warn("scraper > Lyrics not found after all attempts.");
       safeRespond(200, {
         status: 200,
         message: "Lyrics not found",
@@ -489,7 +350,6 @@ async function scrapeLyrisc(req: Request, res: Response) {
       });
       return;
     }
-
 
     safeRespond(200, {
       status: 200,
@@ -507,14 +367,12 @@ async function scrapeLyrisc(req: Request, res: Response) {
     if (context) {
       try {
         await context.close();
-        console.log("scraper > Browser context closed.");
       } catch (error: any) {
         console.error("scraper > Error closing browser:", error?.message || error);
       }
     }
   }
 }
-
 
 router.get("/scrape-lyrics", scrapeLyrisc);
 export default router;

@@ -1,5 +1,4 @@
-// app/common_routes/controllers/upload-muisc.ts
-
+// app/music/controllers/upload-music.ts
 
 import express, { NextFunction, Request, Response } from "express";
 import multer from "multer";
@@ -27,7 +26,11 @@ for (const d of [SEPARATED_DIR, UPLOADS_DIR]) {
 /* static */
 router.use(
   "/separated",
-  express.static(SEPARATED_DIR, { maxAge: "1h", etag: true, lastModified: true })
+  express.static(SEPARATED_DIR, {
+    maxAge: "1h",
+    etag: true,
+    lastModified: true,
+  })
 );
 
 /* upload */
@@ -42,13 +45,16 @@ const upload = multer({
 /* optional Redis ledger */
 let Redis: any = null;
 try {
-  const { BullRedis } = require("../lib/bullRedis.ts");
+  const { BullRedis } = require("../../lib/bullRedis.ts");
   Redis = BullRedis;
 } catch {}
 const META_TTL_SEC = 60 * 60 * 24 * 3; // 3 days
 const THREE_DAYS_MS = 1000 * 60 * 60 * 24 * 3;
 const key = (id: string) => `stems:${id}:meta`;
-async function ledgerSet(id: string, obj: Record<string, string | number | boolean>) {
+async function ledgerSet(
+  id: string,
+  obj: Record<string, string | number | boolean>
+) {
   if (!Redis) return;
   await Redis.hset(
     key(id),
@@ -69,11 +75,13 @@ async function ledgerGet(id: string): Promise<Record<string, string>> {
 function absUrl(req: Request, maybePath?: string) {
   if (!maybePath) return;
   if (/^https?:\/\//i.test(maybePath)) return maybePath;
-  const xfProto = (req.headers["x-forwarded-proto"] as string | undefined)?.split(",")[0];
-  const proto = xfProto?.trim() || (req.protocol || "https");
+  const xfProto = (
+    req.headers["x-forwarded-proto"] as string | undefined
+  )?.split(",")[0];
+  const proto = xfProto?.trim() || req.protocol || "https";
   const host = req.get("host") || "localhost:3000";
   const p = maybePath.startsWith("/") ? maybePath : `/${maybePath}`;
-  return `${proto}://${host}${p}`;
+  return `${proto}://${host}/music${p}`;
 }
 
 function findStemFiles(dir: string) {
@@ -81,10 +89,17 @@ function findStemFiles(dir: string) {
     const files = fs.readdirSync(dir);
     const pick = (prefixes: string[]) =>
       files
-        .filter((f) => prefixes.some((p) => f.toLowerCase().startsWith(`${p.toLowerCase()}.`)))
+        .filter((f) =>
+          prefixes.some((p) =>
+            f.toLowerCase().startsWith(`${p.toLowerCase()}.`)
+          )
+        )
         .sort((a, b) => {
           const pref = [".m4a", ".mp3", ".wav", ".aac", ".caf"];
-          return pref.indexOf(path.extname(a).toLowerCase()) - pref.indexOf(path.extname(b).toLowerCase());
+          return (
+            pref.indexOf(path.extname(a).toLowerCase()) -
+            pref.indexOf(path.extname(b).toLowerCase())
+          );
         })[0];
     return {
       vocals: pick(["vocals", "voice"]),
@@ -99,8 +114,10 @@ function sepDirFromAnyUrl(url?: string) {
   try {
     const pathname = url.startsWith("http") ? new URL(url).pathname : url;
     const parts = pathname.split("/").filter(Boolean);
-    if (parts[0] !== "separated" || parts.length < 3) return;
-    const folder = parts.slice(1, -1).join("/");
+    // Handle both /music/separated/... and /separated/...
+    const sepIdx = parts.indexOf("separated");
+    if (sepIdx === -1 || parts.length < sepIdx + 3) return;
+    const folder = parts.slice(sepIdx + 1, -1).join("/");
     return path.join(SEPARATED_DIR, folder);
   } catch {
     return;
@@ -123,8 +140,12 @@ function urlsFromSepDir(req: Request, sepDir?: string) {
   if (!sepDir) return {};
   const { vocals, accomp } = findStemFiles(sepDir);
   const rel = path.relative(SEPARATED_DIR, sepDir).replace(/\\/g, "/");
-  const vocalsUrl = vocals ? absUrl(req, `/separated/${rel}/${vocals}`) : undefined;
-  const accompanimentUrl = accomp ? absUrl(req, `/separated/${rel}/${accomp}`) : undefined;
+  const vocalsUrl = vocals
+    ? absUrl(req, `/separated/${rel}/${vocals}`)
+    : undefined;
+  const accompanimentUrl = accomp
+    ? absUrl(req, `/separated/${rel}/${accomp}`)
+    : undefined;
   return { vocalsUrl, accompanimentUrl, instrumentalUrl: accompanimentUrl };
 }
 async function resolveSepDir(job: any, ret?: any) {
@@ -135,7 +156,11 @@ async function resolveSepDir(job: any, ret?: any) {
     sepDirFromAnyUrl(ret?.instrumentalUrl);
   if (dir) return dir;
   const candidates = Array.from(
-    new Set([job?.id, job?.data?.basename, job?.data?.originalBasename].filter(Boolean))
+    new Set(
+      [job?.id, job?.data?.basename, job?.data?.originalBasename].filter(
+        Boolean
+      )
+    )
   ) as string[];
   for (const b of candidates) {
     const d = sepDirFromBasename(b);
@@ -144,7 +169,8 @@ async function resolveSepDir(job: any, ret?: any) {
   return;
 }
 async function gather(req: Request, idOrJob: string | any) {
-  const job = typeof idOrJob === "string" ? await demucsQueue.getJob(idOrJob) : idOrJob;
+  const job =
+    typeof idOrJob === "string" ? await demucsQueue.getJob(idOrJob) : idOrJob;
   let state: string = "not_found";
   let progress = 0;
   if (job) {
@@ -159,7 +185,9 @@ async function gather(req: Request, idOrJob: string | any) {
 
   const urls = urlsFromSepDir(req, sepDir);
   const vocals = urls.vocalsUrl || absUrl(req, ret.vocalsUrl);
-  const accomp = urls.accompanimentUrl || absUrl(req, ret.accompanimentUrl || ret.instrumentalUrl);
+  const accomp =
+    urls.accompanimentUrl ||
+    absUrl(req, ret.accompanimentUrl || ret.instrumentalUrl);
   const ready = !!(vocals && accomp);
 
   return {
@@ -197,45 +225,58 @@ setInterval(() => {
 }, 60 * 60 * 1000);
 
 /* routes */
-router.post("/upload_music", longTimeout, upload.single("file"), async (req, res) => {
-  try {
-    const file = (req as any).file as
-      | { originalname: string; size: number; filename: string; path: string }
-      | undefined;
-    if (!file)  res.status(400).json({ success: false, message: "Field 'file' is required." });
+router.post(
+  "/upload",
+  longTimeout,
+  upload.single("file"),
+  async (req, res) => {
+    try {
+      const file = (req as any).file as
+        | { originalname: string; size: number; filename: string; path: string }
+        | undefined;
+      if (!file)
+        res
+          .status(400)
+          .json({ success: false, message: "Field 'file' is required." });
 
-    const songId = (req.body?.songId as string | undefined)?.trim();
-    const basename = songId || file.filename;
+      const songId = (req.body?.songId as string | undefined)?.trim();
+      const basename = songId || file!.filename;
 
-    const job = await demucsQueue.add(
-      "separate",
-      {
-        inputPath: file.path,
-        basename,
-        originalBasename: file.filename,
-        originalName: file.originalname,
-        uploadedAt: Date.now(),
-      },
-      songId ? { jobId: basename } : undefined
-    );
+      const job = await demucsQueue.add(
+        "separate",
+        {
+          inputPath: file!.path,
+          basename,
+          originalBasename: file!.filename,
+          originalName: file!.originalname,
+          uploadedAt: Date.now(),
+        },
+        songId ? { jobId: basename } : undefined
+      );
 
-    const now = Date.now();
-    await ledgerSet(basename, {
-      status: "enqueued",
-      available: 0,
-      uploadedAt: now,
-      progress: 1,
-      expiresAt: now + THREE_DAYS_MS,
-      originalName: file.originalname,
-      size: file.size,
-    });
+      const now = Date.now();
+      await ledgerSet(basename, {
+        status: "enqueued",
+        available: 0,
+        uploadedAt: now,
+        progress: 1,
+        expiresAt: now + THREE_DAYS_MS,
+        originalName: file!.originalname,
+        size: file!.size,
+      });
 
-    res.json({ success: true, jobId: job.id, originalName: file.originalname, size: file.size });
-  } catch (e) {
-    console.error("[upload_music] error:", e);
-    res.status(500).json({ success: false });
+      res.json({
+        success: true,
+        jobId: job.id,
+        originalName: file!.originalname,
+        size: file!.size,
+      });
+    } catch (e) {
+      console.error("[upload] error:", e);
+      res.status(500).json({ success: false });
+    }
   }
-});
+);
 
 router.get("/stems/:id/state", async (req, res) => {
   try {
@@ -243,7 +284,6 @@ router.get("/stems/:id/state", async (req, res) => {
     const info = await gather(req, id);
     const meta = await ledgerGet(id);
 
-    // default availability (Redis off ⇒ equals "ready")
     let available = info.ready;
     let expiresAt: number | null = null;
 
@@ -253,7 +293,6 @@ router.get("/stems/:id/state", async (req, res) => {
       expiresAt = meta.expiresAt ? Number(meta.expiresAt) : null;
     }
 
-    // auto-flip to available if files are on disk
     if (info.ready && !available) {
       const now = Date.now();
       const r = (info.result || {}) as any;
@@ -295,7 +334,9 @@ router.get("/stems/:id/result", async (req, res) => {
     const id = req.params.id;
     const info = await gather(req, id);
     const meta = await ledgerGet(id);
-    const isAvailable = meta?.available === "1" && (!meta.expiresAt || Date.now() < Number(meta.expiresAt));
+    const isAvailable =
+      meta?.available === "1" &&
+      (!meta.expiresAt || Date.now() < Number(meta.expiresAt));
 
     if (info.ready && isAvailable) {
       res.json({
@@ -319,7 +360,12 @@ router.get("/stems/:id/result", async (req, res) => {
         instrumentalUrl: urls.instrumentalUrl || urls.accompanimentUrl || "",
         status: "completed",
       });
-      res.json({ ready: true, ...(urls as any), available: true, expiresAt: now + THREE_DAYS_MS });
+      res.json({
+        ready: true,
+        ...(urls as any),
+        available: true,
+        expiresAt: now + THREE_DAYS_MS,
+      });
       return;
     }
 
@@ -355,7 +401,7 @@ router.post("/stems/:id/cleanup", async (req, res) => {
     if (job) {
       const state = await job.getState();
       if (state !== "completed")
-         res.status(409).json({ success: false, message: "not_completed" });
+        res.status(409).json({ success: false, message: "not_completed" });
 
       const ret = job.returnvalue || {};
       const sepDir = await resolveSepDir(job, ret);
@@ -371,7 +417,13 @@ router.post("/stems/:id/cleanup", async (req, res) => {
     }
 
     const now = Date.now();
-    await ledgerSet(id, { status: "cleaned", available: 0, downloadedAt: now, cleanedUpAt: now, progress: 0 });
+    await ledgerSet(id, {
+      status: "cleaned",
+      available: 0,
+      downloadedAt: now,
+      cleanedUpAt: now,
+      progress: 0,
+    });
     res.json({ success: true });
   } catch (e) {
     console.error("[stems cleanup] error:", e);
