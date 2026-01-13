@@ -54,7 +54,7 @@ const COMMON_ARGS: readonly string[] = [
   "--proxy",
   "http://10.8.0.2:3128",
   "--user-agent",
-  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
 ] as const;
 
 const HARD_TIMEOUT: number = 1000 * 180;
@@ -76,31 +76,32 @@ async function streamToBuffer(
 ): Promise<Buffer> {
   const chunks: Buffer[] = [];
   let read: number = 0;
-  
+
   for await (const c of r) {
     const buf = c as Buffer;
     chunks.push(buf);
     read += buf.length;
-    
+
     if (onChunk) {
       const progressFraction = Math.min(0.95, read / MAX_ASSUMED_SIZE);
       onChunk(progressFraction);
     }
   }
-  
+
   return Buffer.concat(chunks);
 }
 
 function extractVideoId(url: string): string {
   const patterns: VideoIdPattern[] = [
-    { 
-      pattern: /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
-      groupIndex: 1
+    {
+      pattern:
+        /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
+      groupIndex: 1,
     },
-    { 
+    {
       pattern: /^([a-zA-Z0-9_-]{11})$/,
-      groupIndex: 1
-    }
+      groupIndex: 1,
+    },
   ];
 
   for (const { pattern, groupIndex } of patterns) {
@@ -109,63 +110,66 @@ function extractVideoId(url: string): string {
       return match[groupIndex];
     }
   }
-  
+
   return "";
 }
 
 function generateFallbackMetadata(videoUrl: string): ExtractedMetadata {
   const videoId: string = extractVideoId(videoUrl);
-  
+
   const fallbackTitles: readonly string[] = [
     "YouTube Video",
     "Music Track",
     "Audio Content",
     "Downloaded Audio",
-    "YouTube Audio"
+    "YouTube Audio",
   ] as const;
-  
+
   const fallbackAuthors: readonly string[] = [
     "Unknown Artist",
     "YouTube Creator",
     "Content Creator",
-    "Various Artists"
+    "Various Artists",
   ] as const;
 
-  const titleIndex: number = videoId ? 
-    videoId.charCodeAt(0) % fallbackTitles.length : 0;
-  const authorIndex: number = videoId ? 
-    videoId.charCodeAt(1) % fallbackAuthors.length : 0;
+  const titleIndex: number = videoId
+    ? videoId.charCodeAt(0) % fallbackTitles.length
+    : 0;
+  const authorIndex: number = videoId
+    ? videoId.charCodeAt(1) % fallbackAuthors.length
+    : 0;
 
   return {
-    title: fallbackTitles[titleIndex] + 
-           (videoId ? ` (${videoId.substring(0, 6)})` : ""),
-    author: fallbackAuthors[authorIndex]
+    title:
+      fallbackTitles[titleIndex] +
+      (videoId ? ` (${videoId.substring(0, 6)})` : ""),
+    author: fallbackAuthors[authorIndex],
   };
 }
 
 interface AudioHeader {
   isValid: boolean;
-  format: 'mp3' | 'id3' | 'unknown';
+  format: "mp3" | "id3" | "unknown";
   bytes: number[];
 }
 
 function validateAudioHeader(buffer: Buffer): AudioHeader {
   if (buffer.length < 3) {
-    return { isValid: false, format: 'unknown', bytes: [] };
+    return { isValid: false, format: "unknown", bytes: [] };
   }
-  
+
   const header = buffer.slice(0, 3);
   const bytes = Array.from(header);
-  
-  if (header[0] === 0xFF && (header[1] & 0xE0) === 0xE0) {
-    return { isValid: true, format: 'mp3', bytes };
+
+  if (header[0] === 0xff && (header[1] & 0xe0) === 0xe0) {
+    return { isValid: true, format: "mp3", bytes };
   }
-  
+
   if (header[0] === 0x49 && header[1] === 0x44 && header[2] === 0x33) {
-    return { isValid: true, format: 'id3', bytes };
+    return { isValid: true, format: "id3", bytes };
   }
-  
-  return { isValid: false, format: 'unknown', bytes };
+
+  return { isValid: false, format: "unknown", bytes };
 }
 
 function runYtDlpJson(videoUrl: string): Promise<YtDlpMetadata> {
@@ -189,7 +193,7 @@ function runYtDlpJson(videoUrl: string): Promise<YtDlpMetadata> {
           new Error(`yt-dlp metadata failed (code ${code}): ${errText}`)
         );
       }
-      
+
       try {
         const raw: string = Buffer.concat(outChunks).toString("utf8");
         const json: YtDlpMetadata = JSON.parse(raw);
@@ -207,19 +211,25 @@ function runYtDlpAudio(
   onProgress: (f: number) => void
 ): Promise<Buffer> {
   return new Promise((resolve, reject) => {
-    const tempFile: string = `/tmp/audio_${Date.now()}_${Math.random().toString(36).substring(7)}.mp3`;
-    
+    const tempFile: string = `/tmp/audio_${Date.now()}_${Math.random()
+      .toString(36)
+      .substring(7)}.mp3`;
+
     const args: string[] = [
       ...COMMON_ARGS,
-      "-f", "bestaudio/best",
+      "-f",
+      "bestaudio/best",
       "-x",
-      "--audio-format", "mp3",
-      "--audio-quality", "0",
+      "--audio-format",
+      "mp3",
+      "--audio-quality",
+      "0",
       "--no-playlist",
       "--no-warnings",
       "--no-progress",
-      "-o", tempFile,
-      videoUrl
+      "-o",
+      tempFile,
+      videoUrl,
     ];
 
     console.log("[yt-dlp] Running command:", "yt-dlp", args.join(" "));
@@ -255,36 +265,49 @@ function runYtDlpAudio(
           new Error(`yt-dlp download failed (code ${code}): ${errText}`)
         );
       }
-      
+
       try {
         const fileBuffer: Buffer = fs.readFileSync(tempFile);
         fs.unlinkSync(tempFile);
-        
-        console.log("[yt-dlp] Successfully downloaded audio file, size:", fileBuffer.length, "bytes");
-        
+
+        console.log(
+          "[yt-dlp] Successfully downloaded audio file, size:",
+          fileBuffer.length,
+          "bytes"
+        );
+
         if (fileBuffer.length < MIN_VALID_AUDIO_SIZE) {
           throw new Error("Downloaded file is too small to be valid audio");
         }
-        
+
         const headerValidation: AudioHeader = validateAudioHeader(fileBuffer);
-        
+
         if (headerValidation.isValid) {
-          console.log(`[yt-dlp] Valid ${headerValidation.format.toUpperCase()} header detected`);
+          console.log(
+            `[yt-dlp] Valid ${headerValidation.format.toUpperCase()} header detected`
+          );
         } else {
-          console.warn("[yt-dlp] Warning: Unexpected file header, but proceeding anyway");
+          console.warn(
+            "[yt-dlp] Warning: Unexpected file header, but proceeding anyway"
+          );
         }
-        
+
         resolve(fileBuffer);
       } catch (fileError) {
         const error = fileError as Error;
         console.error("[yt-dlp] File read error:", error);
-        reject(new Error(`Failed to read downloaded audio file: ${error.message}`));
+        reject(
+          new Error(`Failed to read downloaded audio file: ${error.message}`)
+        );
       }
     });
   });
 }
 
-async function downloadMp3(req: Request, res: Response<DownloadResponse | ErrorResponse>): Promise<void> {
+async function downloadMp3(
+  req: Request,
+  res: Response<DownloadResponse | ErrorResponse>
+): Promise<void> {
   const id: string = (req.query.id as string) || randomUUID();
   console.log("[dl] new request id", id, "url", req.query.url);
 
@@ -295,11 +318,11 @@ async function downloadMp3(req: Request, res: Response<DownloadResponse | ErrorR
 
   try {
     const videoUrl: string = req.query.url as string;
-    
-    if (!videoUrl || typeof videoUrl !== 'string') {
+
+    if (!videoUrl || typeof videoUrl !== "string") {
       throw new Error("URL parameter is required and must be a string");
     }
-    
+
     if (!/^https?:\/\//i.test(videoUrl)) {
       throw new Error("Invalid URL format");
     }
@@ -339,17 +362,17 @@ async function downloadMp3(req: Request, res: Response<DownloadResponse | ErrorR
       base64Buffer,
       title,
       author,
-      id
+      id,
     };
 
     res.json(response);
   } catch (err) {
     clearTimeout(killer);
     setP(id, 1);
-    
+
     const error = err as Error;
     console.log("[dl] error", error.message, error.stack);
-    
+
     res.status(500).json({ error: error.message });
   }
 }
@@ -357,7 +380,7 @@ async function downloadMp3(req: Request, res: Response<DownloadResponse | ErrorR
 function getProgress(req: Request, res: Response<ProgressResponse>): void {
   const id: string = req.params.id;
   const val: number = progress[id] ?? 0;
-  
+
   console.log("[progress] id", id, "->", val);
   res.json({ progress: val });
 }

@@ -8,7 +8,7 @@ const COMMON_ARGS = [
     "--proxy",
     "http://10.8.0.2:3128",
     "--user-agent",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
 ];
 const HARD_TIMEOUT = 1000 * 180;
 const MAX_ASSUMED_SIZE = 1024 * 1024 * 20;
@@ -37,12 +37,12 @@ function extractVideoId(url) {
     const patterns = [
         {
             pattern: /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
-            groupIndex: 1
+            groupIndex: 1,
         },
         {
             pattern: /^([a-zA-Z0-9_-]{11})$/,
-            groupIndex: 1
-        }
+            groupIndex: 1,
+        },
     ];
     for (const { pattern, groupIndex } of patterns) {
         const match = url.match(pattern);
@@ -59,37 +59,39 @@ function generateFallbackMetadata(videoUrl) {
         "Music Track",
         "Audio Content",
         "Downloaded Audio",
-        "YouTube Audio"
+        "YouTube Audio",
     ];
     const fallbackAuthors = [
         "Unknown Artist",
         "YouTube Creator",
         "Content Creator",
-        "Various Artists"
+        "Various Artists",
     ];
-    const titleIndex = videoId ?
-        videoId.charCodeAt(0) % fallbackTitles.length : 0;
-    const authorIndex = videoId ?
-        videoId.charCodeAt(1) % fallbackAuthors.length : 0;
+    const titleIndex = videoId
+        ? videoId.charCodeAt(0) % fallbackTitles.length
+        : 0;
+    const authorIndex = videoId
+        ? videoId.charCodeAt(1) % fallbackAuthors.length
+        : 0;
     return {
         title: fallbackTitles[titleIndex] +
             (videoId ? ` (${videoId.substring(0, 6)})` : ""),
-        author: fallbackAuthors[authorIndex]
+        author: fallbackAuthors[authorIndex],
     };
 }
 function validateAudioHeader(buffer) {
     if (buffer.length < 3) {
-        return { isValid: false, format: 'unknown', bytes: [] };
+        return { isValid: false, format: "unknown", bytes: [] };
     }
     const header = buffer.slice(0, 3);
     const bytes = Array.from(header);
-    if (header[0] === 0xFF && (header[1] & 0xE0) === 0xE0) {
-        return { isValid: true, format: 'mp3', bytes };
+    if (header[0] === 0xff && (header[1] & 0xe0) === 0xe0) {
+        return { isValid: true, format: "mp3", bytes };
     }
     if (header[0] === 0x49 && header[1] === 0x44 && header[2] === 0x33) {
-        return { isValid: true, format: 'id3', bytes };
+        return { isValid: true, format: "id3", bytes };
     }
-    return { isValid: false, format: 'unknown', bytes };
+    return { isValid: false, format: "unknown", bytes };
 }
 function runYtDlpJson(videoUrl) {
     return new Promise((resolve, reject) => {
@@ -120,18 +122,24 @@ function runYtDlpJson(videoUrl) {
 }
 function runYtDlpAudio(videoUrl, onProgress) {
     return new Promise((resolve, reject) => {
-        const tempFile = `/tmp/audio_${Date.now()}_${Math.random().toString(36).substring(7)}.mp3`;
+        const tempFile = `/tmp/audio_${Date.now()}_${Math.random()
+            .toString(36)
+            .substring(7)}.mp3`;
         const args = [
             ...COMMON_ARGS,
-            "-f", "bestaudio/best",
+            "-f",
+            "bestaudio/best",
             "-x",
-            "--audio-format", "mp3",
-            "--audio-quality", "0",
+            "--audio-format",
+            "mp3",
+            "--audio-quality",
+            "0",
             "--no-playlist",
             "--no-warnings",
             "--no-progress",
-            "-o", tempFile,
-            videoUrl
+            "-o",
+            tempFile,
+            videoUrl,
         ];
         console.log("[yt-dlp] Running command:", "yt-dlp", args.join(" "));
         const proc = spawn("yt-dlp", args);
@@ -192,7 +200,7 @@ async function downloadMp3(req, res) {
     }, HARD_TIMEOUT);
     try {
         const videoUrl = req.query.url;
-        if (!videoUrl || typeof videoUrl !== 'string') {
+        if (!videoUrl || typeof videoUrl !== "string") {
             throw new Error("URL parameter is required and must be a string");
         }
         if (!/^https?:\/\//i.test(videoUrl)) {
@@ -225,7 +233,7 @@ async function downloadMp3(req, res) {
             base64Buffer,
             title,
             author,
-            id
+            id,
         };
         res.json(response);
     }

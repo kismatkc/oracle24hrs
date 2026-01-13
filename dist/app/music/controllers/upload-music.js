@@ -38,8 +38,10 @@ try {
     Redis = BullRedis;
 }
 catch { }
-const META_TTL_SEC = 60 * 60 * 24 * 3; // 3 days
-const THREE_DAYS_MS = 1000 * 60 * 60 * 24 * 3;
+// Changed to 15 days as requested
+const FIFTEEN_DAYS_SEC = 60 * 60 * 24 * 15;
+const FIFTEEN_DAYS_MS = 1000 * 60 * 60 * 24 * 15;
+const META_TTL_SEC = FIFTEEN_DAYS_SEC;
 const key = (id) => `stems:${id}:meta`;
 async function ledgerSet(id, obj) {
     if (!Redis)
@@ -94,7 +96,6 @@ function sepDirFromAnyUrl(url) {
     try {
         const pathname = url.startsWith("http") ? new URL(url).pathname : url;
         const parts = pathname.split("/").filter(Boolean);
-        // Handle both /music/separated/... and /separated/...
         const sepIdx = parts.indexOf("separated");
         if (sepIdx === -1 || parts.length < sepIdx + 3)
             return;
@@ -179,8 +180,9 @@ async function gather(req, idOrJob) {
         },
     };
 }
-/* sweeper (3 days) */
+/* Sweeper - Changed to 15 days */
 setInterval(() => {
+    console.log("[sweeper] Running cleanup for files older than 15 days...");
     try {
         const sweep = (dir) => {
             if (!fs.existsSync(dir))
@@ -189,7 +191,7 @@ setInterval(() => {
                 const p = path.join(dir, ent.name);
                 try {
                     const st = fs.statSync(p);
-                    const old = Date.now() - st.mtimeMs > THREE_DAYS_MS;
+                    const old = Date.now() - st.mtimeMs > FIFTEEN_DAYS_MS;
                     if (ent.isDirectory()) {
                         old ? fs.rmSync(p, { recursive: true, force: true }) : sweep(p);
                     }
@@ -203,17 +205,34 @@ setInterval(() => {
         sweep(UPLOADS_DIR);
     }
     catch { }
-}, 60 * 60 * 1000);
-/* routes */
+}, 60 * 60 * 1000); // Run every hour
+/* ========== ROUTES ========== */
 router.post("/upload", longTimeout, upload.single("file"), async (req, res) => {
     try {
         const file = req.file;
-        if (!file)
-            res
-                .status(400)
-                .json({ success: false, message: "Field 'file' is required." });
+        if (!file) {
+            res.status(400).json({ success: false, message: "Field 'file' is required." });
+            return;
+        }
         const songId = req.body?.songId?.trim();
         const basename = songId || file.filename;
+        // Check if job already exists
+        const existingJob = await demucsQueue.getJob(basename);
+        if (existingJob) {
+            const state = await existingJob.getState();
+            if (state === "completed" || state === "active" || state === "waiting") {
+                // Job exists, return current state
+                const meta = await ledgerGet(basename);
+                res.json({
+                    success: true,
+                    jobId: existingJob.id,
+                    alreadyExists: true,
+                    state,
+                    progress: Number(meta.progress || 0),
+                });
+                return;
+            }
+        }
         const job = await demucsQueue.add("separate", {
             inputPath: file.path,
             basename,
@@ -226,16 +245,18 @@ router.post("/upload", longTimeout, upload.single("file"), async (req, res) => {
             status: "enqueued",
             available: 0,
             uploadedAt: now,
-            progress: 1,
-            expiresAt: now + THREE_DAYS_MS,
+            progress: 5, // Start at 5% to show immediate feedback
+            expiresAt: now + FIFTEEN_DAYS_MS,
             originalName: file.originalname,
             size: file.size,
         });
+        console.log(`[upload] Job created: ${job.id} for song ${basename}`);
         res.json({
             success: true,
             jobId: job.id,
             originalName: file.originalname,
             size: file.size,
+            progress: 5,
         });
     }
     catch (e) {
@@ -250,15 +271,29 @@ router.get("/stems/:id/state", async (req, res) => {
         const meta = await ledgerGet(id);
         let available = info.ready;
         let expiresAt = null;
+        let displayProgress = info.progress;
+        // Get milestone-based progress for smooth UI
         if (meta && Object.keys(meta).length) {
             const stillValid = !meta.expiresAt || Date.now() < Number(meta.expiresAt);
             available = meta.available === "1" && stillValid;
             expiresAt = meta.expiresAt ? Number(meta.expiresAt) : null;
+            // Use stored progress if higher (for smooth milestone progression)
+            const storedProgress = Number(meta.progress || 0);
+            displayProgress = Math.max(displayProgress, storedProgress);
+        }
+        // Map job states to milestone progress for smoother UX
+        const stateMilestones = {
+            'waiting': 10,
+            'active': 25,
+            'delayed': 15,
+        };
+        if (!info.ready && stateMilestones[info.state]) {
+            displayProgress = Math.max(displayProgress, stateMilestones[info.state]);
         }
         if (info.ready && !available) {
             const now = Date.now();
             const r = (info.result || {});
-            expiresAt = now + THREE_DAYS_MS;
+            expiresAt = now + FIFTEEN_DAYS_MS;
             await ledgerSet(id, {
                 status: "completed",
                 progress: 100,
@@ -270,17 +305,19 @@ router.get("/stems/:id/state", async (req, res) => {
                 instrumentalUrl: r.instrumentalUrl || r.accompanimentUrl || "",
             });
             available = true;
+            displayProgress = 100;
         }
         else {
+            // Update ledger with current progress
             await ledgerSet(id, {
                 status: info.ready ? "completed" : info.state || "pending",
-                progress: info.progress ?? 0,
+                progress: displayProgress,
                 available: available ? 1 : 0,
             });
         }
         res.json({
             state: info.state,
-            progress: info.progress ?? 0,
+            progress: displayProgress,
             ready: !!info.ready,
             available,
             expiresAt,
@@ -288,7 +325,7 @@ router.get("/stems/:id/state", async (req, res) => {
     }
     catch (e) {
         console.error("[stems state] error:", e);
-        res.status(500).json({ state: "error", ready: false, available: false });
+        res.status(500).json({ state: "error", progress: 0, ready: false, available: false });
     }
 });
 router.get("/stems/:id/result", async (req, res) => {
@@ -313,17 +350,18 @@ router.get("/stems/:id/result", async (req, res) => {
             await ledgerSet(id, {
                 available: 1,
                 readyAt: now,
-                expiresAt: now + THREE_DAYS_MS,
+                expiresAt: now + FIFTEEN_DAYS_MS,
                 vocalsUrl: urls.vocalsUrl || "",
                 accompanimentUrl: urls.accompanimentUrl || urls.instrumentalUrl || "",
                 instrumentalUrl: urls.instrumentalUrl || urls.accompanimentUrl || "",
                 status: "completed",
+                progress: 100,
             });
             res.json({
                 ready: true,
                 ...urls,
                 available: true,
-                expiresAt: now + THREE_DAYS_MS,
+                expiresAt: now + FIFTEEN_DAYS_MS,
             });
             return;
         }
@@ -331,6 +369,7 @@ router.get("/stems/:id/result", async (req, res) => {
             ready: false,
             available: false,
             expiresAt: meta?.expiresAt ? Number(meta.expiresAt) : null,
+            progress: Number(meta?.progress || 0),
         });
     }
     catch (e) {
@@ -358,8 +397,10 @@ router.post("/stems/:id/cleanup", async (req, res) => {
         };
         if (job) {
             const state = await job.getState();
-            if (state !== "completed")
+            if (state !== "completed") {
                 res.status(409).json({ success: false, message: "not_completed" });
+                return;
+            }
             const ret = job.returnvalue || {};
             const sepDir = await resolveSepDir(job, ret);
             const uploadPath = job.data?.inputPath;

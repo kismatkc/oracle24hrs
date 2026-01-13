@@ -48,8 +48,26 @@ const extractLyricsFromHtml = (html: string): string[] => {
   let currentBuffer = "";
 
   const blockElements = new Set([
-    "P", "DIV", "BLOCKQUOTE", "LI", "UL", "OL", "H1", "H2", "H3", "H4", "H5", "H6",
-    "SECTION", "ARTICLE", "HEADER", "FOOTER", "MAIN", "ASIDE", "NAV", "PRE",
+    "P",
+    "DIV",
+    "BLOCKQUOTE",
+    "LI",
+    "UL",
+    "OL",
+    "H1",
+    "H2",
+    "H3",
+    "H4",
+    "H5",
+    "H6",
+    "SECTION",
+    "ARTICLE",
+    "HEADER",
+    "FOOTER",
+    "MAIN",
+    "ASIDE",
+    "NAV",
+    "PRE",
   ]);
 
   const flushBuffer = (): void => {
@@ -183,10 +201,15 @@ async function scrapeLyrisc(req: Request, res: Response) {
   };
 
   const timeoutId = setTimeout(() => {
-    console.warn("scraper > Timeout hit. Closing context and returning fallback.");
+    console.warn(
+      "scraper > Timeout hit. Closing context and returning fallback."
+    );
     if (context) {
       context.close().catch((e) => {
-        console.warn("scraper > Error closing context on timeout:", (e as Error).message);
+        console.warn(
+          "scraper > Error closing context on timeout:",
+          (e as Error).message
+        );
       });
     }
     safeRespond(200, { status: 200, message: "Lyrics not found", data: {} });
@@ -211,8 +234,8 @@ async function scrapeLyrisc(req: Request, res: Response) {
       userAgent:
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118 Safari/537.36",
       proxy: {
-        server: 'http://10.8.0.2:3128'
-      }
+        server: "http://10.8.0.2:3128",
+      },
     });
     const page = await context.newPage();
 
@@ -225,7 +248,9 @@ async function scrapeLyrisc(req: Request, res: Response) {
     const idx = Number.isFinite(Number(linkIndex)) ? Number(linkIndex) : 0;
     const chosen = results[idx];
     if (!chosen) {
-      throw new Error(`linkIndex ${linkIndex} is out of range (max ${results.length - 1})`);
+      throw new Error(
+        `linkIndex ${linkIndex} is out of range (max ${results.length - 1})`
+      );
     }
 
     const url = chosen.link;
@@ -238,9 +263,11 @@ async function scrapeLyrisc(req: Request, res: Response) {
     });
     console.log("scraper > page.goto done. Final URL:", page.url());
 
-    await page.waitForLoadState("networkidle", { timeout: 12_000 }).catch(() => {
-      console.log("scraper > networkidle wait skipped/timeout");
-    });
+    await page
+      .waitForLoadState("networkidle", { timeout: 12_000 })
+      .catch(() => {
+        console.log("scraper > networkidle wait skipped/timeout");
+      });
 
     const title = await page.title();
     const pageHtml = await page.content();
@@ -266,7 +293,10 @@ async function scrapeLyrisc(req: Request, res: Response) {
           lyrics = extractLyricsFromReadability(result);
           readabilityUseful = lyrics.length > 0;
         } catch (e) {
-          console.log("scraper > extractLyricsFromReadability error:", (e as Error).message);
+          console.log(
+            "scraper > extractLyricsFromReadability error:",
+            (e as Error).message
+          );
         }
       }
     } catch (e) {
@@ -276,10 +306,20 @@ async function scrapeLyrisc(req: Request, res: Response) {
     logDivider("FALLBACK #1 (DENSE BLOCK)");
     if (!lyrics.length) {
       const denseInner = await page.evaluate(() => {
-        const blockTags = new Set(["DIV", "SECTION", "ARTICLE", "MAIN", "P", "TD"]);
+        const blockTags = new Set([
+          "DIV",
+          "SECTION",
+          "ARTICLE",
+          "MAIN",
+          "P",
+          "TD",
+        ]);
         let best: { el: Element; score: number } | null = null;
 
-        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT);
+        const walker = document.createTreeWalker(
+          document.body,
+          NodeFilter.SHOW_ELEMENT
+        );
         while (walker.nextNode()) {
           const el = walker.currentNode as Element;
           if (!blockTags.has(el.tagName)) continue;
@@ -288,7 +328,10 @@ async function scrapeLyrisc(req: Request, res: Response) {
           if (!text) continue;
 
           const brs = el.querySelectorAll("br").length;
-          const lines = text.split(/\n+/).map((x) => x.trim()).filter(Boolean);
+          const lines = text
+            .split(/\n+/)
+            .map((x) => x.trim())
+            .filter(Boolean);
           const shortLines = lines.filter((l) => l.length <= 120).length;
 
           const score = brs * 3 + shortLines + Math.min(text.length / 50, 40);
@@ -308,7 +351,9 @@ async function scrapeLyrisc(req: Request, res: Response) {
     logDivider("FALLBACK #2 (SITE-AWARE)");
     if (!lyrics.length) {
       const siteHtml = await page.evaluate(() => {
-        const geniusNodes = document.querySelectorAll('[data-lyrics-container]');
+        const geniusNodes = document.querySelectorAll(
+          "[data-lyrics-container]"
+        );
         if (geniusNodes.length) {
           return Array.from(geniusNodes)
             .map((n) => (n as HTMLElement).innerHTML)
@@ -318,7 +363,9 @@ async function scrapeLyrisc(req: Request, res: Response) {
         const lc = document.querySelector(".lyric-body, .lyrics-body");
         if (lc) return (lc as HTMLElement).innerHTML;
 
-        const azColumn = document.querySelector(".col-xs-12.col-lg-8.text-center");
+        const azColumn = document.querySelector(
+          ".col-xs-12.col-lg-8.text-center"
+        );
         if (azColumn) {
           const guess = Array.from(azColumn.querySelectorAll("div")).find(
             (d) => !(d as HTMLElement).className && !(d as HTMLElement).id
@@ -368,7 +415,10 @@ async function scrapeLyrisc(req: Request, res: Response) {
       try {
         await context.close();
       } catch (error: any) {
-        console.error("scraper > Error closing browser:", error?.message || error);
+        console.error(
+          "scraper > Error closing browser:",
+          error?.message || error
+        );
       }
     }
   }

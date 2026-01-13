@@ -26,22 +26,41 @@ function resolveFfmpeg(): string {
   return "ffmpeg";
 }
 
-function runProc(cmd: string, args: string[], cwd?: string, env?: NodeJS.ProcessEnv) {
+function runProc(
+  cmd: string,
+  args: string[],
+  cwd?: string,
+  env?: NodeJS.ProcessEnv
+) {
   return new Promise<void>((resolve, reject) => {
     const p = spawn(cmd, args, { cwd, env });
     p.on("error", reject);
-    p.on("close", (code) => (code === 0 ? resolve() : reject(new Error(`${cmd} exited ${code}`))));
+    p.on("close", (code) =>
+      code === 0 ? resolve() : reject(new Error(`${cmd} exited ${code}`))
+    );
   });
 }
 
-async function transcodeToM4A(inputWav: string, outM4a: string): Promise<boolean> {
+async function transcodeToM4A(
+  inputWav: string,
+  outM4a: string
+): Promise<boolean> {
   const ffmpeg = resolveFfmpeg();
   try {
     await runProc(ffmpeg, ["-version"]);
   } catch {
     return false;
   }
-  await runProc(ffmpeg, ["-y", "-i", inputWav, "-c:a", "aac", "-b:a", "192k", outM4a]);
+  await runProc(ffmpeg, [
+    "-y",
+    "-i",
+    inputWav,
+    "-c:a",
+    "aac",
+    "-b:a",
+    "192k",
+    outM4a,
+  ]);
   return fs.existsSync(outM4a) && fs.statSync(outM4a).size > 0;
 }
 
@@ -91,17 +110,25 @@ async function runDemucs(
     });
 
     proc.on("error", reject);
-    proc.on("close", (code) => (code === 0 ? resolve() : reject(new Error(`Demucs exited ${code}`))));
+    proc.on("close", (code) =>
+      code === 0 ? resolve() : reject(new Error(`Demucs exited ${code}`))
+    );
   });
 }
 
 export const demucsWorker = new Worker(
   "demucs",
   async (job: Job) => {
-    const { inputPath, basename } = job.data as { inputPath: string; basename: string };
+    const { inputPath, basename } = job.data as {
+      inputPath: string;
+      basename: string;
+    };
 
     const srcExt = path.extname(inputPath) || ".mp3";
-    const canonicalInput = path.join(path.dirname(inputPath), `${basename}${srcExt}`);
+    const canonicalInput = path.join(
+      path.dirname(inputPath),
+      `${basename}${srcExt}`
+    );
 
     try {
       if (canonicalInput !== inputPath) {
@@ -129,20 +156,28 @@ export const demucsWorker = new Worker(
         const ok = await transcodeToM4A(wavVocals, m4aVocals);
         if (ok) {
           vocalsUrl = `${stemBase}/vocals.m4a`;
-          try { fs.unlinkSync(wavVocals); } catch {}
+          try {
+            fs.unlinkSync(wavVocals);
+          } catch {}
         }
       }
       if (fs.existsSync(wavNoVoc)) {
         const ok = await transcodeToM4A(wavNoVoc, m4aNoVoc);
         if (ok) {
           accompUrl = `${stemBase}/no_vocals.m4a`;
-          try { fs.unlinkSync(wavNoVoc); } catch {}
+          try {
+            fs.unlinkSync(wavNoVoc);
+          } catch {}
         }
       }
     } finally {
-      try { fs.unlinkSync(inputPath); } catch {}
+      try {
+        fs.unlinkSync(inputPath);
+      } catch {}
       if (canonicalInput !== inputPath) {
-        try { fs.unlinkSync(canonicalInput); } catch {}
+        try {
+          fs.unlinkSync(canonicalInput);
+        } catch {}
       }
     }
 

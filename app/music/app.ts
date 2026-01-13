@@ -29,7 +29,8 @@ app.use(express.json({ limit: BODY_LIMIT }));
 app.use(express.urlencoded({ extended: true, limit: BODY_LIMIT }));
 
 app.use((err: any, _req: any, res: any, next: any) => {
-  if (err?.type === "entity.too.large") return res.status(413).json({ error: "payload too large" });
+  if (err?.type === "entity.too.large")
+    return res.status(413).json({ error: "payload too large" });
   return next(err);
 });
 

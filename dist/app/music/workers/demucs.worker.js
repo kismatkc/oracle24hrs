@@ -23,7 +23,7 @@ function runProc(cmd, args, cwd, env) {
     return new Promise((resolve, reject) => {
         const p = spawn(cmd, args, { cwd, env });
         p.on("error", reject);
-        p.on("close", (code) => (code === 0 ? resolve() : reject(new Error(`${cmd} exited ${code}`))));
+        p.on("close", (code) => code === 0 ? resolve() : reject(new Error(`${cmd} exited ${code}`)));
     });
 }
 async function transcodeToM4A(inputWav, outM4a) {
@@ -34,7 +34,16 @@ async function transcodeToM4A(inputWav, outM4a) {
     catch {
         return false;
     }
-    await runProc(ffmpeg, ["-y", "-i", inputWav, "-c:a", "aac", "-b:a", "192k", outM4a]);
+    await runProc(ffmpeg, [
+        "-y",
+        "-i",
+        inputWav,
+        "-c:a",
+        "aac",
+        "-b:a",
+        "192k",
+        outM4a,
+    ]);
     return fs.existsSync(outM4a) && fs.statSync(outM4a).size > 0;
 }
 async function runDemucs(canonicalInputPath, onProgress) {
@@ -75,7 +84,7 @@ async function runDemucs(canonicalInputPath, onProgress) {
             }
         });
         proc.on("error", reject);
-        proc.on("close", (code) => (code === 0 ? resolve() : reject(new Error(`Demucs exited ${code}`))));
+        proc.on("close", (code) => code === 0 ? resolve() : reject(new Error(`Demucs exited ${code}`)));
     });
 }
 export const demucsWorker = new Worker("demucs", async (job) => {

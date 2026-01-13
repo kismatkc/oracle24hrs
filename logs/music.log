@@ -115,3 +115,102 @@
 2026-01-13T21:26:48: 
 2026-01-13T21:26:48: ──────── RESULT ────────
 2026-01-13T21:26:48: scraper > Total lines: 94
+2026-01-13T22:13:35: OPTIONS  /.*/
+2026-01-13T22:13:35: [33mPOST[39m     /~/upload
+2026-01-13T22:13:35: [32mGET[39m      /~/stems/:id/state
+2026-01-13T22:13:35: [32mGET[39m      /~/stems/:id/result
+2026-01-13T22:13:35: [33mPOST[39m     /~/stems/:id/cleanup
+2026-01-13T22:13:35: [32mGET[39m      /~/progress/:id
+2026-01-13T22:13:35: [32mGET[39m      /~/download-mp3
+2026-01-13T22:13:35: [32mGET[39m      /~/scrape-lyrics
+2026-01-13T22:13:35: [32mGET[39m      /~/scrape-news
+2026-01-13T22:13:35: [32mGET[39m      /restart/Mohan9869868880
+2026-01-13T22:13:35: Music API listening on port 3000
+2026-01-13T22:13:48: 
+2026-01-13T22:13:48: ──────── REQUEST ────────
+2026-01-13T22:13:48: scraper > songName: albatross
+2026-01-13T22:13:48: scraper > linkIndex (raw): 0
+2026-01-13T22:13:48: 
+2026-01-13T22:13:48: ──────── GOOGLE SEARCH ────────
+2026-01-13T22:13:48: scraper > Searching Google for: albatross
+2026-01-13T22:13:48: scraper > Final query sent: "albatross lyrics and chords"
+2026-01-13T22:13:48: scraper > Google returned 8 results
+2026-01-13T22:13:48: scraper > Chosen URL: https://tabs.ultimate-guitar.com/tab/taylor-swift/the-albatross-chords-5233518
+2026-01-13T22:13:48: 
+2026-01-13T22:13:48: ──────── NAVIGATE ────────
+2026-01-13T22:13:49: scraper > page.goto done. Final URL: https://tabs.ultimate-guitar.com/tab/taylor-swift/the-albatross-chords-5233518
+2026-01-13T22:14:01: scraper > networkidle wait skipped/timeout
+2026-01-13T22:14:01: 
+2026-01-13T22:14:01: ──────── READABILITY ────────
+2026-01-13T22:14:02: scraper > isProbablyReaderable: true
+2026-01-13T22:14:02: 
+2026-01-13T22:14:02: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-13T22:14:02: 
+2026-01-13T22:14:02: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-13T22:14:02: 
+2026-01-13T22:14:02: ──────── RESULT ────────
+2026-01-13T22:14:02: scraper > Total lines: 49
+2026-01-13T22:16:18: [dl] new request id mkd5iidq-e31cxri9 url https://youtu.be/2aogxVYGX_I?si=kDIAGqkTfcbzXVun
+2026-01-13T22:16:18: [setP] mkd5iidq-e31cxri9 0.05
+2026-01-13T22:16:19: [progress] id mkd5iidq-e31cxri9 -> 0.05
+2026-01-13T22:16:20: [progress] id mkd5iidq-e31cxri9 -> 0.05
+2026-01-13T22:16:21: [progress] id mkd5iidq-e31cxri9 -> 0.05
+2026-01-13T22:16:22: [progress] id mkd5iidq-e31cxri9 -> 0.05
+2026-01-13T22:16:23: [setP] mkd5iidq-e31cxri9 0.15
+2026-01-13T22:16:23: [dl] Starting yt-dlp audio download...
+2026-01-13T22:16:23: [yt-dlp] Running command: yt-dlp --proxy http://10.8.0.2:3128 --user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 -f bestaudio/best -x --audio-format mp3 --audio-quality 0 --no-playlist --no-warnings --no-progress -o /tmp/audio_1768342583380_zrxcd.mp3 https://youtu.be/2aogxVYGX_I?si=kDIAGqkTfcbzXVun
+2026-01-13T22:16:23: [progress] id mkd5iidq-e31cxri9 -> 0.15
+2026-01-13T22:16:24: [progress] id mkd5iidq-e31cxri9 -> 0.15
+2026-01-13T22:16:25: [progress] id mkd5iidq-e31cxri9 -> 0.15
+2026-01-13T22:16:26: [progress] id mkd5iidq-e31cxri9 -> 0.15
+2026-01-13T22:16:27: [progress] id mkd5iidq-e31cxri9 -> 0.15
+2026-01-13T22:16:28: [progress] id mkd5iidq-e31cxri9 -> 0.15
+2026-01-13T22:16:30: [progress] id mkd5iidq-e31cxri9 -> 0.15
+2026-01-13T22:16:31: [progress] id mkd5iidq-e31cxri9 -> 0.15
+2026-01-13T22:16:32: [progress] id mkd5iidq-e31cxri9 -> 0.15
+2026-01-13T22:16:33: [progress] id mkd5iidq-e31cxri9 -> 0.15
+2026-01-13T22:16:34: [progress] id mkd5iidq-e31cxri9 -> 0.15
+2026-01-13T22:16:34: [yt-dlp] Successfully downloaded audio file, size: 925581 bytes
+2026-01-13T22:16:34: [yt-dlp] Valid ID3 header detected
+2026-01-13T22:16:34: [setP] mkd5iidq-e31cxri9 1
+2026-01-13T22:16:40: 
+2026-01-13T22:16:40: ──────── REQUEST ────────
+2026-01-13T22:16:40: scraper > songName: ⚡🎵 Epic Electric Timer - 30 Seconds Countdown 🎵⚡
+2026-01-13T22:16:40: scraper > linkIndex (raw): 0
+2026-01-13T22:16:40: 
+2026-01-13T22:16:40: ──────── GOOGLE SEARCH ────────
+2026-01-13T22:16:40: scraper > Searching Google for: ⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡
+2026-01-13T22:16:40: scraper > Final query sent: "⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡ lyrics and chords"
+2026-01-13T22:16:40: scraper > Google returned 8 results
+2026-01-13T22:16:40: scraper > Chosen URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-13T22:16:40: 
+2026-01-13T22:16:40: ──────── NAVIGATE ────────
+2026-01-13T22:16:43: scraper > page.goto done. Final URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-13T22:16:55: scraper > networkidle wait skipped/timeout
+2026-01-13T22:16:55: scraper > Timeout hit. Closing context and returning fallback.
+2026-01-13T22:16:55: scraper > Error in scrapeLyrisc: page.content: Target page, context or browser has been closed
+2026-01-13T22:16:59: [upload] Job created: mkd5iub8-mxwjgk3g for song mkd5iub8-mxwjgk3g
+2026-01-13T22:31:17: 
+2026-01-13T22:31:17: ──────── REQUEST ────────
+2026-01-13T22:31:17: scraper > songName: ⚡🎵 Epic Electric Timer - 30 Seconds Countdown 🎵⚡
+2026-01-13T22:31:17: scraper > linkIndex (raw): 0
+2026-01-13T22:31:17: 
+2026-01-13T22:31:17: ──────── GOOGLE SEARCH ────────
+2026-01-13T22:31:17: scraper > Searching Google for: ⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡
+2026-01-13T22:31:17: scraper > Final query sent: "⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡ lyrics and chords"
+2026-01-13T22:31:17: scraper > Google returned 8 results
+2026-01-13T22:31:17: scraper > Chosen URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-13T22:31:17: 
+2026-01-13T22:31:17: ──────── NAVIGATE ────────
+2026-01-13T22:31:19: scraper > page.goto done. Final URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-13T22:31:31: scraper > networkidle wait skipped/timeout
+2026-01-13T22:31:31: 
+2026-01-13T22:31:31: ──────── READABILITY ────────
+2026-01-13T22:31:32: scraper > isProbablyReaderable: true
+2026-01-13T22:31:32: 
+2026-01-13T22:31:32: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-13T22:31:32: 
+2026-01-13T22:31:32: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-13T22:31:32: 
+2026-01-13T22:31:32: ──────── RESULT ────────
+2026-01-13T22:31:32: scraper > Total lines: 95

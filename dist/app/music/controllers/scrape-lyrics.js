@@ -34,8 +34,26 @@ const extractLyricsFromHtml = (html) => {
     const lines = [];
     let currentBuffer = "";
     const blockElements = new Set([
-        "P", "DIV", "BLOCKQUOTE", "LI", "UL", "OL", "H1", "H2", "H3", "H4", "H5", "H6",
-        "SECTION", "ARTICLE", "HEADER", "FOOTER", "MAIN", "ASIDE", "NAV", "PRE",
+        "P",
+        "DIV",
+        "BLOCKQUOTE",
+        "LI",
+        "UL",
+        "OL",
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "SECTION",
+        "ARTICLE",
+        "HEADER",
+        "FOOTER",
+        "MAIN",
+        "ASIDE",
+        "NAV",
+        "PRE",
     ]);
     const flushBuffer = () => {
         if (currentBuffer.trim()) {
@@ -176,8 +194,8 @@ async function scrapeLyrisc(req, res) {
         context = await browser.newContext({
             userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118 Safari/537.36",
             proxy: {
-                server: 'http://10.8.0.2:3128'
-            }
+                server: "http://10.8.0.2:3128",
+            },
         });
         const page = await context.newPage();
         logDivider("GOOGLE SEARCH");
@@ -198,7 +216,9 @@ async function scrapeLyrisc(req, res) {
             timeout: 20000,
         });
         console.log("scraper > page.goto done. Final URL:", page.url());
-        await page.waitForLoadState("networkidle", { timeout: 12000 }).catch(() => {
+        await page
+            .waitForLoadState("networkidle", { timeout: 12000 })
+            .catch(() => {
             console.log("scraper > networkidle wait skipped/timeout");
         });
         const title = await page.title();
@@ -231,7 +251,14 @@ async function scrapeLyrisc(req, res) {
         logDivider("FALLBACK #1 (DENSE BLOCK)");
         if (!lyrics.length) {
             const denseInner = await page.evaluate(() => {
-                const blockTags = new Set(["DIV", "SECTION", "ARTICLE", "MAIN", "P", "TD"]);
+                const blockTags = new Set([
+                    "DIV",
+                    "SECTION",
+                    "ARTICLE",
+                    "MAIN",
+                    "P",
+                    "TD",
+                ]);
                 let best = null;
                 const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT);
                 while (walker.nextNode()) {
@@ -242,7 +269,10 @@ async function scrapeLyrisc(req, res) {
                     if (!text)
                         continue;
                     const brs = el.querySelectorAll("br").length;
-                    const lines = text.split(/\n+/).map((x) => x.trim()).filter(Boolean);
+                    const lines = text
+                        .split(/\n+/)
+                        .map((x) => x.trim())
+                        .filter(Boolean);
                     const shortLines = lines.filter((l) => l.length <= 120).length;
                     const score = brs * 3 + shortLines + Math.min(text.length / 50, 40);
                     if (!best || score > best.score)
@@ -262,7 +292,7 @@ async function scrapeLyrisc(req, res) {
         logDivider("FALLBACK #2 (SITE-AWARE)");
         if (!lyrics.length) {
             const siteHtml = await page.evaluate(() => {
-                const geniusNodes = document.querySelectorAll('[data-lyrics-container]');
+                const geniusNodes = document.querySelectorAll("[data-lyrics-container]");
                 if (geniusNodes.length) {
                     return Array.from(geniusNodes)
                         .map((n) => n.innerHTML)

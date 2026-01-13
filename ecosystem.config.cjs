@@ -10,9 +10,9 @@ module.exports = {
       node_args: "-r ./doppler-production.cjs",
       time: true,
       merge_logs: true,
-      log_date_format: 'YYYY-MM-DD HH:mm:ss.SSS',
-      out_file: 'logs/music.log',
-      error_file: 'logs/music.log',
+      log_date_format: "YYYY-MM-DD HH:mm:ss.SSS",
+      out_file: "logs/music.log",
+      error_file: "logs/music.log",
       instances: 1,
       exec_mode: "fork",
       watch: false,
@@ -36,10 +36,6 @@ module.exports = {
       exec_mode: "fork",
       watch: false,
       env: { NODE_ENV: "production" },
-    }
+    },
   ],
 };
-
-
-
-
