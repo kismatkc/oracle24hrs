@@ -214,3 +214,137 @@
 2026-01-13T22:31:32: 
 2026-01-13T22:31:32: ──────── RESULT ────────
 2026-01-13T22:31:32: scraper > Total lines: 95
+2026-01-13T23:00:34: 
+2026-01-13T23:00:34: ──────── REQUEST ────────
+2026-01-13T23:00:34: scraper > songName: albatross
+2026-01-13T23:00:34: scraper > linkIndex (raw): 0
+2026-01-13T23:00:34: 
+2026-01-13T23:00:34: ──────── GOOGLE SEARCH ────────
+2026-01-13T23:00:34: scraper > Searching Google for: albatross
+2026-01-13T23:00:34: scraper > Final query sent: "albatross lyrics and chords"
+2026-01-13T23:00:34: scraper > Google returned 8 results
+2026-01-13T23:00:34: scraper > Chosen URL: https://tabs.ultimate-guitar.com/tab/taylor-swift/the-albatross-chords-5233518
+2026-01-13T23:00:34: 
+2026-01-13T23:00:34: ──────── NAVIGATE ────────
+2026-01-13T23:00:35: scraper > page.goto done. Final URL: https://tabs.ultimate-guitar.com/tab/taylor-swift/the-albatross-chords-5233518
+2026-01-13T23:00:47: scraper > networkidle wait skipped/timeout
+2026-01-13T23:00:47: 
+2026-01-13T23:00:47: ──────── READABILITY ────────
+2026-01-13T23:00:48: scraper > isProbablyReaderable: true
+2026-01-13T23:00:48: 
+2026-01-13T23:00:48: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-13T23:00:48: 
+2026-01-13T23:00:48: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-13T23:00:48: 
+2026-01-13T23:00:48: ──────── RESULT ────────
+2026-01-13T23:00:48: scraper > Total lines: 49
+2026-01-13T23:01:57: [dl] new request id mkd7571x-hfjqj34v url https://youtu.be/2aogxVYGX_I?si=PTcqA6jbJwVyLSYe
+2026-01-13T23:01:57: [setP] mkd7571x-hfjqj34v 0.05
+2026-01-13T23:01:58: [progress] id mkd7571x-hfjqj34v -> 0.05
+2026-01-13T23:02:00: [progress] id mkd7571x-hfjqj34v -> 0.05
+2026-01-13T23:02:01: [setP] mkd7571x-hfjqj34v 0.15
+2026-01-13T23:02:01: [dl] Starting yt-dlp audio download...
+2026-01-13T23:02:01: [yt-dlp] Running command: yt-dlp --proxy http://10.8.0.2:3128 --user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 -f bestaudio/best -x --audio-format mp3 --audio-quality 0 --no-playlist --no-warnings --no-progress -o /tmp/audio_1768345321254_p2s79e.mp3 https://youtu.be/2aogxVYGX_I?si=PTcqA6jbJwVyLSYe
+2026-01-13T23:02:02: [progress] id mkd7571x-hfjqj34v -> 0.15
+2026-01-13T23:02:05: [progress] id mkd7571x-hfjqj34v -> 0.15
+2026-01-13T23:02:07: [progress] id mkd7571x-hfjqj34v -> 0.15
+2026-01-13T23:02:09: [progress] id mkd7571x-hfjqj34v -> 0.15
+2026-01-13T23:02:11: [progress] id mkd7571x-hfjqj34v -> 0.15
+2026-01-13T23:02:11: [yt-dlp] Successfully downloaded audio file, size: 925581 bytes
+2026-01-13T23:02:11: [yt-dlp] Valid ID3 header detected
+2026-01-13T23:02:11: [setP] mkd7571x-hfjqj34v 1
+2026-01-13T23:08:57: 
+2026-01-13T23:08:57: ──────── REQUEST ────────
+2026-01-13T23:08:57: scraper > songName: ⚡🎵 Epic Electric Timer - 30 Seconds Countdown 🎵⚡
+2026-01-13T23:08:57: scraper > linkIndex (raw): 0
+2026-01-13T23:08:57: 
+2026-01-13T23:08:57: ──────── GOOGLE SEARCH ────────
+2026-01-13T23:08:57: scraper > Searching Google for: ⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡
+2026-01-13T23:08:57: scraper > Final query sent: "⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡ lyrics and chords"
+2026-01-13T23:08:57: scraper > Google returned 8 results
+2026-01-13T23:08:57: scraper > Chosen URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-13T23:08:57: 
+2026-01-13T23:08:57: ──────── NAVIGATE ────────
+2026-01-13T23:08:59: scraper > page.goto done. Final URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-13T23:09:11: scraper > networkidle wait skipped/timeout
+2026-01-13T23:09:11: 
+2026-01-13T23:09:11: ──────── READABILITY ────────
+2026-01-13T23:09:12: scraper > isProbablyReaderable: true
+2026-01-13T23:09:12: 
+2026-01-13T23:09:12: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-13T23:09:12: 
+2026-01-13T23:09:12: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-13T23:09:12: 
+2026-01-13T23:09:12: ──────── RESULT ────────
+2026-01-13T23:09:12: scraper > Total lines: 95
+2026-01-13T23:13:35: [sweeper] Running cleanup for files older than 15 days...
+2026-01-14T00:13:35: [sweeper] Running cleanup for files older than 15 days...
+2026-01-14T01:07:03: [dl] new request id mkdbm27y-n2rk87ve url https://youtu.be/b0fgETOm2UQ?si=TCQWFYReij9D0_ft
+2026-01-14T01:07:03: [setP] mkdbm27y-n2rk87ve 0.05
+2026-01-14T01:07:04: [progress] id mkdbm27y-n2rk87ve -> 0.05
+2026-01-14T01:07:06: [progress] id mkdbm27y-n2rk87ve -> 0.05
+2026-01-14T01:07:07: [setP] mkdbm27y-n2rk87ve 0.15
+2026-01-14T01:07:07: [dl] Starting yt-dlp audio download...
+2026-01-14T01:07:07: [yt-dlp] Running command: yt-dlp --proxy http://10.8.0.2:3128 --user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 -f bestaudio/best -x --audio-format mp3 --audio-quality 0 --no-playlist --no-warnings --no-progress -o /tmp/audio_1768352827144_g5htc9.mp3 https://youtu.be/b0fgETOm2UQ?si=TCQWFYReij9D0_ft
+2026-01-14T01:07:08: [progress] id mkdbm27y-n2rk87ve -> 0.15
+2026-01-14T01:07:10: [progress] id mkdbm27y-n2rk87ve -> 0.15
+2026-01-14T01:07:12: [progress] id mkdbm27y-n2rk87ve -> 0.15
+2026-01-14T01:07:14: [progress] id mkdbm27y-n2rk87ve -> 0.15
+2026-01-14T01:07:16: [progress] id mkdbm27y-n2rk87ve -> 0.15
+2026-01-14T01:07:18: [progress] id mkdbm27y-n2rk87ve -> 0.15
+2026-01-14T01:07:20: [progress] id mkdbm27y-n2rk87ve -> 0.15
+2026-01-14T01:07:22: [progress] id mkdbm27y-n2rk87ve -> 0.15
+2026-01-14T01:07:24: [progress] id mkdbm27y-n2rk87ve -> 0.15
+2026-01-14T01:07:24: [yt-dlp] Successfully downloaded audio file, size: 8248197 bytes
+2026-01-14T01:07:24: [yt-dlp] Valid ID3 header detected
+2026-01-14T01:07:24: [setP] mkdbm27y-n2rk87ve 1
+2026-01-14T01:07:26: [progress] id mkdbm27y-n2rk87ve -> 1
+2026-01-14T01:07:28: [progress] id mkdbm27y-n2rk87ve -> 1
+2026-01-14T01:07:30: [progress] id mkdbm27y-n2rk87ve -> 1
+2026-01-14T01:07:32: [progress] id mkdbm27y-n2rk87ve -> 1
+2026-01-14T01:07:34: [progress] id mkdbm27y-n2rk87ve -> 1
+2026-01-14T01:07:36: [progress] id mkdbm27y-n2rk87ve -> 1
+2026-01-14T01:07:38: [progress] id mkdbm27y-n2rk87ve -> 1
+2026-01-14T01:07:40: [progress] id mkdbm27y-n2rk87ve -> 1
+2026-01-14T01:07:42: [progress] id mkdbm27y-n2rk87ve -> 1
+2026-01-14T01:07:59: 
+2026-01-14T01:07:59: ──────── REQUEST ────────
+2026-01-14T01:07:59: scraper > songName: Arthur Gunn - Save Me Now (Official Music Video)
+2026-01-14T01:07:59: scraper > linkIndex (raw): 0
+2026-01-14T01:07:59: 
+2026-01-14T01:07:59: ──────── GOOGLE SEARCH ────────
+2026-01-14T01:07:59: scraper > Searching Google for: arthur gunn - save me now (official music video)
+2026-01-14T01:07:59: scraper > Final query sent: "arthur gunn - save me now (official music video) lyrics and chords"
+2026-01-14T01:08:00: scraper > Google returned 8 results
+2026-01-14T01:08:00: scraper > Chosen URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-01-14T01:08:00: 
+2026-01-14T01:08:00: ──────── NAVIGATE ────────
+2026-01-14T01:08:03: scraper > page.goto done. Final URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-01-14T01:08:14: scraper > Timeout hit. Closing context and returning fallback.
+2026-01-14T01:08:14: scraper > networkidle wait skipped/timeout
+2026-01-14T01:08:14: scraper > Error in scrapeLyrisc: page.title: Target page, context or browser has been closed
+2026-01-14T01:08:15: [upload] Job created: mkdbmxgg-52ywjzl7 for song mkdbmxgg-52ywjzl7
+2026-01-14T01:08:39: 
+2026-01-14T01:08:39: ──────── REQUEST ────────
+2026-01-14T01:08:39: scraper > songName: Arthur Gunn - Save Me Now (Official Music Video)
+2026-01-14T01:08:39: scraper > linkIndex (raw): 0
+2026-01-14T01:08:39: 
+2026-01-14T01:08:39: ──────── GOOGLE SEARCH ────────
+2026-01-14T01:08:39: scraper > Searching Google for: arthur gunn - save me now (official music video)
+2026-01-14T01:08:39: scraper > Final query sent: "arthur gunn - save me now (official music video) lyrics and chords"
+2026-01-14T01:08:40: scraper > Google returned 8 results
+2026-01-14T01:08:40: scraper > Chosen URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-01-14T01:08:40: 
+2026-01-14T01:08:40: ──────── NAVIGATE ────────
+2026-01-14T01:08:42: scraper > page.goto done. Final URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-01-14T01:08:46: 
+2026-01-14T01:08:46: ──────── READABILITY ────────
+2026-01-14T01:08:47: scraper > isProbablyReaderable: true
+2026-01-14T01:08:47: 
+2026-01-14T01:08:47: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-14T01:08:47: 
+2026-01-14T01:08:47: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-14T01:08:47: 
+2026-01-14T01:08:47: ──────── RESULT ────────
+2026-01-14T01:08:47: scraper > Total lines: 2
+2026-01-14T01:13:35: [sweeper] Running cleanup for files older than 15 days...
