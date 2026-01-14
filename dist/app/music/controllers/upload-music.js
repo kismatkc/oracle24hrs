@@ -211,7 +211,9 @@ router.post("/upload", longTimeout, upload.single("file"), async (req, res) => {
     try {
         const file = req.file;
         if (!file) {
-            res.status(400).json({ success: false, message: "Field 'file' is required." });
+            res
+                .status(400)
+                .json({ success: false, message: "Field 'file' is required." });
             return;
         }
         const songId = req.body?.songId?.trim();
@@ -283,9 +285,9 @@ router.get("/stems/:id/state", async (req, res) => {
         }
         // Map job states to milestone progress for smoother UX
         const stateMilestones = {
-            'waiting': 10,
-            'active': 25,
-            'delayed': 15,
+            waiting: 10,
+            active: 25,
+            delayed: 15,
         };
         if (!info.ready && stateMilestones[info.state]) {
             displayProgress = Math.max(displayProgress, stateMilestones[info.state]);
@@ -325,7 +327,9 @@ router.get("/stems/:id/state", async (req, res) => {
     }
     catch (e) {
         console.error("[stems state] error:", e);
-        res.status(500).json({ state: "error", progress: 0, ready: false, available: false });
+        res
+            .status(500)
+            .json({ state: "error", progress: 0, ready: false, available: false });
     }
 });
 router.get("/stems/:id/result", async (req, res) => {

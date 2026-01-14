@@ -10,6 +10,7 @@ import uploadMusic from "./controllers/upload-music.js";
 import downloadMp3 from "./controllers/download-mp3.js";
 import scrapeLyrics from "./controllers/scrape-lyrics.js";
 import ttcAlerts from "./controllers/ttc-alerts.js";
+import youtube from "./controllers/youtube.js";
 import dotenv from "dotenv";
 dotenv.config();
 const app = express();
@@ -32,6 +33,7 @@ app.use("/music", uploadMusic);
 app.use("/music", downloadMp3);
 app.use("/music", scrapeLyrics);
 app.use("/music", ttcAlerts);
+app.use("/music/youtube", youtube);
 /* ---------- PM2 restart-all via GET ---------- */
 app.get(`/restart/${RESTART_SECRET}`, (_req, res) => {
     res.json({ message: "Restarting all PM2 processes…" });

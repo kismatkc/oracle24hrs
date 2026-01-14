@@ -1,0 +1,759 @@
+// app/music/controllers/youtube.ts
+// Innertube API controller for YouTube search and streaming
+
+import express, { Request, Response } from "express";
+import { Innertube, UniversalCache, ClientType } from "youtubei.js";
+import { spawn } from "node:child_process";
+
+const router = express.Router();
+
+// Singleton Innertube instance (lazy init)
+let innertubeClient: Innertube | null = null;
+let clientInitPromise: Promise<Innertube> | null = null;
+let lastClientInit = 0;
+const CLIENT_REFRESH_MS = 10 * 60 * 1000; // Refresh client every 10 minutes
+
+const USER_AGENTS = [
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0",
+];
+
+const randomDelay = (min = 500, max = 2000) =>
+  new Promise((resolve) =>
+    setTimeout(resolve, Math.floor(Math.random() * (max - min + 1)) + min)
+  );
+
+const getRandomUserAgent = () =>
+  USER_AGENTS[Math.floor(Math.random() * USER_AGENTS.length)];
+
+async function getInnertubeClient(forceNew = false): Promise<Innertube> {
+  const now = Date.now();
+  const needsRefresh = now - lastClientInit > CLIENT_REFRESH_MS;
+
+  if (innertubeClient && !forceNew && !needsRefresh) {
+    return innertubeClient;
+  }
+
+  if (forceNew || needsRefresh) {
+    innertubeClient = null;
+    clientInitPromise = null;
+    console.log("[youtube] Creating fresh Innertube client...");
+  }
+
+  if (!clientInitPromise) {
+    clientInitPromise = Innertube.create({
+      retrieve_player: true,
+      generate_session_locally: true,
+      cache: new UniversalCache(false),
+    });
+  }
+
+  innertubeClient = await clientInitPromise;
+  lastClientInit = Date.now();
+  console.log("[youtube] Innertube client initialized");
+  return innertubeClient;
+}
+
+// Helper to format duration from seconds to mm:ss or hh:mm:ss
+function formatDuration(seconds?: number): string {
+  if (!seconds || seconds <= 0) return "0:00";
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds % 3600) / 60);
+  const s = seconds % 60;
+  if (h > 0) {
+    return `${h}:${m.toString().padStart(2, "0")}:${s
+      .toString()
+      .padStart(2, "0")}`;
+  }
+  return `${m}:${s.toString().padStart(2, "0")}`;
+}
+
+// Helper to format view count
+function formatViews(views?: number): string {
+  if (!views) return "";
+  if (views >= 1_000_000_000)
+    return `${(views / 1_000_000_000).toFixed(1)}B views`;
+  if (views >= 1_000_000) return `${(views / 1_000_000).toFixed(1)}M views`;
+  if (views >= 1_000) return `${(views / 1_000).toFixed(1)}K views`;
+  return `${views} views`;
+}
+
+// Extract video info from search result item
+function extractVideoInfo(item: any): any | null {
+  try {
+    // Handle different result types
+    const type = item?.type;
+
+    if (type === "Video" || type === "CompactVideo" || type === "GridVideo") {
+      const videoId = item.id || item.video_id;
+      if (!videoId) return null;
+
+      // Get thumbnail - try different paths
+      let thumbnail = "";
+      if (item.thumbnails && item.thumbnails.length > 0) {
+        // Get highest quality thumbnail
+        const thumbs = item.thumbnails.sort(
+          (a: any, b: any) => (b.width || 0) - (a.width || 0)
+        );
+        thumbnail = thumbs[0]?.url || "";
+      } else if (item.thumbnail?.url) {
+        thumbnail = item.thumbnail.url;
+      }
+
+      // Get duration in seconds
+      let durationSeconds = 0;
+      if (item.duration?.seconds) {
+        durationSeconds = item.duration.seconds;
+      } else if (typeof item.duration === "number") {
+        durationSeconds = item.duration;
+      }
+
+      // Get view count
+      let viewCount = 0;
+      if (item.view_count?.text) {
+        const viewText = item.view_count.text.replace(/[^0-9]/g, "");
+        viewCount = parseInt(viewText, 10) || 0;
+      } else if (typeof item.view_count === "number") {
+        viewCount = item.view_count;
+      } else if (item.short_view_count?.text) {
+        // Parse "1.2M views" format
+        const match = item.short_view_count.text.match(/([0-9.]+)\s*([KMB])?/i);
+        if (match) {
+          let num = parseFloat(match[1]);
+          const suffix = (match[2] || "").toUpperCase();
+          if (suffix === "K") num *= 1000;
+          else if (suffix === "M") num *= 1_000_000;
+          else if (suffix === "B") num *= 1_000_000_000;
+          viewCount = Math.floor(num);
+        }
+      }
+
+      // Get author/channel
+      const author =
+        item.author?.name ||
+        item.channel?.name ||
+        item.owner?.name ||
+        "Unknown";
+
+      return {
+        videoId,
+        title: item.title?.text || item.title || "Untitled",
+        thumbnail,
+        duration: formatDuration(durationSeconds),
+        durationSeconds,
+        views: formatViews(viewCount),
+        viewCount,
+        author,
+        type: "video",
+      };
+    }
+
+    // Handle Shorts
+    if (type === "ShortsLockupView" || type === "ReelShelf") {
+      // Skip shorts for music app
+      return null;
+    }
+
+    // Handle playlists (optional)
+    if (type === "Playlist" || type === "CompactPlaylist") {
+      const playlistId = item.id || item.playlist_id;
+      if (!playlistId) return null;
+
+      let thumbnail = "";
+      if (item.thumbnails && item.thumbnails.length > 0) {
+        thumbnail = item.thumbnails[0]?.url || "";
+      }
+
+      return {
+        playlistId,
+        videoId: null,
+        title: item.title?.text || item.title || "Untitled Playlist",
+        thumbnail,
+        videoCount: item.video_count || item.video_count_text?.text || "",
+        author: item.author?.name || "Unknown",
+        type: "playlist",
+      };
+    }
+
+    return null;
+  } catch (e) {
+    console.error("[youtube] Error extracting video info:", e);
+    return null;
+  }
+}
+
+// GET /music/youtube/search?query=<query>
+router.get("/search", async (req: Request, res: Response) => {
+  try {
+    const query = (req.query.query as string)?.trim();
+
+    if (!query) {
+      res.status(400).json({ error: "Query parameter is required" });
+      return;
+    }
+
+    console.log("[youtube] Search request:", query);
+
+    // Random delay to avoid rate limiting
+    await randomDelay(300, 800);
+
+    const yt = await getInnertubeClient();
+    const searchResults = await yt.search(query, {
+      type: "video",
+      sort_by: "relevance",
+    });
+
+    const results: any[] = [];
+
+    // Process results
+    if (searchResults.results) {
+      for (const item of searchResults.results) {
+        const info = extractVideoInfo(item);
+        if (info && info.videoId) {
+          results.push(info);
+        }
+        // Limit to 20 results
+        if (results.length >= 20) break;
+      }
+    }
+
+    console.log(`[youtube] Search returned ${results.length} results`);
+
+    res.json({
+      query,
+      results,
+      count: results.length,
+    });
+  } catch (error: any) {
+    console.error("[youtube] Search error:", error?.message || error);
+
+    // Reset client on error
+    innertubeClient = null;
+    clientInitPromise = null;
+
+    res.status(500).json({
+      error: "Search failed",
+      message: error?.message || "Unknown error",
+      results: [],
+    });
+  }
+});
+
+// GET /music/youtube/suggestions?query=<partial_query>
+router.get("/suggestions", async (req: Request, res: Response) => {
+  try {
+    const query = (req.query.query as string)?.trim();
+
+    if (!query || query.length < 2) {
+      res.json({ suggestions: [] });
+      return;
+    }
+
+    console.log("[youtube] Suggestions request:", query);
+
+    // Small delay
+    await randomDelay(100, 300);
+
+    const yt = await getInnertubeClient();
+
+    // Use search suggestions
+    const suggestions = await yt.getSearchSuggestions(query);
+
+    // Extract suggestion strings
+    const suggestionStrings: string[] = [];
+    if (suggestions && Array.isArray(suggestions)) {
+      for (const item of suggestions) {
+        const suggestion = item as any;
+        if (typeof suggestion === "string") {
+          suggestionStrings.push(suggestion);
+        } else if (suggestion?.text) {
+          suggestionStrings.push(suggestion.text);
+        } else if (suggestion?.query) {
+          suggestionStrings.push(suggestion.query);
+        }
+        if (suggestionStrings.length >= 8) break;
+      }
+    }
+
+    res.json({ suggestions: suggestionStrings });
+  } catch (error: any) {
+    console.error("[youtube] Suggestions error:", error?.message || error);
+    res.json({ suggestions: [] });
+  }
+});
+
+// Helper to extract stream URL from streaming data with detailed logging
+// Prioritizes iOS-compatible formats (M4A/AAC) over WebM/Opus
+async function extractStreamUrl(
+  streamingData: any,
+  yt: Innertube
+): Promise<{
+  url: string | null;
+  format: string | null;
+  error: string | null;
+}> {
+  if (!streamingData) {
+    console.log("[youtube] No streaming_data object");
+    return { url: null, format: null, error: "No streaming data in response" };
+  }
+
+  // Log available formats for debugging
+  const adaptiveCount = streamingData.adaptive_formats?.length || 0;
+  const regularCount = streamingData.formats?.length || 0;
+  console.log(
+    `[youtube] Available formats: ${adaptiveCount} adaptive, ${regularCount} regular`
+  );
+
+  // Try adaptive_formats first (audio-only, better quality)
+  let audioFormats = streamingData.adaptive_formats?.filter(
+    (f: any) => f.has_audio && !f.has_video
+  );
+
+  console.log(
+    `[youtube] Found ${audioFormats?.length || 0} audio-only formats`
+  );
+
+  // Fallback to combined formats
+  if (!audioFormats || audioFormats.length === 0) {
+    audioFormats = streamingData.formats?.filter((f: any) => f.has_audio);
+    console.log(
+      `[youtube] Found ${audioFormats?.length || 0} combined formats with audio`
+    );
+  }
+
+  if (!audioFormats || audioFormats.length === 0) {
+    // Log what we do have for debugging
+    if (streamingData.adaptive_formats?.length) {
+      const types = streamingData.adaptive_formats.map((f: any) => ({
+        mime: f.mime_type,
+        hasAudio: f.has_audio,
+        hasVideo: f.has_video,
+      }));
+      console.log(
+        "[youtube] Adaptive format types:",
+        JSON.stringify(types.slice(0, 5))
+      );
+    }
+    return { url: null, format: null, error: "No audio formats available" };
+  }
+
+  // iOS-compatible MIME types (M4A/AAC and MP3)
+  const IOS_COMPATIBLE_MIMES = [
+    "audio/mp4",
+    "audio/mpeg",
+    "audio/aac",
+    "audio/m4a",
+  ];
+
+  // Separate iOS-compatible formats from others
+  const iosCompatibleFormats = audioFormats.filter((f: any) => {
+    const mime = (f.mime_type || "").toLowerCase();
+    return IOS_COMPATIBLE_MIMES.some((compatMime) =>
+      mime.includes(compatMime.split("/")[1])
+    );
+  });
+
+  const webmFormats = audioFormats.filter((f: any) => {
+    const mime = (f.mime_type || "").toLowerCase();
+    return mime.includes("webm") || mime.includes("opus");
+  });
+
+  console.log(
+    `[youtube] iOS-compatible formats: ${iosCompatibleFormats.length}, WebM/Opus formats: ${webmFormats.length}`
+  );
+
+  // Sort iOS-compatible formats by bitrate (highest first)
+  iosCompatibleFormats.sort(
+    (a: any, b: any) => (b.bitrate || 0) - (a.bitrate || 0)
+  );
+
+  // Try iOS-compatible formats FIRST
+  for (let i = 0; i < iosCompatibleFormats.length; i++) {
+    const format = iosCompatibleFormats[i];
+    const formatInfo = `mime=${format.mime_type}, bitrate=${format.bitrate}, itag=${format.itag}`;
+    console.log(
+      `[youtube] Trying iOS-compatible format ${i + 1}: ${formatInfo}`
+    );
+
+    try {
+      // Method 1: Direct URL
+      if (format.url) {
+        console.log("[youtube] Got iOS-compatible stream URL directly");
+        return { url: format.url, format: formatInfo, error: null };
+      }
+
+      // Method 2: Decipher
+      if (format.decipher && yt.session?.player) {
+        try {
+          const url = await format.decipher(yt.session.player);
+          if (url) {
+            console.log("[youtube] Got iOS-compatible stream URL via decipher");
+            return { url, format: formatInfo, error: null };
+          }
+        } catch (e: any) {
+          console.log(
+            `[youtube] Decipher failed for iOS format ${i + 1}:`,
+            e?.message
+          );
+        }
+      }
+
+      // Method 3: Signature cipher
+      if (format.signature_cipher && yt.session?.player) {
+        try {
+          const url = await format.decipher(yt.session.player);
+          if (url) {
+            console.log(
+              "[youtube] Got iOS-compatible stream URL via signature cipher"
+            );
+            return { url, format: formatInfo, error: null };
+          }
+        } catch (e: any) {
+          console.log(
+            `[youtube] Signature cipher failed for iOS format ${i + 1}:`,
+            e?.message
+          );
+        }
+      }
+    } catch (e: any) {
+      console.error(
+        `[youtube] Error with iOS-compatible format ${i + 1}:`,
+        e?.message
+      );
+    }
+  }
+
+  // If no iOS-compatible formats worked, log warning but DON'T fall back to WebM
+  // WebM won't work on iOS anyway
+  console.log(
+    "[youtube] No iOS-compatible formats available, WebM/Opus won't work on iOS"
+  );
+
+  return {
+    url: null,
+    format: null,
+    error: "No iOS-compatible audio formats (M4A/MP3) available",
+  };
+}
+
+// yt-dlp fallback for getting stream URL when Innertube fails
+const YTDLP_COMMON_ARGS: readonly string[] = [
+  "--proxy",
+  "http://10.8.0.2:3128",
+  "--user-agent",
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+] as const;
+
+interface YtDlpStreamResult {
+  url: string | null;
+  title: string;
+  author: string;
+  duration: number;
+  thumbnail: string;
+  error: string | null;
+}
+
+async function getStreamUrlWithYtDlp(
+  videoId: string
+): Promise<YtDlpStreamResult> {
+  return new Promise((resolve) => {
+    const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+
+    // Use -g to get URL - prefer iOS-compatible formats (M4A/AAC/MP3) over WebM/Opus
+    // Format priority: m4a > mp3 > aac > any audio
+    const args: string[] = [
+      ...YTDLP_COMMON_ARGS,
+      "-f",
+      "bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio[ext=aac]/bestaudio[acodec=aac]/bestaudio",
+      "-g", // Get URL only
+      "--no-playlist",
+      "--no-warnings",
+      videoUrl,
+    ];
+
+    console.log(
+      "[youtube] yt-dlp fallback: Getting iOS-compatible stream URL for",
+      videoId
+    );
+
+    const proc = spawn("yt-dlp", args);
+
+    let stdout = "";
+    let stderr = "";
+
+    proc.stdout?.on("data", (d: Buffer) => {
+      stdout += d.toString();
+    });
+
+    proc.stderr?.on("data", (d: Buffer) => {
+      stderr += d.toString();
+    });
+
+    proc.on("error", (err: Error) => {
+      console.error("[youtube] yt-dlp spawn error:", err.message);
+      resolve({
+        url: null,
+        title: "",
+        author: "",
+        duration: 0,
+        thumbnail: "",
+        error: err.message,
+      });
+    });
+
+    proc.on("close", async (code: number | null) => {
+      if (code !== 0 || !stdout.trim()) {
+        console.error("[youtube] yt-dlp failed (code", code, "):", stderr);
+        resolve({
+          url: null,
+          title: "",
+          author: "",
+          duration: 0,
+          thumbnail: "",
+          error: stderr || `Exit code ${code}`,
+        });
+        return;
+      }
+
+      const streamUrl = stdout.trim().split("\n")[0]; // First line is the URL
+      console.log(
+        "[youtube] yt-dlp got stream URL:",
+        streamUrl.substring(0, 80) + "..."
+      );
+
+      // Now get metadata
+      let title = "Unknown Title";
+      let author = "Unknown Artist";
+      let duration = 0;
+      let thumbnail = "";
+
+      try {
+        const metaResult = await getYtDlpMetadata(videoId);
+        title = metaResult.title || title;
+        author = metaResult.author || author;
+        duration = metaResult.duration || duration;
+        thumbnail = metaResult.thumbnail || thumbnail;
+      } catch (e: any) {
+        console.log("[youtube] yt-dlp metadata fetch failed, using defaults");
+      }
+
+      resolve({
+        url: streamUrl,
+        title,
+        author,
+        duration,
+        thumbnail,
+        error: null,
+      });
+    });
+
+    // Timeout after 30 seconds
+    setTimeout(() => {
+      proc.kill();
+      resolve({
+        url: null,
+        title: "",
+        author: "",
+        duration: 0,
+        thumbnail: "",
+        error: "Timeout",
+      });
+    }, 30000);
+  });
+}
+
+async function getYtDlpMetadata(videoId: string): Promise<{
+  title: string;
+  author: string;
+  duration: number;
+  thumbnail: string;
+}> {
+  return new Promise((resolve, reject) => {
+    const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+
+    const args: string[] = [
+      ...YTDLP_COMMON_ARGS,
+      "-J", // JSON output
+      "--no-playlist",
+      "--no-warnings",
+      videoUrl,
+    ];
+
+    const proc = spawn("yt-dlp", args);
+
+    let stdout = "";
+    let stderr = "";
+
+    proc.stdout?.on("data", (d: Buffer) => {
+      stdout += d.toString();
+    });
+
+    proc.stderr?.on("data", (d: Buffer) => {
+      stderr += d.toString();
+    });
+
+    proc.on("error", reject);
+
+    proc.on("close", (code: number | null) => {
+      if (code !== 0) {
+        reject(new Error(stderr || `Exit code ${code}`));
+        return;
+      }
+
+      try {
+        const json = JSON.parse(stdout);
+        resolve({
+          title: json.title || json.fulltitle || "",
+          author: json.uploader || json.channel || json.uploader_id || "",
+          duration: json.duration || 0,
+          thumbnail: json.thumbnail || "",
+        });
+      } catch (e) {
+        reject(e);
+      }
+    });
+
+    // Timeout
+    setTimeout(() => {
+      proc.kill();
+      reject(new Error("Metadata timeout"));
+    }, 15000);
+  });
+}
+
+// GET /music/youtube/stream?video_id=<id>
+router.get("/stream", async (req: Request, res: Response) => {
+  try {
+    const videoId = (req.query.video_id as string)?.trim();
+
+    if (!videoId) {
+      res.status(400).json({ error: "video_id parameter is required" });
+      return;
+    }
+
+    console.log("[youtube] Stream request for:", videoId);
+
+    await randomDelay(200, 600);
+
+    let streamUrl: string | null = null;
+    let title = "Unknown Title";
+    let author = "Unknown Artist";
+    let duration = 0;
+    let thumbnail = "";
+    let lastError = "Unknown error";
+    let formatUsed = "";
+
+    // Use yt-dlp directly - it's the most reliable method
+    // Innertube methods consistently fail due to YouTube API changes
+    try {
+      console.log("[youtube] Using yt-dlp for stream...");
+      const ytdlpResult = await getStreamUrlWithYtDlp(videoId);
+
+      if (ytdlpResult.url) {
+        streamUrl = ytdlpResult.url;
+        formatUsed = "yt-dlp";
+        title = ytdlpResult.title || title;
+        author = ytdlpResult.author || author;
+        duration = ytdlpResult.duration || duration;
+        thumbnail = ytdlpResult.thumbnail || thumbnail;
+        console.log("[youtube] yt-dlp succeeded");
+      } else {
+        lastError = ytdlpResult.error || "yt-dlp failed";
+        console.log("[youtube] yt-dlp failed:", lastError);
+      }
+    } catch (e: any) {
+      lastError = e?.message || "yt-dlp failed";
+      console.error("[youtube] yt-dlp error:", lastError);
+    }
+
+    if (!streamUrl) {
+      console.error(
+        `[youtube] Failed to get stream for video: ${videoId}. Error: ${lastError}`
+      );
+
+      res.status(404).json({
+        error: "No streaming data available",
+        message: `Could not get stream for this video. ${lastError}. Try using 'Save MP3' to download instead.`,
+        video_id: videoId,
+        debug: {
+          lastError,
+          title,
+          author,
+        },
+      });
+      return;
+    }
+
+    console.log(
+      `[youtube] Stream ready: "${title}" by ${author} (${formatDuration(
+        duration
+      )})`
+    );
+    console.log(`[youtube] Format used: ${formatUsed}`);
+
+    res.json({
+      stream_url: streamUrl,
+      video_id: videoId,
+      title,
+      author,
+      duration,
+      durationFormatted: formatDuration(duration),
+      thumbnail,
+    });
+  } catch (error: any) {
+    console.error("[youtube] Stream error:", error?.message || error);
+
+    res.status(500).json({
+      error: "Failed to get stream",
+      message: error?.message || "Unknown error",
+    });
+  }
+});
+
+// GET /music/youtube/info?video_id=<id> - Get video info without stream URL
+router.get("/info", async (req: Request, res: Response) => {
+  try {
+    const videoId = (req.query.video_id as string)?.trim();
+
+    if (!videoId) {
+      res.status(400).json({ error: "video_id parameter is required" });
+      return;
+    }
+
+    await randomDelay(100, 400);
+
+    const yt = await getInnertubeClient();
+    const info = await yt.getBasicInfo(videoId);
+
+    if (!info) {
+      res.status(404).json({ error: "Video not found" });
+      return;
+    }
+
+    const basicInfo = info.basic_info;
+
+    let thumbnail = "";
+    if (basicInfo?.thumbnail && basicInfo.thumbnail.length > 0) {
+      thumbnail = basicInfo.thumbnail[0]?.url || "";
+    }
+
+    res.json({
+      video_id: videoId,
+      title: basicInfo?.title || "Unknown",
+      author: basicInfo?.author || "Unknown",
+      duration: basicInfo?.duration || 0,
+      durationFormatted: formatDuration(basicInfo?.duration),
+      thumbnail,
+      view_count: basicInfo?.view_count || 0,
+    });
+  } catch (error: any) {
+    console.error("[youtube] Info error:", error?.message || error);
+    res.status(500).json({
+      error: "Failed to get info",
+      message: error?.message || "Unknown error",
+    });
+  }
+});
+
+export default router;

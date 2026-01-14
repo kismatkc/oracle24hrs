@@ -12,6 +12,7 @@ import uploadMusic from "./controllers/upload-music.ts";
 import downloadMp3 from "./controllers/download-mp3.ts";
 import scrapeLyrics from "./controllers/scrape-lyrics.ts";
 import ttcAlerts from "./controllers/ttc-alerts.ts";
+import youtube from "./controllers/youtube.ts";
 
 import dotenv from "dotenv";
 dotenv.config();
@@ -41,6 +42,7 @@ app.use("/music", uploadMusic);
 app.use("/music", downloadMp3);
 app.use("/music", scrapeLyrics);
 app.use("/music", ttcAlerts);
+app.use("/music/youtube", youtube);
 
 /* ---------- PM2 restart-all via GET ---------- */
 app.get(`/restart/${RESTART_SECRET}`, (_req, res) => {

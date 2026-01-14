@@ -30,7 +30,8 @@
     "jsdom": "^26.1.0",
     "multer": "^2.0.2",
     "playwright": "^1.52.0",
-    "playwright-extra": "^4.3.6"
+    "playwright-extra": "^4.3.6",
+    "youtubei.js": "^16.0.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
