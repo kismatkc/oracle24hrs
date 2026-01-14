@@ -348,3 +348,126 @@
 2026-01-14T01:08:47: ──────── RESULT ────────
 2026-01-14T01:08:47: scraper > Total lines: 2
 2026-01-14T01:13:35: [sweeper] Running cleanup for files older than 15 days...
+2026-01-14T02:13:35: [sweeper] Running cleanup for files older than 15 days...
+2026-01-14T02:40:48: 
+2026-01-14T02:40:48: ──────── REQUEST ────────
+2026-01-14T02:40:48: scraper > songName: save me now arthur gunn
+2026-01-14T02:40:48: scraper > linkIndex (raw): 0
+2026-01-14T02:40:48: 
+2026-01-14T02:40:48: ──────── GOOGLE SEARCH ────────
+2026-01-14T02:40:48: scraper > Searching Google for: save me now arthur gunn
+2026-01-14T02:40:48: scraper > Final query sent: "save me now arthur gunn lyrics and chords"
+2026-01-14T02:40:48: scraper > Google returned 8 results
+2026-01-14T02:40:48: scraper > Chosen URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-01-14T02:40:48: 
+2026-01-14T02:40:48: ──────── NAVIGATE ────────
+2026-01-14T02:40:50: scraper > page.goto done. Final URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-01-14T02:41:02: scraper > networkidle wait skipped/timeout
+2026-01-14T02:41:02: 
+2026-01-14T02:41:02: ──────── READABILITY ────────
+2026-01-14T02:41:02: scraper > isProbablyReaderable: true
+2026-01-14T02:41:02: 
+2026-01-14T02:41:02: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-14T02:41:02: 
+2026-01-14T02:41:02: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-14T02:41:02: 
+2026-01-14T02:41:02: ──────── RESULT ────────
+2026-01-14T02:41:02: scraper > Total lines: 2
+2026-01-14T02:55:58: [dl] new request id mkdfi55l-j2q0y2yo url https://youtu.be/Cn2yL2AwWdA?si=ToK21WmaMWe5ue3F
+2026-01-14T02:55:58: [setP] mkdfi55l-j2q0y2yo 0.05
+2026-01-14T02:55:59: [progress] id mkdfi55l-j2q0y2yo -> 0.05
+2026-01-14T02:56:01: [progress] id mkdfi55l-j2q0y2yo -> 0.05
+2026-01-14T02:56:01: [setP] mkdfi55l-j2q0y2yo 0.15
+2026-01-14T02:56:01: [dl] Starting yt-dlp audio download...
+2026-01-14T02:56:01: [yt-dlp] Running command: yt-dlp --proxy http://10.8.0.2:3128 --user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 -f bestaudio/best -x --audio-format mp3 --audio-quality 0 --no-playlist --no-warnings --no-progress -o /tmp/audio_1768359361964_hxhunk.mp3 https://youtu.be/Cn2yL2AwWdA?si=ToK21WmaMWe5ue3F
+2026-01-14T02:56:03: [progress] id mkdfi55l-j2q0y2yo -> 0.15
+2026-01-14T02:56:05: [progress] id mkdfi55l-j2q0y2yo -> 0.15
+2026-01-14T02:56:07: [progress] id mkdfi55l-j2q0y2yo -> 0.15
+2026-01-14T02:56:09: [progress] id mkdfi55l-j2q0y2yo -> 0.15
+2026-01-14T02:56:11: [progress] id mkdfi55l-j2q0y2yo -> 0.15
+2026-01-14T02:56:13: [progress] id mkdfi55l-j2q0y2yo -> 0.15
+2026-01-14T02:56:15: [progress] id mkdfi55l-j2q0y2yo -> 0.15
+2026-01-14T02:56:17: [yt-dlp] Successfully downloaded audio file, size: 5795613 bytes
+2026-01-14T02:56:17: [yt-dlp] Valid ID3 header detected
+2026-01-14T02:56:17: [setP] mkdfi55l-j2q0y2yo 1
+2026-01-14T02:56:17: [progress] id mkdfi55l-j2q0y2yo -> 1
+2026-01-14T02:56:19: [progress] id mkdfi55l-j2q0y2yo -> 1
+2026-01-14T02:56:21: [progress] id mkdfi55l-j2q0y2yo -> 1
+2026-01-14T02:56:40: 
+2026-01-14T02:56:40: ──────── REQUEST ────────
+2026-01-14T02:56:40: scraper > songName: Bagaichama Najau Timi (Cover) | Subodh KC | Sansic Records
+2026-01-14T02:56:40: scraper > linkIndex (raw): 0
+2026-01-14T02:56:40: 
+2026-01-14T02:56:40: ──────── GOOGLE SEARCH ────────
+2026-01-14T02:56:40: scraper > Searching Google for: bagaichama najau timi (cover) | subodh kc | sansic records
+2026-01-14T02:56:40: scraper > Final query sent: "bagaichama najau timi (cover) | subodh kc | sansic records lyrics and chords"
+2026-01-14T02:56:40: scraper > Google returned 8 results
+2026-01-14T02:56:40: scraper > Chosen URL: https://www.shazam.com/song/1767406384/bagaicha-ma
+2026-01-14T02:56:40: 
+2026-01-14T02:56:40: ──────── NAVIGATE ────────
+2026-01-14T02:56:42: scraper > page.goto done. Final URL: https://www.shazam.com/song/1767406384/bagaicha-ma
+2026-01-14T02:56:45: 
+2026-01-14T02:56:45: ──────── READABILITY ────────
+2026-01-14T02:56:45: scraper > isProbablyReaderable: false
+2026-01-14T02:56:46: 
+2026-01-14T02:56:46: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-14T02:56:46: 
+2026-01-14T02:56:46: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-14T02:56:46: 
+2026-01-14T02:56:46: ──────── RESULT ────────
+2026-01-14T02:56:46: scraper > Total lines: 60
+2026-01-14T02:57:34: 
+2026-01-14T02:57:34: ──────── REQUEST ────────
+2026-01-14T02:57:34: scraper > songName: Bagaichama Najau Timi (Cover) | Subodh KC | Sansic Records
+2026-01-14T02:57:34: scraper > linkIndex (raw): 1
+2026-01-14T02:57:34: 
+2026-01-14T02:57:34: ──────── GOOGLE SEARCH ────────
+2026-01-14T02:57:34: scraper > Searching Google for: bagaichama najau timi (cover) | subodh kc | sansic records
+2026-01-14T02:57:34: scraper > Final query sent: "bagaichama najau timi (cover) | subodh kc | sansic records lyrics and chords"
+2026-01-14T02:57:34: scraper > Google returned 8 results
+2026-01-14T02:57:34: scraper > Chosen URL: https://www.smule.com/song/udit-narayan-sadhana-sargam-bagaichama-najau-timi-%E0%A4%9A%E0%A4%B2%E0%A4%9A-%E0%A4%A4-%E0%A4%B0-%E0%A4%B8-%E0%A4%96-%E0%A4%A6-%E0%A4%96-hd-karaoke-lyrics/5120040_5120040/arrangement
+2026-01-14T02:57:34: 
+2026-01-14T02:57:34: ──────── NAVIGATE ────────
+2026-01-14T02:57:35: scraper > page.goto done. Final URL: https://www.smule.com/song/udit-narayan-sadhana-sargam-bagaichama-najau-timi-%E0%A4%9A%E0%A4%B2%E0%A4%9A-%E0%A4%A4-%E0%A4%B0-%E0%A4%B8-%E0%A4%96-%E0%A4%A6-%E0%A4%96-hd-karaoke-lyrics/5120040_5120040/arrangement
+2026-01-14T02:57:37: 
+2026-01-14T02:57:37: ──────── READABILITY ────────
+2026-01-14T02:57:37: scraper > isProbablyReaderable: false
+2026-01-14T02:57:37: 
+2026-01-14T02:57:37: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-14T02:57:37: 
+2026-01-14T02:57:37: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-14T02:57:37: 
+2026-01-14T02:57:37: ──────── RESULT ────────
+2026-01-14T02:57:37: scraper > Total lines: 132
+2026-01-14T02:57:54: [upload] Job created: mkdfio2w-qv286y98 for song mkdfio2w-qv286y98
+2026-01-14T03:13:35: [sweeper] Running cleanup for files older than 15 days...
+2026-01-14T04:13:35: [sweeper] Running cleanup for files older than 15 days...
+2026-01-14T05:13:35: [sweeper] Running cleanup for files older than 15 days...
+2026-01-14T06:13:35: [sweeper] Running cleanup for files older than 15 days...
+2026-01-14T07:13:35: [sweeper] Running cleanup for files older than 15 days...
+2026-01-14T08:13:35: [sweeper] Running cleanup for files older than 15 days...
+2026-01-14T09:13:35: [sweeper] Running cleanup for files older than 15 days...
+2026-01-14T10:13:35: [sweeper] Running cleanup for files older than 15 days...
+2026-01-14T11:13:35: [sweeper] Running cleanup for files older than 15 days...
+2026-01-14T12:13:35: [sweeper] Running cleanup for files older than 15 days...
+2026-01-14T13:13:35: [sweeper] Running cleanup for files older than 15 days...
+2026-01-14T14:13:35: [sweeper] Running cleanup for files older than 15 days...
+2026-01-14T15:13:35: [sweeper] Running cleanup for files older than 15 days...
+2026-01-14T15:35:27: 
+2026-01-14T15:35:27: ──────── REQUEST ────────
+2026-01-14T15:35:27: scraper > songName: ⚡🎵 Epic Electric Timer - 30 Seconds Countdown 🎵⚡
+2026-01-14T15:35:27: scraper > linkIndex (raw): 0
+2026-01-14T15:35:27: 
+2026-01-14T15:35:27: ──────── GOOGLE SEARCH ────────
+2026-01-14T15:35:27: scraper > Searching Google for: ⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡
+2026-01-14T15:35:27: scraper > Final query sent: "⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡ lyrics and chords"
+2026-01-14T15:35:28: scraper > Google returned 8 results
+2026-01-14T15:35:28: scraper > Chosen URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-14T15:35:28: 
+2026-01-14T15:35:28: ──────── NAVIGATE ────────
+2026-01-14T15:35:30: scraper > page.goto done. Final URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-14T15:35:42: scraper > networkidle wait skipped/timeout
+2026-01-14T15:35:42: scraper > Timeout hit. Closing context and returning fallback.
+2026-01-14T15:35:42: scraper > Error in scrapeLyrisc: page.title: Target page, context or browser has been closed
+2026-01-14T16:13:35: [sweeper] Running cleanup for files older than 15 days...
+2026-01-14T17:13:35: [sweeper] Running cleanup for files older than 15 days...
