@@ -52,3 +52,795 @@
 2026-01-14T23:15:58: [youtube] yt-dlp succeeded
 2026-01-14T23:15:58: [youtube] Stream ready: "Bhool Unplugged | Shirish Dali (Albatross) | #MusicalOutBreak Virtual Concert | #StayHome |#WithMe" by Rock Nepal (4:35)
 2026-01-14T23:15:58: [youtube] Format used: yt-dlp
+2026-01-15T00:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T01:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T01:41:14: 
+2026-01-15T01:41:14: ──────── REQUEST ────────
+2026-01-15T01:41:14: scraper > songName: aprabahsit swar
+2026-01-15T01:41:14: scraper > linkIndex (raw): 0
+2026-01-15T01:41:15: 
+2026-01-15T01:41:15: ──────── GOOGLE SEARCH ────────
+2026-01-15T01:41:15: scraper > Searching Google for: aprabahsit swar
+2026-01-15T01:41:15: scraper > Final query sent: "aprabahsit swar lyrics and chords"
+2026-01-15T01:41:15: scraper > Google returned 0 results
+2026-01-15T01:41:15: scraper > Error in scrapeLyrisc: No search results found for the song
+2026-01-15T01:41:19: 
+2026-01-15T01:41:19: ──────── REQUEST ────────
+2026-01-15T01:41:19: scraper > songName: swar
+2026-01-15T01:41:19: scraper > linkIndex (raw): 0
+2026-01-15T01:41:19: 
+2026-01-15T01:41:19: ──────── GOOGLE SEARCH ────────
+2026-01-15T01:41:19: scraper > Searching Google for: swar
+2026-01-15T01:41:19: scraper > Final query sent: "swar lyrics and chords"
+2026-01-15T01:41:20: scraper > Google returned 8 results
+2026-01-15T01:41:20: scraper > Chosen URL: https://mychords.net/swar/196421-swar-bistarai.html
+2026-01-15T01:41:20: 
+2026-01-15T01:41:20: ──────── NAVIGATE ────────
+2026-01-15T01:41:21: scraper > page.goto done. Final URL: https://mychords.net/swar/196421-swar-bistarai.html
+2026-01-15T01:41:22: 
+2026-01-15T01:41:22: ──────── READABILITY ────────
+2026-01-15T01:41:22: scraper > isProbablyReaderable: false
+2026-01-15T01:41:22: 
+2026-01-15T01:41:22: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-15T01:41:22: 
+2026-01-15T01:41:22: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-15T01:41:22: 
+2026-01-15T01:41:22: ──────── RESULT ────────
+2026-01-15T01:41:22: scraper > Total lines: 88
+2026-01-15T01:41:30: 
+2026-01-15T01:41:30: ──────── REQUEST ────────
+2026-01-15T01:41:30: scraper > songName: swar
+2026-01-15T01:41:30: scraper > linkIndex (raw): 1
+2026-01-15T01:41:30: 
+2026-01-15T01:41:30: ──────── GOOGLE SEARCH ────────
+2026-01-15T01:41:30: scraper > Searching Google for: swar
+2026-01-15T01:41:30: scraper > Final query sent: "swar lyrics and chords"
+2026-01-15T01:41:31: scraper > Google returned 8 results
+2026-01-15T01:41:31: scraper > Chosen URL: https://songschord.com/maya-ma-guitar-chords-and-lyrics/
+2026-01-15T01:41:31: 
+2026-01-15T01:41:31: ──────── NAVIGATE ────────
+2026-01-15T01:41:31: scraper > page.goto done. Final URL: https://songschord.com/maya-ma-guitar-chords-and-lyrics/
+2026-01-15T01:41:32: 
+2026-01-15T01:41:32: ──────── READABILITY ────────
+2026-01-15T01:41:33: scraper > isProbablyReaderable: true
+2026-01-15T01:41:33: 
+2026-01-15T01:41:33: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-15T01:41:33: 
+2026-01-15T01:41:33: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-15T01:41:33: 
+2026-01-15T01:41:33: ──────── RESULT ────────
+2026-01-15T01:41:33: scraper > Total lines: 131
+2026-01-15T01:41:45: 
+2026-01-15T01:41:45: ──────── REQUEST ────────
+2026-01-15T01:41:45: scraper > songName: swar swapnil
+2026-01-15T01:41:45: scraper > linkIndex (raw): 0
+2026-01-15T01:41:45: 
+2026-01-15T01:41:45: ──────── GOOGLE SEARCH ────────
+2026-01-15T01:41:45: scraper > Searching Google for: swar swapnil
+2026-01-15T01:41:45: scraper > Final query sent: "swar swapnil lyrics and chords"
+2026-01-15T01:41:46: scraper > Google returned 8 results
+2026-01-15T01:41:46: scraper > Chosen URL: https://www.tiktok.com/discover/ma-mara-pani-lyrics-and-chords
+2026-01-15T01:41:46: 
+2026-01-15T01:41:46: ──────── NAVIGATE ────────
+2026-01-15T01:41:47: scraper > page.goto done. Final URL: https://www.tiktok.com/discover/ma-mara-pani-lyrics-and-chords
+2026-01-15T01:41:58: 
+2026-01-15T01:41:58: ──────── READABILITY ────────
+2026-01-15T01:41:58: scraper > isProbablyReaderable: false
+2026-01-15T01:41:58: 
+2026-01-15T01:41:58: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-15T01:41:58: 
+2026-01-15T01:41:58: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-15T01:41:58: 
+2026-01-15T01:41:58: ──────── RESULT ────────
+2026-01-15T01:41:58: scraper > Total lines: 32
+2026-01-15T02:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T02:31:49: 
+2026-01-15T02:31:49: ──────── REQUEST ────────
+2026-01-15T02:31:49: scraper > songName: arthur gun save me now
+2026-01-15T02:31:49: scraper > linkIndex (raw): 0
+2026-01-15T02:31:49: 
+2026-01-15T02:31:49: ──────── GOOGLE SEARCH ────────
+2026-01-15T02:31:49: scraper > Searching Google for: arthur gun save me now
+2026-01-15T02:31:49: scraper > Final query sent: "arthur gun save me now lyrics and chords"
+2026-01-15T02:31:50: scraper > Google returned 8 results
+2026-01-15T02:31:50: scraper > Chosen URL: https://www.thelyricsblog.com/2021/05/save-me-now-lyrics-chords-by-arthur-gun.html
+2026-01-15T02:31:50: 
+2026-01-15T02:31:50: ──────── NAVIGATE ────────
+2026-01-15T02:31:51: scraper > page.goto done. Final URL: https://www.thelyricsblog.com/2021/05/save-me-now-lyrics-chords-by-arthur-gun.html
+2026-01-15T02:31:56: 
+2026-01-15T02:31:56: ──────── READABILITY ────────
+2026-01-15T02:31:56: scraper > isProbablyReaderable: false
+2026-01-15T02:31:57: 
+2026-01-15T02:31:57: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-15T02:31:57: 
+2026-01-15T02:31:57: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-15T02:31:57: 
+2026-01-15T02:31:57: ──────── RESULT ────────
+2026-01-15T02:31:57: scraper > Total lines: 83
+2026-01-15T02:32:03: 
+2026-01-15T02:32:03: ──────── REQUEST ────────
+2026-01-15T02:32:03: scraper > songName: arthur gun save me now
+2026-01-15T02:32:03: scraper > linkIndex (raw): 1
+2026-01-15T02:32:03: 
+2026-01-15T02:32:03: ──────── GOOGLE SEARCH ────────
+2026-01-15T02:32:03: scraper > Searching Google for: arthur gun save me now
+2026-01-15T02:32:03: scraper > Final query sent: "arthur gun save me now lyrics and chords"
+2026-01-15T02:32:04: scraper > Google returned 8 results
+2026-01-15T02:32:04: scraper > Chosen URL: https://www.shazam.com/song/1676680315/winter-snow
+2026-01-15T02:32:04: 
+2026-01-15T02:32:04: ──────── NAVIGATE ────────
+2026-01-15T02:32:04: scraper > page.goto done. Final URL: https://www.shazam.com/song/1676680315/winter-snow
+2026-01-15T02:32:07: 
+2026-01-15T02:32:07: ──────── READABILITY ────────
+2026-01-15T02:32:07: scraper > isProbablyReaderable: false
+2026-01-15T02:32:08: 
+2026-01-15T02:32:08: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-15T02:32:08: 
+2026-01-15T02:32:08: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-15T02:32:08: 
+2026-01-15T02:32:08: ──────── RESULT ────────
+2026-01-15T02:32:08: scraper > Total lines: 76
+2026-01-15T02:32:11: 
+2026-01-15T02:32:11: ──────── REQUEST ────────
+2026-01-15T02:32:11: scraper > songName: arthur gun save me now
+2026-01-15T02:32:11: scraper > linkIndex (raw): 2
+2026-01-15T02:32:11: 
+2026-01-15T02:32:11: ──────── GOOGLE SEARCH ────────
+2026-01-15T02:32:11: scraper > Searching Google for: arthur gun save me now
+2026-01-15T02:32:11: scraper > Final query sent: "arthur gun save me now lyrics and chords"
+2026-01-15T02:32:11: scraper > Google returned 8 results
+2026-01-15T02:32:11: scraper > Chosen URL: https://tabs.ultimate-guitar.com/tab/arthur-gunn/save-me-now-chords-3709568
+2026-01-15T02:32:11: 
+2026-01-15T02:32:11: ──────── NAVIGATE ────────
+2026-01-15T02:32:12: scraper > page.goto done. Final URL: https://tabs.ultimate-guitar.com/tab/arthur-gunn/save-me-now-chords-3709568
+2026-01-15T02:32:24: scraper > networkidle wait skipped/timeout
+2026-01-15T02:32:24: 
+2026-01-15T02:32:24: ──────── READABILITY ────────
+2026-01-15T02:32:25: scraper > isProbablyReaderable: true
+2026-01-15T02:32:25: 
+2026-01-15T02:32:25: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-15T02:32:25: 
+2026-01-15T02:32:25: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-15T02:32:25: 
+2026-01-15T02:32:25: ──────── RESULT ────────
+2026-01-15T02:32:25: scraper > Total lines: 35
+2026-01-15T03:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T04:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T05:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T06:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T07:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T08:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T09:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T10:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T11:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T12:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T13:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T14:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T15:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T16:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T17:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T18:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T18:16:36: [youtube] Suggestions request: cihan ki pari
+2026-01-15T18:16:36: [youtube] Creating fresh Innertube client...
+2026-01-15T18:16:37: [youtube] Innertube client initialized
+2026-01-15T18:16:37: [youtube] Search request: cihan ki pari
+2026-01-15T18:16:38: [youtube] Suggestions request: cihan ki pari
+2026-01-15T18:16:39: [youtube] Search returned 19 results
+2026-01-15T18:16:40: [youtube] Search request: cihan ki pari
+2026-01-15T18:16:41: [youtube] Search returned 19 results
+2026-01-15T18:16:45: [youtube] Stream request for: -PWJflcm2fw
+2026-01-15T18:16:45: [youtube] Using yt-dlp for stream...
+2026-01-15T18:16:45: [youtube] yt-dlp fallback: Getting iOS-compatible stream URL for -PWJflcm2fw
+2026-01-15T18:16:49: [youtube] yt-dlp got stream URL: https://rr4---sn-jp3uxa-tt1l.googlevideo.com/videoplayback?expire=1768522608&ei=...
+2026-01-15T18:16:53: [youtube] yt-dlp succeeded
+2026-01-15T18:16:53: [youtube] Stream ready: "Chihanki Pari - Shirish Khadka ( Official Music Video ) चिहानकी परी - शिरिष खड्का #chihankipari" by Shirish Khadka Official (4:03)
+2026-01-15T18:16:53: [youtube] Format used: yt-dlp
+2026-01-15T18:17:37: [youtube] Stream request for: BZTueYP5Pro
+2026-01-15T18:17:38: [youtube] Using yt-dlp for stream...
+2026-01-15T18:17:38: [youtube] yt-dlp fallback: Getting iOS-compatible stream URL for BZTueYP5Pro
+2026-01-15T18:17:41: [youtube] yt-dlp got stream URL: https://rr2---sn-jp3uxa-tt1l.googlevideo.com/videoplayback?expire=1768522661&ei=...
+2026-01-15T18:17:45: [youtube] yt-dlp succeeded
+2026-01-15T18:17:45: [youtube] Stream ready: "Chihanki Pari by Shirish Khadka" by Reeyaz Music (4:15)
+2026-01-15T18:17:45: [youtube] Format used: yt-dlp
+2026-01-15T18:18:10: [youtube] Suggestions request: albat
+2026-01-15T18:18:11: [youtube] Suggestions request: albatross
+2026-01-15T18:18:13: [youtube] Search request: albatross edison
+2026-01-15T18:18:14: [youtube] Search returned 15 results
+2026-01-15T18:18:18: [youtube] Stream request for: KT1JvgyLFJ8
+2026-01-15T18:18:19: [youtube] Using yt-dlp for stream...
+2026-01-15T18:18:19: [youtube] yt-dlp fallback: Getting iOS-compatible stream URL for KT1JvgyLFJ8
+2026-01-15T18:18:23: [youtube] yt-dlp got stream URL: https://rr2---sn-jp3uxa-tt1l.googlevideo.com/videoplayback?expire=1768522702&ei=...
+2026-01-15T18:18:27: [youtube] yt-dlp succeeded
+2026-01-15T18:18:27: [youtube] Stream ready: "WDHA's Mike Anthony Visited Albatross in Edison" by WDHAFM (1:30)
+2026-01-15T18:18:27: [youtube] Format used: yt-dlp
+2026-01-15T18:31:48: [youtube] Search request: save me now
+2026-01-15T18:31:48: [youtube] Suggestions request: save me now
+2026-01-15T18:31:49: [youtube] Creating fresh Innertube client...
+2026-01-15T18:31:49: [youtube] Innertube client initialized
+2026-01-15T18:31:50: [youtube] Search returned 19 results
+2026-01-15T18:31:52: [youtube] Stream request for: b0fgETOm2UQ
+2026-01-15T18:31:53: [youtube] Using yt-dlp for stream...
+2026-01-15T18:31:53: [youtube] yt-dlp fallback: Getting iOS-compatible stream URL for b0fgETOm2UQ
+2026-01-15T18:31:57: [youtube] yt-dlp got stream URL: https://rr1---sn-jp3uxa-tt1l.googlevideo.com/videoplayback?expire=1768523516&ei=...
+2026-01-15T18:32:01: [youtube] yt-dlp succeeded
+2026-01-15T18:32:01: [youtube] Stream ready: "Arthur Gunn - Save Me Now (Official Music Video)" by Arthur Gunn [OFFICIAL] (4:19)
+2026-01-15T18:32:01: [youtube] Format used: yt-dlp
+2026-01-15T18:33:40: [youtube] Suggestions request: albatross
+2026-01-15T18:33:40: [youtube] Search request: albatross
+2026-01-15T18:33:42: [YOUTUBEJS][Parser]: InnertubeError: VideoSummaryContentView not found!
+2026-01-15T18:33:42: This is a bug, want to help us fix it? Follow the instructions at https://github.com/LuanRT/YouTube.js/blob/main/docs/updating-the-parser.md or report it at https://github.com/LuanRT/YouTube.js/issues!
+2026-01-15T18:33:42: Introspected and JIT generated this class in the meantime:
+2026-01-15T18:33:42: class VideoSummaryContentView extends YTNode {
+2026-01-15T18:33:42:   static type = 'VideoSummaryContentView';
+2026-01-15T18:33:42: 
+2026-01-15T18:33:42:   paragraphs: ObservedArray<YTNodes.VideoSummaryParagraphView> | null;
+2026-01-15T18:33:42:   like_button_view_model: YTNodes.LikeButtonView | null;
+2026-01-15T18:33:42:   dislike_button_view_model: YTNodes.DislikeButtonView | null;
+2026-01-15T18:33:42: 
+2026-01-15T18:33:42:   constructor(data: RawNode) {
+2026-01-15T18:33:42:     super();
+2026-01-15T18:33:42:     this.paragraphs = Parser.parse(data.paragraphs, true, YTNodes.VideoSummaryParagraphView);
+2026-01-15T18:33:42:     this.like_button_view_model = Parser.parseItem(data.likeButtonViewModel, YTNodes.LikeButtonView);
+2026-01-15T18:33:42:     this.dislike_button_view_model = Parser.parseItem(data.dislikeButtonViewModel, YTNodes.DislikeButtonView);
+2026-01-15T18:33:42:   }
+2026-01-15T18:33:42: }
+2026-01-15T18:33:42: 
+2026-01-15T18:33:42:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:70:27)
+2026-01-15T18:33:42:     at createRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:320:5)
+2026-01-15T18:33:42:     at generateRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:371:21)
+2026-01-15T18:33:42:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:400:17)
+2026-01-15T18:33:42:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-15T18:33:42:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T18:33:42:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-15T18:33:42:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T18:33:42:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-15T18:33:42:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32) {
+2026-01-15T18:33:42:   date: 2026-01-15T18:33:42.136Z,
+2026-01-15T18:33:42:   version: '16.0.1',
+2026-01-15T18:33:42:   info: undefined
+2026-01-15T18:33:42: }
+2026-01-15T18:33:42: [YOUTUBEJS][Parser]: InnertubeError: VideoSummaryParagraphView not found!
+2026-01-15T18:33:42: This is a bug, want to help us fix it? Follow the instructions at https://github.com/LuanRT/YouTube.js/blob/main/docs/updating-the-parser.md or report it at https://github.com/LuanRT/YouTube.js/issues!
+2026-01-15T18:33:42: Introspected and JIT generated this class in the meantime:
+2026-01-15T18:33:42: class VideoSummaryParagraphView extends YTNode {
+2026-01-15T18:33:42:   static type = 'VideoSummaryParagraphView';
+2026-01-15T18:33:42: 
+2026-01-15T18:33:42:   text: {
+2026-01-15T18:33:42:     content: string
+2026-01-15T18:33:42:   };
+2026-01-15T18:33:42: 
+2026-01-15T18:33:42:   constructor(data: RawNode) {
+2026-01-15T18:33:42:     super();
+2026-01-15T18:33:42:     this.text = {
+2026-01-15T18:33:42:       content: data.text.content
+2026-01-15T18:33:42:     };
+2026-01-15T18:33:42:   }
+2026-01-15T18:33:42: }
+2026-01-15T18:33:42: 
+2026-01-15T18:33:42:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:70:27)
+2026-01-15T18:33:42:     at createRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:320:5)
+2026-01-15T18:33:42:     at generateRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:371:21)
+2026-01-15T18:33:42:     at generateRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:374:9)
+2026-01-15T18:33:42:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:400:17)
+2026-01-15T18:33:42:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-15T18:33:42:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T18:33:42:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-15T18:33:42:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T18:33:42:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-15T18:33:42:   date: 2026-01-15T18:33:42.139Z,
+2026-01-15T18:33:42:   version: '16.0.1',
+2026-01-15T18:33:42:   info: undefined
+2026-01-15T18:33:42: }
+2026-01-15T18:33:42: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+2026-01-15T18:33:42:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+2026-01-15T18:33:42:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+2026-01-15T18:33:42:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-15T18:33:42:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T18:33:42:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-15T18:33:42:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T18:33:42:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-15T18:33:42:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32)
+2026-01-15T18:33:42:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T18:33:42:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-15T18:33:42:   date: 2026-01-15T18:33:42.140Z,
+2026-01-15T18:33:42:   version: '16.0.1',
+2026-01-15T18:33:42:   info: {
+2026-01-15T18:33:42:     paragraphs: [ [Object] ],
+2026-01-15T18:33:42:     likeButtonViewModel: { likeButtonViewModel: [Object] },
+2026-01-15T18:33:42:     dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+2026-01-15T18:33:42:   }
+2026-01-15T18:33:42: }
+2026-01-15T18:33:42: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+2026-01-15T18:33:42:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+2026-01-15T18:33:42:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+2026-01-15T18:33:42:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-15T18:33:42:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T18:33:42:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-15T18:33:42:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T18:33:42:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-15T18:33:42:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32)
+2026-01-15T18:33:42:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T18:33:42:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-15T18:33:42:   date: 2026-01-15T18:33:42.141Z,
+2026-01-15T18:33:42:   version: '16.0.1',
+2026-01-15T18:33:42:   info: {
+2026-01-15T18:33:42:     paragraphs: [ [Object] ],
+2026-01-15T18:33:42:     likeButtonViewModel: { likeButtonViewModel: [Object] },
+2026-01-15T18:33:42:     dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+2026-01-15T18:33:42:   }
+2026-01-15T18:33:42: }
+2026-01-15T18:33:42: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+2026-01-15T18:33:42:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+2026-01-15T18:33:42:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+2026-01-15T18:33:42:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-15T18:33:42:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T18:33:42:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-15T18:33:42:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T18:33:42:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-15T18:33:42:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32)
+2026-01-15T18:33:42:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T18:33:42:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-15T18:33:42:   date: 2026-01-15T18:33:42.143Z,
+2026-01-15T18:33:42:   version: '16.0.1',
+2026-01-15T18:33:42:   info: {
+2026-01-15T18:33:42:     paragraphs: [ [Object] ],
+2026-01-15T18:33:42:     likeButtonViewModel: { likeButtonViewModel: [Object] },
+2026-01-15T18:33:42:     dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+2026-01-15T18:33:42:   }
+2026-01-15T18:33:42: }
+2026-01-15T18:33:42: [youtube] Search returned 19 results
+2026-01-15T18:33:43: [youtube] Stream request for: Bznxx12Ptl0
+2026-01-15T18:33:44: [youtube] Using yt-dlp for stream...
+2026-01-15T18:33:44: [youtube] yt-dlp fallback: Getting iOS-compatible stream URL for Bznxx12Ptl0
+2026-01-15T18:33:47: [youtube] yt-dlp got stream URL: https://rr1---sn-jp3uxa-tt1s.googlevideo.com/videoplayback?expire=1768523627&ei=...
+2026-01-15T18:33:51: [youtube] yt-dlp succeeded
+2026-01-15T18:33:51: [youtube] Stream ready: "AronChupa, Little Sis Nora - I'm an Albatraoz | OFFICIAL VIDEO" by AronChupa & Little Sis Nora (2:29)
+2026-01-15T18:33:51: [youtube] Format used: yt-dlp
+2026-01-15T18:34:13: [youtube] Suggestions request: 30
+2026-01-15T18:34:15: [youtube] Search request: 30 second stimer
+2026-01-15T18:34:15: [youtube] Suggestions request: 30 second stimer
+2026-01-15T18:34:16: [youtube] Search returned 20 results
+2026-01-15T18:34:18: [youtube] Stream request for: tWoo8i_VkvI
+2026-01-15T18:34:18: [youtube] Using yt-dlp for stream...
+2026-01-15T18:34:18: [youtube] yt-dlp fallback: Getting iOS-compatible stream URL for tWoo8i_VkvI
+2026-01-15T18:34:22: [youtube] yt-dlp got stream URL: https://rr2---sn-jp3uxa-tt1l.googlevideo.com/videoplayback?expire=1768523661&ei=...
+2026-01-15T18:34:26: [youtube] yt-dlp succeeded
+2026-01-15T18:34:26: [youtube] Stream ready: "30 SECOND TIMER" by Countdown Timer (0:30)
+2026-01-15T18:34:26: [youtube] Format used: yt-dlp
+2026-01-15T19:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T20:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T21:05:21: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T21:06:46: [youtube] Search request: save me now
+2026-01-15T21:06:46: [youtube] Suggestions request: save me now
+2026-01-15T21:06:46: [youtube] Creating fresh Innertube client...
+2026-01-15T21:06:46: [youtube] Innertube client initialized
+2026-01-15T21:06:47: [youtube] Search returned 19 results
+2026-01-15T21:06:52: [youtube] Stream request for: b0fgETOm2UQ
+2026-01-15T21:06:53: [youtube] Using yt-dlp for stream...
+2026-01-15T21:06:53: [youtube] yt-dlp fallback: Getting iOS-compatible stream URL for b0fgETOm2UQ
+2026-01-15T21:06:57: [youtube] yt-dlp got stream URL: https://rr1---sn-jp3uxa-tt1l.googlevideo.com/videoplayback?expire=1768532816&ei=...
+2026-01-15T21:07:00: [youtube] yt-dlp succeeded
+2026-01-15T21:07:00: [youtube] Stream ready: "Arthur Gunn - Save Me Now (Official Music Video)" by Arthur Gunn [OFFICIAL] (4:19)
+2026-01-15T21:07:00: [youtube] Format used: yt-dlp
+2026-01-15T21:08:28: OPTIONS  /.*/
+2026-01-15T21:08:28: [33mPOST[39m     /~/upload
+2026-01-15T21:08:28: [32mGET[39m      /~/stems/:id/state
+2026-01-15T21:08:28: [32mGET[39m      /~/stems/:id/result
+2026-01-15T21:08:28: [33mPOST[39m     /~/stems/:id/cleanup
+2026-01-15T21:08:28: [32mGET[39m      /~/progress/:id
+2026-01-15T21:08:28: [32mGET[39m      /~/download-mp3
+2026-01-15T21:08:28: [32mGET[39m      /~/scrape-lyrics
+2026-01-15T21:08:28: [32mGET[39m      /~/scrape-news
+2026-01-15T21:08:28: [32mGET[39m      /~/search
+2026-01-15T21:08:28: [32mGET[39m      /~/suggestions
+2026-01-15T21:08:28: [32mGET[39m      /~/stream
+2026-01-15T21:08:28: [32mGET[39m      /~/info
+2026-01-15T21:08:28: [32mGET[39m      /restart/Mohan9869868880
+2026-01-15T21:08:28: Music API listening on port 3000
+2026-01-15T21:09:01: [youtube] Suggestions request: sa
+2026-01-15T21:09:01: [youtube] Creating fresh Innertube client...
+2026-01-15T21:09:01: [youtube] Innertube client initialized
+2026-01-15T21:09:02: [youtube] Suggestions request: save
+2026-01-15T21:09:04: [youtube] Search request: save your tears
+2026-01-15T21:09:05: [youtube] Search returned 19 results
+2026-01-15T21:09:07: [youtube] Stream request for: XXYlFuWEuKI
+2026-01-15T21:09:08: [youtube] Using yt-dlp for stream...
+2026-01-15T21:09:08: [youtube] yt-dlp fallback: Getting iOS-compatible stream URL for XXYlFuWEuKI
+2026-01-15T21:09:11: [youtube] yt-dlp got stream URL: https://rr3---sn-jp3uxa-tt1l.googlevideo.com/videoplayback?expire=1768532950&ei=...
+2026-01-15T21:09:16: [youtube] yt-dlp succeeded
+2026-01-15T21:09:16: [youtube] Stream ready: "The Weeknd - Save Your Tears (Official Music Video)" by The Weeknd (4:09)
+2026-01-15T21:09:16: [youtube] Format used: yt-dlp
+2026-01-15T21:09:29: [youtube] Search request: save me now
+2026-01-15T21:09:29: [youtube] Suggestions request: save me now
+2026-01-15T21:09:30: [youtube] Search returned 19 results
+2026-01-15T21:09:32: [youtube] Stream request for: b0fgETOm2UQ
+2026-01-15T21:09:32: [youtube] Using yt-dlp for stream...
+2026-01-15T21:09:32: [youtube] yt-dlp fallback: Getting iOS-compatible stream URL for b0fgETOm2UQ
+2026-01-15T21:09:36: [youtube] yt-dlp got stream URL: https://rr1---sn-jp3uxa-tt1l.googlevideo.com/videoplayback?expire=1768532975&ei=...
+2026-01-15T21:09:40: [youtube] yt-dlp succeeded
+2026-01-15T21:09:40: [youtube] Stream ready: "Arthur Gunn - Save Me Now (Official Music Video)" by Arthur Gunn [OFFICIAL] (4:19)
+2026-01-15T21:09:40: [youtube] Format used: yt-dlp
+2026-01-15T22:02:48: [youtube] Suggestions request: al
+2026-01-15T22:02:48: [youtube] Suggestions request: alb
+2026-01-15T22:02:48: [youtube] Creating fresh Innertube client...
+2026-01-15T22:02:48: [youtube] Innertube client initialized
+2026-01-15T22:02:48: [youtube] Suggestions request: alba
+2026-01-15T22:02:49: [youtube] Suggestions request: albatr
+2026-01-15T22:02:49: [youtube] Suggestions request: albatro
+2026-01-15T22:02:50: [youtube] Suggestions request: albatross
+2026-01-15T22:02:51: [youtube] Search request: albatross
+2026-01-15T22:02:52: [YOUTUBEJS][Parser]: InnertubeError: VideoSummaryContentView not found!
+2026-01-15T22:02:52: This is a bug, want to help us fix it? Follow the instructions at https://github.com/LuanRT/YouTube.js/blob/main/docs/updating-the-parser.md or report it at https://github.com/LuanRT/YouTube.js/issues!
+2026-01-15T22:02:52: Introspected and JIT generated this class in the meantime:
+2026-01-15T22:02:52: class VideoSummaryContentView extends YTNode {
+2026-01-15T22:02:52:   static type = 'VideoSummaryContentView';
+2026-01-15T22:02:52: 
+2026-01-15T22:02:52:   paragraphs: ObservedArray<YTNodes.VideoSummaryParagraphView> | null;
+2026-01-15T22:02:52:   like_button_view_model: YTNodes.LikeButtonView | null;
+2026-01-15T22:02:52:   dislike_button_view_model: YTNodes.DislikeButtonView | null;
+2026-01-15T22:02:52: 
+2026-01-15T22:02:52:   constructor(data: RawNode) {
+2026-01-15T22:02:52:     super();
+2026-01-15T22:02:52:     this.paragraphs = Parser.parse(data.paragraphs, true, YTNodes.VideoSummaryParagraphView);
+2026-01-15T22:02:52:     this.like_button_view_model = Parser.parseItem(data.likeButtonViewModel, YTNodes.LikeButtonView);
+2026-01-15T22:02:52:     this.dislike_button_view_model = Parser.parseItem(data.dislikeButtonViewModel, YTNodes.DislikeButtonView);
+2026-01-15T22:02:52:   }
+2026-01-15T22:02:52: }
+2026-01-15T22:02:52: 
+2026-01-15T22:02:52:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:70:27)
+2026-01-15T22:02:52:     at createRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:320:5)
+2026-01-15T22:02:52:     at generateRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:371:21)
+2026-01-15T22:02:52:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:400:17)
+2026-01-15T22:02:52:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-15T22:02:52:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:02:52:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-15T22:02:52:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:02:52:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-15T22:02:52:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32) {
+2026-01-15T22:02:52:   date: 2026-01-15T22:02:52.088Z,
+2026-01-15T22:02:52:   version: '16.0.1',
+2026-01-15T22:02:52:   info: undefined
+2026-01-15T22:02:52: }
+2026-01-15T22:02:52: [YOUTUBEJS][Parser]: InnertubeError: VideoSummaryParagraphView not found!
+2026-01-15T22:02:52: This is a bug, want to help us fix it? Follow the instructions at https://github.com/LuanRT/YouTube.js/blob/main/docs/updating-the-parser.md or report it at https://github.com/LuanRT/YouTube.js/issues!
+2026-01-15T22:02:52: Introspected and JIT generated this class in the meantime:
+2026-01-15T22:02:52: class VideoSummaryParagraphView extends YTNode {
+2026-01-15T22:02:52:   static type = 'VideoSummaryParagraphView';
+2026-01-15T22:02:52: 
+2026-01-15T22:02:52:   text: {
+2026-01-15T22:02:52:     content: string
+2026-01-15T22:02:52:   };
+2026-01-15T22:02:52: 
+2026-01-15T22:02:52:   constructor(data: RawNode) {
+2026-01-15T22:02:52:     super();
+2026-01-15T22:02:52:     this.text = {
+2026-01-15T22:02:52:       content: data.text.content
+2026-01-15T22:02:52:     };
+2026-01-15T22:02:52:   }
+2026-01-15T22:02:52: }
+2026-01-15T22:02:52: 
+2026-01-15T22:02:52:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:70:27)
+2026-01-15T22:02:52:     at createRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:320:5)
+2026-01-15T22:02:52:     at generateRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:371:21)
+2026-01-15T22:02:52:     at generateRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:374:9)
+2026-01-15T22:02:52:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:400:17)
+2026-01-15T22:02:52:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-15T22:02:52:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:02:52:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-15T22:02:52:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:02:52:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-15T22:02:52:   date: 2026-01-15T22:02:52.091Z,
+2026-01-15T22:02:52:   version: '16.0.1',
+2026-01-15T22:02:52:   info: undefined
+2026-01-15T22:02:52: }
+2026-01-15T22:02:52: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+2026-01-15T22:02:52:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+2026-01-15T22:02:52:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+2026-01-15T22:02:52:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-15T22:02:52:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:02:52:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-15T22:02:52:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:02:52:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-15T22:02:52:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32)
+2026-01-15T22:02:52:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:02:52:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-15T22:02:52:   date: 2026-01-15T22:02:52.091Z,
+2026-01-15T22:02:52:   version: '16.0.1',
+2026-01-15T22:02:52:   info: {
+2026-01-15T22:02:52:     paragraphs: [ [Object] ],
+2026-01-15T22:02:52:     likeButtonViewModel: { likeButtonViewModel: [Object] },
+2026-01-15T22:02:52:     dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+2026-01-15T22:02:52:   }
+2026-01-15T22:02:52: }
+2026-01-15T22:02:52: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+2026-01-15T22:02:52:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+2026-01-15T22:02:52:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+2026-01-15T22:02:52:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-15T22:02:52:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:02:52:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-15T22:02:52:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:02:52:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-15T22:02:52:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32)
+2026-01-15T22:02:52:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:02:52:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-15T22:02:52:   date: 2026-01-15T22:02:52.092Z,
+2026-01-15T22:02:52:   version: '16.0.1',
+2026-01-15T22:02:52:   info: {
+2026-01-15T22:02:52:     paragraphs: [ [Object] ],
+2026-01-15T22:02:52:     likeButtonViewModel: { likeButtonViewModel: [Object] },
+2026-01-15T22:02:52:     dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+2026-01-15T22:02:52:   }
+2026-01-15T22:02:52: }
+2026-01-15T22:02:52: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+2026-01-15T22:02:52:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+2026-01-15T22:02:52:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+2026-01-15T22:02:52:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-15T22:02:52:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:02:52:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-15T22:02:52:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:02:52:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-15T22:02:52:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32)
+2026-01-15T22:02:52:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:02:52:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-15T22:02:52:   date: 2026-01-15T22:02:52.095Z,
+2026-01-15T22:02:52:   version: '16.0.1',
+2026-01-15T22:02:52:   info: {
+2026-01-15T22:02:52:     paragraphs: [ [Object] ],
+2026-01-15T22:02:52:     likeButtonViewModel: { likeButtonViewModel: [Object] },
+2026-01-15T22:02:52:     dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+2026-01-15T22:02:52:   }
+2026-01-15T22:02:52: }
+2026-01-15T22:02:52: [youtube] Search returned 19 results
+2026-01-15T22:02:53: [youtube] Stream request for: Bznxx12Ptl0
+2026-01-15T22:02:53: [youtube] Using yt-dlp for stream...
+2026-01-15T22:02:53: [youtube] yt-dlp fallback: Getting iOS-compatible stream URL for Bznxx12Ptl0
+2026-01-15T22:02:57: [youtube] yt-dlp got stream URL: https://rr1---sn-jp3uxa-tt1s.googlevideo.com/videoplayback?expire=1768536176&ei=...
+2026-01-15T22:03:01: [youtube] yt-dlp succeeded
+2026-01-15T22:03:01: [youtube] Stream ready: "AronChupa, Little Sis Nora - I'm an Albatraoz | OFFICIAL VIDEO" by AronChupa & Little Sis Nora (2:29)
+2026-01-15T22:03:01: [youtube] Format used: yt-dlp
+2026-01-15T22:03:36: [youtube] Suggestions request: 30
+2026-01-15T22:03:37: [youtube] Suggestions request: 30 sec
+2026-01-15T22:03:38: [youtube] Search request: 30 secnd music
+2026-01-15T22:03:39: [youtube] Suggestions request: 30 secnd music
+2026-01-15T22:03:40: [youtube] Search returned 20 results
+2026-01-15T22:03:42: [dl] new request id mkfzy017-nutkaeea url https://www.youtube.com/watch?v=2aogxVYGX_I
+2026-01-15T22:03:42: [setP] mkfzy017-nutkaeea 0.05
+2026-01-15T22:03:44: [progress] id mkfzy017-nutkaeea -> 0.05
+2026-01-15T22:03:46: [setP] mkfzy017-nutkaeea 0.15
+2026-01-15T22:03:46: [dl] Starting yt-dlp audio download...
+2026-01-15T22:03:46: [yt-dlp] Running command: yt-dlp --proxy http://10.8.0.2:3128 --user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 -f bestaudio/best -x --audio-format mp3 --audio-quality 0 --no-playlist --no-warnings --no-progress -o /tmp/audio_1768514626280_q0qfuq.mp3 https://www.youtube.com/watch?v=2aogxVYGX_I
+2026-01-15T22:03:46: [progress] id mkfzy017-nutkaeea -> 0.15
+2026-01-15T22:03:48: [progress] id mkfzy017-nutkaeea -> 0.15
+2026-01-15T22:03:50: [progress] id mkfzy017-nutkaeea -> 0.15
+2026-01-15T22:03:52: [progress] id mkfzy017-nutkaeea -> 0.15
+2026-01-15T22:03:54: [progress] id mkfzy017-nutkaeea -> 0.15
+2026-01-15T22:03:56: [progress] id mkfzy017-nutkaeea -> 0.15
+2026-01-15T22:03:56: [yt-dlp] Successfully downloaded audio file, size: 925581 bytes
+2026-01-15T22:03:56: [yt-dlp] Valid ID3 header detected
+2026-01-15T22:03:56: [setP] mkfzy017-nutkaeea 1
+2026-01-15T22:04:03: 
+2026-01-15T22:04:03: ──────── REQUEST ────────
+2026-01-15T22:04:03: scraper > songName: ⚡🎵 Epic Electric Timer - 30 Seconds Countdown 🎵⚡
+2026-01-15T22:04:03: scraper > linkIndex (raw): 0
+2026-01-15T22:04:03: 
+2026-01-15T22:04:03: ──────── GOOGLE SEARCH ────────
+2026-01-15T22:04:03: scraper > Searching Google for: ⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡
+2026-01-15T22:04:03: scraper > Final query sent: "⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡ lyrics and chords"
+2026-01-15T22:04:04: scraper > Google returned 8 results
+2026-01-15T22:04:04: scraper > Chosen URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-15T22:04:04: 
+2026-01-15T22:04:04: ──────── NAVIGATE ────────
+2026-01-15T22:04:06: scraper > page.goto done. Final URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-15T22:04:18: scraper > Timeout hit. Closing context and returning fallback.
+2026-01-15T22:04:18: scraper > networkidle wait skipped/timeout
+2026-01-15T22:04:18: scraper > Error in scrapeLyrisc: page.title: Target page, context or browser has been closed
+2026-01-15T22:08:27: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T22:11:05: [youtube] Suggestions request: test
+2026-01-15T22:11:05: [youtube] Search request: test
+2026-01-15T22:11:06: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+2026-01-15T22:11:06:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+2026-01-15T22:11:06:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+2026-01-15T22:11:06:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-15T22:11:06:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:11:06:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-15T22:11:06:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:11:06:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-15T22:11:06:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32)
+2026-01-15T22:11:06:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:11:06:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-15T22:11:06:   date: 2026-01-15T22:11:06.902Z,
+2026-01-15T22:11:06:   version: '16.0.1',
+2026-01-15T22:11:06:   info: {
+2026-01-15T22:11:06:     paragraphs: [ [Object] ],
+2026-01-15T22:11:06:     likeButtonViewModel: { likeButtonViewModel: [Object] },
+2026-01-15T22:11:06:     dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+2026-01-15T22:11:06:   }
+2026-01-15T22:11:06: }
+2026-01-15T22:11:06: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+2026-01-15T22:11:06:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+2026-01-15T22:11:06:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+2026-01-15T22:11:06:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-15T22:11:06:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:11:06:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-15T22:11:06:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:11:06:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-15T22:11:06:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32)
+2026-01-15T22:11:06:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:11:06:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-15T22:11:06:   date: 2026-01-15T22:11:06.904Z,
+2026-01-15T22:11:06:   version: '16.0.1',
+2026-01-15T22:11:06:   info: {
+2026-01-15T22:11:06:     paragraphs: [ [Object] ],
+2026-01-15T22:11:06:     likeButtonViewModel: { likeButtonViewModel: [Object] },
+2026-01-15T22:11:06:     dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+2026-01-15T22:11:06:   }
+2026-01-15T22:11:06: }
+2026-01-15T22:11:06: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+2026-01-15T22:11:06:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+2026-01-15T22:11:06:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+2026-01-15T22:11:06:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-15T22:11:06:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:11:06:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-15T22:11:06:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:11:06:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-15T22:11:06:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32)
+2026-01-15T22:11:06:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:11:06:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-15T22:11:06:   date: 2026-01-15T22:11:06.910Z,
+2026-01-15T22:11:06:   version: '16.0.1',
+2026-01-15T22:11:06:   info: {
+2026-01-15T22:11:06:     paragraphs: [ [Object] ],
+2026-01-15T22:11:06:     likeButtonViewModel: { likeButtonViewModel: [Object] },
+2026-01-15T22:11:06:     dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+2026-01-15T22:11:06:   }
+2026-01-15T22:11:06: }
+2026-01-15T22:11:06: [youtube] Search returned 20 results
+2026-01-15T22:11:08: [youtube] Stream request for: UEQSkaqrMZA
+2026-01-15T22:11:09: [youtube] Using yt-dlp for stream...
+2026-01-15T22:11:09: [youtube] yt-dlp fallback: Getting iOS-compatible stream URL for UEQSkaqrMZA
+2026-01-15T22:11:12: [youtube] yt-dlp got stream URL: https://rr2---sn-jp3uxa-tt1s.googlevideo.com/videoplayback?expire=1768536671&ei=...
+2026-01-15T22:11:16: [youtube] yt-dlp succeeded
+2026-01-15T22:11:16: [youtube] Stream ready: "OLED TEST HDR 4K 120FPS DOLBY VISION 🏞 4K / 8K Monitor Test Video #BGM" by 8K Earth (1:17:43)
+2026-01-15T22:11:16: [youtube] Format used: yt-dlp
+2026-01-15T22:11:27: [youtube] Search request: 30 secodn timer
+2026-01-15T22:11:27: [youtube] Suggestions request: 30 secodn timer
+2026-01-15T22:11:28: [youtube] Search returned 20 results
+2026-01-15T22:11:32: [youtube] Suggestions request: 30 secodn
+2026-01-15T22:11:33: [youtube] Search request: 30 secodn music
+2026-01-15T22:11:34: [youtube] Suggestions request: 30 secodn music
+2026-01-15T22:11:35: [youtube] Search returned 20 results
+2026-01-15T22:11:37: [youtube] Stream request for: 2aogxVYGX_I
+2026-01-15T22:11:37: [youtube] Using yt-dlp for stream...
+2026-01-15T22:11:37: [youtube] yt-dlp fallback: Getting iOS-compatible stream URL for 2aogxVYGX_I
+2026-01-15T22:11:41: [youtube] yt-dlp got stream URL: https://rr4---sn-jp3uxa-tt1l.googlevideo.com/videoplayback?expire=1768536700&ei=...
+2026-01-15T22:11:45: [youtube] yt-dlp succeeded
+2026-01-15T22:11:45: [youtube] Stream ready: "⚡🎵 Epic Electric Timer - 30 Seconds Countdown 🎵⚡" by Timer (0:30)
+2026-01-15T22:11:45: [youtube] Format used: yt-dlp
+2026-01-15T22:14:14: [youtube] Suggestions request: 30b
+2026-01-15T22:14:14: [youtube] Creating fresh Innertube client...
+2026-01-15T22:14:14: [youtube] Innertube client initialized
+2026-01-15T22:14:15: [youtube] Suggestions request: 30
+2026-01-15T22:14:15: [youtube] Suggestions request: 30
+2026-01-15T22:14:16: [youtube] Suggestions request: 30 se
+2026-01-15T22:14:17: [youtube] Search request: 30 seconds to mars
+2026-01-15T22:14:18: [youtube] Search returned 19 results
+2026-01-15T22:14:20: [youtube] Stream request for: 8yvGCAvOAfM
+2026-01-15T22:14:20: [youtube] Using yt-dlp for stream...
+2026-01-15T22:14:20: [youtube] yt-dlp fallback: Getting iOS-compatible stream URL for 8yvGCAvOAfM
+2026-01-15T22:14:24: [youtube] yt-dlp got stream URL: https://rr2---sn-jp3uxa-tt1l.googlevideo.com/videoplayback?expire=1768536863&ei=...
+2026-01-15T22:14:28: [youtube] yt-dlp succeeded
+2026-01-15T22:14:28: [youtube] Stream ready: "Thirty Seconds To Mars - The Kill (Bury Me)" by THIRTY SECONDS TO MARS (5:30)
+2026-01-15T22:14:28: [youtube] Format used: yt-dlp
+2026-01-15T22:33:08: [youtube] Suggestions request: al
+2026-01-15T22:33:08: [youtube] Creating fresh Innertube client...
+2026-01-15T22:33:08: [youtube] Innertube client initialized
+2026-01-15T22:33:08: [youtube] Suggestions request: alb
+2026-01-15T22:33:08: [youtube] Suggestions request: alba
+2026-01-15T22:33:09: [youtube] Suggestions request: albatr
+2026-01-15T22:33:09: [youtube] Suggestions request: albatro
+2026-01-15T22:33:10: [youtube] Suggestions request: albatross
+2026-01-15T22:33:11: [youtube] Search request: albatross
+2026-01-15T22:33:12: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+2026-01-15T22:33:12:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+2026-01-15T22:33:12:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+2026-01-15T22:33:12:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-15T22:33:12:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:33:12:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-15T22:33:12:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:33:12:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-15T22:33:12:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32)
+2026-01-15T22:33:12:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:33:12:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-15T22:33:12:   date: 2026-01-15T22:33:11.999Z,
+2026-01-15T22:33:12:   version: '16.0.1',
+2026-01-15T22:33:12:   info: {
+2026-01-15T22:33:12:     paragraphs: [ [Object] ],
+2026-01-15T22:33:12:     likeButtonViewModel: { likeButtonViewModel: [Object] },
+2026-01-15T22:33:12:     dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+2026-01-15T22:33:12:   }
+2026-01-15T22:33:12: }
+2026-01-15T22:33:12: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+2026-01-15T22:33:12:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+2026-01-15T22:33:12:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+2026-01-15T22:33:12:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-15T22:33:12:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:33:12:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-15T22:33:12:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:33:12:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-15T22:33:12:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32)
+2026-01-15T22:33:12:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:33:12:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-15T22:33:12:   date: 2026-01-15T22:33:12.001Z,
+2026-01-15T22:33:12:   version: '16.0.1',
+2026-01-15T22:33:12:   info: {
+2026-01-15T22:33:12:     paragraphs: [ [Object] ],
+2026-01-15T22:33:12:     likeButtonViewModel: { likeButtonViewModel: [Object] },
+2026-01-15T22:33:12:     dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+2026-01-15T22:33:12:   }
+2026-01-15T22:33:12: }
+2026-01-15T22:33:12: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+2026-01-15T22:33:12:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+2026-01-15T22:33:12:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+2026-01-15T22:33:12:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-15T22:33:12:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:33:12:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-15T22:33:12:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:33:12:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-15T22:33:12:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32)
+2026-01-15T22:33:12:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-15T22:33:12:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-15T22:33:12:   date: 2026-01-15T22:33:12.002Z,
+2026-01-15T22:33:12:   version: '16.0.1',
+2026-01-15T22:33:12:   info: {
+2026-01-15T22:33:12:     paragraphs: [ [Object] ],
+2026-01-15T22:33:12:     likeButtonViewModel: { likeButtonViewModel: [Object] },
+2026-01-15T22:33:12:     dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+2026-01-15T22:33:12:   }
+2026-01-15T22:33:12: }
+2026-01-15T22:33:12: [youtube] Search returned 19 results
+2026-01-15T22:33:13: [youtube] Stream request for: Bznxx12Ptl0
+2026-01-15T22:33:14: [youtube] Using yt-dlp for stream...
+2026-01-15T22:33:14: [youtube] yt-dlp fallback: Getting iOS-compatible stream URL for Bznxx12Ptl0
+2026-01-15T22:33:18: [youtube] yt-dlp got stream URL: https://rr1---sn-jp3uxa-tt1s.googlevideo.com/videoplayback?expire=1768537997&ei=...
+2026-01-15T22:33:21: [youtube] yt-dlp succeeded
+2026-01-15T22:33:21: [youtube] Stream ready: "AronChupa, Little Sis Nora - I'm an Albatraoz | OFFICIAL VIDEO" by AronChupa & Little Sis Nora (2:29)
+2026-01-15T22:33:21: [youtube] Format used: yt-dlp
+2026-01-15T22:33:40: 
+2026-01-15T22:33:40: ──────── REQUEST ────────
+2026-01-15T22:33:40: scraper > songName: ⚡🎵 Epic Electric Timer - 30 Seconds Countdown 🎵⚡
+2026-01-15T22:33:40: scraper > linkIndex (raw): 0
+2026-01-15T22:33:40: 
+2026-01-15T22:33:40: ──────── GOOGLE SEARCH ────────
+2026-01-15T22:33:40: scraper > Searching Google for: ⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡
+2026-01-15T22:33:40: scraper > Final query sent: "⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡ lyrics and chords"
+2026-01-15T22:33:40: scraper > Google returned 8 results
+2026-01-15T22:33:40: scraper > Chosen URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-15T22:33:40: 
+2026-01-15T22:33:40: ──────── NAVIGATE ────────
+2026-01-15T22:33:43: scraper > page.goto done. Final URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-15T22:33:45: 
+2026-01-15T22:33:45: ──────── REQUEST ────────
+2026-01-15T22:33:45: scraper > songName: ⚡🎵 Epic Electric Timer - 30 Seconds Countdown 🎵⚡
+2026-01-15T22:33:45: scraper > linkIndex (raw): 0
+2026-01-15T22:33:45: 
+2026-01-15T22:33:45: ──────── GOOGLE SEARCH ────────
+2026-01-15T22:33:45: scraper > Searching Google for: ⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡
+2026-01-15T22:33:45: scraper > Final query sent: "⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡ lyrics and chords"
+2026-01-15T22:33:45: scraper > Google returned 8 results
+2026-01-15T22:33:45: scraper > Chosen URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-15T22:33:45: 
+2026-01-15T22:33:45: ──────── NAVIGATE ────────
+2026-01-15T22:33:49: [youtube] Stream request for: SRTRRMwXuEg
+2026-01-15T22:33:49: [youtube] Using yt-dlp for stream...
+2026-01-15T22:33:49: [youtube] yt-dlp fallback: Getting iOS-compatible stream URL for SRTRRMwXuEg
+2026-01-15T22:33:52: scraper > page.goto done. Final URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-15T22:33:55: scraper > Timeout hit. Closing context and returning fallback.
+2026-01-15T22:33:55: scraper > networkidle wait skipped/timeout
+2026-01-15T22:33:55: scraper > Error in scrapeLyrisc: page.title: Target page, context or browser has been closed
+2026-01-15T22:33:56: [youtube] yt-dlp got stream URL: https://rr3---sn-jp3uxa-tt1l.googlevideo.com/videoplayback?expire=1768538034&ei=...
+2026-01-15T22:34:00: scraper > Timeout hit. Closing context and returning fallback.
+2026-01-15T22:34:00: scraper > networkidle wait skipped/timeout
+2026-01-15T22:34:00: scraper > Error in scrapeLyrisc: page.title: Target page, context or browser has been closed
+2026-01-15T22:34:01: [youtube] yt-dlp succeeded
+2026-01-15T22:34:01: [youtube] Stream ready: "Albatrosses Use Their Nostrils To Fly | Nature's Biggest Beasts | BBC Earth" by BBC Earth (4:23)
+2026-01-15T22:34:01: [youtube] Format used: yt-dlp
