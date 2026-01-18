@@ -844,3 +844,488 @@
 2026-01-15T22:34:01: [youtube] yt-dlp succeeded
 2026-01-15T22:34:01: [youtube] Stream ready: "Albatrosses Use Their Nostrils To Fly | Nature's Biggest Beasts | BBC Earth" by BBC Earth (4:23)
 2026-01-15T22:34:01: [youtube] Format used: yt-dlp
+2026-01-15T23:08:27: [sweeper] Running cleanup for files older than 15 days...
+2026-01-15T23:13:10: OPTIONS  /.*/
+2026-01-15T23:13:10: [33mPOST[39m     /~/upload
+2026-01-15T23:13:10: [32mGET[39m      /~/stems/:id/state
+2026-01-15T23:13:10: [32mGET[39m      /~/stems/:id/result
+2026-01-15T23:13:10: [33mPOST[39m     /~/stems/:id/cleanup
+2026-01-15T23:13:10: [32mGET[39m      /~/progress/:id
+2026-01-15T23:13:10: [32mGET[39m      /~/download-mp3
+2026-01-15T23:13:10: [32mGET[39m      /~/scrape-lyrics
+2026-01-15T23:13:10: [32mGET[39m      /~/scrape-news
+2026-01-15T23:13:10: [32mGET[39m      /~/search
+2026-01-15T23:13:10: [32mGET[39m      /~/suggestions
+2026-01-15T23:13:10: [32mGET[39m      /~/stream
+2026-01-15T23:13:10: [32mGET[39m      /~/info
+2026-01-15T23:13:10: [32mGET[39m      /restart/Mohan9869868880
+2026-01-15T23:13:10: Music API listening on port 3000
+2026-01-16T00:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T01:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T01:44:14: [youtube] Suggestions request: save me
+2026-01-16T01:44:14: [youtube] Creating fresh Innertube client...
+2026-01-16T01:44:14: [youtube] Innertube client initialized
+2026-01-16T01:44:14: [youtube] Suggestions request: save me now
+2026-01-16T01:44:15: [youtube] Search request: save me now
+2026-01-16T01:44:16: [youtube] Search returned 19 results
+2026-01-16T01:44:19: [dl] new request id mkg7tplz-ak60i47l url https://www.youtube.com/watch?v=b0fgETOm2UQ
+2026-01-16T01:44:19: [setP] mkg7tplz-ak60i47l 0.05
+2026-01-16T01:44:21: [progress] id mkg7tplz-ak60i47l -> 0.05
+2026-01-16T01:44:23: [setP] mkg7tplz-ak60i47l 0.15
+2026-01-16T01:44:23: [dl] Starting yt-dlp audio download...
+2026-01-16T01:44:23: [yt-dlp] Running command: yt-dlp --proxy http://10.8.0.2:3128 --user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 -f bestaudio/best -x --audio-format mp3 --audio-quality 0 --no-playlist --no-warnings --no-progress -o /tmp/audio_1768527863023_so6t55.mp3 https://www.youtube.com/watch?v=b0fgETOm2UQ
+2026-01-16T01:44:23: [progress] id mkg7tplz-ak60i47l -> 0.15
+2026-01-16T01:44:25: [progress] id mkg7tplz-ak60i47l -> 0.15
+2026-01-16T01:44:27: [progress] id mkg7tplz-ak60i47l -> 0.15
+2026-01-16T01:44:29: [progress] id mkg7tplz-ak60i47l -> 0.15
+2026-01-16T01:44:31: [progress] id mkg7tplz-ak60i47l -> 0.15
+2026-01-16T01:44:33: [progress] id mkg7tplz-ak60i47l -> 0.15
+2026-01-16T01:44:35: [progress] id mkg7tplz-ak60i47l -> 0.15
+2026-01-16T01:44:37: [progress] id mkg7tplz-ak60i47l -> 0.15
+2026-01-16T01:44:39: [progress] id mkg7tplz-ak60i47l -> 0.15
+2026-01-16T01:44:40: [yt-dlp] Successfully downloaded audio file, size: 8248197 bytes
+2026-01-16T01:44:40: [yt-dlp] Valid ID3 header detected
+2026-01-16T01:44:40: [setP] mkg7tplz-ak60i47l 1
+2026-01-16T01:44:41: [progress] id mkg7tplz-ak60i47l -> 1
+2026-01-16T01:44:43: [progress] id mkg7tplz-ak60i47l -> 1
+2026-01-16T01:44:45: [progress] id mkg7tplz-ak60i47l -> 1
+2026-01-16T01:44:52: 
+2026-01-16T01:44:52: ──────── REQUEST ────────
+2026-01-16T01:44:52: scraper > songName: Arthur Gunn - Save Me Now (Official Music Video)
+2026-01-16T01:44:52: scraper > linkIndex (raw): 0
+2026-01-16T01:44:53: 
+2026-01-16T01:44:53: ──────── GOOGLE SEARCH ────────
+2026-01-16T01:44:53: scraper > Searching Google for: arthur gunn - save me now (official music video)
+2026-01-16T01:44:53: scraper > Final query sent: "arthur gunn - save me now (official music video) lyrics and chords"
+2026-01-16T01:44:53: scraper > Google returned 8 results
+2026-01-16T01:44:53: scraper > Chosen URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-01-16T01:44:53: 
+2026-01-16T01:44:53: ──────── NAVIGATE ────────
+2026-01-16T01:44:55: scraper > page.goto done. Final URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-01-16T01:45:06: 
+2026-01-16T01:45:06: ──────── REQUEST ────────
+2026-01-16T01:45:06: scraper > songName: Arthur Gunn - Save Me Now (Official Music Video)
+2026-01-16T01:45:06: scraper > linkIndex (raw): 0
+2026-01-16T01:45:06: 
+2026-01-16T01:45:06: ──────── GOOGLE SEARCH ────────
+2026-01-16T01:45:06: scraper > Searching Google for: arthur gunn - save me now (official music video)
+2026-01-16T01:45:06: scraper > Final query sent: "arthur gunn - save me now (official music video) lyrics and chords"
+2026-01-16T01:45:06: scraper > Google returned 8 results
+2026-01-16T01:45:06: scraper > Chosen URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-01-16T01:45:06: 
+2026-01-16T01:45:06: ──────── NAVIGATE ────────
+2026-01-16T01:45:07: scraper > networkidle wait skipped/timeout
+2026-01-16T01:45:07: 
+2026-01-16T01:45:07: ──────── READABILITY ────────
+2026-01-16T01:45:08: scraper > isProbablyReaderable: true
+2026-01-16T01:45:08: 
+2026-01-16T01:45:08: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-16T01:45:08: 
+2026-01-16T01:45:08: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-16T01:45:08: 
+2026-01-16T01:45:08: ──────── RESULT ────────
+2026-01-16T01:45:08: scraper > Total lines: 2
+2026-01-16T01:45:08: scraper > page.goto done. Final URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-01-16T01:45:16: 
+2026-01-16T01:45:16: ──────── REQUEST ────────
+2026-01-16T01:45:16: scraper > songName: Arthur Gunn - Save Me Now (Official Music Video)
+2026-01-16T01:45:16: scraper > linkIndex (raw): 0
+2026-01-16T01:45:16: 
+2026-01-16T01:45:16: ──────── GOOGLE SEARCH ────────
+2026-01-16T01:45:16: scraper > Searching Google for: arthur gunn - save me now (official music video)
+2026-01-16T01:45:16: scraper > Final query sent: "arthur gunn - save me now (official music video) lyrics and chords"
+2026-01-16T01:45:16: scraper > Google returned 8 results
+2026-01-16T01:45:16: scraper > Chosen URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-01-16T01:45:16: 
+2026-01-16T01:45:16: ──────── NAVIGATE ────────
+2026-01-16T01:45:17: scraper > page.goto done. Final URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-01-16T01:45:20: scraper > networkidle wait skipped/timeout
+2026-01-16T01:45:20: 
+2026-01-16T01:45:20: ──────── READABILITY ────────
+2026-01-16T01:45:20: scraper > isProbablyReaderable: true
+2026-01-16T01:45:20: 
+2026-01-16T01:45:20: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-16T01:45:20: 
+2026-01-16T01:45:20: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-16T01:45:20: 
+2026-01-16T01:45:20: ──────── RESULT ────────
+2026-01-16T01:45:20: scraper > Total lines: 2
+2026-01-16T01:45:29: scraper > networkidle wait skipped/timeout
+2026-01-16T01:45:29: 
+2026-01-16T01:45:29: ──────── READABILITY ────────
+2026-01-16T01:45:29: scraper > isProbablyReaderable: true
+2026-01-16T01:45:29: 
+2026-01-16T01:45:29: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-16T01:45:29: 
+2026-01-16T01:45:29: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-16T01:45:29: 
+2026-01-16T01:45:29: ──────── RESULT ────────
+2026-01-16T01:45:29: scraper > Total lines: 2
+2026-01-16T01:45:42: 
+2026-01-16T01:45:42: ──────── REQUEST ────────
+2026-01-16T01:45:42: scraper > songName: Arthur Gunn - Save Me Now (Official Music Video)
+2026-01-16T01:45:42: scraper > linkIndex (raw): 0
+2026-01-16T01:45:42: 
+2026-01-16T01:45:42: ──────── GOOGLE SEARCH ────────
+2026-01-16T01:45:42: scraper > Searching Google for: arthur gunn - save me now (official music video)
+2026-01-16T01:45:42: scraper > Final query sent: "arthur gunn - save me now (official music video) lyrics and chords"
+2026-01-16T01:45:42: scraper > Google returned 8 results
+2026-01-16T01:45:42: scraper > Chosen URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-01-16T01:45:42: 
+2026-01-16T01:45:42: ──────── NAVIGATE ────────
+2026-01-16T01:45:44: scraper > page.goto done. Final URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-01-16T01:45:49: 
+2026-01-16T01:45:49: ──────── READABILITY ────────
+2026-01-16T01:45:50: scraper > isProbablyReaderable: true
+2026-01-16T01:45:50: 
+2026-01-16T01:45:50: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-16T01:45:50: 
+2026-01-16T01:45:50: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-16T01:45:50: 
+2026-01-16T01:45:50: ──────── RESULT ────────
+2026-01-16T01:45:50: scraper > Total lines: 2
+2026-01-16T01:45:51: [upload] Job created: mkg7u9x6-v9lrmh17 for song mkg7u9x6-v9lrmh17
+2026-01-16T02:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T03:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T04:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T05:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T06:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T07:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T08:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T09:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T10:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T11:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T12:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T13:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T14:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T15:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T16:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T17:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T18:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T19:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T20:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T21:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T22:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-16T23:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T00:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T01:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T02:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T02:53:16: [youtube] Suggestions request: test
+2026-01-17T02:53:16: [youtube] Creating fresh Innertube client...
+2026-01-17T02:53:16: [youtube] Innertube client initialized
+2026-01-17T02:53:22: [youtube] Suggestions request: save me now
+2026-01-17T02:53:22: [youtube] Search request: save me now
+2026-01-17T02:53:23: [youtube] Search returned 19 results
+2026-01-17T02:53:25: [youtube] Stream request for: b0fgETOm2UQ
+2026-01-17T02:53:25: [youtube] Using yt-dlp for stream...
+2026-01-17T02:53:25: [youtube] yt-dlp fallback: Getting iOS-compatible stream URL for b0fgETOm2UQ
+2026-01-17T02:53:29: [youtube] yt-dlp got stream URL: https://rr1---sn-jp3uxa-tt1l.googlevideo.com/videoplayback?expire=1768640008&ei=...
+2026-01-17T02:53:33: [youtube] yt-dlp succeeded
+2026-01-17T02:53:33: [youtube] Stream ready: "Arthur Gunn - Save Me Now (Official Music Video)" by Arthur Gunn [OFFICIAL] (4:19)
+2026-01-17T02:53:33: [youtube] Format used: yt-dlp
+2026-01-17T03:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T03:29:27: [youtube] Suggestions request: lana
+2026-01-17T03:29:27: [youtube] Creating fresh Innertube client...
+2026-01-17T03:29:27: [youtube] Innertube client initialized
+2026-01-17T03:29:28: [youtube] Suggestions request: lana del
+2026-01-17T03:29:28: [youtube] Suggestions request: lana del rey
+2026-01-17T03:29:29: [youtube] Search request: lana del rey
+2026-01-17T03:29:30: [youtube] Search returned 20 results
+2026-01-17T03:29:34: [youtube] Stream request for: JRWox-i6aAk
+2026-01-17T03:29:35: [youtube] Using yt-dlp for stream...
+2026-01-17T03:29:35: [youtube] yt-dlp fallback: Getting iOS-compatible stream URL for JRWox-i6aAk
+2026-01-17T03:29:39: [youtube] yt-dlp got stream URL: https://rr1---sn-jp3uxa-tt1s.googlevideo.com/videoplayback?expire=1768642178&ei=...
+2026-01-17T03:29:43: [youtube] yt-dlp succeeded
+2026-01-17T03:29:43: [youtube] Stream ready: "Lana Del Rey - Blue Jeans" by Lana Del Rey (4:21)
+2026-01-17T03:29:43: [youtube] Format used: yt-dlp
+2026-01-17T03:29:48: [youtube] Suggestions request: lana del rey
+2026-01-17T03:29:48: [youtube] Suggestions request: lana del rey d
+2026-01-17T03:29:50: [youtube] Suggestions request: lana del rey moun
+2026-01-17T03:29:52: [youtube] Search request: lana del rey mountain dew
+2026-01-17T03:29:53: [youtube] Search returned 19 results
+2026-01-17T03:29:55: [dl] new request id mkhr1d6o-p0jlcorx url https://www.youtube.com/watch?v=sEetXo3R-aM
+2026-01-17T03:29:55: [setP] mkhr1d6o-p0jlcorx 0.05
+2026-01-17T03:29:57: [progress] id mkhr1d6o-p0jlcorx -> 0.05
+2026-01-17T03:29:58: [youtube] Stream request for: sEetXo3R-aM
+2026-01-17T03:29:59: [youtube] Using yt-dlp for stream...
+2026-01-17T03:29:59: [youtube] yt-dlp fallback: Getting iOS-compatible stream URL for sEetXo3R-aM
+2026-01-17T03:29:59: [progress] id mkhr1d6o-p0jlcorx -> 0.05
+2026-01-17T03:29:59: [setP] mkhr1d6o-p0jlcorx 0.15
+2026-01-17T03:29:59: [dl] Starting yt-dlp audio download...
+2026-01-17T03:29:59: [yt-dlp] Running command: yt-dlp --proxy http://10.8.0.2:3128 --user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 -f bestaudio/best -x --audio-format mp3 --audio-quality 0 --no-playlist --no-warnings --no-progress -o /tmp/audio_1768620599499_fr7vc.mp3 https://www.youtube.com/watch?v=sEetXo3R-aM
+2026-01-17T03:30:01: [progress] id mkhr1d6o-p0jlcorx -> 0.15
+2026-01-17T03:30:02: [youtube] yt-dlp got stream URL: https://rr1---sn-jp3uxa-tt1s.googlevideo.com/videoplayback?expire=1768642202&ei=...
+2026-01-17T03:30:03: [progress] id mkhr1d6o-p0jlcorx -> 0.15
+2026-01-17T03:30:05: [progress] id mkhr1d6o-p0jlcorx -> 0.15
+2026-01-17T03:30:07: [youtube] yt-dlp succeeded
+2026-01-17T03:30:07: [youtube] Stream ready: "Diet Mountain Dew" by Lana Del Rey (3:43)
+2026-01-17T03:30:07: [youtube] Format used: yt-dlp
+2026-01-17T03:30:07: [progress] id mkhr1d6o-p0jlcorx -> 0.15
+2026-01-17T03:30:09: [progress] id mkhr1d6o-p0jlcorx -> 0.15
+2026-01-17T03:30:11: [progress] id mkhr1d6o-p0jlcorx -> 0.15
+2026-01-17T03:30:13: [progress] id mkhr1d6o-p0jlcorx -> 0.15
+2026-01-17T03:30:15: [progress] id mkhr1d6o-p0jlcorx -> 0.15
+2026-01-17T03:30:16: [yt-dlp] Successfully downloaded audio file, size: 7269189 bytes
+2026-01-17T03:30:16: [yt-dlp] Valid ID3 header detected
+2026-01-17T03:30:16: [setP] mkhr1d6o-p0jlcorx 1
+2026-01-17T03:30:32: 
+2026-01-17T03:30:32: ──────── REQUEST ────────
+2026-01-17T03:30:32: scraper > songName: Diet Mountain Dew
+2026-01-17T03:30:32: scraper > linkIndex (raw): 0
+2026-01-17T03:30:32: 
+2026-01-17T03:30:32: ──────── GOOGLE SEARCH ────────
+2026-01-17T03:30:32: scraper > Searching Google for: diet mountain dew
+2026-01-17T03:30:32: scraper > Final query sent: "diet mountain dew lyrics and chords"
+2026-01-17T03:30:33: scraper > Google returned 8 results
+2026-01-17T03:30:33: scraper > Chosen URL: https://mychords.net/en/lana_rey/24236-lana-del-rey-diet-mtn-dew.html
+2026-01-17T03:30:33: 
+2026-01-17T03:30:33: ──────── NAVIGATE ────────
+2026-01-17T03:30:35: scraper > page.goto done. Final URL: https://mychords.net/en/lana_rey/24236-lana-del-rey-diet-mtn-dew.html
+2026-01-17T03:30:35: 
+2026-01-17T03:30:35: ──────── READABILITY ────────
+2026-01-17T03:30:36: scraper > isProbablyReaderable: false
+2026-01-17T03:30:36: 
+2026-01-17T03:30:36: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-17T03:30:36: 
+2026-01-17T03:30:36: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-17T03:30:36: 
+2026-01-17T03:30:36: ──────── RESULT ────────
+2026-01-17T03:30:36: scraper > Total lines: 151
+2026-01-17T03:30:37: [upload] Job created: mkhr1twc-rl2ei6lr for song mkhr1twc-rl2ei6lr
+2026-01-17T03:33:43: 
+2026-01-17T03:33:43: ──────── REQUEST ────────
+2026-01-17T03:33:43: scraper > songName: balen
+2026-01-17T03:33:43: scraper > linkIndex (raw): 0
+2026-01-17T03:33:43: 
+2026-01-17T03:33:43: ──────── GOOGLE SEARCH ────────
+2026-01-17T03:33:43: scraper > Searching Google for: balen
+2026-01-17T03:33:43: scraper > Final query sent: "balen lyrics and chords"
+2026-01-17T03:33:44: scraper > Google returned 8 results
+2026-01-17T03:33:44: scraper > Chosen URL: https://chordify.net/chords/balen-arayat-song-with-lyrics-a-puno
+2026-01-17T03:33:44: 
+2026-01-17T03:33:44: ──────── NAVIGATE ────────
+2026-01-17T03:33:45: scraper > page.goto done. Final URL: https://chordify.net/chords/balen-arayat-song-with-lyrics-a-puno
+2026-01-17T03:33:57: scraper > networkidle wait skipped/timeout
+2026-01-17T03:33:57: 
+2026-01-17T03:33:57: ──────── READABILITY ────────
+2026-01-17T03:33:58: scraper > isProbablyReaderable: true
+2026-01-17T03:33:59: 
+2026-01-17T03:33:59: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-17T03:33:59: 
+2026-01-17T03:33:59: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-17T03:33:59: 
+2026-01-17T03:33:59: ──────── RESULT ────────
+2026-01-17T03:33:59: scraper > Total lines: 614
+2026-01-17T03:34:22: 
+2026-01-17T03:34:22: ──────── REQUEST ────────
+2026-01-17T03:34:22: scraper > songName: balen ma nepal hasyesko herna
+2026-01-17T03:34:22: scraper > linkIndex (raw): 0
+2026-01-17T03:34:22: 
+2026-01-17T03:34:22: ──────── GOOGLE SEARCH ────────
+2026-01-17T03:34:22: scraper > Searching Google for: balen ma nepal hasyesko herna
+2026-01-17T03:34:22: scraper > Final query sent: "balen ma nepal hasyesko herna lyrics and chords"
+2026-01-17T03:34:23: scraper > Google returned 0 results
+2026-01-17T03:34:23: scraper > Error in scrapeLyrisc: No search results found for the song
+2026-01-17T03:34:40: 
+2026-01-17T03:34:40: ──────── REQUEST ────────
+2026-01-17T03:34:40: scraper > songName: laure nephop ko bato
+2026-01-17T03:34:40: scraper > linkIndex (raw): 0
+2026-01-17T03:34:40: 
+2026-01-17T03:34:40: ──────── GOOGLE SEARCH ────────
+2026-01-17T03:34:40: scraper > Searching Google for: laure nephop ko bato
+2026-01-17T03:34:40: scraper > Final query sent: "laure nephop ko bato lyrics and chords"
+2026-01-17T03:34:40: scraper > Google returned 8 results
+2026-01-17T03:34:40: scraper > Chosen URL: https://tunesnepal.com/public/index.php/laure
+2026-01-17T03:34:40: 
+2026-01-17T03:34:40: ──────── NAVIGATE ────────
+2026-01-17T03:34:44: scraper > page.goto done. Final URL: https://tunesnepal.com/public/index.php/laure
+2026-01-17T03:34:48: 
+2026-01-17T03:34:48: ──────── READABILITY ────────
+2026-01-17T03:34:48: scraper > isProbablyReaderable: true
+2026-01-17T03:34:49: 
+2026-01-17T03:34:49: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-17T03:34:49: 
+2026-01-17T03:34:49: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-17T03:34:49: 
+2026-01-17T03:34:49: ──────── RESULT ────────
+2026-01-17T03:34:49: scraper > Total lines: 33
+2026-01-17T04:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T05:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T06:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T07:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T08:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T08:41:45: [youtube] Suggestions request: albaross
+2026-01-17T08:41:45: [youtube] Search request: albaross
+2026-01-17T08:41:46: [youtube] Creating fresh Innertube client...
+2026-01-17T08:41:46: [youtube] Innertube client initialized
+2026-01-17T08:41:47: [YOUTUBEJS][Parser]: InnertubeError: VideoSummaryContentView not found!
+2026-01-17T08:41:47: This is a bug, want to help us fix it? Follow the instructions at https://github.com/LuanRT/YouTube.js/blob/main/docs/updating-the-parser.md or report it at https://github.com/LuanRT/YouTube.js/issues!
+2026-01-17T08:41:47: Introspected and JIT generated this class in the meantime:
+2026-01-17T08:41:47: class VideoSummaryContentView extends YTNode {
+2026-01-17T08:41:47:   static type = 'VideoSummaryContentView';
+2026-01-17T08:41:47: 
+2026-01-17T08:41:47:   paragraphs: ObservedArray<YTNodes.VideoSummaryParagraphView> | null;
+2026-01-17T08:41:47:   like_button_view_model: YTNodes.LikeButtonView | null;
+2026-01-17T08:41:47:   dislike_button_view_model: YTNodes.DislikeButtonView | null;
+2026-01-17T08:41:47: 
+2026-01-17T08:41:47:   constructor(data: RawNode) {
+2026-01-17T08:41:47:     super();
+2026-01-17T08:41:47:     this.paragraphs = Parser.parse(data.paragraphs, true, YTNodes.VideoSummaryParagraphView);
+2026-01-17T08:41:47:     this.like_button_view_model = Parser.parseItem(data.likeButtonViewModel, YTNodes.LikeButtonView);
+2026-01-17T08:41:47:     this.dislike_button_view_model = Parser.parseItem(data.dislikeButtonViewModel, YTNodes.DislikeButtonView);
+2026-01-17T08:41:47:   }
+2026-01-17T08:41:47: }
+2026-01-17T08:41:47: 
+2026-01-17T08:41:47:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:70:27)
+2026-01-17T08:41:47:     at createRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:320:5)
+2026-01-17T08:41:47:     at generateRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:371:21)
+2026-01-17T08:41:47:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:400:17)
+2026-01-17T08:41:47:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-17T08:41:47:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-17T08:41:47:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-17T08:41:47:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-17T08:41:47:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-17T08:41:47:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32) {
+2026-01-17T08:41:47:   date: 2026-01-17T08:41:47.147Z,
+2026-01-17T08:41:47:   version: '16.0.1',
+2026-01-17T08:41:47:   info: undefined
+2026-01-17T08:41:47: }
+2026-01-17T08:41:47: [YOUTUBEJS][Parser]: InnertubeError: VideoSummaryParagraphView not found!
+2026-01-17T08:41:47: This is a bug, want to help us fix it? Follow the instructions at https://github.com/LuanRT/YouTube.js/blob/main/docs/updating-the-parser.md or report it at https://github.com/LuanRT/YouTube.js/issues!
+2026-01-17T08:41:47: Introspected and JIT generated this class in the meantime:
+2026-01-17T08:41:47: class VideoSummaryParagraphView extends YTNode {
+2026-01-17T08:41:47:   static type = 'VideoSummaryParagraphView';
+2026-01-17T08:41:47: 
+2026-01-17T08:41:47:   text: {
+2026-01-17T08:41:47:     content: string
+2026-01-17T08:41:47:   };
+2026-01-17T08:41:47: 
+2026-01-17T08:41:47:   constructor(data: RawNode) {
+2026-01-17T08:41:47:     super();
+2026-01-17T08:41:47:     this.text = {
+2026-01-17T08:41:47:       content: data.text.content
+2026-01-17T08:41:47:     };
+2026-01-17T08:41:47:   }
+2026-01-17T08:41:47: }
+2026-01-17T08:41:47: 
+2026-01-17T08:41:47:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:70:27)
+2026-01-17T08:41:47:     at createRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:320:5)
+2026-01-17T08:41:47:     at generateRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:371:21)
+2026-01-17T08:41:47:     at generateRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:374:9)
+2026-01-17T08:41:47:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:400:17)
+2026-01-17T08:41:47:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-17T08:41:47:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-17T08:41:47:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-17T08:41:47:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-17T08:41:47:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-17T08:41:47:   date: 2026-01-17T08:41:47.149Z,
+2026-01-17T08:41:47:   version: '16.0.1',
+2026-01-17T08:41:47:   info: undefined
+2026-01-17T08:41:47: }
+2026-01-17T08:41:47: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+2026-01-17T08:41:47:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+2026-01-17T08:41:47:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+2026-01-17T08:41:47:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-17T08:41:47:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-17T08:41:47:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-17T08:41:47:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-17T08:41:47:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-17T08:41:47:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32)
+2026-01-17T08:41:47:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-17T08:41:47:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-17T08:41:47:   date: 2026-01-17T08:41:47.150Z,
+2026-01-17T08:41:47:   version: '16.0.1',
+2026-01-17T08:41:47:   info: {
+2026-01-17T08:41:47:     paragraphs: [ [Object] ],
+2026-01-17T08:41:47:     likeButtonViewModel: { likeButtonViewModel: [Object] },
+2026-01-17T08:41:47:     dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+2026-01-17T08:41:47:   }
+2026-01-17T08:41:47: }
+2026-01-17T08:41:47: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+2026-01-17T08:41:47:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+2026-01-17T08:41:47:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+2026-01-17T08:41:47:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-17T08:41:47:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-17T08:41:47:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-17T08:41:47:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-17T08:41:47:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-17T08:41:47:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32)
+2026-01-17T08:41:47:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-17T08:41:47:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-17T08:41:47:   date: 2026-01-17T08:41:47.150Z,
+2026-01-17T08:41:47:   version: '16.0.1',
+2026-01-17T08:41:47:   info: {
+2026-01-17T08:41:47:     paragraphs: [ [Object] ],
+2026-01-17T08:41:47:     likeButtonViewModel: { likeButtonViewModel: [Object] },
+2026-01-17T08:41:47:     dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+2026-01-17T08:41:47:   }
+2026-01-17T08:41:47: }
+2026-01-17T08:41:47: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+2026-01-17T08:41:47:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+2026-01-17T08:41:47:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+2026-01-17T08:41:47:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-17T08:41:47:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-17T08:41:47:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-17T08:41:47:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-17T08:41:47:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-17T08:41:47:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32)
+2026-01-17T08:41:47:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-17T08:41:47:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-17T08:41:47:   date: 2026-01-17T08:41:47.155Z,
+2026-01-17T08:41:47:   version: '16.0.1',
+2026-01-17T08:41:47:   info: {
+2026-01-17T08:41:47:     paragraphs: [ [Object] ],
+2026-01-17T08:41:47:     likeButtonViewModel: { likeButtonViewModel: [Object] },
+2026-01-17T08:41:47:     dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+2026-01-17T08:41:47:   }
+2026-01-17T08:41:47: }
+2026-01-17T08:41:47: [youtube] Search returned 19 results
+2026-01-17T08:41:49: [youtube] Suggestions request: sa
+2026-01-17T08:41:52: [youtube] Suggestions request: save me now
+2026-01-17T08:41:52: [youtube] Search request: save me now
+2026-01-17T08:41:53: [youtube] Search returned 19 results
+2026-01-17T08:41:55: [youtube] Stream request for: b0fgETOm2UQ
+2026-01-17T08:41:55: [youtube] Using yt-dlp for stream...
+2026-01-17T08:41:55: [youtube] yt-dlp fallback: Getting iOS-compatible stream URL for b0fgETOm2UQ
+2026-01-17T08:41:59: [youtube] yt-dlp got stream URL: https://rr1---sn-jp3uxa-tt1l.googlevideo.com/videoplayback?expire=1768660918&ei=...
+2026-01-17T08:42:03: [youtube] yt-dlp succeeded
+2026-01-17T08:42:03: [youtube] Stream ready: "Arthur Gunn - Save Me Now (Official Music Video)" by Arthur Gunn [OFFICIAL] (4:19)
+2026-01-17T08:42:03: [youtube] Format used: yt-dlp
+2026-01-17T09:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T10:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T11:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T12:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T13:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T14:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T15:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T16:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T17:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T18:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T19:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T20:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T21:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T22:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-17T23:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T00:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T01:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T02:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T03:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T04:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T05:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T06:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T07:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T08:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T09:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T10:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T11:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T12:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T13:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T14:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T15:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T16:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T17:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T18:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T19:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T20:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T21:13:09: [sweeper] Running cleanup for files older than 15 days...
+2026-01-18T22:13:09: [sweeper] Running cleanup for files older than 15 days...
