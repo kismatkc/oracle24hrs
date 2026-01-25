@@ -33262,3 +33262,1987 @@ arser/parser.js:404:25)
 2026-01-25T01:30:27:   address: '127.0.0.1',
 2026-01-25T01:30:27:   port: 6379
 2026-01-25T01:30:27: }
+2026-01-25T01:30:29: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:29:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:29:   errno: -61,
+2026-01-25T01:30:29:   code: 'ECONNREFUSED',
+2026-01-25T01:30:29:   syscall: 'connect',
+2026-01-25T01:30:29:   address: '127.0.0.1',
+2026-01-25T01:30:29:   port: 6379
+2026-01-25T01:30:29: }
+2026-01-25T01:30:29: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:29:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:29:   errno: -61,
+2026-01-25T01:30:29:   code: 'ECONNREFUSED',
+2026-01-25T01:30:29:   syscall: 'connect',
+2026-01-25T01:30:29:   address: '127.0.0.1',
+2026-01-25T01:30:29:   port: 6379
+2026-01-25T01:30:29: }
+2026-01-25T01:30:29: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:29:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:29:   errno: -61,
+2026-01-25T01:30:29:   code: 'ECONNREFUSED',
+2026-01-25T01:30:29:   syscall: 'connect',
+2026-01-25T01:30:29:   address: '127.0.0.1',
+2026-01-25T01:30:29:   port: 6379
+2026-01-25T01:30:29: }
+2026-01-25T01:30:29: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:29:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:29:   errno: -61,
+2026-01-25T01:30:29:   code: 'ECONNREFUSED',
+2026-01-25T01:30:29:   syscall: 'connect',
+2026-01-25T01:30:29:   address: '127.0.0.1',
+2026-01-25T01:30:29:   port: 6379
+2026-01-25T01:30:29: }
+2026-01-25T01:30:31: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:31:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:31:   errno: -61,
+2026-01-25T01:30:31:   code: 'ECONNREFUSED',
+2026-01-25T01:30:31:   syscall: 'connect',
+2026-01-25T01:30:31:   address: '127.0.0.1',
+2026-01-25T01:30:31:   port: 6379
+2026-01-25T01:30:31: }
+2026-01-25T01:30:31: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:31:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:31:   errno: -61,
+2026-01-25T01:30:31:   code: 'ECONNREFUSED',
+2026-01-25T01:30:31:   syscall: 'connect',
+2026-01-25T01:30:31:   address: '127.0.0.1',
+2026-01-25T01:30:31:   port: 6379
+2026-01-25T01:30:31: }
+2026-01-25T01:30:31: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:31:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:31:   errno: -61,
+2026-01-25T01:30:31:   code: 'ECONNREFUSED',
+2026-01-25T01:30:31:   syscall: 'connect',
+2026-01-25T01:30:31:   address: '127.0.0.1',
+2026-01-25T01:30:31:   port: 6379
+2026-01-25T01:30:31: }
+2026-01-25T01:30:31: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:31:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:31:   errno: -61,
+2026-01-25T01:30:31:   code: 'ECONNREFUSED',
+2026-01-25T01:30:31:   syscall: 'connect',
+2026-01-25T01:30:31:   address: '127.0.0.1',
+2026-01-25T01:30:31:   port: 6379
+2026-01-25T01:30:31: }
+2026-01-25T01:30:33: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:33:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:33:   errno: -61,
+2026-01-25T01:30:33:   code: 'ECONNREFUSED',
+2026-01-25T01:30:33:   syscall: 'connect',
+2026-01-25T01:30:33:   address: '127.0.0.1',
+2026-01-25T01:30:33:   port: 6379
+2026-01-25T01:30:33: }
+2026-01-25T01:30:33: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:33:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:33:   errno: -61,
+2026-01-25T01:30:33:   code: 'ECONNREFUSED',
+2026-01-25T01:30:33:   syscall: 'connect',
+2026-01-25T01:30:33:   address: '127.0.0.1',
+2026-01-25T01:30:33:   port: 6379
+2026-01-25T01:30:33: }
+2026-01-25T01:30:33: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:33:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:33:   errno: -61,
+2026-01-25T01:30:33:   code: 'ECONNREFUSED',
+2026-01-25T01:30:33:   syscall: 'connect',
+2026-01-25T01:30:33:   address: '127.0.0.1',
+2026-01-25T01:30:33:   port: 6379
+2026-01-25T01:30:33: }
+2026-01-25T01:30:33: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:33:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:33:   errno: -61,
+2026-01-25T01:30:33:   code: 'ECONNREFUSED',
+2026-01-25T01:30:33:   syscall: 'connect',
+2026-01-25T01:30:33:   address: '127.0.0.1',
+2026-01-25T01:30:33:   port: 6379
+2026-01-25T01:30:33: }
+2026-01-25T01:30:35: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:35:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:35:   errno: -61,
+2026-01-25T01:30:35:   code: 'ECONNREFUSED',
+2026-01-25T01:30:35:   syscall: 'connect',
+2026-01-25T01:30:35:   address: '127.0.0.1',
+2026-01-25T01:30:35:   port: 6379
+2026-01-25T01:30:35: }
+2026-01-25T01:30:35: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:35:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:35:   errno: -61,
+2026-01-25T01:30:35:   code: 'ECONNREFUSED',
+2026-01-25T01:30:35:   syscall: 'connect',
+2026-01-25T01:30:35:   address: '127.0.0.1',
+2026-01-25T01:30:35:   port: 6379
+2026-01-25T01:30:35: }
+2026-01-25T01:30:35: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:35:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:35:   errno: -61,
+2026-01-25T01:30:35:   code: 'ECONNREFUSED',
+2026-01-25T01:30:35:   syscall: 'connect',
+2026-01-25T01:30:35:   address: '127.0.0.1',
+2026-01-25T01:30:35:   port: 6379
+2026-01-25T01:30:35: }
+2026-01-25T01:30:35: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:35:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:35:   errno: -61,
+2026-01-25T01:30:35:   code: 'ECONNREFUSED',
+2026-01-25T01:30:35:   syscall: 'connect',
+2026-01-25T01:30:35:   address: '127.0.0.1',
+2026-01-25T01:30:35:   port: 6379
+2026-01-25T01:30:35: }
+2026-01-25T01:30:37: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:37:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:37:   errno: -61,
+2026-01-25T01:30:37:   code: 'ECONNREFUSED',
+2026-01-25T01:30:37:   syscall: 'connect',
+2026-01-25T01:30:37:   address: '127.0.0.1',
+2026-01-25T01:30:37:   port: 6379
+2026-01-25T01:30:37: }
+2026-01-25T01:30:37: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:37:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:37:   errno: -61,
+2026-01-25T01:30:37:   code: 'ECONNREFUSED',
+2026-01-25T01:30:37:   syscall: 'connect',
+2026-01-25T01:30:37:   address: '127.0.0.1',
+2026-01-25T01:30:37:   port: 6379
+2026-01-25T01:30:37: }
+2026-01-25T01:30:37: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:37:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:37:   errno: -61,
+2026-01-25T01:30:37:   code: 'ECONNREFUSED',
+2026-01-25T01:30:37:   syscall: 'connect',
+2026-01-25T01:30:37:   address: '127.0.0.1',
+2026-01-25T01:30:37:   port: 6379
+2026-01-25T01:30:37: }
+2026-01-25T01:30:37: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:37:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:37:   errno: -61,
+2026-01-25T01:30:37:   code: 'ECONNREFUSED',
+2026-01-25T01:30:37:   syscall: 'connect',
+2026-01-25T01:30:37:   address: '127.0.0.1',
+2026-01-25T01:30:37:   port: 6379
+2026-01-25T01:30:37: }
+2026-01-25T01:30:39: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:39:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:39:   errno: -61,
+2026-01-25T01:30:39:   code: 'ECONNREFUSED',
+2026-01-25T01:30:39:   syscall: 'connect',
+2026-01-25T01:30:39:   address: '127.0.0.1',
+2026-01-25T01:30:39:   port: 6379
+2026-01-25T01:30:39: }
+2026-01-25T01:30:39: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:39:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:39:   errno: -61,
+2026-01-25T01:30:39:   code: 'ECONNREFUSED',
+2026-01-25T01:30:39:   syscall: 'connect',
+2026-01-25T01:30:39:   address: '127.0.0.1',
+2026-01-25T01:30:39:   port: 6379
+2026-01-25T01:30:39: }
+2026-01-25T01:30:39: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:39:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:39:   errno: -61,
+2026-01-25T01:30:39:   code: 'ECONNREFUSED',
+2026-01-25T01:30:39:   syscall: 'connect',
+2026-01-25T01:30:39:   address: '127.0.0.1',
+2026-01-25T01:30:39:   port: 6379
+2026-01-25T01:30:39: }
+2026-01-25T01:30:39: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:39:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:39:   errno: -61,
+2026-01-25T01:30:39:   code: 'ECONNREFUSED',
+2026-01-25T01:30:39:   syscall: 'connect',
+2026-01-25T01:30:39:   address: '127.0.0.1',
+2026-01-25T01:30:39:   port: 6379
+2026-01-25T01:30:39: }
+2026-01-25T01:30:41: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:41:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:41:   errno: -61,
+2026-01-25T01:30:41:   code: 'ECONNREFUSED',
+2026-01-25T01:30:41:   syscall: 'connect',
+2026-01-25T01:30:41:   address: '127.0.0.1',
+2026-01-25T01:30:41:   port: 6379
+2026-01-25T01:30:41: }
+2026-01-25T01:30:41: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:41:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:41:   errno: -61,
+2026-01-25T01:30:41:   code: 'ECONNREFUSED',
+2026-01-25T01:30:41:   syscall: 'connect',
+2026-01-25T01:30:41:   address: '127.0.0.1',
+2026-01-25T01:30:41:   port: 6379
+2026-01-25T01:30:41: }
+2026-01-25T01:30:41: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:41:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:41:   errno: -61,
+2026-01-25T01:30:41:   code: 'ECONNREFUSED',
+2026-01-25T01:30:41:   syscall: 'connect',
+2026-01-25T01:30:41:   address: '127.0.0.1',
+2026-01-25T01:30:41:   port: 6379
+2026-01-25T01:30:41: }
+2026-01-25T01:30:41: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:41:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:41:   errno: -61,
+2026-01-25T01:30:41:   code: 'ECONNREFUSED',
+2026-01-25T01:30:41:   syscall: 'connect',
+2026-01-25T01:30:41:   address: '127.0.0.1',
+2026-01-25T01:30:41:   port: 6379
+2026-01-25T01:30:41: }
+2026-01-25T01:30:43: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:43:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:43:   errno: -61,
+2026-01-25T01:30:43:   code: 'ECONNREFUSED',
+2026-01-25T01:30:43:   syscall: 'connect',
+2026-01-25T01:30:43:   address: '127.0.0.1',
+2026-01-25T01:30:43:   port: 6379
+2026-01-25T01:30:43: }
+2026-01-25T01:30:43: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:43:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:43:   errno: -61,
+2026-01-25T01:30:43:   code: 'ECONNREFUSED',
+2026-01-25T01:30:43:   syscall: 'connect',
+2026-01-25T01:30:43:   address: '127.0.0.1',
+2026-01-25T01:30:43:   port: 6379
+2026-01-25T01:30:43: }
+2026-01-25T01:30:43: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:43:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:43:   errno: -61,
+2026-01-25T01:30:43:   code: 'ECONNREFUSED',
+2026-01-25T01:30:43:   syscall: 'connect',
+2026-01-25T01:30:43:   address: '127.0.0.1',
+2026-01-25T01:30:43:   port: 6379
+2026-01-25T01:30:43: }
+2026-01-25T01:30:43: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:43:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:43:   errno: -61,
+2026-01-25T01:30:43:   code: 'ECONNREFUSED',
+2026-01-25T01:30:43:   syscall: 'connect',
+2026-01-25T01:30:43:   address: '127.0.0.1',
+2026-01-25T01:30:43:   port: 6379
+2026-01-25T01:30:43: }
+2026-01-25T01:30:45: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:45:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:45:   errno: -61,
+2026-01-25T01:30:45:   code: 'ECONNREFUSED',
+2026-01-25T01:30:45:   syscall: 'connect',
+2026-01-25T01:30:45:   address: '127.0.0.1',
+2026-01-25T01:30:45:   port: 6379
+2026-01-25T01:30:45: }
+2026-01-25T01:30:45: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:45:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:45:   errno: -61,
+2026-01-25T01:30:45:   code: 'ECONNREFUSED',
+2026-01-25T01:30:45:   syscall: 'connect',
+2026-01-25T01:30:45:   address: '127.0.0.1',
+2026-01-25T01:30:45:   port: 6379
+2026-01-25T01:30:45: }
+2026-01-25T01:30:45: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:45:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:45:   errno: -61,
+2026-01-25T01:30:45:   code: 'ECONNREFUSED',
+2026-01-25T01:30:45:   syscall: 'connect',
+2026-01-25T01:30:45:   address: '127.0.0.1',
+2026-01-25T01:30:45:   port: 6379
+2026-01-25T01:30:45: }
+2026-01-25T01:30:45: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:45:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:45:   errno: -61,
+2026-01-25T01:30:45:   code: 'ECONNREFUSED',
+2026-01-25T01:30:45:   syscall: 'connect',
+2026-01-25T01:30:45:   address: '127.0.0.1',
+2026-01-25T01:30:45:   port: 6379
+2026-01-25T01:30:45: }
+2026-01-25T01:30:47: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:47:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:47:   errno: -61,
+2026-01-25T01:30:47:   code: 'ECONNREFUSED',
+2026-01-25T01:30:47:   syscall: 'connect',
+2026-01-25T01:30:47:   address: '127.0.0.1',
+2026-01-25T01:30:47:   port: 6379
+2026-01-25T01:30:47: }
+2026-01-25T01:30:47: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:47:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:47:   errno: -61,
+2026-01-25T01:30:47:   code: 'ECONNREFUSED',
+2026-01-25T01:30:47:   syscall: 'connect',
+2026-01-25T01:30:47:   address: '127.0.0.1',
+2026-01-25T01:30:47:   port: 6379
+2026-01-25T01:30:47: }
+2026-01-25T01:30:47: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:47:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:47:   errno: -61,
+2026-01-25T01:30:47:   code: 'ECONNREFUSED',
+2026-01-25T01:30:47:   syscall: 'connect',
+2026-01-25T01:30:47:   address: '127.0.0.1',
+2026-01-25T01:30:47:   port: 6379
+2026-01-25T01:30:47: }
+2026-01-25T01:30:47: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:47:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:47:   errno: -61,
+2026-01-25T01:30:47:   code: 'ECONNREFUSED',
+2026-01-25T01:30:47:   syscall: 'connect',
+2026-01-25T01:30:47:   address: '127.0.0.1',
+2026-01-25T01:30:47:   port: 6379
+2026-01-25T01:30:47: }
+2026-01-25T01:30:49: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:49:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:49:   errno: -61,
+2026-01-25T01:30:49:   code: 'ECONNREFUSED',
+2026-01-25T01:30:49:   syscall: 'connect',
+2026-01-25T01:30:49:   address: '127.0.0.1',
+2026-01-25T01:30:49:   port: 6379
+2026-01-25T01:30:49: }
+2026-01-25T01:30:49: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:49:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:49:   errno: -61,
+2026-01-25T01:30:49:   code: 'ECONNREFUSED',
+2026-01-25T01:30:49:   syscall: 'connect',
+2026-01-25T01:30:49:   address: '127.0.0.1',
+2026-01-25T01:30:49:   port: 6379
+2026-01-25T01:30:49: }
+2026-01-25T01:30:49: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:49:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:49:   errno: -61,
+2026-01-25T01:30:49:   code: 'ECONNREFUSED',
+2026-01-25T01:30:49:   syscall: 'connect',
+2026-01-25T01:30:49:   address: '127.0.0.1',
+2026-01-25T01:30:49:   port: 6379
+2026-01-25T01:30:49: }
+2026-01-25T01:30:49: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:49:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:49:   errno: -61,
+2026-01-25T01:30:49:   code: 'ECONNREFUSED',
+2026-01-25T01:30:49:   syscall: 'connect',
+2026-01-25T01:30:49:   address: '127.0.0.1',
+2026-01-25T01:30:49:   port: 6379
+2026-01-25T01:30:49: }
+2026-01-25T01:30:51: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:51:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:51:   errno: -61,
+2026-01-25T01:30:51:   code: 'ECONNREFUSED',
+2026-01-25T01:30:51:   syscall: 'connect',
+2026-01-25T01:30:51:   address: '127.0.0.1',
+2026-01-25T01:30:51:   port: 6379
+2026-01-25T01:30:51: }
+2026-01-25T01:30:51: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:51:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:51:   errno: -61,
+2026-01-25T01:30:51:   code: 'ECONNREFUSED',
+2026-01-25T01:30:51:   syscall: 'connect',
+2026-01-25T01:30:51:   address: '127.0.0.1',
+2026-01-25T01:30:51:   port: 6379
+2026-01-25T01:30:51: }
+2026-01-25T01:30:51: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:51:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:51:   errno: -61,
+2026-01-25T01:30:51:   code: 'ECONNREFUSED',
+2026-01-25T01:30:51:   syscall: 'connect',
+2026-01-25T01:30:51:   address: '127.0.0.1',
+2026-01-25T01:30:51:   port: 6379
+2026-01-25T01:30:51: }
+2026-01-25T01:30:51: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:51:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:51:   errno: -61,
+2026-01-25T01:30:51:   code: 'ECONNREFUSED',
+2026-01-25T01:30:51:   syscall: 'connect',
+2026-01-25T01:30:51:   address: '127.0.0.1',
+2026-01-25T01:30:51:   port: 6379
+2026-01-25T01:30:51: }
+2026-01-25T01:30:53: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:53:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:53:   errno: -61,
+2026-01-25T01:30:53:   code: 'ECONNREFUSED',
+2026-01-25T01:30:53:   syscall: 'connect',
+2026-01-25T01:30:53:   address: '127.0.0.1',
+2026-01-25T01:30:53:   port: 6379
+2026-01-25T01:30:53: }
+2026-01-25T01:30:53: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:53:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:53:   errno: -61,
+2026-01-25T01:30:53:   code: 'ECONNREFUSED',
+2026-01-25T01:30:53:   syscall: 'connect',
+2026-01-25T01:30:53:   address: '127.0.0.1',
+2026-01-25T01:30:53:   port: 6379
+2026-01-25T01:30:53: }
+2026-01-25T01:30:53: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:53:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:53:   errno: -61,
+2026-01-25T01:30:53:   code: 'ECONNREFUSED',
+2026-01-25T01:30:53:   syscall: 'connect',
+2026-01-25T01:30:53:   address: '127.0.0.1',
+2026-01-25T01:30:53:   port: 6379
+2026-01-25T01:30:53: }
+2026-01-25T01:30:53: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:53:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:53:   errno: -61,
+2026-01-25T01:30:53:   code: 'ECONNREFUSED',
+2026-01-25T01:30:53:   syscall: 'connect',
+2026-01-25T01:30:53:   address: '127.0.0.1',
+2026-01-25T01:30:53:   port: 6379
+2026-01-25T01:30:53: }
+2026-01-25T01:30:55: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:55:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:55:   errno: -61,
+2026-01-25T01:30:55:   code: 'ECONNREFUSED',
+2026-01-25T01:30:55:   syscall: 'connect',
+2026-01-25T01:30:55:   address: '127.0.0.1',
+2026-01-25T01:30:55:   port: 6379
+2026-01-25T01:30:55: }
+2026-01-25T01:30:55: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:55:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:55:   errno: -61,
+2026-01-25T01:30:55:   code: 'ECONNREFUSED',
+2026-01-25T01:30:55:   syscall: 'connect',
+2026-01-25T01:30:55:   address: '127.0.0.1',
+2026-01-25T01:30:55:   port: 6379
+2026-01-25T01:30:55: }
+2026-01-25T01:30:55: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:55:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:55:   errno: -61,
+2026-01-25T01:30:55:   code: 'ECONNREFUSED',
+2026-01-25T01:30:55:   syscall: 'connect',
+2026-01-25T01:30:55:   address: '127.0.0.1',
+2026-01-25T01:30:55:   port: 6379
+2026-01-25T01:30:55: }
+2026-01-25T01:30:55: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:55:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:55:   errno: -61,
+2026-01-25T01:30:55:   code: 'ECONNREFUSED',
+2026-01-25T01:30:55:   syscall: 'connect',
+2026-01-25T01:30:55:   address: '127.0.0.1',
+2026-01-25T01:30:55:   port: 6379
+2026-01-25T01:30:55: }
+2026-01-25T01:30:57: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:57:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:57:   errno: -61,
+2026-01-25T01:30:57:   code: 'ECONNREFUSED',
+2026-01-25T01:30:57:   syscall: 'connect',
+2026-01-25T01:30:57:   address: '127.0.0.1',
+2026-01-25T01:30:57:   port: 6379
+2026-01-25T01:30:57: }
+2026-01-25T01:30:57: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:57:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:57:   errno: -61,
+2026-01-25T01:30:57:   code: 'ECONNREFUSED',
+2026-01-25T01:30:57:   syscall: 'connect',
+2026-01-25T01:30:57:   address: '127.0.0.1',
+2026-01-25T01:30:57:   port: 6379
+2026-01-25T01:30:57: }
+2026-01-25T01:30:57: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:57:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:57:   errno: -61,
+2026-01-25T01:30:57:   code: 'ECONNREFUSED',
+2026-01-25T01:30:57:   syscall: 'connect',
+2026-01-25T01:30:57:   address: '127.0.0.1',
+2026-01-25T01:30:57:   port: 6379
+2026-01-25T01:30:57: }
+2026-01-25T01:30:57: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:30:57:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:30:57:   errno: -61,
+2026-01-25T01:30:57:   code: 'ECONNREFUSED',
+2026-01-25T01:30:57:   syscall: 'connect',
+2026-01-25T01:30:57:   address: '127.0.0.1',
+2026-01-25T01:30:57:   port: 6379
+2026-01-25T01:30:57: }
+2026-01-25T01:31:00: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:00:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:00:   errno: -61,
+2026-01-25T01:31:00:   code: 'ECONNREFUSED',
+2026-01-25T01:31:00:   syscall: 'connect',
+2026-01-25T01:31:00:   address: '127.0.0.1',
+2026-01-25T01:31:00:   port: 6379
+2026-01-25T01:31:00: }
+2026-01-25T01:31:00: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:00:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:00:   errno: -61,
+2026-01-25T01:31:00:   code: 'ECONNREFUSED',
+2026-01-25T01:31:00:   syscall: 'connect',
+2026-01-25T01:31:00:   address: '127.0.0.1',
+2026-01-25T01:31:00:   port: 6379
+2026-01-25T01:31:00: }
+2026-01-25T01:31:00: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:00:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:00:   errno: -61,
+2026-01-25T01:31:00:   code: 'ECONNREFUSED',
+2026-01-25T01:31:00:   syscall: 'connect',
+2026-01-25T01:31:00:   address: '127.0.0.1',
+2026-01-25T01:31:00:   port: 6379
+2026-01-25T01:31:00: }
+2026-01-25T01:31:00: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:00:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:00:   errno: -61,
+2026-01-25T01:31:00:   code: 'ECONNREFUSED',
+2026-01-25T01:31:00:   syscall: 'connect',
+2026-01-25T01:31:00:   address: '127.0.0.1',
+2026-01-25T01:31:00:   port: 6379
+2026-01-25T01:31:00: }
+2026-01-25T01:31:02: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:02:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:02:   errno: -61,
+2026-01-25T01:31:02:   code: 'ECONNREFUSED',
+2026-01-25T01:31:02:   syscall: 'connect',
+2026-01-25T01:31:02:   address: '127.0.0.1',
+2026-01-25T01:31:02:   port: 6379
+2026-01-25T01:31:02: }
+2026-01-25T01:31:02: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:02:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:02:   errno: -61,
+2026-01-25T01:31:02:   code: 'ECONNREFUSED',
+2026-01-25T01:31:02:   syscall: 'connect',
+2026-01-25T01:31:02:   address: '127.0.0.1',
+2026-01-25T01:31:02:   port: 6379
+2026-01-25T01:31:02: }
+2026-01-25T01:31:02: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:02:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:02:   errno: -61,
+2026-01-25T01:31:02:   code: 'ECONNREFUSED',
+2026-01-25T01:31:02:   syscall: 'connect',
+2026-01-25T01:31:02:   address: '127.0.0.1',
+2026-01-25T01:31:02:   port: 6379
+2026-01-25T01:31:02: }
+2026-01-25T01:31:02: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:02:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:02:   errno: -61,
+2026-01-25T01:31:02:   code: 'ECONNREFUSED',
+2026-01-25T01:31:02:   syscall: 'connect',
+2026-01-25T01:31:02:   address: '127.0.0.1',
+2026-01-25T01:31:02:   port: 6379
+2026-01-25T01:31:02: }
+2026-01-25T01:31:04: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:04:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:04:   errno: -61,
+2026-01-25T01:31:04:   code: 'ECONNREFUSED',
+2026-01-25T01:31:04:   syscall: 'connect',
+2026-01-25T01:31:04:   address: '127.0.0.1',
+2026-01-25T01:31:04:   port: 6379
+2026-01-25T01:31:04: }
+2026-01-25T01:31:04: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:04:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:04:   errno: -61,
+2026-01-25T01:31:04:   code: 'ECONNREFUSED',
+2026-01-25T01:31:04:   syscall: 'connect',
+2026-01-25T01:31:04:   address: '127.0.0.1',
+2026-01-25T01:31:04:   port: 6379
+2026-01-25T01:31:04: }
+2026-01-25T01:31:04: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:04:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:04:   errno: -61,
+2026-01-25T01:31:04:   code: 'ECONNREFUSED',
+2026-01-25T01:31:04:   syscall: 'connect',
+2026-01-25T01:31:04:   address: '127.0.0.1',
+2026-01-25T01:31:04:   port: 6379
+2026-01-25T01:31:04: }
+2026-01-25T01:31:04: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:04:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:04:   errno: -61,
+2026-01-25T01:31:04:   code: 'ECONNREFUSED',
+2026-01-25T01:31:04:   syscall: 'connect',
+2026-01-25T01:31:04:   address: '127.0.0.1',
+2026-01-25T01:31:04:   port: 6379
+2026-01-25T01:31:04: }
+2026-01-25T01:31:06: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:06:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:06:   errno: -61,
+2026-01-25T01:31:06:   code: 'ECONNREFUSED',
+2026-01-25T01:31:06:   syscall: 'connect',
+2026-01-25T01:31:06:   address: '127.0.0.1',
+2026-01-25T01:31:06:   port: 6379
+2026-01-25T01:31:06: }
+2026-01-25T01:31:06: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:06:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:06:   errno: -61,
+2026-01-25T01:31:06:   code: 'ECONNREFUSED',
+2026-01-25T01:31:06:   syscall: 'connect',
+2026-01-25T01:31:06:   address: '127.0.0.1',
+2026-01-25T01:31:06:   port: 6379
+2026-01-25T01:31:06: }
+2026-01-25T01:31:06: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:06:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:06:   errno: -61,
+2026-01-25T01:31:06:   code: 'ECONNREFUSED',
+2026-01-25T01:31:06:   syscall: 'connect',
+2026-01-25T01:31:06:   address: '127.0.0.1',
+2026-01-25T01:31:06:   port: 6379
+2026-01-25T01:31:06: }
+2026-01-25T01:31:06: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:06:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:06:   errno: -61,
+2026-01-25T01:31:06:   code: 'ECONNREFUSED',
+2026-01-25T01:31:06:   syscall: 'connect',
+2026-01-25T01:31:06:   address: '127.0.0.1',
+2026-01-25T01:31:06:   port: 6379
+2026-01-25T01:31:06: }
+2026-01-25T01:31:08: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:08:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:08:   errno: -61,
+2026-01-25T01:31:08:   code: 'ECONNREFUSED',
+2026-01-25T01:31:08:   syscall: 'connect',
+2026-01-25T01:31:08:   address: '127.0.0.1',
+2026-01-25T01:31:08:   port: 6379
+2026-01-25T01:31:08: }
+2026-01-25T01:31:08: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:08:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:08:   errno: -61,
+2026-01-25T01:31:08:   code: 'ECONNREFUSED',
+2026-01-25T01:31:08:   syscall: 'connect',
+2026-01-25T01:31:08:   address: '127.0.0.1',
+2026-01-25T01:31:08:   port: 6379
+2026-01-25T01:31:08: }
+2026-01-25T01:31:08: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:08:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:08:   errno: -61,
+2026-01-25T01:31:08:   code: 'ECONNREFUSED',
+2026-01-25T01:31:08:   syscall: 'connect',
+2026-01-25T01:31:08:   address: '127.0.0.1',
+2026-01-25T01:31:08:   port: 6379
+2026-01-25T01:31:08: }
+2026-01-25T01:31:08: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:08:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:08:   errno: -61,
+2026-01-25T01:31:08:   code: 'ECONNREFUSED',
+2026-01-25T01:31:08:   syscall: 'connect',
+2026-01-25T01:31:08:   address: '127.0.0.1',
+2026-01-25T01:31:08:   port: 6379
+2026-01-25T01:31:08: }
+2026-01-25T01:31:10: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:10:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:10:   errno: -61,
+2026-01-25T01:31:10:   code: 'ECONNREFUSED',
+2026-01-25T01:31:10:   syscall: 'connect',
+2026-01-25T01:31:10:   address: '127.0.0.1',
+2026-01-25T01:31:10:   port: 6379
+2026-01-25T01:31:10: }
+2026-01-25T01:31:10: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:10:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:10:   errno: -61,
+2026-01-25T01:31:10:   code: 'ECONNREFUSED',
+2026-01-25T01:31:10:   syscall: 'connect',
+2026-01-25T01:31:10:   address: '127.0.0.1',
+2026-01-25T01:31:10:   port: 6379
+2026-01-25T01:31:10: }
+2026-01-25T01:31:10: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:10:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:10:   errno: -61,
+2026-01-25T01:31:10:   code: 'ECONNREFUSED',
+2026-01-25T01:31:10:   syscall: 'connect',
+2026-01-25T01:31:10:   address: '127.0.0.1',
+2026-01-25T01:31:10:   port: 6379
+2026-01-25T01:31:10: }
+2026-01-25T01:31:10: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:10:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:10:   errno: -61,
+2026-01-25T01:31:10:   code: 'ECONNREFUSED',
+2026-01-25T01:31:10:   syscall: 'connect',
+2026-01-25T01:31:10:   address: '127.0.0.1',
+2026-01-25T01:31:10:   port: 6379
+2026-01-25T01:31:10: }
+2026-01-25T01:31:12: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:12:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:12:   errno: -61,
+2026-01-25T01:31:12:   code: 'ECONNREFUSED',
+2026-01-25T01:31:12:   syscall: 'connect',
+2026-01-25T01:31:12:   address: '127.0.0.1',
+2026-01-25T01:31:12:   port: 6379
+2026-01-25T01:31:12: }
+2026-01-25T01:31:12: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:12:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:12:   errno: -61,
+2026-01-25T01:31:12:   code: 'ECONNREFUSED',
+2026-01-25T01:31:12:   syscall: 'connect',
+2026-01-25T01:31:12:   address: '127.0.0.1',
+2026-01-25T01:31:12:   port: 6379
+2026-01-25T01:31:12: }
+2026-01-25T01:31:12: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:12:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:12:   errno: -61,
+2026-01-25T01:31:12:   code: 'ECONNREFUSED',
+2026-01-25T01:31:12:   syscall: 'connect',
+2026-01-25T01:31:12:   address: '127.0.0.1',
+2026-01-25T01:31:12:   port: 6379
+2026-01-25T01:31:12: }
+2026-01-25T01:31:12: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:12:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:12:   errno: -61,
+2026-01-25T01:31:12:   code: 'ECONNREFUSED',
+2026-01-25T01:31:12:   syscall: 'connect',
+2026-01-25T01:31:12:   address: '127.0.0.1',
+2026-01-25T01:31:12:   port: 6379
+2026-01-25T01:31:12: }
+2026-01-25T01:31:14: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:14:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:14:   errno: -61,
+2026-01-25T01:31:14:   code: 'ECONNREFUSED',
+2026-01-25T01:31:14:   syscall: 'connect',
+2026-01-25T01:31:14:   address: '127.0.0.1',
+2026-01-25T01:31:14:   port: 6379
+2026-01-25T01:31:14: }
+2026-01-25T01:31:14: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:14:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:14:   errno: -61,
+2026-01-25T01:31:14:   code: 'ECONNREFUSED',
+2026-01-25T01:31:14:   syscall: 'connect',
+2026-01-25T01:31:14:   address: '127.0.0.1',
+2026-01-25T01:31:14:   port: 6379
+2026-01-25T01:31:14: }
+2026-01-25T01:31:14: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:14:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:14:   errno: -61,
+2026-01-25T01:31:14:   code: 'ECONNREFUSED',
+2026-01-25T01:31:14:   syscall: 'connect',
+2026-01-25T01:31:14:   address: '127.0.0.1',
+2026-01-25T01:31:14:   port: 6379
+2026-01-25T01:31:14: }
+2026-01-25T01:31:14: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:14:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:14:   errno: -61,
+2026-01-25T01:31:14:   code: 'ECONNREFUSED',
+2026-01-25T01:31:14:   syscall: 'connect',
+2026-01-25T01:31:14:   address: '127.0.0.1',
+2026-01-25T01:31:14:   port: 6379
+2026-01-25T01:31:14: }
+2026-01-25T01:31:16: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:16:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:16:   errno: -61,
+2026-01-25T01:31:16:   code: 'ECONNREFUSED',
+2026-01-25T01:31:16:   syscall: 'connect',
+2026-01-25T01:31:16:   address: '127.0.0.1',
+2026-01-25T01:31:16:   port: 6379
+2026-01-25T01:31:16: }
+2026-01-25T01:31:16: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:16:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:16:   errno: -61,
+2026-01-25T01:31:16:   code: 'ECONNREFUSED',
+2026-01-25T01:31:16:   syscall: 'connect',
+2026-01-25T01:31:16:   address: '127.0.0.1',
+2026-01-25T01:31:16:   port: 6379
+2026-01-25T01:31:16: }
+2026-01-25T01:31:16: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:16:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:16:   errno: -61,
+2026-01-25T01:31:16:   code: 'ECONNREFUSED',
+2026-01-25T01:31:16:   syscall: 'connect',
+2026-01-25T01:31:16:   address: '127.0.0.1',
+2026-01-25T01:31:16:   port: 6379
+2026-01-25T01:31:16: }
+2026-01-25T01:31:16: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:16:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:16:   errno: -61,
+2026-01-25T01:31:16:   code: 'ECONNREFUSED',
+2026-01-25T01:31:16:   syscall: 'connect',
+2026-01-25T01:31:16:   address: '127.0.0.1',
+2026-01-25T01:31:16:   port: 6379
+2026-01-25T01:31:16: }
+2026-01-25T01:31:18: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:18:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:18:   errno: -61,
+2026-01-25T01:31:18:   code: 'ECONNREFUSED',
+2026-01-25T01:31:18:   syscall: 'connect',
+2026-01-25T01:31:18:   address: '127.0.0.1',
+2026-01-25T01:31:18:   port: 6379
+2026-01-25T01:31:18: }
+2026-01-25T01:31:18: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:18:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:18:   errno: -61,
+2026-01-25T01:31:18:   code: 'ECONNREFUSED',
+2026-01-25T01:31:18:   syscall: 'connect',
+2026-01-25T01:31:18:   address: '127.0.0.1',
+2026-01-25T01:31:18:   port: 6379
+2026-01-25T01:31:18: }
+2026-01-25T01:31:18: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:18:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:18:   errno: -61,
+2026-01-25T01:31:18:   code: 'ECONNREFUSED',
+2026-01-25T01:31:18:   syscall: 'connect',
+2026-01-25T01:31:18:   address: '127.0.0.1',
+2026-01-25T01:31:18:   port: 6379
+2026-01-25T01:31:18: }
+2026-01-25T01:31:18: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:18:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:18:   errno: -61,
+2026-01-25T01:31:18:   code: 'ECONNREFUSED',
+2026-01-25T01:31:18:   syscall: 'connect',
+2026-01-25T01:31:18:   address: '127.0.0.1',
+2026-01-25T01:31:18:   port: 6379
+2026-01-25T01:31:18: }
+2026-01-25T01:31:20: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:20:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:20:   errno: -61,
+2026-01-25T01:31:20:   code: 'ECONNREFUSED',
+2026-01-25T01:31:20:   syscall: 'connect',
+2026-01-25T01:31:20:   address: '127.0.0.1',
+2026-01-25T01:31:20:   port: 6379
+2026-01-25T01:31:20: }
+2026-01-25T01:31:20: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:20:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:20:   errno: -61,
+2026-01-25T01:31:20:   code: 'ECONNREFUSED',
+2026-01-25T01:31:20:   syscall: 'connect',
+2026-01-25T01:31:20:   address: '127.0.0.1',
+2026-01-25T01:31:20:   port: 6379
+2026-01-25T01:31:20: }
+2026-01-25T01:31:20: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:20:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:20:   errno: -61,
+2026-01-25T01:31:20:   code: 'ECONNREFUSED',
+2026-01-25T01:31:20:   syscall: 'connect',
+2026-01-25T01:31:20:   address: '127.0.0.1',
+2026-01-25T01:31:20:   port: 6379
+2026-01-25T01:31:20: }
+2026-01-25T01:31:20: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:20:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:20:   errno: -61,
+2026-01-25T01:31:20:   code: 'ECONNREFUSED',
+2026-01-25T01:31:20:   syscall: 'connect',
+2026-01-25T01:31:20:   address: '127.0.0.1',
+2026-01-25T01:31:20:   port: 6379
+2026-01-25T01:31:20: }
+2026-01-25T01:31:22: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:22:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:22:   errno: -61,
+2026-01-25T01:31:22:   code: 'ECONNREFUSED',
+2026-01-25T01:31:22:   syscall: 'connect',
+2026-01-25T01:31:22:   address: '127.0.0.1',
+2026-01-25T01:31:22:   port: 6379
+2026-01-25T01:31:22: }
+2026-01-25T01:31:22: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:22:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:22:   errno: -61,
+2026-01-25T01:31:22:   code: 'ECONNREFUSED',
+2026-01-25T01:31:22:   syscall: 'connect',
+2026-01-25T01:31:22:   address: '127.0.0.1',
+2026-01-25T01:31:22:   port: 6379
+2026-01-25T01:31:22: }
+2026-01-25T01:31:22: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:22:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:22:   errno: -61,
+2026-01-25T01:31:22:   code: 'ECONNREFUSED',
+2026-01-25T01:31:22:   syscall: 'connect',
+2026-01-25T01:31:22:   address: '127.0.0.1',
+2026-01-25T01:31:22:   port: 6379
+2026-01-25T01:31:22: }
+2026-01-25T01:31:22: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:22:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:22:   errno: -61,
+2026-01-25T01:31:22:   code: 'ECONNREFUSED',
+2026-01-25T01:31:22:   syscall: 'connect',
+2026-01-25T01:31:22:   address: '127.0.0.1',
+2026-01-25T01:31:22:   port: 6379
+2026-01-25T01:31:22: }
+2026-01-25T01:31:24: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:24:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:24:   errno: -61,
+2026-01-25T01:31:24:   code: 'ECONNREFUSED',
+2026-01-25T01:31:24:   syscall: 'connect',
+2026-01-25T01:31:24:   address: '127.0.0.1',
+2026-01-25T01:31:24:   port: 6379
+2026-01-25T01:31:24: }
+2026-01-25T01:31:24: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:24:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:24:   errno: -61,
+2026-01-25T01:31:24:   code: 'ECONNREFUSED',
+2026-01-25T01:31:24:   syscall: 'connect',
+2026-01-25T01:31:24:   address: '127.0.0.1',
+2026-01-25T01:31:24:   port: 6379
+2026-01-25T01:31:24: }
+2026-01-25T01:31:24: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:24:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:24:   errno: -61,
+2026-01-25T01:31:24:   code: 'ECONNREFUSED',
+2026-01-25T01:31:24:   syscall: 'connect',
+2026-01-25T01:31:24:   address: '127.0.0.1',
+2026-01-25T01:31:24:   port: 6379
+2026-01-25T01:31:24: }
+2026-01-25T01:31:24: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:24:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:24:   errno: -61,
+2026-01-25T01:31:24:   code: 'ECONNREFUSED',
+2026-01-25T01:31:24:   syscall: 'connect',
+2026-01-25T01:31:24:   address: '127.0.0.1',
+2026-01-25T01:31:24:   port: 6379
+2026-01-25T01:31:24: }
+2026-01-25T01:31:26: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:26:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:26:   errno: -61,
+2026-01-25T01:31:26:   code: 'ECONNREFUSED',
+2026-01-25T01:31:26:   syscall: 'connect',
+2026-01-25T01:31:26:   address: '127.0.0.1',
+2026-01-25T01:31:26:   port: 6379
+2026-01-25T01:31:26: }
+2026-01-25T01:31:26: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:26:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:26:   errno: -61,
+2026-01-25T01:31:26:   code: 'ECONNREFUSED',
+2026-01-25T01:31:26:   syscall: 'connect',
+2026-01-25T01:31:26:   address: '127.0.0.1',
+2026-01-25T01:31:26:   port: 6379
+2026-01-25T01:31:26: }
+2026-01-25T01:31:26: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:26:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:26:   errno: -61,
+2026-01-25T01:31:26:   code: 'ECONNREFUSED',
+2026-01-25T01:31:26:   syscall: 'connect',
+2026-01-25T01:31:26:   address: '127.0.0.1',
+2026-01-25T01:31:26:   port: 6379
+2026-01-25T01:31:26: }
+2026-01-25T01:31:26: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:26:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:26:   errno: -61,
+2026-01-25T01:31:26:   code: 'ECONNREFUSED',
+2026-01-25T01:31:26:   syscall: 'connect',
+2026-01-25T01:31:26:   address: '127.0.0.1',
+2026-01-25T01:31:26:   port: 6379
+2026-01-25T01:31:26: }
+2026-01-25T01:31:28: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:28:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:28:   errno: -61,
+2026-01-25T01:31:28:   code: 'ECONNREFUSED',
+2026-01-25T01:31:28:   syscall: 'connect',
+2026-01-25T01:31:28:   address: '127.0.0.1',
+2026-01-25T01:31:28:   port: 6379
+2026-01-25T01:31:28: }
+2026-01-25T01:31:28: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:28:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:28:   errno: -61,
+2026-01-25T01:31:28:   code: 'ECONNREFUSED',
+2026-01-25T01:31:28:   syscall: 'connect',
+2026-01-25T01:31:28:   address: '127.0.0.1',
+2026-01-25T01:31:28:   port: 6379
+2026-01-25T01:31:28: }
+2026-01-25T01:31:28: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:28:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:28:   errno: -61,
+2026-01-25T01:31:28:   code: 'ECONNREFUSED',
+2026-01-25T01:31:28:   syscall: 'connect',
+2026-01-25T01:31:28:   address: '127.0.0.1',
+2026-01-25T01:31:28:   port: 6379
+2026-01-25T01:31:28: }
+2026-01-25T01:31:28: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:28:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:28:   errno: -61,
+2026-01-25T01:31:28:   code: 'ECONNREFUSED',
+2026-01-25T01:31:28:   syscall: 'connect',
+2026-01-25T01:31:28:   address: '127.0.0.1',
+2026-01-25T01:31:28:   port: 6379
+2026-01-25T01:31:28: }
+2026-01-25T01:31:30: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:30:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:30:   errno: -61,
+2026-01-25T01:31:30:   code: 'ECONNREFUSED',
+2026-01-25T01:31:30:   syscall: 'connect',
+2026-01-25T01:31:30:   address: '127.0.0.1',
+2026-01-25T01:31:30:   port: 6379
+2026-01-25T01:31:30: }
+2026-01-25T01:31:30: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:30:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:30:   errno: -61,
+2026-01-25T01:31:30:   code: 'ECONNREFUSED',
+2026-01-25T01:31:30:   syscall: 'connect',
+2026-01-25T01:31:30:   address: '127.0.0.1',
+2026-01-25T01:31:30:   port: 6379
+2026-01-25T01:31:30: }
+2026-01-25T01:31:30: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:30:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:30:   errno: -61,
+2026-01-25T01:31:30:   code: 'ECONNREFUSED',
+2026-01-25T01:31:30:   syscall: 'connect',
+2026-01-25T01:31:30:   address: '127.0.0.1',
+2026-01-25T01:31:30:   port: 6379
+2026-01-25T01:31:30: }
+2026-01-25T01:31:30: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:30:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:30:   errno: -61,
+2026-01-25T01:31:30:   code: 'ECONNREFUSED',
+2026-01-25T01:31:30:   syscall: 'connect',
+2026-01-25T01:31:30:   address: '127.0.0.1',
+2026-01-25T01:31:30:   port: 6379
+2026-01-25T01:31:30: }
+2026-01-25T01:31:32: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:32:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:32:   errno: -61,
+2026-01-25T01:31:32:   code: 'ECONNREFUSED',
+2026-01-25T01:31:32:   syscall: 'connect',
+2026-01-25T01:31:32:   address: '127.0.0.1',
+2026-01-25T01:31:32:   port: 6379
+2026-01-25T01:31:32: }
+2026-01-25T01:31:32: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:32:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:32:   errno: -61,
+2026-01-25T01:31:32:   code: 'ECONNREFUSED',
+2026-01-25T01:31:32:   syscall: 'connect',
+2026-01-25T01:31:32:   address: '127.0.0.1',
+2026-01-25T01:31:32:   port: 6379
+2026-01-25T01:31:32: }
+2026-01-25T01:31:32: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:32:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:32:   errno: -61,
+2026-01-25T01:31:32:   code: 'ECONNREFUSED',
+2026-01-25T01:31:32:   syscall: 'connect',
+2026-01-25T01:31:32:   address: '127.0.0.1',
+2026-01-25T01:31:32:   port: 6379
+2026-01-25T01:31:32: }
+2026-01-25T01:31:32: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:32:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:32:   errno: -61,
+2026-01-25T01:31:32:   code: 'ECONNREFUSED',
+2026-01-25T01:31:32:   syscall: 'connect',
+2026-01-25T01:31:32:   address: '127.0.0.1',
+2026-01-25T01:31:32:   port: 6379
+2026-01-25T01:31:32: }
+2026-01-25T01:31:34: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:34:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:34:   errno: -61,
+2026-01-25T01:31:34:   code: 'ECONNREFUSED',
+2026-01-25T01:31:34:   syscall: 'connect',
+2026-01-25T01:31:34:   address: '127.0.0.1',
+2026-01-25T01:31:34:   port: 6379
+2026-01-25T01:31:34: }
+2026-01-25T01:31:34: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:34:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:34:   errno: -61,
+2026-01-25T01:31:34:   code: 'ECONNREFUSED',
+2026-01-25T01:31:34:   syscall: 'connect',
+2026-01-25T01:31:34:   address: '127.0.0.1',
+2026-01-25T01:31:34:   port: 6379
+2026-01-25T01:31:34: }
+2026-01-25T01:31:34: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:34:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:34:   errno: -61,
+2026-01-25T01:31:34:   code: 'ECONNREFUSED',
+2026-01-25T01:31:34:   syscall: 'connect',
+2026-01-25T01:31:34:   address: '127.0.0.1',
+2026-01-25T01:31:34:   port: 6379
+2026-01-25T01:31:34: }
+2026-01-25T01:31:34: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:34:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:34:   errno: -61,
+2026-01-25T01:31:34:   code: 'ECONNREFUSED',
+2026-01-25T01:31:34:   syscall: 'connect',
+2026-01-25T01:31:34:   address: '127.0.0.1',
+2026-01-25T01:31:34:   port: 6379
+2026-01-25T01:31:34: }
+2026-01-25T01:31:36: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:36:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:36:   errno: -61,
+2026-01-25T01:31:36:   code: 'ECONNREFUSED',
+2026-01-25T01:31:36:   syscall: 'connect',
+2026-01-25T01:31:36:   address: '127.0.0.1',
+2026-01-25T01:31:36:   port: 6379
+2026-01-25T01:31:36: }
+2026-01-25T01:31:36: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:36:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:36:   errno: -61,
+2026-01-25T01:31:36:   code: 'ECONNREFUSED',
+2026-01-25T01:31:36:   syscall: 'connect',
+2026-01-25T01:31:36:   address: '127.0.0.1',
+2026-01-25T01:31:36:   port: 6379
+2026-01-25T01:31:36: }
+2026-01-25T01:31:36: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:36:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:36:   errno: -61,
+2026-01-25T01:31:36:   code: 'ECONNREFUSED',
+2026-01-25T01:31:36:   syscall: 'connect',
+2026-01-25T01:31:36:   address: '127.0.0.1',
+2026-01-25T01:31:36:   port: 6379
+2026-01-25T01:31:36: }
+2026-01-25T01:31:36: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:36:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:36:   errno: -61,
+2026-01-25T01:31:36:   code: 'ECONNREFUSED',
+2026-01-25T01:31:36:   syscall: 'connect',
+2026-01-25T01:31:36:   address: '127.0.0.1',
+2026-01-25T01:31:36:   port: 6379
+2026-01-25T01:31:36: }
+2026-01-25T01:31:38: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:38:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:38:   errno: -61,
+2026-01-25T01:31:38:   code: 'ECONNREFUSED',
+2026-01-25T01:31:38:   syscall: 'connect',
+2026-01-25T01:31:38:   address: '127.0.0.1',
+2026-01-25T01:31:38:   port: 6379
+2026-01-25T01:31:38: }
+2026-01-25T01:31:38: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:38:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:38:   errno: -61,
+2026-01-25T01:31:38:   code: 'ECONNREFUSED',
+2026-01-25T01:31:38:   syscall: 'connect',
+2026-01-25T01:31:38:   address: '127.0.0.1',
+2026-01-25T01:31:38:   port: 6379
+2026-01-25T01:31:38: }
+2026-01-25T01:31:38: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:38:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:38:   errno: -61,
+2026-01-25T01:31:38:   code: 'ECONNREFUSED',
+2026-01-25T01:31:38:   syscall: 'connect',
+2026-01-25T01:31:38:   address: '127.0.0.1',
+2026-01-25T01:31:38:   port: 6379
+2026-01-25T01:31:38: }
+2026-01-25T01:31:38: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:38:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:38:   errno: -61,
+2026-01-25T01:31:38:   code: 'ECONNREFUSED',
+2026-01-25T01:31:38:   syscall: 'connect',
+2026-01-25T01:31:38:   address: '127.0.0.1',
+2026-01-25T01:31:38:   port: 6379
+2026-01-25T01:31:38: }
+2026-01-25T01:31:40: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:40:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:40:   errno: -61,
+2026-01-25T01:31:40:   code: 'ECONNREFUSED',
+2026-01-25T01:31:40:   syscall: 'connect',
+2026-01-25T01:31:40:   address: '127.0.0.1',
+2026-01-25T01:31:40:   port: 6379
+2026-01-25T01:31:40: }
+2026-01-25T01:31:40: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:40:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:40:   errno: -61,
+2026-01-25T01:31:40:   code: 'ECONNREFUSED',
+2026-01-25T01:31:40:   syscall: 'connect',
+2026-01-25T01:31:40:   address: '127.0.0.1',
+2026-01-25T01:31:40:   port: 6379
+2026-01-25T01:31:40: }
+2026-01-25T01:31:40: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:40:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:40:   errno: -61,
+2026-01-25T01:31:40:   code: 'ECONNREFUSED',
+2026-01-25T01:31:40:   syscall: 'connect',
+2026-01-25T01:31:40:   address: '127.0.0.1',
+2026-01-25T01:31:40:   port: 6379
+2026-01-25T01:31:40: }
+2026-01-25T01:31:40: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:40:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:40:   errno: -61,
+2026-01-25T01:31:40:   code: 'ECONNREFUSED',
+2026-01-25T01:31:40:   syscall: 'connect',
+2026-01-25T01:31:40:   address: '127.0.0.1',
+2026-01-25T01:31:40:   port: 6379
+2026-01-25T01:31:40: }
+2026-01-25T01:31:42: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:42:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:42:   errno: -61,
+2026-01-25T01:31:42:   code: 'ECONNREFUSED',
+2026-01-25T01:31:42:   syscall: 'connect',
+2026-01-25T01:31:42:   address: '127.0.0.1',
+2026-01-25T01:31:42:   port: 6379
+2026-01-25T01:31:42: }
+2026-01-25T01:31:42: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:42:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:42:   errno: -61,
+2026-01-25T01:31:42:   code: 'ECONNREFUSED',
+2026-01-25T01:31:42:   syscall: 'connect',
+2026-01-25T01:31:42:   address: '127.0.0.1',
+2026-01-25T01:31:42:   port: 6379
+2026-01-25T01:31:42: }
+2026-01-25T01:31:42: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:42:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:42:   errno: -61,
+2026-01-25T01:31:42:   code: 'ECONNREFUSED',
+2026-01-25T01:31:42:   syscall: 'connect',
+2026-01-25T01:31:42:   address: '127.0.0.1',
+2026-01-25T01:31:42:   port: 6379
+2026-01-25T01:31:42: }
+2026-01-25T01:31:42: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:42:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:42:   errno: -61,
+2026-01-25T01:31:42:   code: 'ECONNREFUSED',
+2026-01-25T01:31:42:   syscall: 'connect',
+2026-01-25T01:31:42:   address: '127.0.0.1',
+2026-01-25T01:31:42:   port: 6379
+2026-01-25T01:31:42: }
+2026-01-25T01:31:44: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:44:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:44:   errno: -61,
+2026-01-25T01:31:44:   code: 'ECONNREFUSED',
+2026-01-25T01:31:44:   syscall: 'connect',
+2026-01-25T01:31:44:   address: '127.0.0.1',
+2026-01-25T01:31:44:   port: 6379
+2026-01-25T01:31:44: }
+2026-01-25T01:31:44: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:44:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:44:   errno: -61,
+2026-01-25T01:31:44:   code: 'ECONNREFUSED',
+2026-01-25T01:31:44:   syscall: 'connect',
+2026-01-25T01:31:44:   address: '127.0.0.1',
+2026-01-25T01:31:44:   port: 6379
+2026-01-25T01:31:44: }
+2026-01-25T01:31:44: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:44:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:44:   errno: -61,
+2026-01-25T01:31:44:   code: 'ECONNREFUSED',
+2026-01-25T01:31:44:   syscall: 'connect',
+2026-01-25T01:31:44:   address: '127.0.0.1',
+2026-01-25T01:31:44:   port: 6379
+2026-01-25T01:31:44: }
+2026-01-25T01:31:44: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:44:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:44:   errno: -61,
+2026-01-25T01:31:44:   code: 'ECONNREFUSED',
+2026-01-25T01:31:44:   syscall: 'connect',
+2026-01-25T01:31:44:   address: '127.0.0.1',
+2026-01-25T01:31:44:   port: 6379
+2026-01-25T01:31:44: }
+2026-01-25T01:31:46: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:46:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:46:   errno: -61,
+2026-01-25T01:31:46:   code: 'ECONNREFUSED',
+2026-01-25T01:31:46:   syscall: 'connect',
+2026-01-25T01:31:46:   address: '127.0.0.1',
+2026-01-25T01:31:46:   port: 6379
+2026-01-25T01:31:46: }
+2026-01-25T01:31:46: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:46:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:46:   errno: -61,
+2026-01-25T01:31:46:   code: 'ECONNREFUSED',
+2026-01-25T01:31:46:   syscall: 'connect',
+2026-01-25T01:31:46:   address: '127.0.0.1',
+2026-01-25T01:31:46:   port: 6379
+2026-01-25T01:31:46: }
+2026-01-25T01:31:46: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:46:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:46:   errno: -61,
+2026-01-25T01:31:46:   code: 'ECONNREFUSED',
+2026-01-25T01:31:46:   syscall: 'connect',
+2026-01-25T01:31:46:   address: '127.0.0.1',
+2026-01-25T01:31:46:   port: 6379
+2026-01-25T01:31:46: }
+2026-01-25T01:31:46: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:46:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:46:   errno: -61,
+2026-01-25T01:31:46:   code: 'ECONNREFUSED',
+2026-01-25T01:31:46:   syscall: 'connect',
+2026-01-25T01:31:46:   address: '127.0.0.1',
+2026-01-25T01:31:46:   port: 6379
+2026-01-25T01:31:46: }
+2026-01-25T01:31:48: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:48:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:48:   errno: -61,
+2026-01-25T01:31:48:   code: 'ECONNREFUSED',
+2026-01-25T01:31:48:   syscall: 'connect',
+2026-01-25T01:31:48:   address: '127.0.0.1',
+2026-01-25T01:31:48:   port: 6379
+2026-01-25T01:31:48: }
+2026-01-25T01:31:48: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:48:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:48:   errno: -61,
+2026-01-25T01:31:48:   code: 'ECONNREFUSED',
+2026-01-25T01:31:48:   syscall: 'connect',
+2026-01-25T01:31:48:   address: '127.0.0.1',
+2026-01-25T01:31:48:   port: 6379
+2026-01-25T01:31:48: }
+2026-01-25T01:31:48: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:48:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:48:   errno: -61,
+2026-01-25T01:31:48:   code: 'ECONNREFUSED',
+2026-01-25T01:31:48:   syscall: 'connect',
+2026-01-25T01:31:48:   address: '127.0.0.1',
+2026-01-25T01:31:48:   port: 6379
+2026-01-25T01:31:48: }
+2026-01-25T01:31:48: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:48:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:48:   errno: -61,
+2026-01-25T01:31:48:   code: 'ECONNREFUSED',
+2026-01-25T01:31:48:   syscall: 'connect',
+2026-01-25T01:31:48:   address: '127.0.0.1',
+2026-01-25T01:31:48:   port: 6379
+2026-01-25T01:31:48: }
+2026-01-25T01:31:50: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:50:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:50:   errno: -61,
+2026-01-25T01:31:50:   code: 'ECONNREFUSED',
+2026-01-25T01:31:50:   syscall: 'connect',
+2026-01-25T01:31:50:   address: '127.0.0.1',
+2026-01-25T01:31:50:   port: 6379
+2026-01-25T01:31:50: }
+2026-01-25T01:31:50: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:50:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:50:   errno: -61,
+2026-01-25T01:31:50:   code: 'ECONNREFUSED',
+2026-01-25T01:31:50:   syscall: 'connect',
+2026-01-25T01:31:50:   address: '127.0.0.1',
+2026-01-25T01:31:50:   port: 6379
+2026-01-25T01:31:50: }
+2026-01-25T01:31:50: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:50:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:50:   errno: -61,
+2026-01-25T01:31:50:   code: 'ECONNREFUSED',
+2026-01-25T01:31:50:   syscall: 'connect',
+2026-01-25T01:31:50:   address: '127.0.0.1',
+2026-01-25T01:31:50:   port: 6379
+2026-01-25T01:31:50: }
+2026-01-25T01:31:50: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:50:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:50:   errno: -61,
+2026-01-25T01:31:50:   code: 'ECONNREFUSED',
+2026-01-25T01:31:50:   syscall: 'connect',
+2026-01-25T01:31:50:   address: '127.0.0.1',
+2026-01-25T01:31:50:   port: 6379
+2026-01-25T01:31:50: }
+2026-01-25T01:31:52: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:52:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:52:   errno: -61,
+2026-01-25T01:31:52:   code: 'ECONNREFUSED',
+2026-01-25T01:31:52:   syscall: 'connect',
+2026-01-25T01:31:52:   address: '127.0.0.1',
+2026-01-25T01:31:52:   port: 6379
+2026-01-25T01:31:52: }
+2026-01-25T01:31:52: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:52:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:52:   errno: -61,
+2026-01-25T01:31:52:   code: 'ECONNREFUSED',
+2026-01-25T01:31:52:   syscall: 'connect',
+2026-01-25T01:31:52:   address: '127.0.0.1',
+2026-01-25T01:31:52:   port: 6379
+2026-01-25T01:31:52: }
+2026-01-25T01:31:52: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:52:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:52:   errno: -61,
+2026-01-25T01:31:52:   code: 'ECONNREFUSED',
+2026-01-25T01:31:52:   syscall: 'connect',
+2026-01-25T01:31:52:   address: '127.0.0.1',
+2026-01-25T01:31:52:   port: 6379
+2026-01-25T01:31:52: }
+2026-01-25T01:31:52: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:52:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:52:   errno: -61,
+2026-01-25T01:31:52:   code: 'ECONNREFUSED',
+2026-01-25T01:31:52:   syscall: 'connect',
+2026-01-25T01:31:52:   address: '127.0.0.1',
+2026-01-25T01:31:52:   port: 6379
+2026-01-25T01:31:52: }
+2026-01-25T01:31:54: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:54:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:54:   errno: -61,
+2026-01-25T01:31:54:   code: 'ECONNREFUSED',
+2026-01-25T01:31:54:   syscall: 'connect',
+2026-01-25T01:31:54:   address: '127.0.0.1',
+2026-01-25T01:31:54:   port: 6379
+2026-01-25T01:31:54: }
+2026-01-25T01:31:54: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:54:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:54:   errno: -61,
+2026-01-25T01:31:54:   code: 'ECONNREFUSED',
+2026-01-25T01:31:54:   syscall: 'connect',
+2026-01-25T01:31:54:   address: '127.0.0.1',
+2026-01-25T01:31:54:   port: 6379
+2026-01-25T01:31:54: }
+2026-01-25T01:31:54: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:54:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:54:   errno: -61,
+2026-01-25T01:31:54:   code: 'ECONNREFUSED',
+2026-01-25T01:31:54:   syscall: 'connect',
+2026-01-25T01:31:54:   address: '127.0.0.1',
+2026-01-25T01:31:54:   port: 6379
+2026-01-25T01:31:54: }
+2026-01-25T01:31:54: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:54:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:54:   errno: -61,
+2026-01-25T01:31:54:   code: 'ECONNREFUSED',
+2026-01-25T01:31:54:   syscall: 'connect',
+2026-01-25T01:31:54:   address: '127.0.0.1',
+2026-01-25T01:31:54:   port: 6379
+2026-01-25T01:31:54: }
+2026-01-25T01:31:56: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:56:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:56:   errno: -61,
+2026-01-25T01:31:56:   code: 'ECONNREFUSED',
+2026-01-25T01:31:56:   syscall: 'connect',
+2026-01-25T01:31:56:   address: '127.0.0.1',
+2026-01-25T01:31:56:   port: 6379
+2026-01-25T01:31:56: }
+2026-01-25T01:31:56: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:56:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:56:   errno: -61,
+2026-01-25T01:31:56:   code: 'ECONNREFUSED',
+2026-01-25T01:31:56:   syscall: 'connect',
+2026-01-25T01:31:56:   address: '127.0.0.1',
+2026-01-25T01:31:56:   port: 6379
+2026-01-25T01:31:56: }
+2026-01-25T01:31:56: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:56:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:56:   errno: -61,
+2026-01-25T01:31:56:   code: 'ECONNREFUSED',
+2026-01-25T01:31:56:   syscall: 'connect',
+2026-01-25T01:31:56:   address: '127.0.0.1',
+2026-01-25T01:31:56:   port: 6379
+2026-01-25T01:31:56: }
+2026-01-25T01:31:56: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:56:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:56:   errno: -61,
+2026-01-25T01:31:56:   code: 'ECONNREFUSED',
+2026-01-25T01:31:56:   syscall: 'connect',
+2026-01-25T01:31:56:   address: '127.0.0.1',
+2026-01-25T01:31:56:   port: 6379
+2026-01-25T01:31:56: }
+2026-01-25T01:31:58: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:58:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:58:   errno: -61,
+2026-01-25T01:31:58:   code: 'ECONNREFUSED',
+2026-01-25T01:31:58:   syscall: 'connect',
+2026-01-25T01:31:58:   address: '127.0.0.1',
+2026-01-25T01:31:58:   port: 6379
+2026-01-25T01:31:58: }
+2026-01-25T01:31:58: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:58:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:58:   errno: -61,
+2026-01-25T01:31:58:   code: 'ECONNREFUSED',
+2026-01-25T01:31:58:   syscall: 'connect',
+2026-01-25T01:31:58:   address: '127.0.0.1',
+2026-01-25T01:31:58:   port: 6379
+2026-01-25T01:31:58: }
+2026-01-25T01:31:58: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:58:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:58:   errno: -61,
+2026-01-25T01:31:58:   code: 'ECONNREFUSED',
+2026-01-25T01:31:58:   syscall: 'connect',
+2026-01-25T01:31:58:   address: '127.0.0.1',
+2026-01-25T01:31:58:   port: 6379
+2026-01-25T01:31:58: }
+2026-01-25T01:31:58: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:31:58:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:31:58:   errno: -61,
+2026-01-25T01:31:58:   code: 'ECONNREFUSED',
+2026-01-25T01:31:58:   syscall: 'connect',
+2026-01-25T01:31:58:   address: '127.0.0.1',
+2026-01-25T01:31:58:   port: 6379
+2026-01-25T01:31:58: }
+2026-01-25T01:32:00: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:00:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:00:   errno: -61,
+2026-01-25T01:32:00:   code: 'ECONNREFUSED',
+2026-01-25T01:32:00:   syscall: 'connect',
+2026-01-25T01:32:00:   address: '127.0.0.1',
+2026-01-25T01:32:00:   port: 6379
+2026-01-25T01:32:00: }
+2026-01-25T01:32:00: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:00:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:00:   errno: -61,
+2026-01-25T01:32:00:   code: 'ECONNREFUSED',
+2026-01-25T01:32:00:   syscall: 'connect',
+2026-01-25T01:32:00:   address: '127.0.0.1',
+2026-01-25T01:32:00:   port: 6379
+2026-01-25T01:32:00: }
+2026-01-25T01:32:00: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:00:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:00:   errno: -61,
+2026-01-25T01:32:00:   code: 'ECONNREFUSED',
+2026-01-25T01:32:00:   syscall: 'connect',
+2026-01-25T01:32:00:   address: '127.0.0.1',
+2026-01-25T01:32:00:   port: 6379
+2026-01-25T01:32:00: }
+2026-01-25T01:32:00: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:00:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:00:   errno: -61,
+2026-01-25T01:32:00:   code: 'ECONNREFUSED',
+2026-01-25T01:32:00:   syscall: 'connect',
+2026-01-25T01:32:00:   address: '127.0.0.1',
+2026-01-25T01:32:00:   port: 6379
+2026-01-25T01:32:00: }
+2026-01-25T01:32:02: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:02:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:02:   errno: -61,
+2026-01-25T01:32:02:   code: 'ECONNREFUSED',
+2026-01-25T01:32:02:   syscall: 'connect',
+2026-01-25T01:32:02:   address: '127.0.0.1',
+2026-01-25T01:32:02:   port: 6379
+2026-01-25T01:32:02: }
+2026-01-25T01:32:02: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:02:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:02:   errno: -61,
+2026-01-25T01:32:02:   code: 'ECONNREFUSED',
+2026-01-25T01:32:02:   syscall: 'connect',
+2026-01-25T01:32:02:   address: '127.0.0.1',
+2026-01-25T01:32:02:   port: 6379
+2026-01-25T01:32:02: }
+2026-01-25T01:32:02: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:02:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:02:   errno: -61,
+2026-01-25T01:32:02:   code: 'ECONNREFUSED',
+2026-01-25T01:32:02:   syscall: 'connect',
+2026-01-25T01:32:02:   address: '127.0.0.1',
+2026-01-25T01:32:02:   port: 6379
+2026-01-25T01:32:02: }
+2026-01-25T01:32:02: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:02:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:02:   errno: -61,
+2026-01-25T01:32:02:   code: 'ECONNREFUSED',
+2026-01-25T01:32:02:   syscall: 'connect',
+2026-01-25T01:32:02:   address: '127.0.0.1',
+2026-01-25T01:32:02:   port: 6379
+2026-01-25T01:32:02: }
+2026-01-25T01:32:04: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:04:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:04:   errno: -61,
+2026-01-25T01:32:04:   code: 'ECONNREFUSED',
+2026-01-25T01:32:04:   syscall: 'connect',
+2026-01-25T01:32:04:   address: '127.0.0.1',
+2026-01-25T01:32:04:   port: 6379
+2026-01-25T01:32:04: }
+2026-01-25T01:32:04: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:04:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:04:   errno: -61,
+2026-01-25T01:32:04:   code: 'ECONNREFUSED',
+2026-01-25T01:32:04:   syscall: 'connect',
+2026-01-25T01:32:04:   address: '127.0.0.1',
+2026-01-25T01:32:04:   port: 6379
+2026-01-25T01:32:04: }
+2026-01-25T01:32:04: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:04:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:04:   errno: -61,
+2026-01-25T01:32:04:   code: 'ECONNREFUSED',
+2026-01-25T01:32:04:   syscall: 'connect',
+2026-01-25T01:32:04:   address: '127.0.0.1',
+2026-01-25T01:32:04:   port: 6379
+2026-01-25T01:32:04: }
+2026-01-25T01:32:04: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:04:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:04:   errno: -61,
+2026-01-25T01:32:04:   code: 'ECONNREFUSED',
+2026-01-25T01:32:04:   syscall: 'connect',
+2026-01-25T01:32:04:   address: '127.0.0.1',
+2026-01-25T01:32:04:   port: 6379
+2026-01-25T01:32:04: }
+2026-01-25T01:32:06: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:06:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:06:   errno: -61,
+2026-01-25T01:32:06:   code: 'ECONNREFUSED',
+2026-01-25T01:32:06:   syscall: 'connect',
+2026-01-25T01:32:06:   address: '127.0.0.1',
+2026-01-25T01:32:06:   port: 6379
+2026-01-25T01:32:06: }
+2026-01-25T01:32:06: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:06:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:06:   errno: -61,
+2026-01-25T01:32:06:   code: 'ECONNREFUSED',
+2026-01-25T01:32:06:   syscall: 'connect',
+2026-01-25T01:32:06:   address: '127.0.0.1',
+2026-01-25T01:32:06:   port: 6379
+2026-01-25T01:32:06: }
+2026-01-25T01:32:06: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:06:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:06:   errno: -61,
+2026-01-25T01:32:06:   code: 'ECONNREFUSED',
+2026-01-25T01:32:06:   syscall: 'connect',
+2026-01-25T01:32:06:   address: '127.0.0.1',
+2026-01-25T01:32:06:   port: 6379
+2026-01-25T01:32:06: }
+2026-01-25T01:32:06: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:06:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:06:   errno: -61,
+2026-01-25T01:32:06:   code: 'ECONNREFUSED',
+2026-01-25T01:32:06:   syscall: 'connect',
+2026-01-25T01:32:06:   address: '127.0.0.1',
+2026-01-25T01:32:06:   port: 6379
+2026-01-25T01:32:06: }
+2026-01-25T01:32:08: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:08:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:08:   errno: -61,
+2026-01-25T01:32:08:   code: 'ECONNREFUSED',
+2026-01-25T01:32:08:   syscall: 'connect',
+2026-01-25T01:32:08:   address: '127.0.0.1',
+2026-01-25T01:32:08:   port: 6379
+2026-01-25T01:32:08: }
+2026-01-25T01:32:08: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:08:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:08:   errno: -61,
+2026-01-25T01:32:08:   code: 'ECONNREFUSED',
+2026-01-25T01:32:08:   syscall: 'connect',
+2026-01-25T01:32:08:   address: '127.0.0.1',
+2026-01-25T01:32:08:   port: 6379
+2026-01-25T01:32:08: }
+2026-01-25T01:32:08: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:08:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:08:   errno: -61,
+2026-01-25T01:32:08:   code: 'ECONNREFUSED',
+2026-01-25T01:32:08:   syscall: 'connect',
+2026-01-25T01:32:08:   address: '127.0.0.1',
+2026-01-25T01:32:08:   port: 6379
+2026-01-25T01:32:08: }
+2026-01-25T01:32:08: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:08:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:08:   errno: -61,
+2026-01-25T01:32:08:   code: 'ECONNREFUSED',
+2026-01-25T01:32:08:   syscall: 'connect',
+2026-01-25T01:32:08:   address: '127.0.0.1',
+2026-01-25T01:32:08:   port: 6379
+2026-01-25T01:32:08: }
+2026-01-25T01:32:10: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:10:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:10:   errno: -61,
+2026-01-25T01:32:10:   code: 'ECONNREFUSED',
+2026-01-25T01:32:10:   syscall: 'connect',
+2026-01-25T01:32:10:   address: '127.0.0.1',
+2026-01-25T01:32:10:   port: 6379
+2026-01-25T01:32:10: }
+2026-01-25T01:32:10: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:10:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:10:   errno: -61,
+2026-01-25T01:32:10:   code: 'ECONNREFUSED',
+2026-01-25T01:32:10:   syscall: 'connect',
+2026-01-25T01:32:10:   address: '127.0.0.1',
+2026-01-25T01:32:10:   port: 6379
+2026-01-25T01:32:10: }
+2026-01-25T01:32:10: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:10:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:10:   errno: -61,
+2026-01-25T01:32:10:   code: 'ECONNREFUSED',
+2026-01-25T01:32:10:   syscall: 'connect',
+2026-01-25T01:32:10:   address: '127.0.0.1',
+2026-01-25T01:32:10:   port: 6379
+2026-01-25T01:32:10: }
+2026-01-25T01:32:10: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:10:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:10:   errno: -61,
+2026-01-25T01:32:10:   code: 'ECONNREFUSED',
+2026-01-25T01:32:10:   syscall: 'connect',
+2026-01-25T01:32:10:   address: '127.0.0.1',
+2026-01-25T01:32:10:   port: 6379
+2026-01-25T01:32:10: }
+2026-01-25T01:32:12: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:12:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:12:   errno: -61,
+2026-01-25T01:32:12:   code: 'ECONNREFUSED',
+2026-01-25T01:32:12:   syscall: 'connect',
+2026-01-25T01:32:12:   address: '127.0.0.1',
+2026-01-25T01:32:12:   port: 6379
+2026-01-25T01:32:12: }
+2026-01-25T01:32:12: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:12:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:12:   errno: -61,
+2026-01-25T01:32:12:   code: 'ECONNREFUSED',
+2026-01-25T01:32:12:   syscall: 'connect',
+2026-01-25T01:32:12:   address: '127.0.0.1',
+2026-01-25T01:32:12:   port: 6379
+2026-01-25T01:32:12: }
+2026-01-25T01:32:12: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:12:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:12:   errno: -61,
+2026-01-25T01:32:12:   code: 'ECONNREFUSED',
+2026-01-25T01:32:12:   syscall: 'connect',
+2026-01-25T01:32:12:   address: '127.0.0.1',
+2026-01-25T01:32:12:   port: 6379
+2026-01-25T01:32:12: }
+2026-01-25T01:32:12: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:12:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:12:   errno: -61,
+2026-01-25T01:32:12:   code: 'ECONNREFUSED',
+2026-01-25T01:32:12:   syscall: 'connect',
+2026-01-25T01:32:12:   address: '127.0.0.1',
+2026-01-25T01:32:12:   port: 6379
+2026-01-25T01:32:12: }
+2026-01-25T01:32:14: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:14:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:14:   errno: -61,
+2026-01-25T01:32:14:   code: 'ECONNREFUSED',
+2026-01-25T01:32:14:   syscall: 'connect',
+2026-01-25T01:32:14:   address: '127.0.0.1',
+2026-01-25T01:32:14:   port: 6379
+2026-01-25T01:32:14: }
+2026-01-25T01:32:14: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:14:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:14:   errno: -61,
+2026-01-25T01:32:14:   code: 'ECONNREFUSED',
+2026-01-25T01:32:14:   syscall: 'connect',
+2026-01-25T01:32:14:   address: '127.0.0.1',
+2026-01-25T01:32:14:   port: 6379
+2026-01-25T01:32:14: }
+2026-01-25T01:32:14: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:14:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:14:   errno: -61,
+2026-01-25T01:32:14:   code: 'ECONNREFUSED',
+2026-01-25T01:32:14:   syscall: 'connect',
+2026-01-25T01:32:14:   address: '127.0.0.1',
+2026-01-25T01:32:14:   port: 6379
+2026-01-25T01:32:14: }
+2026-01-25T01:32:14: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:14:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:14:   errno: -61,
+2026-01-25T01:32:14:   code: 'ECONNREFUSED',
+2026-01-25T01:32:14:   syscall: 'connect',
+2026-01-25T01:32:14:   address: '127.0.0.1',
+2026-01-25T01:32:14:   port: 6379
+2026-01-25T01:32:14: }
+2026-01-25T01:32:16: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:16:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:16:   errno: -61,
+2026-01-25T01:32:16:   code: 'ECONNREFUSED',
+2026-01-25T01:32:16:   syscall: 'connect',
+2026-01-25T01:32:16:   address: '127.0.0.1',
+2026-01-25T01:32:16:   port: 6379
+2026-01-25T01:32:16: }
+2026-01-25T01:32:16: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:16:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:16:   errno: -61,
+2026-01-25T01:32:16:   code: 'ECONNREFUSED',
+2026-01-25T01:32:16:   syscall: 'connect',
+2026-01-25T01:32:16:   address: '127.0.0.1',
+2026-01-25T01:32:16:   port: 6379
+2026-01-25T01:32:16: }
+2026-01-25T01:32:16: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:16:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:16:   errno: -61,
+2026-01-25T01:32:16:   code: 'ECONNREFUSED',
+2026-01-25T01:32:16:   syscall: 'connect',
+2026-01-25T01:32:16:   address: '127.0.0.1',
+2026-01-25T01:32:16:   port: 6379
+2026-01-25T01:32:16: }
+2026-01-25T01:32:16: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:16:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:16:   errno: -61,
+2026-01-25T01:32:16:   code: 'ECONNREFUSED',
+2026-01-25T01:32:16:   syscall: 'connect',
+2026-01-25T01:32:16:   address: '127.0.0.1',
+2026-01-25T01:32:16:   port: 6379
+2026-01-25T01:32:16: }
+2026-01-25T01:32:18: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:18:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:18:   errno: -61,
+2026-01-25T01:32:18:   code: 'ECONNREFUSED',
+2026-01-25T01:32:18:   syscall: 'connect',
+2026-01-25T01:32:18:   address: '127.0.0.1',
+2026-01-25T01:32:18:   port: 6379
+2026-01-25T01:32:18: }
+2026-01-25T01:32:18: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:18:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:18:   errno: -61,
+2026-01-25T01:32:18:   code: 'ECONNREFUSED',
+2026-01-25T01:32:18:   syscall: 'connect',
+2026-01-25T01:32:18:   address: '127.0.0.1',
+2026-01-25T01:32:18:   port: 6379
+2026-01-25T01:32:18: }
+2026-01-25T01:32:18: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:18:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:18:   errno: -61,
+2026-01-25T01:32:18:   code: 'ECONNREFUSED',
+2026-01-25T01:32:18:   syscall: 'connect',
+2026-01-25T01:32:18:   address: '127.0.0.1',
+2026-01-25T01:32:18:   port: 6379
+2026-01-25T01:32:18: }
+2026-01-25T01:32:18: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:18:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:18:   errno: -61,
+2026-01-25T01:32:18:   code: 'ECONNREFUSED',
+2026-01-25T01:32:18:   syscall: 'connect',
+2026-01-25T01:32:18:   address: '127.0.0.1',
+2026-01-25T01:32:18:   port: 6379
+2026-01-25T01:32:18: }
+2026-01-25T01:32:20: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:20:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:20:   errno: -61,
+2026-01-25T01:32:20:   code: 'ECONNREFUSED',
+2026-01-25T01:32:20:   syscall: 'connect',
+2026-01-25T01:32:20:   address: '127.0.0.1',
+2026-01-25T01:32:20:   port: 6379
+2026-01-25T01:32:20: }
+2026-01-25T01:32:20: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:20:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:20:   errno: -61,
+2026-01-25T01:32:20:   code: 'ECONNREFUSED',
+2026-01-25T01:32:20:   syscall: 'connect',
+2026-01-25T01:32:20:   address: '127.0.0.1',
+2026-01-25T01:32:20:   port: 6379
+2026-01-25T01:32:20: }
+2026-01-25T01:32:20: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:20:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:20:   errno: -61,
+2026-01-25T01:32:20:   code: 'ECONNREFUSED',
+2026-01-25T01:32:20:   syscall: 'connect',
+2026-01-25T01:32:20:   address: '127.0.0.1',
+2026-01-25T01:32:20:   port: 6379
+2026-01-25T01:32:20: }
+2026-01-25T01:32:20: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:20:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:20:   errno: -61,
+2026-01-25T01:32:20:   code: 'ECONNREFUSED',
+2026-01-25T01:32:20:   syscall: 'connect',
+2026-01-25T01:32:20:   address: '127.0.0.1',
+2026-01-25T01:32:20:   port: 6379
+2026-01-25T01:32:20: }
+2026-01-25T01:32:22: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:22:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:22:   errno: -61,
+2026-01-25T01:32:22:   code: 'ECONNREFUSED',
+2026-01-25T01:32:22:   syscall: 'connect',
+2026-01-25T01:32:22:   address: '127.0.0.1',
+2026-01-25T01:32:22:   port: 6379
+2026-01-25T01:32:22: }
+2026-01-25T01:32:22: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:22:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:22:   errno: -61,
+2026-01-25T01:32:22:   code: 'ECONNREFUSED',
+2026-01-25T01:32:22:   syscall: 'connect',
+2026-01-25T01:32:22:   address: '127.0.0.1',
+2026-01-25T01:32:22:   port: 6379
+2026-01-25T01:32:22: }
+2026-01-25T01:32:22: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:22:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:22:   errno: -61,
+2026-01-25T01:32:22:   code: 'ECONNREFUSED',
+2026-01-25T01:32:22:   syscall: 'connect',
+2026-01-25T01:32:22:   address: '127.0.0.1',
+2026-01-25T01:32:22:   port: 6379
+2026-01-25T01:32:22: }
+2026-01-25T01:32:22: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:22:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:22:   errno: -61,
+2026-01-25T01:32:22:   code: 'ECONNREFUSED',
+2026-01-25T01:32:22:   syscall: 'connect',
+2026-01-25T01:32:22:   address: '127.0.0.1',
+2026-01-25T01:32:22:   port: 6379
+2026-01-25T01:32:22: }
+2026-01-25T01:32:24: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:24:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:24:   errno: -61,
+2026-01-25T01:32:24:   code: 'ECONNREFUSED',
+2026-01-25T01:32:24:   syscall: 'connect',
+2026-01-25T01:32:24:   address: '127.0.0.1',
+2026-01-25T01:32:24:   port: 6379
+2026-01-25T01:32:24: }
+2026-01-25T01:32:24: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:24:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:24:   errno: -61,
+2026-01-25T01:32:24:   code: 'ECONNREFUSED',
+2026-01-25T01:32:24:   syscall: 'connect',
+2026-01-25T01:32:24:   address: '127.0.0.1',
+2026-01-25T01:32:24:   port: 6379
+2026-01-25T01:32:24: }
+2026-01-25T01:32:24: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:24:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:24:   errno: -61,
+2026-01-25T01:32:24:   code: 'ECONNREFUSED',
+2026-01-25T01:32:24:   syscall: 'connect',
+2026-01-25T01:32:24:   address: '127.0.0.1',
+2026-01-25T01:32:24:   port: 6379
+2026-01-25T01:32:24: }
+2026-01-25T01:32:24: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:24:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:24:   errno: -61,
+2026-01-25T01:32:24:   code: 'ECONNREFUSED',
+2026-01-25T01:32:24:   syscall: 'connect',
+2026-01-25T01:32:24:   address: '127.0.0.1',
+2026-01-25T01:32:24:   port: 6379
+2026-01-25T01:32:24: }
+2026-01-25T01:32:26: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:26:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:26:   errno: -61,
+2026-01-25T01:32:26:   code: 'ECONNREFUSED',
+2026-01-25T01:32:26:   syscall: 'connect',
+2026-01-25T01:32:26:   address: '127.0.0.1',
+2026-01-25T01:32:26:   port: 6379
+2026-01-25T01:32:26: }
+2026-01-25T01:32:26: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:26:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:26:   errno: -61,
+2026-01-25T01:32:26:   code: 'ECONNREFUSED',
+2026-01-25T01:32:26:   syscall: 'connect',
+2026-01-25T01:32:26:   address: '127.0.0.1',
+2026-01-25T01:32:26:   port: 6379
+2026-01-25T01:32:26: }
+2026-01-25T01:32:26: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:26:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:26:   errno: -61,
+2026-01-25T01:32:26:   code: 'ECONNREFUSED',
+2026-01-25T01:32:26:   syscall: 'connect',
+2026-01-25T01:32:26:   address: '127.0.0.1',
+2026-01-25T01:32:26:   port: 6379
+2026-01-25T01:32:26: }
+2026-01-25T01:32:26: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:26:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:26:   errno: -61,
+2026-01-25T01:32:26:   code: 'ECONNREFUSED',
+2026-01-25T01:32:26:   syscall: 'connect',
+2026-01-25T01:32:26:   address: '127.0.0.1',
+2026-01-25T01:32:26:   port: 6379
+2026-01-25T01:32:26: }
+2026-01-25T01:32:28: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:28:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:28:   errno: -61,
+2026-01-25T01:32:28:   code: 'ECONNREFUSED',
+2026-01-25T01:32:28:   syscall: 'connect',
+2026-01-25T01:32:28:   address: '127.0.0.1',
+2026-01-25T01:32:28:   port: 6379
+2026-01-25T01:32:28: }
+2026-01-25T01:32:28: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:28:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:28:   errno: -61,
+2026-01-25T01:32:28:   code: 'ECONNREFUSED',
+2026-01-25T01:32:28:   syscall: 'connect',
+2026-01-25T01:32:28:   address: '127.0.0.1',
+2026-01-25T01:32:28:   port: 6379
+2026-01-25T01:32:28: }
+2026-01-25T01:32:28: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:28:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:28:   errno: -61,
+2026-01-25T01:32:28:   code: 'ECONNREFUSED',
+2026-01-25T01:32:28:   syscall: 'connect',
+2026-01-25T01:32:28:   address: '127.0.0.1',
+2026-01-25T01:32:28:   port: 6379
+2026-01-25T01:32:28: }
+2026-01-25T01:32:28: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:28:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:28:   errno: -61,
+2026-01-25T01:32:28:   code: 'ECONNREFUSED',
+2026-01-25T01:32:28:   syscall: 'connect',
+2026-01-25T01:32:28:   address: '127.0.0.1',
+2026-01-25T01:32:28:   port: 6379
+2026-01-25T01:32:28: }
+2026-01-25T01:32:30: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:30:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:30:   errno: -61,
+2026-01-25T01:32:30:   code: 'ECONNREFUSED',
+2026-01-25T01:32:30:   syscall: 'connect',
+2026-01-25T01:32:30:   address: '127.0.0.1',
+2026-01-25T01:32:30:   port: 6379
+2026-01-25T01:32:30: }
+2026-01-25T01:32:30: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:30:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:30:   errno: -61,
+2026-01-25T01:32:30:   code: 'ECONNREFUSED',
+2026-01-25T01:32:30:   syscall: 'connect',
+2026-01-25T01:32:30:   address: '127.0.0.1',
+2026-01-25T01:32:30:   port: 6379
+2026-01-25T01:32:30: }
+2026-01-25T01:32:30: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:30:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:30:   errno: -61,
+2026-01-25T01:32:30:   code: 'ECONNREFUSED',
+2026-01-25T01:32:30:   syscall: 'connect',
+2026-01-25T01:32:30:   address: '127.0.0.1',
+2026-01-25T01:32:30:   port: 6379
+2026-01-25T01:32:30: }
+2026-01-25T01:32:30: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:30:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:30:   errno: -61,
+2026-01-25T01:32:30:   code: 'ECONNREFUSED',
+2026-01-25T01:32:30:   syscall: 'connect',
+2026-01-25T01:32:30:   address: '127.0.0.1',
+2026-01-25T01:32:30:   port: 6379
+2026-01-25T01:32:30: }
+2026-01-25T01:32:32: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:32:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:32:   errno: -61,
+2026-01-25T01:32:32:   code: 'ECONNREFUSED',
+2026-01-25T01:32:32:   syscall: 'connect',
+2026-01-25T01:32:32:   address: '127.0.0.1',
+2026-01-25T01:32:32:   port: 6379
+2026-01-25T01:32:32: }
+2026-01-25T01:32:32: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:32:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:32:   errno: -61,
+2026-01-25T01:32:32:   code: 'ECONNREFUSED',
+2026-01-25T01:32:32:   syscall: 'connect',
+2026-01-25T01:32:32:   address: '127.0.0.1',
+2026-01-25T01:32:32:   port: 6379
+2026-01-25T01:32:32: }
+2026-01-25T01:32:32: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:32:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:32:   errno: -61,
+2026-01-25T01:32:32:   code: 'ECONNREFUSED',
+2026-01-25T01:32:32:   syscall: 'connect',
+2026-01-25T01:32:32:   address: '127.0.0.1',
+2026-01-25T01:32:32:   port: 6379
+2026-01-25T01:32:32: }
+2026-01-25T01:32:32: [demucs] ✗ WORKER ERROR: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-01-25T01:32:32:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+2026-01-25T01:32:32:   errno: -61,
+2026-01-25T01:32:32:   code: 'ECONNREFUSED',
+2026-01-25T01:32:32:   syscall: 'connect',
+2026-01-25T01:32:32:   address: '127.0.0.1',
+2026-01-25T01:32:32:   port: 6379
+2026-01-25T01:32:32: }
