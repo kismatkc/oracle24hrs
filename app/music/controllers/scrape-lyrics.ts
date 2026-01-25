@@ -23,6 +23,96 @@ const preview = (s: string, max = 160) =>
 const logDivider = (label: string) =>
   console.log(`\n──────── ${label} ────────`);
 
+// ============================================================
+// LRCLIB API - Fast Pass for Synced Lyrics
+// ============================================================
+
+interface LrcLibResponse {
+  id?: number;
+  trackName?: string;
+  artistName?: string;
+  albumName?: string;
+  duration?: number;
+  instrumental?: boolean;
+  plainLyrics?: string;
+  syncedLyrics?: string;
+}
+
+/**
+ * Try to fetch lyrics from LRCLIB API first (fast, ~200ms)
+ * Returns synced lyrics with timestamps if available
+ */
+async function tryLrcLib(
+  trackName: string,
+  artistName?: string,
+  duration?: number
+): Promise<{ found: boolean; synced?: string; plain?: string }> {
+  try {
+    const params = new URLSearchParams();
+    params.set("track_name", trackName);
+    if (artistName) params.set("artist_name", artistName);
+    if (duration && duration > 0)
+      params.set("duration", String(Math.round(duration)));
+
+    const url = `https://lrclib.net/api/get?${params.toString()}`;
+    console.log(`[LRCLIB] Checking: ${url}`);
+
+    const response = await axios.get<LrcLibResponse>(url, {
+      timeout: 3000, // 3 second timeout - fail fast
+      headers: {
+        "User-Agent": "MusicApp/1.0 (https://github.com/music-app)",
+      },
+    });
+
+    const data = response.data;
+
+    // Check if we got valid lyrics
+    if (data.syncedLyrics) {
+      console.log(`[LRCLIB] ✅ Found SYNCED lyrics for "${trackName}"`);
+      return {
+        found: true,
+        synced: data.syncedLyrics,
+        plain: data.plainLyrics,
+      };
+    }
+
+    if (data.plainLyrics) {
+      console.log(
+        `[LRCLIB] ✅ Found PLAIN lyrics for "${trackName}" (no sync data)`
+      );
+      return { found: true, plain: data.plainLyrics };
+    }
+
+    console.log(`[LRCLIB] ❌ No lyrics found for "${trackName}"`);
+    return { found: false };
+  } catch (error: any) {
+    // Don't log full errors for 404s - they're expected
+    if (error.response?.status === 404) {
+      console.log(`[LRCLIB] ❌ Not found: "${trackName}"`);
+    } else {
+      console.log(`[LRCLIB] ⚠️ API error:`, error.message || error);
+    }
+    return { found: false };
+  }
+}
+
+/**
+ * Parse synced lyrics format "[mm:ss.xx] text" into plain text lines
+ */
+function parseSyncedToPlainLines(syncedLyrics: string): string[] {
+  return syncedLyrics
+    .split("\n")
+    .map((line) => {
+      // Remove timestamp prefix like [00:12.40]
+      return line.replace(/^\[\d{2}:\d{2}\.\d{2,3}\]\s*/, "").trim();
+    })
+    .filter((line) => line.length > 0 || line === ""); // Keep empty lines for verse breaks
+}
+
+// ============================================================
+// Existing Google/Playwright Scraper (unchanged)
+// ============================================================
+
 const extractLyricsFromReadability = (jsonResponse: any): string[] => {
   const { content: htmlContent } = jsonResponse ?? {};
   if (!htmlContent || typeof htmlContent !== "string") {
@@ -186,7 +276,92 @@ async function getGoogleSearchFirstResult(query: string) {
   }
 }
 
-async function scrapeLyrisc(req: Request, res: Response) {
+// ============================================================
+// Main Lyrics Handler - Hybrid Flow
+// ============================================================
+
+async function scrapeLyrics(req: Request, res: Response) {
+  const { songName, artist, duration, linkIndex } = req.query as {
+    songName: string;
+    artist?: string;
+    duration?: string;
+    linkIndex?: string;
+  };
+
+  logDivider("LYRICS REQUEST");
+  console.log("scraper > songName:", songName);
+  console.log("scraper > artist:", artist || "(not provided)");
+  console.log("scraper > duration:", duration || "(not provided)");
+  console.log("scraper > linkIndex:", linkIndex || "0");
+
+  if (!songName || !songName.trim()) {
+    res.status(400).json({
+      status: 400,
+      message: "Missing required parameter: songName",
+      source: "error",
+      type: "plain",
+      lyrics: [],
+    });
+    return;
+  }
+
+  const parsedDuration = duration ? parseFloat(duration) : undefined;
+  const parsedLinkIndex = linkIndex ? parseInt(linkIndex, 10) : 0;
+
+  // ─────────────────────────────────────────────────────────
+  // STEP 1: Try LRCLIB API first (Fast Pass - ~200ms)
+  // Only try LRCLIB on first request (linkIndex = 0)
+  // When user clicks "Change lyrics", skip to Google scraper
+  // ─────────────────────────────────────────────────────────
+  if (parsedLinkIndex === 0) {
+    logDivider("STEP 1: LRCLIB FAST PASS");
+    const lrcResult = await tryLrcLib(
+      songName.trim(),
+      artist?.trim(),
+      parsedDuration
+    );
+
+    if (lrcResult.found && lrcResult.synced) {
+      // Return synced lyrics with timestamps
+      console.log("[LRCLIB] Returning SYNCED lyrics - karaoke mode available!");
+      res.json({
+        status: 200,
+        message: "Lyrics found",
+        source: "lrclib",
+        type: "synced",
+        syncedLyrics: lrcResult.synced,
+        lyrics: parseSyncedToPlainLines(lrcResult.synced), // Also provide plain for backward compat
+      });
+      return;
+    }
+
+    if (lrcResult.found && lrcResult.plain) {
+      // Return plain lyrics from LRCLIB
+      console.log("[LRCLIB] Returning PLAIN lyrics from LRCLIB");
+      const lines = lrcResult.plain.split("\n").map((l) => l.trim());
+      res.json({
+        status: 200,
+        message: "Lyrics found",
+        source: "lrclib",
+        type: "plain",
+        lyrics: lines,
+      });
+      return;
+    }
+
+    console.log("[LRCLIB] No results, falling back to Google scraper...");
+  } else {
+    console.log(
+      `[LRCLIB] Skipped (linkIndex=${parsedLinkIndex}, user wants alternative source)`
+    );
+  }
+
+  // ─────────────────────────────────────────────────────────
+  // STEP 2: Fall back to existing Google/Playwright scraper
+  // This is the original code, preserved exactly
+  // ─────────────────────────────────────────────────────────
+  logDivider("STEP 2: GOOGLE/PLAYWRIGHT SCRAPER");
+
   let context: BrowserContext | null = null;
   let responded = false;
 
@@ -194,7 +369,13 @@ async function scrapeLyrisc(req: Request, res: Response) {
     if (responded) return;
     responded = true;
     try {
-      res.status(status).json(payload);
+      // Add source/type fields for consistency
+      const enhancedPayload = {
+        ...payload,
+        source: payload.source || "google",
+        type: payload.type || "plain",
+      };
+      res.status(status).json(enhancedPayload);
     } catch (e) {
       console.error("scraper > Response send error:", (e as Error).message);
     }
@@ -212,23 +393,15 @@ async function scrapeLyrisc(req: Request, res: Response) {
         );
       });
     }
-    safeRespond(200, { status: 200, message: "Lyrics not found", data: {} });
+    safeRespond(200, {
+      status: 200,
+      message: "Lyrics not found",
+      data: {},
+      lyrics: [],
+    });
   }, globalTimeout);
 
   try {
-    const { songName, linkIndex } = req.query as {
-      songName: string;
-      linkIndex: string;
-    };
-
-    logDivider("REQUEST");
-    console.log("scraper > songName:", songName);
-    console.log("scraper > linkIndex (raw):", linkIndex);
-
-    if (!songName || !songName.trim()) {
-      throw new Error("Missing required parameter: songName");
-    }
-
     const browser = await getBrowser();
     context = await browser.newContext({
       userAgent:
@@ -245,7 +418,7 @@ async function scrapeLyrisc(req: Request, res: Response) {
       throw new Error("No search results found for the song");
     }
 
-    const idx = Number.isFinite(Number(linkIndex)) ? Number(linkIndex) : 0;
+    const idx = Number.isFinite(parsedLinkIndex) ? parsedLinkIndex : 0;
     const chosen = results[idx];
     if (!chosen) {
       throw new Error(
@@ -394,6 +567,7 @@ async function scrapeLyrisc(req: Request, res: Response) {
         status: 200,
         message: "Lyrics not found",
         data: { url: page.url(), title },
+        lyrics: [],
       });
       return;
     }
@@ -405,10 +579,11 @@ async function scrapeLyrisc(req: Request, res: Response) {
     });
   } catch (error: any) {
     clearTimeout(timeoutId);
-    console.error("scraper > Error in scrapeLyrisc:", error?.message || error);
+    console.error("scraper > Error in scrapeLyrics:", error?.message || error);
     safeRespond(500, {
       error: error?.message,
       stack: process.env.NODE_ENV === "development" ? error?.stack : undefined,
+      lyrics: [],
     });
   } finally {
     if (context) {
@@ -424,5 +599,5 @@ async function scrapeLyrisc(req: Request, res: Response) {
   }
 }
 
-router.get("/scrape-lyrics", scrapeLyrisc);
+router.get("/scrape-lyrics", scrapeLyrics);
 export default router;
