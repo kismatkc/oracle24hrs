@@ -6,13 +6,16 @@ import { exec } from "child_process";
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 const listRoutes = require("express-list-routes");
-//test
+
 // Import all controllers
 import uploadMusic from "./controllers/upload-music.ts";
 import downloadMp3 from "./controllers/download-mp3.ts";
 import scrapeLyrics from "./controllers/scrape-lyrics.ts";
 import ttcAlerts from "./controllers/ttc-alerts.ts";
 import youtube from "./controllers/youtube.ts";
+
+// Import and start the demucs worker
+import { demucsWorker } from "./workers/demucs.worker.ts";
 
 import dotenv from "dotenv";
 dotenv.config();
@@ -65,4 +68,5 @@ app.use("/", (_req, res) => {
 /* ---------- start server ---------- */
 app.listen(Number(PORT), () => {
   console.log(`Music API listening on port ${PORT}`);
+  console.log(`Demucs worker status: ${demucsWorker ? 'running' : 'not started'}`);
 });

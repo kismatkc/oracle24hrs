@@ -283,161 +283,7 @@ router.get("/suggestions", async (req: Request, res: Response) => {
   }
 });
 
-// Helper to extract stream URL from streaming data with detailed logging
-// Prioritizes iOS-compatible formats (M4A/AAC) over WebM/Opus
-async function extractStreamUrl(
-  streamingData: any,
-  yt: Innertube
-): Promise<{
-  url: string | null;
-  format: string | null;
-  error: string | null;
-}> {
-  if (!streamingData) {
-    console.log("[youtube] No streaming_data object");
-    return { url: null, format: null, error: "No streaming data in response" };
-  }
-
-  // Log available formats for debugging
-  const adaptiveCount = streamingData.adaptive_formats?.length || 0;
-  const regularCount = streamingData.formats?.length || 0;
-  console.log(
-    `[youtube] Available formats: ${adaptiveCount} adaptive, ${regularCount} regular`
-  );
-
-  // Try adaptive_formats first (audio-only, better quality)
-  let audioFormats = streamingData.adaptive_formats?.filter(
-    (f: any) => f.has_audio && !f.has_video
-  );
-
-  console.log(
-    `[youtube] Found ${audioFormats?.length || 0} audio-only formats`
-  );
-
-  // Fallback to combined formats
-  if (!audioFormats || audioFormats.length === 0) {
-    audioFormats = streamingData.formats?.filter((f: any) => f.has_audio);
-    console.log(
-      `[youtube] Found ${audioFormats?.length || 0} combined formats with audio`
-    );
-  }
-
-  if (!audioFormats || audioFormats.length === 0) {
-    // Log what we do have for debugging
-    if (streamingData.adaptive_formats?.length) {
-      const types = streamingData.adaptive_formats.map((f: any) => ({
-        mime: f.mime_type,
-        hasAudio: f.has_audio,
-        hasVideo: f.has_video,
-      }));
-      console.log(
-        "[youtube] Adaptive format types:",
-        JSON.stringify(types.slice(0, 5))
-      );
-    }
-    return { url: null, format: null, error: "No audio formats available" };
-  }
-
-  // iOS-compatible MIME types (M4A/AAC and MP3)
-  const IOS_COMPATIBLE_MIMES = [
-    "audio/mp4",
-    "audio/mpeg",
-    "audio/aac",
-    "audio/m4a",
-  ];
-
-  // Separate iOS-compatible formats from others
-  const iosCompatibleFormats = audioFormats.filter((f: any) => {
-    const mime = (f.mime_type || "").toLowerCase();
-    return IOS_COMPATIBLE_MIMES.some((compatMime) =>
-      mime.includes(compatMime.split("/")[1])
-    );
-  });
-
-  const webmFormats = audioFormats.filter((f: any) => {
-    const mime = (f.mime_type || "").toLowerCase();
-    return mime.includes("webm") || mime.includes("opus");
-  });
-
-  console.log(
-    `[youtube] iOS-compatible formats: ${iosCompatibleFormats.length}, WebM/Opus formats: ${webmFormats.length}`
-  );
-
-  // Sort iOS-compatible formats by bitrate (highest first)
-  iosCompatibleFormats.sort(
-    (a: any, b: any) => (b.bitrate || 0) - (a.bitrate || 0)
-  );
-
-  // Try iOS-compatible formats FIRST
-  for (let i = 0; i < iosCompatibleFormats.length; i++) {
-    const format = iosCompatibleFormats[i];
-    const formatInfo = `mime=${format.mime_type}, bitrate=${format.bitrate}, itag=${format.itag}`;
-    console.log(
-      `[youtube] Trying iOS-compatible format ${i + 1}: ${formatInfo}`
-    );
-
-    try {
-      // Method 1: Direct URL
-      if (format.url) {
-        console.log("[youtube] Got iOS-compatible stream URL directly");
-        return { url: format.url, format: formatInfo, error: null };
-      }
-
-      // Method 2: Decipher
-      if (format.decipher && yt.session?.player) {
-        try {
-          const url = await format.decipher(yt.session.player);
-          if (url) {
-            console.log("[youtube] Got iOS-compatible stream URL via decipher");
-            return { url, format: formatInfo, error: null };
-          }
-        } catch (e: any) {
-          console.log(
-            `[youtube] Decipher failed for iOS format ${i + 1}:`,
-            e?.message
-          );
-        }
-      }
-
-      // Method 3: Signature cipher
-      if (format.signature_cipher && yt.session?.player) {
-        try {
-          const url = await format.decipher(yt.session.player);
-          if (url) {
-            console.log(
-              "[youtube] Got iOS-compatible stream URL via signature cipher"
-            );
-            return { url, format: formatInfo, error: null };
-          }
-        } catch (e: any) {
-          console.log(
-            `[youtube] Signature cipher failed for iOS format ${i + 1}:`,
-            e?.message
-          );
-        }
-      }
-    } catch (e: any) {
-      console.error(
-        `[youtube] Error with iOS-compatible format ${i + 1}:`,
-        e?.message
-      );
-    }
-  }
-
-  // If no iOS-compatible formats worked, log warning but DON'T fall back to WebM
-  // WebM won't work on iOS anyway
-  console.log(
-    "[youtube] No iOS-compatible formats available, WebM/Opus won't work on iOS"
-  );
-
-  return {
-    url: null,
-    format: null,
-    error: "No iOS-compatible audio formats (M4A/MP3) available",
-  };
-}
-
-// yt-dlp fallback for getting stream URL when Innertube fails
+// yt-dlp with residential IP proxy - this is the key for avoiding bot detection
 const YTDLP_COMMON_ARGS: readonly string[] = [
   "--proxy",
   "http://10.8.0.2:3128",
@@ -473,8 +319,9 @@ async function getStreamUrlWithYtDlp(
     ];
 
     console.log(
-      "[youtube] yt-dlp fallback: Getting iOS-compatible stream URL for",
-      videoId
+      "[youtube] yt-dlp: Getting iOS-compatible stream URL for",
+      videoId,
+      "(via residential proxy)"
     );
 
     const proc = spawn("yt-dlp", args);

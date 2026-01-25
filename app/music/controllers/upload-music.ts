@@ -8,6 +8,10 @@ import { demucsQueue } from "../queues/demucs.queue.ts";
 
 const router = express.Router();
 
+// 6-stem types
+type StemType = "vocals" | "drums" | "bass" | "guitar" | "piano" | "other";
+const ALL_STEMS: StemType[] = ["vocals", "drums", "bass", "guitar", "piano", "other"];
+
 /* timeouts */
 const TEN_MIN = 10 * 60 * 1000;
 function longTimeout(_req: Request, res: Response, next: NextFunction) {
@@ -22,6 +26,9 @@ const UPLOADS_DIR = path.join(ROOT, "uploads");
 for (const d of [SEPARATED_DIR, UPLOADS_DIR]) {
   fs.mkdirSync(d, { mode: 0o770, recursive: true });
 }
+
+// Model name - should match worker
+const model = process.env.DEMUCS_MODEL || "htdemucs_6s";
 
 /* static */
 router.use(
@@ -93,13 +100,9 @@ function absUrl(req: Request, maybePath?: string) {
 function findStemFiles(dir: string) {
   try {
     const files = fs.readdirSync(dir);
-    const pick = (prefixes: string[]) =>
+    const pick = (stemName: string) =>
       files
-        .filter((f) =>
-          prefixes.some((p) =>
-            f.toLowerCase().startsWith(`${p.toLowerCase()}.`)
-          )
-        )
+        .filter((f) => f.toLowerCase().startsWith(`${stemName.toLowerCase()}.`))
         .sort((a, b) => {
           const pref = [".m4a", ".mp3", ".wav", ".aac", ".caf"];
           return (
@@ -107,10 +110,13 @@ function findStemFiles(dir: string) {
             pref.indexOf(path.extname(b).toLowerCase())
           );
         })[0];
-    return {
-      vocals: pick(["vocals", "voice"]),
-      accomp: pick(["no_vocals", "accompaniment", "instrumental", "other"]),
-    };
+    
+    // Return all 6 stems
+    const result: Record<string, string | undefined> = {};
+    for (const stem of ALL_STEMS) {
+      result[stem] = pick(stem);
+    }
+    return result;
   } catch {
     return {};
   }
@@ -132,6 +138,10 @@ function sepDirFromAnyUrl(url?: string) {
 
 function sepDirFromBasename(b?: string) {
   if (!b) return;
+  // Check with model prefix first
+  const withModel = path.join(SEPARATED_DIR, model, b);
+  if (fs.existsSync(withModel) && fs.statSync(withModel).isDirectory()) return withModel;
+  
   const direct = path.join(SEPARATED_DIR, b);
   if (fs.existsSync(direct) && fs.statSync(direct).isDirectory()) return direct;
   try {
@@ -146,23 +156,32 @@ function sepDirFromBasename(b?: string) {
 
 function urlsFromSepDir(req: Request, sepDir?: string) {
   if (!sepDir) return {};
-  const { vocals, accomp } = findStemFiles(sepDir);
+  const stemFiles = findStemFiles(sepDir);
   const rel = path.relative(SEPARATED_DIR, sepDir).replace(/\\/g, "/");
-  const vocalsUrl = vocals
-    ? absUrl(req, `/separated/${rel}/${vocals}`)
-    : undefined;
-  const accompanimentUrl = accomp
-    ? absUrl(req, `/separated/${rel}/${accomp}`)
-    : undefined;
-  return { vocalsUrl, accompanimentUrl, instrumentalUrl: accompanimentUrl };
+  
+  const result: Record<string, string | undefined> = {};
+  
+  // Build URLs for all 6 stems
+  for (const stem of ALL_STEMS) {
+    const file = stemFiles[stem];
+    if (file) {
+      result[`${stem}Url`] = absUrl(req, `/separated/${rel}/${file}`);
+    }
+  }
+  
+  // Legacy compatibility
+  result.accompanimentUrl = result.otherUrl;
+  result.instrumentalUrl = result.otherUrl;
+  
+  return result;
 }
 
 async function resolveSepDir(job: any, ret?: any) {
   let dir =
     ret?.sepDir ||
     sepDirFromAnyUrl(ret?.vocalsUrl) ||
-    sepDirFromAnyUrl(ret?.accompanimentUrl) ||
-    sepDirFromAnyUrl(ret?.instrumentalUrl);
+    sepDirFromAnyUrl(ret?.drumsUrl) ||
+    sepDirFromAnyUrl(ret?.otherUrl);
   if (dir) return dir;
   const candidates = Array.from(
     new Set(
@@ -194,20 +213,32 @@ async function gather(req: Request, idOrJob: string | any) {
     sepDirFromBasename(typeof idOrJob === "string" ? idOrJob : undefined);
 
   const urls = urlsFromSepDir(req, sepDir);
-  const vocals = urls.vocalsUrl || absUrl(req, ret.vocalsUrl);
-  const accomp =
-    urls.accompanimentUrl ||
-    absUrl(req, ret.accompanimentUrl || ret.instrumentalUrl);
-  const ready = !!(vocals && accomp);
+  
+  // Get all stem URLs
+  const vocalsUrl = urls.vocalsUrl || absUrl(req, ret.vocalsUrl);
+  const drumsUrl = urls.drumsUrl || absUrl(req, ret.drumsUrl);
+  const bassUrl = urls.bassUrl || absUrl(req, ret.bassUrl);
+  const guitarUrl = urls.guitarUrl || absUrl(req, ret.guitarUrl);
+  const pianoUrl = urls.pianoUrl || absUrl(req, ret.pianoUrl);
+  const otherUrl = urls.otherUrl || absUrl(req, ret.otherUrl);
+  
+  // Ready if we have at least vocals (primary stem)
+  const ready = !!vocalsUrl;
 
   return {
     state: ready ? "completed" : state,
     progress: ready ? 100 : progress,
     ready,
     result: {
-      vocalsUrl: vocals,
-      accompanimentUrl: accomp,
-      instrumentalUrl: accomp,
+      vocalsUrl,
+      drumsUrl,
+      bassUrl,
+      guitarUrl,
+      pianoUrl,
+      otherUrl,
+      // Legacy compatibility
+      accompanimentUrl: otherUrl,
+      instrumentalUrl: otherUrl,
       sepDir,
     },
   };
@@ -351,8 +382,13 @@ router.get("/stems/:id/state", async (req, res) => {
         readyAt: now,
         expiresAt,
         vocalsUrl: r.vocalsUrl || "",
-        accompanimentUrl: r.accompanimentUrl || r.instrumentalUrl || "",
-        instrumentalUrl: r.instrumentalUrl || r.accompanimentUrl || "",
+        drumsUrl: r.drumsUrl || "",
+        bassUrl: r.bassUrl || "",
+        guitarUrl: r.guitarUrl || "",
+        pianoUrl: r.pianoUrl || "",
+        otherUrl: r.otherUrl || "",
+        accompanimentUrl: r.otherUrl || "",
+        instrumentalUrl: r.otherUrl || "",
       });
       available = true;
       displayProgress = 100;
@@ -392,9 +428,18 @@ router.get("/stems/:id/result", async (req, res) => {
     if (info.ready && isAvailable) {
       res.json({
         ready: true,
-        ...(info.result as any),
         available: true,
         expiresAt: meta?.expiresAt ? Number(meta.expiresAt) : null,
+        // All 6 stems
+        vocalsUrl: (info.result as any).vocalsUrl,
+        drumsUrl: (info.result as any).drumsUrl,
+        bassUrl: (info.result as any).bassUrl,
+        guitarUrl: (info.result as any).guitarUrl,
+        pianoUrl: (info.result as any).pianoUrl,
+        otherUrl: (info.result as any).otherUrl,
+        // Legacy
+        accompanimentUrl: (info.result as any).otherUrl,
+        instrumentalUrl: (info.result as any).otherUrl,
       });
       return;
     }
@@ -407,16 +452,28 @@ router.get("/stems/:id/result", async (req, res) => {
         readyAt: now,
         expiresAt: now + FIFTEEN_DAYS_MS,
         vocalsUrl: urls.vocalsUrl || "",
-        accompanimentUrl: urls.accompanimentUrl || urls.instrumentalUrl || "",
-        instrumentalUrl: urls.instrumentalUrl || urls.accompanimentUrl || "",
+        drumsUrl: urls.drumsUrl || "",
+        bassUrl: urls.bassUrl || "",
+        guitarUrl: urls.guitarUrl || "",
+        pianoUrl: urls.pianoUrl || "",
+        otherUrl: urls.otherUrl || "",
+        accompanimentUrl: urls.otherUrl || "",
+        instrumentalUrl: urls.otherUrl || "",
         status: "completed",
         progress: 100,
       });
       res.json({
         ready: true,
-        ...(urls as any),
         available: true,
         expiresAt: now + FIFTEEN_DAYS_MS,
+        vocalsUrl: urls.vocalsUrl,
+        drumsUrl: urls.drumsUrl,
+        bassUrl: urls.bassUrl,
+        guitarUrl: urls.guitarUrl,
+        pianoUrl: urls.pianoUrl,
+        otherUrl: urls.otherUrl,
+        accompanimentUrl: urls.otherUrl,
+        instrumentalUrl: urls.otherUrl,
       });
       return;
     }

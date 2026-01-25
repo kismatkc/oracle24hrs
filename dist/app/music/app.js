@@ -11,6 +11,8 @@ import downloadMp3 from "./controllers/download-mp3.js";
 import scrapeLyrics from "./controllers/scrape-lyrics.js";
 import ttcAlerts from "./controllers/ttc-alerts.js";
 import youtube from "./controllers/youtube.js";
+// Import and start the demucs worker
+import { demucsWorker } from "./workers/demucs.worker.js";
 import dotenv from "dotenv";
 dotenv.config();
 const app = express();
@@ -54,4 +56,5 @@ app.use("/", (_req, res) => {
 /* ---------- start server ---------- */
 app.listen(Number(PORT), () => {
     console.log(`Music API listening on port ${PORT}`);
+    console.log(`Demucs worker status: ${demucsWorker ? 'running' : 'not started'}`);
 });
