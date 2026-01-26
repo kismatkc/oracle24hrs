@@ -39,7 +39,11 @@ async function tryLrcLib(trackName, artistName, duration) {
         // Check if we got valid lyrics
         if (data.syncedLyrics) {
             console.log(`[LRCLIB] ✅ Found SYNCED lyrics for "${trackName}"`);
-            return { found: true, synced: data.syncedLyrics, plain: data.plainLyrics };
+            return {
+                found: true,
+                synced: data.syncedLyrics,
+                plain: data.plainLyrics,
+            };
         }
         if (data.plainLyrics) {
             console.log(`[LRCLIB] ✅ Found PLAIN lyrics for "${trackName}" (no sync data)`);
@@ -310,7 +314,12 @@ async function scrapeLyrics(req, res) {
                 console.warn("scraper > Error closing context on timeout:", e.message);
             });
         }
-        safeRespond(200, { status: 200, message: "Lyrics not found", data: {}, lyrics: [] });
+        safeRespond(200, {
+            status: 200,
+            message: "Lyrics not found",
+            data: {},
+            lyrics: [],
+        });
     }, globalTimeout);
     try {
         const browser = await getBrowser();

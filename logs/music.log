@@ -1,117 +1,404 @@
-2026-01-25T23:32:25: 
-2026-01-25T23:32:25: ──────── LYRICS REQUEST ────────
-2026-01-25T23:32:25: scraper > songName: K Garu (Acoustic) - @JohnChamlingTV #johnandthelocals
-2026-01-25T23:32:25: scraper > artist: Hashtag Dang
-2026-01-25T23:32:25: scraper > duration: 173
-2026-01-25T23:32:25: scraper > linkIndex: 0
-2026-01-25T23:32:25: 
-2026-01-25T23:32:25: ──────── STEP 1: LRCLIB FAST PASS ────────
-2026-01-25T23:32:25: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=K+Garu+%28Acoustic%29+-+%40JohnChamlingTV+%23johnandthelocals&artist_name=Hashtag+Dang&duration=173
-2026-01-25T23:32:28: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
-2026-01-25T23:32:28: [LRCLIB] No results, falling back to Google scraper...
-2026-01-25T23:32:28: 
-2026-01-25T23:32:28: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
-2026-01-25T23:32:29: 
-2026-01-25T23:32:29: ──────── GOOGLE SEARCH ────────
-2026-01-25T23:32:29: scraper > Searching Google for: k garu (acoustic) - @johnchamlingtv #johnandthelocals
-2026-01-25T23:32:29: scraper > Final query sent: "k garu (acoustic) - @johnchamlingtv #johnandthelocals lyrics and chords"
-2026-01-25T23:32:29: scraper > Google returned 8 results
-2026-01-25T23:32:29: scraper > Chosen URL: https://www.tiktok.com/discover/k-garu-john-chamling-full-lyrics
-2026-01-25T23:32:29: 
-2026-01-25T23:32:29: ──────── NAVIGATE ────────
-2026-01-25T23:32:30: scraper > page.goto done. Final URL: https://www.tiktok.com/discover/k-garu-john-chamling-full-lyrics
-2026-01-25T23:32:39: 
-2026-01-25T23:32:39: ──────── READABILITY ────────
-2026-01-25T23:32:40: scraper > isProbablyReaderable: false
-2026-01-25T23:32:40: 
-2026-01-25T23:32:40: ──────── FALLBACK #1 (DENSE BLOCK) ────────
-2026-01-25T23:32:40: 
-2026-01-25T23:32:40: ──────── FALLBACK #2 (SITE-AWARE) ────────
-2026-01-25T23:32:40: 
-2026-01-25T23:32:40: ──────── RESULT ────────
-2026-01-25T23:32:40: scraper > Total lines: 32
-2026-01-25T23:33:14: 
-2026-01-25T23:33:14: ──────── LYRICS REQUEST ────────
-2026-01-25T23:33:14: scraper > songName: K Garu (Acoustic) - @JohnChamlingTV #johnandthelocals
-2026-01-25T23:33:14: scraper > artist: Hashtag Dang
-2026-01-25T23:33:14: scraper > duration: 173
-2026-01-25T23:33:14: scraper > linkIndex: 1
-2026-01-25T23:33:14: [LRCLIB] Skipped (linkIndex=1, user wants alternative source)
-2026-01-25T23:33:14: 
-2026-01-25T23:33:14: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
-2026-01-25T23:33:14: 
-2026-01-25T23:33:14: ──────── GOOGLE SEARCH ────────
-2026-01-25T23:33:14: scraper > Searching Google for: k garu (acoustic) - @johnchamlingtv #johnandthelocals
-2026-01-25T23:33:14: scraper > Final query sent: "k garu (acoustic) - @johnchamlingtv #johnandthelocals lyrics and chords"
-2026-01-25T23:33:15: scraper > Google returned 8 results
-2026-01-25T23:33:15: scraper > Chosen URL: https://www.tiktok.com/discover/john-chamling-rai-k-garu-lyrics
-2026-01-25T23:33:15: 
-2026-01-25T23:33:15: ──────── NAVIGATE ────────
-2026-01-25T23:33:16: scraper > page.goto done. Final URL: https://www.tiktok.com/discover/john-chamling-rai-k-garu-lyrics
-2026-01-25T23:33:24: 
-2026-01-25T23:33:24: ──────── READABILITY ────────
-2026-01-25T23:33:24: scraper > isProbablyReaderable: false
-2026-01-25T23:33:24: 
-2026-01-25T23:33:24: ──────── FALLBACK #1 (DENSE BLOCK) ────────
-2026-01-25T23:33:24: 
-2026-01-25T23:33:24: ──────── FALLBACK #2 (SITE-AWARE) ────────
-2026-01-25T23:33:24: 
-2026-01-25T23:33:24: ──────── RESULT ────────
-2026-01-25T23:33:24: scraper > Total lines: 32
-2026-01-25T23:33:29: 
-2026-01-25T23:33:29: ──────── LYRICS REQUEST ────────
-2026-01-25T23:33:29: scraper > songName: K Garu (Acoustic) - @JohnChamlingTV #johnandthelocals
-2026-01-25T23:33:29: scraper > artist: Hashtag Dang
-2026-01-25T23:33:29: scraper > duration: 173
-2026-01-25T23:33:29: scraper > linkIndex: 2
-2026-01-25T23:33:29: [LRCLIB] Skipped (linkIndex=2, user wants alternative source)
-2026-01-25T23:33:29: 
-2026-01-25T23:33:29: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
-2026-01-25T23:33:29: 
-2026-01-25T23:33:29: ──────── GOOGLE SEARCH ────────
-2026-01-25T23:33:29: scraper > Searching Google for: k garu (acoustic) - @johnchamlingtv #johnandthelocals
-2026-01-25T23:33:29: scraper > Final query sent: "k garu (acoustic) - @johnchamlingtv #johnandthelocals lyrics and chords"
-2026-01-25T23:33:29: scraper > Google returned 8 results
-2026-01-25T23:33:29: scraper > Chosen URL: https://www.tiktok.com/discover/john-chamling-vanana-matra-overley-lyrics
-2026-01-25T23:33:29: 
-2026-01-25T23:33:29: ──────── NAVIGATE ────────
-2026-01-25T23:33:30: scraper > page.goto done. Final URL: https://www.tiktok.com/discover/john-chamling-vanana-matra-overley-lyrics
-2026-01-25T23:33:38: 
-2026-01-25T23:33:38: ──────── READABILITY ────────
-2026-01-25T23:33:38: scraper > isProbablyReaderable: false
-2026-01-25T23:33:38: 
-2026-01-25T23:33:38: ──────── FALLBACK #1 (DENSE BLOCK) ────────
-2026-01-25T23:33:38: 
-2026-01-25T23:33:38: ──────── FALLBACK #2 (SITE-AWARE) ────────
-2026-01-25T23:33:38: 
-2026-01-25T23:33:38: ──────── RESULT ────────
-2026-01-25T23:33:38: scraper > Total lines: 32
-2026-01-25T23:34:19: 
-2026-01-25T23:34:19: ──────── LYRICS REQUEST ────────
-2026-01-25T23:34:19: scraper > songName: Nothing else matters
-2026-01-25T23:34:19: scraper > artist: Metalica
-2026-01-25T23:34:19: scraper > duration: 173
-2026-01-25T23:34:19: scraper > linkIndex: 1
-2026-01-25T23:34:19: [LRCLIB] Skipped (linkIndex=1, user wants alternative source)
-2026-01-25T23:34:19: 
-2026-01-25T23:34:19: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
-2026-01-25T23:34:19: 
-2026-01-25T23:34:19: ──────── GOOGLE SEARCH ────────
-2026-01-25T23:34:19: scraper > Searching Google for: nothing else matters
-2026-01-25T23:34:19: scraper > Final query sent: "nothing else matters lyrics and chords"
-2026-01-25T23:34:19: scraper > Google returned 8 results
-2026-01-25T23:34:19: scraper > Chosen URL: https://www.e-chords.com/chords/metallica/nothing-else-matters
-2026-01-25T23:34:19: 
-2026-01-25T23:34:19: ──────── NAVIGATE ────────
-2026-01-25T23:34:21: scraper > page.goto done. Final URL: https://www.e-chords.com/chords/metallica/nothing-else-matters
-2026-01-25T23:34:33: scraper > networkidle wait skipped/timeout
-2026-01-25T23:34:33: 
-2026-01-25T23:34:33: ──────── READABILITY ────────
-2026-01-25T23:34:33: scraper > isProbablyReaderable: true
-2026-01-25T23:34:34: 
-2026-01-25T23:34:34: ──────── FALLBACK #1 (DENSE BLOCK) ────────
-2026-01-25T23:34:34: 
-2026-01-25T23:34:34: ──────── FALLBACK #2 (SITE-AWARE) ────────
-2026-01-25T23:34:34: 
-2026-01-25T23:34:34: ──────── RESULT ────────
-2026-01-25T23:34:34: scraper > Total lines: 2
+2026-01-26T18:41:00: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:01: [upload] Job created: mkviihc0-k93z01bw for song mkviihc0-k93z01bw
+2026-01-26T18:41:06: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:06: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:41:06: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:11: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:11: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:41:11: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:16: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:16: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:41:16: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:21: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:21: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:41:21: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:26: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:26: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:41:26: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:31: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:31: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:41:31: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:36: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:36: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:41:36: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:41: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:41: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:41:41: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:46: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:46: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:41:46: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:51: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:51: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:41:51: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:56: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:41:56: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:41:56: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:42:01: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:42:01: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:42:01: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:42:06: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:42:06: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:42:06: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:42:11: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:42:11: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:42:11: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:46:25: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:46:25: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:46:25: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:46:30: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:46:30: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:46:30: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:46:35: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:46:35: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:46:35: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:46:40: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:46:40: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:46:40: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:46:44: 
+2026-01-26T18:46:44: ──────── LYRICS REQUEST ────────
+2026-01-26T18:46:44: scraper > songName: ⚡🎵 Epic Electric Timer - 30 Seconds Countdown 🎵⚡
+2026-01-26T18:46:44: scraper > artist: Timer
+2026-01-26T18:46:44: scraper > duration: 31
+2026-01-26T18:46:44: scraper > linkIndex: 0
+2026-01-26T18:46:44: 
+2026-01-26T18:46:44: ──────── STEP 1: LRCLIB FAST PASS ────────
+2026-01-26T18:46:44: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=%E2%9A%A1%F0%9F%8E%B5+Epic+Electric+Timer+-+30+Seconds+Countdown+%F0%9F%8E%B5%E2%9A%A1&artist_name=Timer&duration=31
+2026-01-26T18:46:45: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:46:45: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:46:45: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:46:47: [LRCLIB] ❌ Not found: "⚡🎵 Epic Electric Timer - 30 Seconds Countdown 🎵⚡"
+2026-01-26T18:46:47: [LRCLIB] No results, falling back to Google scraper...
+2026-01-26T18:46:47: 
+2026-01-26T18:46:47: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
+2026-01-26T18:46:47: 
+2026-01-26T18:46:47: ──────── GOOGLE SEARCH ────────
+2026-01-26T18:46:47: scraper > Searching Google for: ⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡
+2026-01-26T18:46:47: scraper > Final query sent: "⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡ lyrics and chords"
+2026-01-26T18:46:47: scraper > Google returned 8 results
+2026-01-26T18:46:47: scraper > Chosen URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-26T18:46:47: 
+2026-01-26T18:46:47: ──────── NAVIGATE ────────
+2026-01-26T18:46:50: scraper > page.goto done. Final URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-26T18:46:50: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:46:50: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:46:50: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:46:55: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:46:55: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:46:55: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:00: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:00: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:47:00: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:02: scraper > Timeout hit. Closing context and returning fallback.
+2026-01-26T18:47:02: scraper > networkidle wait skipped/timeout
+2026-01-26T18:47:02: scraper > Error in scrapeLyrics: page.title: Target page, context or browser has been closed
+2026-01-26T18:47:05: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:05: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:47:05: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:10: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:10: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:47:10: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:15: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:15: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:47:15: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:20: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:20: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:47:20: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:25: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:25: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:47:25: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:30: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:30: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:47:30: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:35: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:35: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:47:35: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:40: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:40: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:47:40: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:45: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:45: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:47:45: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:50: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:50: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:47:50: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:55: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:47:55: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:47:55: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:00: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:00: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:48:00: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:06: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:06: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:48:06: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:11: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:11: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:48:11: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:16: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:16: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:48:16: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:21: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:21: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:48:21: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:26: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:26: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:48:26: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:31: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:31: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:48:31: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:36: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:36: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:48:36: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:41: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:41: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:48:41: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:46: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:46: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:48:46: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:51: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:51: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:48:51: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:56: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:48:56: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:48:56: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:01: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:01: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:49:01: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:06: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:06: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:49:06: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:11: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:11: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:49:11: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:16: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:16: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:49:16: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:21: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:21: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:49:21: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:26: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:26: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:49:26: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:31: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:31: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:49:31: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:36: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:36: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:49:36: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:41: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:41: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:49:41: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:41: 
+2026-01-26T18:49:41: ──────── LYRICS REQUEST ────────
+2026-01-26T18:49:41: scraper > songName: ⚡🎵 Epic Electric Timer - 30 Seconds Countdown 🎵⚡
+2026-01-26T18:49:41: scraper > artist: Timer
+2026-01-26T18:49:41: scraper > duration: 31
+2026-01-26T18:49:41: scraper > linkIndex: 0
+2026-01-26T18:49:41: 
+2026-01-26T18:49:41: ──────── STEP 1: LRCLIB FAST PASS ────────
+2026-01-26T18:49:41: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=%E2%9A%A1%F0%9F%8E%B5+Epic+Electric+Timer+-+30+Seconds+Countdown+%F0%9F%8E%B5%E2%9A%A1&artist_name=Timer&duration=31
+2026-01-26T18:49:43: [LRCLIB] ❌ Not found: "⚡🎵 Epic Electric Timer - 30 Seconds Countdown 🎵⚡"
+2026-01-26T18:49:43: [LRCLIB] No results, falling back to Google scraper...
+2026-01-26T18:49:43: 
+2026-01-26T18:49:43: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
+2026-01-26T18:49:43: 
+2026-01-26T18:49:43: ──────── GOOGLE SEARCH ────────
+2026-01-26T18:49:43: scraper > Searching Google for: ⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡
+2026-01-26T18:49:43: scraper > Final query sent: "⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡ lyrics and chords"
+2026-01-26T18:49:44: scraper > Google returned 8 results
+2026-01-26T18:49:44: scraper > Chosen URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-26T18:49:44: 
+2026-01-26T18:49:44: ──────── NAVIGATE ────────
+2026-01-26T18:49:46: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:46: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:49:46: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:47: scraper > page.goto done. Final URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-26T18:49:51: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:51: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:49:51: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:56: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:56: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:49:56: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:49:58: scraper > Timeout hit. Closing context and returning fallback.
+2026-01-26T18:49:58: scraper > networkidle wait skipped/timeout
+2026-01-26T18:49:58: scraper > Error in scrapeLyrics: page.title: Target page, context or browser has been closed
+2026-01-26T18:50:01: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:01: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:50:01: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:06: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:06: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:50:06: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:11: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:11: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:50:11: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:16: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:16: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:50:16: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:21: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:21: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:50:21: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:26: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:26: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:50:26: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:31: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:31: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:50:31: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:36: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:36: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:50:36: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:41: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:41: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:50:41: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:46: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:46: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:50:46: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:51: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:51: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:50:51: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:56: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:50:56: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:50:56: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:01: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:01: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:51:01: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:06: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:06: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:51:06: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:11: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:11: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:51:11: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:16: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:16: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:51:16: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:21: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:21: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:51:21: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:26: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:26: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:51:26: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:31: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:31: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:51:31: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:36: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:36: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:51:36: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:41: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:41: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:51:41: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:46: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:46: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:51:46: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:51: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:51: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:51:51: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:56: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:51:56: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:51:56: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:01: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:01: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:52:01: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:06: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:06: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:52:06: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:11: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:11: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:52:11: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:16: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:16: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:52:16: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:21: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:21: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:52:21: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:26: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:26: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:52:26: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:31: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:31: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:52:31: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:36: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:36: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:52:36: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:41: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:41: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:52:41: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:46: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:46: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:52:46: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:51: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:51: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:52:51: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:56: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:52:56: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:52:56: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:01: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:01: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:53:01: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:06: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:06: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:53:06: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:11: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:11: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:53:11: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:16: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:16: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:53:16: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:21: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:21: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:53:21: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:26: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:26: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:53:26: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:31: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:31: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:53:31: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:36: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:36: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:53:36: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:41: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:41: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:53:41: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:46: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:46: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:53:46: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:51: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:51: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:53:51: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:56: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:53:56: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:53:56: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:54:01: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:54:01: [sepDirFromBasename] Not found for: 7cd2be81efa9c575214abec055563018
+2026-01-26T18:54:01: [sepDirFromBasename] Not found for: mkviihc0-k93z01bw
+2026-01-26T18:54:07: [sepDirFromBasename] Found normalized: /home/ubuntu/Projects/oracle24hrs/separated/htdemucs_6s/mkviihc0-k93z01bw_normalized
+2026-01-26T18:55:12: 
+2026-01-26T18:55:12: ──────── LYRICS REQUEST ────────
+2026-01-26T18:55:12: scraper > songName: ⚡🎵 Epic Electric Timer - 30 Seconds Countdown 🎵⚡
+2026-01-26T18:55:12: scraper > artist: Timer
+2026-01-26T18:55:12: scraper > duration: 31
+2026-01-26T18:55:12: scraper > linkIndex: 0
+2026-01-26T18:55:12: 
+2026-01-26T18:55:12: ──────── STEP 1: LRCLIB FAST PASS ────────
+2026-01-26T18:55:12: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=%E2%9A%A1%F0%9F%8E%B5+Epic+Electric+Timer+-+30+Seconds+Countdown+%F0%9F%8E%B5%E2%9A%A1&artist_name=Timer&duration=31
+2026-01-26T18:55:15: [LRCLIB] ❌ Not found: "⚡🎵 Epic Electric Timer - 30 Seconds Countdown 🎵⚡"
+2026-01-26T18:55:15: [LRCLIB] No results, falling back to Google scraper...
+2026-01-26T18:55:15: 
+2026-01-26T18:55:15: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
+2026-01-26T18:55:15: 
+2026-01-26T18:55:15: ──────── GOOGLE SEARCH ────────
+2026-01-26T18:55:15: scraper > Searching Google for: ⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡
+2026-01-26T18:55:15: scraper > Final query sent: "⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡ lyrics and chords"
+2026-01-26T18:55:16: scraper > Google returned 8 results
+2026-01-26T18:55:16: scraper > Chosen URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-26T18:55:16: 
+2026-01-26T18:55:16: ──────── NAVIGATE ────────
+2026-01-26T18:55:17: scraper > page.goto done. Final URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
+2026-01-26T18:55:29: scraper > networkidle wait skipped/timeout
+2026-01-26T18:55:30: 
+2026-01-26T18:55:30: ──────── READABILITY ────────
+2026-01-26T18:55:31: scraper > isProbablyReaderable: true
+2026-01-26T18:55:31: 
+2026-01-26T18:55:31: ──────── FALLBACK #1 (DENSE BLOCK) ────────
+2026-01-26T18:55:31: 
+2026-01-26T18:55:31: ──────── FALLBACK #2 (SITE-AWARE) ────────
+2026-01-26T18:55:31: 
+2026-01-26T18:55:31: ──────── RESULT ────────
+2026-01-26T18:55:31: scraper > Total lines: 95

@@ -23,7 +23,8 @@ function longTimeout(_req: Request, res: Response, next: NextFunction) {
 const ROOT = process.cwd();
 const SEPARATED_DIR = path.join(ROOT, "separated");
 const UPLOADS_DIR = path.join(ROOT, "uploads");
-for (const d of [SEPARATED_DIR, UPLOADS_DIR]) {
+const NORMALIZED_DIR = path.join(ROOT, "normalized");
+for (const d of [SEPARATED_DIR, UPLOADS_DIR, NORMALIZED_DIR]) {
   fs.mkdirSync(d, { mode: 0o770, recursive: true });
 }
 
@@ -56,10 +57,16 @@ try {
   Redis = BullRedis;
 } catch {}
 
-// Changed to 15 days as requested
-const FIFTEEN_DAYS_SEC = 60 * 60 * 24 * 15;
-const FIFTEEN_DAYS_MS = 1000 * 60 * 60 * 24 * 15;
-const META_TTL_SEC = FIFTEEN_DAYS_SEC;
+// ============================================================
+// AUTO-PURGE CONFIGURATION: 72 hours (3 days)
+// Files older than 72 hours will be automatically deleted
+// to prevent unnecessary storage usage
+// ============================================================
+const THREE_DAYS_SEC = 60 * 60 * 24 * 3;  // 72 hours in seconds
+const THREE_DAYS_MS = 1000 * 60 * 60 * 24 * 3;  // 72 hours in milliseconds
+const META_TTL_SEC = THREE_DAYS_SEC;
+
+console.log("[upload-music] Auto-purge configured: 72 hours (3 days)");
 
 const key = (id: string) => `stems:${id}:meta`;
 
@@ -138,19 +145,57 @@ function sepDirFromAnyUrl(url?: string) {
 
 function sepDirFromBasename(b?: string) {
   if (!b) return;
-  // Check with model prefix first
-  const withModel = path.join(SEPARATED_DIR, model, b);
-  if (fs.existsSync(withModel) && fs.statSync(withModel).isDirectory()) return withModel;
   
+  // Check with model prefix and _normalized suffix first (most common case)
+  const withModelNormalized = path.join(SEPARATED_DIR, model, `${b}_normalized`);
+  if (fs.existsSync(withModelNormalized) && fs.statSync(withModelNormalized).isDirectory()) {
+    console.log(`[sepDirFromBasename] Found normalized: ${withModelNormalized}`);
+    return withModelNormalized;
+  }
+  
+  // Check with model prefix (no _normalized)
+  const withModel = path.join(SEPARATED_DIR, model, b);
+  if (fs.existsSync(withModel) && fs.statSync(withModel).isDirectory()) {
+    console.log(`[sepDirFromBasename] Found with model: ${withModel}`);
+    return withModel;
+  }
+  
+  // Check direct path with _normalized
+  const directNormalized = path.join(SEPARATED_DIR, `${b}_normalized`);
+  if (fs.existsSync(directNormalized) && fs.statSync(directNormalized).isDirectory()) {
+    console.log(`[sepDirFromBasename] Found direct normalized: ${directNormalized}`);
+    return directNormalized;
+  }
+  
+  // Check direct path
   const direct = path.join(SEPARATED_DIR, b);
-  if (fs.existsSync(direct) && fs.statSync(direct).isDirectory()) return direct;
+  if (fs.existsSync(direct) && fs.statSync(direct).isDirectory()) {
+    console.log(`[sepDirFromBasename] Found direct: ${direct}`);
+    return direct;
+  }
+  
+  // Search in all model subdirectories
   try {
     for (const ent of fs.readdirSync(SEPARATED_DIR, { withFileTypes: true })) {
       if (!ent.isDirectory()) continue;
+      
+      // Check for _normalized suffix first
+      const candNormalized = path.join(SEPARATED_DIR, ent.name, `${b}_normalized`);
+      if (fs.existsSync(candNormalized) && fs.statSync(candNormalized).isDirectory()) {
+        console.log(`[sepDirFromBasename] Found in subdir normalized: ${candNormalized}`);
+        return candNormalized;
+      }
+      
+      // Check without suffix
       const cand = path.join(SEPARATED_DIR, ent.name, b);
-      if (fs.existsSync(cand) && fs.statSync(cand).isDirectory()) return cand;
+      if (fs.existsSync(cand) && fs.statSync(cand).isDirectory()) {
+        console.log(`[sepDirFromBasename] Found in subdir: ${cand}`);
+        return cand;
+      }
     }
   } catch {}
+  
+  console.log(`[sepDirFromBasename] Not found for: ${b}`);
   return;
 }
 
@@ -244,9 +289,9 @@ async function gather(req: Request, idOrJob: string | any) {
   };
 }
 
-/* Sweeper - Changed to 15 days */
+/* Sweeper - Changed to 72 hours */
 setInterval(() => {
-  console.log("[sweeper] Running cleanup for files older than 15 days...");
+  console.log("[sweeper] Running cleanup for files older than 72 hours...");
   try {
     const sweep = (dir: string) => {
       if (!fs.existsSync(dir)) return;
@@ -254,7 +299,7 @@ setInterval(() => {
         const p = path.join(dir, ent.name);
         try {
           const st = fs.statSync(p);
-          const old = Date.now() - st.mtimeMs > FIFTEEN_DAYS_MS;
+          const old = Date.now() - st.mtimeMs > THREE_DAYS_MS;
           if (ent.isDirectory()) {
             old ? fs.rmSync(p, { recursive: true, force: true }) : sweep(p);
           } else if (old) fs.rmSync(p, { force: true });
@@ -263,6 +308,7 @@ setInterval(() => {
     };
     sweep(SEPARATED_DIR);
     sweep(UPLOADS_DIR);
+    sweep(NORMALIZED_DIR);
   } catch {}
 }, 60 * 60 * 1000); // Run every hour
 
@@ -319,7 +365,7 @@ router.post("/upload", longTimeout, upload.single("file"), async (req, res) => {
       available: 0,
       uploadedAt: now,
       progress: 5, // Start at 5% to show immediate feedback
-      expiresAt: now + FIFTEEN_DAYS_MS,
+      expiresAt: now + THREE_DAYS_MS,
       originalName: file.originalname,
       size: file.size,
     });
@@ -374,7 +420,7 @@ router.get("/stems/:id/state", async (req, res) => {
     if (info.ready && !available) {
       const now = Date.now();
       const r = (info.result || {}) as any;
-      expiresAt = now + FIFTEEN_DAYS_MS;
+      expiresAt = now + THREE_DAYS_MS;
       await ledgerSet(id, {
         status: "completed",
         progress: 100,
@@ -450,7 +496,7 @@ router.get("/stems/:id/result", async (req, res) => {
       await ledgerSet(id, {
         available: 1,
         readyAt: now,
-        expiresAt: now + FIFTEEN_DAYS_MS,
+        expiresAt: now + THREE_DAYS_MS,
         vocalsUrl: urls.vocalsUrl || "",
         drumsUrl: urls.drumsUrl || "",
         bassUrl: urls.bassUrl || "",
@@ -465,7 +511,7 @@ router.get("/stems/:id/result", async (req, res) => {
       res.json({
         ready: true,
         available: true,
-        expiresAt: now + FIFTEEN_DAYS_MS,
+        expiresAt: now + THREE_DAYS_MS,
         vocalsUrl: urls.vocalsUrl,
         drumsUrl: urls.drumsUrl,
         bassUrl: urls.bassUrl,

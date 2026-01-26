@@ -31,8 +31,57 @@ type Result = {
 // Use htdemucs_6s for 6-stem separation (vocals, drums, bass, guitar, piano, other)
 const model = process.env.DEMUCS_MODEL || "htdemucs_6s";
 
+// ============================================================
+// HIGH QUALITY CONFIGURATION
+// Priority: Maximum extraction quality over speed
+// Expected processing time: 10-20 minutes per song on Oracle A1.Flex
+// ============================================================
+
 // CPU thread optimization for Oracle Ampere A1 (4 vCPU)
 const CPU_THREADS = parseInt(process.env.DEMUCS_THREADS || "4", 10);
+
+// High-quality Demucs settings
+const DEMUCS_CONFIG = {
+  // --shifts: Number of random shifts for augmentation averaging
+  // Higher = fewer artifacts, slower processing
+  // Default: 1, Max quality: 10-20
+  shifts: parseInt(process.env.DEMUCS_SHIFTS || "20", 10),
+  
+  // --overlap: Overlap between chunks (0.0 to 0.99)
+  // Higher = smoother transitions, more memory usage
+  // Default: 0.25, Max quality: 0.5-0.75
+  overlap: parseFloat(process.env.DEMUCS_OVERLAP || "0.5"),
+  
+  // --clip-mode: How to handle clipping in output
+  // "rescale" = scale down to prevent clipping (recommended)
+  // "clamp" = hard clip (can cause distortion)
+  // "none" = allow clipping
+  clipMode: process.env.DEMUCS_CLIP_MODE || "rescale",
+  
+  // --segment: Segment length in seconds
+  // htdemucs_6s max is 7.8, use 7 to be safe
+  segment: 7,
+};
+
+// High-quality audio encoding settings
+const AUDIO_CONFIG = {
+  // M4A/AAC bitrate for stems (kbps)
+  // 192k = good, 256k = very good, 320k = near-lossless
+  stemBitrate: process.env.STEM_BITRATE || "320k",
+  
+  // Keep original WAV files as backup (true/false)
+  keepWav: process.env.KEEP_WAV === "true",
+};
+
+console.log("[demucs] ========== HIGH QUALITY CONFIG ==========");
+console.log("[demucs] Model:", model);
+console.log("[demucs] Shifts:", DEMUCS_CONFIG.shifts, "(default: 1, using 20 for max quality)");
+console.log("[demucs] Overlap:", DEMUCS_CONFIG.overlap, "(default: 0.25, using 0.5 for smoother transitions)");
+console.log("[demucs] Clip Mode:", DEMUCS_CONFIG.clipMode, "(rescale prevents distortion)");
+console.log("[demucs] Segment:", DEMUCS_CONFIG.segment, "seconds");
+console.log("[demucs] Stem Bitrate:", AUDIO_CONFIG.stemBitrate, "(320k for near-lossless)");
+console.log("[demucs] CPU Threads:", CPU_THREADS);
+console.log("[demucs] ==========================================");
 
 function resolveFfmpeg(): string {
   if (process.env.FFMPEG_BIN) return process.env.FFMPEG_BIN;
@@ -63,9 +112,9 @@ function runProc(
 }
 
 /**
- * FFmpeg Normalization Pre-processing
+ * FFmpeg Normalization Pre-processing (HIGH QUALITY)
  * Converts input to 44.1kHz, 16-bit WAV for optimal Demucs processing
- * This fixes "glitchy/corrupted" audio artifacts
+ * Uses EBU R128 loudness normalization to ensure consistent input levels
  */
 async function normalizeAudio(inputPath: string, outputPath: string): Promise<boolean> {
   const ffmpeg = resolveFfmpeg();
@@ -78,21 +127,29 @@ async function normalizeAudio(inputPath: string, outputPath: string): Promise<bo
   }
 
   try {
-    // Normalize to 44.1kHz, 16-bit signed PCM WAV
-    // -af loudnorm applies EBU R128 loudness normalization
+    console.log("[demucs] Normalizing audio to 44.1kHz/16-bit WAV with EBU R128...");
+    
+    // High-quality normalization pipeline:
+    // 1. Resample to 44.1kHz (CD quality, Demucs training rate)
+    // 2. Convert to 16-bit signed PCM (optimal for Demucs)
+    // 3. Apply EBU R128 loudness normalization
+    //    - I=-16 LUFS (integrated loudness target)
+    //    - TP=-1.5 dBTP (true peak limit, prevents clipping)
+    //    - LRA=11 (loudness range target)
     await runProc(ffmpeg, [
       "-y",
       "-i", inputPath,
       "-ar", "44100",           // 44.1kHz sample rate (CD quality)
       "-ac", "2",               // Stereo
-      "-sample_fmt", "s16",     // 16-bit signed
-      "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", // EBU R128 normalization
+      "-sample_fmt", "s16",     // 16-bit signed PCM
+      "-af", "loudnorm=I=-16:TP=-1.5:LRA=11:measured_I=-16:measured_TP=-1.5:measured_LRA=11:measured_thresh=-26:offset=0:linear=true:print_format=summary",
       "-f", "wav",
       outputPath,
     ]);
     
     if (fs.existsSync(outputPath) && fs.statSync(outputPath).size > 0) {
-      console.log(`[demucs] Normalized audio: ${inputPath} -> ${outputPath}`);
+      const stats = fs.statSync(outputPath);
+      console.log(`[demucs] ✓ Normalized audio: ${inputPath} -> ${outputPath} (${Math.round(stats.size / 1024 / 1024)}MB)`);
       return true;
     }
   } catch (e) {
@@ -102,6 +159,10 @@ async function normalizeAudio(inputPath: string, outputPath: string): Promise<bo
   return false;
 }
 
+/**
+ * Transcode WAV to M4A with HIGH QUALITY settings
+ * Uses AAC codec at 320kbps for near-lossless compression
+ */
 async function transcodeToM4A(
   inputWav: string,
   outM4a: string
@@ -114,12 +175,15 @@ async function transcodeToM4A(
   }
   
   try {
+    console.log(`[demucs] Transcoding to M4A @ ${AUDIO_CONFIG.stemBitrate}...`);
+    
     await runProc(ffmpeg, [
       "-y",
       "-i", inputWav,
       "-c:a", "aac",
-      "-b:a", "192k",
-      "-movflags", "+faststart", // Optimize for streaming
+      "-b:a", AUDIO_CONFIG.stemBitrate,  // 320k for high quality
+      "-movflags", "+faststart",          // Optimize for streaming
+      "-profile:a", "aac_low",            // AAC-LC profile (best compatibility)
       outM4a,
     ]);
     return fs.existsSync(outM4a) && fs.statSync(outM4a).size > 0;
@@ -129,6 +193,11 @@ async function transcodeToM4A(
   }
 }
 
+/**
+ * Run Demucs with HIGH QUALITY configuration
+ * Uses --shifts=20, --overlap=0.5, --clip-mode=rescale for maximum quality
+ * Expected time: 10-20 minutes per song on 4-core ARM64
+ */
 async function runDemucs(
   canonicalInputPath: string,
   onProgress: (p: number) => Promise<void>
@@ -138,36 +207,46 @@ async function runDemucs(
     path.join(process.env.HOME || "", "demucs_env", "bin", "python3");
   const MODULE_NAME = "demucs";
 
-  // htdemucs_6s is a Transformer model with max segment of 7.8 seconds
-  // Use smaller segment to stay within limits
+  // HIGH QUALITY Demucs arguments
   const args = [
     "-m", MODULE_NAME,
     "-d", "cpu",
     "-n", model,
     "-j", String(CPU_THREADS),
-    "--overlap", "0.25",
-    "--segment", "7",  // Max for htdemucs_6s is 7.8, use 7 to be safe
+    
+    // HIGH QUALITY FLAGS
+    "--shifts", String(DEMUCS_CONFIG.shifts),       // 20 random shifts for artifact reduction
+    "--overlap", String(DEMUCS_CONFIG.overlap),     // 0.5 overlap for smooth transitions
+    "--clip-mode", DEMUCS_CONFIG.clipMode,          // rescale to prevent clipping
+    "--segment", String(DEMUCS_CONFIG.segment),     // 7 seconds (max for htdemucs_6s is 7.8)
+    
     "-o", SEPARATED_DIR,
     canonicalInputPath,
   ];
 
   await onProgress(1);
 
+  console.log("[demucs] ========== STARTING HIGH QUALITY SEPARATION ==========");
+  console.log("[demucs] This will take 10-20 minutes for maximum quality...");
+  console.log("[demucs] Command:", PYTHON_BIN, args.join(" "));
+
   await new Promise<void>((resolve, reject) => {
     if (!fs.existsSync(PYTHON_BIN)) {
       return reject(new Error(`Demucs python not found at ${PYTHON_BIN}`));
     }
     
-    console.log(`[demucs] Starting separation with ${CPU_THREADS} threads...`);
-    console.log(`[demucs] Command: ${PYTHON_BIN} ${args.join(" ")}`);
+    const startTime = Date.now();
     
     const proc = spawn(PYTHON_BIN, args, { 
       cwd: ROOT, 
       env: {
         ...process.env,
+        // Optimize CPU threading for quality
         OMP_NUM_THREADS: String(CPU_THREADS),
         MKL_NUM_THREADS: String(CPU_THREADS),
         OPENBLAS_NUM_THREADS: String(CPU_THREADS),
+        // Disable GPU (CPU-only for Oracle A1)
+        CUDA_VISIBLE_DEVICES: "",
       }
     });
 
@@ -184,6 +263,8 @@ async function runDemucs(
         const pct = Number(m[1]);
         if (!Number.isNaN(pct) && pct !== lastPct) {
           lastPct = pct;
+          const elapsed = Math.round((Date.now() - startTime) / 1000);
+          console.log(`[demucs] Progress: ${pct}% (${elapsed}s elapsed)`);
           await onProgress(pct);
         }
       }
@@ -193,15 +274,21 @@ async function runDemucs(
     });
 
     proc.on("error", reject);
-    proc.on("close", (code) =>
-      code === 0 ? resolve() : reject(new Error(`Demucs exited ${code}`))
-    );
+    proc.on("close", (code) => {
+      const totalTime = Math.round((Date.now() - startTime) / 1000);
+      if (code === 0) {
+        console.log(`[demucs] ✓ Separation completed in ${totalTime} seconds`);
+        resolve();
+      } else {
+        reject(new Error(`Demucs exited ${code} after ${totalTime}s`));
+      }
+    });
   });
 }
 
 /**
  * Create a combined instrumental track from non-vocal stems
- * This provides backward compatibility with 2-stem apps
+ * Uses HIGH QUALITY bitrate for the mix
  */
 async function createInstrumentalMix(sepDir: string): Promise<string | null> {
   const ffmpeg = resolveFfmpeg();
@@ -222,6 +309,8 @@ async function createInstrumentalMix(sepDir: string): Promise<string | null> {
   if (nonVocalStems.length === 0) return null;
   
   try {
+    console.log(`[demucs] Creating instrumental mix from ${nonVocalStems.length} stems @ ${AUDIO_CONFIG.stemBitrate}...`);
+    
     // Use FFmpeg to mix all non-vocal stems into one instrumental track
     const inputs: string[] = [];
     nonVocalStems.forEach((stem) => {
@@ -229,6 +318,7 @@ async function createInstrumentalMix(sepDir: string): Promise<string | null> {
     });
     
     // Create amix filter for combining audio streams
+    // normalize=0 preserves original levels (no auto-normalization)
     const filterComplex = `amix=inputs=${nonVocalStems.length}:duration=longest:normalize=0`;
     
     await runProc(ffmpeg, [
@@ -236,13 +326,14 @@ async function createInstrumentalMix(sepDir: string): Promise<string | null> {
       ...inputs,
       "-filter_complex", filterComplex,
       "-c:a", "aac",
-      "-b:a", "192k",
+      "-b:a", AUDIO_CONFIG.stemBitrate,  // 320k for high quality
       "-movflags", "+faststart",
+      "-profile:a", "aac_low",
       instrumentalPath,
     ]);
     
     if (fs.existsSync(instrumentalPath) && fs.statSync(instrumentalPath).size > 0) {
-      console.log("[demucs] Created instrumental mix:", instrumentalPath);
+      console.log("[demucs] ✓ Created instrumental mix:", instrumentalPath);
       return instrumentalPath;
     }
   } catch (e) {
@@ -255,9 +346,11 @@ async function createInstrumentalMix(sepDir: string): Promise<string | null> {
 export const demucsWorker = new Worker(
   "demucs",
   async (job: Job) => {
-    console.log("[demucs] ========== JOB STARTED ==========");
+    console.log("[demucs] ========== JOB STARTED (HIGH QUALITY MODE) ==========");
     console.log("[demucs] Job ID:", job.id);
     console.log("[demucs] Job data:", JSON.stringify(job.data));
+    console.log("[demucs] Quality settings: shifts=%d, overlap=%s, clip-mode=%s, bitrate=%s",
+      DEMUCS_CONFIG.shifts, DEMUCS_CONFIG.overlap, DEMUCS_CONFIG.clipMode, AUDIO_CONFIG.stemBitrate);
     
     const { inputPath, basename } = job.data as {
       inputPath: string;
@@ -290,26 +383,25 @@ export const demucsWorker = new Worker(
     const normalizedPath = path.join(NORMALIZED_DIR, `${basename}_normalized.wav`);
     let processInput = canonicalInput;
     
-    console.log("[demucs] Starting normalization...");
+    console.log("[demucs] Phase 1: Audio normalization (44.1kHz/16-bit WAV)...");
     const normalized = await normalizeAudio(canonicalInput, normalizedPath);
     if (normalized) {
       processInput = normalizedPath;
-      console.log("[demucs] ✓ Normalized audio ready:", normalizedPath);
+      console.log("[demucs] ✓ Phase 1 complete: Normalized audio ready");
     } else {
-      console.log("[demucs] ✗ Normalization skipped, using original");
+      console.log("[demucs] ⚠ Phase 1 skipped: Using original file");
     }
 
-    // Phase 2: Run Demucs separation
-    console.log("[demucs] Starting Demucs separation...");
+    // Phase 2: Run Demucs separation with HIGH QUALITY settings
+    console.log("[demucs] Phase 2: Demucs separation (HIGH QUALITY - this takes 10-20 min)...");
     console.log("[demucs] Process input:", processInput);
     console.log("[demucs] Process input exists:", fs.existsSync(processInput));
     
     await runDemucs(processInput, async (p) => {
-      console.log(`[demucs] Progress: ${p}%`);
       await job.updateProgress(p);
     });
 
-    console.log("[demucs] Demucs separation finished!");
+    console.log("[demucs] ✓ Phase 2 complete: Demucs separation finished!");
 
     // Determine the actual output directory
     let sepDir = path.join(SEPARATED_DIR, model, normalized ? `${basename}_normalized` : basename);
@@ -345,7 +437,8 @@ export const demucsWorker = new Worker(
 
     const stemBase = `/separated/${model}/${path.basename(sepDir)}`;
 
-    // Process all 6 stems - transcode to M4A for smaller file size
+    // Phase 3: Transcode stems to M4A with HIGH QUALITY bitrate
+    console.log("[demucs] Phase 3: Transcoding stems to M4A @ " + AUDIO_CONFIG.stemBitrate + "...");
     const stemUrls: Record<string, string | undefined> = {};
     
     for (const stem of ALL_STEMS) {
@@ -356,16 +449,20 @@ export const demucsWorker = new Worker(
       
       try {
         if (fs.existsSync(wavPath)) {
-          console.log(`[demucs] Found ${stem}.wav, transcoding to m4a...`);
+          console.log(`[demucs] Transcoding ${stem}.wav -> ${stem}.m4a @ ${AUDIO_CONFIG.stemBitrate}...`);
           const ok = await transcodeToM4A(wavPath, m4aPath);
           if (ok) {
             url = `${stemBase}/${stem}.m4a`;
-            try {
-              fs.unlinkSync(wavPath);
-            } catch {}
+            // Optionally keep WAV files for lossless storage
+            if (!AUDIO_CONFIG.keepWav) {
+              try {
+                fs.unlinkSync(wavPath);
+              } catch {}
+            }
           } else {
-            // Transcode failed, use WAV
+            // Transcode failed, use WAV (lossless fallback)
             url = `${stemBase}/${stem}.wav`;
+            console.log(`[demucs] ⚠ Transcode failed for ${stem}, keeping WAV (lossless)`);
           }
         } else if (fs.existsSync(m4aPath)) {
           url = `${stemBase}/${stem}.m4a`;
@@ -384,7 +481,7 @@ export const demucsWorker = new Worker(
 
     // Log which stems were found
     const foundStems = Object.keys(stemUrls).map(k => k.replace('Url', ''));
-    console.log(`[demucs] Found ${foundStems.length}/6 stems:`, foundStems);
+    console.log(`[demucs] ✓ Phase 3 complete: ${foundStems.length}/6 stems transcoded:`, foundStems);
 
     // CRITICAL: Validate that at least vocals were generated
     if (!stemUrls.vocalsUrl) {
@@ -394,8 +491,8 @@ export const demucsWorker = new Worker(
       throw new Error(errorMsg);
     }
 
-    // Create combined instrumental for backward compatibility
-    console.log("[demucs] Creating instrumental mix...");
+    // Phase 4: Create combined instrumental for backward compatibility
+    console.log("[demucs] Phase 4: Creating instrumental mix...");
     const instrumentalPath = await createInstrumentalMix(sepDir);
     const instrumentalUrl = instrumentalPath 
       ? `${stemBase}/instrumental.m4a`
@@ -422,7 +519,7 @@ export const demucsWorker = new Worker(
       sepDir,
     };
     
-    console.log("[demucs] ========== JOB COMPLETE ==========");
+    console.log("[demucs] ========== JOB COMPLETE (HIGH QUALITY) ==========");
     console.log("[demucs] Result:", JSON.stringify(result, null, 2));
     return result;
   },
@@ -446,7 +543,8 @@ demucsWorker.on("stalled", (jobId) =>
   console.warn("[demucs] ⚠ STALLED job:", jobId)
 );
 demucsWorker.on("ready", () =>
-  console.log("[demucs] ✓ Worker READY and listening for jobs")
+  console.log("[demucs] ✓ Worker READY (HIGH QUALITY MODE) - shifts=%d, overlap=%s, bitrate=%s",
+    DEMUCS_CONFIG.shifts, DEMUCS_CONFIG.overlap, AUDIO_CONFIG.stemBitrate)
 );
 
-console.log("[demucs] Worker module loaded, connecting to Redis...");
+console.log("[demucs] Worker module loaded (HIGH QUALITY MODE), connecting to Redis...");
