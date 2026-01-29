@@ -5,7 +5,7 @@ import path from "path";
 import fs from "fs";
 import crypto from "crypto";
 const router = Router();
-const ORIGIN = "https://blinkintel.com";
+const ORIGIN = "https://gigidy.link";
 const BASE = "/updates";
 const ROOT = "/home/ubuntu/Projects/oracle24hrs";
 const OUT_DIR = path.join(ROOT, "updates-dist");
