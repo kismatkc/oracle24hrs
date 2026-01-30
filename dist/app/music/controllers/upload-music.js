@@ -18,7 +18,9 @@ const model = process.env.DEMUCS_MODEL || "htdemucs_6s";
 router.use("/separated", express.static(SEPARATED_DIR, { maxAge: "1h" }));
 const upload = multer({
     dest: UPLOADS_DIR,
-    fileFilter: (_req, file, cb) => file.mimetype.startsWith("audio/") ? cb(null, true) : cb(new Error("Only audio files")),
+    fileFilter: (_req, file, cb) => file.mimetype.startsWith("audio/")
+        ? cb(null, true)
+        : cb(new Error("Only audio files")),
 });
 // Redis ledger for tracking job state
 let Redis = null;
@@ -51,7 +53,9 @@ function absUrl(req, maybePath) {
         return;
     if (/^https?:\/\//i.test(maybePath))
         return maybePath;
-    const proto = req.headers["x-forwarded-proto"]?.split(",")[0]?.trim() || req.protocol || "https";
+    const proto = req.headers["x-forwarded-proto"]?.split(",")[0]?.trim() ||
+        req.protocol ||
+        "https";
     const host = req.get("host") || "localhost:3000";
     return `${proto}://${host}/music${maybePath.startsWith("/") ? maybePath : `/${maybePath}`}`;
 }
@@ -59,7 +63,15 @@ function findStemFiles(dir) {
     try {
         const files = fs.readdirSync(dir);
         const pick = (stem) => files.find((f) => f.toLowerCase().startsWith(`${stem}.`));
-        return { vocals: pick("vocals"), drums: pick("drums"), bass: pick("bass"), guitar: pick("guitar"), piano: pick("piano"), other: pick("other"), instrumental: pick("instrumental") };
+        return {
+            vocals: pick("vocals"),
+            drums: pick("drums"),
+            bass: pick("bass"),
+            guitar: pick("guitar"),
+            piano: pick("piano"),
+            other: pick("other"),
+            instrumental: pick("instrumental"),
+        };
     }
     catch {
         return {};
@@ -99,7 +111,12 @@ async function gather(req, id) {
     const sepDir = ret.sepDir || sepDirFromBasename(id);
     const urls = urlsFromSepDir(req, sepDir);
     const ready = !!urls.vocalsUrl;
-    return { state: ready ? "completed" : state, progress: ready ? 100 : progress, ready, result: { ...urls, sepDir } };
+    return {
+        state: ready ? "completed" : state,
+        progress: ready ? 100 : progress,
+        ready,
+        result: { ...urls, sepDir },
+    };
 }
 // 72-hour purge sweeper
 setInterval(() => {
@@ -138,14 +155,30 @@ router.post("/upload", upload.single("file"), async (req, res) => {
         if (existing) {
             const state = await existing.getState();
             if (["completed", "active", "waiting"].includes(state)) {
-                res.json({ success: true, jobId: existing.id, alreadyExists: true, state });
+                res.json({
+                    success: true,
+                    jobId: existing.id,
+                    alreadyExists: true,
+                    state,
+                });
                 return;
             }
         }
         const job = await demucsQueue.add("separate", { inputPath: file.path, basename }, songId ? { jobId: basename } : undefined);
-        await ledgerSet(basename, { status: "enqueued", progress: 5, uploadedAt: Date.now(), expiresAt: Date.now() + THREE_DAYS_MS });
+        await ledgerSet(basename, {
+            status: "enqueued",
+            progress: 5,
+            uploadedAt: Date.now(),
+            expiresAt: Date.now() + THREE_DAYS_MS,
+        });
         console.log(`[upload] Job created: ${job.id}`);
-        res.json({ success: true, jobId: job.id, originalName: file.originalname, size: file.size, progress: 5 });
+        res.json({
+            success: true,
+            jobId: job.id,
+            originalName: file.originalname,
+            size: file.size,
+            progress: 5,
+        });
     }
     catch (e) {
         console.error("[upload] error:", e);
@@ -159,17 +192,33 @@ router.get("/stems/:id/state", async (req, res) => {
         const info = await gather(req, id);
         const meta = await ledgerGet(id);
         let available = info.ready;
-        let expiresAt = meta.expiresAt ? Number(meta.expiresAt) : null;
+        let expiresAt = meta.expiresAt
+            ? Number(meta.expiresAt)
+            : null;
         if (info.ready && meta.available !== "1") {
             expiresAt = Date.now() + THREE_DAYS_MS;
-            await ledgerSet(id, { status: "completed", progress: 100, available: 1, expiresAt, ...info.result });
+            await ledgerSet(id, {
+                status: "completed",
+                progress: 100,
+                available: 1,
+                expiresAt,
+                ...info.result,
+            });
             available = true;
         }
-        res.json({ state: info.state, progress: info.progress, ready: info.ready, available, expiresAt });
+        res.json({
+            state: info.state,
+            progress: info.progress,
+            ready: info.ready,
+            available,
+            expiresAt,
+        });
     }
     catch (e) {
         console.error("[stems state] error:", e);
-        res.status(500).json({ state: "error", progress: 0, ready: false, available: false });
+        res
+            .status(500)
+            .json({ state: "error", progress: 0, ready: false, available: false });
     }
 });
 // Get stem URLs
@@ -179,9 +228,17 @@ router.get("/stems/:id/result", async (req, res) => {
         const info = await gather(req, id);
         const meta = await ledgerGet(id);
         if (info.ready) {
-            const expiresAt = meta.expiresAt ? Number(meta.expiresAt) : Date.now() + THREE_DAYS_MS;
+            const expiresAt = meta.expiresAt
+                ? Number(meta.expiresAt)
+                : Date.now() + THREE_DAYS_MS;
             if (meta.available !== "1") {
-                await ledgerSet(id, { status: "completed", progress: 100, available: 1, expiresAt, ...info.result });
+                await ledgerSet(id, {
+                    status: "completed",
+                    progress: 100,
+                    available: 1,
+                    expiresAt,
+                    ...info.result,
+                });
             }
             res.json({ ready: true, available: true, expiresAt, ...info.result });
             return;
@@ -223,7 +280,11 @@ router.post("/stems/:id/cleanup", async (req, res) => {
                 }
                 catch { }
         }
-        await ledgerSet(id, { status: "cleaned", available: 0, cleanedUpAt: Date.now() });
+        await ledgerSet(id, {
+            status: "cleaned",
+            available: 0,
+            cleanedUpAt: Date.now(),
+        });
         res.json({ success: true });
     }
     catch (e) {

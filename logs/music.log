@@ -1,505 +1,174 @@
-2026-01-28T22:10:42: [youtube] Search request: 30 seconds songs
-2026-01-28T22:10:42: [youtube] Suggestions request: 30 seconds songs
-2026-01-28T22:10:42: [youtube] Creating fresh Innertube client...
-2026-01-28T22:10:44: [youtube] Creating fresh Innertube client...
-2026-01-28T22:10:44: [youtube] Innertube client initialized
-2026-01-28T22:10:44: [youtube] Innertube client initialized
-2026-01-28T22:10:44: [youtube] Search returned 20 results
-2026-01-28T22:10:48: [dl] new request id mkykx7i7-8ykddmcv url https://www.youtube.com/watch?v=2aogxVYGX_I
-2026-01-28T22:10:48: [setP] mkykx7i7-8ykddmcv 0.05
-2026-01-28T22:10:50: [progress] id mkykx7i7-8ykddmcv -> 0.05
-2026-01-28T22:10:52: [setP] mkykx7i7-8ykddmcv 0.15
-2026-01-28T22:10:52: [dl] Starting yt-dlp audio download...
-2026-01-28T22:10:52: [yt-dlp] Running command: yt-dlp --proxy http://10.8.0.2:3128 --user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 -f bestaudio/best -x --audio-format mp3 --audio-quality 0 --no-playlist --no-warnings --no-progress -o /tmp/audio_1769638252417_245xyh.mp3 https://www.youtube.com/watch?v=2aogxVYGX_I
-2026-01-28T22:10:52: [progress] id mkykx7i7-8ykddmcv -> 0.15
-2026-01-28T22:10:54: [progress] id mkykx7i7-8ykddmcv -> 0.15
-2026-01-28T22:10:56: [progress] id mkykx7i7-8ykddmcv -> 0.15
-2026-01-28T22:10:58: [progress] id mkykx7i7-8ykddmcv -> 0.15
-2026-01-28T22:11:00: [progress] id mkykx7i7-8ykddmcv -> 0.15
-2026-01-28T22:11:02: [progress] id mkykx7i7-8ykddmcv -> 0.15
-2026-01-28T22:11:02: [yt-dlp] Successfully downloaded audio file, size: 925581 bytes
-2026-01-28T22:11:02: [yt-dlp] Valid ID3 header detected
-2026-01-28T22:11:02: [setP] mkykx7i7-8ykddmcv 1
-2026-01-28T22:11:09: 
-2026-01-28T22:11:09: ──────── LYRICS REQUEST ────────
-2026-01-28T22:11:09: scraper > songName: ⚡🎵 Epic Electric Timer - 30 Seconds Countdown 🎵⚡
-2026-01-28T22:11:09: scraper > artist: Timer
-2026-01-28T22:11:09: scraper > duration: 31
-2026-01-28T22:11:09: scraper > linkIndex: 0
-2026-01-28T22:11:09: 
-2026-01-28T22:11:09: ──────── STEP 1: LRCLIB FAST PASS ────────
-2026-01-28T22:11:09: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=%E2%9A%A1%F0%9F%8E%B5+Epic+Electric+Timer+-+30+Seconds+Countdown+%F0%9F%8E%B5%E2%9A%A1&artist_name=Timer&duration=31
-2026-01-28T22:11:12: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
-2026-01-28T22:11:12: [LRCLIB] No results, falling back to Google scraper...
-2026-01-28T22:11:12: 
-2026-01-28T22:11:12: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
-2026-01-28T22:11:12: 
-2026-01-28T22:11:12: ──────── GOOGLE SEARCH ────────
-2026-01-28T22:11:12: scraper > Searching Google for: ⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡
-2026-01-28T22:11:12: scraper > Final query sent: "⚡🎵 epic electric timer - 30 seconds countdown 🎵⚡ lyrics and chords"
-2026-01-28T22:11:12: scraper > Google returned 8 results
-2026-01-28T22:11:12: scraper > Chosen URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
-2026-01-28T22:11:12: 
-2026-01-28T22:11:12: ──────── NAVIGATE ────────
-2026-01-28T22:11:14: scraper > page.goto done. Final URL: https://genius.com/Starship-nothings-gonna-stop-us-now-lyrics
-2026-01-28T22:11:26: scraper > networkidle wait skipped/timeout
-2026-01-28T22:11:27: 
-2026-01-28T22:11:27: ──────── READABILITY ────────
-2026-01-28T22:11:27: scraper > isProbablyReaderable: true
-2026-01-28T22:11:28: 
-2026-01-28T22:11:28: ──────── FALLBACK #1 (DENSE BLOCK) ────────
-2026-01-28T22:11:28: 
-2026-01-28T22:11:28: ──────── FALLBACK #2 (SITE-AWARE) ────────
-2026-01-28T22:11:28: 
-2026-01-28T22:11:28: ──────── RESULT ────────
-2026-01-28T22:11:28: scraper > Total lines: 95
-2026-01-28T23:03:12: [youtube] Suggestions request: 30 sec
-2026-01-28T23:03:12: [youtube] Creating fresh Innertube client...
-2026-01-28T23:03:13: [youtube] Innertube client initialized
-2026-01-28T23:03:14: [youtube] Suggestions request: 30 seconds
-2026-01-28T23:03:16: [youtube] Search request: 30 seconds songs
-2026-01-28T23:03:17: [youtube] Suggestions request: 30 seconds songs
-2026-01-28T23:03:18: [youtube] Search returned 20 results
-2026-01-28T23:03:23: [dl] new request id mkymsu3h-y54jar4r url https://www.youtube.com/watch?v=M-mtdN6R3bQ
-2026-01-28T23:03:23: [setP] mkymsu3h-y54jar4r 0.05
-2026-01-28T23:03:25: [progress] id mkymsu3h-y54jar4r -> 0.05
-2026-01-28T23:03:27: [setP] mkymsu3h-y54jar4r 0.15
-2026-01-28T23:03:27: [dl] Starting yt-dlp audio download...
-2026-01-28T23:03:27: [yt-dlp] Running command: yt-dlp --proxy http://10.8.0.2:3128 --user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 -f bestaudio/best -x --audio-format mp3 --audio-quality 0 --no-playlist --no-warnings --no-progress -o /tmp/audio_1769641407395_x8qnek.mp3 https://www.youtube.com/watch?v=M-mtdN6R3bQ
-2026-01-28T23:03:27: [progress] id mkymsu3h-y54jar4r -> 0.15
-2026-01-28T23:03:29: [progress] id mkymsu3h-y54jar4r -> 0.15
-2026-01-28T23:03:31: [progress] id mkymsu3h-y54jar4r -> 0.15
-2026-01-28T23:03:33: [progress] id mkymsu3h-y54jar4r -> 0.15
-2026-01-28T23:03:35: [progress] id mkymsu3h-y54jar4r -> 0.15
-2026-01-28T23:03:37: [progress] id mkymsu3h-y54jar4r -> 0.15
-2026-01-28T23:03:38: [yt-dlp] Successfully downloaded audio file, size: 833037 bytes
-2026-01-28T23:03:38: [yt-dlp] Valid ID3 header detected
-2026-01-28T23:03:38: [setP] mkymsu3h-y54jar4r 1
-2026-01-28T23:03:42: 
-2026-01-28T23:03:42: ──────── LYRICS REQUEST ────────
-2026-01-28T23:03:42: scraper > songName: Short Song (English Song)🎵 [W Lyrics] 30 seconds
-2026-01-28T23:03:42: scraper > artist: LEVIOS LS
-2026-01-28T23:03:42: scraper > duration: 30
-2026-01-28T23:03:42: scraper > linkIndex: 0
-2026-01-28T23:03:42: 
-2026-01-28T23:03:42: ──────── STEP 1: LRCLIB FAST PASS ────────
-2026-01-28T23:03:42: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Short+Song+%28English+Song%29%F0%9F%8E%B5+%5BW+Lyrics%5D+30+seconds&artist_name=LEVIOS+LS&duration=30
-2026-01-28T23:03:44: [LRCLIB] ❌ Not found: "Short Song (English Song)🎵 [W Lyrics] 30 seconds"
-2026-01-28T23:03:44: [LRCLIB] No results, falling back to Google scraper...
-2026-01-28T23:03:44: 
-2026-01-28T23:03:44: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
-2026-01-28T23:03:44: 
-2026-01-28T23:03:44: ──────── GOOGLE SEARCH ────────
-2026-01-28T23:03:44: scraper > Searching Google for: short song (english song)🎵 [w lyrics] 30 seconds
-2026-01-28T23:03:44: scraper > Final query sent: "short song (english song)🎵 [w lyrics] 30 seconds lyrics and chords"
-2026-01-28T23:03:45: scraper > Google returned 8 results
-2026-01-28T23:03:45: scraper > Chosen URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-28T23:03:45: 
-2026-01-28T23:03:45: ──────── NAVIGATE ────────
-2026-01-28T23:03:46: scraper > page.goto done. Final URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-28T23:03:54: 
-2026-01-28T23:03:54: ──────── READABILITY ────────
-2026-01-28T23:03:55: scraper > isProbablyReaderable: true
-2026-01-28T23:03:55: 
-2026-01-28T23:03:55: ──────── FALLBACK #1 (DENSE BLOCK) ────────
-2026-01-28T23:03:55: 
-2026-01-28T23:03:55: ──────── FALLBACK #2 (SITE-AWARE) ────────
-2026-01-28T23:03:55: 
-2026-01-28T23:03:55: ──────── RESULT ────────
-2026-01-28T23:03:55: scraper > Total lines: 511
-2026-01-29T01:50:16: [youtube] Suggestions request: 30 sec
-2026-01-29T01:50:17: [youtube] Creating fresh Innertube client...
-2026-01-29T01:50:17: [youtube] Innertube client initialized
-2026-01-29T01:50:17: [youtube] Search request: 30 secnd songs
-2026-01-29T01:50:17: [youtube] Suggestions request: 30 secnd songs
-2026-01-29T01:50:19: [youtube] Search returned 20 results
-2026-01-29T01:50:21: [dl] new request id mkysrjyf-czxbnjs3 url https://www.youtube.com/watch?v=M-mtdN6R3bQ
-2026-01-29T01:50:21: [setP] mkysrjyf-czxbnjs3 0.05
-2026-01-29T01:50:23: [progress] id mkysrjyf-czxbnjs3 -> 0.05
-2026-01-29T01:50:25: [setP] mkysrjyf-czxbnjs3 0.15
-2026-01-29T01:50:25: [dl] Starting yt-dlp audio download...
-2026-01-29T01:50:25: [yt-dlp] Running command: yt-dlp --proxy http://10.8.0.2:3128 --user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 -f bestaudio/best -x --audio-format mp3 --audio-quality 0 --no-playlist --no-warnings --no-progress -o /tmp/audio_1769651425528_7ru22u.mp3 https://www.youtube.com/watch?v=M-mtdN6R3bQ
-2026-01-29T01:50:25: [progress] id mkysrjyf-czxbnjs3 -> 0.15
-2026-01-29T01:50:27: [progress] id mkysrjyf-czxbnjs3 -> 0.15
-2026-01-29T01:50:29: [progress] id mkysrjyf-czxbnjs3 -> 0.15
-2026-01-29T01:50:31: [progress] id mkysrjyf-czxbnjs3 -> 0.15
-2026-01-29T01:50:33: [progress] id mkysrjyf-czxbnjs3 -> 0.15
-2026-01-29T01:50:35: [progress] id mkysrjyf-czxbnjs3 -> 0.15
-2026-01-29T01:50:36: [yt-dlp] Successfully downloaded audio file, size: 833037 bytes
-2026-01-29T01:50:36: [yt-dlp] Valid ID3 header detected
-2026-01-29T01:50:36: [setP] mkysrjyf-czxbnjs3 1
-2026-01-29T01:50:41: [dl] new request id mkysrz5r-3p42lsg6 url https://www.youtube.com/watch?v=7HezR3KVyqA
-2026-01-29T01:50:41: [setP] mkysrz5r-3p42lsg6 0.05
-2026-01-29T01:50:43: [progress] id mkysrz5r-3p42lsg6 -> 0.05
-2026-01-29T01:50:45: [setP] mkysrz5r-3p42lsg6 0.15
-2026-01-29T01:50:45: [dl] Starting yt-dlp audio download...
-2026-01-29T01:50:45: [yt-dlp] Running command: yt-dlp --proxy http://10.8.0.2:3128 --user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 -f bestaudio/best -x --audio-format mp3 --audio-quality 0 --no-playlist --no-warnings --no-progress -o /tmp/audio_1769651445276_8auf6k.mp3 https://www.youtube.com/watch?v=7HezR3KVyqA
-2026-01-29T01:50:45: [progress] id mkysrz5r-3p42lsg6 -> 0.15
-2026-01-29T01:50:47: [progress] id mkysrz5r-3p42lsg6 -> 0.15
-2026-01-29T01:50:49: [progress] id mkysrz5r-3p42lsg6 -> 0.15
-2026-01-29T01:50:51: [progress] id mkysrz5r-3p42lsg6 -> 0.15
-2026-01-29T01:50:53: [progress] id mkysrz5r-3p42lsg6 -> 0.15
-2026-01-29T01:50:55: [yt-dlp] Successfully downloaded audio file, size: 665565 bytes
-2026-01-29T01:50:55: [yt-dlp] Valid ID3 header detected
-2026-01-29T01:50:55: [setP] mkysrz5r-3p42lsg6 1
-2026-01-29T01:50:55: [progress] id mkysrz5r-3p42lsg6 -> 1
-2026-01-29T01:50:55: 
-2026-01-29T01:50:55: ──────── LYRICS REQUEST ────────
-2026-01-29T01:50:55: scraper > songName: Short Song (English Song)🎵 [W Lyrics] 30 seconds
-2026-01-29T01:50:55: scraper > artist: LEVIOS LS
-2026-01-29T01:50:55: scraper > duration: 30
-2026-01-29T01:50:55: scraper > linkIndex: 0
-2026-01-29T01:50:55: 
-2026-01-29T01:50:55: ──────── STEP 1: LRCLIB FAST PASS ────────
-2026-01-29T01:50:55: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Short+Song+%28English+Song%29%F0%9F%8E%B5+%5BW+Lyrics%5D+30+seconds&artist_name=LEVIOS+LS&duration=30
-2026-01-29T01:50:58: [LRCLIB] ❌ Not found: "Short Song (English Song)🎵 [W Lyrics] 30 seconds"
-2026-01-29T01:50:58: [LRCLIB] No results, falling back to Google scraper...
-2026-01-29T01:50:58: 
-2026-01-29T01:50:58: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
-2026-01-29T01:50:58: 
-2026-01-29T01:50:58: ──────── GOOGLE SEARCH ────────
-2026-01-29T01:50:58: scraper > Searching Google for: short song (english song)🎵 [w lyrics] 30 seconds
-2026-01-29T01:50:58: scraper > Final query sent: "short song (english song)🎵 [w lyrics] 30 seconds lyrics and chords"
-2026-01-29T01:50:58: scraper > Google returned 8 results
-2026-01-29T01:50:58: scraper > Chosen URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:50:58: 
-2026-01-29T01:50:58: ──────── NAVIGATE ────────
-2026-01-29T01:50:59: scraper > page.goto done. Final URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:51:06: 
-2026-01-29T01:51:06: ──────── READABILITY ────────
-2026-01-29T01:51:06: scraper > isProbablyReaderable: true
-2026-01-29T01:51:07: 
-2026-01-29T01:51:07: ──────── FALLBACK #1 (DENSE BLOCK) ────────
-2026-01-29T01:51:07: 
-2026-01-29T01:51:07: ──────── FALLBACK #2 (SITE-AWARE) ────────
-2026-01-29T01:51:07: 
-2026-01-29T01:51:07: ──────── RESULT ────────
-2026-01-29T01:51:07: scraper > Total lines: 511
-2026-01-29T01:51:07: 
-2026-01-29T01:51:07: ──────── LYRICS REQUEST ────────
-2026-01-29T01:51:07: scraper > songName: Short Song (English Song)🎵 [W Lyrics] 30 seconds
-2026-01-29T01:51:07: scraper > artist: LEVIOS LS
-2026-01-29T01:51:07: scraper > duration: 30
-2026-01-29T01:51:07: scraper > linkIndex: 0
-2026-01-29T01:51:07: 
-2026-01-29T01:51:07: ──────── STEP 1: LRCLIB FAST PASS ────────
-2026-01-29T01:51:07: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Short+Song+%28English+Song%29%F0%9F%8E%B5+%5BW+Lyrics%5D+30+seconds&artist_name=LEVIOS+LS&duration=30
-2026-01-29T01:51:09: [upload] Job created: mkysrw91-m6iebd5v
-2026-01-29T01:51:10: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
-2026-01-29T01:51:10: [LRCLIB] No results, falling back to Google scraper...
-2026-01-29T01:51:10: 
-2026-01-29T01:51:10: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
-2026-01-29T01:51:10: 
-2026-01-29T01:51:10: ──────── GOOGLE SEARCH ────────
-2026-01-29T01:51:10: scraper > Searching Google for: short song (english song)🎵 [w lyrics] 30 seconds
-2026-01-29T01:51:10: scraper > Final query sent: "short song (english song)🎵 [w lyrics] 30 seconds lyrics and chords"
-2026-01-29T01:51:10: scraper > Google returned 8 results
-2026-01-29T01:51:10: scraper > Chosen URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:51:10: 
-2026-01-29T01:51:10: ──────── NAVIGATE ────────
-2026-01-29T01:51:11: 
-2026-01-29T01:51:11: ──────── LYRICS REQUEST ────────
-2026-01-29T01:51:11: scraper > songName: Short Song (English Song)🎵 [W Lyrics] 30 seconds song
-2026-01-29T01:51:11: scraper > artist: LEVIOS LS
-2026-01-29T01:51:11: scraper > duration: 30
-2026-01-29T01:51:11: scraper > linkIndex: 0
-2026-01-29T01:51:11: 
-2026-01-29T01:51:11: ──────── STEP 1: LRCLIB FAST PASS ────────
-2026-01-29T01:51:11: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Short+Song+%28English+Song%29%F0%9F%8E%B5+%5BW+Lyrics%5D+30+seconds+song&artist_name=LEVIOS+LS&duration=30
-2026-01-29T01:51:11: scraper > page.goto done. Final URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:51:14: 
-2026-01-29T01:51:14: ──────── READABILITY ────────
-2026-01-29T01:51:15: scraper > isProbablyReaderable: true
-2026-01-29T01:51:17: 
-2026-01-29T01:51:17: ──────── FALLBACK #1 (DENSE BLOCK) ────────
-2026-01-29T01:51:17: 
-2026-01-29T01:51:17: ──────── FALLBACK #2 (SITE-AWARE) ────────
-2026-01-29T01:51:17: 
-2026-01-29T01:51:17: ──────── RESULT ────────
-2026-01-29T01:51:17: scraper > Total lines: 529
-2026-01-29T01:51:17: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
-2026-01-29T01:51:17: [LRCLIB] No results, falling back to Google scraper...
-2026-01-29T01:51:17: 
-2026-01-29T01:51:17: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
-2026-01-29T01:51:17: [demucs-oracle] Worker ready
-2026-01-29T01:51:17: 
-2026-01-29T01:51:17: ──────── GOOGLE SEARCH ────────
-2026-01-29T01:51:17: scraper > Searching Google for: short song (english song)🎵 [w lyrics] 30 seconds song
-2026-01-29T01:51:17: scraper > Final query sent: "short song (english song)🎵 [w lyrics] 30 seconds song lyrics and chords"
-2026-01-29T01:51:17: 
-2026-01-29T01:51:17: ──────── LYRICS REQUEST ────────
-2026-01-29T01:51:17: scraper > songName: Short Song (English Song)🎵 [W Lyrics] 30 seconds
-2026-01-29T01:51:17: scraper > artist: LEVIOS LS
-2026-01-29T01:51:17: scraper > duration: 30
-2026-01-29T01:51:17: scraper > linkIndex: 0
-2026-01-29T01:51:17: 
-2026-01-29T01:51:17: ──────── STEP 1: LRCLIB FAST PASS ────────
-2026-01-29T01:51:17: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Short+Song+%28English+Song%29%F0%9F%8E%B5+%5BW+Lyrics%5D+30+seconds&artist_name=LEVIOS+LS&duration=30
-2026-01-29T01:51:17: scraper > Google returned 8 results
-2026-01-29T01:51:17: scraper > Chosen URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:51:17: 
-2026-01-29T01:51:17: ──────── NAVIGATE ────────
-2026-01-29T01:51:18: scraper > page.goto done. Final URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:51:20: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
-2026-01-29T01:51:20: [LRCLIB] No results, falling back to Google scraper...
-2026-01-29T01:51:20: 
-2026-01-29T01:51:20: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
-2026-01-29T01:51:20: 
-2026-01-29T01:51:20: ──────── GOOGLE SEARCH ────────
-2026-01-29T01:51:20: scraper > Searching Google for: short song (english song)🎵 [w lyrics] 30 seconds
-2026-01-29T01:51:20: scraper > Final query sent: "short song (english song)🎵 [w lyrics] 30 seconds lyrics and chords"
-2026-01-29T01:51:21: scraper > Google returned 8 results
-2026-01-29T01:51:21: scraper > Chosen URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:51:21: 
-2026-01-29T01:51:21: ──────── NAVIGATE ────────
-2026-01-29T01:51:22: 
-2026-01-29T01:51:22: ──────── READABILITY ────────
-2026-01-29T01:51:23: scraper > isProbablyReaderable: true
-2026-01-29T01:51:26: 
-2026-01-29T01:51:26: ──────── FALLBACK #1 (DENSE BLOCK) ────────
-2026-01-29T01:51:26: 
-2026-01-29T01:51:26: ──────── FALLBACK #2 (SITE-AWARE) ────────
-2026-01-29T01:51:26: 
-2026-01-29T01:51:26: ──────── RESULT ────────
-2026-01-29T01:51:26: scraper > Total lines: 529
-2026-01-29T01:51:26: scraper > page.goto done. Final URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:51:27: 
-2026-01-29T01:51:27: ──────── READABILITY ────────
-2026-01-29T01:51:28: scraper > isProbablyReaderable: true
-2026-01-29T01:51:30: 
-2026-01-29T01:51:30: ──────── FALLBACK #1 (DENSE BLOCK) ────────
-2026-01-29T01:51:30: 
-2026-01-29T01:51:30: ──────── FALLBACK #2 (SITE-AWARE) ────────
-2026-01-29T01:51:30: 
-2026-01-29T01:51:30: ──────── RESULT ────────
-2026-01-29T01:51:30: scraper > Total lines: 529
-2026-01-29T01:52:10: 
-2026-01-29T01:52:10: ──────── LYRICS REQUEST ────────
-2026-01-29T01:52:10: scraper > songName: Short Song (English Song)🎵 [W Lyrics] 30 seconds song
-2026-01-29T01:52:10: scraper > artist: LEVIOS LS
-2026-01-29T01:52:10: scraper > duration: 30
-2026-01-29T01:52:10: scraper > linkIndex: 0
-2026-01-29T01:52:10: 
-2026-01-29T01:52:10: ──────── STEP 1: LRCLIB FAST PASS ────────
-2026-01-29T01:52:10: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Short+Song+%28English+Song%29%F0%9F%8E%B5+%5BW+Lyrics%5D+30+seconds+song&artist_name=LEVIOS+LS&duration=30
-2026-01-29T01:52:13: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
-2026-01-29T01:52:13: [LRCLIB] No results, falling back to Google scraper...
-2026-01-29T01:52:13: 
-2026-01-29T01:52:13: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
-2026-01-29T01:52:13: 
-2026-01-29T01:52:13: ──────── GOOGLE SEARCH ────────
-2026-01-29T01:52:13: scraper > Searching Google for: short song (english song)🎵 [w lyrics] 30 seconds song
-2026-01-29T01:52:13: scraper > Final query sent: "short song (english song)🎵 [w lyrics] 30 seconds song lyrics and chords"
-2026-01-29T01:52:14: scraper > Google returned 8 results
-2026-01-29T01:52:14: scraper > Chosen URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:52:14: 
-2026-01-29T01:52:14: ──────── NAVIGATE ────────
-2026-01-29T01:52:16: scraper > page.goto done. Final URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:52:22: 
-2026-01-29T01:52:22: ──────── READABILITY ────────
-2026-01-29T01:52:24: scraper > isProbablyReaderable: true
-2026-01-29T01:52:26: 
-2026-01-29T01:52:26: ──────── FALLBACK #1 (DENSE BLOCK) ────────
-2026-01-29T01:52:26: 
-2026-01-29T01:52:26: ──────── FALLBACK #2 (SITE-AWARE) ────────
-2026-01-29T01:52:26: 
-2026-01-29T01:52:26: ──────── RESULT ────────
-2026-01-29T01:52:26: scraper > Total lines: 529
-2026-01-29T01:52:26: 
-2026-01-29T01:52:26: ──────── LYRICS REQUEST ────────
-2026-01-29T01:52:26: scraper > songName: Short Song (English Song)🎵 [W Lyrics] 30 seconds song
-2026-01-29T01:52:26: scraper > artist: LEVIOS LS
-2026-01-29T01:52:26: scraper > duration: 30
-2026-01-29T01:52:26: scraper > linkIndex: 0
-2026-01-29T01:52:26: 
-2026-01-29T01:52:26: ──────── STEP 1: LRCLIB FAST PASS ────────
-2026-01-29T01:52:26: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Short+Song+%28English+Song%29%F0%9F%8E%B5+%5BW+Lyrics%5D+30+seconds+song&artist_name=LEVIOS+LS&duration=30
-2026-01-29T01:52:26: [demucs-oracle] Worker ready
-2026-01-29T01:52:29: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
-2026-01-29T01:52:29: [LRCLIB] No results, falling back to Google scraper...
-2026-01-29T01:52:29: 
-2026-01-29T01:52:29: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
-2026-01-29T01:52:29: 
-2026-01-29T01:52:29: ──────── GOOGLE SEARCH ────────
-2026-01-29T01:52:29: scraper > Searching Google for: short song (english song)🎵 [w lyrics] 30 seconds song
-2026-01-29T01:52:29: scraper > Final query sent: "short song (english song)🎵 [w lyrics] 30 seconds song lyrics and chords"
-2026-01-29T01:52:29: scraper > Google returned 8 results
-2026-01-29T01:52:29: scraper > Chosen URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:52:29: 
-2026-01-29T01:52:29: ──────── NAVIGATE ────────
-2026-01-29T01:52:30: scraper > page.goto done. Final URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:52:34: 
-2026-01-29T01:52:34: ──────── READABILITY ────────
-2026-01-29T01:52:35: scraper > isProbablyReaderable: true
-2026-01-29T01:52:37: 
-2026-01-29T01:52:37: ──────── FALLBACK #1 (DENSE BLOCK) ────────
-2026-01-29T01:52:37: 
-2026-01-29T01:52:37: ──────── FALLBACK #2 (SITE-AWARE) ────────
-2026-01-29T01:52:37: 
-2026-01-29T01:52:37: ──────── RESULT ────────
-2026-01-29T01:52:37: scraper > Total lines: 529
-2026-01-29T01:52:37: [demucs-oracle] Worker ready
-2026-01-29T01:52:57: 
-2026-01-29T01:52:57: ──────── LYRICS REQUEST ────────
-2026-01-29T01:52:57: scraper > songName: Short Song (English Song)🎵 [W Lyrics] 30 seconds song
-2026-01-29T01:52:57: scraper > artist: LEVIOS LS
-2026-01-29T01:52:57: scraper > duration: 30
-2026-01-29T01:52:57: scraper > linkIndex: 0
-2026-01-29T01:52:57: 
-2026-01-29T01:52:57: ──────── STEP 1: LRCLIB FAST PASS ────────
-2026-01-29T01:52:57: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Short+Song+%28English+Song%29%F0%9F%8E%B5+%5BW+Lyrics%5D+30+seconds+song&artist_name=LEVIOS+LS&duration=30
-2026-01-29T01:53:00: [LRCLIB] ❌ Not found: "Short Song (English Song)🎵 [W Lyrics] 30 seconds song"
-2026-01-29T01:53:00: [LRCLIB] No results, falling back to Google scraper...
-2026-01-29T01:53:00: 
-2026-01-29T01:53:00: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
-2026-01-29T01:53:00: 
-2026-01-29T01:53:00: ──────── GOOGLE SEARCH ────────
-2026-01-29T01:53:00: scraper > Searching Google for: short song (english song)🎵 [w lyrics] 30 seconds song
-2026-01-29T01:53:00: scraper > Final query sent: "short song (english song)🎵 [w lyrics] 30 seconds song lyrics and chords"
-2026-01-29T01:53:00: scraper > Google returned 8 results
-2026-01-29T01:53:00: scraper > Chosen URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:53:00: 
-2026-01-29T01:53:00: ──────── NAVIGATE ────────
-2026-01-29T01:53:04: scraper > page.goto done. Final URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:53:05: 
-2026-01-29T01:53:05: ──────── READABILITY ────────
-2026-01-29T01:53:06: scraper > isProbablyReaderable: true
-2026-01-29T01:53:07: 
-2026-01-29T01:53:07: ──────── FALLBACK #1 (DENSE BLOCK) ────────
-2026-01-29T01:53:07: 
-2026-01-29T01:53:07: ──────── FALLBACK #2 (SITE-AWARE) ────────
-2026-01-29T01:53:07: 
-2026-01-29T01:53:07: ──────── RESULT ────────
-2026-01-29T01:53:07: scraper > Total lines: 529
-2026-01-29T01:53:07: 
-2026-01-29T01:53:07: ──────── LYRICS REQUEST ────────
-2026-01-29T01:53:07: scraper > songName: Short Song (English Song)🎵 [W Lyrics] 30 seconds song
-2026-01-29T01:53:07: scraper > artist: LEVIOS LS
-2026-01-29T01:53:07: scraper > duration: 30
-2026-01-29T01:53:07: scraper > linkIndex: 0
-2026-01-29T01:53:07: 
-2026-01-29T01:53:07: ──────── STEP 1: LRCLIB FAST PASS ────────
-2026-01-29T01:53:07: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Short+Song+%28English+Song%29%F0%9F%8E%B5+%5BW+Lyrics%5D+30+seconds+song&artist_name=LEVIOS+LS&duration=30
-2026-01-29T01:53:10: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
-2026-01-29T01:53:10: [LRCLIB] No results, falling back to Google scraper...
-2026-01-29T01:53:10: 
-2026-01-29T01:53:10: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
-2026-01-29T01:53:10: 
-2026-01-29T01:53:10: ──────── GOOGLE SEARCH ────────
-2026-01-29T01:53:10: scraper > Searching Google for: short song (english song)🎵 [w lyrics] 30 seconds song
-2026-01-29T01:53:10: scraper > Final query sent: "short song (english song)🎵 [w lyrics] 30 seconds song lyrics and chords"
-2026-01-29T01:53:11: scraper > Google returned 8 results
-2026-01-29T01:53:11: scraper > Chosen URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:53:11: 
-2026-01-29T01:53:11: ──────── NAVIGATE ────────
-2026-01-29T01:53:13: scraper > page.goto done. Final URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:53:25: scraper > networkidle wait skipped/timeout
-2026-01-29T01:53:25: 
-2026-01-29T01:53:25: ──────── READABILITY ────────
-2026-01-29T01:53:26: scraper > isProbablyReaderable: true
-2026-01-29T01:53:27: 
-2026-01-29T01:53:27: ──────── FALLBACK #1 (DENSE BLOCK) ────────
-2026-01-29T01:53:27: 
-2026-01-29T01:53:27: ──────── FALLBACK #2 (SITE-AWARE) ────────
-2026-01-29T01:53:27: 
-2026-01-29T01:53:27: ──────── RESULT ────────
-2026-01-29T01:53:27: scraper > Total lines: 511
-2026-01-29T01:53:31: 
-2026-01-29T01:53:31: ──────── LYRICS REQUEST ────────
-2026-01-29T01:53:31: scraper > songName: Short Song (English Song)🎵 [W Lyrics] 30 seconds song
-2026-01-29T01:53:31: scraper > artist: LEVIOS LS
-2026-01-29T01:53:31: scraper > duration: 30
-2026-01-29T01:53:31: scraper > linkIndex: 0
-2026-01-29T01:53:31: 
-2026-01-29T01:53:31: ──────── STEP 1: LRCLIB FAST PASS ────────
-2026-01-29T01:53:31: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Short+Song+%28English+Song%29%F0%9F%8E%B5+%5BW+Lyrics%5D+30+seconds+song&artist_name=LEVIOS+LS&duration=30
-2026-01-29T01:53:33: [LRCLIB] ❌ Not found: "Short Song (English Song)🎵 [W Lyrics] 30 seconds song"
-2026-01-29T01:53:33: [LRCLIB] No results, falling back to Google scraper...
-2026-01-29T01:53:33: 
-2026-01-29T01:53:33: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
-2026-01-29T01:53:33: 
-2026-01-29T01:53:33: ──────── GOOGLE SEARCH ────────
-2026-01-29T01:53:33: scraper > Searching Google for: short song (english song)🎵 [w lyrics] 30 seconds song
-2026-01-29T01:53:33: scraper > Final query sent: "short song (english song)🎵 [w lyrics] 30 seconds song lyrics and chords"
-2026-01-29T01:53:33: scraper > Google returned 8 results
-2026-01-29T01:53:33: scraper > Chosen URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:53:33: 
-2026-01-29T01:53:33: ──────── NAVIGATE ────────
-2026-01-29T01:53:37: scraper > page.goto done. Final URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:53:45: 
-2026-01-29T01:53:45: ──────── READABILITY ────────
-2026-01-29T01:53:45: scraper > isProbablyReaderable: true
-2026-01-29T01:53:46: 
-2026-01-29T01:53:46: ──────── FALLBACK #1 (DENSE BLOCK) ────────
-2026-01-29T01:53:46: 
-2026-01-29T01:53:46: ──────── FALLBACK #2 (SITE-AWARE) ────────
-2026-01-29T01:53:46: 
-2026-01-29T01:53:46: ──────── RESULT ────────
-2026-01-29T01:53:46: scraper > Total lines: 513
-2026-01-29T01:55:27: 
-2026-01-29T01:55:27: ──────── LYRICS REQUEST ────────
-2026-01-29T01:55:27: scraper > songName: Short Song (English Song)🎵 [W Lyrics] 30 seconds song
-2026-01-29T01:55:27: scraper > artist: LEVIOS LS
-2026-01-29T01:55:27: scraper > duration: 30
-2026-01-29T01:55:27: scraper > linkIndex: 0
-2026-01-29T01:55:27: 
-2026-01-29T01:55:27: ──────── STEP 1: LRCLIB FAST PASS ────────
-2026-01-29T01:55:27: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Short+Song+%28English+Song%29%F0%9F%8E%B5+%5BW+Lyrics%5D+30+seconds+song&artist_name=LEVIOS+LS&duration=30
-2026-01-29T01:55:30: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
-2026-01-29T01:55:30: [LRCLIB] No results, falling back to Google scraper...
-2026-01-29T01:55:30: 
-2026-01-29T01:55:30: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
-2026-01-29T01:55:30: 
-2026-01-29T01:55:30: ──────── GOOGLE SEARCH ────────
-2026-01-29T01:55:30: scraper > Searching Google for: short song (english song)🎵 [w lyrics] 30 seconds song
-2026-01-29T01:55:30: scraper > Final query sent: "short song (english song)🎵 [w lyrics] 30 seconds song lyrics and chords"
-2026-01-29T01:55:30: scraper > Google returned 8 results
-2026-01-29T01:55:31: scraper > Chosen URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:55:31: 
-2026-01-29T01:55:31: ──────── NAVIGATE ────────
-2026-01-29T01:55:33: scraper > page.goto done. Final URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:55:45: scraper > networkidle wait skipped/timeout
-2026-01-29T01:55:45: 
-2026-01-29T01:55:45: ──────── READABILITY ────────
-2026-01-29T01:55:47: scraper > isProbablyReaderable: true
-2026-01-29T01:55:50: 
-2026-01-29T01:55:50: ──────── FALLBACK #1 (DENSE BLOCK) ────────
-2026-01-29T01:55:50: 
-2026-01-29T01:55:50: ──────── FALLBACK #2 (SITE-AWARE) ────────
-2026-01-29T01:55:50: 
-2026-01-29T01:55:50: ──────── RESULT ────────
-2026-01-29T01:55:50: scraper > Total lines: 511
-2026-01-29T01:55:50: [demucs-oracle] Worker ready
-2026-01-29T01:57:35: 
-2026-01-29T01:57:35: ──────── LYRICS REQUEST ────────
-2026-01-29T01:57:35: scraper > songName: Short Song (English Song)🎵 [W Lyrics] 30 seconds song
-2026-01-29T01:57:35: scraper > artist: LEVIOS LS
-2026-01-29T01:57:35: scraper > duration: 30
-2026-01-29T01:57:35: scraper > linkIndex: 0
-2026-01-29T01:57:35: 
-2026-01-29T01:57:35: ──────── STEP 1: LRCLIB FAST PASS ────────
-2026-01-29T01:57:35: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Short+Song+%28English+Song%29%F0%9F%8E%B5+%5BW+Lyrics%5D+30+seconds+song&artist_name=LEVIOS+LS&duration=30
-2026-01-29T01:57:38: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
-2026-01-29T01:57:38: [LRCLIB] No results, falling back to Google scraper...
-2026-01-29T01:57:38: 
-2026-01-29T01:57:38: ──────── STEP 2: GOOGLE/PLAYWRIGHT SCRAPER ────────
-2026-01-29T01:57:38: 
-2026-01-29T01:57:38: ──────── GOOGLE SEARCH ────────
-2026-01-29T01:57:38: scraper > Searching Google for: short song (english song)🎵 [w lyrics] 30 seconds song
-2026-01-29T01:57:38: scraper > Final query sent: "short song (english song)🎵 [w lyrics] 30 seconds song lyrics and chords"
-2026-01-29T01:57:38: scraper > Google returned 8 results
-2026-01-29T01:57:38: scraper > Chosen URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:57:38: 
-2026-01-29T01:57:38: ──────── NAVIGATE ────────
-2026-01-29T01:57:39: scraper > page.goto done. Final URL: https://transactions.ismir.net/articles/10.5334/tismir.30
-2026-01-29T01:57:51: scraper > networkidle wait skipped/timeout
-2026-01-29T01:57:51: 
-2026-01-29T01:57:51: ──────── READABILITY ────────
-2026-01-29T01:57:52: scraper > isProbablyReaderable: true
-2026-01-29T01:57:53: 
-2026-01-29T01:57:53: ──────── FALLBACK #1 (DENSE BLOCK) ────────
-2026-01-29T01:57:53: 
-2026-01-29T01:57:53: ──────── FALLBACK #2 (SITE-AWARE) ────────
-2026-01-29T01:57:53: 
-2026-01-29T01:57:53: ──────── RESULT ────────
-2026-01-29T01:57:53: scraper > Total lines: 511
+2026-01-30T19:02:02: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-01-30T19:02:02: [demucs-oracle] Model: htdemucs_6s
+2026-01-30T19:02:02: [demucs-oracle] Shifts: 10
+2026-01-30T19:02:02: [demucs-oracle] Overlap: 0.25
+2026-01-30T19:02:02: [demucs-oracle] Output: 320k mp3
+2026-01-30T19:02:02: [demucs-oracle] ====================================
+2026-01-30T19:02:02: [demucs-oracle] Module loaded
+2026-01-30T19:02:02: OPTIONS  /.*/
+2026-01-30T19:02:02: [33mPOST[39m     /~/upload
+2026-01-30T19:02:02: [32mGET[39m      /~/stems/:id/state
+2026-01-30T19:02:02: [32mGET[39m      /~/stems/:id/result
+2026-01-30T19:02:02: [33mPOST[39m     /~/stems/:id/cleanup
+2026-01-30T19:02:02: [32mGET[39m      /~/progress/:id
+2026-01-30T19:02:02: [32mGET[39m      /~/download-mp3
+2026-01-30T19:02:02: [32mGET[39m      /~/scrape-lyrics
+2026-01-30T19:02:02: [32mGET[39m      /~/scrape-news
+2026-01-30T19:02:02: [32mGET[39m      /~/search
+2026-01-30T19:02:02: [32mGET[39m      /~/suggestions
+2026-01-30T19:02:02: [32mGET[39m      /~/stream
+2026-01-30T19:02:02: [32mGET[39m      /~/info
+2026-01-30T19:02:02: [32mGET[39m      /restart/Mohan9869868880
+2026-01-30T19:02:02: Music API listening on port 3000
+2026-01-30T19:02:02: Demucs worker status: running
+2026-01-30T19:02:02: [demucs-oracle] Worker ready
+2026-01-30T19:02:16: [youtube] Suggestions request: 30
+2026-01-30T19:02:16: [youtube] Creating fresh Innertube client...
+2026-01-30T19:02:16: [youtube] Innertube client initialized
+2026-01-30T19:02:17: [youtube] Suggestions request: 30 seo
+2026-01-30T19:02:17: [youtube] Search request: 30 seocnd video
+2026-01-30T19:02:18: [youtube] Suggestions request: 30 seocnd video
+2026-01-30T19:02:18: [youtube] Search returned 20 results
+2026-01-30T19:02:30: [dl] new request id ml192rd5-qgh2y620 url https://www.youtube.com/watch?v=RE-dLbNOkf4
+2026-01-30T19:02:30: [setP] ml192rd5-qgh2y620 0.05
+2026-01-30T19:02:32: [progress] id ml192rd5-qgh2y620 -> 0.05
+2026-01-30T19:02:33: [setP] ml192rd5-qgh2y620 0.15
+2026-01-30T19:02:33: [dl] Starting yt-dlp audio download...
+2026-01-30T19:02:33: [yt-dlp] Running command: yt-dlp --proxy http://10.8.0.2:3128 --user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 --extractor-args youtube:player_client=android -f bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio[ext=aac]/bestaudio[acodec=aac]/bestaudio/best -x --audio-format mp3 --audio-quality 0 --no-playlist --no-warnings --no-progress --retries 3 --fragment-retries 3 -o /tmp/audio_1769799753787_wuggrl.mp3 https://www.youtube.com/watch?v=RE-dLbNOkf4
+2026-01-30T19:02:34: [progress] id ml192rd5-qgh2y620 -> 0.15
+2026-01-30T19:02:36: [progress] id ml192rd5-qgh2y620 -> 0.15
+2026-01-30T19:02:38: [progress] id ml192rd5-qgh2y620 -> 0.15
+2026-01-30T19:02:40: [progress] id ml192rd5-qgh2y620 -> 0.15
+2026-01-30T19:02:42: [progress] id ml192rd5-qgh2y620 -> 0.15
+2026-01-30T19:02:44: [progress] id ml192rd5-qgh2y620 -> 0.15
+2026-01-30T19:02:45: [yt-dlp] Successfully downloaded audio file, size: 793179 bytes
+2026-01-30T19:02:45: [yt-dlp] Valid ID3 header detected
+2026-01-30T19:02:45: [setP] ml192rd5-qgh2y620 1
+2026-01-30T19:02:47: [progress] id ml192rd5-qgh2y620 -> 1
+2026-01-30T19:11:35: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-01-30T19:11:35: [demucs-oracle] Model: htdemucs_6s
+2026-01-30T19:11:35: [demucs-oracle] Shifts: 10
+2026-01-30T19:11:35: [demucs-oracle] Overlap: 0.25
+2026-01-30T19:11:35: [demucs-oracle] Output: 320k mp3
+2026-01-30T19:11:35: [demucs-oracle] ====================================
+2026-01-30T19:11:35: [demucs-oracle] Module loaded
+2026-01-30T19:11:35: OPTIONS  /.*/
+2026-01-30T19:11:35: [33mPOST[39m     /~/upload
+2026-01-30T19:11:35: [32mGET[39m      /~/stems/:id/state
+2026-01-30T19:11:35: [32mGET[39m      /~/stems/:id/result
+2026-01-30T19:11:35: [33mPOST[39m     /~/stems/:id/cleanup
+2026-01-30T19:11:35: [32mGET[39m      /~/progress/:id
+2026-01-30T19:11:35: [32mGET[39m      /~/download-mp3
+2026-01-30T19:11:35: [32mGET[39m      /~/scrape-lyrics
+2026-01-30T19:11:35: [32mGET[39m      /~/scrape-news
+2026-01-30T19:11:35: [32mGET[39m      /~/search
+2026-01-30T19:11:35: [32mGET[39m      /~/suggestions
+2026-01-30T19:11:35: [32mGET[39m      /~/stream
+2026-01-30T19:11:35: [32mGET[39m      /~/info
+2026-01-30T19:11:35: [32mGET[39m      /restart/Mohan9869868880
+2026-01-30T19:11:35: Music API listening on port 3000
+2026-01-30T19:11:35: Demucs worker status: running
+2026-01-30T19:11:35: [demucs-oracle] Worker ready
+2026-01-30T19:11:49: [youtube] Search request: 30secodns videos
+2026-01-30T19:11:49: [youtube] Suggestions request: 30secodns videos
+2026-01-30T19:11:49: [youtube] Creating fresh Innertube client...
+2026-01-30T19:11:50: [youtube] Innertube client initialized
+2026-01-30T19:11:50: [YOUTUBEJS][Parser]: InnertubeError: VideoSummaryContentView not found!
+2026-01-30T19:11:50: This is a bug, want to help us fix it? Follow the instructions at https://github.com/LuanRT/YouTube.js/blob/main/docs/updating-the-parser.md or report it at https://github.com/LuanRT/YouTube.js/issues!
+2026-01-30T19:11:50: Introspected and JIT generated this class in the meantime:
+2026-01-30T19:11:50: class VideoSummaryContentView extends YTNode {
+2026-01-30T19:11:50:   static type = 'VideoSummaryContentView';
+2026-01-30T19:11:50: 
+2026-01-30T19:11:50:   paragraphs: ObservedArray<YTNodes.VideoSummaryParagraphView> | null;
+2026-01-30T19:11:50:   like_button_view_model: YTNodes.LikeButtonView | null;
+2026-01-30T19:11:50:   dislike_button_view_model: YTNodes.DislikeButtonView | null;
+2026-01-30T19:11:50: 
+2026-01-30T19:11:50:   constructor(data: RawNode) {
+2026-01-30T19:11:50:     super();
+2026-01-30T19:11:50:     this.paragraphs = Parser.parse(data.paragraphs, true, YTNodes.VideoSummaryParagraphView);
+2026-01-30T19:11:50:     this.like_button_view_model = Parser.parseItem(data.likeButtonViewModel, YTNodes.LikeButtonView);
+2026-01-30T19:11:50:     this.dislike_button_view_model = Parser.parseItem(data.dislikeButtonViewModel, YTNodes.DislikeButtonView);
+2026-01-30T19:11:50:   }
+2026-01-30T19:11:50: }
+2026-01-30T19:11:50: 
+2026-01-30T19:11:50:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:70:27)
+2026-01-30T19:11:50:     at createRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:320:5)
+2026-01-30T19:11:50:     at generateRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:371:21)
+2026-01-30T19:11:50:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:400:17)
+2026-01-30T19:11:50:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-30T19:11:50:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-30T19:11:50:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-30T19:11:50:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-30T19:11:50:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-30T19:11:50:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32) {
+2026-01-30T19:11:50:   date: 2026-01-30T19:11:50.631Z,
+2026-01-30T19:11:50:   version: '16.0.1',
+2026-01-30T19:11:50:   info: undefined
+2026-01-30T19:11:50: }
+2026-01-30T19:11:50: [YOUTUBEJS][Parser]: InnertubeError: VideoSummaryParagraphView not found!
+2026-01-30T19:11:50: This is a bug, want to help us fix it? Follow the instructions at https://github.com/LuanRT/YouTube.js/blob/main/docs/updating-the-parser.md or report it at https://github.com/LuanRT/YouTube.js/issues!
+2026-01-30T19:11:50: Introspected and JIT generated this class in the meantime:
+2026-01-30T19:11:50: class VideoSummaryParagraphView extends YTNode {
+2026-01-30T19:11:50:   static type = 'VideoSummaryParagraphView';
+2026-01-30T19:11:50: 
+2026-01-30T19:11:50:   text: {
+2026-01-30T19:11:50:     content: string
+2026-01-30T19:11:50:   };
+2026-01-30T19:11:50: 
+2026-01-30T19:11:50:   constructor(data: RawNode) {
+2026-01-30T19:11:50:     super();
+2026-01-30T19:11:50:     this.text = {
+2026-01-30T19:11:50:       content: data.text.content
+2026-01-30T19:11:50:     };
+2026-01-30T19:11:50:   }
+2026-01-30T19:11:50: }
+2026-01-30T19:11:50: 
+2026-01-30T19:11:50:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:70:27)
+2026-01-30T19:11:50:     at createRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:320:5)
+2026-01-30T19:11:50:     at generateRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:371:21)
+2026-01-30T19:11:50:     at generateRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:374:9)
+2026-01-30T19:11:50:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:400:17)
+2026-01-30T19:11:50:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-30T19:11:50:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-30T19:11:50:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-30T19:11:50:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-30T19:11:50:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-30T19:11:50:   date: 2026-01-30T19:11:50.633Z,
+2026-01-30T19:11:50:   version: '16.0.1',
+2026-01-30T19:11:50:   info: undefined
+2026-01-30T19:11:50: }
+2026-01-30T19:11:50: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+2026-01-30T19:11:50:     at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+2026-01-30T19:11:50:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+2026-01-30T19:11:50:     at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+2026-01-30T19:11:50:     at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-30T19:11:50:     at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+2026-01-30T19:11:50:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-30T19:11:50:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+2026-01-30T19:11:50:     at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32)
+2026-01-30T19:11:50:     at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+2026-01-30T19:11:50:     at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+2026-01-30T19:11:50:   date: 2026-01-30T19:11:50.634Z,
+2026-01-30T19:11:50:   version: '16.0.1',
+2026-01-30T19:11:50:   info: {
+2026-01-30T19:11:50:     paragraphs: [ [Object] ],
+2026-01-30T19:11:50:     likeButtonViewModel: { likeButtonViewModel: [Object] },
+2026-01-30T19:11:50:     dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+2026-01-30T19:11:50:   }
+2026-01-30T19:11:50: }
+2026-01-30T19:11:50: [youtube] Search returned 20 results
+2026-01-30T19:11:57: [dl] new request id ml19ewgp-kooqu5ys url https://www.youtube.com/watch?v=M6ltG5OdjrQ
+2026-01-30T19:11:57: [setP] ml19ewgp-kooqu5ys 0.05
+2026-01-30T19:11:59: [progress] id ml19ewgp-kooqu5ys -> 0.05
+2026-01-30T19:12:00: [setP] ml19ewgp-kooqu5ys 0.15
+2026-01-30T19:12:00: [dl] Starting yt-dlp audio download...
+2026-01-30T19:12:00: [yt-dlp] Running command: yt-dlp --proxy http://10.8.0.2:3128 --user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 --extractor-args youtube:player_client=android -f bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio[ext=aac]/bestaudio[acodec=aac]/bestaudio/best -x --audio-format mp3 --audio-quality 0 --no-playlist --no-warnings --no-progress --retries 3 --fragment-retries 3 -o /tmp/audio_1769800320084_loiq6.mp3 https://www.youtube.com/watch?v=M6ltG5OdjrQ
+2026-01-30T19:12:01: [progress] id ml19ewgp-kooqu5ys -> 0.15
+2026-01-30T19:12:03: [progress] id ml19ewgp-kooqu5ys -> 0.15
+2026-01-30T19:12:05: [progress] id ml19ewgp-kooqu5ys -> 0.15
+2026-01-30T19:12:07: [progress] id ml19ewgp-kooqu5ys -> 0.15
+2026-01-30T19:12:09: [progress] id ml19ewgp-kooqu5ys -> 0.15
+2026-01-30T19:12:11: [progress] id ml19ewgp-kooqu5ys -> 0.15
+2026-01-30T19:12:12: [yt-dlp] Successfully downloaded audio file, size: 1156684 bytes
+2026-01-30T19:12:12: [yt-dlp] Valid ID3 header detected
+2026-01-30T19:12:12: [setP] ml19ewgp-kooqu5ys 1

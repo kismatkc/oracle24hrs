@@ -1,6 +1,6 @@
 // app/music/workers/demucs.worker.ts
 // Oracle CPU Demucs Worker - High Quality Configuration
-// Shifts: 10, Overlap: 0.4, Output: 320kbps MP3
+// Shifts: 10, Overlap: 0.25, Output: 320kbps MP3
 import path from "path";
 import fs from "fs";
 import { spawn } from "child_process";
@@ -11,20 +11,34 @@ const SEPARATED_DIR = path.join(ROOT, "separated");
 const NORMALIZED_DIR = path.join(ROOT, "normalized");
 fs.mkdirSync(SEPARATED_DIR, { recursive: true });
 fs.mkdirSync(NORMALIZED_DIR, { recursive: true });
-const ALL_STEMS = ["vocals", "drums", "bass", "guitar", "piano", "other"];
+const ALL_STEMS = [
+    "vocals",
+    "drums",
+    "bass",
+    "guitar",
+    "piano",
+    "other",
+];
 const model = process.env.DEMUCS_MODEL || "htdemucs_6s";
 // ============================================================
-// STANDARDIZED QUALITY CONFIGURATION
+// STANDARDIZED QUALITY CONFIGURATION - MAXIMUM QUALITY
 // Matches Mac FastAPI settings for consistent output
 // ============================================================
+// Model: htdemucs_6s = 6 stems (vocals, drums, bass, guitar, piano, other)
+// Shifts: 10 = maximum quality (shift trick averages multiple predictions)
+// Overlap: 0.25 = default, good quality at segment boundaries
+// Clip Mode: rescale = avoids clipping artifacts (default)
+// MP3 Bitrate: 320k = maximum quality
+// Note: No GPU settings - Oracle runs on CPU only
+// ============================================================
 const DEMUCS_CONFIG = {
-    shifts: 10,
-    overlap: 0.4,
+    shifts: 10, // Max quality - averages 10 shifted predictions
+    overlap: 0.25, // Default overlap between segments
     clipMode: "rescale",
-    segment: 7,
+    segment: 7, // Segment length in seconds
 };
 const AUDIO_CONFIG = {
-    stemBitrate: "320k",
+    stemBitrate: "320k", // Maximum MP3 bitrate
     outputFormat: "mp3",
 };
 const CPU_THREADS = parseInt(process.env.DEMUCS_THREADS || "4", 10);
@@ -53,17 +67,29 @@ function runProc(cmd, args) {
         p.stdout?.on("data", (d) => (stdout += d.toString()));
         p.stderr?.on("data", (d) => (stderr += d.toString()));
         p.on("error", reject);
-        p.on("close", (code) => code === 0 ? resolve({ stdout, stderr }) : reject(new Error(`${cmd} exited ${code}: ${stderr}`)));
+        p.on("close", (code) => code === 0
+            ? resolve({ stdout, stderr })
+            : reject(new Error(`${cmd} exited ${code}: ${stderr}`)));
     });
 }
 async function normalizeAudio(inputPath, outputPath) {
     const ffmpeg = resolveFfmpeg();
     try {
         await runProc(ffmpeg, [
-            "-y", "-i", inputPath,
-            "-ar", "44100", "-ac", "2", "-sample_fmt", "s16",
-            "-af", "loudnorm=I=-16:TP=-1.5:LRA=11",
-            "-f", "wav", outputPath,
+            "-y",
+            "-i",
+            inputPath,
+            "-ar",
+            "44100",
+            "-ac",
+            "2",
+            "-sample_fmt",
+            "s16",
+            "-af",
+            "loudnorm=I=-16:TP=-1.5:LRA=11",
+            "-f",
+            "wav",
+            outputPath,
         ]);
         return fs.existsSync(outputPath) && fs.statSync(outputPath).size > 0;
     }
@@ -75,10 +101,15 @@ async function transcodeToMp3(inputWav, outMp3) {
     const ffmpeg = resolveFfmpeg();
     try {
         await runProc(ffmpeg, [
-            "-y", "-i", inputWav,
-            "-c:a", "libmp3lame",
-            "-b:a", AUDIO_CONFIG.stemBitrate,
-            "-q:a", "0",
+            "-y",
+            "-i",
+            inputWav,
+            "-c:a",
+            "libmp3lame",
+            "-b:a",
+            AUDIO_CONFIG.stemBitrate,
+            "-q:a",
+            "0",
             outMp3,
         ]);
         return fs.existsSync(outMp3) && fs.statSync(outMp3).size > 0;
@@ -88,14 +119,28 @@ async function transcodeToMp3(inputWav, outMp3) {
     }
 }
 async function runDemucs(inputPath, onProgress) {
-    const PYTHON_BIN = process.env.PYTHON_BIN || path.join(process.env.HOME || "", "demucs_env", "bin", "python3");
+    const PYTHON_BIN = process.env.PYTHON_BIN ||
+        path.join(process.env.HOME || "", "demucs_env", "bin", "python3");
     const args = [
-        "-m", "demucs", "-d", "cpu", "-n", model, "-j", String(CPU_THREADS),
-        "--shifts", String(DEMUCS_CONFIG.shifts),
-        "--overlap", String(DEMUCS_CONFIG.overlap),
-        "--clip-mode", DEMUCS_CONFIG.clipMode,
-        "--segment", String(DEMUCS_CONFIG.segment),
-        "-o", SEPARATED_DIR, inputPath,
+        "-m",
+        "demucs",
+        "-d",
+        "cpu",
+        "-n",
+        model,
+        "-j",
+        String(CPU_THREADS),
+        "--shifts",
+        String(DEMUCS_CONFIG.shifts),
+        "--overlap",
+        String(DEMUCS_CONFIG.overlap),
+        "--clip-mode",
+        DEMUCS_CONFIG.clipMode,
+        "--segment",
+        String(DEMUCS_CONFIG.segment),
+        "-o",
+        SEPARATED_DIR,
+        inputPath,
     ];
     await onProgress(1);
     await new Promise((resolve, reject) => {
@@ -103,7 +148,11 @@ async function runDemucs(inputPath, onProgress) {
             return reject(new Error(`Python not found: ${PYTHON_BIN}`));
         const proc = spawn(PYTHON_BIN, args, {
             cwd: ROOT,
-            env: { ...process.env, OMP_NUM_THREADS: String(CPU_THREADS), CUDA_VISIBLE_DEVICES: "" },
+            env: {
+                ...process.env,
+                OMP_NUM_THREADS: String(CPU_THREADS),
+                CUDA_VISIBLE_DEVICES: "",
+            },
         });
         let lastPct = -1;
         proc.stderr.on("data", async (buf) => {
@@ -138,9 +187,15 @@ async function createInstrumentalMix(sepDir) {
         const inputs = [];
         stems.forEach((s) => inputs.push("-i", s));
         await runProc(ffmpeg, [
-            "-y", ...inputs,
-            "-filter_complex", `amix=inputs=${stems.length}:duration=longest:normalize=0`,
-            "-c:a", "libmp3lame", "-b:a", AUDIO_CONFIG.stemBitrate, outPath,
+            "-y",
+            ...inputs,
+            "-filter_complex",
+            `amix=inputs=${stems.length}:duration=longest:normalize=0`,
+            "-c:a",
+            "libmp3lame",
+            "-b:a",
+            AUDIO_CONFIG.stemBitrate,
+            outPath,
         ]);
         return fs.existsSync(outPath) ? outPath : null;
     }
@@ -192,7 +247,9 @@ export const demucsWorker = new Worker("demucs", async (job) => {
     if (!stemUrls.vocalsUrl)
         throw new Error("No stems found");
     const instrumentalPath = await createInstrumentalMix(sepDir);
-    const instrumentalUrl = instrumentalPath ? `${stemBase}/instrumental.mp3` : stemUrls.otherUrl;
+    const instrumentalUrl = instrumentalPath
+        ? `${stemBase}/instrumental.mp3`
+        : stemUrls.otherUrl;
     // Cleanup
     try {
         fs.unlinkSync(inputPath);
@@ -209,9 +266,15 @@ export const demucsWorker = new Worker("demucs", async (job) => {
     catch { }
     console.log("[demucs-oracle] Job complete:", job.id);
     return {
-        vocalsUrl: stemUrls.vocalsUrl, drumsUrl: stemUrls.drumsUrl, bassUrl: stemUrls.bassUrl,
-        guitarUrl: stemUrls.guitarUrl, pianoUrl: stemUrls.pianoUrl, otherUrl: stemUrls.otherUrl,
-        accompanimentUrl: instrumentalUrl, instrumentalUrl: instrumentalUrl, sepDir,
+        vocalsUrl: stemUrls.vocalsUrl,
+        drumsUrl: stemUrls.drumsUrl,
+        bassUrl: stemUrls.bassUrl,
+        guitarUrl: stemUrls.guitarUrl,
+        pianoUrl: stemUrls.pianoUrl,
+        otherUrl: stemUrls.otherUrl,
+        accompanimentUrl: instrumentalUrl,
+        instrumentalUrl: instrumentalUrl,
+        sepDir,
     };
 }, { connection: Redis, concurrency: 1 });
 demucsWorker.on("completed", (job) => console.log("[demucs-oracle] ✓", job.id));

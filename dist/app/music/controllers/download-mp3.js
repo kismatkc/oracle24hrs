@@ -9,6 +9,9 @@ const COMMON_ARGS = [
     "http://10.8.0.2:3128",
     "--user-agent",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    // Use Android client which has fewer restrictions on audio downloads
+    "--extractor-args",
+    "youtube:player_client=android",
 ];
 const HARD_TIMEOUT = 1000 * 180;
 const MAX_ASSUMED_SIZE = 1024 * 1024 * 20;
@@ -128,7 +131,8 @@ function runYtDlpAudio(videoUrl, onProgress) {
         const args = [
             ...COMMON_ARGS,
             "-f",
-            "bestaudio/best",
+            // Prefer iOS-compatible formats (M4A/AAC) which have fewer restrictions
+            "bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio[ext=aac]/bestaudio[acodec=aac]/bestaudio/best",
             "-x",
             "--audio-format",
             "mp3",
@@ -137,6 +141,11 @@ function runYtDlpAudio(videoUrl, onProgress) {
             "--no-playlist",
             "--no-warnings",
             "--no-progress",
+            // Add retries for transient 403 errors
+            "--retries",
+            "3",
+            "--fragment-retries",
+            "3",
             "-o",
             tempFile,
             videoUrl,
