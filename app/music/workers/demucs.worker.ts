@@ -351,22 +351,7 @@ demucsWorker.on("failed", (job, err) =>
 );
 demucsWorker.on("ready", () => console.log("[demucs-oracle] Worker ready"));
 
-// 72-hour purge
-setInterval(() => {
-  const sweep = (dir: string) => {
-    if (!fs.existsSync(dir)) return;
-    for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
-      const p = path.join(dir, ent.name);
-      try {
-        const old = Date.now() - fs.statSync(p).mtimeMs > THREE_DAYS_MS;
-        if (ent.isDirectory())
-          old ? fs.rmSync(p, { recursive: true }) : sweep(p);
-        else if (old) fs.rmSync(p);
-      } catch {}
-    }
-  };
-  sweep(SEPARATED_DIR);
-  sweep(NORMALIZED_DIR);
-}, 60 * 60 * 1000);
+// NOTE: 72-hour purge is handled by upload-music.ts controller
+// Removed duplicate purge here to prevent file access conflicts
 
 console.log("[demucs-oracle] Module loaded");

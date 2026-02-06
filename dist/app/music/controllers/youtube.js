@@ -261,18 +261,18 @@ const YTDLP_COMMON_ARGS = [
 async function getStreamUrlWithYtDlp(videoId) {
     return new Promise((resolve) => {
         const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
-        // Use -g to get URL - prefer iOS-compatible formats (M4A/AAC/MP3) over WebM/Opus
-        // Format priority: m4a > mp3 > aac > any audio
+        // Use -j to get JSON output with URL, metadata, AND http_headers in one call
+        // The http_headers are critical - YouTube CDN validates User-Agent matches the client type
         const args = [
             ...YTDLP_COMMON_ARGS,
             "-f",
             "bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio[ext=aac]/bestaudio[acodec=aac]/bestaudio",
-            "-g", // Get URL only
+            "-j", // JSON output - includes url, http_headers, and metadata
             "--no-playlist",
             "--no-warnings",
             videoUrl,
         ];
-        console.log("[youtube] yt-dlp: Getting iOS-compatible stream URL for", videoId, "(via residential proxy)");
+        console.log("[youtube] yt-dlp: Getting stream URL + headers for", videoId, "(via residential proxy)");
         const proc = spawn("yt-dlp", args);
         let stdout = "";
         let stderr = "";
@@ -286,6 +286,7 @@ async function getStreamUrlWithYtDlp(videoId) {
             console.error("[youtube] yt-dlp spawn error:", err.message);
             resolve({
                 url: null,
+                httpHeaders: null,
                 title: "",
                 author: "",
                 duration: 0,
@@ -293,11 +294,12 @@ async function getStreamUrlWithYtDlp(videoId) {
                 error: err.message,
             });
         });
-        proc.on("close", async (code) => {
+        proc.on("close", (code) => {
             if (code !== 0 || !stdout.trim()) {
                 console.error("[youtube] yt-dlp failed (code", code, "):", stderr);
                 resolve({
                     url: null,
+                    httpHeaders: null,
                     title: "",
                     author: "",
                     duration: 0,
@@ -306,37 +308,45 @@ async function getStreamUrlWithYtDlp(videoId) {
                 });
                 return;
             }
-            const streamUrl = stdout.trim().split("\n")[0]; // First line is the URL
-            console.log("[youtube] yt-dlp got stream URL:", streamUrl.substring(0, 80) + "...");
-            // Now get metadata
-            let title = "Unknown Title";
-            let author = "Unknown Artist";
-            let duration = 0;
-            let thumbnail = "";
             try {
-                const metaResult = await getYtDlpMetadata(videoId);
-                title = metaResult.title || title;
-                author = metaResult.author || author;
-                duration = metaResult.duration || duration;
-                thumbnail = metaResult.thumbnail || thumbnail;
+                const json = JSON.parse(stdout);
+                const streamUrl = json.url || null;
+                const httpHeaders = json.http_headers || null;
+                if (streamUrl) {
+                    console.log("[youtube] yt-dlp got stream URL:", streamUrl.substring(0, 80) + "...");
+                    if (httpHeaders) {
+                        console.log("[youtube] yt-dlp http_headers User-Agent:", httpHeaders["User-Agent"]?.substring(0, 60) || "none");
+                    }
+                }
+                resolve({
+                    url: streamUrl,
+                    httpHeaders,
+                    title: json.title || json.fulltitle || "",
+                    author: json.uploader || json.channel || json.uploader_id || "",
+                    duration: json.duration || 0,
+                    thumbnail: json.thumbnail || "",
+                    error: streamUrl ? null : "No URL in JSON output",
+                });
             }
             catch (e) {
-                console.log("[youtube] yt-dlp metadata fetch failed, using defaults");
+                console.error("[youtube] yt-dlp JSON parse error:", e.message);
+                resolve({
+                    url: null,
+                    httpHeaders: null,
+                    title: "",
+                    author: "",
+                    duration: 0,
+                    thumbnail: "",
+                    error: `JSON parse error: ${e.message}`,
+                });
             }
-            resolve({
-                url: streamUrl,
-                title,
-                author,
-                duration,
-                thumbnail,
-                error: null,
-            });
         });
         // Timeout after 30 seconds
         setTimeout(() => {
             proc.kill();
             resolve({
                 url: null,
+                httpHeaders: null,
                 title: "",
                 author: "",
                 duration: 0,
@@ -402,6 +412,7 @@ router.get("/stream", async (req, res) => {
         console.log("[youtube] Stream request for:", videoId);
         await randomDelay(200, 600);
         let streamUrl = null;
+        let httpHeaders = null;
         let title = "Unknown Title";
         let author = "Unknown Artist";
         let duration = 0;
@@ -415,6 +426,7 @@ router.get("/stream", async (req, res) => {
             const ytdlpResult = await getStreamUrlWithYtDlp(videoId);
             if (ytdlpResult.url) {
                 streamUrl = ytdlpResult.url;
+                httpHeaders = ytdlpResult.httpHeaders;
                 formatUsed = "yt-dlp";
                 title = ytdlpResult.title || title;
                 author = ytdlpResult.author || author;
@@ -449,6 +461,7 @@ router.get("/stream", async (req, res) => {
         console.log(`[youtube] Format used: ${formatUsed}`);
         res.json({
             stream_url: streamUrl,
+            headers: httpHeaders,
             video_id: videoId,
             title,
             author,

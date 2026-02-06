@@ -1,6 +1,7 @@
 .env
 node_modules
-seperated
+separated
 uploads
+normalized
 oracle.key
 oracle.pub 
