@@ -3,12 +3,72 @@
 import express from "express";
 import { Innertube, UniversalCache } from "youtubei.js";
 import { spawn } from "node:child_process";
+import * as path from "node:path";
+import * as fs from "node:fs";
 const router = express.Router();
-// Singleton Innertube instance (lazy init)
+const PROXY_URL = "http://10.8.0.2:3128";
+// ─── File-based audio cache ──────────────────────────────────────────────────
+const CACHE_DIR = path.join(process.cwd(), "youtube-cache");
+const CACHE_MAX_AGE_MS = 3 * 24 * 60 * 60 * 1000; // 3 days
+// Ensure cache directory exists on startup
+if (!fs.existsSync(CACHE_DIR)) {
+    fs.mkdirSync(CACHE_DIR, { recursive: true });
+    console.log("[youtube] Created cache directory:", CACHE_DIR);
+}
+const activeDownloads = new Map();
+// Cleanup cached files older than 3 days — runs every hour
+setInterval(() => {
+    try {
+        const now = Date.now();
+        for (const file of fs.readdirSync(CACHE_DIR)) {
+            const filePath = path.join(CACHE_DIR, file);
+            const stat = fs.statSync(filePath);
+            if (now - stat.mtimeMs > CACHE_MAX_AGE_MS) {
+                fs.unlinkSync(filePath);
+                console.log("[youtube] Cleaned up old cache file:", file);
+            }
+        }
+    }
+    catch (e) {
+        console.error("[youtube] Cache cleanup error:", e.message);
+    }
+}, 60 * 60 * 1000);
+function getCachedFilePath(videoId) {
+    return path.join(CACHE_DIR, `${videoId}.mp3`);
+}
+function getCachedMetaPath(videoId) {
+    return path.join(CACHE_DIR, `${videoId}.meta.json`);
+}
+function saveCachedMeta(videoId, meta) {
+    try {
+        fs.writeFileSync(getCachedMetaPath(videoId), JSON.stringify(meta));
+    }
+    catch { }
+}
+function loadCachedMeta(videoId) {
+    try {
+        const fp = getCachedMetaPath(videoId);
+        if (!fs.existsSync(fp))
+            return null;
+        return JSON.parse(fs.readFileSync(fp, "utf8"));
+    }
+    catch {
+        return null;
+    }
+}
+function isCached(videoId) {
+    const fp = getCachedFilePath(videoId);
+    if (!fs.existsSync(fp))
+        return false;
+    const stat = fs.statSync(fp);
+    // Valid if > 10KB and < 3 days old
+    return stat.size > 10000 && Date.now() - stat.mtimeMs < CACHE_MAX_AGE_MS;
+}
+// ─── Singleton Innertube ─────────────────────────────────────────────────────
 let innertubeClient = null;
 let clientInitPromise = null;
 let lastClientInit = 0;
-const CLIENT_REFRESH_MS = 10 * 60 * 1000; // Refresh client every 10 minutes
+const CLIENT_REFRESH_MS = 10 * 60 * 1000;
 const USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
@@ -39,7 +99,6 @@ async function getInnertubeClient(forceNew = false) {
     console.log("[youtube] Innertube client initialized");
     return innertubeClient;
 }
-// Helper to format duration from seconds to mm:ss or hh:mm:ss
 function formatDuration(seconds) {
     if (!seconds || seconds <= 0)
         return "0:00";
@@ -53,7 +112,6 @@ function formatDuration(seconds) {
     }
     return `${m}:${s.toString().padStart(2, "0")}`;
 }
-// Helper to format view count
 function formatViews(views) {
     if (!views)
         return "";
@@ -65,26 +123,21 @@ function formatViews(views) {
         return `${(views / 1000).toFixed(1)}K views`;
     return `${views} views`;
 }
-// Extract video info from search result item
 function extractVideoInfo(item) {
     try {
-        // Handle different result types
         const type = item?.type;
         if (type === "Video" || type === "CompactVideo" || type === "GridVideo") {
             const videoId = item.id || item.video_id;
             if (!videoId)
                 return null;
-            // Get thumbnail - try different paths
             let thumbnail = "";
             if (item.thumbnails && item.thumbnails.length > 0) {
-                // Get highest quality thumbnail
                 const thumbs = item.thumbnails.sort((a, b) => (b.width || 0) - (a.width || 0));
                 thumbnail = thumbs[0]?.url || "";
             }
             else if (item.thumbnail?.url) {
                 thumbnail = item.thumbnail.url;
             }
-            // Get duration in seconds
             let durationSeconds = 0;
             if (item.duration?.seconds) {
                 durationSeconds = item.duration.seconds;
@@ -92,7 +145,6 @@ function extractVideoInfo(item) {
             else if (typeof item.duration === "number") {
                 durationSeconds = item.duration;
             }
-            // Get view count
             let viewCount = 0;
             if (item.view_count?.text) {
                 const viewText = item.view_count.text.replace(/[^0-9]/g, "");
@@ -102,7 +154,6 @@ function extractVideoInfo(item) {
                 viewCount = item.view_count;
             }
             else if (item.short_view_count?.text) {
-                // Parse "1.2M views" format
                 const match = item.short_view_count.text.match(/([0-9.]+)\s*([KMB])?/i);
                 if (match) {
                     let num = parseFloat(match[1]);
@@ -116,7 +167,6 @@ function extractVideoInfo(item) {
                     viewCount = Math.floor(num);
                 }
             }
-            // Get author/channel
             const author = item.author?.name ||
                 item.channel?.name ||
                 item.owner?.name ||
@@ -133,12 +183,9 @@ function extractVideoInfo(item) {
                 type: "video",
             };
         }
-        // Handle Shorts
         if (type === "ShortsLockupView" || type === "ReelShelf") {
-            // Skip shorts for music app
             return null;
         }
-        // Handle playlists (optional)
         if (type === "Playlist" || type === "CompactPlaylist") {
             const playlistId = item.id || item.playlist_id;
             if (!playlistId)
@@ -164,7 +211,7 @@ function extractVideoInfo(item) {
         return null;
     }
 }
-// GET /music/youtube/search?query=<query>
+// ─── Search ──────────────────────────────────────────────────────────────────
 router.get("/search", async (req, res) => {
     try {
         const query = req.query.query?.trim();
@@ -173,7 +220,6 @@ router.get("/search", async (req, res) => {
             return;
         }
         console.log("[youtube] Search request:", query);
-        // Random delay to avoid rate limiting
         await randomDelay(300, 800);
         const yt = await getInnertubeClient();
         const searchResults = await yt.search(query, {
@@ -181,14 +227,12 @@ router.get("/search", async (req, res) => {
             sort_by: "relevance",
         });
         const results = [];
-        // Process results
         if (searchResults.results) {
             for (const item of searchResults.results) {
                 const info = extractVideoInfo(item);
                 if (info && info.videoId) {
                     results.push(info);
                 }
-                // Limit to 20 results
                 if (results.length >= 20)
                     break;
             }
@@ -202,7 +246,6 @@ router.get("/search", async (req, res) => {
     }
     catch (error) {
         console.error("[youtube] Search error:", error?.message || error);
-        // Reset client on error
         innertubeClient = null;
         clientInitPromise = null;
         res.status(500).json({
@@ -212,7 +255,7 @@ router.get("/search", async (req, res) => {
         });
     }
 });
-// GET /music/youtube/suggestions?query=<partial_query>
+// ─── Suggestions ─────────────────────────────────────────────────────────────
 router.get("/suggestions", async (req, res) => {
     try {
         const query = req.query.query?.trim();
@@ -221,12 +264,9 @@ router.get("/suggestions", async (req, res) => {
             return;
         }
         console.log("[youtube] Suggestions request:", query);
-        // Small delay
         await randomDelay(100, 300);
         const yt = await getInnertubeClient();
-        // Use search suggestions
         const suggestions = await yt.getSearchSuggestions(query);
-        // Extract suggestion strings
         const suggestionStrings = [];
         if (suggestions && Array.isArray(suggestions)) {
             for (const item of suggestions) {
@@ -251,28 +291,28 @@ router.get("/suggestions", async (req, res) => {
         res.json({ suggestions: [] });
     }
 });
-// yt-dlp with residential IP proxy - this is the key for avoiding bot detection
+// ─── yt-dlp helpers ──────────────────────────────────────────────────────────
 const YTDLP_COMMON_ARGS = [
     "--proxy",
     "http://10.8.0.2:3128",
     "--user-agent",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "--extractor-args",
+    "youtube:player_client=android",
 ];
 async function getStreamUrlWithYtDlp(videoId) {
     return new Promise((resolve) => {
         const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
-        // Use -j to get JSON output with URL, metadata, AND http_headers in one call
-        // The http_headers are critical - YouTube CDN validates User-Agent matches the client type
         const args = [
             ...YTDLP_COMMON_ARGS,
             "-f",
             "bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio[ext=aac]/bestaudio[acodec=aac]/bestaudio",
-            "-j", // JSON output - includes url, http_headers, and metadata
+            "-j",
             "--no-playlist",
             "--no-warnings",
             videoUrl,
         ];
-        console.log("[youtube] yt-dlp: Getting stream URL + headers for", videoId, "(via residential proxy)");
+        console.log("[youtube] yt-dlp: Getting metadata for", videoId);
         const proc = spawn("yt-dlp", args);
         let stdout = "";
         let stderr = "";
@@ -310,26 +350,17 @@ async function getStreamUrlWithYtDlp(videoId) {
             }
             try {
                 const json = JSON.parse(stdout);
-                const streamUrl = json.url || null;
-                const httpHeaders = json.http_headers || null;
-                if (streamUrl) {
-                    console.log("[youtube] yt-dlp got stream URL:", streamUrl.substring(0, 80) + "...");
-                    if (httpHeaders) {
-                        console.log("[youtube] yt-dlp http_headers User-Agent:", httpHeaders["User-Agent"]?.substring(0, 60) || "none");
-                    }
-                }
                 resolve({
-                    url: streamUrl,
-                    httpHeaders,
+                    url: json.url || null,
+                    httpHeaders: json.http_headers || null,
                     title: json.title || json.fulltitle || "",
                     author: json.uploader || json.channel || json.uploader_id || "",
                     duration: json.duration || 0,
                     thumbnail: json.thumbnail || "",
-                    error: streamUrl ? null : "No URL in JSON output",
+                    error: null,
                 });
             }
             catch (e) {
-                console.error("[youtube] yt-dlp JSON parse error:", e.message);
                 resolve({
                     url: null,
                     httpHeaders: null,
@@ -341,7 +372,6 @@ async function getStreamUrlWithYtDlp(videoId) {
                 });
             }
         });
-        // Timeout after 30 seconds
         setTimeout(() => {
             proc.kill();
             resolve({
@@ -356,52 +386,205 @@ async function getStreamUrlWithYtDlp(videoId) {
         }, 30000);
     });
 }
-async function getYtDlpMetadata(videoId) {
-    return new Promise((resolve, reject) => {
-        const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
-        const args = [
-            ...YTDLP_COMMON_ARGS,
-            "-J", // JSON output
-            "--no-playlist",
-            "--no-warnings",
-            videoUrl,
-        ];
-        const proc = spawn("yt-dlp", args);
-        let stdout = "";
-        let stderr = "";
-        proc.stdout?.on("data", (d) => {
-            stdout += d.toString();
-        });
-        proc.stderr?.on("data", (d) => {
-            stderr += d.toString();
-        });
-        proc.on("error", reject);
-        proc.on("close", (code) => {
-            if (code !== 0) {
-                reject(new Error(stderr || `Exit code ${code}`));
-                return;
+// ─── Background download to disk ────────────────────────────────────────────
+// Downloads the audio file with yt-dlp into youtube-cache/<videoId>.mp3
+// and tracks progress so the frontend can poll it.
+function startBackgroundDownload(videoId) {
+    // If already in progress, skip
+    if (activeDownloads.has(videoId))
+        return;
+    const entry = {
+        progress: 0,
+        status: "downloading",
+        title: "",
+        author: "",
+        duration: 0,
+        thumbnail: "",
+    };
+    activeDownloads.set(videoId, entry);
+    const outPath = getCachedFilePath(videoId);
+    const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+    const args = [
+        ...YTDLP_COMMON_ARGS,
+        "-f",
+        "bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio[ext=aac]/bestaudio[acodec=aac]/bestaudio/best",
+        "-x",
+        "--audio-format",
+        "mp3",
+        "--audio-quality",
+        "0",
+        "--no-playlist",
+        "--no-warnings",
+        "--newline", // force progress on separate lines so we can parse %
+        "--retries",
+        "3",
+        "--fragment-retries",
+        "3",
+        "-o",
+        outPath,
+        videoUrl,
+    ];
+    console.log(`[audio-cache] Starting download for ${videoId} → ${outPath}`);
+    const proc = spawn("yt-dlp", args);
+    let stderrBuf = "";
+    proc.stdout?.on("data", (d) => {
+        const text = d.toString();
+        // yt-dlp with --newline prints progress to stdout
+        const match = text.match(/\[download\]\s+([0-9.]+)%/);
+        if (match) {
+            const pct = parseFloat(match[1]);
+            if (!Number.isNaN(pct)) {
+                entry.progress = Math.min(pct / 100, 0.99);
             }
-            try {
-                const json = JSON.parse(stdout);
-                resolve({
-                    title: json.title || json.fulltitle || "",
-                    author: json.uploader || json.channel || json.uploader_id || "",
-                    duration: json.duration || 0,
-                    thumbnail: json.thumbnail || "",
-                });
-            }
-            catch (e) {
-                reject(e);
-            }
-        });
-        // Timeout
-        setTimeout(() => {
-            proc.kill();
-            reject(new Error("Metadata timeout"));
-        }, 15000);
+        }
     });
+    proc.stderr?.on("data", (d) => {
+        const text = d.toString();
+        stderrBuf += text;
+        // Also try parsing progress from stderr (some yt-dlp versions)
+        const match = text.match(/\[download\]\s+([0-9.]+)%/);
+        if (match) {
+            const pct = parseFloat(match[1]);
+            if (!Number.isNaN(pct)) {
+                entry.progress = Math.min(pct / 100, 0.99);
+            }
+        }
+    });
+    proc.on("error", (err) => {
+        console.error(`[audio-cache] Spawn error for ${videoId}:`, err.message);
+        entry.status = "error";
+        entry.error = err.message;
+        // Clean up after 60s so a retry can happen
+        setTimeout(() => activeDownloads.delete(videoId), 60000);
+    });
+    proc.on("close", (code) => {
+        if (code !== 0) {
+            console.error(`[audio-cache] yt-dlp failed for ${videoId} (code ${code}):`, stderrBuf.slice(-500));
+            entry.status = "error";
+            entry.error = stderrBuf.slice(-200) || `Exit code ${code}`;
+            setTimeout(() => activeDownloads.delete(videoId), 60000);
+            return;
+        }
+        // Verify file exists and is valid
+        if (!fs.existsSync(outPath) || fs.statSync(outPath).size < 10000) {
+            entry.status = "error";
+            entry.error = "Downloaded file missing or too small";
+            setTimeout(() => activeDownloads.delete(videoId), 60000);
+            return;
+        }
+        console.log(`[audio-cache] Download complete for ${videoId}`, `(${(fs.statSync(outPath).size / 1024 / 1024).toFixed(1)} MB)`);
+        entry.progress = 1;
+        entry.status = "done";
+        // Save metadata to sidecar file
+        saveCachedMeta(videoId, {
+            title: entry.title,
+            author: entry.author,
+            duration: entry.duration,
+            thumbnail: entry.thumbnail,
+        });
+        // Keep the entry around for 5 minutes so late pollers see "done"
+        setTimeout(() => activeDownloads.delete(videoId), 5 * 60000);
+    });
+    // Also fetch metadata in parallel (non-blocking) so we can return it in prepare
+    getStreamUrlWithYtDlp(videoId).then((meta) => {
+        entry.title = meta.title || "";
+        entry.author = meta.author || "";
+        entry.duration = meta.duration || 0;
+        entry.thumbnail = meta.thumbnail || "";
+    }).catch(() => { });
+    // Safety timeout — kill after 3 minutes
+    setTimeout(() => {
+        if (entry.status === "downloading") {
+            proc.kill();
+            entry.status = "error";
+            entry.error = "Download timeout (3 min)";
+            setTimeout(() => activeDownloads.delete(videoId), 60000);
+        }
+    }, 180000);
 }
-// GET /music/youtube/stream?video_id=<id>
+// ─── GET /audio/prepare?video_id=<id> ────────────────────────────────────────
+// Kicks off download if needed, returns current status + progress for polling.
+router.get("/audio/prepare", async (req, res) => {
+    const videoId = req.query.video_id?.trim();
+    if (!videoId) {
+        res.status(400).json({ error: "video_id parameter is required" });
+        return;
+    }
+    // 1. Already cached on disk → ready immediately
+    if (isCached(videoId)) {
+        const active = activeDownloads.get(videoId);
+        const cachedMeta = loadCachedMeta(videoId);
+        res.json({
+            status: "ready",
+            progress: 1,
+            video_id: videoId,
+            title: active?.title || cachedMeta?.title || "",
+            author: active?.author || cachedMeta?.author || "",
+            duration: active?.duration || cachedMeta?.duration || 0,
+            thumbnail: active?.thumbnail || cachedMeta?.thumbnail || "",
+        });
+        return;
+    }
+    // 2. Download in progress → return current progress
+    const active = activeDownloads.get(videoId);
+    if (active) {
+        res.json({
+            status: active.status,
+            progress: active.progress,
+            video_id: videoId,
+            title: active.title,
+            author: active.author,
+            duration: active.duration,
+            thumbnail: active.thumbnail,
+            error: active.error,
+        });
+        return;
+    }
+    // 3. Not started → kick off background download
+    startBackgroundDownload(videoId);
+    res.json({
+        status: "downloading",
+        progress: 0,
+        video_id: videoId,
+        title: "",
+        author: "",
+        duration: 0,
+        thumbnail: "",
+    });
+});
+// ─── GET /audio?video_id=<id> ────────────────────────────────────────────────
+// Serves the cached MP3 file. Supports Range requests (Express sendFile does
+// this automatically).
+router.get("/audio", async (req, res) => {
+    const videoId = req.query.video_id?.trim();
+    if (!videoId) {
+        res.status(400).json({ error: "video_id parameter is required" });
+        return;
+    }
+    const filePath = getCachedFilePath(videoId);
+    if (!fs.existsSync(filePath)) {
+        res.status(404).json({
+            error: "Audio not ready",
+            message: "Call /audio/prepare first and wait for status=ready",
+        });
+        return;
+    }
+    const stat = fs.statSync(filePath);
+    if (stat.size < 10000) {
+        res.status(404).json({ error: "Cached file is corrupted" });
+        return;
+    }
+    console.log(`[audio] Serving cached file for ${videoId}`, `(${(stat.size / 1024 / 1024).toFixed(1)} MB)`, req.headers.range ? `Range: ${req.headers.range}` : "(full)");
+    // sendFile handles Range headers, Content-Type, etc.
+    res.sendFile(filePath, {
+        headers: {
+            "Content-Type": "audio/mpeg",
+            "Accept-Ranges": "bytes",
+            "Cache-Control": "public, max-age=86400",
+        },
+    });
+});
+// ─── GET /stream (kept for metadata — frontend may still call it) ────────────
 router.get("/stream", async (req, res) => {
     try {
         const videoId = req.query.video_id?.trim();
@@ -409,65 +592,26 @@ router.get("/stream", async (req, res) => {
             res.status(400).json({ error: "video_id parameter is required" });
             return;
         }
-        console.log("[youtube] Stream request for:", videoId);
+        console.log("[youtube] Stream metadata request for:", videoId);
         await randomDelay(200, 600);
-        let streamUrl = null;
-        let httpHeaders = null;
-        let title = "Unknown Title";
-        let author = "Unknown Artist";
-        let duration = 0;
-        let thumbnail = "";
-        let lastError = "Unknown error";
-        let formatUsed = "";
-        // Use yt-dlp directly - it's the most reliable method
-        // Innertube methods consistently fail due to YouTube API changes
-        try {
-            console.log("[youtube] Using yt-dlp for stream...");
-            const ytdlpResult = await getStreamUrlWithYtDlp(videoId);
-            if (ytdlpResult.url) {
-                streamUrl = ytdlpResult.url;
-                httpHeaders = ytdlpResult.httpHeaders;
-                formatUsed = "yt-dlp";
-                title = ytdlpResult.title || title;
-                author = ytdlpResult.author || author;
-                duration = ytdlpResult.duration || duration;
-                thumbnail = ytdlpResult.thumbnail || thumbnail;
-                console.log("[youtube] yt-dlp succeeded");
-            }
-            else {
-                lastError = ytdlpResult.error || "yt-dlp failed";
-                console.log("[youtube] yt-dlp failed:", lastError);
-            }
-        }
-        catch (e) {
-            lastError = e?.message || "yt-dlp failed";
-            console.error("[youtube] yt-dlp error:", lastError);
-        }
-        if (!streamUrl) {
-            console.error(`[youtube] Failed to get stream for video: ${videoId}. Error: ${lastError}`);
+        const result = await getStreamUrlWithYtDlp(videoId);
+        if (!result.url) {
             res.status(404).json({
                 error: "No streaming data available",
-                message: `Could not get stream for this video. ${lastError}. Try using 'Save MP3' to download instead.`,
+                message: result.error || "Could not get stream for this video",
                 video_id: videoId,
-                debug: {
-                    lastError,
-                    title,
-                    author,
-                },
             });
             return;
         }
-        console.log(`[youtube] Stream ready: "${title}" by ${author} (${formatDuration(duration)})`);
-        console.log(`[youtube] Format used: ${formatUsed}`);
         res.json({
-            stream_url: streamUrl,
-            headers: httpHeaders,
+            stream_url: result.url,
+            headers: result.httpHeaders,
             video_id: videoId,
-            title,
-            author,
-            duration,
-            durationFormatted: formatDuration(duration),
-            thumbnail,
+            title: result.title,
+            author: result.author,
+            duration: result.duration,
+            durationFormatted: formatDuration(result.duration),
+            thumbnail: result.thumbnail,
         });
     }
     catch (error) {
@@ -478,7 +622,7 @@ router.get("/stream", async (req, res) => {
         });
     }
 });
-// GET /music/youtube/info?video_id=<id> - Get video info without stream URL
+// ─── GET /info ───────────────────────────────────────────────────────────────
 router.get("/info", async (req, res) => {
     try {
         const videoId = req.query.video_id?.trim();

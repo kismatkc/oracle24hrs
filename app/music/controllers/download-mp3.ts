@@ -69,6 +69,12 @@ const progress: ProgressStore = {};
 const setP = (id: string, p: number): void => {
   progress[id] = p;
   console.log("[setP]", id, p);
+  // Auto-cleanup completed entries to prevent unbounded memory growth
+  if (p >= 1) {
+    setTimeout(() => {
+      delete progress[id];
+    }, 60_000);
+  }
 };
 
 const router = express.Router();

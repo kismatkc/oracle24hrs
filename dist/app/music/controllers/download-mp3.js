@@ -20,6 +20,10 @@ const progress = {};
 const setP = (id, p) => {
     progress[id] = p;
     console.log("[setP]", id, p);
+    // Auto-cleanup completed entries to prevent unbounded memory growth
+    if (p >= 1) {
+        setTimeout(() => { delete progress[id]; }, 60000);
+    }
 };
 const router = express.Router();
 async function streamToBuffer(r, onChunk) {
