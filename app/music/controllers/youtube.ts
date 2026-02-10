@@ -13,7 +13,7 @@ const PROXY_URL = "http://10.8.0.2:3128";
 
 // ─── File-based audio cache ──────────────────────────────────────────────────
 const CACHE_DIR = path.join(process.cwd(), "youtube-cache");
-const CACHE_MAX_AGE_MS = 3 * 24 * 60 * 60 * 1000; // 3 days
+const CACHE_MAX_AGE_MS = 5 * 24 * 60 * 60 * 1000; // 5 days
 
 // Ensure cache directory exists on startup
 if (!fs.existsSync(CACHE_DIR)) {
@@ -33,7 +33,7 @@ interface ActiveDownload {
 }
 const activeDownloads = new Map<string, ActiveDownload>();
 
-// Cleanup cached files older than 3 days — runs every hour
+// Cleanup cached files older than 5 days — runs every hour
 setInterval(() => {
   try {
     const now = Date.now();
@@ -85,7 +85,7 @@ function isCached(videoId: string): boolean {
   const fp = getCachedFilePath(videoId);
   if (!fs.existsSync(fp)) return false;
   const stat = fs.statSync(fp);
-  // Valid if > 10KB and < 3 days old
+  // Valid if > 10KB and < 5 days old
   return stat.size > 10_000 && Date.now() - stat.mtimeMs < CACHE_MAX_AGE_MS;
 }
 
@@ -657,6 +657,31 @@ router.get("/audio/prepare", async (req: Request, res: Response) => {
     duration: 0,
     thumbnail: "",
   });
+});
+
+// ─── GET /audio/check?video_id=<id> ──────────────────────────────────────────
+// Quick check if audio is already cached — does NOT trigger a download.
+// Used by frontend to skip the progress bar for already-cached songs.
+router.get("/audio/check", async (req: Request, res: Response) => {
+  const videoId = (req.query.video_id as string)?.trim();
+  if (!videoId) {
+    res.status(400).json({ error: "video_id parameter is required" });
+    return;
+  }
+
+  if (isCached(videoId)) {
+    const cachedMeta = loadCachedMeta(videoId);
+    res.json({
+      cached: true,
+      video_id: videoId,
+      title: cachedMeta?.title || "",
+      author: cachedMeta?.author || "",
+      duration: cachedMeta?.duration || 0,
+      thumbnail: cachedMeta?.thumbnail || "",
+    });
+  } else {
+    res.json({ cached: false, video_id: videoId });
+  }
 });
 
 // ─── GET /audio?video_id=<id> ────────────────────────────────────────────────

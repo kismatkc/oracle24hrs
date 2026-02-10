@@ -154,7 +154,32 @@ router.post("/upload", upload.single("file"), async (req, res) => {
         const existing = await demucsQueue.getJob(basename);
         if (existing) {
             const state = await existing.getState();
-            if (["completed", "active", "waiting"].includes(state)) {
+            // For completed jobs, verify stem files still exist on disk
+            // (72-hour cleanup may have purged them)
+            if (state === "completed") {
+                const sepDir = existing.returnvalue?.sepDir || sepDirFromBasename(basename);
+                const stemFiles = sepDir ? findStemFiles(sepDir) : {};
+                const filesExist = !!stemFiles.vocals;
+                if (filesExist) {
+                    // Stems still on disk — safe to return alreadyExists
+                    res.json({
+                        success: true,
+                        jobId: existing.id,
+                        alreadyExists: true,
+                        state,
+                    });
+                    return;
+                }
+                // Stale job: BullMQ says "completed" but files are purged
+                // Remove the stale job so we can create a fresh one below
+                console.log(`[upload] Stale completed job ${basename} — stem files purged, re-queuing`);
+                try {
+                    await existing.remove();
+                }
+                catch { }
+                // Fall through to create a new job
+            }
+            else if (["active", "waiting"].includes(state)) {
                 res.json({
                     success: true,
                     jobId: existing.id,
@@ -290,6 +315,50 @@ router.post("/stems/:id/cleanup", async (req, res) => {
     catch (e) {
         console.error("[stems cleanup] error:", e);
         res.status(500).json({ success: false });
+    }
+});
+// Combined check+prepare: returns state AND URLs in a single call (#4)
+// Replaces the need for separate /state + /result round trips
+router.get("/stems/:id/check", async (req, res) => {
+    try {
+        const id = req.params.id;
+        const info = await gather(req, id);
+        const meta = await ledgerGet(id);
+        let available = info.ready;
+        let expiresAt = meta.expiresAt
+            ? Number(meta.expiresAt)
+            : null;
+        if (info.ready && meta.available !== "1") {
+            expiresAt = Date.now() + THREE_DAYS_MS;
+            await ledgerSet(id, {
+                status: "completed",
+                progress: 100,
+                available: 1,
+                expiresAt,
+                ...info.result,
+            });
+            available = true;
+        }
+        // Return everything the client needs in one shot
+        const response = {
+            state: info.state,
+            progress: info.progress,
+            ready: info.ready,
+            available,
+            expiresAt,
+        };
+        // Include stem URLs when ready (so client doesn't need a second /result call)
+        if (info.ready) {
+            const { sepDir, ...urls } = info.result;
+            Object.assign(response, urls);
+        }
+        res.json(response);
+    }
+    catch (e) {
+        console.error("[stems check] error:", e);
+        res
+            .status(500)
+            .json({ state: "error", progress: 0, ready: false, available: false });
     }
 });
 export default router;

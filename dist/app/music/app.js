@@ -11,6 +11,7 @@ import downloadMp3 from "./controllers/download-mp3.js";
 import scrapeLyrics from "./controllers/scrape-lyrics.js";
 import ttcAlerts from "./controllers/ttc-alerts.js";
 import youtube from "./controllers/youtube.js";
+import cacheManagement from "./controllers/cache-management.js";
 // Import and start the demucs worker
 import { demucsWorker } from "./workers/demucs.worker.js";
 import dotenv from "dotenv";
@@ -36,6 +37,7 @@ app.use("/music", downloadMp3);
 app.use("/music", scrapeLyrics);
 app.use("/music", ttcAlerts);
 app.use("/music/youtube", youtube);
+app.use("/music", cacheManagement);
 /* ---------- PM2 restart-all via GET ---------- */
 app.get(`/restart/${RESTART_SECRET}`, (_req, res) => {
     res.json({ message: "Restarting all PM2 processes…" });

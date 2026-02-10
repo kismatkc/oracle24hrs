@@ -4,6 +4,7 @@ import express, { Request, Response } from "express";
 import { randomUUID } from "node:crypto";
 import { spawn, ChildProcess } from "node:child_process";
 import * as fs from "node:fs";
+import * as path from "node:path";
 
 // Type definitions
 interface YtDlpMetadata {
@@ -34,6 +35,8 @@ interface DownloadResponse {
   title: string;
   author: string;
   id: string;
+  duration?: number;
+  thumbnail?: string;
 }
 
 interface ErrorResponse {
@@ -319,6 +322,41 @@ function runYtDlpAudio(
   });
 }
 
+// ─── YouTube streaming cache reuse ──────────────────────────────────────────
+// If the song was already downloaded for streaming, reuse it instead of
+// downloading again. The streaming controller caches to youtube-cache/.
+const YOUTUBE_CACHE_DIR = path.join(process.cwd(), "youtube-cache");
+const CACHE_MAX_AGE_MS = 5 * 24 * 60 * 60 * 1000; // 5 days (must match youtube.ts)
+
+function getStreamingCachedFile(videoId: string): string | null {
+  if (!videoId) return null;
+  const fp = path.join(YOUTUBE_CACHE_DIR, `${videoId}.mp3`);
+  if (!fs.existsSync(fp)) return null;
+  const stat = fs.statSync(fp);
+  // Valid if > 10KB and not expired
+  if (stat.size > 10_000 && Date.now() - stat.mtimeMs < CACHE_MAX_AGE_MS) {
+    return fp;
+  }
+  return null;
+}
+
+function getStreamingCachedMeta(
+  videoId: string
+): {
+  title: string;
+  author: string;
+  duration: number;
+  thumbnail: string;
+} | null {
+  try {
+    const metaPath = path.join(YOUTUBE_CACHE_DIR, `${videoId}.meta.json`);
+    if (!fs.existsSync(metaPath)) return null;
+    return JSON.parse(fs.readFileSync(metaPath, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
 async function downloadMp3(
   req: Request,
   res: Response<DownloadResponse | ErrorResponse>
@@ -342,14 +380,57 @@ async function downloadMp3(
       throw new Error("Invalid URL format");
     }
 
+    // ── Check streaming cache first ──────────────────────────────────────
+    // Extract videoId from URL to check if we already have it cached
+    const videoIdMatch =
+      videoUrl.match(
+        /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/
+      ) || videoUrl.match(/^([a-zA-Z0-9_-]{11})$/);
+    const videoId = videoIdMatch?.[1] || "";
+
+    if (videoId) {
+      const cachedFile = getStreamingCachedFile(videoId);
+      if (cachedFile) {
+        console.log(
+          `[dl] ✅ Reusing streaming cache for ${videoId} — skipping yt-dlp download`
+        );
+        setP(id, 0.5);
+
+        const cachedMeta = getStreamingCachedMeta(videoId);
+        const audioBuf = fs.readFileSync(cachedFile);
+        const base64Buffer = audioBuf.toString("base64");
+
+        clearTimeout(killer);
+        setP(id, 1);
+
+        const response: DownloadResponse = {
+          base64Buffer,
+          title: cachedMeta?.title || "YouTube Video",
+          author: cachedMeta?.author || "Unknown Artist",
+          duration: cachedMeta?.duration,
+          thumbnail: cachedMeta?.thumbnail || "",
+          id,
+        };
+
+        res.json(response);
+        return;
+      }
+    }
+
+    // ── Not cached — download fresh with yt-dlp ──────────────────────────
+
     let title: string = "";
     let author: string = "";
+    let duration: number | undefined;
+    let thumbnail: string = "";
 
     setP(id, 0.05);
     try {
       const meta: YtDlpMetadata = await runYtDlpJson(videoUrl);
       title = meta.title || meta.fulltitle || meta.playlist_title || "";
       author = meta.uploader || meta.channel || meta.uploader_id || "";
+      duration = meta.duration;
+      thumbnail = meta.thumbnail || "";
     } catch (e) {
       const error = e as Error;
       console.log("[dl] Metadata via yt-dlp failed:", error.message);
@@ -370,6 +451,33 @@ async function downloadMp3(
 
     const base64Buffer: string = audioBuf.toString("base64");
 
+    // ── Also save to streaming cache for future reuse ────────────────────
+    if (videoId) {
+      try {
+        if (!fs.existsSync(YOUTUBE_CACHE_DIR)) {
+          fs.mkdirSync(YOUTUBE_CACHE_DIR, { recursive: true });
+        }
+        const cachePath = path.join(YOUTUBE_CACHE_DIR, `${videoId}.mp3`);
+        if (!fs.existsSync(cachePath)) {
+          fs.writeFileSync(cachePath, audioBuf);
+          // Save metadata too
+          const metaPath = path.join(YOUTUBE_CACHE_DIR, `${videoId}.meta.json`);
+          fs.writeFileSync(
+            metaPath,
+            JSON.stringify({
+              title,
+              author,
+              duration: duration || 0,
+              thumbnail,
+            })
+          );
+          console.log(`[dl] Saved to streaming cache: ${videoId}`);
+        }
+      } catch (cacheErr) {
+        console.log("[dl] Failed to save to streaming cache:", cacheErr);
+      }
+    }
+
     clearTimeout(killer);
     setP(id, 1);
 
@@ -377,6 +485,8 @@ async function downloadMp3(
       base64Buffer,
       title,
       author,
+      duration,
+      thumbnail,
       id,
     };
 

@@ -9,14 +9,14 @@ const router = express.Router();
 const PROXY_URL = "http://10.8.0.2:3128";
 // ─── File-based audio cache ──────────────────────────────────────────────────
 const CACHE_DIR = path.join(process.cwd(), "youtube-cache");
-const CACHE_MAX_AGE_MS = 3 * 24 * 60 * 60 * 1000; // 3 days
+const CACHE_MAX_AGE_MS = 5 * 24 * 60 * 60 * 1000; // 5 days
 // Ensure cache directory exists on startup
 if (!fs.existsSync(CACHE_DIR)) {
     fs.mkdirSync(CACHE_DIR, { recursive: true });
     console.log("[youtube] Created cache directory:", CACHE_DIR);
 }
 const activeDownloads = new Map();
-// Cleanup cached files older than 3 days — runs every hour
+// Cleanup cached files older than 5 days — runs every hour
 setInterval(() => {
     try {
         const now = Date.now();
@@ -61,7 +61,7 @@ function isCached(videoId) {
     if (!fs.existsSync(fp))
         return false;
     const stat = fs.statSync(fp);
-    // Valid if > 10KB and < 3 days old
+    // Valid if > 10KB and < 5 days old
     return stat.size > 10000 && Date.now() - stat.mtimeMs < CACHE_MAX_AGE_MS;
 }
 // ─── Singleton Innertube ─────────────────────────────────────────────────────
@@ -486,12 +486,14 @@ function startBackgroundDownload(videoId) {
         setTimeout(() => activeDownloads.delete(videoId), 5 * 60000);
     });
     // Also fetch metadata in parallel (non-blocking) so we can return it in prepare
-    getStreamUrlWithYtDlp(videoId).then((meta) => {
+    getStreamUrlWithYtDlp(videoId)
+        .then((meta) => {
         entry.title = meta.title || "";
         entry.author = meta.author || "";
         entry.duration = meta.duration || 0;
         entry.thumbnail = meta.thumbnail || "";
-    }).catch(() => { });
+    })
+        .catch(() => { });
     // Safety timeout — kill after 3 minutes
     setTimeout(() => {
         if (entry.status === "downloading") {
@@ -551,6 +553,30 @@ router.get("/audio/prepare", async (req, res) => {
         duration: 0,
         thumbnail: "",
     });
+});
+// ─── GET /audio/check?video_id=<id> ──────────────────────────────────────────
+// Quick check if audio is already cached — does NOT trigger a download.
+// Used by frontend to skip the progress bar for already-cached songs.
+router.get("/audio/check", async (req, res) => {
+    const videoId = req.query.video_id?.trim();
+    if (!videoId) {
+        res.status(400).json({ error: "video_id parameter is required" });
+        return;
+    }
+    if (isCached(videoId)) {
+        const cachedMeta = loadCachedMeta(videoId);
+        res.json({
+            cached: true,
+            video_id: videoId,
+            title: cachedMeta?.title || "",
+            author: cachedMeta?.author || "",
+            duration: cachedMeta?.duration || 0,
+            thumbnail: cachedMeta?.thumbnail || "",
+        });
+    }
+    else {
+        res.json({ cached: false, video_id: videoId });
+    }
 });
 // ─── GET /audio?video_id=<id> ────────────────────────────────────────────────
 // Serves the cached MP3 file. Supports Range requests (Express sendFile does

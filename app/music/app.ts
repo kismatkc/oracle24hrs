@@ -13,6 +13,7 @@ import downloadMp3 from "./controllers/download-mp3.ts";
 import scrapeLyrics from "./controllers/scrape-lyrics.ts";
 import ttcAlerts from "./controllers/ttc-alerts.ts";
 import youtube from "./controllers/youtube.ts";
+import cacheManagement from "./controllers/cache-management.ts";
 
 // Import and start the demucs worker
 import { demucsWorker } from "./workers/demucs.worker.ts";
@@ -46,6 +47,7 @@ app.use("/music", downloadMp3);
 app.use("/music", scrapeLyrics);
 app.use("/music", ttcAlerts);
 app.use("/music/youtube", youtube);
+app.use("/music", cacheManagement);
 
 /* ---------- PM2 restart-all via GET ---------- */
 app.get(`/restart/${RESTART_SECRET}`, (_req, res) => {
