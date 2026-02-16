@@ -192,8 +192,7 @@ router.post(
         // For completed jobs, verify stem files still exist on disk
         // (72-hour cleanup may have purged them)
         if (state === "completed") {
-          const sepDir =
-            existing.returnvalue?.sepDir || sepDirFromBasename(basename);
+          const sepDir = existing.returnvalue?.sepDir || sepDirFromBasename(basename);
           const stemFiles = sepDir ? findStemFiles(sepDir) : {};
           const filesExist = !!stemFiles.vocals;
 
@@ -210,12 +209,8 @@ router.post(
 
           // Stale job: BullMQ says "completed" but files are purged
           // Remove the stale job so we can create a fresh one below
-          console.log(
-            `[upload] Stale completed job ${basename} — stem files purged, re-queuing`
-          );
-          try {
-            await existing.remove();
-          } catch {}
+          console.log(`[upload] Stale completed job ${basename} — stem files purged, re-queuing`);
+          try { await existing.remove(); } catch {}
           // Fall through to create a new job
         } else if (["active", "waiting"].includes(state)) {
           res.json({
