@@ -259,14 +259,11 @@ async function downloadMp3(req, res) {
             const cachedFile = getStreamingCachedFile(videoId);
             if (cachedFile) {
                 console.log(`[dl] ✅ Reusing streaming cache for ${videoId} — skipping yt-dlp download`);
-                setP(id, 0.5);
                 const cachedMeta = getStreamingCachedMeta(videoId);
-                const audioBuf = fs.readFileSync(cachedFile);
-                const base64Buffer = audioBuf.toString("base64");
                 clearTimeout(killer);
                 setP(id, 1);
                 const response = {
-                    base64Buffer,
+                    video_id: videoId,
                     title: cachedMeta?.title || "YouTube Video",
                     author: cachedMeta?.author || "Unknown Artist",
                     duration: cachedMeta?.duration,
@@ -302,8 +299,7 @@ async function downloadMp3(req, res) {
         setP(id, 0.15);
         console.log("[dl] Starting yt-dlp audio download...");
         const audioBuf = await runYtDlpAudio(videoUrl, (f) => setP(id, 0.15 + f * 0.8));
-        const base64Buffer = audioBuf.toString("base64");
-        // ── Also save to streaming cache for future reuse ────────────────────
+        // ── Save to streaming cache for binary serving via /youtube/audio ─────
         if (videoId) {
             try {
                 if (!fs.existsSync(YOUTUBE_CACHE_DIR)) {
@@ -330,7 +326,7 @@ async function downloadMp3(req, res) {
         clearTimeout(killer);
         setP(id, 1);
         const response = {
-            base64Buffer,
+            video_id: videoId,
             title,
             author,
             duration,

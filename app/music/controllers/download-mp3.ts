@@ -31,7 +31,7 @@ interface ProgressStore {
 }
 
 interface DownloadResponse {
-  base64Buffer: string;
+  video_id: string;
   title: string;
   author: string;
   id: string;
@@ -84,7 +84,7 @@ const router = express.Router();
 
 async function streamToBuffer(
   r: NodeJS.ReadableStream,
-  onChunk?: (f: number) => void
+  onChunk?: (f: number) => void,
 ): Promise<Buffer> {
   const chunks: Buffer[] = [];
   let read: number = 0;
@@ -202,7 +202,7 @@ function runYtDlpJson(videoUrl: string): Promise<YtDlpMetadata> {
     proc.on("close", (code: number | null) => {
       if (code !== 0) {
         return reject(
-          new Error(`yt-dlp metadata failed (code ${code}): ${errText}`)
+          new Error(`yt-dlp metadata failed (code ${code}): ${errText}`),
         );
       }
 
@@ -220,7 +220,7 @@ function runYtDlpJson(videoUrl: string): Promise<YtDlpMetadata> {
 
 function runYtDlpAudio(
   videoUrl: string,
-  onProgress: (f: number) => void
+  onProgress: (f: number) => void,
 ): Promise<Buffer> {
   return new Promise((resolve, reject) => {
     const tempFile: string = `/tmp/audio_${Date.now()}_${Math.random()
@@ -280,7 +280,7 @@ function runYtDlpAudio(
         console.error("[yt-dlp] Exit code:", code);
         console.error("[yt-dlp] Error output:", errText);
         return reject(
-          new Error(`yt-dlp download failed (code ${code}): ${errText}`)
+          new Error(`yt-dlp download failed (code ${code}): ${errText}`),
         );
       }
 
@@ -291,7 +291,7 @@ function runYtDlpAudio(
         console.log(
           "[yt-dlp] Successfully downloaded audio file, size:",
           fileBuffer.length,
-          "bytes"
+          "bytes",
         );
 
         if (fileBuffer.length < MIN_VALID_AUDIO_SIZE) {
@@ -302,11 +302,11 @@ function runYtDlpAudio(
 
         if (headerValidation.isValid) {
           console.log(
-            `[yt-dlp] Valid ${headerValidation.format.toUpperCase()} header detected`
+            `[yt-dlp] Valid ${headerValidation.format.toUpperCase()} header detected`,
           );
         } else {
           console.warn(
-            "[yt-dlp] Warning: Unexpected file header, but proceeding anyway"
+            "[yt-dlp] Warning: Unexpected file header, but proceeding anyway",
           );
         }
 
@@ -315,7 +315,7 @@ function runYtDlpAudio(
         const error = fileError as Error;
         console.error("[yt-dlp] File read error:", error);
         reject(
-          new Error(`Failed to read downloaded audio file: ${error.message}`)
+          new Error(`Failed to read downloaded audio file: ${error.message}`),
         );
       }
     });
@@ -340,9 +340,7 @@ function getStreamingCachedFile(videoId: string): string | null {
   return null;
 }
 
-function getStreamingCachedMeta(
-  videoId: string
-): {
+function getStreamingCachedMeta(videoId: string): {
   title: string;
   author: string;
   duration: number;
@@ -359,7 +357,7 @@ function getStreamingCachedMeta(
 
 async function downloadMp3(
   req: Request,
-  res: Response<DownloadResponse | ErrorResponse>
+  res: Response<DownloadResponse | ErrorResponse>,
 ): Promise<void> {
   const id: string = (req.query.id as string) || randomUUID();
   console.log("[dl] new request id", id, "url", req.query.url);
@@ -384,7 +382,7 @@ async function downloadMp3(
     // Extract videoId from URL to check if we already have it cached
     const videoIdMatch =
       videoUrl.match(
-        /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/
+        /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
       ) || videoUrl.match(/^([a-zA-Z0-9_-]{11})$/);
     const videoId = videoIdMatch?.[1] || "";
 
@@ -392,19 +390,16 @@ async function downloadMp3(
       const cachedFile = getStreamingCachedFile(videoId);
       if (cachedFile) {
         console.log(
-          `[dl] ✅ Reusing streaming cache for ${videoId} — skipping yt-dlp download`
+          `[dl] ✅ Reusing streaming cache for ${videoId} — skipping yt-dlp download`,
         );
-        setP(id, 0.5);
 
         const cachedMeta = getStreamingCachedMeta(videoId);
-        const audioBuf = fs.readFileSync(cachedFile);
-        const base64Buffer = audioBuf.toString("base64");
 
         clearTimeout(killer);
         setP(id, 1);
 
         const response: DownloadResponse = {
-          base64Buffer,
+          video_id: videoId,
           title: cachedMeta?.title || "YouTube Video",
           author: cachedMeta?.author || "Unknown Artist",
           duration: cachedMeta?.duration,
@@ -446,12 +441,10 @@ async function downloadMp3(
 
     console.log("[dl] Starting yt-dlp audio download...");
     const audioBuf: Buffer = await runYtDlpAudio(videoUrl, (f: number) =>
-      setP(id, 0.15 + f * 0.8)
+      setP(id, 0.15 + f * 0.8),
     );
 
-    const base64Buffer: string = audioBuf.toString("base64");
-
-    // ── Also save to streaming cache for future reuse ────────────────────
+    // ── Save to streaming cache for binary serving via /youtube/audio ─────
     if (videoId) {
       try {
         if (!fs.existsSync(YOUTUBE_CACHE_DIR)) {
@@ -469,7 +462,7 @@ async function downloadMp3(
               author,
               duration: duration || 0,
               thumbnail,
-            })
+            }),
           );
           console.log(`[dl] Saved to streaming cache: ${videoId}`);
         }
@@ -482,7 +475,7 @@ async function downloadMp3(
     setP(id, 1);
 
     const response: DownloadResponse = {
-      base64Buffer,
+      video_id: videoId,
       title,
       author,
       duration,
