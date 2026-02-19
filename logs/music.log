@@ -1857,3 +1857,435 @@
 2026-02-19T00:40:42: scraper > URL: https://bob-dylan.org.uk/archives/11626
 2026-02-19T00:40:42: [Cheerio] Fetching: https://bob-dylan.org.uk/archives/11626
 2026-02-19T00:40:44: [Cheerio] ✅ Readability (102 lines)
+2026-02-19T00:45:13: [youtube] Suggestions request: jo
+2026-02-19T00:45:14: [youtube] Suggestions request: john
+2026-02-19T00:45:16: [youtube] Suggestions request: john chamling
+2026-02-19T00:45:18: 
+2026-02-19T00:45:18: ──────── LRCLIB (individual) ────────
+2026-02-19T00:45:18: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=john+chamling+rai+song
+2026-02-19T00:45:18: 
+2026-02-19T00:45:18: ──────── GENIUS (individual) ────────
+2026-02-19T00:45:18: [Genius] Searching: "john chamling rai song"
+2026-02-19T00:45:18: 
+2026-02-19T00:45:18: ──────── GOOGLE URLS (individual) ────────
+2026-02-19T00:45:18: [Google] Searching: "john chamling rai song"
+2026-02-19T00:45:18: [Google] Returned 10 results
+2026-02-19T00:45:18: 
+2026-02-19T00:45:18: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T00:45:18: scraper > URL: https://lyricalchordsansar.com/k-garu-lyrics-chords-john-chamling-rai/
+2026-02-19T00:45:18: [Cheerio] Fetching: https://lyricalchordsansar.com/k-garu-lyrics-chords-john-chamling-rai/
+2026-02-19T00:45:18: 
+2026-02-19T00:45:18: ──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-19T00:45:18: scraper > URL: https://lyricalchordsansar.com/k-garu-lyrics-chords-john-chamling-rai/
+2026-02-19T00:45:18: [Playwright] Navigating: https://lyricalchordsansar.com/k-garu-lyrics-chords-john-chamling-rai/
+2026-02-19T00:45:19: [Genius] Found: "BING CHILLING OFFICIAL RAP SONG by Korean Comic" → https://genius.com/Korean-comic-bing-chilling-official-rap-song-lyrics
+2026-02-19T00:45:19: [Cheerio] Fetching: https://genius.com/Korean-comic-bing-chilling-official-rap-song-lyrics
+2026-02-19T00:45:19: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-02-19T00:45:19: [Genius] Cheerio failed/403 — trying Playwright for Genius page
+2026-02-19T00:45:19: [Playwright] Navigating: https://genius.com/Korean-comic-bing-chilling-official-rap-song-lyrics
+2026-02-19T00:45:20: [Cheerio] ✅ Readability (162 lines)
+2026-02-19T00:45:21: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
+2026-02-19T00:45:24: [Playwright] Result: 162 lines
+2026-02-19T00:45:24: 
+2026-02-19T00:45:24: ──────── LRCLIB (individual) ────────
+2026-02-19T00:45:24: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=john+chamling+rai+song
+2026-02-19T00:45:24: 
+2026-02-19T00:45:24: ──────── GENIUS (individual) ────────
+2026-02-19T00:45:24: [Genius] Searching: "john chamling rai song"
+2026-02-19T00:45:24: 
+2026-02-19T00:45:24: ──────── GOOGLE URLS (individual) ────────
+2026-02-19T00:45:24: [Google] Searching: "john chamling rai song"
+2026-02-19T00:45:24: [Genius] Found: "BING CHILLING OFFICIAL RAP SONG by Korean Comic" → https://genius.com/Korean-comic-bing-chilling-official-rap-song-lyrics
+2026-02-19T00:45:24: [Cheerio] Fetching: https://genius.com/Korean-comic-bing-chilling-official-rap-song-lyrics
+2026-02-19T00:45:24: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-02-19T00:45:24: [Genius] Cheerio failed/403 — trying Playwright for Genius page
+2026-02-19T00:45:24: [Playwright] Navigating: https://genius.com/Korean-comic-bing-chilling-official-rap-song-lyrics
+2026-02-19T00:45:25: [Google] Returned 10 results
+2026-02-19T00:45:25: 
+2026-02-19T00:45:25: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T00:45:25: scraper > URL: https://lyricalchordsansar.com/k-garu-lyrics-chords-john-chamling-rai/
+2026-02-19T00:45:25: [Cheerio] Fetching: https://lyricalchordsansar.com/k-garu-lyrics-chords-john-chamling-rai/
+2026-02-19T00:45:25: 
+2026-02-19T00:45:25: ──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-19T00:45:25: scraper > URL: https://lyricalchordsansar.com/k-garu-lyrics-chords-john-chamling-rai/
+2026-02-19T00:45:25: [Playwright] Navigating: https://lyricalchordsansar.com/k-garu-lyrics-chords-john-chamling-rai/
+2026-02-19T00:45:26: [Cheerio] ✅ Readability (162 lines)
+2026-02-19T00:45:27: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
+2026-02-19T00:45:34: [Playwright] Result: 69 lines
+2026-02-19T00:45:34: [Genius] ✅ Scraped 69 lines
+2026-02-19T00:45:39: [Playwright] Result: 162 lines
+2026-02-19T00:45:42: [Playwright] Result: 69 lines
+2026-02-19T00:45:42: [Genius] ✅ Scraped 69 lines
+2026-02-19T00:46:12: [youtube] Suggestions request: 30
+2026-02-19T00:46:13: [youtube] Suggestions request: 30 se
+2026-02-19T00:46:15: [youtube] Suggestions request: 30 seconda
+2026-02-19T00:46:15: [youtube] Search request: 30 seconds
+2026-02-19T00:46:17: [youtube] Search returned 20 results
+2026-02-19T00:46:20: [dl] new request id cache-mlsqq3ql-94z7a5 url https://www.youtube.com/watch?v=tWoo8i_VkvI
+2026-02-19T00:46:20: [setP] cache-mlsqq3ql-94z7a5 0.05
+2026-02-19T00:46:20: [progress] id cache-mlsqq3ql-94z7a5 -> 0.05
+2026-02-19T00:46:21: [progress] id cache-mlsqq3ql-94z7a5 -> 0.05
+2026-02-19T00:46:22: [progress] id cache-mlsqq3ql-94z7a5 -> 0.05
+2026-02-19T00:46:23: [setP] cache-mlsqq3ql-94z7a5 0.15
+2026-02-19T00:46:23: [dl] Starting yt-dlp audio download...
+2026-02-19T00:46:23: [yt-dlp] Running command: yt-dlp --proxy http://10.8.0.2:3128 --user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 --extractor-args youtube:player_client=android -f bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio[ext=aac]/bestaudio[acodec=aac]/bestaudio/best -x --audio-format mp3 --audio-quality 0 --no-playlist --no-warnings --no-progress --retries 3 --fragment-retries 3 -o /tmp/audio_1771461983230_zy61n.mp3 https://www.youtube.com/watch?v=tWoo8i_VkvI
+2026-02-19T00:46:23: [progress] id cache-mlsqq3ql-94z7a5 -> 0.15
+2026-02-19T00:46:24: [progress] id cache-mlsqq3ql-94z7a5 -> 0.15
+2026-02-19T00:46:24: [progress] id cache-mlsqq3ql-94z7a5 -> 0.15
+2026-02-19T00:46:25: [progress] id cache-mlsqq3ql-94z7a5 -> 0.15
+2026-02-19T00:46:26: [progress] id cache-mlsqq3ql-94z7a5 -> 0.15
+2026-02-19T00:46:27: [progress] id cache-mlsqq3ql-94z7a5 -> 0.15
+2026-02-19T00:46:28: [progress] id cache-mlsqq3ql-94z7a5 -> 0.15
+2026-02-19T00:46:28: [progress] id cache-mlsqq3ql-94z7a5 -> 0.15
+2026-02-19T00:46:29: [progress] id cache-mlsqq3ql-94z7a5 -> 0.15
+2026-02-19T00:46:30: [progress] id cache-mlsqq3ql-94z7a5 -> 0.15
+2026-02-19T00:46:31: [progress] id cache-mlsqq3ql-94z7a5 -> 0.15
+2026-02-19T00:46:32: [progress] id cache-mlsqq3ql-94z7a5 -> 0.15
+2026-02-19T00:46:32: [progress] id cache-mlsqq3ql-94z7a5 -> 0.15
+2026-02-19T00:46:33: [yt-dlp] Successfully downloaded audio file, size: 229277 bytes
+2026-02-19T00:46:33: [yt-dlp] Valid ID3 header detected
+2026-02-19T00:46:33: [dl] Saved to streaming cache: tWoo8i_VkvI
+2026-02-19T00:46:33: [setP] cache-mlsqq3ql-94z7a5 1
+2026-02-19T00:46:33: [audio] Serving cached file for tWoo8i_VkvI (0.2 MB) (full)
+2026-02-19T00:46:49: [youtube] Suggestions request: save me
+2026-02-19T00:46:49: [youtube] Search request: save me now
+2026-02-19T00:46:49: [youtube] Suggestions request: save me now
+2026-02-19T00:46:50: [youtube] Search returned 20 results
+2026-02-19T00:46:56: [dl] new request id mlsqqvoq-qb2adsln url https://www.youtube.com/watch?v=b0fgETOm2UQ
+2026-02-19T00:46:56: [dl] ✅ Reusing streaming cache for b0fgETOm2UQ — skipping yt-dlp download
+2026-02-19T00:46:56: [setP] mlsqqvoq-qb2adsln 1
+2026-02-19T00:46:56: [audio] Serving cached file for b0fgETOm2UQ (7.3 MB) (full)
+2026-02-19T01:28:27: [youtube] Suggestions request: mari jau
+2026-02-19T01:28:27: [youtube] Creating fresh Innertube client...
+2026-02-19T01:28:27: [youtube] Innertube client initialized
+2026-02-19T01:28:27: [youtube] Search request: mari jau
+2026-02-19T01:28:28: [youtube] Search returned 19 results
+2026-02-19T01:28:35: [dl] new request id mlss8fzq-2jfd0a33 url https://www.youtube.com/watch?v=ix1Yg_MsmE0
+2026-02-19T01:28:35: [setP] mlss8fzq-2jfd0a33 0.05
+2026-02-19T01:28:37: [progress] id mlss8fzq-2jfd0a33 -> 0.05
+2026-02-19T01:28:38: [setP] mlss8fzq-2jfd0a33 0.15
+2026-02-19T01:28:38: [dl] Starting yt-dlp audio download...
+2026-02-19T01:28:38: [yt-dlp] Running command: yt-dlp --proxy http://10.8.0.2:3128 --user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 --extractor-args youtube:player_client=android -f bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio[ext=aac]/bestaudio[acodec=aac]/bestaudio/best -x --audio-format mp3 --audio-quality 0 --no-playlist --no-warnings --no-progress --retries 3 --fragment-retries 3 -o /tmp/audio_1771464518243_5xm7kh.mp3 https://www.youtube.com/watch?v=ix1Yg_MsmE0
+2026-02-19T01:28:39: [progress] id mlss8fzq-2jfd0a33 -> 0.15
+2026-02-19T01:28:41: [progress] id mlss8fzq-2jfd0a33 -> 0.15
+2026-02-19T01:28:43: [progress] id mlss8fzq-2jfd0a33 -> 0.15
+2026-02-19T01:28:45: [progress] id mlss8fzq-2jfd0a33 -> 0.15
+2026-02-19T01:28:47: [progress] id mlss8fzq-2jfd0a33 -> 0.15
+2026-02-19T01:28:49: [progress] id mlss8fzq-2jfd0a33 -> 0.15
+2026-02-19T01:28:51: [progress] id mlss8fzq-2jfd0a33 -> 0.15
+2026-02-19T01:28:53: [progress] id mlss8fzq-2jfd0a33 -> 0.15
+2026-02-19T01:28:55: [progress] id mlss8fzq-2jfd0a33 -> 0.15
+2026-02-19T01:28:57: [progress] id mlss8fzq-2jfd0a33 -> 0.15
+2026-02-19T01:28:58: [yt-dlp] Successfully downloaded audio file, size: 8469537 bytes
+2026-02-19T01:28:58: [yt-dlp] Valid ID3 header detected
+2026-02-19T01:28:58: [dl] Saved to streaming cache: ix1Yg_MsmE0
+2026-02-19T01:28:58: [setP] mlss8fzq-2jfd0a33 1
+2026-02-19T01:28:58: [audio] Serving cached file for ix1Yg_MsmE0 (8.1 MB) (full)
+2026-02-19T01:29:15: 
+2026-02-19T01:29:15: ──────── LRCLIB (individual) ────────
+2026-02-19T01:29:15: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Bikki+Gurung+-+Mari+Jau+%5B+OFFICIAL+MV+%5D&artist_name=Bikki+Gurung&duration=293
+2026-02-19T01:29:15: 
+2026-02-19T01:29:15: ──────── GENIUS (individual) ────────
+2026-02-19T01:29:15: [Genius] Searching: "Bikki Gurung - Mari Jau [ OFFICIAL MV ] Bikki Gurung"
+2026-02-19T01:29:15: 
+2026-02-19T01:29:15: ──────── GOOGLE URLS (individual) ────────
+2026-02-19T01:29:15: [Google] Searching: "bikki gurung - mari jau [ official mv ] Bikki Gurung"
+2026-02-19T01:29:15: [Genius] ❌ No complete lyrics result for "Bikki Gurung - Mari Jau [ OFFICIAL MV ] Bikki Gurung"
+2026-02-19T01:29:15: [Google] Returned 10 results
+2026-02-19T01:29:15: 
+2026-02-19T01:29:15: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T01:29:15: scraper > URL: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-02-19T01:29:15: [Cheerio] Fetching: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-02-19T01:29:15: 
+2026-02-19T01:29:15: ──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-19T01:29:15: scraper > URL: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-02-19T01:29:15: [Playwright] Navigating: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-02-19T01:29:16: [Cheerio] ⚠️ Error: Request failed with status code 500
+2026-02-19T01:29:18: [Playwright] Result: 2 lines
+2026-02-19T01:29:18: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
+2026-02-19T01:29:31: 
+2026-02-19T01:29:31: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T01:29:31: scraper > URL: https://www.tunesnepal.com/bikki-gurung/khali
+2026-02-19T01:29:31: [Cheerio] Fetching: https://www.tunesnepal.com/bikki-gurung/khali
+2026-02-19T01:29:31: [Cheerio] ⚠️ Error: Request failed with status code 500
+2026-02-19T01:29:34: 
+2026-02-19T01:29:34: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T01:29:34: scraper > URL: https://tabs.musiccafenepal.com/bikki-gurung/mari-jau
+2026-02-19T01:29:34: [Cheerio] Fetching: https://tabs.musiccafenepal.com/bikki-gurung/mari-jau
+2026-02-19T01:29:35: [Cheerio] ✅ Readability (2 lines)
+2026-02-19T01:29:55: 
+2026-02-19T01:29:55: ──────── LRCLIB (individual) ────────
+2026-02-19T01:29:55: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Bikki+Gurung+-+Mari+Jau+%5B+OFFICIAL+MV+%5D&artist_name=Bikki+Gurung&duration=293
+2026-02-19T01:29:55: 
+2026-02-19T01:29:55: ──────── GENIUS (individual) ────────
+2026-02-19T01:29:55: [Genius] Searching: "Bikki Gurung - Mari Jau [ OFFICIAL MV ] Bikki Gurung"
+2026-02-19T01:29:55: 
+2026-02-19T01:29:55: ──────── GOOGLE URLS (individual) ────────
+2026-02-19T01:29:55: [Google] Searching: "bikki gurung - mari jau [ official mv ] Bikki Gurung"
+2026-02-19T01:29:55: [Genius] ❌ No complete lyrics result for "Bikki Gurung - Mari Jau [ OFFICIAL MV ] Bikki Gurung"
+2026-02-19T01:29:55: [Google] Returned 10 results
+2026-02-19T01:29:56: 
+2026-02-19T01:29:56: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T01:29:56: scraper > URL: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-02-19T01:29:56: [Cheerio] Fetching: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-02-19T01:29:56: 
+2026-02-19T01:29:56: ──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-19T01:29:56: scraper > URL: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-02-19T01:29:56: [Playwright] Navigating: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-02-19T01:29:56: [Cheerio] ⚠️ Error: Request failed with status code 500
+2026-02-19T01:29:57: [Playwright] Result: 2 lines
+2026-02-19T01:29:58: [LRCLIB] ❌ Not found: "Bikki Gurung - Mari Jau [ OFFICIAL MV ]"
+2026-02-19T01:45:37: [shazam] Received recording.m4a (185.4 KB) → /home/ubuntu/Projects/oracle24hrs/uploads/shazam-tmp/46224b0a765130bd5edd4509c06cb2da
+2026-02-19T01:45:38: [shazam/py stderr] skipping junk at 64075 bytes
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: skipping junk at 75357 bytes
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: skipping junk at 85605 bytes
+2026-02-19T01:45:38: skipping junk at 94318 bytes
+2026-02-19T01:45:38: skipping junk at 96274 bytes
+2026-02-19T01:45:38: skipping junk at 97527 bytes
+2026-02-19T01:45:38: skipping junk at 101509 bytes
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: skipping junk at 103264 bytes
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: skipping junk at 107494 bytes
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: skipping junk at 113386 bytes
+2026-02-19T01:45:38: skipping junk at 113693 bytes
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: skipping junk at 130738 bytes
+2026-02-19T01:45:38: skipping junk at 131091 bytes
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: skipping junk at 151671 bytes
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: skipping junk at 168594 bytes
+2026-02-19T01:45:38: skipping junk at 170710 bytes
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: skipping junk at 179904 bytes
+2026-02-19T01:45:38: skipping junk at 179905 bytes
+2026-02-19T01:45:38: invalid mpeg audio header
+2026-02-19T01:45:38: skipping junk at 183680 bytes
+2026-02-19T01:45:38: skipping junk at 187822 bytes
+2026-02-19T01:45:38: skipping junk at 188415 bytes
+2026-02-19T01:45:38: [shazam] Match: Knockin' On Heaven's Door
+2026-02-19T01:45:38: 
+2026-02-19T01:45:38: ──────── LRCLIB (individual) ────────
+2026-02-19T01:45:38: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Knockin%27+On+Heaven%27s+Door+Guns+N%27+Roses
+2026-02-19T01:45:38: 
+2026-02-19T01:45:38: ──────── GENIUS (individual) ────────
+2026-02-19T01:45:38: [Genius] Searching: "Knockin' On Heaven's Door Guns N' Roses"
+2026-02-19T01:45:38: 
+2026-02-19T01:45:38: ──────── GOOGLE URLS (individual) ────────
+2026-02-19T01:45:38: [Google] Searching: "knockin' on heaven's door guns n' roses"
+2026-02-19T01:45:38: [Google] Returned 10 results
+2026-02-19T01:45:39: [Genius] Found: "Knockin’ on Heaven’s Door by Guns N' Roses" → https://genius.com/Guns-n-roses-knockin-on-heavens-door-lyrics
+2026-02-19T01:45:39: [Cheerio] Fetching: https://genius.com/Guns-n-roses-knockin-on-heavens-door-lyrics
+2026-02-19T01:45:39: 
+2026-02-19T01:45:39: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T01:45:39: scraper > URL: https://mychords.net/gunsroses/10525-guns-n-roses-knockin-on-heavens-door.html
+2026-02-19T01:45:39: [Cheerio] Fetching: https://mychords.net/gunsroses/10525-guns-n-roses-knockin-on-heavens-door.html
+2026-02-19T01:45:39: 
+2026-02-19T01:45:39: ──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-19T01:45:39: scraper > URL: https://mychords.net/gunsroses/10525-guns-n-roses-knockin-on-heavens-door.html
+2026-02-19T01:45:39: [Playwright] Navigating: https://mychords.net/gunsroses/10525-guns-n-roses-knockin-on-heavens-door.html
+2026-02-19T01:45:39: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-02-19T01:45:39: [Genius] Cheerio failed/403 — trying Playwright for Genius page
+2026-02-19T01:45:39: [Playwright] Navigating: https://genius.com/Guns-n-roses-knockin-on-heavens-door-lyrics
+2026-02-19T01:45:40: [Cheerio] ✅ Dense-block heuristic (512 lines)
+2026-02-19T01:45:41: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
+2026-02-19T01:45:42: [Playwright] Result: 512 lines
+2026-02-19T01:45:56: [Playwright] Result: 64 lines
+2026-02-19T01:45:56: [Genius] ✅ Scraped 64 lines
+2026-02-19T01:45:58: 
+2026-02-19T01:45:58: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T01:45:58: scraper > URL: https://tabs.ultimate-guitar.com/tab/guns-n-roses/knockin-on-heavens-door-chords-1097849
+2026-02-19T01:45:58: [Cheerio] Fetching: https://tabs.ultimate-guitar.com/tab/guns-n-roses/knockin-on-heavens-door-chords-1097849
+2026-02-19T01:45:58: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-02-19T01:46:00: 
+2026-02-19T01:46:00: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T01:46:00: scraper > URL: https://www.songsterr.com/a/wsa/guns-n-roses-knockin-on-heavens-door-chords-s481
+2026-02-19T01:46:00: [Cheerio] Fetching: https://www.songsterr.com/a/wsa/guns-n-roses-knockin-on-heavens-door-chords-s481
+2026-02-19T01:46:03: [Cheerio] ✅ Dense-block heuristic (74 lines)
+2026-02-19T01:46:08: 
+2026-02-19T01:46:08: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T01:46:08: scraper > URL: https://www.e-chords.com/chords/guns-n-roses/knockin-on-heavens-door
+2026-02-19T01:46:08: [Cheerio] Fetching: https://www.e-chords.com/chords/guns-n-roses/knockin-on-heavens-door
+2026-02-19T01:46:08: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-02-19T01:46:09: 
+2026-02-19T01:46:09: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T01:46:09: scraper > URL: https://bob-dylan.org.uk/archives/11626
+2026-02-19T01:46:09: [Cheerio] Fetching: https://bob-dylan.org.uk/archives/11626
+2026-02-19T01:46:11: [Cheerio] ✅ Readability (102 lines)
+2026-02-19T01:46:36: [shazam] Received recording.m4a (180.1 KB) → /home/ubuntu/Projects/oracle24hrs/uploads/shazam-tmp/b892777ee9ab4d6b6c1f5ac884624a02
+2026-02-19T01:46:37: [shazam/py stderr] skipping junk at 63411 bytes
+2026-02-19T01:46:37: invalid mpeg audio header
+2026-02-19T01:46:37: skipping junk at 77744 bytes
+2026-02-19T01:46:37: skipping junk at 78161 bytes
+2026-02-19T01:46:37: skipping junk at 78700 bytes
+2026-02-19T01:46:37: skipping junk at 82141 bytes
+2026-02-19T01:46:37: skipping junk at 85650 bytes
+2026-02-19T01:46:37: invalid mpeg audio header
+2026-02-19T01:46:37: skipping junk at 94598 bytes
+2026-02-19T01:46:37: skipping junk at 97257 bytes
+2026-02-19T01:46:37: skipping junk at 105256 bytes
+2026-02-19T01:46:37: skipping junk at 108230 bytes
+2026-02-19T01:46:37: skipping junk at 110372 bytes
+2026-02-19T01:46:37: skipping junk at 111818 bytes
+2026-02-19T01:46:37: skipping junk at 117009 bytes
+2026-02-19T01:46:37: skipping junk at 120417 bytes
+2026-02-19T01:46:37: skipping junk at 155251 bytes
+2026-02-19T01:46:37: skipping junk at 164324 bytes
+2026-02-19T01:46:37: invalid mpeg audio header
+2026-02-19T01:46:37: invalid mpeg audio header
+2026-02-19T01:46:37: invalid mpeg audio header
+2026-02-19T01:46:37: skipping junk at 179227 bytes
+2026-02-19T01:46:37: invalid mpeg audio header
+2026-02-19T01:46:37: invalid mpeg audio header
+2026-02-19T01:46:37: skipping junk at 181110 bytes
+2026-02-19T01:46:37: invalid mpeg audio header
+2026-02-19T01:46:37: invalid mpeg audio header
+2026-02-19T01:46:37: [shazam] Match: Knockin' On Heaven's Door
+2026-02-19T01:46:37: [youtube] Search request: Knockin' On Heaven's Door Guns N' Roses
+2026-02-19T01:46:38: [youtube] Creating fresh Innertube client...
+2026-02-19T01:46:38: [youtube] Innertube client initialized
+2026-02-19T01:46:39: [youtube] Search returned 19 results
+2026-02-19T01:47:35: 
+2026-02-19T01:47:35: ──────── LRCLIB (individual) ────────
+2026-02-19T01:47:35: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Bikki+Gurung+-+Mari+Jau+%5B+OFFICIAL+MV+%5D&artist_name=Bikki+Gurung&duration=293
+2026-02-19T01:47:35: 
+2026-02-19T01:47:35: ──────── GENIUS (individual) ────────
+2026-02-19T01:47:35: [Genius] Searching: "Bikki Gurung - Mari Jau [ OFFICIAL MV ] Bikki Gurung"
+2026-02-19T01:47:35: 
+2026-02-19T01:47:35: ──────── GOOGLE URLS (individual) ────────
+2026-02-19T01:47:35: [Google] Searching: "bikki gurung - mari jau [ official mv ] Bikki Gurung"
+2026-02-19T01:47:35: [Genius] ❌ No complete lyrics result for "Bikki Gurung - Mari Jau [ OFFICIAL MV ] Bikki Gurung"
+2026-02-19T01:47:35: [Google] Returned 10 results
+2026-02-19T01:47:35: 
+2026-02-19T01:47:35: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T01:47:35: scraper > URL: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-02-19T01:47:35: [Cheerio] Fetching: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-02-19T01:47:35: 
+2026-02-19T01:47:35: ──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-19T01:47:35: scraper > URL: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-02-19T01:47:35: [Playwright] Navigating: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-02-19T01:47:36: [Cheerio] ⚠️ Error: Request failed with status code 500
+2026-02-19T01:47:37: [Playwright] Result: 2 lines
+2026-02-19T01:47:38: [LRCLIB] ❌ Not found: "Bikki Gurung - Mari Jau [ OFFICIAL MV ]"
+2026-02-19T01:48:48: [youtube] Suggestions request: Sa
+2026-02-19T01:48:49: [youtube] Suggestions request: Sav
+2026-02-19T01:48:49: [youtube] Suggestions request: Save
+2026-02-19T02:01:57: 
+2026-02-19T02:01:57: ──────── LRCLIB (individual) ────────
+2026-02-19T02:01:57: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Arthur+Gunn+-+Save+Me+Now+%28Official+Music+Video%29&artist_name=Arthur+Gunn+%5BOFFICIAL%5D&duration=259
+2026-02-19T02:01:57: 
+2026-02-19T02:01:57: ──────── GENIUS (individual) ────────
+2026-02-19T02:01:57: [Genius] Searching: "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
+2026-02-19T02:01:57: 
+2026-02-19T02:01:57: ──────── GOOGLE URLS (individual) ────────
+2026-02-19T02:01:57: [Google] Searching: "arthur gunn - save me now (official music video) Arthur Gunn [OFFICIAL]"
+2026-02-19T02:01:57: [Genius] ❌ No complete lyrics result for "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
+2026-02-19T02:01:57: [Google] Returned 10 results
+2026-02-19T02:01:57: 
+2026-02-19T02:01:57: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T02:01:57: scraper > URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-02-19T02:01:57: [Cheerio] Fetching: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-02-19T02:01:57: 
+2026-02-19T02:01:57: ──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-19T02:01:57: scraper > URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-02-19T02:01:57: [Playwright] Navigating: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-02-19T02:01:58: [Cheerio] ✅ Readability (2 lines)
+2026-02-19T02:02:00: [LRCLIB] ❌ Not found: "Arthur Gunn - Save Me Now (Official Music Video)"
+2026-02-19T02:02:11: [Playwright] Result: 2 lines
+2026-02-19T02:02:21: [youtube] Suggestions request: la
+2026-02-19T02:02:22: [youtube] Creating fresh Innertube client...
+2026-02-19T02:02:22: [youtube] Innertube client initialized
+2026-02-19T02:02:22: [youtube] Suggestions request: lakh
+2026-02-19T02:02:23: [youtube] Suggestions request: lakha
+2026-02-19T02:02:23: [youtube] Suggestions request: lakhau
+2026-02-19T02:02:24: [youtube] Suggestions request: lakhau
+2026-02-19T02:02:25: [youtube] Search request: lakhau hajarau
+2026-02-19T02:02:26: [youtube] Search returned 19 results
+2026-02-19T02:02:32: 
+2026-02-19T02:02:32: ──────── LRCLIB (individual) ────────
+2026-02-19T02:02:32: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Bikki+Gurung+-+Mari+Jau+%5B+OFFICIAL+MV+%5D&artist_name=Bikki+Gurung&duration=293
+2026-02-19T02:02:32: 
+2026-02-19T02:02:32: ──────── GENIUS (individual) ────────
+2026-02-19T02:02:32: [Genius] Searching: "Bikki Gurung - Mari Jau [ OFFICIAL MV ] Bikki Gurung"
+2026-02-19T02:02:32: 
+2026-02-19T02:02:32: ──────── GOOGLE URLS (individual) ────────
+2026-02-19T02:02:32: [Google] Searching: "bikki gurung - mari jau [ official mv ] Bikki Gurung"
+2026-02-19T02:02:32: 
+2026-02-19T02:02:32: ──────── LRCLIB (individual) ────────
+2026-02-19T02:02:32: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Yabesh+Thapa+-+Laakhau+Hajarau&artist_name=ClassX+Presentation&duration=261
+2026-02-19T02:02:32: 
+2026-02-19T02:02:32: ──────── GENIUS (individual) ────────
+2026-02-19T02:02:32: [Genius] Searching: "Yabesh Thapa - Laakhau Hajarau ClassX Presentation"
+2026-02-19T02:02:32: 
+2026-02-19T02:02:32: ──────── GOOGLE URLS (individual) ────────
+2026-02-19T02:02:32: [Google] Searching: "yabesh thapa - laakhau hajarau ClassX Presentation"
+2026-02-19T02:02:32: [Genius] ❌ No complete lyrics result for "Bikki Gurung - Mari Jau [ OFFICIAL MV ] Bikki Gurung"
+2026-02-19T02:02:32: [Google] Returned 10 results
+2026-02-19T02:02:32: [Google] Returned 10 results
+2026-02-19T02:02:32: [Genius] ❌ No complete lyrics result for "Yabesh Thapa - Laakhau Hajarau ClassX Presentation"
+2026-02-19T02:02:32: 
+2026-02-19T02:02:32: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T02:02:32: scraper > URL: https://mychords.net/en/yabesh-thapa/223516-yabesh-thapa-kasari.html
+2026-02-19T02:02:32: [Cheerio] Fetching: https://mychords.net/en/yabesh-thapa/223516-yabesh-thapa-kasari.html
+2026-02-19T02:02:32: 
+2026-02-19T02:02:32: ──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-19T02:02:32: scraper > URL: https://mychords.net/en/yabesh-thapa/223516-yabesh-thapa-kasari.html
+2026-02-19T02:02:32: [Playwright] Navigating: https://mychords.net/en/yabesh-thapa/223516-yabesh-thapa-kasari.html
+2026-02-19T02:02:33: [Cheerio] ✅ Dense-block heuristic (278 lines)
+2026-02-19T02:02:35: [LRCLIB] ❌ Not found: "Bikki Gurung - Mari Jau [ OFFICIAL MV ]"
+2026-02-19T02:02:35: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
+2026-02-19T02:02:37: [Playwright] Result: 284 lines
+2026-02-19T02:02:46: 
+2026-02-19T02:02:46: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T02:02:46: scraper > URL: https://mychords.net/yabesh-thapa/223516-yabesh-thapa-kasari.html
+2026-02-19T02:02:46: [Cheerio] Fetching: https://mychords.net/yabesh-thapa/223516-yabesh-thapa-kasari.html
+2026-02-19T02:02:47: [Cheerio] ✅ Dense-block heuristic (278 lines)
+2026-02-19T02:04:22: 
+2026-02-19T02:04:22: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T02:04:22: scraper > URL: https://paankopat.com/2021/06/06/ae-mutu-lyrics-and-chords-by-yabesh-thapa-and-zeroo/
+2026-02-19T02:04:22: [Cheerio] Fetching: https://paankopat.com/2021/06/06/ae-mutu-lyrics-and-chords-by-yabesh-thapa-and-zeroo/
+2026-02-19T02:04:24: [Cheerio] ✅ Readability (6 lines)
+2026-02-19T02:06:42: [youtube] Suggestions request: ma
+2026-02-19T02:06:43: [youtube] Suggestions request: ma
+2026-02-19T02:06:44: [youtube] Suggestions request: ma m
+2026-02-19T02:06:45: [youtube] Suggestions request: ma mare
+2026-02-19T02:06:47: [youtube] Search request: ma mare pani swar
+2026-02-19T02:06:48: [youtube] Search returned 19 results
+2026-02-19T02:06:51: [dl] new request id mlstlnf1-9434bcmn url https://www.youtube.com/watch?v=lsqbpw67hSs
+2026-02-19T02:06:51: [setP] mlstlnf1-9434bcmn 0.05
+2026-02-19T02:06:53: [progress] id mlstlnf1-9434bcmn -> 0.05
+2026-02-19T02:06:54: [setP] mlstlnf1-9434bcmn 0.15
+2026-02-19T02:06:54: [dl] Starting yt-dlp audio download...
+2026-02-19T02:06:54: [yt-dlp] Running command: yt-dlp --proxy http://10.8.0.2:3128 --user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 --extractor-args youtube:player_client=android -f bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio[ext=aac]/bestaudio[acodec=aac]/bestaudio/best -x --audio-format mp3 --audio-quality 0 --no-playlist --no-warnings --no-progress --retries 3 --fragment-retries 3 -o /tmp/audio_1771466814251_unwh0u.mp3 https://www.youtube.com/watch?v=lsqbpw67hSs
+2026-02-19T02:06:55: [progress] id mlstlnf1-9434bcmn -> 0.15
+2026-02-19T02:06:57: [progress] id mlstlnf1-9434bcmn -> 0.15
+2026-02-19T02:06:59: [progress] id mlstlnf1-9434bcmn -> 0.15
+2026-02-19T02:07:01: [progress] id mlstlnf1-9434bcmn -> 0.15
+2026-02-19T02:07:03: [progress] id mlstlnf1-9434bcmn -> 0.15
+2026-02-19T02:07:05: [progress] id mlstlnf1-9434bcmn -> 0.15
+2026-02-19T02:07:07: [progress] id mlstlnf1-9434bcmn -> 0.15
+2026-02-19T02:07:09: [progress] id mlstlnf1-9434bcmn -> 0.15
+2026-02-19T02:07:11: [progress] id mlstlnf1-9434bcmn -> 0.15
+2026-02-19T02:07:13: [progress] id mlstlnf1-9434bcmn -> 0.15
+2026-02-19T02:07:15: [progress] id mlstlnf1-9434bcmn -> 0.15
+2026-02-19T02:07:17: [progress] id mlstlnf1-9434bcmn -> 0.15
+2026-02-19T02:07:19: [progress] id mlstlnf1-9434bcmn -> 0.15
+2026-02-19T02:07:19: [yt-dlp] Successfully downloaded audio file, size: 8662687 bytes
+2026-02-19T02:07:19: [yt-dlp] Valid ID3 header detected
+2026-02-19T02:07:19: [dl] Saved to streaming cache: lsqbpw67hSs
+2026-02-19T02:07:19: [setP] mlstlnf1-9434bcmn 1
+2026-02-19T02:07:19: [audio] Serving cached file for lsqbpw67hSs (8.3 MB) (full)
