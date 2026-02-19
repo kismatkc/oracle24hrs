@@ -1,7 +1,6 @@
 // app/music/app.ts
 import express from "express";
 import CORS from "cors";
-import compression from "compression";
 import { exec } from "child_process";
 
 import { createRequire } from "module";
@@ -32,7 +31,7 @@ const BODY_LIMIT = process.env.BODY_LIMIT || "25mb";
 
 app.use(CORS({ origin: "*" }));
 app.options(/.*/, CORS({ origin: "*" }));
-app.use(compression()); // gzip/deflate all responses — lyrics, JSON, etc.
+// gzip handled by nginx — no need for Express compression
 app.use(express.json({ limit: BODY_LIMIT }));
 app.use(express.urlencoded({ extended: true, limit: BODY_LIMIT }));
 

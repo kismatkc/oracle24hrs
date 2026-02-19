@@ -4,6 +4,7 @@ import { randomUUID } from "node:crypto";
 import { spawn } from "node:child_process";
 import * as fs from "node:fs";
 import * as path from "node:path";
+import { appRedis } from "../../../lib/appRedis.js";
 // Constants
 const COMMON_ARGS = [
     "--proxy",
@@ -17,14 +18,16 @@ const COMMON_ARGS = [
 const HARD_TIMEOUT = 1000 * 180;
 const MAX_ASSUMED_SIZE = 1024 * 1024 * 20;
 const MIN_VALID_AUDIO_SIZE = 1024;
-const progress = {};
+// Redis-backed progress store for cluster-mode safety
+const PROG_PREFIX = "dl-progress:";
+const PROG_TTL = 300; // 5 min
 const setP = (id, p) => {
-    progress[id] = p;
     console.log("[setP]", id, p);
-    // Auto-cleanup completed entries to prevent unbounded memory growth
+    appRedis.set(PROG_PREFIX + id, String(p), "EX", PROG_TTL).catch(() => { });
     if (p >= 1) {
+        // Auto-cleanup after 60s
         setTimeout(() => {
-            delete progress[id];
+            appRedis.del(PROG_PREFIX + id).catch(() => { });
         }, 60000);
     }
 };
@@ -343,9 +346,10 @@ async function downloadMp3(req, res) {
         res.status(500).json({ error: error.message });
     }
 }
-function getProgress(req, res) {
+async function getProgress(req, res) {
     const id = req.params.id;
-    const val = progress[id] ?? 0;
+    const raw = await appRedis.get(PROG_PREFIX + id);
+    const val = raw ? parseFloat(raw) : 0;
     console.log("[progress] id", id, "->", val);
     res.json({ progress: val });
 }
