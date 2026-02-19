@@ -1,305 +1,1859 @@
-2026-02-17T02:57:25: 
-2026-02-17T02:57:25: ──────── LYRICS REQUEST (ALL SOURCES) ────────
-2026-02-17T02:57:25: scraper > songName: Bhool | ALBATROSS
-2026-02-17T02:57:25: scraper > artist: Albatross Nepal - Official
-2026-02-17T02:57:25: scraper > duration: 254
-2026-02-17T02:57:25: 
-2026-02-17T02:57:25: ──────── PARALLEL: LRCLIB + GENIUS + GOOGLE ────────
-2026-02-17T02:57:25: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Bhool+%7C+ALBATROSS&artist_name=Albatross+Nepal+-+Official&duration=254
-2026-02-17T02:57:25: [Genius] Searching: "Bhool | ALBATROSS Albatross Nepal - Official"
-2026-02-17T02:57:25: [Google] Searching: "bhool | albatross"
-2026-02-17T02:57:25: [Genius] ❌ No complete lyrics result for "Bhool | ALBATROSS Albatross Nepal - Official"
-2026-02-17T02:57:25: [Google] Returned 10 results
-2026-02-17T02:57:28: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
-2026-02-17T02:57:28: 
-2026-02-17T02:57:28: ──────── PARALLEL: CHEERIO + PLAYWRIGHT (link 1) ────────
-2026-02-17T02:57:28: scraper > First URL: https://www.chordie.com/chord.pere/www.azchords.com/a/albatross-tabs-49376/nischal-tabs-911826.html
-2026-02-17T02:57:28: [Cheerio] Fetching: https://www.chordie.com/chord.pere/www.azchords.com/a/albatross-tabs-49376/nischal-tabs-911826.html
-2026-02-17T02:57:28: [Playwright] Navigating: https://www.chordie.com/chord.pere/www.azchords.com/a/albatross-tabs-49376/nischal-tabs-911826.html
-2026-02-17T02:57:29: [Cheerio] ✅ Readability (90 lines)
-2026-02-17T02:57:42: [Playwright] Result: 100 lines
-2026-02-17T02:57:42: 
-2026-02-17T02:57:42: ── RESULTS SUMMARY ──
-2026-02-17T02:57:42:   LRCLIB:     ❌
-2026-02-17T02:57:42:   Genius:     ❌
-2026-02-17T02:57:42:   Google:     10 URLs
-2026-02-17T02:57:42:   Cheerio#1:  ✅ 90 lines
-2026-02-17T02:57:42:   Playwright#1: ✅ 100 lines
-2026-02-17T03:09:24: 
-2026-02-17T03:09:24: ──────── LYRICS REQUEST (ALL SOURCES) ────────
-2026-02-17T03:09:24: scraper > songName: Bhool | ALBATROSS
-2026-02-17T03:09:24: scraper > artist: Albatross Nepal - Official
-2026-02-17T03:09:24: scraper > duration: 254
-2026-02-17T03:09:24: 
-2026-02-17T03:09:24: ──────── PARALLEL: LRCLIB + GENIUS + GOOGLE ────────
-2026-02-17T03:09:24: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Bhool+%7C+ALBATROSS&artist_name=Albatross+Nepal+-+Official&duration=254
-2026-02-17T03:09:24: [Genius] Searching: "Bhool | ALBATROSS Albatross Nepal - Official"
-2026-02-17T03:09:24: [Google] Searching: "bhool | albatross"
-2026-02-17T03:09:25: [Genius] ❌ No complete lyrics result for "Bhool | ALBATROSS Albatross Nepal - Official"
-2026-02-17T03:09:25: [Google] Returned 10 results
-2026-02-17T03:09:27: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
-2026-02-17T03:09:27: 
-2026-02-17T03:09:27: ──────── PARALLEL: CHEERIO + PLAYWRIGHT (link 1) ────────
-2026-02-17T03:09:27: scraper > First URL: https://www.chordie.com/chord.pere/www.azchords.com/a/albatross-tabs-49376/nischal-tabs-911826.html
-2026-02-17T03:09:27: [Cheerio] Fetching: https://www.chordie.com/chord.pere/www.azchords.com/a/albatross-tabs-49376/nischal-tabs-911826.html
-2026-02-17T03:09:27: [Playwright] Navigating: https://www.chordie.com/chord.pere/www.azchords.com/a/albatross-tabs-49376/nischal-tabs-911826.html
-2026-02-17T03:09:28: [Cheerio] ✅ Readability (90 lines)
-2026-02-17T03:09:41: [Playwright] Result: 100 lines
-2026-02-17T03:09:41: 
-2026-02-17T03:09:41: ── RESULTS SUMMARY ──
-2026-02-17T03:09:41:   LRCLIB:     ❌
-2026-02-17T03:09:41:   Genius:     ❌
-2026-02-17T03:09:41:   Google:     10 URLs
-2026-02-17T03:09:41:   Cheerio#1:  ✅ 90 lines
-2026-02-17T03:09:41:   Playwright#1: ✅ 100 lines
-2026-02-18T01:46:41: [youtube] Suggestions request: dave
-2026-02-18T01:46:41: [youtube] Creating fresh Innertube client...
-2026-02-18T01:46:41: [youtube] Innertube client initialized
-2026-02-18T01:46:45: [youtube] Suggestions request: save me now
-2026-02-18T01:46:46: [youtube] Search request: save me now arthur gunn
-2026-02-18T01:46:47: [youtube] Search returned 19 results
-2026-02-18T01:46:49: [dl] new request id mlrdg1ts-v0tdv86l url https://www.youtube.com/watch?v=b0fgETOm2UQ
-2026-02-18T01:46:49: [setP] mlrdg1ts-v0tdv86l 0.05
-2026-02-18T01:46:51: [progress] id mlrdg1ts-v0tdv86l -> 0.05
-2026-02-18T01:46:52: [setP] mlrdg1ts-v0tdv86l 0.15
-2026-02-18T01:46:52: [dl] Starting yt-dlp audio download...
-2026-02-18T01:46:52: [yt-dlp] Running command: yt-dlp --proxy http://10.8.0.2:3128 --user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 --extractor-args youtube:player_client=android -f bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio[ext=aac]/bestaudio[acodec=aac]/bestaudio/best -x --audio-format mp3 --audio-quality 0 --no-playlist --no-warnings --no-progress --retries 3 --fragment-retries 3 -o /tmp/audio_1771379212540_rpubq.mp3 https://www.youtube.com/watch?v=b0fgETOm2UQ
-2026-02-18T01:46:53: [progress] id mlrdg1ts-v0tdv86l -> 0.15
-2026-02-18T01:46:55: [progress] id mlrdg1ts-v0tdv86l -> 0.15
-2026-02-18T01:46:57: [progress] id mlrdg1ts-v0tdv86l -> 0.15
-2026-02-18T01:46:59: [progress] id mlrdg1ts-v0tdv86l -> 0.15
-2026-02-18T01:47:01: [progress] id mlrdg1ts-v0tdv86l -> 0.15
-2026-02-18T01:47:03: [progress] id mlrdg1ts-v0tdv86l -> 0.15
-2026-02-18T01:47:05: [progress] id mlrdg1ts-v0tdv86l -> 0.15
-2026-02-18T01:47:07: [progress] id mlrdg1ts-v0tdv86l -> 0.15
-2026-02-18T01:47:09: [progress] id mlrdg1ts-v0tdv86l -> 0.15
-2026-02-18T01:47:11: [progress] id mlrdg1ts-v0tdv86l -> 0.15
-2026-02-18T01:47:13: [yt-dlp] Successfully downloaded audio file, size: 7620349 bytes
-2026-02-18T01:47:13: [yt-dlp] Valid ID3 header detected
-2026-02-18T01:47:13: [dl] Saved to streaming cache: b0fgETOm2UQ
-2026-02-18T01:47:13: [setP] mlrdg1ts-v0tdv86l 1
-2026-02-18T01:47:13: [audio] Serving cached file for b0fgETOm2UQ (7.3 MB) (full)
-2026-02-18T01:47:53: 
-2026-02-18T01:47:53: ──────── LYRICS REQUEST (ALL SOURCES) ────────
-2026-02-18T01:47:53: scraper > songName: Arthur Gunn - Save Me Now (Official Music Video)
-2026-02-18T01:47:53: scraper > artist: Arthur Gunn [OFFICIAL]
-2026-02-18T01:47:53: scraper > duration: 259
-2026-02-18T01:47:53: 
-2026-02-18T01:47:53: ──────── PARALLEL: LRCLIB + GENIUS + GOOGLE ────────
-2026-02-18T01:47:53: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Arthur+Gunn+-+Save+Me+Now+%28Official+Music+Video%29&artist_name=Arthur+Gunn+%5BOFFICIAL%5D&duration=259
-2026-02-18T01:47:53: [Genius] Searching: "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
-2026-02-18T01:47:53: [Google] Searching: "arthur gunn - save me now (official music video)"
-2026-02-18T01:47:54: [Genius] ❌ No complete lyrics result for "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
-2026-02-18T01:47:54: [Google] Returned 10 results
-2026-02-18T01:47:56: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
-2026-02-18T01:47:56: 
-2026-02-18T01:47:56: ──────── PARALLEL: CHEERIO + PLAYWRIGHT (link 1) ────────
-2026-02-18T01:47:56: scraper > First URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
-2026-02-18T01:47:56: [Cheerio] Fetching: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
-2026-02-18T01:47:56: [Playwright] Navigating: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
-2026-02-18T01:47:58: [Cheerio] ✅ Readability (2 lines)
-2026-02-18T01:48:12: [Playwright] Result: 2 lines
-2026-02-18T01:48:12: 
-2026-02-18T01:48:12: ── RESULTS SUMMARY ──
-2026-02-18T01:48:12:   LRCLIB:     ❌
-2026-02-18T01:48:12:   Genius:     ❌
-2026-02-18T01:48:12:   Google:     10 URLs
-2026-02-18T01:48:12:   Cheerio#1:  ✅ 2 lines
-2026-02-18T01:48:12:   Playwright#1: ✅ 2 lines
-2026-02-18T14:10:09: 
-2026-02-18T14:10:09: ──────── LYRICS REQUEST (ALL SOURCES) ────────
-2026-02-18T14:10:09: scraper > songName: Arthur Gunn - Save Me Now (Official Music Video)
-2026-02-18T14:10:09: scraper > artist: Arthur Gunn [OFFICIAL]
-2026-02-18T14:10:09: scraper > duration: 259
-2026-02-18T14:10:09: 
-2026-02-18T14:10:09: ──────── PARALLEL: LRCLIB + GENIUS + GOOGLE ────────
-2026-02-18T14:10:09: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Arthur+Gunn+-+Save+Me+Now+%28Official+Music+Video%29&artist_name=Arthur+Gunn+%5BOFFICIAL%5D&duration=259
-2026-02-18T14:10:09: [Genius] Searching: "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
-2026-02-18T14:10:09: [Google] Searching: "arthur gunn - save me now (official music video)"
-2026-02-18T14:10:09: [Genius] ❌ No complete lyrics result for "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
-2026-02-18T14:10:09: [Google] Returned 10 results
-2026-02-18T14:10:12: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
-2026-02-18T14:10:12: 
-2026-02-18T14:10:12: ──────── PARALLEL: CHEERIO + PLAYWRIGHT (link 1) ────────
-2026-02-18T14:10:12: scraper > First URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
-2026-02-18T14:10:12: [Cheerio] Fetching: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
-2026-02-18T14:10:12: [Playwright] Navigating: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
-2026-02-18T14:10:13: [Cheerio] ✅ Readability (2 lines)
-2026-02-18T14:10:27: [Playwright] Result: 2 lines
-2026-02-18T14:10:28: 
-2026-02-18T14:10:28: ── RESULTS SUMMARY ──
-2026-02-18T14:10:28:   LRCLIB:     ❌
-2026-02-18T14:10:28:   Genius:     ❌
-2026-02-18T14:10:28:   Google:     10 URLs
-2026-02-18T14:10:28:   Cheerio#1:  ✅ 2 lines
-2026-02-18T14:10:28:   Playwright#1: ✅ 2 lines
-2026-02-18T14:10:39: 
-2026-02-18T14:10:39: ──────── LYRICS REQUEST (ALL SOURCES) ────────
-2026-02-18T14:10:39: scraper > songName: Arthur Gunn - Save Me Now (Official Music Video)
-2026-02-18T14:10:39: scraper > artist: Arthur Gunn [OFFICIAL]
-2026-02-18T14:10:39: scraper > duration: 259
-2026-02-18T14:10:39: 
-2026-02-18T14:10:39: ──────── PARALLEL: LRCLIB + GENIUS + GOOGLE ────────
-2026-02-18T14:10:39: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Arthur+Gunn+-+Save+Me+Now+%28Official+Music+Video%29&artist_name=Arthur+Gunn+%5BOFFICIAL%5D&duration=259
-2026-02-18T14:10:39: [Genius] Searching: "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
-2026-02-18T14:10:39: [Google] Searching: "arthur gunn - save me now (official music video)"
-2026-02-18T14:10:39: [Genius] ❌ No complete lyrics result for "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
-2026-02-18T14:10:40: [Google] Returned 10 results
-2026-02-18T14:10:42: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
-2026-02-18T14:10:42: 
-2026-02-18T14:10:42: ──────── PARALLEL: CHEERIO + PLAYWRIGHT (link 1) ────────
-2026-02-18T14:10:42: scraper > First URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
-2026-02-18T14:10:42: [Cheerio] Fetching: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
-2026-02-18T14:10:42: [Playwright] Navigating: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
-2026-02-18T14:10:44: [Cheerio] ✅ Readability (2 lines)
-2026-02-18T14:10:49: [Playwright] Result: 2 lines
-2026-02-18T14:10:49: 
-2026-02-18T14:10:49: ── RESULTS SUMMARY ──
-2026-02-18T14:10:49:   LRCLIB:     ❌
-2026-02-18T14:10:49:   Genius:     ❌
-2026-02-18T14:10:49:   Google:     10 URLs
-2026-02-18T14:10:49:   Cheerio#1:  ✅ 2 lines
-2026-02-18T14:10:49:   Playwright#1: ✅ 2 lines
-2026-02-18T15:22:37: 
-2026-02-18T15:22:37: ──────── LYRICS REQUEST (ALL SOURCES) ────────
-2026-02-18T15:22:37: scraper > songName: Bhool | ALBATROSS
-2026-02-18T15:22:37: scraper > artist: Albatross Nepal - Official
-2026-02-18T15:22:37: scraper > duration: 254
-2026-02-18T15:22:37: 
-2026-02-18T15:22:37: ──────── PARALLEL: LRCLIB + GENIUS + GOOGLE ────────
-2026-02-18T15:22:37: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Bhool+%7C+ALBATROSS&artist_name=Albatross+Nepal+-+Official&duration=254
-2026-02-18T15:22:37: [Genius] Searching: "Bhool | ALBATROSS Albatross Nepal - Official"
-2026-02-18T15:22:37: [Google] Searching: "bhool | albatross"
-2026-02-18T15:22:38: [Genius] ❌ No complete lyrics result for "Bhool | ALBATROSS Albatross Nepal - Official"
-2026-02-18T15:22:38: [Google] Returned 10 results
-2026-02-18T15:22:40: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
-2026-02-18T15:22:40: 
-2026-02-18T15:22:40: ──────── PARALLEL: CHEERIO + PLAYWRIGHT (link 1) ────────
-2026-02-18T15:22:40: scraper > First URL: https://www.chordie.com/chord.pere/www.azchords.com/a/albatross-tabs-49376/nischal-tabs-911826.html
-2026-02-18T15:22:40: [Cheerio] Fetching: https://www.chordie.com/chord.pere/www.azchords.com/a/albatross-tabs-49376/nischal-tabs-911826.html
-2026-02-18T15:22:40: [Playwright] Navigating: https://www.chordie.com/chord.pere/www.azchords.com/a/albatross-tabs-49376/nischal-tabs-911826.html
-2026-02-18T15:22:41: [Cheerio] ✅ Readability (90 lines)
-2026-02-18T15:22:46: [Playwright] Result: 100 lines
-2026-02-18T15:22:46: 
-2026-02-18T15:22:46: ── RESULTS SUMMARY ──
-2026-02-18T15:22:46:   LRCLIB:     ❌
-2026-02-18T15:22:46:   Genius:     ❌
-2026-02-18T15:22:46:   Google:     10 URLs
-2026-02-18T15:22:46:   Cheerio#1:  ✅ 90 lines
-2026-02-18T15:22:46:   Playwright#1: ✅ 100 lines
-2026-02-18T15:23:02: 
-2026-02-18T15:23:02: ──────── EXTRACT (CHEERIO) ────────
-2026-02-18T15:23:02: scraper > URL: https://www.cowboylyrics.com/tabs/swift-taylor/the-albatross-35137.html
-2026-02-18T15:23:02: [Cheerio] Fetching: https://www.cowboylyrics.com/tabs/swift-taylor/the-albatross-35137.html
-2026-02-18T15:23:03: [Cheerio] ✅ Readability (6 lines)
-2026-02-18T15:23:05: 
-2026-02-18T15:23:05: ──────── EXTRACT (CHEERIO) ────────
-2026-02-18T15:23:05: scraper > URL: https://tabs.ultimate-guitar.com/tab/albatross/bhool-chords-2539722
-2026-02-18T15:23:05: [Cheerio] Fetching: https://tabs.ultimate-guitar.com/tab/albatross/bhool-chords-2539722
-2026-02-18T15:23:05: [Cheerio] ⚠️ Error: Request failed with status code 403
-2026-02-18T15:23:07: 
-2026-02-18T15:23:07: ──────── EXTRACT (CHEERIO) ────────
-2026-02-18T15:23:07: scraper > URL: https://www.ultimate-guitar.com/artist/albatross_30279
-2026-02-18T15:23:07: [Cheerio] Fetching: https://www.ultimate-guitar.com/artist/albatross_30279
-2026-02-18T15:23:07: [Cheerio] ⚠️ Error: Request failed with status code 403
-2026-02-18T15:23:08: 
-2026-02-18T15:23:08: ──────── EXTRACT (CHEERIO) ────────
-2026-02-18T15:23:08: scraper > URL: http://songskord.blogspot.com/2015/08/gm-f-e-kahile-hasenau-gm-f-e-pani-kehi.html
-2026-02-18T15:23:08: [Cheerio] Fetching: http://songskord.blogspot.com/2015/08/gm-f-e-kahile-hasenau-gm-f-e-pani-kehi.html
-2026-02-18T15:23:09: [Cheerio] ✅ Readability (54 lines)
-2026-02-18T15:29:04: [youtube] Suggestions request: alba
-2026-02-18T15:29:04: [youtube] Creating fresh Innertube client...
-2026-02-18T15:29:04: [youtube] Innertube client initialized
-2026-02-18T15:29:06: [youtube] Suggestions request: albatross
-2026-02-18T15:29:08: [youtube] Suggestions request: albatross
-2026-02-18T15:29:11: [youtube] Suggestions request: albatross la
-2026-02-18T15:29:12: [youtube] Suggestions request: albatross lakhau
-2026-02-18T15:29:13: [youtube] Suggestions request: albatross
-2026-02-18T15:29:15: [youtube] Suggestions request: albatross bhool
-2026-02-18T15:29:16: 
-2026-02-18T15:29:16: ──────── LYRICS REQUEST (ALL SOURCES) ────────
-2026-02-18T15:29:16: scraper > songName: albatross bhool
-2026-02-18T15:29:16: scraper > artist: (not provided)
-2026-02-18T15:29:16: scraper > duration: (not provided)
-2026-02-18T15:29:16: 
-2026-02-18T15:29:16: ──────── PARALLEL: LRCLIB + GENIUS + GOOGLE ────────
-2026-02-18T15:29:16: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=albatross+bhool
-2026-02-18T15:29:16: [Genius] Searching: "albatross bhool"
-2026-02-18T15:29:16: [Google] Searching: "albatross bhool"
-2026-02-18T15:29:17: [Google] Returned 10 results
-2026-02-18T15:29:17: [Genius] Found: "Albatross - Bhool (Romanized) by Genius Romanizations" → https://genius.com/Genius-romanizations-albatross-bhool-romanized-lyrics
-2026-02-18T15:29:17: [Cheerio] Fetching: https://genius.com/Genius-romanizations-albatross-bhool-romanized-lyrics
-2026-02-18T15:29:17: [Cheerio] ⚠️ Error: Request failed with status code 403
-2026-02-18T15:29:17: [Genius] Cheerio failed/403 — trying Playwright for Genius page
-2026-02-18T15:29:17: [Playwright] Navigating: https://genius.com/Genius-romanizations-albatross-bhool-romanized-lyrics
-2026-02-18T15:29:19: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
-2026-02-18T15:29:34: [Playwright] Result: 52 lines
-2026-02-18T15:29:34: [Genius] ✅ Scraped 52 lines
-2026-02-18T15:29:34: 
-2026-02-18T15:29:34: ──────── PARALLEL: CHEERIO + PLAYWRIGHT (link 1) ────────
-2026-02-18T15:29:34: scraper > First URL: https://www.tunesnepal.com/albatross/bhool
-2026-02-18T15:29:34: [Cheerio] Fetching: https://www.tunesnepal.com/albatross/bhool
-2026-02-18T15:29:34: [Playwright] Navigating: https://www.tunesnepal.com/albatross/bhool
-2026-02-18T15:29:35: [Cheerio] ⚠️ Error: Request failed with status code 500
-2026-02-18T15:29:36: [Playwright] Result: 2 lines
-2026-02-18T15:29:36: 
-2026-02-18T15:29:36: ── RESULTS SUMMARY ──
-2026-02-18T15:29:36:   LRCLIB:     ❌
-2026-02-18T15:29:36:   Genius:     ✅ 52 lines
-2026-02-18T15:29:36:   Google:     10 URLs
-2026-02-18T15:29:36:   Cheerio#1:  ❌
-2026-02-18T15:29:36:   Playwright#1: ✅ 2 lines
-2026-02-18T15:47:01: 
-2026-02-18T15:47:01: ──────── LYRICS REQUEST (ALL SOURCES) ────────
-2026-02-18T15:47:01: scraper > songName: Bhool | ALBATROSS
-2026-02-18T15:47:01: scraper > artist: Albatross Nepal - Official
-2026-02-18T15:47:01: scraper > duration: 254
-2026-02-18T15:47:01: 
-2026-02-18T15:47:01: ──────── PARALLEL: LRCLIB + GENIUS + GOOGLE ────────
-2026-02-18T15:47:01: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Bhool+%7C+ALBATROSS&artist_name=Albatross+Nepal+-+Official&duration=254
-2026-02-18T15:47:01: [Genius] Searching: "Bhool | ALBATROSS Albatross Nepal - Official"
-2026-02-18T15:47:01: [Google] Searching: "bhool | albatross"
-2026-02-18T15:47:02: [Genius] ❌ No complete lyrics result for "Bhool | ALBATROSS Albatross Nepal - Official"
-2026-02-18T15:47:02: [Google] Returned 10 results
-2026-02-18T15:47:04: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
-2026-02-18T15:47:04: 
-2026-02-18T15:47:04: ──────── PARALLEL: CHEERIO + PLAYWRIGHT (link 1) ────────
-2026-02-18T15:47:04: scraper > First URL: https://www.chordie.com/chord.pere/www.azchords.com/a/albatross-tabs-49376/nischal-tabs-911826.html
-2026-02-18T15:47:04: [Cheerio] Fetching: https://www.chordie.com/chord.pere/www.azchords.com/a/albatross-tabs-49376/nischal-tabs-911826.html
-2026-02-18T15:47:04: [Playwright] Navigating: https://www.chordie.com/chord.pere/www.azchords.com/a/albatross-tabs-49376/nischal-tabs-911826.html
-2026-02-18T15:47:05: [Cheerio] ✅ Readability (90 lines)
-2026-02-18T15:47:18: [Playwright] Result: 100 lines
-2026-02-18T15:47:18: 
-2026-02-18T15:47:18: ── RESULTS SUMMARY ──
-2026-02-18T15:47:18:   LRCLIB:     ❌
-2026-02-18T15:47:18:   Genius:     ❌
-2026-02-18T15:47:18:   Google:     10 URLs
-2026-02-18T15:47:18:   Cheerio#1:  ✅ 90 lines
-2026-02-18T15:47:18:   Playwright#1: ✅ 100 lines
-2026-02-18T15:47:18: 
-2026-02-18T15:47:18: ──────── LYRICS REQUEST (ALL SOURCES) ────────
-2026-02-18T15:47:18: scraper > songName: Dolby Atmos 5.1 Surround Sound Test
-2026-02-18T15:47:18: scraper > artist: JD | Media
-2026-02-18T15:47:18: scraper > duration: 64
-2026-02-18T15:47:18: 
-2026-02-18T15:47:18: ──────── PARALLEL: LRCLIB + GENIUS + GOOGLE ────────
-2026-02-18T15:47:18: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Dolby+Atmos+5.1+Surround+Sound+Test&artist_name=JD+%7C+Media&duration=64
-2026-02-18T15:47:18: [Genius] Searching: "Dolby Atmos 5.1 Surround Sound Test JD | Media"
-2026-02-18T15:47:18: [Google] Searching: "dolby atmos 5.1 surround sound test"
-2026-02-18T15:47:19: [Genius] ❌ No complete lyrics result for "Dolby Atmos 5.1 Surround Sound Test JD | Media"
-2026-02-18T15:47:19: [Google] Returned 10 results
-2026-02-18T15:47:21: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
-2026-02-18T15:47:21: 
-2026-02-18T15:47:21: ──────── PARALLEL: CHEERIO + PLAYWRIGHT (link 1) ────────
-2026-02-18T15:47:21: scraper > First URL: https://support.apple.com/en-ke/guide/logicpro/lgcp179f27c1/mac
-2026-02-18T15:47:21: [Cheerio] Fetching: https://support.apple.com/en-ke/guide/logicpro/lgcp179f27c1/mac
-2026-02-18T15:47:21: [Playwright] Navigating: https://support.apple.com/en-ke/guide/logicpro/lgcp179f27c1/mac
-2026-02-18T15:47:24: [Cheerio] ✅ Readability (136 lines)
-2026-02-18T15:47:25: [Playwright] Result: 91 lines
-2026-02-18T15:47:25: 
-2026-02-18T15:47:25: ── RESULTS SUMMARY ──
-2026-02-18T15:47:25:   LRCLIB:     ❌
-2026-02-18T15:47:25:   Genius:     ❌
-2026-02-18T15:47:25:   Google:     10 URLs
-2026-02-18T15:47:25:   Cheerio#1:  ✅ 136 lines
-2026-02-18T15:47:25:   Playwright#1: ✅ 91 lines
+2026-02-19T00:29:26: [shazam] Received recording.m4a (168.8 KB) → /home/ubuntu/Projects/oracle24hrs/uploads/shazam-tmp/fabaf59fbbae085b0173a16e698022b1
+2026-02-19T00:29:27: [shazam/py stderr] skipping junk at 57699 bytes
+2026-02-19T00:29:27: skipping junk at 57906 bytes
+2026-02-19T00:29:27: skipping junk at 58102 bytes
+2026-02-19T00:29:27: skipping junk at 58907 bytes
+2026-02-19T00:29:27: skipping junk at 59487 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 60934 bytes
+2026-02-19T00:29:27: skipping junk at 61195 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 64204 bytes
+2026-02-19T00:29:27: skipping junk at 64467 bytes
+2026-02-19T00:29:27: skipping junk at 65280 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 66830 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 69039 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 71617 bytes
+2026-02-19T00:29:27: skipping junk at 72399 bytes
+2026-02-19T00:29:27: skipping junk at 72684 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 72970 bytes
+2026-02-19T00:29:27: skipping junk at 73106 bytes
+2026-02-19T00:29:27: skipping junk at 73228 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 81680 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 83015 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 83700 bytes
+2026-02-19T00:29:27: skipping junk at 83984 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 87775 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 89131 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 92153 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 93966 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 95427 bytes
+2026-02-19T00:29:27: skipping junk at 95713 bytes
+2026-02-19T00:29:27: skipping junk at 96275 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 98043 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 99781 bytes
+2026-02-19T00:29:27: skipping junk at 100068 bytes
+2026-02-19T00:29:27: skipping junk at 100339 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 103876 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 104948 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 105550 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 106663 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 108484 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 109365 bytes
+2026-02-19T00:29:27: skipping junk at 109676 bytes
+2026-02-19T00:29:27: skipping junk at 109962 bytes
+2026-02-19T00:29:27: skipping junk at 110239 bytes
+2026-02-19T00:29:27: skipping junk at 110531 bytes
+2026-02-19T00:29:27: skipping junk at 110828 bytes
+2026-02-19T00:29:27: skipping junk at 111121 bytes
+2026-02-19T00:29:27: skipping junk at 111415 bytes
+2026-02-19T00:29:27: skipping junk at 111711 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 112597 bytes
+2026-02-19T00:29:27: skipping junk at 112890 bytes
+2026-02-19T00:29:27: skipping junk at 113174 bytes
+2026-02-19T00:29:27: skipping junk at 113473 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 117328 bytes
+2026-02-19T00:29:27: skipping junk at 117635 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 120615 bytes
+2026-02-19T00:29:27: skipping junk at 121207 bytes
+2026-02-19T00:29:27: skipping junk at 122381 bytes
+2026-02-19T00:29:27: skipping junk at 122947 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 125049 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 126490 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 130911 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 132421 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 134656 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 135582 bytes
+2026-02-19T00:29:27: skipping junk at 136108 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 141356 bytes
+2026-02-19T00:29:27: skipping junk at 141647 bytes
+2026-02-19T00:29:27: skipping junk at 141937 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 144923 bytes
+2026-02-19T00:29:27: skipping junk at 146117 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 148173 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 149625 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 151922 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 157737 bytes
+2026-02-19T00:29:27: skipping junk at 158188 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 158627 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 158969 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 164800 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 166286 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 167863 bytes
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: invalid mpeg audio header
+2026-02-19T00:29:27: skipping junk at 169454 bytes
+2026-02-19T00:29:27: skipping junk at 169748 bytes
+2026-02-19T00:29:27: [shazam] Match: End of Beginning
+2026-02-19T00:29:57: [shazam] Received recording.m4a (167.1 KB) → /home/ubuntu/Projects/oracle24hrs/uploads/shazam-tmp/9115d0b3367e96b5d6e29a3ca71a43b8
+2026-02-19T00:29:58: [shazam/py stderr] invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 59216 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 68827 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 72066 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 82703 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 85320 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 86903 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 87851 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 96450 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 98841 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 99513 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 104574 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 108003 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 113794 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 114033 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 115528 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 116988 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 118362 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 119251 bytes
+2026-02-19T00:29:58: skipping junk at 119264 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 121636 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 126215 bytes
+2026-02-19T00:29:58: skipping junk at 126694 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 130227 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 131058 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 133439 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 140556 bytes
+2026-02-19T00:29:58: skipping junk at 140699 bytes
+2026-02-19T00:29:58: skipping junk at 140820 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 143210 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 144650 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 145557 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 151428 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 152301 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 152879 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: skipping junk at 158909 bytes
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: invalid mpeg audio header
+2026-02-19T00:29:58: [shazam] Match: Hotel California (Live)
+2026-02-19T00:30:26: 
+2026-02-19T00:30:26: ──────── LRCLIB (individual) ────────
+2026-02-19T00:30:26: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Hotel+California+%28Live%29+Eagles
+2026-02-19T00:30:26: 
+2026-02-19T00:30:26: ──────── GENIUS (individual) ────────
+2026-02-19T00:30:26: [Genius] Searching: "Hotel California (Live) Eagles"
+2026-02-19T00:30:26: 
+2026-02-19T00:30:26: ──────── GOOGLE URLS (individual) ────────
+2026-02-19T00:30:26: [Google] Searching: "hotel california (live) eagles"
+2026-02-19T00:30:27: [Genius] Found: "Hotel California (Live Millennium Concert Version) by Eagles" → https://genius.com/Eagles-hotel-california-live-millennium-concert-version-lyrics
+2026-02-19T00:30:27: [Cheerio] Fetching: https://genius.com/Eagles-hotel-california-live-millennium-concert-version-lyrics
+2026-02-19T00:30:27: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-02-19T00:30:27: [Genius] Cheerio failed/403 — trying Playwright for Genius page
+2026-02-19T00:30:27: [Playwright] Navigating: https://genius.com/Eagles-hotel-california-live-millennium-concert-version-lyrics
+2026-02-19T00:30:27: [Google] Returned 10 results
+2026-02-19T00:30:27: 
+2026-02-19T00:30:27: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T00:30:27: scraper > URL: https://www.chordie.com/chord.pere/www.xguitar.com/guitar-tabs/eagles/hotel_california/hotel_california.txt
+2026-02-19T00:30:27: [Cheerio] Fetching: https://www.chordie.com/chord.pere/www.xguitar.com/guitar-tabs/eagles/hotel_california/hotel_california.txt
+2026-02-19T00:30:27: 
+2026-02-19T00:30:27: ──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-19T00:30:27: scraper > URL: https://www.chordie.com/chord.pere/www.xguitar.com/guitar-tabs/eagles/hotel_california/hotel_california.txt
+2026-02-19T00:30:27: [Playwright] Navigating: https://www.chordie.com/chord.pere/www.xguitar.com/guitar-tabs/eagles/hotel_california/hotel_california.txt
+2026-02-19T00:30:28: [Cheerio] ✅ Readability (74 lines)
+2026-02-19T00:30:29: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
+2026-02-19T00:30:34: [Playwright] Result: 74 lines
+2026-02-19T00:30:39: [shazam] Received recording.m4a (166.5 KB) → /home/ubuntu/Projects/oracle24hrs/uploads/shazam-tmp/c2ba1c41188728fc3073343caca25b2d
+2026-02-19T00:30:40: [shazam/py stderr] invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 58594 bytes
+2026-02-19T00:30:40: skipping junk at 58821 bytes
+2026-02-19T00:30:40: skipping junk at 59049 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 60462 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 61785 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 62723 bytes
+2026-02-19T00:30:40: skipping junk at 62972 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 64518 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 70189 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 71793 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 73132 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 77696 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 78155 bytes
+2026-02-19T00:30:40: skipping junk at 78401 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 81151 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 81631 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 82787 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 84501 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 86991 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 89936 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 90637 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 114938 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 117986 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 124995 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 128713 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 130474 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 133356 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 135067 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 143824 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 144449 bytes
+2026-02-19T00:30:40: skipping junk at 145004 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 148649 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 150613 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 153591 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 161041 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 163344 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 164683 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 167165 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: skipping junk at 168508 bytes
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: invalid mpeg audio header
+2026-02-19T00:30:40: [shazam] No match: no_match
+2026-02-19T00:30:43: [Playwright] Result: 68 lines
+2026-02-19T00:30:43: [Genius] ✅ Scraped 68 lines
+2026-02-19T00:31:20: [shazam] Received recording.m4a (170.8 KB) → /home/ubuntu/Projects/oracle24hrs/uploads/shazam-tmp/94b9abe2110620658be164ec2081fe7b
+2026-02-19T00:31:21: [shazam/py stderr] invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 61149 bytes
+2026-02-19T00:31:21: skipping junk at 61372 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 64589 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 70248 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 76446 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 78043 bytes
+2026-02-19T00:31:21: skipping junk at 78146 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 78678 bytes
+2026-02-19T00:31:21: skipping junk at 78904 bytes
+2026-02-19T00:31:21: skipping junk at 79221 bytes
+2026-02-19T00:31:21: skipping junk at 79503 bytes
+2026-02-19T00:31:21: skipping junk at 80563 bytes
+2026-02-19T00:31:21: skipping junk at 80838 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 81352 bytes
+2026-02-19T00:31:21: skipping junk at 81952 bytes
+2026-02-19T00:31:21: skipping junk at 82231 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 84818 bytes
+2026-02-19T00:31:21: skipping junk at 85102 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 87640 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 89288 bytes
+2026-02-19T00:31:21: skipping junk at 89536 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 93089 bytes
+2026-02-19T00:31:21: skipping junk at 94152 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 102146 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 104381 bytes
+2026-02-19T00:31:21: skipping junk at 105073 bytes
+2026-02-19T00:31:21: skipping junk at 105371 bytes
+2026-02-19T00:31:21: skipping junk at 105666 bytes
+2026-02-19T00:31:21: skipping junk at 105955 bytes
+2026-02-19T00:31:21: skipping junk at 106251 bytes
+2026-02-19T00:31:21: skipping junk at 106534 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 108428 bytes
+2026-02-19T00:31:21: skipping junk at 108694 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 115211 bytes
+2026-02-19T00:31:21: skipping junk at 115499 bytes
+2026-02-19T00:31:21: skipping junk at 115835 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 116762 bytes
+2026-02-19T00:31:21: skipping junk at 116811 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 117907 bytes
+2026-02-19T00:31:21: skipping junk at 118202 bytes
+2026-02-19T00:31:21: skipping junk at 118850 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 120338 bytes
+2026-02-19T00:31:21: skipping junk at 120662 bytes
+2026-02-19T00:31:21: skipping junk at 120946 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 123051 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 125426 bytes
+2026-02-19T00:31:21: skipping junk at 125759 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 127757 bytes
+2026-02-19T00:31:21: skipping junk at 128082 bytes
+2026-02-19T00:31:21: skipping junk at 128412 bytes
+2026-02-19T00:31:21: skipping junk at 128694 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 130463 bytes
+2026-02-19T00:31:21: skipping junk at 130763 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 133145 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 135204 bytes
+2026-02-19T00:31:21: skipping junk at 135531 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 137362 bytes
+2026-02-19T00:31:21: skipping junk at 137557 bytes
+2026-02-19T00:31:21: skipping junk at 137855 bytes
+2026-02-19T00:31:21: skipping junk at 139118 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 142417 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 145405 bytes
+2026-02-19T00:31:21: skipping junk at 145683 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 147428 bytes
+2026-02-19T00:31:21: skipping junk at 147745 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 149834 bytes
+2026-02-19T00:31:21: skipping junk at 150148 bytes
+2026-02-19T00:31:21: skipping junk at 150445 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 153850 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 154476 bytes
+2026-02-19T00:31:21: skipping junk at 155080 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 156881 bytes
+2026-02-19T00:31:21: skipping junk at 157494 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 159306 bytes
+2026-02-19T00:31:21: skipping junk at 159617 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 160464 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 162253 bytes
+2026-02-19T00:31:21: skipping junk at 162566 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 164357 bytes
+2026-02-19T00:31:21: skipping junk at 164626 bytes
+2026-02-19T00:31:21: skipping junk at 164932 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 166706 bytes
+2026-02-19T00:31:21: skipping junk at 166989 bytes
+2026-02-19T00:31:21: skipping junk at 167341 bytes
+2026-02-19T00:31:21: skipping junk at 167642 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 169421 bytes
+2026-02-19T00:31:21: skipping junk at 169718 bytes
+2026-02-19T00:31:21: skipping junk at 170007 bytes
+2026-02-19T00:31:21: skipping junk at 170307 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: skipping junk at 171471 bytes
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: invalid mpeg audio header
+2026-02-19T00:31:21: [shazam] Match: Sirfula Siraima
+2026-02-19T00:32:06: 
+2026-02-19T00:32:06: ──────── LRCLIB (individual) ────────
+2026-02-19T00:32:06: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Sirfula+Siraima+Nepathya
+2026-02-19T00:32:06: 
+2026-02-19T00:32:06: ──────── GENIUS (individual) ────────
+2026-02-19T00:32:06: [Genius] Searching: "Sirfula Siraima Nepathya"
+2026-02-19T00:32:06: 
+2026-02-19T00:32:06: ──────── GOOGLE URLS (individual) ────────
+2026-02-19T00:32:06: [Google] Searching: "sirfula siraima nepathya"
+2026-02-19T00:32:06: [Genius] ❌ No complete lyrics result for "Sirfula Siraima Nepathya"
+2026-02-19T00:32:06: [Google] Returned 10 results
+2026-02-19T00:32:06: 
+2026-02-19T00:32:06: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T00:32:06: scraper > URL: https://tabs.musiccafenepal.com/nepathya/sirfula-siraima
+2026-02-19T00:32:06: [Cheerio] Fetching: https://tabs.musiccafenepal.com/nepathya/sirfula-siraima
+2026-02-19T00:32:06: 
+2026-02-19T00:32:06: ──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-19T00:32:06: scraper > URL: https://tabs.musiccafenepal.com/nepathya/sirfula-siraima
+2026-02-19T00:32:06: [Playwright] Navigating: https://tabs.musiccafenepal.com/nepathya/sirfula-siraima
+2026-02-19T00:32:08: [Cheerio] ✅ Readability (2 lines)
+2026-02-19T00:32:09: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
+2026-02-19T00:32:19: [shazam] Received recording.m4a (170.9 KB) → /home/ubuntu/Projects/oracle24hrs/uploads/shazam-tmp/0fc9aa3376da63245a62eb899c5f1a65
+2026-02-19T00:32:20: [shazam/py stderr] invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 59439 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 60249 bytes
+2026-02-19T00:32:20: skipping junk at 61370 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 63668 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 64869 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 67220 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 67765 bytes
+2026-02-19T00:32:20: skipping junk at 67960 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 69702 bytes
+2026-02-19T00:32:20: skipping junk at 69991 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 71956 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 72950 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 74240 bytes
+2026-02-19T00:32:20: skipping junk at 74502 bytes
+2026-02-19T00:32:20: skipping junk at 74773 bytes
+2026-02-19T00:32:20: skipping junk at 75550 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 76321 bytes
+2026-02-19T00:32:20: skipping junk at 76588 bytes
+2026-02-19T00:32:20: skipping junk at 78730 bytes
+2026-02-19T00:32:20: skipping junk at 79004 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 79649 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 80809 bytes
+2026-02-19T00:32:20: skipping junk at 81087 bytes
+2026-02-19T00:32:20: skipping junk at 81372 bytes
+2026-02-19T00:32:20: skipping junk at 81654 bytes
+2026-02-19T00:32:20: skipping junk at 81942 bytes
+2026-02-19T00:32:20: skipping junk at 83330 bytes
+2026-02-19T00:32:20: skipping junk at 83890 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 87915 bytes
+2026-02-19T00:32:20: skipping junk at 88411 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 89612 bytes
+2026-02-19T00:32:20: skipping junk at 89858 bytes
+2026-02-19T00:32:20: skipping junk at 90119 bytes
+2026-02-19T00:32:20: skipping junk at 90407 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 95845 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 97308 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 97983 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 101039 bytes
+2026-02-19T00:32:20: skipping junk at 101317 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 105304 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 106249 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 107181 bytes
+2026-02-19T00:32:20: skipping junk at 107809 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 109849 bytes
+2026-02-19T00:32:20: skipping junk at 110138 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 117210 bytes
+2026-02-19T00:32:20: skipping junk at 117513 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 123731 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 128457 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 132835 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 138605 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 139488 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 140369 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 147825 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 155180 bytes
+2026-02-19T00:32:20: skipping junk at 155475 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 158151 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 159674 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 161096 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 161685 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 162575 bytes
+2026-02-19T00:32:20: skipping junk at 162874 bytes
+2026-02-19T00:32:20: skipping junk at 163816 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 164706 bytes
+2026-02-19T00:32:20: skipping junk at 164821 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 165317 bytes
+2026-02-19T00:32:20: skipping junk at 165915 bytes
+2026-02-19T00:32:20: skipping junk at 166197 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 169983 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: skipping junk at 172909 bytes
+2026-02-19T00:32:20: skipping junk at 173200 bytes
+2026-02-19T00:32:20: skipping junk at 173507 bytes
+2026-02-19T00:32:20: skipping junk at 174027 bytes
+2026-02-19T00:32:20: skipping junk at 174067 bytes
+2026-02-19T00:32:20: skipping junk at 174359 bytes
+2026-02-19T00:32:20: invalid mpeg audio header
+2026-02-19T00:32:20: [shazam] No match: no_match
+2026-02-19T00:32:21: [Playwright] Result: 2 lines
+2026-02-19T00:32:39: [shazam] Received recording.m4a (168.1 KB) → /home/ubuntu/Projects/oracle24hrs/uploads/shazam-tmp/6f176f226f7734dd3e29dcc260342dcb
+2026-02-19T00:32:40: [shazam/py stderr] skipping junk at 58061 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 59171 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 59988 bytes
+2026-02-19T00:32:40: skipping junk at 60381 bytes
+2026-02-19T00:32:40: skipping junk at 61161 bytes
+2026-02-19T00:32:40: skipping junk at 61570 bytes
+2026-02-19T00:32:40: skipping junk at 62010 bytes
+2026-02-19T00:32:40: skipping junk at 62263 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 67018 bytes
+2026-02-19T00:32:40: skipping junk at 67203 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 70008 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 71118 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 72443 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 76169 bytes
+2026-02-19T00:32:40: skipping junk at 76500 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 79540 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 82442 bytes
+2026-02-19T00:32:40: skipping junk at 82713 bytes
+2026-02-19T00:32:40: skipping junk at 82991 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 92087 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 94644 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 97427 bytes
+2026-02-19T00:32:40: skipping junk at 97679 bytes
+2026-02-19T00:32:40: skipping junk at 97980 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 99948 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 102568 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 106063 bytes
+2026-02-19T00:32:40: skipping junk at 106308 bytes
+2026-02-19T00:32:40: skipping junk at 107003 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 107769 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 109862 bytes
+2026-02-19T00:32:40: skipping junk at 110041 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 110420 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 112786 bytes
+2026-02-19T00:32:40: skipping junk at 113066 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 117647 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 118386 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 119052 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 121621 bytes
+2026-02-19T00:32:40: skipping junk at 122188 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 123377 bytes
+2026-02-19T00:32:40: skipping junk at 123982 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 124850 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 126329 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 138127 bytes
+2026-02-19T00:32:40: skipping junk at 139068 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 140091 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 144783 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 150065 bytes
+2026-02-19T00:32:40: skipping junk at 150351 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 154157 bytes
+2026-02-19T00:32:40: skipping junk at 154263 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 162128 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 162748 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 166790 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 168284 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: skipping junk at 169471 bytes
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: invalid mpeg audio header
+2026-02-19T00:32:40: [shazam] Match: Nihita
+2026-02-19T00:39:24: [shazam] Received recording.m4a (173.4 KB) → /home/ubuntu/Projects/oracle24hrs/uploads/shazam-tmp/79030b24b5def7bf69238003eb76f8ff
+2026-02-19T00:39:25: [shazam/py stderr] skipping junk at 58399 bytes
+2026-02-19T00:39:25: skipping junk at 58596 bytes
+2026-02-19T00:39:25: skipping junk at 59050 bytes
+2026-02-19T00:39:25: skipping junk at 59273 bytes
+2026-02-19T00:39:25: skipping junk at 60121 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 62750 bytes
+2026-02-19T00:39:25: skipping junk at 63650 bytes
+2026-02-19T00:39:25: skipping junk at 63907 bytes
+2026-02-19T00:39:25: skipping junk at 64457 bytes
+2026-02-19T00:39:25: skipping junk at 65243 bytes
+2026-02-19T00:39:25: skipping junk at 65528 bytes
+2026-02-19T00:39:25: skipping junk at 65789 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 66556 bytes
+2026-02-19T00:39:25: skipping junk at 67050 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 67579 bytes
+2026-02-19T00:39:25: skipping junk at 68075 bytes
+2026-02-19T00:39:25: skipping junk at 68372 bytes
+2026-02-19T00:39:25: skipping junk at 68673 bytes
+2026-02-19T00:39:25: skipping junk at 68960 bytes
+2026-02-19T00:39:25: skipping junk at 69243 bytes
+2026-02-19T00:39:25: skipping junk at 69534 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 70061 bytes
+2026-02-19T00:39:25: skipping junk at 70590 bytes
+2026-02-19T00:39:25: skipping junk at 70835 bytes
+2026-02-19T00:39:25: skipping junk at 71092 bytes
+2026-02-19T00:39:25: skipping junk at 71541 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 73511 bytes
+2026-02-19T00:39:25: skipping junk at 73815 bytes
+2026-02-19T00:39:25: skipping junk at 74102 bytes
+2026-02-19T00:39:25: skipping junk at 74398 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 76600 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 77651 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 78356 bytes
+2026-02-19T00:39:25: skipping junk at 78632 bytes
+2026-02-19T00:39:25: skipping junk at 78935 bytes
+2026-02-19T00:39:25: skipping junk at 79518 bytes
+2026-02-19T00:39:25: skipping junk at 79772 bytes
+2026-02-19T00:39:25: skipping junk at 80047 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 81292 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 83586 bytes
+2026-02-19T00:39:25: skipping junk at 83894 bytes
+2026-02-19T00:39:25: skipping junk at 84178 bytes
+2026-02-19T00:39:25: skipping junk at 84465 bytes
+2026-02-19T00:39:25: skipping junk at 84751 bytes
+2026-02-19T00:39:25: skipping junk at 85302 bytes
+2026-02-19T00:39:25: skipping junk at 85579 bytes
+2026-02-19T00:39:25: skipping junk at 85844 bytes
+2026-02-19T00:39:25: skipping junk at 86114 bytes
+2026-02-19T00:39:25: skipping junk at 86378 bytes
+2026-02-19T00:39:25: skipping junk at 86628 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 88494 bytes
+2026-02-19T00:39:25: skipping junk at 88766 bytes
+2026-02-19T00:39:25: skipping junk at 89085 bytes
+2026-02-19T00:39:25: skipping junk at 89374 bytes
+2026-02-19T00:39:25: skipping junk at 90487 bytes
+2026-02-19T00:39:25: skipping junk at 90739 bytes
+2026-02-19T00:39:25: skipping junk at 90986 bytes
+2026-02-19T00:39:25: skipping junk at 91490 bytes
+2026-02-19T00:39:25: skipping junk at 92458 bytes
+2026-02-19T00:39:25: skipping junk at 92704 bytes
+2026-02-19T00:39:25: skipping junk at 92983 bytes
+2026-02-19T00:39:25: skipping junk at 93723 bytes
+2026-02-19T00:39:25: skipping junk at 94017 bytes
+2026-02-19T00:39:25: skipping junk at 94317 bytes
+2026-02-19T00:39:25: skipping junk at 94609 bytes
+2026-02-19T00:39:25: skipping junk at 94905 bytes
+2026-02-19T00:39:25: skipping junk at 95171 bytes
+2026-02-19T00:39:25: skipping junk at 95427 bytes
+2026-02-19T00:39:25: skipping junk at 95888 bytes
+2026-02-19T00:39:25: skipping junk at 96350 bytes
+2026-02-19T00:39:25: skipping junk at 96583 bytes
+2026-02-19T00:39:25: skipping junk at 97108 bytes
+2026-02-19T00:39:25: skipping junk at 97576 bytes
+2026-02-19T00:39:25: skipping junk at 98099 bytes
+2026-02-19T00:39:25: skipping junk at 99106 bytes
+2026-02-19T00:39:25: skipping junk at 99404 bytes
+2026-02-19T00:39:25: skipping junk at 99694 bytes
+2026-02-19T00:39:25: skipping junk at 100530 bytes
+2026-02-19T00:39:25: skipping junk at 100726 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 101286 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 102267 bytes
+2026-02-19T00:39:25: skipping junk at 102325 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 103768 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 104518 bytes
+2026-02-19T00:39:25: skipping junk at 104808 bytes
+2026-02-19T00:39:25: skipping junk at 105090 bytes
+2026-02-19T00:39:25: skipping junk at 105370 bytes
+2026-02-19T00:39:25: skipping junk at 105653 bytes
+2026-02-19T00:39:25: skipping junk at 105934 bytes
+2026-02-19T00:39:25: skipping junk at 106481 bytes
+2026-02-19T00:39:25: skipping junk at 106748 bytes
+2026-02-19T00:39:25: skipping junk at 107015 bytes
+2026-02-19T00:39:25: skipping junk at 107289 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 108299 bytes
+2026-02-19T00:39:25: skipping junk at 108792 bytes
+2026-02-19T00:39:25: skipping junk at 109291 bytes
+2026-02-19T00:39:25: skipping junk at 109589 bytes
+2026-02-19T00:39:25: skipping junk at 109913 bytes
+2026-02-19T00:39:25: skipping junk at 110199 bytes
+2026-02-19T00:39:25: skipping junk at 110486 bytes
+2026-02-19T00:39:25: skipping junk at 110765 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 112572 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 115315 bytes
+2026-02-19T00:39:25: skipping junk at 115669 bytes
+2026-02-19T00:39:25: skipping junk at 116254 bytes
+2026-02-19T00:39:25: skipping junk at 116564 bytes
+2026-02-19T00:39:25: skipping junk at 116860 bytes
+2026-02-19T00:39:25: skipping junk at 117076 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 118042 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 121393 bytes
+2026-02-19T00:39:25: skipping junk at 121684 bytes
+2026-02-19T00:39:25: skipping junk at 121966 bytes
+2026-02-19T00:39:25: skipping junk at 122253 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 124006 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 126061 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 128060 bytes
+2026-02-19T00:39:25: skipping junk at 128343 bytes
+2026-02-19T00:39:25: skipping junk at 128622 bytes
+2026-02-19T00:39:25: skipping junk at 128907 bytes
+2026-02-19T00:39:25: skipping junk at 129217 bytes
+2026-02-19T00:39:25: skipping junk at 129495 bytes
+2026-02-19T00:39:25: skipping junk at 129780 bytes
+2026-02-19T00:39:25: skipping junk at 129974 bytes
+2026-02-19T00:39:25: skipping junk at 130074 bytes
+2026-02-19T00:39:25: skipping junk at 130363 bytes
+2026-02-19T00:39:25: skipping junk at 130682 bytes
+2026-02-19T00:39:25: skipping junk at 131539 bytes
+2026-02-19T00:39:25: skipping junk at 131903 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 132699 bytes
+2026-02-19T00:39:25: skipping junk at 133078 bytes
+2026-02-19T00:39:25: skipping junk at 133357 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 139002 bytes
+2026-02-19T00:39:25: skipping junk at 139301 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 140177 bytes
+2026-02-19T00:39:25: skipping junk at 140462 bytes
+2026-02-19T00:39:25: skipping junk at 141031 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 142223 bytes
+2026-02-19T00:39:25: skipping junk at 143416 bytes
+2026-02-19T00:39:25: skipping junk at 143728 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 144311 bytes
+2026-02-19T00:39:25: skipping junk at 144348 bytes
+2026-02-19T00:39:25: skipping junk at 144628 bytes
+2026-02-19T00:39:25: skipping junk at 145257 bytes
+2026-02-19T00:39:25: skipping junk at 145545 bytes
+2026-02-19T00:39:25: skipping junk at 145859 bytes
+2026-02-19T00:39:25: skipping junk at 146140 bytes
+2026-02-19T00:39:25: skipping junk at 146421 bytes
+2026-02-19T00:39:25: skipping junk at 146980 bytes
+2026-02-19T00:39:25: skipping junk at 147265 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 148418 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 149874 bytes
+2026-02-19T00:39:25: skipping junk at 150175 bytes
+2026-02-19T00:39:25: skipping junk at 150534 bytes
+2026-02-19T00:39:25: skipping junk at 150828 bytes
+2026-02-19T00:39:25: skipping junk at 151117 bytes
+2026-02-19T00:39:25: skipping junk at 151397 bytes
+2026-02-19T00:39:25: skipping junk at 151719 bytes
+2026-02-19T00:39:25: skipping junk at 153049 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 153495 bytes
+2026-02-19T00:39:25: skipping junk at 154064 bytes
+2026-02-19T00:39:25: skipping junk at 154631 bytes
+2026-02-19T00:39:25: skipping junk at 154915 bytes
+2026-02-19T00:39:25: skipping junk at 156631 bytes
+2026-02-19T00:39:25: skipping junk at 156926 bytes
+2026-02-19T00:39:25: skipping junk at 157696 bytes
+2026-02-19T00:39:25: skipping junk at 157790 bytes
+2026-02-19T00:39:25: skipping junk at 158447 bytes
+2026-02-19T00:39:25: skipping junk at 158667 bytes
+2026-02-19T00:39:25: skipping junk at 159882 bytes
+2026-02-19T00:39:25: skipping junk at 160171 bytes
+2026-02-19T00:39:25: skipping junk at 161699 bytes
+2026-02-19T00:39:25: skipping junk at 162020 bytes
+2026-02-19T00:39:25: skipping junk at 162310 bytes
+2026-02-19T00:39:25: skipping junk at 162915 bytes
+2026-02-19T00:39:25: skipping junk at 163508 bytes
+2026-02-19T00:39:25: skipping junk at 163795 bytes
+2026-02-19T00:39:25: skipping junk at 164075 bytes
+2026-02-19T00:39:25: skipping junk at 164369 bytes
+2026-02-19T00:39:25: skipping junk at 164996 bytes
+2026-02-19T00:39:25: skipping junk at 165275 bytes
+2026-02-19T00:39:25: skipping junk at 165343 bytes
+2026-02-19T00:39:25: skipping junk at 166239 bytes
+2026-02-19T00:39:25: skipping junk at 167151 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: skipping junk at 168056 bytes
+2026-02-19T00:39:25: skipping junk at 168653 bytes
+2026-02-19T00:39:25: skipping junk at 168966 bytes
+2026-02-19T00:39:25: skipping junk at 173703 bytes
+2026-02-19T00:39:25: skipping junk at 174850 bytes
+2026-02-19T00:39:25: skipping junk at 175429 bytes
+2026-02-19T00:39:25: skipping junk at 175747 bytes
+2026-02-19T00:39:25: invalid mpeg audio header
+2026-02-19T00:39:25: [shazam] Match: Knockin' On Heaven's Door
+2026-02-19T00:39:25: [youtube] Search request: Knockin' On Heaven's Door Guns N' Roses
+2026-02-19T00:39:25: [youtube] Creating fresh Innertube client...
+2026-02-19T00:39:26: [youtube] Innertube client initialized
+2026-02-19T00:39:26: [youtube] Search returned 19 results
+2026-02-19T00:39:42: [shazam] Received recording.m4a (171.4 KB) → /home/ubuntu/Projects/oracle24hrs/uploads/shazam-tmp/3a60e507662ab565978cfd36d769e4ba
+2026-02-19T00:39:43: [shazam/py stderr] skipping junk at 59304 bytes
+2026-02-19T00:39:43: skipping junk at 60461 bytes
+2026-02-19T00:39:43: skipping junk at 61320 bytes
+2026-02-19T00:39:43: skipping junk at 61548 bytes
+2026-02-19T00:39:43: skipping junk at 61812 bytes
+2026-02-19T00:39:43: skipping junk at 62566 bytes
+2026-02-19T00:39:43: invalid mpeg audio header
+2026-02-19T00:39:43: skipping junk at 63763 bytes
+2026-02-19T00:39:43: skipping junk at 64042 bytes
+2026-02-19T00:39:43: skipping junk at 64340 bytes
+2026-02-19T00:39:43: skipping junk at 64624 bytes
+2026-02-19T00:39:43: skipping junk at 65182 bytes
+2026-02-19T00:39:43: skipping junk at 66211 bytes
+2026-02-19T00:39:43: skipping junk at 66246 bytes
+2026-02-19T00:39:43: skipping junk at 66800 bytes
+2026-02-19T00:39:43: skipping junk at 67341 bytes
+2026-02-19T00:39:43: skipping junk at 68651 bytes
+2026-02-19T00:39:43: skipping junk at 69443 bytes
+2026-02-19T00:39:43: skipping junk at 70025 bytes
+2026-02-19T00:39:43: skipping junk at 70316 bytes
+2026-02-19T00:39:43: skipping junk at 70496 bytes
+2026-02-19T00:39:43: skipping junk at 70607 bytes
+2026-02-19T00:39:43: skipping junk at 71451 bytes
+2026-02-19T00:39:43: skipping junk at 71726 bytes
+2026-02-19T00:39:43: [shazam] Match: Knockin' On Heaven's Door
+2026-02-19T00:39:43: 
+2026-02-19T00:39:43: ──────── LRCLIB (individual) ────────
+2026-02-19T00:39:43: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Knockin%27+On+Heaven%27s+Door+Guns+N%27+Roses
+2026-02-19T00:39:43: 
+2026-02-19T00:39:43: ──────── GENIUS (individual) ────────
+2026-02-19T00:39:43: [Genius] Searching: "Knockin' On Heaven's Door Guns N' Roses"
+2026-02-19T00:39:43: 
+2026-02-19T00:39:43: ──────── GOOGLE URLS (individual) ────────
+2026-02-19T00:39:43: [Google] Searching: "knockin' on heaven's door guns n' roses"
+2026-02-19T00:39:43: [Google] Returned 10 results
+2026-02-19T00:39:43: [Genius] Found: "Knockin’ on Heaven’s Door by Guns N' Roses" → https://genius.com/Guns-n-roses-knockin-on-heavens-door-lyrics
+2026-02-19T00:39:43: [Cheerio] Fetching: https://genius.com/Guns-n-roses-knockin-on-heavens-door-lyrics
+2026-02-19T00:39:43: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-02-19T00:39:43: [Genius] Cheerio failed/403 — trying Playwright for Genius page
+2026-02-19T00:39:43: [Playwright] Navigating: https://genius.com/Guns-n-roses-knockin-on-heavens-door-lyrics
+2026-02-19T00:39:43: 
+2026-02-19T00:39:43: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T00:39:43: scraper > URL: https://mychords.net/gunsroses/10525-guns-n-roses-knockin-on-heavens-door.html
+2026-02-19T00:39:43: [Cheerio] Fetching: https://mychords.net/gunsroses/10525-guns-n-roses-knockin-on-heavens-door.html
+2026-02-19T00:39:43: 
+2026-02-19T00:39:43: ──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-19T00:39:43: scraper > URL: https://mychords.net/gunsroses/10525-guns-n-roses-knockin-on-heavens-door.html
+2026-02-19T00:39:43: [Playwright] Navigating: https://mychords.net/gunsroses/10525-guns-n-roses-knockin-on-heavens-door.html
+2026-02-19T00:39:45: [Cheerio] ✅ Dense-block heuristic (512 lines)
+2026-02-19T00:39:46: [Playwright] Result: 512 lines
+2026-02-19T00:39:46: [LRCLIB] ⚠️ API error: Request failed with status code 400
+2026-02-19T00:40:01: [Playwright] Result: 64 lines
+2026-02-19T00:40:01: [Genius] ✅ Scraped 64 lines
+2026-02-19T00:40:06: 
+2026-02-19T00:40:06: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T00:40:06: scraper > URL: https://tabs.ultimate-guitar.com/tab/guns-n-roses/knockin-on-heavens-door-chords-1097849
+2026-02-19T00:40:06: [Cheerio] Fetching: https://tabs.ultimate-guitar.com/tab/guns-n-roses/knockin-on-heavens-door-chords-1097849
+2026-02-19T00:40:06: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-02-19T00:40:34: 
+2026-02-19T00:40:34: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T00:40:34: scraper > URL: https://www.songsterr.com/a/wsa/guns-n-roses-knockin-on-heavens-door-chords-s481
+2026-02-19T00:40:34: [Cheerio] Fetching: https://www.songsterr.com/a/wsa/guns-n-roses-knockin-on-heavens-door-chords-s481
+2026-02-19T00:40:35: [Cheerio] ✅ Dense-block heuristic (72 lines)
+2026-02-19T00:40:40: 
+2026-02-19T00:40:40: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T00:40:40: scraper > URL: https://www.e-chords.com/chords/guns-n-roses/knockin-on-heavens-door
+2026-02-19T00:40:40: [Cheerio] Fetching: https://www.e-chords.com/chords/guns-n-roses/knockin-on-heavens-door
+2026-02-19T00:40:40: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-02-19T00:40:42: 
+2026-02-19T00:40:42: ──────── EXTRACT (CHEERIO) ────────
+2026-02-19T00:40:42: scraper > URL: https://bob-dylan.org.uk/archives/11626
+2026-02-19T00:40:42: [Cheerio] Fetching: https://bob-dylan.org.uk/archives/11626
+2026-02-19T00:40:44: [Cheerio] ✅ Readability (102 lines)

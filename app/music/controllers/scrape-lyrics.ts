@@ -626,8 +626,14 @@ async function scrapeLyrics(req: Request, res: Response) {
       10,
       trimmedArtist,
     );
-    let cheerioFirst: { found: boolean; lyrics: string[] } = { found: false, lyrics: [] };
-    let playwrightFirst: { found: boolean; lyrics: string[] } = { found: false, lyrics: [] };
+    let cheerioFirst: { found: boolean; lyrics: string[] } = {
+      found: false,
+      lyrics: [],
+    };
+    let playwrightFirst: { found: boolean; lyrics: string[] } = {
+      found: false,
+      lyrics: [],
+    };
 
     if (urls.length > 0) {
       const firstUrl = urls[0].link;
@@ -745,8 +751,88 @@ async function extractFromUrl(req: Request, res: Response) {
   }
 }
 
+// ============================================================
+// INDIVIDUAL SOURCE ROUTES — Each fires independently so the
+// frontend can show results as they arrive (zero waterfall).
+// ============================================================
+
+async function lrclibRoute(req: Request, res: Response) {
+  const { songName, artist, duration } = req.query as {
+    songName: string;
+    artist?: string;
+    duration?: string;
+  };
+  if (!songName?.trim()) {
+    res.status(400).json({ status: 400, message: "Missing: songName" });
+    return;
+  }
+  logDivider("LRCLIB (individual)");
+  const result = await tryLrcLib(
+    songName.trim(),
+    artist?.trim(),
+    duration ? parseFloat(duration) : undefined,
+  );
+  const data: {
+    found: boolean;
+    type: string | null;
+    lyrics: string[];
+    syncedLyrics: string | null;
+  } = { found: false, type: null, lyrics: [], syncedLyrics: null };
+  if (result.found && result.synced) {
+    data.found = true;
+    data.type = "synced";
+    data.lyrics = parseSyncedToPlainLines(result.synced);
+    data.syncedLyrics = result.synced;
+  } else if (result.found && result.plain) {
+    data.found = true;
+    data.type = "plain";
+    data.lyrics = result.plain.split("\n").map((l) => l.trim());
+  }
+  res.json({ status: 200, ...data });
+}
+
+async function geniusRoute(req: Request, res: Response) {
+  const { songName, artist } = req.query as {
+    songName: string;
+    artist?: string;
+  };
+  if (!songName?.trim()) {
+    res.status(400).json({ status: 400, message: "Missing: songName" });
+    return;
+  }
+  logDivider("GENIUS (individual)");
+  const result = await tryGenius(songName.trim(), artist?.trim());
+  res.json({
+    status: 200,
+    found: result.found,
+    lyrics: result.lyrics || [],
+  });
+}
+
+async function googleRoute(req: Request, res: Response) {
+  const { songName, artist } = req.query as {
+    songName: string;
+    artist?: string;
+  };
+  if (!songName?.trim()) {
+    res.status(400).json({ status: 400, message: "Missing: songName" });
+    return;
+  }
+  logDivider("GOOGLE URLS (individual)");
+  const results = await getGoogleSearchResults(
+    songName.trim().toLowerCase(),
+    10,
+    artist?.trim(),
+  );
+  res.json({ status: 200, googleResults: results });
+}
+
 // ── Register routes ──────────────────────────────────────────
-router.get("/scrape-lyrics", scrapeLyrics);
+// More-specific paths FIRST so Express won't short-circuit.
+router.get("/scrape-lyrics/lrclib", lrclibRoute);
+router.get("/scrape-lyrics/genius", geniusRoute);
+router.get("/scrape-lyrics/google", googleRoute);
 router.get("/scrape-lyrics/extract", extractFromUrl);
+router.get("/scrape-lyrics", scrapeLyrics);
 
 export default router;

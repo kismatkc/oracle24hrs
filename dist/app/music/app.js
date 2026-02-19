@@ -1,6 +1,7 @@
 // app/music/app.ts
 import express from "express";
 import CORS from "cors";
+import compression from "compression";
 import { exec } from "child_process";
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
@@ -12,6 +13,7 @@ import scrapeLyrics from "./controllers/scrape-lyrics.js";
 import ttcAlerts from "./controllers/ttc-alerts.js";
 import youtube from "./controllers/youtube.js";
 import cacheManagement from "./controllers/cache-management.js";
+import shazam from "./controllers/shazam.js";
 // Import and start the demucs worker
 import { demucsWorker } from "./workers/demucs.worker.js";
 import dotenv from "dotenv";
@@ -23,6 +25,7 @@ const RESTART_SECRET = "Mohan9869868880";
 const BODY_LIMIT = process.env.BODY_LIMIT || "25mb";
 app.use(CORS({ origin: "*" }));
 app.options(/.*/, CORS({ origin: "*" }));
+app.use(compression()); // gzip/deflate all responses — lyrics, JSON, etc.
 app.use(express.json({ limit: BODY_LIMIT }));
 app.use(express.urlencoded({ extended: true, limit: BODY_LIMIT }));
 app.use((err, _req, res, next) => {
@@ -38,6 +41,7 @@ app.use("/music", scrapeLyrics);
 app.use("/music", ttcAlerts);
 app.use("/music/youtube", youtube);
 app.use("/music", cacheManagement);
+app.use("/music", shazam);
 /* ---------- PM2 restart-all via GET ---------- */
 app.get(`/restart/${RESTART_SECRET}`, (_req, res) => {
     res.json({ message: "Restarting all PM2 processes…" });
@@ -58,5 +62,5 @@ app.use("/", (_req, res) => {
 /* ---------- start server ---------- */
 app.listen(Number(PORT), () => {
     console.log(`Music API listening on port ${PORT}`);
-    console.log(`Demucs worker status: ${demucsWorker ? 'running' : 'not started'}`);
+    console.log(`Demucs worker status: ${demucsWorker ? "running" : "not started"}`);
 });

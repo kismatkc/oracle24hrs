@@ -31,7 +31,11 @@ async function tryLrcLib(trackName, artistName, duration) {
         const data = response.data;
         if (data.syncedLyrics) {
             console.log(`[LRCLIB] ✅ Found SYNCED lyrics for "${trackName}"`);
-            return { found: true, synced: data.syncedLyrics, plain: data.plainLyrics };
+            return {
+                found: true,
+                synced: data.syncedLyrics,
+                plain: data.plainLyrics,
+            };
         }
         if (data.plainLyrics) {
             console.log(`[LRCLIB] ✅ Found PLAIN lyrics for "${trackName}"`);
@@ -119,10 +123,26 @@ const extractLyricsFromHtml = (html) => {
     const lines = [];
     let currentBuffer = "";
     const blockElements = new Set([
-        "P", "DIV", "BLOCKQUOTE", "LI", "UL", "OL",
-        "H1", "H2", "H3", "H4", "H5", "H6",
-        "SECTION", "ARTICLE", "HEADER", "FOOTER",
-        "MAIN", "ASIDE", "NAV", "PRE",
+        "P",
+        "DIV",
+        "BLOCKQUOTE",
+        "LI",
+        "UL",
+        "OL",
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "SECTION",
+        "ARTICLE",
+        "HEADER",
+        "FOOTER",
+        "MAIN",
+        "ASIDE",
+        "NAV",
+        "PRE",
     ]);
     const flushBuffer = () => {
         if (currentBuffer.trim()) {
@@ -268,7 +288,10 @@ async function scrapeUrlWithCheerio(url) {
                 if (!text)
                     return;
                 const brs = $(el).find("br").length;
-                const textLines = text.split(/\n+/).map((x) => x.trim()).filter(Boolean);
+                const textLines = text
+                    .split(/\n+/)
+                    .map((x) => x.trim())
+                    .filter(Boolean);
                 const shortLines = textLines.filter((l) => l.length <= 120).length;
                 const score = brs * 3 + shortLines + Math.min(text.length / 50, 40);
                 if (score > bestScore) {
@@ -306,7 +329,9 @@ async function scrapeUrlWithPlaywright(url) {
         });
         const page = await context.newPage();
         await page.goto(url, { waitUntil: "domcontentloaded", timeout: 20000 });
-        await page.waitForLoadState("networkidle", { timeout: 12000 }).catch(() => { });
+        await page
+            .waitForLoadState("networkidle", { timeout: 12000 })
+            .catch(() => { });
         const pageHtml = await page.content();
         let lyrics = [];
         // Readability
@@ -324,7 +349,14 @@ async function scrapeUrlWithPlaywright(url) {
         // Dense-block (in-browser)
         if (!lyrics.length) {
             const denseInner = await page.evaluate(() => {
-                const blockTags = new Set(["DIV", "SECTION", "ARTICLE", "MAIN", "P", "TD"]);
+                const blockTags = new Set([
+                    "DIV",
+                    "SECTION",
+                    "ARTICLE",
+                    "MAIN",
+                    "P",
+                    "TD",
+                ]);
                 let best = null;
                 const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT);
                 while (walker.nextNode()) {
@@ -335,7 +367,10 @@ async function scrapeUrlWithPlaywright(url) {
                     if (!text)
                         continue;
                     const brs = el.querySelectorAll("br").length;
-                    const textLines = text.split(/\n+/).map((x) => x.trim()).filter(Boolean);
+                    const textLines = text
+                        .split(/\n+/)
+                        .map((x) => x.trim())
+                        .filter(Boolean);
                     const shortLines = textLines.filter((l) => l.length <= 120).length;
                     const score = brs * 3 + shortLines + Math.min(text.length / 50, 40);
                     if (!best || score > best.score)
@@ -397,10 +432,11 @@ async function scrapeUrlWithPlaywright(url) {
         }
     }
 }
-async function getGoogleSearchResults(query, num = 10) {
+async function getGoogleSearchResults(query, num = 10, artist) {
     try {
-        console.log(`[Google] Searching: "${query}"`);
-        const modifiedQuery = `${query} lyrics and chords`;
+        const base = artist ? `${query} ${artist}` : query;
+        console.log(`[Google] Searching: "${base}"`);
+        const modifiedQuery = `${base} lyrics and chords`;
         const response = await axios.get("https://www.googleapis.com/customsearch/v1", {
             params: {
                 key: process.env.GOOGLE_NOBILLING_API_KEY_2,
@@ -417,8 +453,10 @@ async function getGoogleSearchResults(query, num = 10) {
         const sorted = items.sort((a, b) => {
             const titleA = (a.title || "").toLowerCase();
             const titleB = (b.title || "").toLowerCase();
-            const scoreA = (titleA.includes("lyrics") ? 2 : 0) + (titleA.includes("chord") ? 1 : 0);
-            const scoreB = (titleB.includes("lyrics") ? 2 : 0) + (titleB.includes("chord") ? 1 : 0);
+            const scoreA = (titleA.includes("lyrics") ? 2 : 0) +
+                (titleA.includes("chord") ? 1 : 0);
+            const scoreB = (titleB.includes("lyrics") ? 2 : 0) +
+                (titleB.includes("chord") ? 1 : 0);
             return scoreB - scoreA;
         });
         return sorted.map((item) => ({
@@ -450,16 +488,50 @@ async function scrapeLyrics(req, res) {
     const trimmedName = songName.trim();
     const trimmedArtist = artist?.trim();
     const parsedDuration = duration ? parseFloat(duration) : undefined;
-    // ── Run LRCLIB, Genius, Google search in parallel ─────
-    logDivider("PARALLEL: LRCLIB + GENIUS + GOOGLE");
-    const [lrcResult, geniusResult, googleResults] = await Promise.all([
+    // ── Run ALL sources truly in parallel ─────────────────
+    // LRCLIB, Genius, and Google→Cheerio+Playwright all fire at the same
+    // time.  The Google chain waits for URLs internally, but the other
+    // two sources are NOT blocked by it — zero waterfall.
+    logDivider("PARALLEL: ALL SOURCES (LRCLIB + GENIUS + GOOGLE→SCRAPE)");
+    // Google chain: search → scrape first URL with both Cheerio + Playwright
+    async function googleChain() {
+        const urls = await getGoogleSearchResults(trimmedName.toLowerCase(), 10, trimmedArtist);
+        let cheerioFirst = {
+            found: false,
+            lyrics: [],
+        };
+        let playwrightFirst = {
+            found: false,
+            lyrics: [],
+        };
+        if (urls.length > 0) {
+            const firstUrl = urls[0].link;
+            console.log(`scraper > Google first URL: ${firstUrl}`);
+            const [cLines, pLines] = await Promise.all([
+                scrapeUrlWithCheerio(firstUrl).catch(() => []),
+                scrapeUrlWithPlaywright(firstUrl).catch(() => []),
+            ]);
+            if (cLines.length > 0)
+                cheerioFirst = { found: true, lyrics: cLines };
+            if (pLines.length > 0)
+                playwrightFirst = { found: true, lyrics: pLines };
+        }
+        return { urls, cheerioFirst, playwrightFirst };
+    }
+    const [lrcResult, geniusResult, googleData] = await Promise.all([
         tryLrcLib(trimmedName, trimmedArtist, parsedDuration),
         tryGenius(trimmedName, trimmedArtist),
-        getGoogleSearchResults(trimmedName.toLowerCase(), 10),
+        googleChain(),
     ]);
+    const googleResults = googleData.urls;
+    const cheerioFirst = googleData.cheerioFirst;
+    const playwrightFirst = googleData.playwrightFirst;
     // Build LRCLIB response
     const lrclibData = {
-        found: false, type: null, lyrics: [], syncedLyrics: null,
+        found: false,
+        type: null,
+        lyrics: [],
+        syncedLyrics: null,
     };
     if (lrcResult.found && lrcResult.synced) {
         lrclibData.found = true;
@@ -473,26 +545,13 @@ async function scrapeLyrics(req, res) {
         lrclibData.lyrics = lrcResult.plain.split("\n").map((l) => l.trim());
     }
     // Build Genius response
-    const geniusData = { found: false, lyrics: [] };
+    const geniusData = {
+        found: false,
+        lyrics: [],
+    };
     if (geniusResult.found && geniusResult.lyrics?.length) {
         geniusData.found = true;
         geniusData.lyrics = geniusResult.lyrics;
-    }
-    // ── Try first Google URL with both Cheerio + Playwright in parallel ──
-    let cheerioFirst = { found: false, lyrics: [] };
-    let playwrightFirst = { found: false, lyrics: [] };
-    if (googleResults.length > 0) {
-        const firstUrl = googleResults[0].link;
-        logDivider("PARALLEL: CHEERIO + PLAYWRIGHT (link 1)");
-        console.log(`scraper > First URL: ${firstUrl}`);
-        const [cheerioLines, playwrightLines] = await Promise.all([
-            scrapeUrlWithCheerio(firstUrl).catch(() => []),
-            scrapeUrlWithPlaywright(firstUrl).catch(() => []),
-        ]);
-        if (cheerioLines.length > 0)
-            cheerioFirst = { found: true, lyrics: cheerioLines };
-        if (playwrightLines.length > 0)
-            playwrightFirst = { found: true, lyrics: playwrightLines };
     }
     console.log(`\n── RESULTS SUMMARY ──`);
     console.log(`  LRCLIB:     ${lrclibData.found ? `✅ ${lrclibData.lyrics.length} lines (${lrclibData.type})` : "❌"}`);
@@ -538,7 +597,61 @@ async function extractFromUrl(req, res) {
         res.status(500).json({ status: 500, message: error.message, lyrics: [] });
     }
 }
+// ============================================================
+// INDIVIDUAL SOURCE ROUTES — Each fires independently so the
+// frontend can show results as they arrive (zero waterfall).
+// ============================================================
+async function lrclibRoute(req, res) {
+    const { songName, artist, duration } = req.query;
+    if (!songName?.trim()) {
+        res.status(400).json({ status: 400, message: "Missing: songName" });
+        return;
+    }
+    logDivider("LRCLIB (individual)");
+    const result = await tryLrcLib(songName.trim(), artist?.trim(), duration ? parseFloat(duration) : undefined);
+    const data = { found: false, type: null, lyrics: [], syncedLyrics: null };
+    if (result.found && result.synced) {
+        data.found = true;
+        data.type = "synced";
+        data.lyrics = parseSyncedToPlainLines(result.synced);
+        data.syncedLyrics = result.synced;
+    }
+    else if (result.found && result.plain) {
+        data.found = true;
+        data.type = "plain";
+        data.lyrics = result.plain.split("\n").map((l) => l.trim());
+    }
+    res.json({ status: 200, ...data });
+}
+async function geniusRoute(req, res) {
+    const { songName, artist } = req.query;
+    if (!songName?.trim()) {
+        res.status(400).json({ status: 400, message: "Missing: songName" });
+        return;
+    }
+    logDivider("GENIUS (individual)");
+    const result = await tryGenius(songName.trim(), artist?.trim());
+    res.json({
+        status: 200,
+        found: result.found,
+        lyrics: result.lyrics || [],
+    });
+}
+async function googleRoute(req, res) {
+    const { songName, artist } = req.query;
+    if (!songName?.trim()) {
+        res.status(400).json({ status: 400, message: "Missing: songName" });
+        return;
+    }
+    logDivider("GOOGLE URLS (individual)");
+    const results = await getGoogleSearchResults(songName.trim().toLowerCase(), 10, artist?.trim());
+    res.json({ status: 200, googleResults: results });
+}
 // ── Register routes ──────────────────────────────────────────
-router.get("/scrape-lyrics", scrapeLyrics);
+// More-specific paths FIRST so Express won't short-circuit.
+router.get("/scrape-lyrics/lrclib", lrclibRoute);
+router.get("/scrape-lyrics/genius", geniusRoute);
+router.get("/scrape-lyrics/google", googleRoute);
 router.get("/scrape-lyrics/extract", extractFromUrl);
+router.get("/scrape-lyrics", scrapeLyrics);
 export default router;
