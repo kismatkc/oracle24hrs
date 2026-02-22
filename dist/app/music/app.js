@@ -13,6 +13,7 @@ import ttcAlerts from "./controllers/ttc-alerts.js";
 import youtube from "./controllers/youtube.js";
 import cacheManagement from "./controllers/cache-management.js";
 import shazam from "./controllers/shazam.js";
+import dailyWords from "./controllers/daily-words.js";
 // Import and start the demucs worker
 import { demucsWorker } from "./workers/demucs.worker.js";
 import dotenv from "dotenv";
@@ -41,6 +42,8 @@ app.use("/music", ttcAlerts);
 app.use("/music/youtube", youtube);
 app.use("/music", cacheManagement);
 app.use("/music", shazam);
+/* ---------- Ontime routes (lifestyle app) ---------- */
+app.use("/ontime", dailyWords);
 /* ---------- PM2 restart-all via GET ---------- */
 app.get(`/restart/${RESTART_SECRET}`, (_req, res) => {
     res.json({ message: "Restarting all PM2 processes…" });

@@ -112,3 +112,285 @@
 2026-02-19T20:51:28: Demucs worker status: running
 2026-02-19T20:51:28: [appRedis] connected
 2026-02-19T20:51:28: [demucs-oracle] Worker ready
+2026-02-19T22:37:26: [youtube] Suggestions request: may
+2026-02-19T22:37:26: [youtube] Creating fresh Innertube client...
+2026-02-19T22:37:26: [youtube] Innertube client initialized
+2026-02-19T22:37:28: [youtube] Suggestions request: maya ma
+2026-02-19T22:37:30: 
+──────── GENIUS (individual) ────────
+2026-02-19T22:37:30: [Genius] Searching: "maya ma purna rai"
+2026-02-19T22:37:30: [Genius] Found: "Ma Bolna Khojchu tara Uu Boldina by Mc Flo" → https://genius.com/Mc-flo-ma-bolna-khojchu-tara-uu-boldina-lyrics
+2026-02-19T22:37:30: [Cheerio] Fetching: https://genius.com/Mc-flo-ma-bolna-khojchu-tara-uu-boldina-lyrics
+2026-02-19T22:37:30: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-02-19T22:37:30: [Genius] Cheerio failed/403 — trying Playwright for Genius page
+2026-02-19T22:37:30: [Playwright] Navigating: https://genius.com/Mc-flo-ma-bolna-khojchu-tara-uu-boldina-lyrics
+2026-02-19T22:37:31: 
+──────── GENIUS (individual) ────────
+2026-02-19T22:37:31: [Genius] Searching: "maya ma purna rai"
+2026-02-19T22:37:31: [Genius] Found: "Ma Bolna Khojchu tara Uu Boldina by Mc Flo" → https://genius.com/Mc-flo-ma-bolna-khojchu-tara-uu-boldina-lyrics
+2026-02-19T22:37:31: [Cheerio] Fetching: https://genius.com/Mc-flo-ma-bolna-khojchu-tara-uu-boldina-lyrics
+2026-02-19T22:37:31: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-02-19T22:37:31: [Genius] Cheerio failed/403 — trying Playwright for Genius page
+2026-02-19T22:37:31: [Playwright] Navigating: https://genius.com/Mc-flo-ma-bolna-khojchu-tara-uu-boldina-lyrics
+2026-02-19T22:37:32: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-19T22:37:32: scraper > URL: https://tabs.ultimate-guitar.com/tab/purna-rai/mann-cha-chords-5951897
+2026-02-19T22:37:32: [Playwright] Navigating: https://tabs.ultimate-guitar.com/tab/purna-rai/mann-cha-chords-5951897
+2026-02-19T22:37:48: [Playwright] Result: 49 lines
+2026-02-19T22:37:49: [Playwright] Result: 76 lines
+2026-02-19T22:37:49: [Playwright] Result: 76 lines
+2026-02-19T22:37:49: [Genius] ✅ Scraped 76 lines
+2026-02-19T22:37:49: [Genius] ✅ Scraped 76 lines
+2026-02-19T22:38:29: 
+──────── LRCLIB (individual) ────────
+2026-02-19T22:38:29: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=purna+rai+and+daju+bhai+maya+ma
+2026-02-19T22:38:32: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
+2026-02-19T22:38:35: 
+──────── GENIUS (individual) ────────
+2026-02-19T22:38:35: [Genius] Searching: "purna rai and daju bhai maya ma"
+2026-02-19T22:38:35: [Genius] Found: "ZiD by Biplab (Ft. Pankaj)" → https://genius.com/Biplab-zid-lyrics
+2026-02-19T22:38:35: [Cheerio] Fetching: https://genius.com/Biplab-zid-lyrics
+2026-02-19T22:38:35: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-02-19T22:38:35: [Genius] Cheerio failed/403 — trying Playwright for Genius page
+2026-02-19T22:38:35: [Playwright] Navigating: https://genius.com/Biplab-zid-lyrics
+2026-02-19T22:38:52: [Playwright] Result: 76 lines
+2026-02-19T22:38:52: [Genius] ✅ Scraped 76 lines
+2026-02-19T22:39:54: [youtube] Suggestions request: k maile
+2026-02-19T22:39:59: 
+──────── LRCLIB (individual) ────────
+2026-02-19T22:39:59: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=k+maile+matra+garirahane+ho+maya
+2026-02-19T22:39:59: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-19T22:39:59: scraper > URL: https://chordsnepal.com/lyrics/yo-maya-ma-bhuldina/
+2026-02-19T22:39:59: [Playwright] Navigating: https://chordsnepal.com/lyrics/yo-maya-ma-bhuldina/
+2026-02-19T22:40:01: [Playwright] Result: 94 lines
+2026-02-19T22:40:02: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
+2026-02-19T22:40:04: 
+──────── EXTRACT (CHEERIO) ────────
+2026-02-19T22:40:04: scraper > URL: https://chordsnepal.com/lyrics/yo-maya-ma-bhuldina/
+2026-02-19T22:40:04: [Cheerio] Fetching: https://chordsnepal.com/lyrics/yo-maya-ma-bhuldina/
+2026-02-19T22:40:04: [Cheerio] ✅ Readability (94 lines)
+2026-02-19T22:40:29: 
+──────── EXTRACT (CHEERIO) ────────
+2026-02-19T22:40:29: scraper > URL: https://www.tiktok.com/discover/dherai-maya-garchu-timilai-lyrics-song
+2026-02-19T22:40:29: [Cheerio] Fetching: https://www.tiktok.com/discover/dherai-maya-garchu-timilai-lyrics-song
+2026-02-19T22:40:30: [Cheerio] ❌ No lyrics extracted
+2026-02-19T22:40:59: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-19T22:40:59: scraper > URL: https://www.tiktok.com/discover/maya-ma-lyrics
+2026-02-19T22:40:59: [Playwright] Navigating: https://www.tiktok.com/discover/maya-ma-lyrics
+2026-02-19T22:41:10: [Playwright] Result: 183 lines
+2026-02-19T22:41:23: 
+──────── GOOGLE URLS (individual) ────────
+2026-02-19T22:41:23: [Google] Searching: "k maile matra garirahane ho maya"
+2026-02-19T22:41:23: [Google] Returned 10 results
+2026-02-21T07:17:55: [shazam] Received recording.m4a (187.2 KB) → /home/ubuntu/Projects/oracle24hrs/uploads/shazam-tmp/df4919eb93d386f81fcd5d4e37aac2f9
+2026-02-21T07:17:55: [shazam] No match: no_match
+2026-02-21T07:18:02: [youtube] Suggestions request: save me bl
+2026-02-21T07:18:02: [youtube] Creating fresh Innertube client...
+2026-02-21T07:18:02: [youtube] Innertube client initialized
+2026-02-21T07:18:10: [youtube] Suggestions request: save me n
+2026-02-21T07:18:22: 
+──────── LRCLIB (individual) ────────
+2026-02-21T07:18:22: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Arthur+Gunn+-+Save+Me+Now+%28Official+Music+Video%29&artist_name=Arthur+Gunn+%5BOFFICIAL%5D&duration=259
+2026-02-21T07:18:25: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
+2026-02-22T04:12:57: [daily-words] Loaded 276233 words
+2026-02-22T04:12:57: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-02-22T04:12:57: [demucs-oracle] Model: htdemucs_6s
+2026-02-22T04:12:57: [demucs-oracle] Shifts: 10
+2026-02-22T04:12:57: [demucs-oracle] Overlap: 0.25
+2026-02-22T04:12:57: [demucs-oracle] Output: 320k mp3
+2026-02-22T04:12:57: [demucs-oracle] ====================================
+2026-02-22T04:12:57: [demucs-oracle] Module loaded
+2026-02-22T04:12:57: OPTIONS  /.*/
+2026-02-22T04:12:57: [33mPOST[39m     /~/upload
+2026-02-22T04:12:57: [32mGET[39m      /~/stems/:id/state
+2026-02-22T04:12:57: [32mGET[39m      /~/stems/:id/result
+2026-02-22T04:12:57: [33mPOST[39m     /~/stems/:id/cleanup
+2026-02-22T04:12:57: [32mGET[39m      /~/stems/:id/check
+2026-02-22T04:12:57: [32mGET[39m      /~/progress/:id
+2026-02-22T04:12:57: [32mGET[39m      /~/download-mp3
+2026-02-22T04:12:57: [32mGET[39m      /~/scrape-lyrics/lrclib
+2026-02-22T04:12:57: [32mGET[39m      /~/scrape-lyrics/genius
+2026-02-22T04:12:57: [32mGET[39m      /~/scrape-lyrics/google
+2026-02-22T04:12:57: [32mGET[39m      /~/scrape-lyrics/extract
+2026-02-22T04:12:57: [32mGET[39m      /~/scrape-lyrics
+2026-02-22T04:12:57: [32mGET[39m      /~/scrape-news
+2026-02-22T04:12:57: [32mGET[39m      /~/search
+2026-02-22T04:12:57: [32mGET[39m      /~/suggestions
+2026-02-22T04:12:57: [32mGET[39m      /~/audio/prepare
+2026-02-22T04:12:57: [32mGET[39m      /~/audio/check
+2026-02-22T04:12:57: [32mGET[39m      /~/audio
+2026-02-22T04:12:57: [32mGET[39m      /~/stream
+2026-02-22T04:12:57: [32mGET[39m      /~/info
+2026-02-22T04:12:57: [32mGET[39m      /~/cache/youtube
+2026-02-22T04:12:57: [31mDELETE[39m   /~/cache/youtube/:videoId
+2026-02-22T04:12:57: [31mDELETE[39m   /~/cache/youtube
+2026-02-22T04:12:57: [32mGET[39m      /~/cache/stems
+2026-02-22T04:12:57: [31mDELETE[39m   /~/cache/stems/:songId
+2026-02-22T04:12:57: [31mDELETE[39m   /~/cache/stems
+2026-02-22T04:12:57: [32mGET[39m      /~/cache/uploads
+2026-02-22T04:12:57: [31mDELETE[39m   /~/cache/uploads/:name
+2026-02-22T04:12:57: [31mDELETE[39m   /~/cache/uploads
+2026-02-22T04:12:57: [32mGET[39m      /~/cache/normalized
+2026-02-22T04:12:57: [31mDELETE[39m   /~/cache/normalized/:name
+2026-02-22T04:12:57: [31mDELETE[39m   /~/cache/normalized
+2026-02-22T04:12:57: [31mDELETE[39m   /~/cache/all
+2026-02-22T04:12:57: [32mGET[39m      /~/cache/summary
+2026-02-22T04:12:57: [33mPOST[39m     /~/shazam/recognize
+2026-02-22T04:12:57: [32mGET[39m      /~/daily-words
+2026-02-22T04:12:57: [32mGET[39m      /restart/Mohan9869868880
+2026-02-22T04:12:58: Music API listening on port 3000
+2026-02-22T04:12:58: Demucs worker status: running
+2026-02-22T04:12:58: [appRedis] connected
+2026-02-22T04:12:58: [demucs-oracle] Worker ready
+2026-02-22T04:14:15: [daily-words] Loaded 276233 words
+2026-02-22T04:14:15: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-02-22T04:14:15: [demucs-oracle] Model: htdemucs_6s
+2026-02-22T04:14:15: [demucs-oracle] Shifts: 10
+2026-02-22T04:14:15: [demucs-oracle] Overlap: 0.25
+2026-02-22T04:14:15: [demucs-oracle] Output: 320k mp3
+2026-02-22T04:14:15: [demucs-oracle] ====================================
+2026-02-22T04:14:15: [demucs-oracle] Module loaded
+2026-02-22T04:14:15: OPTIONS  /.*/
+2026-02-22T04:14:15: [33mPOST[39m     /~/upload
+2026-02-22T04:14:15: [32mGET[39m      /~/stems/:id/state
+2026-02-22T04:14:15: [32mGET[39m      /~/stems/:id/result
+2026-02-22T04:14:15: [33mPOST[39m     /~/stems/:id/cleanup
+2026-02-22T04:14:15: [32mGET[39m      /~/stems/:id/check
+2026-02-22T04:14:15: [32mGET[39m      /~/progress/:id
+2026-02-22T04:14:15: [32mGET[39m      /~/download-mp3
+2026-02-22T04:14:15: [32mGET[39m      /~/scrape-lyrics/lrclib
+2026-02-22T04:14:15: [32mGET[39m      /~/scrape-lyrics/genius
+2026-02-22T04:14:15: [32mGET[39m      /~/scrape-lyrics/google
+2026-02-22T04:14:15: [32mGET[39m      /~/scrape-lyrics/extract
+2026-02-22T04:14:15: [32mGET[39m      /~/scrape-lyrics
+2026-02-22T04:14:15: [32mGET[39m      /~/scrape-news
+2026-02-22T04:14:15: [32mGET[39m      /~/search
+2026-02-22T04:14:15: [32mGET[39m      /~/suggestions
+2026-02-22T04:14:15: [32mGET[39m      /~/audio/prepare
+2026-02-22T04:14:15: [32mGET[39m      /~/audio/check
+2026-02-22T04:14:15: [32mGET[39m      /~/audio
+2026-02-22T04:14:15: [32mGET[39m      /~/stream
+2026-02-22T04:14:15: [32mGET[39m      /~/info
+2026-02-22T04:14:15: [32mGET[39m      /~/cache/youtube
+2026-02-22T04:14:15: [31mDELETE[39m   /~/cache/youtube/:videoId
+2026-02-22T04:14:15: [31mDELETE[39m   /~/cache/youtube
+2026-02-22T04:14:15: [32mGET[39m      /~/cache/stems
+2026-02-22T04:14:15: [31mDELETE[39m   /~/cache/stems/:songId
+2026-02-22T04:14:15: [31mDELETE[39m   /~/cache/stems
+2026-02-22T04:14:15: [32mGET[39m      /~/cache/uploads
+2026-02-22T04:14:15: [31mDELETE[39m   /~/cache/uploads/:name
+2026-02-22T04:14:15: [31mDELETE[39m   /~/cache/uploads
+2026-02-22T04:14:15: [32mGET[39m      /~/cache/normalized
+2026-02-22T04:14:15: [31mDELETE[39m   /~/cache/normalized/:name
+2026-02-22T04:14:15: [31mDELETE[39m   /~/cache/normalized
+2026-02-22T04:14:15: [31mDELETE[39m   /~/cache/all
+2026-02-22T04:14:15: [32mGET[39m      /~/cache/summary
+2026-02-22T04:14:15: [33mPOST[39m     /~/shazam/recognize
+2026-02-22T04:14:15: [32mGET[39m      /~/daily-words
+2026-02-22T04:14:15: [32mGET[39m      /restart/Mohan9869868880
+2026-02-22T04:14:15: Music API listening on port 3000
+2026-02-22T04:14:15: Demucs worker status: running
+2026-02-22T04:14:15: [appRedis] connected
+2026-02-22T04:14:15: [demucs-oracle] Worker ready
+2026-02-22T04:18:58: [daily-words] Loaded 276233 words
+2026-02-22T04:18:58: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-02-22T04:18:58: [demucs-oracle] Model: htdemucs_6s
+2026-02-22T04:18:58: [demucs-oracle] Shifts: 10
+2026-02-22T04:18:58: [demucs-oracle] Overlap: 0.25
+2026-02-22T04:18:58: [demucs-oracle] Output: 320k mp3
+2026-02-22T04:18:58: [demucs-oracle] ====================================
+2026-02-22T04:18:58: [demucs-oracle] Module loaded
+2026-02-22T04:18:58: OPTIONS  /.*/
+2026-02-22T04:18:58: [33mPOST[39m     /~/upload
+2026-02-22T04:18:58: [32mGET[39m      /~/stems/:id/state
+2026-02-22T04:18:58: [32mGET[39m      /~/stems/:id/result
+2026-02-22T04:18:58: [33mPOST[39m     /~/stems/:id/cleanup
+2026-02-22T04:18:58: [32mGET[39m      /~/stems/:id/check
+2026-02-22T04:18:58: [32mGET[39m      /~/progress/:id
+2026-02-22T04:18:58: [32mGET[39m      /~/download-mp3
+2026-02-22T04:18:58: [32mGET[39m      /~/scrape-lyrics/lrclib
+2026-02-22T04:18:58: [32mGET[39m      /~/scrape-lyrics/genius
+2026-02-22T04:18:58: [32mGET[39m      /~/scrape-lyrics/google
+2026-02-22T04:18:58: [32mGET[39m      /~/scrape-lyrics/extract
+2026-02-22T04:18:58: [32mGET[39m      /~/scrape-lyrics
+2026-02-22T04:18:58: [32mGET[39m      /~/scrape-news
+2026-02-22T04:18:58: [32mGET[39m      /~/search
+2026-02-22T04:18:58: [32mGET[39m      /~/suggestions
+2026-02-22T04:18:58: [32mGET[39m      /~/audio/prepare
+2026-02-22T04:18:58: [32mGET[39m      /~/audio/check
+2026-02-22T04:18:58: [32mGET[39m      /~/audio
+2026-02-22T04:18:58: [32mGET[39m      /~/stream
+2026-02-22T04:18:58: [32mGET[39m      /~/info
+2026-02-22T04:18:58: [32mGET[39m      /~/cache/youtube
+2026-02-22T04:18:58: [31mDELETE[39m   /~/cache/youtube/:videoId
+2026-02-22T04:18:58: [31mDELETE[39m   /~/cache/youtube
+2026-02-22T04:18:58: [32mGET[39m      /~/cache/stems
+2026-02-22T04:18:58: [31mDELETE[39m   /~/cache/stems/:songId
+2026-02-22T04:18:58: [31mDELETE[39m   /~/cache/stems
+2026-02-22T04:18:58: [32mGET[39m      /~/cache/uploads
+2026-02-22T04:18:58: [31mDELETE[39m   /~/cache/uploads/:name
+2026-02-22T04:18:58: [31mDELETE[39m   /~/cache/uploads
+2026-02-22T04:18:58: [32mGET[39m      /~/cache/normalized
+2026-02-22T04:18:58: [31mDELETE[39m   /~/cache/normalized/:name
+2026-02-22T04:18:58: [31mDELETE[39m   /~/cache/normalized
+2026-02-22T04:18:58: [31mDELETE[39m   /~/cache/all
+2026-02-22T04:18:58: [32mGET[39m      /~/cache/summary
+2026-02-22T04:18:58: [33mPOST[39m     /~/shazam/recognize
+2026-02-22T04:18:58: [32mGET[39m      /~/daily-words
+2026-02-22T04:18:58: [32mGET[39m      /restart/Mohan9869868880
+2026-02-22T04:18:58: Music API listening on port 3000
+2026-02-22T04:18:58: Demucs worker status: running
+2026-02-22T04:18:58: [appRedis] connected
+2026-02-22T04:18:58: [demucs-oracle] Worker ready
+2026-02-22T04:26:02: [daily-words] Loaded 276233 words
+2026-02-22T04:26:02: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-02-22T04:26:02: [demucs-oracle] Model: htdemucs_6s
+2026-02-22T04:26:02: [demucs-oracle] Shifts: 10
+2026-02-22T04:26:02: [demucs-oracle] Overlap: 0.25
+2026-02-22T04:26:02: [demucs-oracle] Output: 320k mp3
+2026-02-22T04:26:02: [demucs-oracle] ====================================
+2026-02-22T04:26:02: [demucs-oracle] Module loaded
+2026-02-22T04:26:02: OPTIONS  /.*/
+2026-02-22T04:26:02: [33mPOST[39m     /~/upload
+2026-02-22T04:26:02: [32mGET[39m      /~/stems/:id/state
+2026-02-22T04:26:02: [32mGET[39m      /~/stems/:id/result
+2026-02-22T04:26:02: [33mPOST[39m     /~/stems/:id/cleanup
+2026-02-22T04:26:02: [32mGET[39m      /~/stems/:id/check
+2026-02-22T04:26:02: [32mGET[39m      /~/progress/:id
+2026-02-22T04:26:02: [32mGET[39m      /~/download-mp3
+2026-02-22T04:26:02: [32mGET[39m      /~/scrape-lyrics/lrclib
+2026-02-22T04:26:02: [32mGET[39m      /~/scrape-lyrics/genius
+2026-02-22T04:26:02: [32mGET[39m      /~/scrape-lyrics/google
+2026-02-22T04:26:02: [32mGET[39m      /~/scrape-lyrics/extract
+2026-02-22T04:26:02: [32mGET[39m      /~/scrape-lyrics
+2026-02-22T04:26:02: [32mGET[39m      /~/scrape-news
+2026-02-22T04:26:02: [32mGET[39m      /~/search
+2026-02-22T04:26:02: [32mGET[39m      /~/suggestions
+2026-02-22T04:26:02: [32mGET[39m      /~/audio/prepare
+2026-02-22T04:26:02: [32mGET[39m      /~/audio/check
+2026-02-22T04:26:02: [32mGET[39m      /~/audio
+2026-02-22T04:26:02: [32mGET[39m      /~/stream
+2026-02-22T04:26:02: [32mGET[39m      /~/info
+2026-02-22T04:26:02: [32mGET[39m      /~/cache/youtube
+2026-02-22T04:26:02: [31mDELETE[39m   /~/cache/youtube/:videoId
+2026-02-22T04:26:02: [31mDELETE[39m   /~/cache/youtube
+2026-02-22T04:26:02: [32mGET[39m      /~/cache/stems
+2026-02-22T04:26:02: [31mDELETE[39m   /~/cache/stems/:songId
+2026-02-22T04:26:02: [31mDELETE[39m   /~/cache/stems
+2026-02-22T04:26:02: [32mGET[39m      /~/cache/uploads
+2026-02-22T04:26:02: [31mDELETE[39m   /~/cache/uploads/:name
+2026-02-22T04:26:02: [31mDELETE[39m   /~/cache/uploads
+2026-02-22T04:26:02: [32mGET[39m      /~/cache/normalized
+2026-02-22T04:26:02: [31mDELETE[39m   /~/cache/normalized/:name
+2026-02-22T04:26:02: [31mDELETE[39m   /~/cache/normalized
+2026-02-22T04:26:02: [31mDELETE[39m   /~/cache/all
+2026-02-22T04:26:02: [32mGET[39m      /~/cache/summary
+2026-02-22T04:26:02: [33mPOST[39m     /~/shazam/recognize
+2026-02-22T04:26:02: [32mGET[39m      /~/daily-words
+2026-02-22T04:26:02: [32mGET[39m      /restart/Mohan9869868880
+2026-02-22T04:26:02: Music API listening on port 3000
+2026-02-22T04:26:02: Demucs worker status: running
+2026-02-22T04:26:02: [appRedis] connected
+2026-02-22T04:26:02: [demucs-oracle] Worker ready

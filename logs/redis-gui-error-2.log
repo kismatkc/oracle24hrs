@@ -30,3 +30,67 @@
 2026-02-19T20:51:26:   code: 'MODULE_NOT_FOUND',
 2026-02-19T20:51:26:   requireStack: [ '/home/ubuntu/Projects/oracle24hrs/scripts/run-redis-gui.cjs' ]
 2026-02-19T20:51:26: }
+2026-02-22T04:12:55: Error: Cannot find module 'redis-commander/bin/redis-commander.js'
+2026-02-22T04:12:55: Require stack:
+2026-02-22T04:12:55: - /home/ubuntu/Projects/oracle24hrs/scripts/run-redis-gui.cjs
+2026-02-22T04:12:55:     at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+2026-02-22T04:12:55:     at Function.resolve (node:internal/modules/helpers:193:19)
+2026-02-22T04:12:55:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/scripts/run-redis-gui.cjs:6:21)
+2026-02-22T04:12:55:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-02-22T04:12:55:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-02-22T04:12:55:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-02-22T04:12:55:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-02-22T04:12:55:     at cjsLoader (node:internal/modules/esm/translators:298:15)
+2026-02-22T04:12:55:     at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:240:7)
+2026-02-22T04:12:55:     at ModuleJob.run (node:internal/modules/esm/module_job:263:25) {
+2026-02-22T04:12:55:   code: 'MODULE_NOT_FOUND',
+2026-02-22T04:12:55:   requireStack: [ '/home/ubuntu/Projects/oracle24hrs/scripts/run-redis-gui.cjs' ]
+2026-02-22T04:12:55: }
+2026-02-22T04:14:12: Error: Cannot find module 'redis-commander/bin/redis-commander.js'
+2026-02-22T04:14:12: Require stack:
+2026-02-22T04:14:12: - /home/ubuntu/Projects/oracle24hrs/scripts/run-redis-gui.cjs
+2026-02-22T04:14:12:     at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+2026-02-22T04:14:12:     at Function.resolve (node:internal/modules/helpers:193:19)
+2026-02-22T04:14:12:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/scripts/run-redis-gui.cjs:6:21)
+2026-02-22T04:14:12:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-02-22T04:14:12:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-02-22T04:14:12:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-02-22T04:14:12:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-02-22T04:14:12:     at cjsLoader (node:internal/modules/esm/translators:298:15)
+2026-02-22T04:14:12:     at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:240:7)
+2026-02-22T04:14:12:     at ModuleJob.run (node:internal/modules/esm/module_job:263:25) {
+2026-02-22T04:14:12:   code: 'MODULE_NOT_FOUND',
+2026-02-22T04:14:12:   requireStack: [ '/home/ubuntu/Projects/oracle24hrs/scripts/run-redis-gui.cjs' ]
+2026-02-22T04:14:12: }
+2026-02-22T04:18:56: Error: Cannot find module 'redis-commander/bin/redis-commander.js'
+2026-02-22T04:18:56: Require stack:
+2026-02-22T04:18:56: - /home/ubuntu/Projects/oracle24hrs/scripts/run-redis-gui.cjs
+2026-02-22T04:18:56:     at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+2026-02-22T04:18:56:     at Function.resolve (node:internal/modules/helpers:193:19)
+2026-02-22T04:18:56:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/scripts/run-redis-gui.cjs:6:21)
+2026-02-22T04:18:56:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-02-22T04:18:56:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-02-22T04:18:56:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-02-22T04:18:56:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-02-22T04:18:56:     at cjsLoader (node:internal/modules/esm/translators:298:15)
+2026-02-22T04:18:56:     at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:240:7)
+2026-02-22T04:18:56:     at ModuleJob.run (node:internal/modules/esm/module_job:263:25) {
+2026-02-22T04:18:56:   code: 'MODULE_NOT_FOUND',
+2026-02-22T04:18:56:   requireStack: [ '/home/ubuntu/Projects/oracle24hrs/scripts/run-redis-gui.cjs' ]
+2026-02-22T04:18:56: }
+2026-02-22T04:26:00: Error: Cannot find module 'redis-commander/bin/redis-commander.js'
+2026-02-22T04:26:00: Require stack:
+2026-02-22T04:26:00: - /home/ubuntu/Projects/oracle24hrs/scripts/run-redis-gui.cjs
+2026-02-22T04:26:00:     at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+2026-02-22T04:26:00:     at Function.resolve (node:internal/modules/helpers:193:19)
+2026-02-22T04:26:00:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/scripts/run-redis-gui.cjs:6:21)
+2026-02-22T04:26:00:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-02-22T04:26:00:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-02-22T04:26:00:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-02-22T04:26:00:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-02-22T04:26:00:     at cjsLoader (node:internal/modules/esm/translators:298:15)
+2026-02-22T04:26:00:     at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:240:7)
+2026-02-22T04:26:00:     at ModuleJob.run (node:internal/modules/esm/module_job:263:25) {
+2026-02-22T04:26:00:   code: 'MODULE_NOT_FOUND',
+2026-02-22T04:26:00:   requireStack: [ '/home/ubuntu/Projects/oracle24hrs/scripts/run-redis-gui.cjs' ]
+2026-02-22T04:26:00: }

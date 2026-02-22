@@ -15,6 +15,7 @@ import ttcAlerts from "./controllers/ttc-alerts.ts";
 import youtube from "./controllers/youtube.ts";
 import cacheManagement from "./controllers/cache-management.ts";
 import shazam from "./controllers/shazam.ts";
+import dailyWords from "./controllers/daily-words.ts";
 
 // Import and start the demucs worker
 import { demucsWorker } from "./workers/demucs.worker.ts";
@@ -51,6 +52,9 @@ app.use("/music", ttcAlerts);
 app.use("/music/youtube", youtube);
 app.use("/music", cacheManagement);
 app.use("/music", shazam);
+
+/* ---------- Ontime routes (lifestyle app) ---------- */
+app.use("/ontime", dailyWords);
 
 /* ---------- PM2 restart-all via GET ---------- */
 app.get(`/restart/${RESTART_SECRET}`, (_req, res) => {

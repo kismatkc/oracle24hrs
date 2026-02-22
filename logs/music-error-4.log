@@ -1,0 +1,197 @@
+2026-02-22T04:13:58: [YOUTUBEJS][Parser]: InnertubeError: VideoSummaryContentView not found!
+This is a bug, want to help us fix it? Follow the instructions at https://github.com/LuanRT/YouTube.js/blob/main/docs/updating-the-parser.md or report it at https://github.com/LuanRT/YouTube.js/issues!
+Introspected and JIT generated this class in the meantime:
+class VideoSummaryContentView extends YTNode {
+  static type = 'VideoSummaryContentView';
+
+  paragraphs: ObservedArray<YTNodes.VideoSummaryParagraphView> | null;
+  like_button_view_model: YTNodes.LikeButtonView | null;
+  dislike_button_view_model: YTNodes.DislikeButtonView | null;
+
+  constructor(data: RawNode) {
+    super();
+    this.paragraphs = Parser.parse(data.paragraphs, true, YTNodes.VideoSummaryParagraphView);
+    this.like_button_view_model = Parser.parseItem(data.likeButtonViewModel, YTNodes.LikeButtonView);
+    this.dislike_button_view_model = Parser.parseItem(data.dislikeButtonViewModel, YTNodes.DislikeButtonView);
+  }
+}
+
+    at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:70:27)
+    at createRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:320:5)
+    at generateRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:371:21)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:400:17)
+    at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+    at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+    at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32) {
+  date: 2026-02-22T04:13:58.567Z,
+  version: '16.0.1',
+  info: undefined
+}
+2026-02-22T04:13:58: [YOUTUBEJS][Parser]: InnertubeError: VideoSummaryParagraphView not found!
+This is a bug, want to help us fix it? Follow the instructions at https://github.com/LuanRT/YouTube.js/blob/main/docs/updating-the-parser.md or report it at https://github.com/LuanRT/YouTube.js/issues!
+Introspected and JIT generated this class in the meantime:
+class VideoSummaryParagraphView extends YTNode {
+  static type = 'VideoSummaryParagraphView';
+
+  text: {
+    content: string
+  };
+
+  constructor(data: RawNode) {
+    super();
+    this.text = {
+      content: data.text.content
+    };
+  }
+}
+
+    at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:70:27)
+    at createRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:320:5)
+    at generateRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:371:21)
+    at generateRuntimeClass (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/generator.js:374:9)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:400:17)
+    at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+    at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+  date: 2026-02-22T04:13:58.570Z,
+  version: '16.0.1',
+  info: undefined
+}
+2026-02-22T04:13:58: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+    at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+    at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+    at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+    at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32)
+    at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+  date: 2026-02-22T04:13:58.571Z,
+  version: '16.0.1',
+  info: {
+    paragraphs: [ [Object] ],
+    likeButtonViewModel: { likeButtonViewModel: [Object] },
+    dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+  }
+}
+2026-02-22T04:13:58: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+    at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+    at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+    at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+    at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32)
+    at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+  date: 2026-02-22T04:13:58.572Z,
+  version: '16.0.1',
+  info: {
+    paragraphs: [ [Object] ],
+    likeButtonViewModel: { likeButtonViewModel: [Object] },
+    dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+  }
+}
+2026-02-22T04:13:58: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+    at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+    at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+    at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+    at new VerticalList (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/VerticalList.js:11:29)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at new Shelf (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Shelf.js:21:31) {
+  date: 2026-02-22T04:13:58.576Z,
+  version: '16.0.1',
+  info: {
+    paragraphs: [ [Object] ],
+    likeButtonViewModel: { likeButtonViewModel: [Object] },
+    dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+  }
+}
+2026-02-22T04:13:58: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+    at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+    at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+    at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+    at new VerticalList (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/VerticalList.js:11:29)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at new Shelf (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Shelf.js:21:31) {
+  date: 2026-02-22T04:13:58.577Z,
+  version: '16.0.1',
+  info: {
+    paragraphs: [ [Object] ],
+    likeButtonViewModel: { likeButtonViewModel: [Object] },
+    dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+  }
+}
+2026-02-22T04:13:58: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+    at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+    at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+    at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+    at new VerticalList (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/VerticalList.js:11:29)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at new Shelf (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Shelf.js:21:31) {
+  date: 2026-02-22T04:13:58.579Z,
+  version: '16.0.1',
+  info: {
+    paragraphs: [ [Object] ],
+    likeButtonViewModel: { likeButtonViewModel: [Object] },
+    dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+  }
+}
+2026-02-22T04:13:58: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+    at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+    at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+    at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+    at new VerticalList (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/VerticalList.js:11:29)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at new Shelf (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Shelf.js:21:31) {
+  date: 2026-02-22T04:13:58.580Z,
+  version: '16.0.1',
+  info: {
+    paragraphs: [ [Object] ],
+    likeButtonViewModel: { likeButtonViewModel: [Object] },
+    dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+  }
+}
+2026-02-22T04:13:58: [YOUTUBEJS][Parser]: ParsingError: Type mismatch, got VideoSummaryContentView expected HorizontalCardList | HorizontalList.
+    at ERROR_HANDLER (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:58:27)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:404:25)
+    at new ExpandableMetadata (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ExpandableMetadata.js:24:40)
+    at Module.parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at new Video (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/Video.js:44:43)
+    at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28)
+    at new ItemSection (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/classes/ItemSection.js:17:32)
+    at parseItem (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:423:28)
+    at Module.parseArray (file:///home/ubuntu/Projects/oracle24hrs/node_modules/youtubei.js/dist/src/parser/parser.js:443:28) {
+  date: 2026-02-22T04:13:58.584Z,
+  version: '16.0.1',
+  info: {
+    paragraphs: [ [Object] ],
+    likeButtonViewModel: { likeButtonViewModel: [Object] },
+    dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
+  }
+}
