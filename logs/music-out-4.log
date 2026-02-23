@@ -587,3 +587,436 @@
 2026-02-23T01:34:31: [appRedis] connected
 2026-02-23T01:34:31: [demucs-oracle] Worker ready
 2026-02-23T01:41:26: [daily-words] Served 0/5 words in 300 attempts (idx: 252673/369652)
+2026-02-23T01:42:37: [daily-words] Loaded 1533 words from words_curated.txt
+2026-02-23T01:42:37: [daily-words] Loaded 369652 words from words_huge.txt
+2026-02-23T01:42:37: [daily-words] Combined: 369652 total (1533 curated + 368119 huge)
+2026-02-23T01:42:37: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-02-23T01:42:37: [demucs-oracle] Model: htdemucs_6s
+2026-02-23T01:42:37: [demucs-oracle] Shifts: 10
+2026-02-23T01:42:37: [demucs-oracle] Overlap: 0.25
+2026-02-23T01:42:37: [demucs-oracle] Output: 320k mp3
+2026-02-23T01:42:37: [demucs-oracle] ====================================
+2026-02-23T01:42:37: [demucs-oracle] Module loaded
+2026-02-23T01:42:37: OPTIONS  /.*/
+2026-02-23T01:42:37: [33mPOST[39m     /~/upload
+2026-02-23T01:42:37: [32mGET[39m      /~/stems/:id/state
+2026-02-23T01:42:37: [32mGET[39m      /~/stems/:id/result
+2026-02-23T01:42:37: [33mPOST[39m     /~/stems/:id/cleanup
+2026-02-23T01:42:37: [32mGET[39m      /~/stems/:id/check
+2026-02-23T01:42:37: [32mGET[39m      /~/progress/:id
+2026-02-23T01:42:37: [32mGET[39m      /~/download-mp3
+2026-02-23T01:42:37: [32mGET[39m      /~/scrape-lyrics/lrclib
+2026-02-23T01:42:37: [32mGET[39m      /~/scrape-lyrics/genius
+2026-02-23T01:42:37: [32mGET[39m      /~/scrape-lyrics/google
+2026-02-23T01:42:37: [32mGET[39m      /~/scrape-lyrics/extract
+2026-02-23T01:42:37: [32mGET[39m      /~/scrape-lyrics
+2026-02-23T01:42:37: [32mGET[39m      /~/scrape-news
+2026-02-23T01:42:37: [32mGET[39m      /~/search
+2026-02-23T01:42:37: [32mGET[39m      /~/suggestions
+2026-02-23T01:42:37: [32mGET[39m      /~/audio/prepare
+2026-02-23T01:42:37: [32mGET[39m      /~/audio/check
+2026-02-23T01:42:37: [32mGET[39m      /~/audio
+2026-02-23T01:42:37: [32mGET[39m      /~/stream
+2026-02-23T01:42:37: [32mGET[39m      /~/info
+2026-02-23T01:42:37: [32mGET[39m      /~/cache/youtube
+2026-02-23T01:42:37: [31mDELETE[39m   /~/cache/youtube/:videoId
+2026-02-23T01:42:37: [31mDELETE[39m   /~/cache/youtube
+2026-02-23T01:42:37: [32mGET[39m      /~/cache/stems
+2026-02-23T01:42:37: [31mDELETE[39m   /~/cache/stems/:songId
+2026-02-23T01:42:37: [31mDELETE[39m   /~/cache/stems
+2026-02-23T01:42:37: [32mGET[39m      /~/cache/uploads
+2026-02-23T01:42:37: [31mDELETE[39m   /~/cache/uploads/:name
+2026-02-23T01:42:37: [31mDELETE[39m   /~/cache/uploads
+2026-02-23T01:42:37: [32mGET[39m      /~/cache/normalized
+2026-02-23T01:42:37: [31mDELETE[39m   /~/cache/normalized/:name
+2026-02-23T01:42:37: [31mDELETE[39m   /~/cache/normalized
+2026-02-23T01:42:37: [31mDELETE[39m   /~/cache/all
+2026-02-23T01:42:37: [32mGET[39m      /~/cache/summary
+2026-02-23T01:42:37: [33mPOST[39m     /~/shazam/recognize
+2026-02-23T01:42:37: [32mGET[39m      /~/daily-words
+2026-02-23T01:42:37: [33mPOST[39m     /~/daily-words/reset
+2026-02-23T01:42:37: [33mPOST[39m     /~/daily-words/clear-cache
+2026-02-23T01:42:37: [32mGET[39m      /restart/Mohan9869868880
+2026-02-23T01:42:37: Music API listening on port 3000
+2026-02-23T01:42:37: Demucs worker status: running
+2026-02-23T01:42:37: [appRedis] connected
+2026-02-23T01:42:37: [demucs-oracle] Worker ready
+2026-02-23T02:08:14: [daily-words] Loaded 1533 words from words_curated.txt
+2026-02-23T02:08:15: [daily-words] Loaded 369652 words from words_huge.txt
+2026-02-23T02:08:15: [daily-words] Combined: 369652 total (1533 curated + 368119 huge)
+2026-02-23T02:08:15: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-02-23T02:08:15: [demucs-oracle] Model: htdemucs_6s
+2026-02-23T02:08:15: [demucs-oracle] Shifts: 10
+2026-02-23T02:08:15: [demucs-oracle] Overlap: 0.25
+2026-02-23T02:08:15: [demucs-oracle] Output: 320k mp3
+2026-02-23T02:08:15: [demucs-oracle] ====================================
+2026-02-23T02:08:15: [demucs-oracle] Module loaded
+2026-02-23T02:08:15: OPTIONS  /.*/
+2026-02-23T02:08:15: [33mPOST[39m     /~/upload
+2026-02-23T02:08:15: [32mGET[39m      /~/stems/:id/state
+2026-02-23T02:08:15: [32mGET[39m      /~/stems/:id/result
+2026-02-23T02:08:15: [33mPOST[39m     /~/stems/:id/cleanup
+2026-02-23T02:08:15: [32mGET[39m      /~/stems/:id/check
+2026-02-23T02:08:15: [32mGET[39m      /~/progress/:id
+2026-02-23T02:08:15: [32mGET[39m      /~/download-mp3
+2026-02-23T02:08:15: [32mGET[39m      /~/scrape-lyrics/lrclib
+2026-02-23T02:08:15: [32mGET[39m      /~/scrape-lyrics/genius
+2026-02-23T02:08:15: [32mGET[39m      /~/scrape-lyrics/google
+2026-02-23T02:08:15: [32mGET[39m      /~/scrape-lyrics/extract
+2026-02-23T02:08:15: [32mGET[39m      /~/scrape-lyrics
+2026-02-23T02:08:15: [32mGET[39m      /~/scrape-news
+2026-02-23T02:08:15: [32mGET[39m      /~/search
+2026-02-23T02:08:15: [32mGET[39m      /~/suggestions
+2026-02-23T02:08:15: [32mGET[39m      /~/audio/prepare
+2026-02-23T02:08:15: [32mGET[39m      /~/audio/check
+2026-02-23T02:08:15: [32mGET[39m      /~/audio
+2026-02-23T02:08:15: [32mGET[39m      /~/stream
+2026-02-23T02:08:15: [32mGET[39m      /~/info
+2026-02-23T02:08:15: [32mGET[39m      /~/cache/youtube
+2026-02-23T02:08:15: [31mDELETE[39m   /~/cache/youtube/:videoId
+2026-02-23T02:08:15: [31mDELETE[39m   /~/cache/youtube
+2026-02-23T02:08:15: [32mGET[39m      /~/cache/stems
+2026-02-23T02:08:15: [31mDELETE[39m   /~/cache/stems/:songId
+2026-02-23T02:08:15: [31mDELETE[39m   /~/cache/stems
+2026-02-23T02:08:15: [32mGET[39m      /~/cache/uploads
+2026-02-23T02:08:15: [31mDELETE[39m   /~/cache/uploads/:name
+2026-02-23T02:08:15: [31mDELETE[39m   /~/cache/uploads
+2026-02-23T02:08:15: [32mGET[39m      /~/cache/normalized
+2026-02-23T02:08:15: [31mDELETE[39m   /~/cache/normalized/:name
+2026-02-23T02:08:15: [31mDELETE[39m   /~/cache/normalized
+2026-02-23T02:08:15: [31mDELETE[39m   /~/cache/all
+2026-02-23T02:08:15: [32mGET[39m      /~/cache/summary
+2026-02-23T02:08:15: [33mPOST[39m     /~/shazam/recognize
+2026-02-23T02:08:15: [32mGET[39m      /~/daily-words
+2026-02-23T02:08:15: [33mPOST[39m     /~/daily-words/reset
+2026-02-23T02:08:15: [33mPOST[39m     /~/daily-words/clear-cache
+2026-02-23T02:08:15: [32mGET[39m      /restart/Mohan9869868880
+2026-02-23T02:08:15: Music API listening on port 3000
+2026-02-23T02:08:15: Demucs worker status: running
+2026-02-23T02:08:15: [appRedis] connected
+2026-02-23T02:08:15: [demucs-oracle] Worker ready
+2026-02-23T02:10:45: [daily-words] Served 2/5 words in 300 attempts (idx: 364323/369652)
+2026-02-23T02:13:23: [daily-words] Loaded 1533 words from words_curated.txt
+2026-02-23T02:13:23: [daily-words] Loaded 369652 words from words_huge.txt
+2026-02-23T02:13:23: [daily-words] Combined: 369652 total (1533 curated + 368119 huge)
+2026-02-23T02:13:23: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-02-23T02:13:23: [demucs-oracle] Model: htdemucs_6s
+2026-02-23T02:13:23: [demucs-oracle] Shifts: 10
+2026-02-23T02:13:23: [demucs-oracle] Overlap: 0.25
+2026-02-23T02:13:23: [demucs-oracle] Output: 320k mp3
+2026-02-23T02:13:23: [demucs-oracle] ====================================
+2026-02-23T02:13:23: [demucs-oracle] Module loaded
+2026-02-23T02:13:23: OPTIONS  /.*/
+2026-02-23T02:13:23: [33mPOST[39m     /~/upload
+2026-02-23T02:13:23: [32mGET[39m      /~/stems/:id/state
+2026-02-23T02:13:23: [32mGET[39m      /~/stems/:id/result
+2026-02-23T02:13:23: [33mPOST[39m     /~/stems/:id/cleanup
+2026-02-23T02:13:23: [32mGET[39m      /~/stems/:id/check
+2026-02-23T02:13:23: [32mGET[39m      /~/progress/:id
+2026-02-23T02:13:23: [32mGET[39m      /~/download-mp3
+2026-02-23T02:13:23: [32mGET[39m      /~/scrape-lyrics/lrclib
+2026-02-23T02:13:23: [32mGET[39m      /~/scrape-lyrics/genius
+2026-02-23T02:13:23: [32mGET[39m      /~/scrape-lyrics/google
+2026-02-23T02:13:23: [32mGET[39m      /~/scrape-lyrics/extract
+2026-02-23T02:13:23: [32mGET[39m      /~/scrape-lyrics
+2026-02-23T02:13:23: [32mGET[39m      /~/scrape-news
+2026-02-23T02:13:23: [32mGET[39m      /~/search
+2026-02-23T02:13:23: [32mGET[39m      /~/suggestions
+2026-02-23T02:13:23: [32mGET[39m      /~/audio/prepare
+2026-02-23T02:13:23: [32mGET[39m      /~/audio/check
+2026-02-23T02:13:23: [32mGET[39m      /~/audio
+2026-02-23T02:13:23: [32mGET[39m      /~/stream
+2026-02-23T02:13:23: [32mGET[39m      /~/info
+2026-02-23T02:13:23: [32mGET[39m      /~/cache/youtube
+2026-02-23T02:13:23: [31mDELETE[39m   /~/cache/youtube/:videoId
+2026-02-23T02:13:23: [31mDELETE[39m   /~/cache/youtube
+2026-02-23T02:13:23: [32mGET[39m      /~/cache/stems
+2026-02-23T02:13:23: [31mDELETE[39m   /~/cache/stems/:songId
+2026-02-23T02:13:23: [31mDELETE[39m   /~/cache/stems
+2026-02-23T02:13:23: [32mGET[39m      /~/cache/uploads
+2026-02-23T02:13:23: [31mDELETE[39m   /~/cache/uploads/:name
+2026-02-23T02:13:23: [31mDELETE[39m   /~/cache/uploads
+2026-02-23T02:13:23: [32mGET[39m      /~/cache/normalized
+2026-02-23T02:13:23: [31mDELETE[39m   /~/cache/normalized/:name
+2026-02-23T02:13:23: [31mDELETE[39m   /~/cache/normalized
+2026-02-23T02:13:23: [31mDELETE[39m   /~/cache/all
+2026-02-23T02:13:23: [32mGET[39m      /~/cache/summary
+2026-02-23T02:13:23: [33mPOST[39m     /~/shazam/recognize
+2026-02-23T02:13:23: [32mGET[39m      /~/daily-words
+2026-02-23T02:13:23: [33mPOST[39m     /~/daily-words/reset
+2026-02-23T02:13:23: [33mPOST[39m     /~/daily-words/clear-cache
+2026-02-23T02:13:23: [32mGET[39m      /restart/Mohan9869868880
+2026-02-23T02:13:23: Music API listening on port 3000
+2026-02-23T02:13:23: Demucs worker status: running
+2026-02-23T02:13:23: [appRedis] connected
+2026-02-23T02:13:23: [demucs-oracle] Worker ready
+2026-02-23T02:16:06: [daily-words] Served 0/5 words in 300 attempts (idx: 204830/369652)
+2026-02-23T02:16:24: [daily-words] Loaded 1533 words from words_curated.txt
+2026-02-23T02:16:24: [daily-words] Loaded 369652 words from words_huge.txt
+2026-02-23T02:16:24: [daily-words] Combined: 369652 total (1533 curated + 368119 huge)
+2026-02-23T02:16:24: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-02-23T02:16:24: [demucs-oracle] Model: htdemucs_6s
+2026-02-23T02:16:24: [demucs-oracle] Shifts: 10
+2026-02-23T02:16:24: [demucs-oracle] Overlap: 0.25
+2026-02-23T02:16:24: [demucs-oracle] Output: 320k mp3
+2026-02-23T02:16:24: [demucs-oracle] ====================================
+2026-02-23T02:16:24: [demucs-oracle] Module loaded
+2026-02-23T02:16:24: OPTIONS  /.*/
+2026-02-23T02:16:24: [33mPOST[39m     /~/upload
+2026-02-23T02:16:24: [32mGET[39m      /~/stems/:id/state
+2026-02-23T02:16:24: [32mGET[39m      /~/stems/:id/result
+2026-02-23T02:16:24: [33mPOST[39m     /~/stems/:id/cleanup
+2026-02-23T02:16:24: [32mGET[39m      /~/stems/:id/check
+2026-02-23T02:16:24: [32mGET[39m      /~/progress/:id
+2026-02-23T02:16:24: [32mGET[39m      /~/download-mp3
+2026-02-23T02:16:24: [32mGET[39m      /~/scrape-lyrics/lrclib
+2026-02-23T02:16:24: [32mGET[39m      /~/scrape-lyrics/genius
+2026-02-23T02:16:24: [32mGET[39m      /~/scrape-lyrics/google
+2026-02-23T02:16:24: [32mGET[39m      /~/scrape-lyrics/extract
+2026-02-23T02:16:24: [32mGET[39m      /~/scrape-lyrics
+2026-02-23T02:16:24: [32mGET[39m      /~/scrape-news
+2026-02-23T02:16:24: [32mGET[39m      /~/search
+2026-02-23T02:16:24: [32mGET[39m      /~/suggestions
+2026-02-23T02:16:24: [32mGET[39m      /~/audio/prepare
+2026-02-23T02:16:24: [32mGET[39m      /~/audio/check
+2026-02-23T02:16:24: [32mGET[39m      /~/audio
+2026-02-23T02:16:24: [32mGET[39m      /~/stream
+2026-02-23T02:16:24: [32mGET[39m      /~/info
+2026-02-23T02:16:24: [32mGET[39m      /~/cache/youtube
+2026-02-23T02:16:24: [31mDELETE[39m   /~/cache/youtube/:videoId
+2026-02-23T02:16:24: [31mDELETE[39m   /~/cache/youtube
+2026-02-23T02:16:24: [32mGET[39m      /~/cache/stems
+2026-02-23T02:16:24: [31mDELETE[39m   /~/cache/stems/:songId
+2026-02-23T02:16:24: [31mDELETE[39m   /~/cache/stems
+2026-02-23T02:16:24: [32mGET[39m      /~/cache/uploads
+2026-02-23T02:16:24: [31mDELETE[39m   /~/cache/uploads/:name
+2026-02-23T02:16:24: [31mDELETE[39m   /~/cache/uploads
+2026-02-23T02:16:24: [32mGET[39m      /~/cache/normalized
+2026-02-23T02:16:24: [31mDELETE[39m   /~/cache/normalized/:name
+2026-02-23T02:16:24: [31mDELETE[39m   /~/cache/normalized
+2026-02-23T02:16:24: [31mDELETE[39m   /~/cache/all
+2026-02-23T02:16:24: [32mGET[39m      /~/cache/summary
+2026-02-23T02:16:24: [33mPOST[39m     /~/shazam/recognize
+2026-02-23T02:16:24: [32mGET[39m      /~/daily-words
+2026-02-23T02:16:24: [33mPOST[39m     /~/daily-words/reset
+2026-02-23T02:16:24: [33mPOST[39m     /~/daily-words/clear-cache
+2026-02-23T02:16:24: [32mGET[39m      /restart/Mohan9869868880
+2026-02-23T02:16:24: Music API listening on port 3000
+2026-02-23T02:16:24: Demucs worker status: running
+2026-02-23T02:16:24: [appRedis] connected
+2026-02-23T02:16:24: [demucs-oracle] Worker ready
+2026-02-23T02:21:19: [daily-words] Loaded 1533 words from words_curated.txt
+2026-02-23T02:21:20: [daily-words] Loaded 369652 words from words_huge.txt
+2026-02-23T02:21:20: [daily-words] Combined: 369652 total (1533 curated + 368119 huge)
+2026-02-23T02:21:20: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-02-23T02:21:20: [demucs-oracle] Model: htdemucs_6s
+2026-02-23T02:21:20: [demucs-oracle] Shifts: 10
+2026-02-23T02:21:20: [demucs-oracle] Overlap: 0.25
+2026-02-23T02:21:20: [demucs-oracle] Output: 320k mp3
+2026-02-23T02:21:20: [demucs-oracle] ====================================
+2026-02-23T02:21:20: [demucs-oracle] Module loaded
+2026-02-23T02:21:20: OPTIONS  /.*/
+2026-02-23T02:21:20: [33mPOST[39m     /~/upload
+2026-02-23T02:21:20: [32mGET[39m      /~/stems/:id/state
+2026-02-23T02:21:20: [32mGET[39m      /~/stems/:id/result
+2026-02-23T02:21:20: [33mPOST[39m     /~/stems/:id/cleanup
+2026-02-23T02:21:20: [32mGET[39m      /~/stems/:id/check
+2026-02-23T02:21:20: [32mGET[39m      /~/progress/:id
+2026-02-23T02:21:20: [32mGET[39m      /~/download-mp3
+2026-02-23T02:21:20: [32mGET[39m      /~/scrape-lyrics/lrclib
+2026-02-23T02:21:20: [32mGET[39m      /~/scrape-lyrics/genius
+2026-02-23T02:21:20: [32mGET[39m      /~/scrape-lyrics/google
+2026-02-23T02:21:20: [32mGET[39m      /~/scrape-lyrics/extract
+2026-02-23T02:21:20: [32mGET[39m      /~/scrape-lyrics
+2026-02-23T02:21:20: [32mGET[39m      /~/scrape-news
+2026-02-23T02:21:20: [32mGET[39m      /~/search
+2026-02-23T02:21:20: [32mGET[39m      /~/suggestions
+2026-02-23T02:21:20: [32mGET[39m      /~/audio/prepare
+2026-02-23T02:21:20: [32mGET[39m      /~/audio/check
+2026-02-23T02:21:20: [32mGET[39m      /~/audio
+2026-02-23T02:21:20: [32mGET[39m      /~/stream
+2026-02-23T02:21:20: [32mGET[39m      /~/info
+2026-02-23T02:21:20: [32mGET[39m      /~/cache/youtube
+2026-02-23T02:21:20: [31mDELETE[39m   /~/cache/youtube/:videoId
+2026-02-23T02:21:20: [31mDELETE[39m   /~/cache/youtube
+2026-02-23T02:21:20: [32mGET[39m      /~/cache/stems
+2026-02-23T02:21:20: [31mDELETE[39m   /~/cache/stems/:songId
+2026-02-23T02:21:20: [31mDELETE[39m   /~/cache/stems
+2026-02-23T02:21:20: [32mGET[39m      /~/cache/uploads
+2026-02-23T02:21:20: [31mDELETE[39m   /~/cache/uploads/:name
+2026-02-23T02:21:20: [31mDELETE[39m   /~/cache/uploads
+2026-02-23T02:21:20: [32mGET[39m      /~/cache/normalized
+2026-02-23T02:21:20: [31mDELETE[39m   /~/cache/normalized/:name
+2026-02-23T02:21:20: [31mDELETE[39m   /~/cache/normalized
+2026-02-23T02:21:20: [31mDELETE[39m   /~/cache/all
+2026-02-23T02:21:20: [32mGET[39m      /~/cache/summary
+2026-02-23T02:21:20: [33mPOST[39m     /~/shazam/recognize
+2026-02-23T02:21:20: [32mGET[39m      /~/daily-words
+2026-02-23T02:21:20: [33mPOST[39m     /~/daily-words/reset
+2026-02-23T02:21:20: [33mPOST[39m     /~/daily-words/clear-cache
+2026-02-23T02:21:20: [32mGET[39m      /restart/Mohan9869868880
+2026-02-23T02:21:20: Music API listening on port 3000
+2026-02-23T02:21:20: Demucs worker status: running
+2026-02-23T02:21:20: [appRedis] connected
+2026-02-23T02:21:20: [demucs-oracle] Worker ready
+2026-02-23T02:56:24: [youtube] Suggestions request: aloatraaa
+2026-02-23T02:56:24: [youtube] Creating fresh Innertube client...
+2026-02-23T02:56:25: [youtube] Innertube client initialized
+2026-02-23T02:56:30: [youtube] Search request: allatraa
+2026-02-23T02:56:31: [youtube] Search returned 20 results
+2026-02-23T02:56:35: [youtube] Suggestions request: all
+2026-02-23T02:56:41: [youtube] Suggestions request: allpa
+2026-02-23T02:56:54: [youtube] Suggestions request: kasar
+2026-02-23T02:57:03: [progress] id mlyl5kop-7dmh5oxr -> 0.05
+2026-02-23T02:57:11: [progress] id mlyl5kop-7dmh5oxr -> 0.15
+2026-02-23T02:57:19: [progress] id mlyl5kop-7dmh5oxr -> 0.15
+2026-02-23T02:58:14: 
+──────── GENIUS (individual) ────────
+2026-02-23T02:58:14: [Genius] Searching: "Yabesh Thapa - Kasari / कसरी Yabesh Thapa"
+2026-02-23T02:58:14: [Genius] Found: "Kasari by Yabesh Thapa" → https://genius.com/Yabesh-thapa-kasari-lyrics
+2026-02-23T02:58:14: [Cheerio] Fetching: https://genius.com/Yabesh-thapa-kasari-lyrics
+2026-02-23T02:58:14: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-02-23T02:58:14: [Genius] Cheerio failed/403 — trying Playwright for Genius page
+2026-02-23T02:58:14: [Playwright] Navigating: https://genius.com/Yabesh-thapa-kasari-lyrics
+2026-02-23T02:58:14: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-23T02:58:14: scraper > URL: https://www.tunesnepal.com/yabesh-thapa-singer/kasari-6
+2026-02-23T02:58:14: [Playwright] Navigating: https://www.tunesnepal.com/yabesh-thapa-singer/kasari-6
+2026-02-23T02:58:29: [Playwright] Result: 85 lines
+2026-02-23T02:58:30: [Playwright] Result: 58 lines
+2026-02-23T02:58:30: [Genius] ✅ Scraped 58 lines
+2026-02-23T02:59:42: 
+──────── LRCLIB (individual) ────────
+2026-02-23T02:59:42: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Yabesh+Thapa+-+Kasari+%2F+%E0%A4%95%E0%A4%B8%E0%A4%B0%E0%A5%80&artist_name=Yabesh+Thapa&duration=252
+2026-02-23T02:59:43: 
+──────── LRCLIB (individual) ────────
+2026-02-23T02:59:43: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Arthur+Gunn+-+Save+Me+Now+%28Official+Music+Video%29&artist_name=Arthur+Gunn+%5BOFFICIAL%5D&duration=259
+2026-02-23T02:59:43: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-23T02:59:43: scraper > URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-02-23T02:59:43: [Playwright] Navigating: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-02-23T02:59:45: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
+2026-02-23T02:59:46: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
+2026-02-23T02:59:59: [Playwright] Result: 2 lines
+2026-02-23T03:00:38: 
+──────── GOOGLE URLS (individual) ────────
+2026-02-23T03:00:38: [Google] Searching: "shiv tandav stotram shankar mahadevan"
+2026-02-23T03:00:38: [Google] Returned 10 results
+2026-02-23T03:01:13: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-23T03:01:13: scraper > URL: https://www.shazam.com/song/928887677/o-navvu-chalu
+2026-02-23T03:01:13: [Playwright] Navigating: https://www.shazam.com/song/928887677/o-navvu-chalu
+2026-02-23T03:01:19: [Playwright] Result: 184 lines
+2026-02-23T18:58:47: [daily-words] Loaded 1533 words from words_curated.txt
+2026-02-23T18:58:47: [daily-words] Loaded 369652 words from words_huge.txt
+2026-02-23T18:58:47: [daily-words] Combined: 369652 total (1533 curated + 368119 huge)
+2026-02-23T18:58:47: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-02-23T18:58:47: [demucs-oracle] Model: htdemucs_6s
+2026-02-23T18:58:47: [demucs-oracle] Shifts: 10
+2026-02-23T18:58:47: [demucs-oracle] Overlap: 0.25
+2026-02-23T18:58:47: [demucs-oracle] Output: 320k mp3
+2026-02-23T18:58:47: [demucs-oracle] ====================================
+2026-02-23T18:58:47: [demucs-oracle] Module loaded
+2026-02-23T18:58:47: OPTIONS  /.*/
+2026-02-23T18:58:47: [33mPOST[39m     /~/upload
+2026-02-23T18:58:47: [32mGET[39m      /~/stems/:id/state
+2026-02-23T18:58:47: [32mGET[39m      /~/stems/:id/result
+2026-02-23T18:58:47: [33mPOST[39m     /~/stems/:id/cleanup
+2026-02-23T18:58:47: [32mGET[39m      /~/stems/:id/check
+2026-02-23T18:58:47: [32mGET[39m      /~/progress/:id
+2026-02-23T18:58:47: [32mGET[39m      /~/download-mp3
+2026-02-23T18:58:47: [32mGET[39m      /~/scrape-lyrics/lrclib
+2026-02-23T18:58:47: [32mGET[39m      /~/scrape-lyrics/genius
+2026-02-23T18:58:47: [32mGET[39m      /~/scrape-lyrics/google
+2026-02-23T18:58:47: [32mGET[39m      /~/scrape-lyrics/extract
+2026-02-23T18:58:47: [32mGET[39m      /~/scrape-lyrics
+2026-02-23T18:58:47: [32mGET[39m      /~/scrape-news
+2026-02-23T18:58:47: [32mGET[39m      /~/search
+2026-02-23T18:58:47: [32mGET[39m      /~/suggestions
+2026-02-23T18:58:47: [32mGET[39m      /~/audio/prepare
+2026-02-23T18:58:47: [32mGET[39m      /~/audio/check
+2026-02-23T18:58:47: [32mGET[39m      /~/audio
+2026-02-23T18:58:47: [32mGET[39m      /~/stream
+2026-02-23T18:58:47: [32mGET[39m      /~/info
+2026-02-23T18:58:47: [32mGET[39m      /~/cache/youtube
+2026-02-23T18:58:47: [31mDELETE[39m   /~/cache/youtube/:videoId
+2026-02-23T18:58:47: [31mDELETE[39m   /~/cache/youtube
+2026-02-23T18:58:47: [32mGET[39m      /~/cache/stems
+2026-02-23T18:58:47: [31mDELETE[39m   /~/cache/stems/:songId
+2026-02-23T18:58:47: [31mDELETE[39m   /~/cache/stems
+2026-02-23T18:58:47: [32mGET[39m      /~/cache/uploads
+2026-02-23T18:58:47: [31mDELETE[39m   /~/cache/uploads/:name
+2026-02-23T18:58:47: [31mDELETE[39m   /~/cache/uploads
+2026-02-23T18:58:47: [32mGET[39m      /~/cache/normalized
+2026-02-23T18:58:47: [31mDELETE[39m   /~/cache/normalized/:name
+2026-02-23T18:58:47: [31mDELETE[39m   /~/cache/normalized
+2026-02-23T18:58:47: [31mDELETE[39m   /~/cache/all
+2026-02-23T18:58:47: [32mGET[39m      /~/cache/summary
+2026-02-23T18:58:47: [33mPOST[39m     /~/shazam/recognize
+2026-02-23T18:58:47: [32mGET[39m      /~/daily-words
+2026-02-23T18:58:47: [33mPOST[39m     /~/daily-words/reset
+2026-02-23T18:58:47: [33mPOST[39m     /~/daily-words/clear-cache
+2026-02-23T18:58:47: [33mPOST[39m     /~/daily-words/preheat
+2026-02-23T18:58:47: [32mGET[39m      /restart/Mohan9869868880
+2026-02-23T18:58:47: Music API listening on port 3000
+2026-02-23T18:58:47: Demucs worker status: running
+2026-02-23T18:58:47: [appRedis] connected
+2026-02-23T18:58:47: [demucs-oracle] Worker ready
+2026-02-23T18:59:02: [daily-words] Day rollover detected (null → 2026-02-23) — clearing today_shown
+2026-02-23T18:59:15: [daily-words] Selected 5 new + 0 cached = 5 words in 9 attempts
+2026-02-23T18:59:15: [daily-words] Served 5 words | attempts=9 | cached=false | cursor=150/369652
+2026-02-23T19:17:48: [daily-words] Loaded 1533 words from words_curated.txt
+2026-02-23T19:17:48: [daily-words] Loaded 369652 words from words_huge.txt
+2026-02-23T19:17:48: [daily-words] Combined: 369652 total (1533 curated + 368119 huge)
+2026-02-23T19:17:48: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-02-23T19:17:48: [demucs-oracle] Model: htdemucs_6s
+2026-02-23T19:17:48: [demucs-oracle] Shifts: 10
+2026-02-23T19:17:48: [demucs-oracle] Overlap: 0.25
+2026-02-23T19:17:48: [demucs-oracle] Output: 320k mp3
+2026-02-23T19:17:48: [demucs-oracle] ====================================
+2026-02-23T19:17:48: [demucs-oracle] Module loaded
+2026-02-23T19:17:48: OPTIONS  /.*/
+2026-02-23T19:17:48: [33mPOST[39m     /~/upload
+2026-02-23T19:17:48: [32mGET[39m      /~/stems/:id/state
+2026-02-23T19:17:48: [32mGET[39m      /~/stems/:id/result
+2026-02-23T19:17:48: [33mPOST[39m     /~/stems/:id/cleanup
+2026-02-23T19:17:48: [32mGET[39m      /~/stems/:id/check
+2026-02-23T19:17:48: [32mGET[39m      /~/progress/:id
+2026-02-23T19:17:48: [32mGET[39m      /~/download-mp3
+2026-02-23T19:17:48: [32mGET[39m      /~/scrape-lyrics/lrclib
+2026-02-23T19:17:48: [32mGET[39m      /~/scrape-lyrics/genius
+2026-02-23T19:17:48: [32mGET[39m      /~/scrape-lyrics/google
+2026-02-23T19:17:48: [32mGET[39m      /~/scrape-lyrics/extract
+2026-02-23T19:17:48: [32mGET[39m      /~/scrape-lyrics
+2026-02-23T19:17:48: [32mGET[39m      /~/scrape-news
+2026-02-23T19:17:48: [32mGET[39m      /~/search
+2026-02-23T19:17:48: [32mGET[39m      /~/suggestions
+2026-02-23T19:17:48: [32mGET[39m      /~/audio/prepare
+2026-02-23T19:17:48: [32mGET[39m      /~/audio/check
+2026-02-23T19:17:48: [32mGET[39m      /~/audio
+2026-02-23T19:17:48: [32mGET[39m      /~/stream
+2026-02-23T19:17:48: [32mGET[39m      /~/info
+2026-02-23T19:17:48: [32mGET[39m      /~/cache/youtube
+2026-02-23T19:17:48: [31mDELETE[39m   /~/cache/youtube/:videoId
+2026-02-23T19:17:48: [31mDELETE[39m   /~/cache/youtube
+2026-02-23T19:17:48: [32mGET[39m      /~/cache/stems
+2026-02-23T19:17:48: [31mDELETE[39m   /~/cache/stems/:songId
+2026-02-23T19:17:48: [31mDELETE[39m   /~/cache/stems
+2026-02-23T19:17:48: [32mGET[39m      /~/cache/uploads
+2026-02-23T19:17:48: [31mDELETE[39m   /~/cache/uploads/:name
+2026-02-23T19:17:48: [31mDELETE[39m   /~/cache/uploads
+2026-02-23T19:17:48: [32mGET[39m      /~/cache/normalized
+2026-02-23T19:17:48: [31mDELETE[39m   /~/cache/normalized/:name
+2026-02-23T19:17:48: [31mDELETE[39m   /~/cache/normalized
+2026-02-23T19:17:48: [31mDELETE[39m   /~/cache/all
+2026-02-23T19:17:48: [32mGET[39m      /~/cache/summary
+2026-02-23T19:17:48: [33mPOST[39m     /~/shazam/recognize
+2026-02-23T19:17:48: [32mGET[39m      /~/daily-words
+2026-02-23T19:17:48: [33mPOST[39m     /~/daily-words/reset
+2026-02-23T19:17:48: [33mPOST[39m     /~/daily-words/clear-cache
+2026-02-23T19:17:48: [33mPOST[39m     /~/daily-words/preheat
+2026-02-23T19:17:48: [32mGET[39m      /restart/Mohan9869868880
+2026-02-23T19:17:48: Music API listening on port 3000
+2026-02-23T19:17:48: Demucs worker status: running
+2026-02-23T19:17:48: [appRedis] connected
+2026-02-23T19:17:48: [demucs-oracle] Worker ready

@@ -78,3 +78,27 @@
 2026-02-23T01:34:29: [demucs-oracle] ====================================
 2026-02-23T01:34:29: [demucs-oracle] Module loaded
 2026-02-23T01:34:29: [demucs-oracle] Worker ready
+2026-02-23T01:42:34: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-02-23T01:42:34: [demucs-oracle] Model: htdemucs_6s
+2026-02-23T01:42:34: [demucs-oracle] Shifts: 10
+2026-02-23T01:42:34: [demucs-oracle] Overlap: 0.25
+2026-02-23T01:42:34: [demucs-oracle] Output: 320k mp3
+2026-02-23T01:42:34: [demucs-oracle] ====================================
+2026-02-23T01:42:34: [demucs-oracle] Module loaded
+2026-02-23T01:42:34: [demucs-oracle] Worker ready
+2026-02-23T02:16:22: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-02-23T02:16:22: [demucs-oracle] Model: htdemucs_6s
+2026-02-23T02:16:22: [demucs-oracle] Shifts: 10
+2026-02-23T02:16:22: [demucs-oracle] Overlap: 0.25
+2026-02-23T02:16:22: [demucs-oracle] Output: 320k mp3
+2026-02-23T02:16:22: [demucs-oracle] ====================================
+2026-02-23T02:16:22: [demucs-oracle] Module loaded
+2026-02-23T02:16:22: [demucs-oracle] Worker ready
+2026-02-23T19:17:46: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-02-23T19:17:46: [demucs-oracle] Model: htdemucs_6s
+2026-02-23T19:17:46: [demucs-oracle] Shifts: 10
+2026-02-23T19:17:46: [demucs-oracle] Overlap: 0.25
+2026-02-23T19:17:46: [demucs-oracle] Output: 320k mp3
+2026-02-23T19:17:46: [demucs-oracle] ====================================
+2026-02-23T19:17:46: [demucs-oracle] Module loaded
+2026-02-23T19:17:46: [demucs-oracle] Worker ready

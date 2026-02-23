@@ -147,3 +147,114 @@ skipping junk at 190114 bytes
 2026-02-23T01:34:53: [daily-words] LibreTranslate error for "To make eternally famous.": fetch failed (attempt 3)
 2026-02-23T01:34:53: [daily-words] LibreTranslate error for "His heroic deeds were immortalised in song and tal": fetch failed (attempt 3)
 2026-02-23T01:34:53: [daily-words] Incomplete French translation for "immortalizing" — skipping
+2026-02-23T01:55:56: [daily-words] LibreTranslate error for "hexose": fetch failed (attempt 1)
+2026-02-23T01:55:56: [daily-words] LibreTranslate error for "A sugar or saccharide containing six carbon atoms.": fetch failed (attempt 1)
+2026-02-23T01:55:56: [daily-words] LibreTranslate error for "Glucose is a common hexose": fetch failed (attempt 1)
+2026-02-23T01:55:57: [daily-words] LibreTranslate error for "hexose": fetch failed (attempt 2)
+2026-02-23T01:55:57: [daily-words] LibreTranslate error for "A sugar or saccharide containing six carbon atoms.": fetch failed (attempt 2)
+2026-02-23T01:55:57: [daily-words] LibreTranslate error for "Glucose is a common hexose": fetch failed (attempt 2)
+2026-02-23T01:55:58: [daily-words] LibreTranslate error for "hexose": fetch failed (attempt 3)
+2026-02-23T01:55:58: [daily-words] LibreTranslate error for "A sugar or saccharide containing six carbon atoms.": fetch failed (attempt 3)
+2026-02-23T01:55:58: [daily-words] LibreTranslate error for "Glucose is a common hexose": fetch failed (attempt 3)
+2026-02-23T01:55:58: [daily-words] Incomplete French translation for "hexose" — skipping
+2026-02-23T01:55:58: [daily-words] LibreTranslate error for "hexoses": fetch failed (attempt 1)
+2026-02-23T01:55:58: [daily-words] LibreTranslate error for "A sugar or saccharide containing six carbon atoms.": fetch failed (attempt 1)
+2026-02-23T01:55:58: [daily-words] LibreTranslate error for "Glucose is a common hexose": fetch failed (attempt 1)
+2026-02-23T01:55:59: [daily-words] LibreTranslate error for "hexoses": fetch failed (attempt 2)
+2026-02-23T01:55:59: [daily-words] LibreTranslate error for "A sugar or saccharide containing six carbon atoms.": fetch failed (attempt 2)
+2026-02-23T01:55:59: [daily-words] LibreTranslate error for "Glucose is a common hexose": fetch failed (attempt 2)
+2026-02-23T01:56:00: [daily-words] LibreTranslate error for "hexoses": fetch failed (attempt 3)
+2026-02-23T01:56:00: [daily-words] LibreTranslate error for "A sugar or saccharide containing six carbon atoms.": fetch failed (attempt 3)
+2026-02-23T01:56:00: [daily-words] LibreTranslate error for "Glucose is a common hexose": fetch failed (attempt 3)
+2026-02-23T01:56:00: [daily-words] Incomplete French translation for "hexoses" — skipping
+2026-02-23T02:04:25: [daily-words] LibreTranslate error for "preexists": fetch failed (attempt 1)
+2026-02-23T02:04:25: [daily-words] LibreTranslate error for "To exist before something else.": fetch failed (attempt 1)
+2026-02-23T02:04:25: [daily-words] LibreTranslate error for "The new device utilized preexisting technologies.": fetch failed (attempt 1)
+2026-02-23T02:04:26: [daily-words] LibreTranslate error for "preexists": fetch failed (attempt 2)
+2026-02-23T02:04:26: [daily-words] LibreTranslate error for "To exist before something else.": fetch failed (attempt 2)
+2026-02-23T02:04:26: [daily-words] LibreTranslate error for "The new device utilized preexisting technologies.": fetch failed (attempt 2)
+2026-02-23T02:04:27: [daily-words] LibreTranslate error for "preexists": fetch failed (attempt 3)
+2026-02-23T02:04:27: [daily-words] LibreTranslate error for "To exist before something else.": fetch failed (attempt 3)
+2026-02-23T02:04:27: [daily-words] LibreTranslate error for "The new device utilized preexisting technologies.": fetch failed (attempt 3)
+2026-02-23T02:04:27: [daily-words] Incomplete French translation for "preexists" — skipping
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/ubuntu/Projects/oracle24hrs/dist/app/music/controllers/upload-music.ts' imported from /home/ubuntu/Projects/oracle24hrs/dist/app/music/app.js
+    at finalizeResolution (node:internal/modules/esm/resolve:283:11)
+    at moduleResolve (node:internal/modules/esm/resolve:952:10)
+    at defaultResolve (node:internal/modules/esm/resolve:1188:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:642:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:591:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:574:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:236:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:130:49)
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/ubuntu/Projects/oracle24hrs/dist/app/music/queues/demucs.queue.ts' imported from /home/ubuntu/Projects/oracle24hrs/dist/app/music/controllers/upload-music.js
+    at finalizeResolution (node:internal/modules/esm/resolve:283:11)
+    at moduleResolve (node:internal/modules/esm/resolve:952:10)
+    at defaultResolve (node:internal/modules/esm/resolve:1188:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:642:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:591:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:574:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:236:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:130:49)
+2026-02-23T02:13:36: [daily-words] Incomplete French translation for "false" — skipping
+2026-02-23T02:13:40: [daily-words] Incomplete French translation for "terrain" — skipping
+2026-02-23T02:22:12: [daily-words] Incomplete French translation for "assume" — skipping
+2026-02-23T03:00:37: [shazam/py stderr] skipping junk at 57565 bytes
+skipping junk at 59492 bytes
+invalid mpeg audio header
+skipping junk at 70596 bytes
+skipping junk at 75719 bytes
+skipping junk at 79389 bytes
+skipping junk at 80421 bytes
+skipping junk at 84854 bytes
+skipping junk at 85439 bytes
+invalid mpeg audio header
+skipping junk at 92974 bytes
+skipping junk at 93275 bytes
+skipping junk at 95107 bytes
+skipping junk at 96273 bytes
+invalid mpeg audio header
+skipping junk at 99574 bytes
+skipping junk at 100616 bytes
+skipping junk at 101940 bytes
+skipping junk at 102579 bytes
+skipping junk at 105120 bytes
+skipping junk at 106304 bytes
+skipping junk at 107098 bytes
+skipping junk at 107401 bytes
+skipping junk at 109172 bytes
+skipping junk at 111887 bytes
+skipping junk at 117617 bytes
+skipping junk at 120278 bytes
+skipping junk at 120641 bytes
+skipping junk at 125374 bytes
+skipping junk at 128097 bytes
+skipping junk at 128686 bytes
+skipping junk at 129012 bytes
+skipping junk at 133848 bytes
+skipping junk at 137892 bytes
+skipping junk at 137937 bytes
+skipping junk at 138300 bytes
+skipping junk at 138832 bytes
+skipping junk at 145058 bytes
+skipping junk at 145074 bytes
+invalid mpeg audio header
+invalid mpeg audio header
+skipping junk at 147553 bytes
+invalid mpeg audio header
+invalid mpeg audio header
+skipping junk at 151474 bytes
+invalid mpeg audio header
+invalid mpeg audio header
+skipping junk at 156796 bytes
+skipping junk at 165142 bytes
+invalid mpeg audio header
+skipping junk at 170666 bytes
+skipping junk at 173130 bytes
+skipping junk at 176700 bytes
+skipping junk at 177035 bytes
+skipping junk at 179077 bytes
+skipping junk at 180040 bytes
+invalid mpeg audio header
+invalid mpeg audio header

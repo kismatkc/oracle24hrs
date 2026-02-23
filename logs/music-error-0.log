@@ -42,3 +42,25 @@ invalid mpeg audio header
 skipping junk at 189687 bytes
 skipping junk at 189876 bytes
 invalid mpeg audio header
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/ubuntu/Projects/oracle24hrs/dist/app/music/controllers/upload-music.ts' imported from /home/ubuntu/Projects/oracle24hrs/dist/app/music/app.js
+    at finalizeResolution (node:internal/modules/esm/resolve:283:11)
+    at moduleResolve (node:internal/modules/esm/resolve:952:10)
+    at defaultResolve (node:internal/modules/esm/resolve:1188:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:642:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:591:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:574:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:236:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:130:49)
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/ubuntu/Projects/oracle24hrs/dist/app/music/queues/demucs.queue.ts' imported from /home/ubuntu/Projects/oracle24hrs/dist/app/music/controllers/upload-music.js
+    at finalizeResolution (node:internal/modules/esm/resolve:283:11)
+    at moduleResolve (node:internal/modules/esm/resolve:952:10)
+    at defaultResolve (node:internal/modules/esm/resolve:1188:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:642:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:591:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:574:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:236:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:130:49)
+2026-02-23T02:42:10: [daily-words] Incomplete French translation for "false" — skipping
+2026-02-23T02:42:13: [daily-words] Incomplete French translation for "terrain" — skipping
