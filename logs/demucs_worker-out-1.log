@@ -46,3 +46,35 @@
 2026-02-22T04:26:00: [demucs-oracle] ====================================
 2026-02-22T04:26:00: [demucs-oracle] Module loaded
 2026-02-22T04:26:00: [demucs-oracle] Worker ready
+2026-02-23T00:15:45: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-02-23T00:15:45: [demucs-oracle] Model: htdemucs_6s
+2026-02-23T00:15:45: [demucs-oracle] Shifts: 10
+2026-02-23T00:15:45: [demucs-oracle] Overlap: 0.25
+2026-02-23T00:15:45: [demucs-oracle] Output: 320k mp3
+2026-02-23T00:15:45: [demucs-oracle] ====================================
+2026-02-23T00:15:45: [demucs-oracle] Module loaded
+2026-02-23T00:15:45: [demucs-oracle] Worker ready
+2026-02-23T00:47:58: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-02-23T00:47:58: [demucs-oracle] Model: htdemucs_6s
+2026-02-23T00:47:58: [demucs-oracle] Shifts: 10
+2026-02-23T00:47:58: [demucs-oracle] Overlap: 0.25
+2026-02-23T00:47:58: [demucs-oracle] Output: 320k mp3
+2026-02-23T00:47:58: [demucs-oracle] ====================================
+2026-02-23T00:47:58: [demucs-oracle] Module loaded
+2026-02-23T00:47:58: [demucs-oracle] Worker ready
+2026-02-23T01:06:22: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-02-23T01:06:22: [demucs-oracle] Model: htdemucs_6s
+2026-02-23T01:06:22: [demucs-oracle] Shifts: 10
+2026-02-23T01:06:22: [demucs-oracle] Overlap: 0.25
+2026-02-23T01:06:22: [demucs-oracle] Output: 320k mp3
+2026-02-23T01:06:22: [demucs-oracle] ====================================
+2026-02-23T01:06:22: [demucs-oracle] Module loaded
+2026-02-23T01:06:22: [demucs-oracle] Worker ready
+2026-02-23T01:34:29: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-02-23T01:34:29: [demucs-oracle] Model: htdemucs_6s
+2026-02-23T01:34:29: [demucs-oracle] Shifts: 10
+2026-02-23T01:34:29: [demucs-oracle] Overlap: 0.25
+2026-02-23T01:34:29: [demucs-oracle] Output: 320k mp3
+2026-02-23T01:34:29: [demucs-oracle] ====================================
+2026-02-23T01:34:29: [demucs-oracle] Module loaded
+2026-02-23T01:34:29: [demucs-oracle] Worker ready

@@ -195,3 +195,13 @@ class VideoSummaryParagraphView extends YTNode {
     dislikeButtonViewModel: { dislikeButtonViewModel: [Object] }
   }
 }
+2026-02-23T01:41:23: [daily-words] LibreTranslate error for "promo": fetch failed (attempt 1)
+2026-02-23T01:41:23: [daily-words] LibreTranslate error for "An advancement in rank or position.": fetch failed (attempt 1)
+2026-02-23T01:41:23: [daily-words] LibreTranslate error for "I'll have to give myself a promotion!": fetch failed (attempt 1)
+2026-02-23T01:41:23: [daily-words] LibreTranslate error for "promo": fetch failed (attempt 2)
+2026-02-23T01:41:23: [daily-words] LibreTranslate error for "An advancement in rank or position.": fetch failed (attempt 2)
+2026-02-23T01:41:23: [daily-words] LibreTranslate error for "I'll have to give myself a promotion!": fetch failed (attempt 2)
+2026-02-23T01:41:24: [daily-words] LibreTranslate error for "promo": fetch failed (attempt 3)
+2026-02-23T01:41:24: [daily-words] LibreTranslate error for "An advancement in rank or position.": fetch failed (attempt 3)
+2026-02-23T01:41:24: [daily-words] LibreTranslate error for "I'll have to give myself a promotion!": fetch failed (attempt 3)
+2026-02-23T01:41:24: [daily-words] Incomplete French translation for "promo" — skipping
