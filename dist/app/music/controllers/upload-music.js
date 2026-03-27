@@ -25,7 +25,7 @@ const upload = multer({
 // Redis ledger for tracking job state
 let Redis = null;
 try {
-    const { BullRedis } = require("../../../lib/bullRedis.ts");
+    const { BullRedis } = require("../../../lib/bullRedis.js");
     Redis = BullRedis;
 }
 catch { }

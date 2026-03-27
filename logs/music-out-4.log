@@ -1020,3 +1020,906 @@
 2026-02-23T19:17:48: Demucs worker status: running
 2026-02-23T19:17:48: [appRedis] connected
 2026-02-23T19:17:48: [demucs-oracle] Worker ready
+2026-02-23T19:29:20: [daily-words] Returning 5 cached today-words
+2026-02-23T19:29:20: [daily-words] Served 5 words | attempts=0 | cached=true | cursor=150/369652
+2026-02-23T20:23:23: [daily-words] Served 5 words | attempts=0 | cached=true | cursor=150/369652
+2026-02-23T22:52:43: [daily-words] Served 5 words | attempts=0 | cached=true | cursor=150/369652
+2026-02-23T23:23:11: [youtube] Suggestions request: scorpia
+2026-02-23T23:23:11: [youtube] Creating fresh Innertube client...
+2026-02-23T23:23:11: [youtube] Innertube client initialized
+2026-02-23T23:23:15: 
+──────── LRCLIB (individual) ────────
+2026-02-23T23:23:15: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=scorpions+still+loving+you
+2026-02-23T23:23:15: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-23T23:23:15: scraper > URL: https://www.chordie.com/chord.pere/www.guitaretab.com/s/scorpions/206038.html
+2026-02-23T23:23:15: [Playwright] Navigating: https://www.chordie.com/chord.pere/www.guitaretab.com/s/scorpions/206038.html
+2026-02-23T23:23:18: [LRCLIB] ⚠️ API error: timeout of 3000ms exceeded
+2026-02-23T23:23:23: [Playwright] Result: 86 lines
+2026-02-23T23:23:44: 
+──────── EXTRACT (CHEERIO) ────────
+2026-02-23T23:23:44: scraper > URL: https://www.chordie.com/chord.pere/www.guitaretab.com/s/scorpions/206038.html
+2026-02-23T23:23:44: [Cheerio] Fetching: https://www.chordie.com/chord.pere/www.guitaretab.com/s/scorpions/206038.html
+2026-02-23T23:23:44: [Cheerio] ✅ Readability (86 lines)
+2026-02-24T01:09:42: [youtube] Suggestions request: test
+2026-02-24T01:09:43: [youtube] Creating fresh Innertube client...
+2026-02-24T01:09:43: [youtube] Innertube client initialized
+2026-02-24T01:09:44: 
+──────── EXTRACT (CHEERIO) ────────
+2026-02-24T01:09:44: scraper > URL: https://groups.google.com/g/mozilla.support.bugzilla/c/y2WIbIWPt2w
+2026-02-24T01:09:44: [Cheerio] Fetching: https://groups.google.com/g/mozilla.support.bugzilla/c/y2WIbIWPt2w
+2026-02-24T01:09:47: [Cheerio] ✅ Readability (3108 lines)
+2026-02-24T01:11:18: 
+──────── GENIUS (individual) ────────
+2026-02-24T01:11:18: [Genius] Searching: "test track epcot"
+2026-02-24T01:11:18: [Genius] Found: "Epcot by Darmstadtium2013 Parodies" → https://genius.com/Darmstadtium2013-parodies-epcot-lyrics
+2026-02-24T01:11:18: [Cheerio] Fetching: https://genius.com/Darmstadtium2013-parodies-epcot-lyrics
+2026-02-24T01:11:18: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-02-24T01:11:18: [Genius] Cheerio failed/403 — trying Playwright for Genius page
+2026-02-24T01:11:18: [Playwright] Navigating: https://genius.com/Darmstadtium2013-parodies-epcot-lyrics
+2026-02-24T01:11:33: [Playwright] Result: 62 lines
+2026-02-24T01:11:33: [Genius] ✅ Scraped 62 lines
+2026-02-24T01:47:35: [youtube] Suggestions request: alba
+2026-02-24T01:47:36: [youtube] Creating fresh Innertube client...
+2026-02-24T01:47:36: [youtube] Innertube client initialized
+2026-02-24T01:47:37: 
+──────── GENIUS (individual) ────────
+2026-02-24T01:47:37: [Genius] Searching: "albatross"
+2026-02-24T01:47:38: [Genius] Found: "The Albatross by Taylor Swift" → https://genius.com/Taylor-swift-the-albatross-lyrics
+2026-02-24T01:47:38: [Cheerio] Fetching: https://genius.com/Taylor-swift-the-albatross-lyrics
+2026-02-24T01:47:38: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-02-24T01:47:38: [Genius] Cheerio failed/403 — trying Playwright for Genius page
+2026-02-24T01:47:38: [Playwright] Navigating: https://genius.com/Taylor-swift-the-albatross-lyrics
+2026-02-24T01:47:54: [Playwright] Result: 8 lines
+2026-02-24T01:47:54: [Genius] ✅ Scraped 8 lines
+2026-02-24T12:54:57: 
+──────── GOOGLE URLS (individual) ────────
+2026-02-24T12:54:57: [Google] Searching: "arthur gunn - save me now (official music video) Arthur Gunn [OFFICIAL]"
+2026-02-24T12:54:58: [Google] Returned 10 results
+2026-02-24T14:19:39: [daily-words] Day rollover detected (2026-02-23 → 2026-02-24) — clearing today_shown
+2026-02-24T14:19:54: [daily-words] Selected 5 new + 0 cached = 5 words in 8 attempts
+2026-02-24T14:19:54: [daily-words] Served 5 words | attempts=8 | cached=false | cursor=300/369652
+2026-02-26T12:41:30: 
+──────── GENIUS (individual) ────────
+2026-02-26T12:41:31: [Genius] Searching: "MA MARE PANI| SWAR | Swapnil Sharma, Rohit Shakya & Gautam Tandukar Swar"
+2026-02-26T12:41:31: [Genius] ❌ No complete lyrics result for "MA MARE PANI| SWAR | Swapnil Sharma, Rohit Shakya & Gautam Tandukar Swar"
+2026-02-26T12:41:42: 
+──────── EXTRACT (CHEERIO) ────────
+2026-02-26T12:41:42: scraper > URL: https://nepaligeetlyrics.com/artist/bidaai-lyrics/
+2026-02-26T12:41:42: [Cheerio] Fetching: https://nepaligeetlyrics.com/artist/bidaai-lyrics/
+2026-02-26T12:41:44: [Cheerio] ✅ Readability (109 lines)
+2026-02-26T12:46:10: 
+──────── EXTRACT (CHEERIO) ────────
+2026-02-26T12:46:10: scraper > URL: https://www.tiktok.com/discover/ma-mare-pani-swar-full-song
+2026-02-26T12:46:10: [Cheerio] Fetching: https://www.tiktok.com/discover/ma-mare-pani-swar-full-song
+2026-02-26T12:46:11: [Cheerio] ❌ No lyrics extracted
+2026-02-26T12:46:51: 
+──────── EXTRACT (CHEERIO) ────────
+2026-02-26T12:46:51: scraper > URL: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-02-26T12:46:51: [Cheerio] Fetching: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-02-26T12:46:53: [Cheerio] ✅ Readability (156 lines)
+2026-02-26T12:51:48: 
+──────── GOOGLE URLS (individual) ────────
+2026-02-26T12:51:48: [Google] Searching: "arthur gunn - save me now (official music video) Arthur Gunn [OFFICIAL]"
+2026-02-26T12:51:49: [Google] Returned 10 results
+2026-02-28T00:32:33: 
+──────── LRCLIB (individual) ────────
+2026-02-28T00:32:33: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Arthur+Gunn+-+Save+Me+Now+%28Official+Music+Video%29&artist_name=Arthur+Gunn+%5BOFFICIAL%5D&duration=259
+2026-02-28T00:32:34: [LRCLIB] ❌ Not found: "Arthur Gunn - Save Me Now (Official Music Video)"
+2026-02-28T00:32:34: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-28T00:32:34: scraper > URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-02-28T00:32:34: [Playwright] Navigating: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-02-28T00:32:43: [Playwright] Result: 2 lines
+2026-02-28T00:37:21: 
+──────── LRCLIB (individual) ────────
+2026-02-28T00:37:21: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Bikki+Gurung+-+Mari+Jau+%5B+OFFICIAL+MV+%5D&artist_name=Bikki+Gurung&duration=293
+2026-02-28T00:37:21: 
+──────── GENIUS (individual) ────────
+2026-02-28T00:37:21: [Genius] Searching: "Yabesh Thapa - Kasari / कसरी Yabesh Thapa"
+2026-02-28T00:37:21: [Genius] Found: "Kasari by Yabesh Thapa" → https://genius.com/Yabesh-thapa-kasari-lyrics
+2026-02-28T00:37:21: [Cheerio] Fetching: https://genius.com/Yabesh-thapa-kasari-lyrics
+2026-02-28T00:37:21: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-02-28T00:37:21: [Genius] Cheerio failed/403 — trying Playwright for Genius page
+2026-02-28T00:37:21: [Playwright] Navigating: https://genius.com/Yabesh-thapa-kasari-lyrics
+2026-02-28T00:37:21: [LRCLIB] ❌ Not found: "Bikki Gurung - Mari Jau [ OFFICIAL MV ]"
+2026-02-28T00:37:21: 
+──────── LRCLIB (individual) ────────
+2026-02-28T00:37:21: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Bikki+Gurung+-+Mari+Jau+%5B+OFFICIAL+MV+%5D&artist_name=Bikki+Gurung&duration=293
+2026-02-28T00:37:21: 
+──────── GENIUS (individual) ────────
+2026-02-28T00:37:21: [Genius] Searching: "Yabesh Thapa - Kasari / कसरी Yabesh Thapa"
+2026-02-28T00:37:21: 
+──────── GENIUS (individual) ────────
+2026-02-28T00:37:21: [Genius] Searching: "Bikki Gurung - Mari Jau [ OFFICIAL MV ] Bikki Gurung"
+2026-02-28T00:37:21: [Genius] Found: "Kasari by Yabesh Thapa" → https://genius.com/Yabesh-thapa-kasari-lyrics
+2026-02-28T00:37:21: [Cheerio] Fetching: https://genius.com/Yabesh-thapa-kasari-lyrics
+2026-02-28T00:37:21: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-02-28T00:37:21: [Genius] Cheerio failed/403 — trying Playwright for Genius page
+2026-02-28T00:37:21: [Playwright] Navigating: https://genius.com/Yabesh-thapa-kasari-lyrics
+2026-02-28T00:37:21: [Genius] ❌ No complete lyrics result for "Bikki Gurung - Mari Jau [ OFFICIAL MV ] Bikki Gurung"
+2026-02-28T00:37:21: [LRCLIB] ❌ Not found: "Bikki Gurung - Mari Jau [ OFFICIAL MV ]"
+2026-02-28T00:37:27: [youtube] Suggestions request: co
+2026-02-28T00:37:27: [youtube] Creating fresh Innertube client...
+2026-02-28T00:37:31: [youtube] Innertube client initialized
+2026-02-28T00:37:31: [demucs-oracle] Worker ready
+2026-02-28T00:37:36: [progress] id mm5ldijg-lv8y3yj6 -> 0.05
+2026-02-28T00:37:40: [Playwright] Result: 58 lines
+2026-02-28T00:37:40: [Genius] ✅ Scraped 58 lines
+2026-02-28T00:37:43: [Playwright] Result: 58 lines
+2026-02-28T00:37:43: [Genius] ✅ Scraped 58 lines
+2026-02-28T00:37:44: [progress] id mm5ldijg-lv8y3yj6 -> 0.15
+2026-02-28T00:37:52: [progress] id mm5ldijg-lv8y3yj6 -> 0.15
+2026-02-28T00:38:00: 
+──────── LRCLIB (individual) ────────
+2026-02-28T00:38:00: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Prateek+Kuhad+-+Co2+%28Official+Audio%29&artist_name=Prateek+Kuhad&duration=164
+2026-02-28T00:38:00: 
+──────── GENIUS (individual) ────────
+2026-02-28T00:38:00: [Genius] Searching: "Bikki Gurung - Mari Jau [ OFFICIAL MV ] Bikki Gurung"
+2026-02-28T00:38:00: [Genius] ❌ No complete lyrics result for "Bikki Gurung - Mari Jau [ OFFICIAL MV ] Bikki Gurung"
+2026-02-28T00:38:01: [LRCLIB] ✅ Found SYNCED lyrics for "Prateek Kuhad - Co2 (Official Audio)"
+2026-02-28T00:38:01: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-28T00:38:01: scraper > URL: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-02-28T00:38:01: [Playwright] Navigating: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-02-28T00:38:01: 
+──────── GOOGLE URLS (individual) ────────
+2026-02-28T00:38:01: [Google] Searching: "prateek kuhad - co2 (official audio) Prateek Kuhad"
+2026-02-28T00:38:01: [Google] Returned 10 results
+2026-02-28T00:38:07: 
+──────── GOOGLE URLS (individual) ────────
+2026-02-28T00:38:07: [Google] Searching: "bikki gurung - mari jau [ official mv ] Bikki Gurung"
+2026-02-28T00:38:07: 
+──────── GENIUS (individual) ────────
+2026-02-28T00:38:07: [Genius] Searching: "Prateek Kuhad - Co2 (Official Audio) Prateek Kuhad"
+2026-02-28T00:38:07: [Genius] ❌ No complete lyrics result for "Prateek Kuhad - Co2 (Official Audio) Prateek Kuhad"
+2026-02-28T00:38:07: [Google] Returned 10 results
+2026-02-28T00:38:07: 
+──────── GOOGLE URLS (individual) ────────
+2026-02-28T00:38:07: [Google] Searching: "bikki gurung - mari jau [ official mv ] Bikki Gurung"
+2026-02-28T00:38:07: [Google] Returned 10 results
+2026-02-28T00:38:18: [Playwright] Result: 156 lines
+2026-02-28T00:43:27: 
+──────── GENIUS (individual) ────────
+2026-02-28T00:43:27: [Genius] Searching: "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
+2026-02-28T00:43:27: [Genius] ❌ No complete lyrics result for "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
+2026-02-28T00:43:35: 
+──────── LRCLIB (individual) ────────
+2026-02-28T00:43:35: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Bikki+Gurung+-+Mari+Jau+%5B+OFFICIAL+MV+%5D&artist_name=Bikki+Gurung&duration=293
+2026-02-28T00:43:36: 
+──────── LRCLIB (individual) ────────
+2026-02-28T00:43:36: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Bikki+Gurung+-+Mari+Jau+%5B+OFFICIAL+MV+%5D&artist_name=Bikki+Gurung&duration=293
+2026-02-28T00:43:36: [LRCLIB] ❌ Not found: "Bikki Gurung - Mari Jau [ OFFICIAL MV ]"
+2026-02-28T00:43:36: [LRCLIB] ❌ Not found: "Bikki Gurung - Mari Jau [ OFFICIAL MV ]"
+2026-02-28T00:46:34: 
+──────── LRCLIB (individual) ────────
+2026-02-28T00:46:34: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Arthur+Gunn+-+Save+Me+Now+%28Official+Music+Video%29&artist_name=Arthur+Gunn+%5BOFFICIAL%5D&duration=259
+2026-02-28T00:46:34: [LRCLIB] ❌ Not found: "Arthur Gunn - Save Me Now (Official Music Video)"
+2026-02-28T00:46:34: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-28T00:46:34: scraper > URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-02-28T00:46:34: [Playwright] Navigating: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-02-28T00:46:51: [Playwright] Result: 2 lines
+2026-02-28T00:46:51: [demucs-oracle] Worker ready
+2026-02-28T02:30:14: [youtube] Suggestions request: mari
+2026-02-28T02:30:14: [youtube] Creating fresh Innertube client...
+2026-02-28T02:30:14: [youtube] Innertube client initialized
+2026-02-28T02:30:18: 
+──────── LRCLIB (individual) ────────
+2026-02-28T02:30:18: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=mari+jau
+2026-02-28T02:30:19: [LRCLIB] ⚠️ API error: Request failed with status code 400
+2026-02-28T02:30:19: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-28T02:30:19: scraper > URL: https://mychords.net/bikki-gurung/118016-bikki-gurung-mari-jau.html
+2026-02-28T02:30:19: [Playwright] Navigating: https://mychords.net/bikki-gurung/118016-bikki-gurung-mari-jau.html
+2026-02-28T02:30:27: [Playwright] ⚠️ Error: page.goto: net::ERR_TIMED_OUT at https://mychords.net/bikki-gurung/118016-bikki-gurung-mari-jau.html
+Call log:
+[2m  - navigating to "https://mychords.net/bikki-gurung/118016-bikki-gurung-mari-jau.html", waiting until "domcontentloaded"[22m
+
+2026-02-28T02:30:53: 
+──────── GOOGLE URLS (individual) ────────
+2026-02-28T02:30:53: [Google] Searching: "bikki gurung - mari jau [ official mv ] Bikki Gurung"
+2026-02-28T02:30:53: [Google] Returned 10 results
+2026-02-28T03:06:10: [youtube] Suggestions request: mari jau
+2026-02-28T03:06:10: [youtube] Creating fresh Innertube client...
+2026-02-28T03:06:10: [youtube] Innertube client initialized
+2026-02-28T03:06:10: [youtube] Suggestions request: mari jau 2
+2026-02-28T03:31:11: [youtube] Suggestions request: save
+2026-02-28T03:31:12: [youtube] Creating fresh Innertube client...
+2026-02-28T03:31:12: [youtube] Innertube client initialized
+2026-02-28T03:31:16: [youtube] Suggestions request: save me now
+2026-02-28T03:31:26: [youtube] Suggestions request: save
+2026-02-28T03:31:31: [youtube] Suggestions request: save me n
+2026-02-28T03:31:33: 
+──────── GOOGLE URLS (individual) ────────
+2026-02-28T03:31:33: [Google] Searching: "save me now arthur gunn"
+2026-02-28T03:31:34: [Google] Returned 10 results
+2026-02-28T03:40:32: [youtube] Suggestions request: Sav
+2026-02-28T03:40:35: [youtube] Suggestions request: Save mew
+2026-02-28T03:40:38: [youtube] Suggestions request: Save me.
+2026-02-28T03:40:43: [youtube] Search request: save me now arthur gunn
+2026-02-28T03:40:44: [youtube] Search returned 19 results
+2026-02-28T18:39:03: 
+──────── LRCLIB (individual) ────────
+2026-02-28T18:39:03: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=MA+MARE+PANI%7C+SWAR+%7C+Swapnil+Sharma%2C+Rohit+Shakya+%26+Gautam+Tandukar&artist_name=Swar&duration=333
+2026-02-28T18:39:03: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-02-28T18:39:03: scraper > URL: https://anysongchord.com/k-paye-lyrics-and-chords/
+2026-02-28T18:39:03: [Playwright] Navigating: https://anysongchord.com/k-paye-lyrics-and-chords/
+2026-02-28T18:39:04: [LRCLIB] ❌ Not found: "MA MARE PANI| SWAR | Swapnil Sharma, Rohit Shakya & Gautam Tandukar"
+2026-02-28T18:39:11: [Playwright] ⚠️ Error: page.goto: net::ERR_TIMED_OUT at https://anysongchord.com/k-paye-lyrics-and-chords/
+Call log:
+[2m  - navigating to "https://anysongchord.com/k-paye-lyrics-and-chords/", waiting until "domcontentloaded"[22m
+
+2026-02-28T18:44:36: 
+──────── GOOGLE URLS (individual) ────────
+2026-02-28T18:44:36: [Google] Searching: "bikki gurung - mari jau [ official mv ] Bikki Gurung"
+2026-02-28T18:44:36: [Google] Returned 10 results
+2026-02-28T18:49:38: 
+──────── GENIUS (individual) ────────
+2026-02-28T18:49:38: [Genius] Searching: "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
+2026-02-28T18:49:38: [Genius] ❌ No complete lyrics result for "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
+2026-03-01T21:56:36: [daily-words] Returning 8 cached today-words
+2026-03-01T21:56:36: [daily-words] Served 5 words | attempts=0 | cached=true | cursor=840/369652
+2026-03-03T12:29:42: [youtube] Suggestions request: https://youtu.be/NW63lS546YQ?si=1fWTAfRum7KA_JOH
+2026-03-03T12:29:42: [youtube] Creating fresh Innertube client...
+2026-03-03T12:29:43: [youtube] Innertube client initialized
+2026-03-03T12:29:52: [progress] id mmal4zyn-cvp3q99r -> 0.05
+2026-03-03T12:30:00: [progress] id mmal4zyn-cvp3q99r -> 0.05
+2026-03-03T12:30:08: [progress] id mmal4zyn-cvp3q99r -> 0.05
+2026-03-03T12:30:16: [progress] id mmal4zyn-cvp3q99r -> 0.05
+2026-03-03T12:30:24: [progress] id mmal4zyn-cvp3q99r -> 0.05
+2026-03-03T12:30:32: [progress] id mmal4zyn-cvp3q99r -> 0.05
+2026-03-03T12:30:40: [progress] id mmal4zyn-cvp3q99r -> 0.05
+2026-03-03T12:30:48: [progress] id mmal4zyn-cvp3q99r -> 0.05
+2026-03-03T12:30:56: [progress] id mmal6eth-qfy3qlpx -> 0.05
+2026-03-03T12:31:00: [progress] id mmal6eth-qfy3qlpx -> 0.05
+2026-03-03T12:31:06: [progress] id mmal6eth-qfy3qlpx -> 0.05
+2026-03-03T12:31:14: [progress] id mmal6eth-qfy3qlpx -> 0.05
+2026-03-03T12:31:23: [progress] id mmal6eth-qfy3qlpx -> 0.05
+2026-03-03T12:31:30: [youtube] Suggestions request: char
+2026-03-03T12:31:32: [youtube] Suggestions request: char dew
+2026-03-03T12:31:33: 
+──────── GENIUS (individual) ────────
+2026-03-03T12:31:33: [Genius] Searching: "char dewat"
+2026-03-03T12:31:34: [Genius] Found: "Icarus Cry by Nastik (Ft. Yung Narcan)" → https://genius.com/Nastik-icarus-cry-lyrics
+2026-03-03T12:31:34: [Cheerio] Fetching: https://genius.com/Nastik-icarus-cry-lyrics
+2026-03-03T12:31:34: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-03-03T12:31:34: [Genius] Cheerio failed/403 — trying Playwright for Genius page
+2026-03-03T12:31:34: [Playwright] Navigating: https://genius.com/Nastik-icarus-cry-lyrics
+2026-03-03T12:31:37: [progress] id mmal6eth-qfy3qlpx -> 0.05
+2026-03-03T12:31:42: [Playwright] ⚠️ Error: page.goto: net::ERR_TIMED_OUT at https://genius.com/Nastik-icarus-cry-lyrics
+Call log:
+[2m  - navigating to "https://genius.com/Nastik-icarus-cry-lyrics", waiting until "domcontentloaded"[22m
+
+2026-03-03T12:31:42: [Genius] ❌ Page scraped but no lyrics extracted
+2026-03-03T12:31:45: [progress] id mmal6eth-qfy3qlpx -> 0.05
+2026-03-03T12:31:49: [youtube] Suggestions request: char dewar
+2026-03-03T12:31:55: [progress] id mmal6eth-qfy3qlpx -> 0.05
+2026-03-03T12:31:56: 
+──────── EXTRACT (CHEERIO) ────────
+2026-03-03T12:31:56: scraper > URL: https://www.sanzivtoo.com.np/2022/07/Chaar-diwar-guitar-chords.html
+2026-03-03T12:31:56: [Cheerio] Fetching: https://www.sanzivtoo.com.np/2022/07/Chaar-diwar-guitar-chords.html
+2026-03-03T12:31:58: [Cheerio] ✅ Readability (91 lines)
+2026-03-03T12:32:01: [progress] id mmal6eth-qfy3qlpx -> 0.05
+2026-03-03T12:32:07: [progress] id mmal6eth-qfy3qlpx -> 0.05
+2026-03-03T12:32:15: [progress] id mmal6eth-qfy3qlpx -> 0.05
+2026-03-03T12:32:23: [progress] id mmal6eth-qfy3qlpx -> 0.05
+2026-03-04T02:18:07: 
+──────── LRCLIB (individual) ────────
+2026-03-04T02:18:07: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=mari+jau
+2026-03-04T02:18:08: [LRCLIB] ⚠️ API error: Request failed with status code 400
+2026-03-04T02:18:08: 
+──────── EXTRACT (CHEERIO) ────────
+2026-03-04T02:18:08: scraper > URL: https://tabs.musiccafenepal.com/bikki-gurung/mari-jau
+2026-03-04T02:18:08: [Cheerio] Fetching: https://tabs.musiccafenepal.com/bikki-gurung/mari-jau
+2026-03-04T02:18:09: [Cheerio] ✅ Readability (2 lines)
+2026-03-04T02:18:15: 
+──────── GOOGLE URLS (individual) ────────
+2026-03-04T02:18:15: [Google] Searching: "bikki gurung - mari jau [ official mv ] Bikki Gurung"
+2026-03-04T02:18:15: [Google] Returned 10 results
+2026-03-05T02:15:43: 
+──────── GENIUS (individual) ────────
+2026-03-05T02:15:43: [Genius] Searching: "Prateek Kuhad - Co2 (Official Audio) Prateek Kuhad"
+2026-03-05T02:15:43: [Genius] ❌ No complete lyrics result for "Prateek Kuhad - Co2 (Official Audio) Prateek Kuhad"
+2026-03-05T02:15:43: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-03-05T02:15:43: scraper > URL: https://genius.com/Prateek-kuhad-co2-lyrics
+2026-03-05T02:15:43: [Playwright] Navigating: https://genius.com/Prateek-kuhad-co2-lyrics
+2026-03-05T02:16:00: [Playwright] Result: 7 lines
+2026-03-05T02:16:02: 
+──────── GOOGLE URLS (individual) ────────
+2026-03-05T02:16:02: [Google] Searching: "ma mare pani| swar | swapnil sharma, rohit shakya & gautam tandukar Swar"
+2026-03-05T02:16:02: [Google] Returned 10 results
+2026-03-06T01:22:20: 
+──────── GENIUS (individual) ────────
+2026-03-06T01:22:20: [Genius] Searching: "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
+2026-03-06T01:22:21: [Genius] ❌ No complete lyrics result for "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
+2026-03-06T01:23:04: [youtube] Suggestions request: bhool
+2026-03-06T01:23:04: [youtube] Creating fresh Innertube client...
+2026-03-06T01:23:04: [youtube] Innertube client initialized
+2026-03-06T01:23:08: [dl] new request id cache-mme7n7vu-lwgyp6 url https://www.youtube.com/watch?v=ZLi0M_9nnNQ
+2026-03-06T01:23:08: [setP] cache-mme7n7vu-lwgyp6 0.05
+2026-03-06T01:23:11: [setP] cache-mme7n7vu-lwgyp6 0.15
+2026-03-06T01:23:11: [dl] Starting yt-dlp audio download...
+2026-03-06T01:23:11: [yt-dlp] Running command: yt-dlp --proxy http://10.8.0.2:3128 --user-agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 --extractor-args youtube:player_client=android -f bestaudio[ext=m4a]/bestaudio[ext=mp3]/bestaudio[ext=aac]/bestaudio[acodec=aac]/bestaudio/best -x --audio-format mp3 --audio-quality 0 --no-playlist --no-warnings --no-progress --retries 3 --fragment-retries 3 -o /tmp/audio_1772760191804_ww4fzb.mp3 https://www.youtube.com/watch?v=ZLi0M_9nnNQ
+2026-03-06T01:23:11: [progress] id cache-mme7n7vu-lwgyp6 -> 0.15
+2026-03-06T01:23:15: [progress] id cache-mme7n7vu-lwgyp6 -> 0.15
+2026-03-06T01:23:18: [progress] id cache-mme7n7vu-lwgyp6 -> 0.15
+2026-03-06T01:23:21: [progress] id cache-mme7n7vu-lwgyp6 -> 0.15
+2026-03-06T01:23:24: [progress] id cache-mme7n7vu-lwgyp6 -> 0.15
+2026-03-06T01:23:27: [progress] id cache-mme7n7vu-lwgyp6 -> 0.15
+2026-03-06T01:23:29: [yt-dlp] Successfully downloaded audio file, size: 7307849 bytes
+2026-03-06T01:23:29: [yt-dlp] Valid ID3 header detected
+2026-03-06T01:23:29: [dl] Saved to streaming cache: ZLi0M_9nnNQ
+2026-03-06T01:23:29: [setP] cache-mme7n7vu-lwgyp6 1
+2026-03-06T01:23:34: 
+──────── GENIUS (individual) ────────
+2026-03-06T01:23:34: [Genius] Searching: "Bhool | ALBATROSS Albatross Nepal - Official"
+2026-03-06T01:23:34: [Genius] ❌ No complete lyrics result for "Bhool | ALBATROSS Albatross Nepal - Official"
+2026-03-06T01:25:45: 
+──────── EXTRACT (CHEERIO) ────────
+2026-03-06T01:25:45: scraper > URL: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-03-06T01:25:45: [Cheerio] Fetching: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-03-06T01:25:47: [Cheerio] ✅ Readability (156 lines)
+2026-03-09T03:15:07: 
+──────── LRCLIB (individual) ────────
+2026-03-09T03:15:07: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Arthur+Gunn+-+Save+Me+Now+%28Official+Music+Video%29&artist_name=Arthur+Gunn+%5BOFFICIAL%5D&duration=259
+2026-03-09T03:15:07: [LRCLIB] ❌ Not found: "Arthur Gunn - Save Me Now (Official Music Video)"
+2026-03-09T03:15:07: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-03-09T03:15:07: scraper > URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-03-09T03:15:07: [Playwright] Navigating: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-03-09T03:15:23: [Playwright] Result: 2 lines
+2026-03-09T21:45:32: [daily-words] Day rollover detected (2026-03-08 → 2026-03-09) — clearing today_shown
+2026-03-09T21:45:55: [daily-words] Selected 5 new + 0 cached = 5 words in 73 attempts
+2026-03-09T21:45:55: [daily-words] Served 5 words | attempts=73 | cached=false | cursor=1860/369652
+2026-03-11T01:44:01: 
+──────── LRCLIB (individual) ────────
+2026-03-11T01:44:01: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Arthur+Gunn+-+Save+Me+Now+%28Official+Music+Video%29&artist_name=Arthur+Gunn+%5BOFFICIAL%5D&duration=259
+2026-03-11T01:44:02: [LRCLIB] ❌ Not found: "Arthur Gunn - Save Me Now (Official Music Video)"
+2026-03-11T01:44:02: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-03-11T01:44:02: scraper > URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-03-11T01:44:02: [Playwright] Navigating: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-03-11T01:44:11: [Playwright] Result: 2 lines
+2026-03-11T01:59:23: 
+──────── LRCLIB (individual) ────────
+2026-03-11T01:59:23: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Prateek+Kuhad+-+Co2+%28Official+Audio%29&artist_name=Prateek+Kuhad&duration=164
+2026-03-11T01:59:23: 
+──────── GENIUS (individual) ────────
+2026-03-11T01:59:23: [Genius] Searching: "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
+2026-03-11T01:59:23: [Genius] ❌ No complete lyrics result for "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
+2026-03-11T01:59:24: [LRCLIB] ✅ Found SYNCED lyrics for "Prateek Kuhad - Co2 (Official Audio)"
+2026-03-11T01:59:41: 
+──────── GENIUS (individual) ────────
+2026-03-11T01:59:41: [Genius] Searching: "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
+2026-03-11T01:59:41: [Genius] ❌ No complete lyrics result for "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
+2026-03-11T02:02:05: 
+──────── LRCLIB (individual) ────────
+2026-03-11T02:02:05: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Prateek+Kuhad+-+Co2+%28Official+Audio%29&artist_name=Prateek+Kuhad&duration=164
+2026-03-11T02:02:05: [LRCLIB] ✅ Found SYNCED lyrics for "Prateek Kuhad - Co2 (Official Audio)"
+2026-03-11T02:04:49: 
+──────── LRCLIB (individual) ────────
+2026-03-11T02:04:49: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Yabesh+Thapa+-+Kasari+%2F+%E0%A4%95%E0%A4%B8%E0%A4%B0%E0%A5%80&artist_name=Yabesh+Thapa&duration=252
+2026-03-11T02:04:49: 
+──────── EXTRACT (CHEERIO) ────────
+2026-03-11T02:04:49: scraper > URL: https://mychords.net/en/yabesh-thapa/223516-yabesh-thapa-kasari.html
+2026-03-11T02:04:49: [Cheerio] Fetching: https://mychords.net/en/yabesh-thapa/223516-yabesh-thapa-kasari.html
+2026-03-11T02:04:50: [LRCLIB] ❌ Not found: "Yabesh Thapa - Kasari / कसरी"
+2026-03-11T02:04:50: [Cheerio] ✅ Dense-block heuristic (278 lines)
+2026-03-11T02:09:02: 
+──────── GOOGLE URLS (individual) ────────
+2026-03-11T02:09:02: [Google] Searching: "vanana matra John Rai"
+2026-03-11T02:09:02: [Google] Returned 10 results
+2026-03-11T02:11:52: 
+──────── LRCLIB (individual) ────────
+2026-03-11T02:11:52: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=MA+MARE+PANI%7C+SWAR+%7C+Swapnil+Sharma%2C+Rohit+Shakya+%26+Gautam+Tandukar&artist_name=Swar&duration=333
+2026-03-11T02:11:53: [LRCLIB] ❌ Not found: "MA MARE PANI| SWAR | Swapnil Sharma, Rohit Shakya & Gautam Tandukar"
+2026-03-11T02:11:53: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-03-11T02:11:53: scraper > URL: https://www.tunesnepal.com/rohit-shakya/sansaar
+2026-03-11T02:11:53: [Playwright] Navigating: https://www.tunesnepal.com/rohit-shakya/sansaar
+2026-03-11T02:12:09: [Playwright] Result: 95 lines
+2026-03-11T02:17:26: 
+──────── GOOGLE URLS (individual) ────────
+2026-03-11T02:17:26: [Google] Searching: "bikki gurung - mari jau [ official mv ] Bikki Gurung"
+2026-03-11T02:17:26: [Google] Returned 10 results
+2026-03-11T02:22:20: 
+──────── GENIUS (individual) ────────
+2026-03-11T02:22:20: [Genius] Searching: "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
+2026-03-11T02:22:20: [Genius] ❌ No complete lyrics result for "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
+2026-03-11T02:26:39: 
+──────── LRCLIB (individual) ────────
+2026-03-11T02:26:39: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Prateek+Kuhad+-+Co2+%28Official+Audio%29&artist_name=Prateek+Kuhad&duration=164
+2026-03-11T02:26:40: [LRCLIB] ✅ Found SYNCED lyrics for "Prateek Kuhad - Co2 (Official Audio)"
+2026-03-12T01:28:34: 
+──────── GENIUS (individual) ────────
+2026-03-12T01:28:34: [Genius] Searching: "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
+2026-03-12T01:28:34: [Genius] ❌ No complete lyrics result for "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
+2026-03-12T01:30:26: 
+──────── LRCLIB (individual) ────────
+2026-03-12T01:30:26: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Prateek+Kuhad+-+Co2+%28Official+Audio%29&artist_name=Prateek+Kuhad&duration=164
+2026-03-12T01:30:26: [LRCLIB] ✅ Found SYNCED lyrics for "Prateek Kuhad - Co2 (Official Audio)"
+2026-03-12T01:30:55: 
+──────── LRCLIB (individual) ────────
+2026-03-12T01:30:55: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Arthur+Gunn+-+Save+Me+Now+%28Official+Music+Video%29&artist_name=Arthur+Gunn+%5BOFFICIAL%5D&duration=259
+2026-03-12T01:30:55: 
+──────── GENIUS (individual) ────────
+2026-03-12T01:30:55: [Genius] Searching: "Prateek Kuhad - Co2 (Official Audio) Prateek Kuhad"
+2026-03-12T01:30:55: [Genius] ❌ No complete lyrics result for "Prateek Kuhad - Co2 (Official Audio) Prateek Kuhad"
+2026-03-12T01:30:55: [LRCLIB] ❌ Not found: "Arthur Gunn - Save Me Now (Official Music Video)"
+2026-03-12T01:30:55: 
+──────── LRCLIB (individual) ────────
+2026-03-12T01:30:55: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Arthur+Gunn+-+Save+Me+Now+%28Official+Music+Video%29&artist_name=Arthur+Gunn+%5BOFFICIAL%5D&duration=259
+2026-03-12T01:30:55: [LRCLIB] ❌ Not found: "Arthur Gunn - Save Me Now (Official Music Video)"
+2026-03-12T01:30:56: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-03-12T01:30:56: scraper > URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-03-12T01:30:56: [Playwright] Navigating: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-03-12T01:31:05: [Playwright] Result: 2 lines
+2026-03-12T01:32:49: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-03-12T01:32:49: scraper > URL: https://www.tiktok.com/discover/co2-prateek-lyrics
+2026-03-12T01:32:49: [Playwright] Navigating: https://www.tiktok.com/discover/co2-prateek-lyrics
+2026-03-12T01:33:03: [Playwright] Result: 181 lines
+2026-03-12T22:00:56: 
+──────── LRCLIB (individual) ────────
+2026-03-12T22:00:56: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Arthur+Gunn+-+Save+Me+Now+%28Official+Music+Video%29&artist_name=Arthur+Gunn+%5BOFFICIAL%5D&duration=259
+2026-03-12T22:00:57: [LRCLIB] ❌ Not found: "Arthur Gunn - Save Me Now (Official Music Video)"
+2026-03-12T22:00:57: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-03-12T22:00:57: scraper > URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-03-12T22:00:57: [Playwright] Navigating: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-03-12T22:01:05: [Playwright] Result: 2 lines
+2026-03-12T22:06:41: 
+──────── GOOGLE URLS (individual) ────────
+2026-03-12T22:06:41: [Google] Searching: "arthur gunn - save me now (official music video) Arthur Gunn [OFFICIAL]"
+2026-03-12T22:06:42: [Google] Returned 10 results
+2026-03-13T18:21:00: 
+──────── GENIUS (individual) ────────
+2026-03-13T18:21:00: [Genius] Searching: "Prateek Kuhad - Co2 (Official Audio) Prateek Kuhad"
+2026-03-13T18:21:01: [Genius] ❌ No complete lyrics result for "Prateek Kuhad - Co2 (Official Audio) Prateek Kuhad"
+2026-03-13T18:28:01: 
+──────── GENIUS (individual) ────────
+2026-03-13T18:28:01: [Genius] Searching: "Vanana Matra John Rai"
+2026-03-13T18:28:01: [Genius] Found: "Vanana Matra by John Rai" → https://genius.com/John-rai-vanana-matra-lyrics
+2026-03-13T18:28:01: [Cheerio] Fetching: https://genius.com/John-rai-vanana-matra-lyrics
+2026-03-13T18:28:01: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-03-13T18:28:01: scraper > URL: https://www.sanzivtoo.com.np/2024/03/bhana-na-matra-lyrics-chords-john.html
+2026-03-13T18:28:01: [Playwright] Navigating: https://www.sanzivtoo.com.np/2024/03/bhana-na-matra-lyrics-chords-john.html
+2026-03-13T18:28:01: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-03-13T18:28:01: [Genius] Cheerio failed/403 — trying Playwright for Genius page
+2026-03-13T18:28:01: [Playwright] Navigating: https://genius.com/John-rai-vanana-matra-lyrics
+2026-03-13T18:28:13: [Playwright] Result: 132 lines
+2026-03-13T18:28:16: [Playwright] Result: 22 lines
+2026-03-13T18:28:16: [Genius] ✅ Scraped 22 lines
+2026-03-13T18:30:59: 
+──────── EXTRACT (CHEERIO) ────────
+2026-03-13T18:30:59: scraper > URL: https://anysongchord.com/sansaar-lyrics-and-chords/
+2026-03-13T18:30:59: [Cheerio] Fetching: https://anysongchord.com/sansaar-lyrics-and-chords/
+2026-03-13T18:31:02: [Cheerio] ✅ Readability (99 lines)
+2026-03-13T22:41:11: [daily-words] Day rollover detected (2026-03-12 → 2026-03-13) — clearing today_shown
+2026-03-13T22:41:19: [daily-words] Selected 0 new + 0 cached = 0 words in 150 attempts
+2026-03-13T22:41:19: [daily-words] Served 0 words | attempts=150 | cached=false | cursor=2460/369652
+2026-03-13T23:49:30: [daily-words] Selected 3 new + 0 cached = 3 words in 150 attempts
+2026-03-13T23:49:30: [daily-words] Served 3 words | attempts=150 | cached=false | cursor=2610/369652
+2026-03-17T01:48:42: 
+──────── GOOGLE URLS (individual) ────────
+2026-03-17T01:48:42: [Google] Searching: "bikki gurung - mari jau [ official mv ] Bikki Gurung"
+2026-03-17T01:48:43: [Google] Returned 10 results
+2026-03-17T01:59:27: 
+──────── GENIUS (individual) ────────
+2026-03-17T01:59:27: [Genius] Searching: "Prateek Kuhad - Co2 (Official Audio) Prateek Kuhad"
+2026-03-17T01:59:27: 
+──────── GENIUS (individual) ────────
+2026-03-17T01:59:27: [Genius] Searching: "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
+2026-03-17T01:59:27: [Genius] ❌ No complete lyrics result for "Arthur Gunn - Save Me Now (Official Music Video) Arthur Gunn [OFFICIAL]"
+2026-03-17T01:59:27: [Genius] ❌ No complete lyrics result for "Prateek Kuhad - Co2 (Official Audio) Prateek Kuhad"
+2026-03-19T13:56:42: [daily-words] Returning 5 cached today-words
+2026-03-19T13:56:42: [daily-words] Served 5 words | attempts=0 | cached=true | cursor=3210/369652
+2026-03-20T00:43:02: [youtube] Suggestions request: Khaseko
+2026-03-20T00:43:02: [youtube] Creating fresh Innertube client...
+2026-03-20T00:43:03: [youtube] Innertube client initialized
+2026-03-20T01:21:29: 
+──────── EXTRACT (CHEERIO) ────────
+2026-03-20T01:21:29: scraper > URL: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-03-20T01:21:29: [Cheerio] Fetching: https://tabs.musiccafenepal.com/arthur-gunn/save-me-now
+2026-03-20T01:21:30: [Cheerio] ✅ Readability (2 lines)
+2026-03-20T01:22:17: [youtube] Suggestions request: Chardewar
+2026-03-20T01:22:17: [youtube] Creating fresh Innertube client...
+2026-03-20T01:22:17: [youtube] Innertube client initialized
+2026-03-21T18:45:50: [youtube] Suggestions request: khaseko tara
+2026-03-21T18:45:50: [youtube] Creating fresh Innertube client...
+2026-03-21T18:45:50: [youtube] Innertube client initialized
+2026-03-21T18:46:04: [progress] id mn0oi4d3-l3u82b4p -> 0.15
+2026-03-21T18:46:12: [progress] id mn0oi4d3-l3u82b4p -> 0.15
+2026-03-21T18:46:20: [progress] id mn0oi4d3-l3u82b4p -> 0.15
+2026-03-21T18:46:33: 
+──────── GOOGLE URLS (individual) ────────
+2026-03-21T18:46:33: [Google] Searching: "khaseka tara | albatross Albatross Nepal - Official"
+2026-03-21T18:46:33: [Google] Returned 10 results
+2026-03-21T18:51:30: 
+──────── GOOGLE URLS (individual) ────────
+2026-03-21T18:51:30: [Google] Searching: "prateek kuhad - co2 (official audio) Prateek Kuhad"
+2026-03-21T18:51:31: [Google] Returned 10 results
+2026-03-21T18:54:50: 
+──────── GENIUS (individual) ────────
+2026-03-21T18:54:50: [Genius] Searching: "Yabesh Thapa - Kasari / कसरी Yabesh Thapa"
+2026-03-21T18:54:50: [Genius] Found: "Kasari by Yabesh Thapa" → https://genius.com/Yabesh-thapa-kasari-lyrics
+2026-03-21T18:54:50: [Cheerio] Fetching: https://genius.com/Yabesh-thapa-kasari-lyrics
+2026-03-21T18:54:50: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-03-21T18:54:50: [Genius] Cheerio failed/403 — trying Playwright for Genius page
+2026-03-21T18:54:50: [Playwright] Navigating: https://genius.com/Yabesh-thapa-kasari-lyrics
+2026-03-21T18:54:50: 
+──────── EXTRACT (CHEERIO) ────────
+2026-03-21T18:54:50: scraper > URL: https://www.tunesnepal.com/yabesh-thapa-singer/kasari-6
+2026-03-21T18:54:50: [Cheerio] Fetching: https://www.tunesnepal.com/yabesh-thapa-singer/kasari-6
+2026-03-21T18:54:53: [Cheerio] ✅ Readability (85 lines)
+2026-03-21T18:55:13: [Playwright] Result: 44 lines
+2026-03-21T18:55:13: [demucs-oracle] Worker ready
+2026-03-21T18:55:13: [Genius] ✅ Scraped 44 lines
+2026-03-21T19:00:43: 
+──────── GOOGLE URLS (individual) ────────
+2026-03-21T19:00:43: [Google] Searching: "prateek kuhad - co2 (official audio) Prateek Kuhad"
+2026-03-21T19:00:43: 
+──────── GENIUS (individual) ────────
+2026-03-21T19:00:43: [Genius] Searching: "Yabesh Thapa - Kasari / कसरी Yabesh Thapa"
+2026-03-21T19:00:43: [Genius] Found: "Kasari by Yabesh Thapa" → https://genius.com/Yabesh-thapa-kasari-lyrics
+2026-03-21T19:00:43: [Cheerio] Fetching: https://genius.com/Yabesh-thapa-kasari-lyrics
+2026-03-21T19:00:43: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-03-21T19:00:43: [Genius] Cheerio failed/403 — trying Playwright for Genius page
+2026-03-21T19:00:43: [Playwright] Navigating: https://genius.com/Yabesh-thapa-kasari-lyrics
+2026-03-21T19:00:43: [Google] Returned 10 results
+2026-03-21T19:00:43: 
+──────── GENIUS (individual) ────────
+2026-03-21T19:00:43: [Genius] Searching: "Prateek Kuhad - Co2 (Official Audio) Prateek Kuhad"
+2026-03-21T19:00:43: [Genius] ❌ No complete lyrics result for "Prateek Kuhad - Co2 (Official Audio) Prateek Kuhad"
+2026-03-21T19:00:44: 
+──────── LRCLIB (individual) ────────
+2026-03-21T19:00:44: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Khaseka+Tara+%7C+ALBATROSS&artist_name=Albatross+Nepal+-+Official&duration=302
+2026-03-21T19:00:44: 
+──────── GENIUS (individual) ────────
+2026-03-21T19:00:44: [Genius] Searching: "Prateek Kuhad - Co2 (Official Audio) Prateek Kuhad"
+2026-03-21T19:00:44: [Genius] ❌ No complete lyrics result for "Prateek Kuhad - Co2 (Official Audio) Prateek Kuhad"
+2026-03-21T19:00:45: 
+──────── EXTRACT (CHEERIO) ────────
+2026-03-21T19:00:45: scraper > URL: https://genius.com/Prateek-kuhad-co2-lyrics
+2026-03-21T19:00:45: [Cheerio] Fetching: https://genius.com/Prateek-kuhad-co2-lyrics
+2026-03-21T19:00:45: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-03-21T19:00:45: 
+──────── GOOGLE URLS (individual) ────────
+2026-03-21T19:00:45: [Google] Searching: "khaseka tara | albatross Albatross Nepal - Official"
+2026-03-21T19:00:45: [Google] Returned 10 results
+2026-03-21T19:00:45: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-03-21T19:00:45: scraper > URL: https://www.tunesnepal.com/albatross/khaseka-tara
+2026-03-21T19:00:45: [Playwright] Navigating: https://www.tunesnepal.com/albatross/khaseka-tara
+2026-03-21T19:00:46: [LRCLIB] ❌ Not found: "Khaseka Tara | ALBATROSS"
+2026-03-21T19:01:04: [Playwright] Result: 44 lines
+2026-03-21T19:01:04: [Genius] ✅ Scraped 44 lines
+2026-03-21T19:01:08: [Playwright] Result: 89 lines
+2026-03-21T19:05:47: 
+──────── GOOGLE URLS (individual) ────────
+2026-03-21T19:05:47: [Google] Searching: "prateek kuhad - co2 (official audio) Prateek Kuhad"
+2026-03-21T19:05:48: [Google] Returned 10 results
+2026-03-21T19:08:34: 
+──────── LRCLIB (individual) ────────
+2026-03-21T19:08:34: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Yabesh+Thapa+-+Kasari+%2F+%E0%A4%95%E0%A4%B8%E0%A4%B0%E0%A5%80&artist_name=Yabesh+Thapa&duration=252
+2026-03-21T19:08:35: [LRCLIB] ❌ Not found: "Yabesh Thapa - Kasari / कसरी"
+2026-03-23T02:01:27: 
+──────── GENIUS (individual) ────────
+2026-03-23T02:01:27: [Genius] Searching: "Bikki Gurung - Mari Jau [ OFFICIAL MV ] Bikki Gurung"
+2026-03-23T02:01:27: [Genius] ❌ No complete lyrics result for "Bikki Gurung - Mari Jau [ OFFICIAL MV ] Bikki Gurung"
+2026-03-23T02:25:29: [youtube] Suggestions request: char
+2026-03-23T02:25:29: [youtube] Creating fresh Innertube client...
+2026-03-23T02:25:29: [youtube] Innertube client initialized
+2026-03-23T02:25:31: [youtube] Suggestions request: char dwear
+2026-03-23T02:25:44: [progress] id mn2kd30d-7i77ahs4 -> 0.15
+2026-03-23T02:25:52: [progress] id mn2kd30d-7i77ahs4 -> 0.15
+2026-03-23T02:25:58: 
+──────── GENIUS (individual) ────────
+2026-03-23T02:25:58: [Genius] Searching: "Chaar dewar-Samir Shrestha Samir Shrestha"
+2026-03-23T02:25:59: [Genius] Found: "Chaar Dewar by Samir Shrestha" → https://genius.com/Samir-shrestha-chaar-dewar-lyrics
+2026-03-23T02:25:59: [Cheerio] Fetching: https://genius.com/Samir-shrestha-chaar-dewar-lyrics
+2026-03-23T02:25:59: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-03-23T02:25:59: [Genius] Cheerio failed/403 — trying Playwright for Genius page
+2026-03-23T02:25:59: [Playwright] Navigating: https://genius.com/Samir-shrestha-chaar-dewar-lyrics
+2026-03-23T02:25:59: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-03-23T02:25:59: scraper > URL: https://www.tunesnepal.com/samir-shrestha-singer/char-diwar
+2026-03-23T02:25:59: [Playwright] Navigating: https://www.tunesnepal.com/samir-shrestha-singer/char-diwar
+2026-03-23T02:26:13: [Playwright] Result: 39 lines
+2026-03-23T02:26:13: [Genius] ✅ Scraped 39 lines
+2026-03-23T02:26:15: [Playwright] Result: 51 lines
+2026-03-24T01:41:49: 
+──────── LRCLIB (individual) ────────
+2026-03-24T01:41:49: [LRCLIB] Checking: https://lrclib.net/api/get?track_name=Bikki+Gurung+-+Mari+Jau+%5B+OFFICIAL+MV+%5D&artist_name=Bikki+Gurung&duration=293
+2026-03-24T01:41:49: [LRCLIB] ❌ Not found: "Bikki Gurung - Mari Jau [ OFFICIAL MV ]"
+2026-03-24T01:41:49: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-03-24T01:41:49: scraper > URL: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-03-24T01:41:49: [Playwright] Navigating: https://www.tunesnepal.com/bikki-gurung/mari-jau-1
+2026-03-24T01:41:57: [Playwright] Result: 156 lines
+2026-03-24T02:16:36: 
+──────── GENIUS (individual) ────────
+2026-03-24T02:16:36: [Genius] Searching: "Khaseka Tara | ALBATROSS Albatross Nepal - Official"
+2026-03-24T02:16:36: [Genius] ❌ No complete lyrics result for "Khaseka Tara | ALBATROSS Albatross Nepal - Official"
+2026-03-24T02:16:36: 
+──────── EXTRACT (CHEERIO) ────────
+2026-03-24T02:16:36: scraper > URL: https://www.tunesnepal.com/albatross/khaseka-tara
+2026-03-24T02:16:36: [Cheerio] Fetching: https://www.tunesnepal.com/albatross/khaseka-tara
+2026-03-24T02:16:38: [Cheerio] ✅ Readability (89 lines)
+2026-03-24T02:21:38: 
+──────── GENIUS (individual) ────────
+2026-03-24T02:21:38: [Genius] Searching: "Prateek Kuhad - Co2 (Official Audio) Prateek Kuhad"
+2026-03-24T02:21:39: [Genius] ❌ No complete lyrics result for "Prateek Kuhad - Co2 (Official Audio) Prateek Kuhad"
+2026-03-24T02:21:39: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-03-24T02:21:39: scraper > URL: https://genius.com/Prateek-kuhad-co2-lyrics
+2026-03-24T02:21:39: [Playwright] Navigating: https://genius.com/Prateek-kuhad-co2-lyrics
+2026-03-24T02:21:53: [Playwright] Result: 7 lines
+2026-03-24T02:28:35: 
+──────── GENIUS (individual) ────────
+2026-03-24T02:28:35: [Genius] Searching: "Vanana Matra John Rai"
+2026-03-24T02:28:36: 
+──────── EXTRACT (PLAYWRIGHT) ────────
+2026-03-24T02:28:36: scraper > URL: https://www.sanzivtoo.com.np/2024/03/bhana-na-matra-lyrics-chords-john.html
+2026-03-24T02:28:36: [Playwright] Navigating: https://www.sanzivtoo.com.np/2024/03/bhana-na-matra-lyrics-chords-john.html
+2026-03-24T02:28:36: [Genius] Found: "Vanana Matra by John Rai" → https://genius.com/John-rai-vanana-matra-lyrics
+2026-03-24T02:28:36: [Cheerio] Fetching: https://genius.com/John-rai-vanana-matra-lyrics
+2026-03-24T02:28:36: [Cheerio] ⚠️ Error: Request failed with status code 403
+2026-03-24T02:28:36: [Genius] Cheerio failed/403 — trying Playwright for Genius page
+2026-03-24T02:28:36: [Playwright] Navigating: https://genius.com/John-rai-vanana-matra-lyrics
+2026-03-24T02:28:51: [Playwright] Result: 140 lines
+2026-03-24T02:28:53: [Playwright] Result: 22 lines
+2026-03-24T02:28:53: [Genius] ✅ Scraped 22 lines
+2026-03-24T02:31:26: 
+──────── GOOGLE URLS (individual) ────────
+2026-03-24T02:31:26: [Google] Searching: "ma mare pani| swar | swapnil sharma, rohit shakya & gautam tandukar Swar"
+2026-03-24T02:31:26: [Google] Returned 8 results
+2026-03-25T06:32:49: [appRedis] connected
+2026-03-25T06:32:49: [demucs-oracle] Worker ready
+2026-03-25T06:32:53: [demucs-oracle] Worker ready
+2026-03-26T11:20:28: [daily-words] Day rollover detected (2026-03-20 → 2026-03-26) — clearing today_shown
+2026-03-26T11:20:52: [daily-words] Selected 5 new + 0 cached = 5 words in 28 attempts
+2026-03-26T11:20:52: [daily-words] Served 5 words | attempts=28 | cached=false | cursor=3510/369652
+2026-03-26T13:52:39: [daily-words] Returning 5 cached today-words
+2026-03-26T13:52:39: [daily-words] Served 5 words | attempts=0 | cached=true | cursor=3510/369652
+2026-03-26T13:56:02: [daily-words] Served 5 words | attempts=0 | cached=true | cursor=3510/369652
+2026-03-26T18:47:38: [daily-words] Loaded 1533 words from words_curated.txt
+2026-03-26T18:47:38: [daily-words] Loaded 369652 words from words_huge.txt
+2026-03-26T18:47:38: [daily-words] Combined: 369652 total (1533 curated + 368119 huge)
+2026-03-26T18:47:38: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-03-26T18:47:38: [demucs-oracle] Model: htdemucs_6s
+2026-03-26T18:47:38: [demucs-oracle] Shifts: 10
+2026-03-26T18:47:38: [demucs-oracle] Overlap: 0.25
+2026-03-26T18:47:38: [demucs-oracle] Output: 320k mp3
+2026-03-26T18:47:38: [demucs-oracle] ====================================
+2026-03-26T18:47:38: [demucs-oracle] Module loaded
+2026-03-26T18:47:38: OPTIONS  /.*/
+2026-03-26T18:47:38: [33mPOST[39m     /~/upload
+2026-03-26T18:47:38: [32mGET[39m      /~/stems/:id/state
+2026-03-26T18:47:38: [32mGET[39m      /~/stems/:id/result
+2026-03-26T18:47:38: [33mPOST[39m     /~/stems/:id/cleanup
+2026-03-26T18:47:38: [32mGET[39m      /~/stems/:id/check
+2026-03-26T18:47:38: [32mGET[39m      /~/progress/:id
+2026-03-26T18:47:38: [32mGET[39m      /~/download-mp3
+2026-03-26T18:47:38: [32mGET[39m      /~/scrape-lyrics/lrclib
+2026-03-26T18:47:38: [32mGET[39m      /~/scrape-lyrics/genius
+2026-03-26T18:47:38: [32mGET[39m      /~/scrape-lyrics/google
+2026-03-26T18:47:38: [32mGET[39m      /~/scrape-lyrics/extract
+2026-03-26T18:47:38: [32mGET[39m      /~/scrape-lyrics
+2026-03-26T18:47:38: [32mGET[39m      /~/scrape-news
+2026-03-26T18:47:38: [32mGET[39m      /~/search
+2026-03-26T18:47:38: [32mGET[39m      /~/suggestions
+2026-03-26T18:47:38: [32mGET[39m      /~/audio/prepare
+2026-03-26T18:47:38: [32mGET[39m      /~/audio/check
+2026-03-26T18:47:38: [32mGET[39m      /~/audio
+2026-03-26T18:47:38: [32mGET[39m      /~/stream
+2026-03-26T18:47:38: [32mGET[39m      /~/info
+2026-03-26T18:47:38: [32mGET[39m      /~/cache/youtube
+2026-03-26T18:47:38: [31mDELETE[39m   /~/cache/youtube/:videoId
+2026-03-26T18:47:38: [31mDELETE[39m   /~/cache/youtube
+2026-03-26T18:47:38: [32mGET[39m      /~/cache/stems
+2026-03-26T18:47:38: [31mDELETE[39m   /~/cache/stems/:songId
+2026-03-26T18:47:38: [31mDELETE[39m   /~/cache/stems
+2026-03-26T18:47:38: [32mGET[39m      /~/cache/uploads
+2026-03-26T18:47:38: [31mDELETE[39m   /~/cache/uploads/:name
+2026-03-26T18:47:38: [31mDELETE[39m   /~/cache/uploads
+2026-03-26T18:47:38: [32mGET[39m      /~/cache/normalized
+2026-03-26T18:47:38: [31mDELETE[39m   /~/cache/normalized/:name
+2026-03-26T18:47:38: [31mDELETE[39m   /~/cache/normalized
+2026-03-26T18:47:38: [31mDELETE[39m   /~/cache/all
+2026-03-26T18:47:38: [32mGET[39m      /~/cache/summary
+2026-03-26T18:47:38: [33mPOST[39m     /~/shazam/recognize
+2026-03-26T18:47:38: [32mGET[39m      /~/daily-words
+2026-03-26T18:47:38: [33mPOST[39m     /~/daily-words/reset
+2026-03-26T18:47:38: [33mPOST[39m     /~/daily-words/clear-cache
+2026-03-26T18:47:38: [33mPOST[39m     /~/daily-words/preheat
+2026-03-26T18:47:38: [33mPOST[39m     /~/reel/transcript
+2026-03-26T18:47:38: [32mGET[39m      /restart/Mohan9869868880
+2026-03-26T18:47:38: Music API listening on port 3000
+2026-03-26T18:47:38: Demucs worker status: running
+2026-03-26T18:47:38: [appRedis] connected
+2026-03-26T18:47:38: [demucs-oracle] Worker ready
+2026-03-26T18:48:35: [reel] transcript request: https://www.instagram.com/reel/ABC123/
+2026-03-26T18:48:35: [reel] yt-dlp download starting for: https://www.instagram.com/reel/ABC123/
+2026-03-26T21:35:38: [daily-words] Loaded 1533 words from words_curated.txt
+2026-03-26T21:35:38: [daily-words] Loaded 369652 words from words_huge.txt
+2026-03-26T21:35:38: [daily-words] Combined: 369652 total (1533 curated + 368119 huge)
+2026-03-26T21:35:38: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-03-26T21:35:38: [demucs-oracle] Model: htdemucs_6s
+2026-03-26T21:35:38: [demucs-oracle] Shifts: 10
+2026-03-26T21:35:38: [demucs-oracle] Overlap: 0.25
+2026-03-26T21:35:38: [demucs-oracle] Output: 320k mp3
+2026-03-26T21:35:38: [demucs-oracle] ====================================
+2026-03-26T21:35:38: [demucs-oracle] Module loaded
+2026-03-26T21:35:38: OPTIONS  /.*/
+2026-03-26T21:35:38: [33mPOST[39m     /~/upload
+2026-03-26T21:35:38: [32mGET[39m      /~/stems/:id/state
+2026-03-26T21:35:38: [32mGET[39m      /~/stems/:id/result
+2026-03-26T21:35:38: [33mPOST[39m     /~/stems/:id/cleanup
+2026-03-26T21:35:38: [32mGET[39m      /~/stems/:id/check
+2026-03-26T21:35:38: [32mGET[39m      /~/progress/:id
+2026-03-26T21:35:38: [32mGET[39m      /~/download-mp3
+2026-03-26T21:35:38: [32mGET[39m      /~/scrape-lyrics/lrclib
+2026-03-26T21:35:38: [32mGET[39m      /~/scrape-lyrics/genius
+2026-03-26T21:35:38: [32mGET[39m      /~/scrape-lyrics/google
+2026-03-26T21:35:38: [32mGET[39m      /~/scrape-lyrics/extract
+2026-03-26T21:35:38: [32mGET[39m      /~/scrape-lyrics
+2026-03-26T21:35:38: [32mGET[39m      /~/scrape-news
+2026-03-26T21:35:38: [32mGET[39m      /~/search
+2026-03-26T21:35:38: [32mGET[39m      /~/suggestions
+2026-03-26T21:35:38: [32mGET[39m      /~/audio/prepare
+2026-03-26T21:35:38: [32mGET[39m      /~/audio/check
+2026-03-26T21:35:38: [32mGET[39m      /~/audio
+2026-03-26T21:35:38: [32mGET[39m      /~/stream
+2026-03-26T21:35:38: [32mGET[39m      /~/info
+2026-03-26T21:35:38: [32mGET[39m      /~/cache/youtube
+2026-03-26T21:35:38: [31mDELETE[39m   /~/cache/youtube/:videoId
+2026-03-26T21:35:38: [31mDELETE[39m   /~/cache/youtube
+2026-03-26T21:35:38: [32mGET[39m      /~/cache/stems
+2026-03-26T21:35:38: [31mDELETE[39m   /~/cache/stems/:songId
+2026-03-26T21:35:38: [31mDELETE[39m   /~/cache/stems
+2026-03-26T21:35:38: [32mGET[39m      /~/cache/uploads
+2026-03-26T21:35:38: [31mDELETE[39m   /~/cache/uploads/:name
+2026-03-26T21:35:38: [31mDELETE[39m   /~/cache/uploads
+2026-03-26T21:35:38: [32mGET[39m      /~/cache/normalized
+2026-03-26T21:35:38: [31mDELETE[39m   /~/cache/normalized/:name
+2026-03-26T21:35:38: [31mDELETE[39m   /~/cache/normalized
+2026-03-26T21:35:38: [31mDELETE[39m   /~/cache/all
+2026-03-26T21:35:38: [32mGET[39m      /~/cache/summary
+2026-03-26T21:35:38: [33mPOST[39m     /~/shazam/recognize
+2026-03-26T21:35:38: [32mGET[39m      /~/daily-words
+2026-03-26T21:35:38: [33mPOST[39m     /~/daily-words/reset
+2026-03-26T21:35:38: [33mPOST[39m     /~/daily-words/clear-cache
+2026-03-26T21:35:38: [33mPOST[39m     /~/daily-words/preheat
+2026-03-26T21:35:38: [33mPOST[39m     /~/reel/transcript
+2026-03-26T21:35:38: [32mGET[39m      /restart/Mohan9869868880
+2026-03-26T21:35:38: Music API listening on port 3000
+2026-03-26T21:35:38: Demucs worker status: running
+2026-03-26T21:35:38: [appRedis] connected
+2026-03-26T21:35:38: [demucs-oracle] Worker ready
+2026-03-26T21:35:51: [reel] transcript request: https://www.instagram.com/reel/DWWJtzLknG1/
+2026-03-26T21:35:51: [reel] yt-dlp download starting for: https://www.instagram.com/reel/DWWJtzLknG1/
+2026-03-26T22:11:05: [daily-words] Loaded 1533 words from words_curated.txt
+2026-03-26T22:11:05: [daily-words] Loaded 369652 words from words_huge.txt
+2026-03-26T22:11:05: [daily-words] Combined: 369652 total (1533 curated + 368119 huge)
+2026-03-26T22:11:05: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-03-26T22:11:05: [demucs-oracle] Model: htdemucs_6s
+2026-03-26T22:11:05: [demucs-oracle] Shifts: 10
+2026-03-26T22:11:05: [demucs-oracle] Overlap: 0.25
+2026-03-26T22:11:05: [demucs-oracle] Output: 320k mp3
+2026-03-26T22:11:05: [demucs-oracle] ====================================
+2026-03-26T22:11:05: [demucs-oracle] Module loaded
+2026-03-26T22:11:05: OPTIONS  /.*/
+2026-03-26T22:11:05: [33mPOST[39m     /~/upload
+2026-03-26T22:11:05: [32mGET[39m      /~/stems/:id/state
+2026-03-26T22:11:05: [32mGET[39m      /~/stems/:id/result
+2026-03-26T22:11:05: [33mPOST[39m     /~/stems/:id/cleanup
+2026-03-26T22:11:05: [32mGET[39m      /~/stems/:id/check
+2026-03-26T22:11:05: [32mGET[39m      /~/progress/:id
+2026-03-26T22:11:05: [32mGET[39m      /~/download-mp3
+2026-03-26T22:11:05: [32mGET[39m      /~/scrape-lyrics/lrclib
+2026-03-26T22:11:05: [32mGET[39m      /~/scrape-lyrics/genius
+2026-03-26T22:11:05: [32mGET[39m      /~/scrape-lyrics/google
+2026-03-26T22:11:05: [32mGET[39m      /~/scrape-lyrics/extract
+2026-03-26T22:11:05: [32mGET[39m      /~/scrape-lyrics
+2026-03-26T22:11:05: [32mGET[39m      /~/scrape-news
+2026-03-26T22:11:05: [32mGET[39m      /~/search
+2026-03-26T22:11:05: [32mGET[39m      /~/suggestions
+2026-03-26T22:11:05: [32mGET[39m      /~/audio/prepare
+2026-03-26T22:11:05: [32mGET[39m      /~/audio/check
+2026-03-26T22:11:05: [32mGET[39m      /~/audio
+2026-03-26T22:11:05: [32mGET[39m      /~/stream
+2026-03-26T22:11:05: [32mGET[39m      /~/info
+2026-03-26T22:11:05: [32mGET[39m      /~/cache/youtube
+2026-03-26T22:11:05: [31mDELETE[39m   /~/cache/youtube/:videoId
+2026-03-26T22:11:05: [31mDELETE[39m   /~/cache/youtube
+2026-03-26T22:11:05: [32mGET[39m      /~/cache/stems
+2026-03-26T22:11:05: [31mDELETE[39m   /~/cache/stems/:songId
+2026-03-26T22:11:05: [31mDELETE[39m   /~/cache/stems
+2026-03-26T22:11:05: [32mGET[39m      /~/cache/uploads
+2026-03-26T22:11:05: [31mDELETE[39m   /~/cache/uploads/:name
+2026-03-26T22:11:05: [31mDELETE[39m   /~/cache/uploads
+2026-03-26T22:11:05: [32mGET[39m      /~/cache/normalized
+2026-03-26T22:11:05: [31mDELETE[39m   /~/cache/normalized/:name
+2026-03-26T22:11:05: [31mDELETE[39m   /~/cache/normalized
+2026-03-26T22:11:05: [31mDELETE[39m   /~/cache/all
+2026-03-26T22:11:05: [32mGET[39m      /~/cache/summary
+2026-03-26T22:11:05: [33mPOST[39m     /~/shazam/recognize
+2026-03-26T22:11:05: [32mGET[39m      /~/daily-words
+2026-03-26T22:11:05: [33mPOST[39m     /~/daily-words/reset
+2026-03-26T22:11:05: [33mPOST[39m     /~/daily-words/clear-cache
+2026-03-26T22:11:05: [33mPOST[39m     /~/daily-words/preheat
+2026-03-26T22:11:05: [33mPOST[39m     /~/reel/transcript
+2026-03-26T22:11:05: [33mPOST[39m     /~/reel/analyze
+2026-03-26T22:11:05: [32mGET[39m      /restart/Mohan9869868880
+2026-03-26T22:11:05: Music API listening on port 3000
+2026-03-26T22:11:05: Demucs worker status: running
+2026-03-26T22:11:05: [appRedis] connected
+2026-03-26T22:11:05: [demucs-oracle] Worker ready
+2026-03-26T22:11:45: [daily-words] Returning 5 cached today-words
+2026-03-26T22:11:45: [daily-words] Served 5 words | attempts=0 | cached=true | cursor=3510/369652
+2026-03-27T00:15:14: [daily-words] Loaded 1533 words from words_curated.txt
+2026-03-27T00:15:14: [daily-words] Loaded 369652 words from words_huge.txt
+2026-03-27T00:15:14: [daily-words] Combined: 369652 total (1533 curated + 368119 huge)
+2026-03-27T00:15:14: [demucs-oracle] ========== QUALITY CONFIG ==========
+2026-03-27T00:15:14: [demucs-oracle] Model: htdemucs_6s
+2026-03-27T00:15:14: [demucs-oracle] Shifts: 10
+2026-03-27T00:15:14: [demucs-oracle] Overlap: 0.25
+2026-03-27T00:15:14: [demucs-oracle] Output: 320k mp3
+2026-03-27T00:15:14: [demucs-oracle] ====================================
+2026-03-27T00:15:14: [demucs-oracle] Module loaded
+2026-03-27T00:15:14: OPTIONS  /.*/
+2026-03-27T00:15:14: [33mPOST[39m     /~/upload
+2026-03-27T00:15:14: [32mGET[39m      /~/stems/:id/state
+2026-03-27T00:15:14: [32mGET[39m      /~/stems/:id/result
+2026-03-27T00:15:14: [33mPOST[39m     /~/stems/:id/cleanup
+2026-03-27T00:15:14: [32mGET[39m      /~/stems/:id/check
+2026-03-27T00:15:14: [32mGET[39m      /~/progress/:id
+2026-03-27T00:15:14: [32mGET[39m      /~/download-mp3
+2026-03-27T00:15:14: [32mGET[39m      /~/scrape-lyrics/lrclib
+2026-03-27T00:15:14: [32mGET[39m      /~/scrape-lyrics/genius
+2026-03-27T00:15:14: [32mGET[39m      /~/scrape-lyrics/google
+2026-03-27T00:15:14: [32mGET[39m      /~/scrape-lyrics/extract
+2026-03-27T00:15:14: [32mGET[39m      /~/scrape-lyrics
+2026-03-27T00:15:14: [32mGET[39m      /~/scrape-news
+2026-03-27T00:15:14: [32mGET[39m      /~/search
+2026-03-27T00:15:14: [32mGET[39m      /~/suggestions
+2026-03-27T00:15:14: [32mGET[39m      /~/audio/prepare
+2026-03-27T00:15:14: [32mGET[39m      /~/audio/check
+2026-03-27T00:15:14: [32mGET[39m      /~/audio
+2026-03-27T00:15:14: [32mGET[39m      /~/stream
+2026-03-27T00:15:14: [32mGET[39m      /~/info
+2026-03-27T00:15:14: [32mGET[39m      /~/cache/youtube
+2026-03-27T00:15:14: [31mDELETE[39m   /~/cache/youtube/:videoId
+2026-03-27T00:15:14: [31mDELETE[39m   /~/cache/youtube
+2026-03-27T00:15:14: [32mGET[39m      /~/cache/stems
+2026-03-27T00:15:14: [31mDELETE[39m   /~/cache/stems/:songId
+2026-03-27T00:15:14: [31mDELETE[39m   /~/cache/stems
+2026-03-27T00:15:14: [32mGET[39m      /~/cache/uploads
+2026-03-27T00:15:14: [31mDELETE[39m   /~/cache/uploads/:name
+2026-03-27T00:15:14: [31mDELETE[39m   /~/cache/uploads
+2026-03-27T00:15:14: [32mGET[39m      /~/cache/normalized
+2026-03-27T00:15:14: [31mDELETE[39m   /~/cache/normalized/:name
+2026-03-27T00:15:14: [31mDELETE[39m   /~/cache/normalized
+2026-03-27T00:15:14: [31mDELETE[39m   /~/cache/all
+2026-03-27T00:15:14: [32mGET[39m      /~/cache/summary
+2026-03-27T00:15:14: [33mPOST[39m     /~/shazam/recognize
+2026-03-27T00:15:14: [32mGET[39m      /~/daily-words
+2026-03-27T00:15:14: [33mPOST[39m     /~/daily-words/reset
+2026-03-27T00:15:14: [33mPOST[39m     /~/daily-words/clear-cache
+2026-03-27T00:15:14: [33mPOST[39m     /~/daily-words/preheat
+2026-03-27T00:15:14: [33mPOST[39m     /~/reel/transcript
+2026-03-27T00:15:14: [33mPOST[39m     /~/reel/analyze
+2026-03-27T00:15:14: [32mGET[39m      /restart/Mohan9869868880
+2026-03-27T00:15:14: Music API listening on port 3000
+2026-03-27T00:15:14: Demucs worker status: running
+2026-03-27T00:15:14: [appRedis] connected
+2026-03-27T00:15:14: [demucs-oracle] Worker ready
+2026-03-27T13:03:21: [daily-words] Day rollover detected (2026-03-26 → 2026-03-27) — clearing today_shown
+2026-03-27T13:03:57: [daily-words] Selected 1 new + 0 cached = 1 words in 150 attempts
+2026-03-27T13:03:57: [daily-words] Served 1 words | attempts=150 | cached=false | cursor=3660/369652

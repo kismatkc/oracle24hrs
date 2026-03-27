@@ -16,6 +16,8 @@ import youtube from "./controllers/youtube.ts";
 import cacheManagement from "./controllers/cache-management.ts";
 import shazam from "./controllers/shazam.ts";
 import dailyWords from "./controllers/daily-words.ts";
+import reelTranscript from "./controllers/reel.ts";
+import reelAnalyze from "./controllers/reel-analyze.ts";
 
 // Import and start the demucs worker
 import { demucsWorker } from "./workers/demucs.worker.ts";
@@ -55,6 +57,10 @@ app.use("/music", shazam);
 
 /* ---------- Ontime routes (lifestyle app) ---------- */
 app.use("/ontime", dailyWords);
+
+/* ---------- API routes ---------- */
+app.use("/api", reelTranscript);
+app.use("/api", reelAnalyze);
 
 /* ---------- PM2 restart-all via GET ---------- */
 app.get(`/restart/${RESTART_SECRET}`, (_req, res) => {

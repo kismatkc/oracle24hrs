@@ -14,6 +14,8 @@ import youtube from "./controllers/youtube.js";
 import cacheManagement from "./controllers/cache-management.js";
 import shazam from "./controllers/shazam.js";
 import dailyWords from "./controllers/daily-words.js";
+import reelTranscript from "./controllers/reel.js";
+import reelAnalyze from "./controllers/reel-analyze.js";
 // Import and start the demucs worker
 import { demucsWorker } from "./workers/demucs.worker.js";
 import dotenv from "dotenv";
@@ -44,6 +46,9 @@ app.use("/music", cacheManagement);
 app.use("/music", shazam);
 /* ---------- Ontime routes (lifestyle app) ---------- */
 app.use("/ontime", dailyWords);
+/* ---------- API routes ---------- */
+app.use("/api", reelTranscript);
+app.use("/api", reelAnalyze);
 /* ---------- PM2 restart-all via GET ---------- */
 app.get(`/restart/${RESTART_SECRET}`, (_req, res) => {
     res.json({ message: "Restarting all PM2 processes…" });

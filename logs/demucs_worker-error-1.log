@@ -1,0 +1,916 @@
+2026-03-25T06:32:49: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-03-25T06:32:49:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
+2026-03-25T06:32:49:   errno: -111,
+2026-03-25T06:32:49:   code: 'ECONNREFUSED',
+2026-03-25T06:32:49:   syscall: 'connect',
+2026-03-25T06:32:49:   address: '127.0.0.1',
+2026-03-25T06:32:49:   port: 6379
+2026-03-25T06:32:49: }
+2026-03-25T06:32:49: Error: connect ECONNREFUSED 127.0.0.1:6379
+2026-03-25T06:32:49:     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
+2026-03-25T06:32:49:   errno: -111,
+2026-03-25T06:32:49:   code: 'ECONNREFUSED',
+2026-03-25T06:32:49:   syscall: 'connect',
+2026-03-25T06:32:49:   address: '127.0.0.1',
+2026-03-25T06:32:49:   port: 6379
+2026-03-25T06:32:49: }
+2026-03-26T18:42:36: Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/ubuntu/Projects/oracle24hrs/dist/lib/bullRedis.ts' imported from /home/ubuntu/Projects/oracle24hrs/dist/app/music/workers/demucs.worker.js
+2026-03-26T18:42:36:     at finalizeResolution (node:internal/modules/esm/resolve:283:11)
+2026-03-26T18:42:36:     at moduleResolve (node:internal/modules/esm/resolve:952:10)
+2026-03-26T18:42:36:     at defaultResolve (node:internal/modules/esm/resolve:1188:11)
+2026-03-26T18:42:36:     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:642:12)
+2026-03-26T18:42:36:     at #cachedDefaultResolve (node:internal/modules/esm/loader:591:25)
+2026-03-26T18:42:36:     at ModuleLoader.resolve (node:internal/modules/esm/loader:574:38)
+2026-03-26T18:42:36:     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:236:38)
+2026-03-26T18:42:36:     at ModuleJob._link (node:internal/modules/esm/module_job:130:49) {
+2026-03-26T18:42:36:   code: 'ERR_MODULE_NOT_FOUND',
+2026-03-26T18:42:36:   url: 'file:///home/ubuntu/Projects/oracle24hrs/dist/lib/bullRedis.ts'
+2026-03-26T18:42:36: }
+2026-03-26T21:32:45: Doppler Error: you must provide a token
+2026-03-26T21:32:45: node:child_process:966
+2026-03-26T21:32:45:     throw err;
+2026-03-26T21:32:45:     ^
+2026-03-26T21:32:45: 
+2026-03-26T21:32:45: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:32:45: Doppler Error: you must provide a token
+2026-03-26T21:32:45: 
+2026-03-26T21:32:45:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:32:45:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:32:45:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:32:45:     at execSync (node:child_process:963:15)
+2026-03-26T21:32:45:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:32:45:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:32:45:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:32:45:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:32:45:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:32:45:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:32:45:   status: 1,
+2026-03-26T21:32:45:   signal: null,
+2026-03-26T21:32:45:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:32:45:   pid: 3256329,
+2026-03-26T21:32:45:   stdout: '',
+2026-03-26T21:32:45:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:32:45: }
+2026-03-26T21:32:45: 
+2026-03-26T21:32:45: Node.js v20.19.2
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: node:child_process:966
+2026-03-26T21:32:46:     throw err;
+2026-03-26T21:32:46:     ^
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:32:46:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:32:46:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:32:46:     at execSync (node:child_process:963:15)
+2026-03-26T21:32:46:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:32:46:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:32:46:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:32:46:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:32:46:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:32:46:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:32:46:   status: 1,
+2026-03-26T21:32:46:   signal: null,
+2026-03-26T21:32:46:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:32:46:   pid: 3256383,
+2026-03-26T21:32:46:   stdout: '',
+2026-03-26T21:32:46:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:32:46: }
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Node.js v20.19.2
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: node:child_process:966
+2026-03-26T21:32:46:     throw err;
+2026-03-26T21:32:46:     ^
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:32:46:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:32:46:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:32:46:     at execSync (node:child_process:963:15)
+2026-03-26T21:32:46:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:32:46:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:32:46:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:32:46:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:32:46:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:32:46:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:32:46:   status: 1,
+2026-03-26T21:32:46:   signal: null,
+2026-03-26T21:32:46:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:32:46:   pid: 3256450,
+2026-03-26T21:32:46:   stdout: '',
+2026-03-26T21:32:46:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:32:46: }
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Node.js v20.19.2
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: node:child_process:966
+2026-03-26T21:32:46:     throw err;
+2026-03-26T21:32:46:     ^
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:32:46:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:32:46:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:32:46:     at execSync (node:child_process:963:15)
+2026-03-26T21:32:46:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:32:46:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:32:46:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:32:46:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:32:46:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:32:46:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:32:46:   status: 1,
+2026-03-26T21:32:46:   signal: null,
+2026-03-26T21:32:46:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:32:46:   pid: 3256528,
+2026-03-26T21:32:46:   stdout: '',
+2026-03-26T21:32:46:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:32:46: }
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Node.js v20.19.2
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: node:child_process:966
+2026-03-26T21:32:46:     throw err;
+2026-03-26T21:32:46:     ^
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:32:46:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:32:46:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:32:46:     at execSync (node:child_process:963:15)
+2026-03-26T21:32:46:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:32:46:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:32:46:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:32:46:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:32:46:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:32:46:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:32:46:   status: 1,
+2026-03-26T21:32:46:   signal: null,
+2026-03-26T21:32:46:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:32:46:   pid: 3256595,
+2026-03-26T21:32:46:   stdout: '',
+2026-03-26T21:32:46:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:32:46: }
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Node.js v20.19.2
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: node:child_process:966
+2026-03-26T21:32:46:     throw err;
+2026-03-26T21:32:46:     ^
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:32:46:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:32:46:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:32:46:     at execSync (node:child_process:963:15)
+2026-03-26T21:32:46:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:32:46:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:32:46:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:32:46:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:32:46:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:32:46:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:32:46:   status: 1,
+2026-03-26T21:32:46:   signal: null,
+2026-03-26T21:32:46:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:32:46:   pid: 3256668,
+2026-03-26T21:32:46:   stdout: '',
+2026-03-26T21:32:46:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:32:46: }
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Node.js v20.19.2
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: node:child_process:966
+2026-03-26T21:32:46:     throw err;
+2026-03-26T21:32:46:     ^
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:32:46:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:32:46:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:32:46:     at execSync (node:child_process:963:15)
+2026-03-26T21:32:46:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:32:46:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:32:46:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:32:46:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:32:46:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:32:46:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:32:46:   status: 1,
+2026-03-26T21:32:46:   signal: null,
+2026-03-26T21:32:46:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:32:46:   pid: 3256722,
+2026-03-26T21:32:46:   stdout: '',
+2026-03-26T21:32:46:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:32:46: }
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Node.js v20.19.2
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: node:child_process:966
+2026-03-26T21:32:46:     throw err;
+2026-03-26T21:32:46:     ^
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:32:46:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:32:46:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:32:46:     at execSync (node:child_process:963:15)
+2026-03-26T21:32:46:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:32:46:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:32:46:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:32:46:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:32:46:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:32:46:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:32:46:   status: 1,
+2026-03-26T21:32:46:   signal: null,
+2026-03-26T21:32:46:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:32:46:   pid: 3256792,
+2026-03-26T21:32:46:   stdout: '',
+2026-03-26T21:32:46:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:32:46: }
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Node.js v20.19.2
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: node:child_process:966
+2026-03-26T21:32:46:     throw err;
+2026-03-26T21:32:46:     ^
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:32:46:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:32:46:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:32:46:     at execSync (node:child_process:963:15)
+2026-03-26T21:32:46:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:32:46:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:32:46:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:32:46:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:32:46:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:32:46:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:32:46:   status: 1,
+2026-03-26T21:32:46:   signal: null,
+2026-03-26T21:32:46:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:32:46:   pid: 3256858,
+2026-03-26T21:32:46:   stdout: '',
+2026-03-26T21:32:46:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:32:46: }
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Node.js v20.19.2
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: node:child_process:966
+2026-03-26T21:32:46:     throw err;
+2026-03-26T21:32:46:     ^
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:32:46:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:32:46:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:32:46:     at execSync (node:child_process:963:15)
+2026-03-26T21:32:46:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:32:46:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:32:46:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:32:46:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:32:46:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:32:46:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:32:46:   status: 1,
+2026-03-26T21:32:46:   signal: null,
+2026-03-26T21:32:46:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:32:46:   pid: 3256926,
+2026-03-26T21:32:46:   stdout: '',
+2026-03-26T21:32:46:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:32:46: }
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Node.js v20.19.2
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: node:child_process:966
+2026-03-26T21:32:46:     throw err;
+2026-03-26T21:32:46:     ^
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:32:46:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:32:46:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:32:46:     at execSync (node:child_process:963:15)
+2026-03-26T21:32:46:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:32:46:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:32:46:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:32:46:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:32:46:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:32:46:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:32:46:   status: 1,
+2026-03-26T21:32:46:   signal: null,
+2026-03-26T21:32:46:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:32:46:   pid: 3257007,
+2026-03-26T21:32:46:   stdout: '',
+2026-03-26T21:32:46:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:32:46: }
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Node.js v20.19.2
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: node:child_process:966
+2026-03-26T21:32:46:     throw err;
+2026-03-26T21:32:46:     ^
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:32:46:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:32:46:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:32:46:     at execSync (node:child_process:963:15)
+2026-03-26T21:32:46:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:32:46:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:32:46:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:32:46:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:32:46:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:32:46:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:32:46:   status: 1,
+2026-03-26T21:32:46:   signal: null,
+2026-03-26T21:32:46:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:32:46:   pid: 3257054,
+2026-03-26T21:32:46:   stdout: '',
+2026-03-26T21:32:46:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:32:46: }
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Node.js v20.19.2
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: node:child_process:966
+2026-03-26T21:32:46:     throw err;
+2026-03-26T21:32:46:     ^
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:32:46:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:32:46:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:32:46:     at execSync (node:child_process:963:15)
+2026-03-26T21:32:46:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:32:46:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:32:46:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:32:46:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:32:46:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:32:46:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:32:46:   status: 1,
+2026-03-26T21:32:46:   signal: null,
+2026-03-26T21:32:46:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:32:46:   pid: 3257080,
+2026-03-26T21:32:46:   stdout: '',
+2026-03-26T21:32:46:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:32:46: }
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Node.js v20.19.2
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: node:child_process:966
+2026-03-26T21:32:46:     throw err;
+2026-03-26T21:32:46:     ^
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:32:46:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:32:46:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:32:46:     at execSync (node:child_process:963:15)
+2026-03-26T21:32:46:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:32:46:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:32:46:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:32:46:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:32:46:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:32:46:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:32:46:   status: 1,
+2026-03-26T21:32:46:   signal: null,
+2026-03-26T21:32:46:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:32:46:   pid: 3257106,
+2026-03-26T21:32:46:   stdout: '',
+2026-03-26T21:32:46:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:32:46: }
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Node.js v20.19.2
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: node:child_process:966
+2026-03-26T21:32:46:     throw err;
+2026-03-26T21:32:46:     ^
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:32:46:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:32:46:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:32:46:     at execSync (node:child_process:963:15)
+2026-03-26T21:32:46:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:32:46:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:32:46:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:32:46:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:32:46:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:32:46:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:32:46:   status: 1,
+2026-03-26T21:32:46:   signal: null,
+2026-03-26T21:32:46:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:32:46:   pid: 3257132,
+2026-03-26T21:32:46:   stdout: '',
+2026-03-26T21:32:46:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:32:46: }
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Node.js v20.19.2
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: node:child_process:966
+2026-03-26T21:32:46:     throw err;
+2026-03-26T21:32:46:     ^
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:32:46: Doppler Error: you must provide a token
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:32:46:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:32:46:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:32:46:     at execSync (node:child_process:963:15)
+2026-03-26T21:32:46:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:32:46:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:32:46:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:32:46:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:32:46:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:32:46:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:32:46:   status: 1,
+2026-03-26T21:32:46:   signal: null,
+2026-03-26T21:32:46:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:32:46:   pid: 3257158,
+2026-03-26T21:32:46:   stdout: '',
+2026-03-26T21:32:46:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:32:46: }
+2026-03-26T21:32:46: 
+2026-03-26T21:32:46: Node.js v20.19.2
+2026-03-26T21:33:37: Doppler Error: you must provide a token
+2026-03-26T21:33:37: node:child_process:966
+2026-03-26T21:33:37:     throw err;
+2026-03-26T21:33:37:     ^
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:33:37: Doppler Error: you must provide a token
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:33:37:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:33:37:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:33:37:     at execSync (node:child_process:963:15)
+2026-03-26T21:33:37:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:33:37:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:33:37:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:33:37:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:33:37:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:33:37:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:33:37:   status: 1,
+2026-03-26T21:33:37:   signal: null,
+2026-03-26T21:33:37:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:33:37:   pid: 3257382,
+2026-03-26T21:33:37:   stdout: '',
+2026-03-26T21:33:37:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:33:37: }
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37: Node.js v20.19.2
+2026-03-26T21:33:37: Doppler Error: you must provide a token
+2026-03-26T21:33:37: node:child_process:966
+2026-03-26T21:33:37:     throw err;
+2026-03-26T21:33:37:     ^
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:33:37: Doppler Error: you must provide a token
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:33:37:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:33:37:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:33:37:     at execSync (node:child_process:963:15)
+2026-03-26T21:33:37:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:33:37:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:33:37:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:33:37:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:33:37:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:33:37:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:33:37:   status: 1,
+2026-03-26T21:33:37:   signal: null,
+2026-03-26T21:33:37:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:33:37:   pid: 3257464,
+2026-03-26T21:33:37:   stdout: '',
+2026-03-26T21:33:37:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:33:37: }
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37: Node.js v20.19.2
+2026-03-26T21:33:37: Doppler Error: you must provide a token
+2026-03-26T21:33:37: node:child_process:966
+2026-03-26T21:33:37:     throw err;
+2026-03-26T21:33:37:     ^
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:33:37: Doppler Error: you must provide a token
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:33:37:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:33:37:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:33:37:     at execSync (node:child_process:963:15)
+2026-03-26T21:33:37:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:33:37:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:33:37:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:33:37:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:33:37:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:33:37:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:33:37:   status: 1,
+2026-03-26T21:33:37:   signal: null,
+2026-03-26T21:33:37:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:33:37:   pid: 3257542,
+2026-03-26T21:33:37:   stdout: '',
+2026-03-26T21:33:37:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:33:37: }
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37: Node.js v20.19.2
+2026-03-26T21:33:37: Doppler Error: you must provide a token
+2026-03-26T21:33:37: node:child_process:966
+2026-03-26T21:33:37:     throw err;
+2026-03-26T21:33:37:     ^
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:33:37: Doppler Error: you must provide a token
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:33:37:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:33:37:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:33:37:     at execSync (node:child_process:963:15)
+2026-03-26T21:33:37:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:33:37:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:33:37:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:33:37:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:33:37:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:33:37:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:33:37:   status: 1,
+2026-03-26T21:33:37:   signal: null,
+2026-03-26T21:33:37:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:33:37:   pid: 3257605,
+2026-03-26T21:33:37:   stdout: '',
+2026-03-26T21:33:37:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:33:37: }
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37: Node.js v20.19.2
+2026-03-26T21:33:37: Doppler Error: you must provide a token
+2026-03-26T21:33:37: node:child_process:966
+2026-03-26T21:33:37:     throw err;
+2026-03-26T21:33:37:     ^
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:33:37: Doppler Error: you must provide a token
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:33:37:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:33:37:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:33:37:     at execSync (node:child_process:963:15)
+2026-03-26T21:33:37:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:33:37:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:33:37:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:33:37:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:33:37:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:33:37:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:33:37:   status: 1,
+2026-03-26T21:33:37:   signal: null,
+2026-03-26T21:33:37:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:33:37:   pid: 3257667,
+2026-03-26T21:33:37:   stdout: '',
+2026-03-26T21:33:37:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:33:37: }
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37: Node.js v20.19.2
+2026-03-26T21:33:37: Doppler Error: you must provide a token
+2026-03-26T21:33:37: node:child_process:966
+2026-03-26T21:33:37:     throw err;
+2026-03-26T21:33:37:     ^
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:33:37: Doppler Error: you must provide a token
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:33:37:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:33:37:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:33:37:     at execSync (node:child_process:963:15)
+2026-03-26T21:33:37:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:33:37:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:33:37:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:33:37:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:33:37:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:33:37:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:33:37:   status: 1,
+2026-03-26T21:33:37:   signal: null,
+2026-03-26T21:33:37:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:33:37:   pid: 3257736,
+2026-03-26T21:33:37:   stdout: '',
+2026-03-26T21:33:37:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:33:37: }
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37: Node.js v20.19.2
+2026-03-26T21:33:37: Doppler Error: you must provide a token
+2026-03-26T21:33:37: node:child_process:966
+2026-03-26T21:33:37:     throw err;
+2026-03-26T21:33:37:     ^
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:33:37: Doppler Error: you must provide a token
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:33:37:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:33:37:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:33:37:     at execSync (node:child_process:963:15)
+2026-03-26T21:33:37:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:33:37:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:33:37:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:33:37:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:33:37:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:33:37:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:33:37:   status: 1,
+2026-03-26T21:33:37:   signal: null,
+2026-03-26T21:33:37:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:33:37:   pid: 3257804,
+2026-03-26T21:33:37:   stdout: '',
+2026-03-26T21:33:37:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:33:37: }
+2026-03-26T21:33:37: 
+2026-03-26T21:33:37: Node.js v20.19.2
+2026-03-26T21:33:38: Doppler Error: you must provide a token
+2026-03-26T21:33:38: node:child_process:966
+2026-03-26T21:33:38:     throw err;
+2026-03-26T21:33:38:     ^
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:33:38: Doppler Error: you must provide a token
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:33:38:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:33:38:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:33:38:     at execSync (node:child_process:963:15)
+2026-03-26T21:33:38:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:33:38:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:33:38:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:33:38:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:33:38:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:33:38:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:33:38:   status: 1,
+2026-03-26T21:33:38:   signal: null,
+2026-03-26T21:33:38:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:33:38:   pid: 3257870,
+2026-03-26T21:33:38:   stdout: '',
+2026-03-26T21:33:38:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:33:38: }
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38: Node.js v20.19.2
+2026-03-26T21:33:38: Doppler Error: you must provide a token
+2026-03-26T21:33:38: node:child_process:966
+2026-03-26T21:33:38:     throw err;
+2026-03-26T21:33:38:     ^
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:33:38: Doppler Error: you must provide a token
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:33:38:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:33:38:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:33:38:     at execSync (node:child_process:963:15)
+2026-03-26T21:33:38:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:33:38:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:33:38:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:33:38:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:33:38:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:33:38:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:33:38:   status: 1,
+2026-03-26T21:33:38:   signal: null,
+2026-03-26T21:33:38:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:33:38:   pid: 3257940,
+2026-03-26T21:33:38:   stdout: '',
+2026-03-26T21:33:38:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:33:38: }
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38: Node.js v20.19.2
+2026-03-26T21:33:38: Doppler Error: you must provide a token
+2026-03-26T21:33:38: node:child_process:966
+2026-03-26T21:33:38:     throw err;
+2026-03-26T21:33:38:     ^
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:33:38: Doppler Error: you must provide a token
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:33:38:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:33:38:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:33:38:     at execSync (node:child_process:963:15)
+2026-03-26T21:33:38:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:33:38:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:33:38:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:33:38:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:33:38:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:33:38:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:33:38:   status: 1,
+2026-03-26T21:33:38:   signal: null,
+2026-03-26T21:33:38:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:33:38:   pid: 3258040,
+2026-03-26T21:33:38:   stdout: '',
+2026-03-26T21:33:38:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:33:38: }
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38: Node.js v20.19.2
+2026-03-26T21:33:38: Doppler Error: you must provide a token
+2026-03-26T21:33:38: node:child_process:966
+2026-03-26T21:33:38:     throw err;
+2026-03-26T21:33:38:     ^
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:33:38: Doppler Error: you must provide a token
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:33:38:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:33:38:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:33:38:     at execSync (node:child_process:963:15)
+2026-03-26T21:33:38:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:33:38:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:33:38:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:33:38:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:33:38:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:33:38:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:33:38:   status: 1,
+2026-03-26T21:33:38:   signal: null,
+2026-03-26T21:33:38:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:33:38:   pid: 3258076,
+2026-03-26T21:33:38:   stdout: '',
+2026-03-26T21:33:38:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:33:38: }
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38: Node.js v20.19.2
+2026-03-26T21:33:38: Doppler Error: you must provide a token
+2026-03-26T21:33:38: node:child_process:966
+2026-03-26T21:33:38:     throw err;
+2026-03-26T21:33:38:     ^
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:33:38: Doppler Error: you must provide a token
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:33:38:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:33:38:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:33:38:     at execSync (node:child_process:963:15)
+2026-03-26T21:33:38:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:33:38:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:33:38:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:33:38:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:33:38:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:33:38:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:33:38:   status: 1,
+2026-03-26T21:33:38:   signal: null,
+2026-03-26T21:33:38:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:33:38:   pid: 3258103,
+2026-03-26T21:33:38:   stdout: '',
+2026-03-26T21:33:38:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:33:38: }
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38: Node.js v20.19.2
+2026-03-26T21:33:38: Doppler Error: you must provide a token
+2026-03-26T21:33:38: node:child_process:966
+2026-03-26T21:33:38:     throw err;
+2026-03-26T21:33:38:     ^
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:33:38: Doppler Error: you must provide a token
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:33:38:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:33:38:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:33:38:     at execSync (node:child_process:963:15)
+2026-03-26T21:33:38:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:33:38:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:33:38:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:33:38:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:33:38:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:33:38:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:33:38:   status: 1,
+2026-03-26T21:33:38:   signal: null,
+2026-03-26T21:33:38:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:33:38:   pid: 3258129,
+2026-03-26T21:33:38:   stdout: '',
+2026-03-26T21:33:38:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:33:38: }
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38: Node.js v20.19.2
+2026-03-26T21:33:38: Doppler Error: you must provide a token
+2026-03-26T21:33:38: node:child_process:966
+2026-03-26T21:33:38:     throw err;
+2026-03-26T21:33:38:     ^
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:33:38: Doppler Error: you must provide a token
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:33:38:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:33:38:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:33:38:     at execSync (node:child_process:963:15)
+2026-03-26T21:33:38:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:33:38:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:33:38:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:33:38:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:33:38:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:33:38:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:33:38:   status: 1,
+2026-03-26T21:33:38:   signal: null,
+2026-03-26T21:33:38:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:33:38:   pid: 3258155,
+2026-03-26T21:33:38:   stdout: '',
+2026-03-26T21:33:38:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:33:38: }
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38: Node.js v20.19.2
+2026-03-26T21:33:38: Doppler Error: you must provide a token
+2026-03-26T21:33:38: node:child_process:966
+2026-03-26T21:33:38:     throw err;
+2026-03-26T21:33:38:     ^
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:33:38: Doppler Error: you must provide a token
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:33:38:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:33:38:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:33:38:     at execSync (node:child_process:963:15)
+2026-03-26T21:33:38:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:33:38:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:33:38:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:33:38:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:33:38:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:33:38:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:33:38:   status: 1,
+2026-03-26T21:33:38:   signal: null,
+2026-03-26T21:33:38:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:33:38:   pid: 3258181,
+2026-03-26T21:33:38:   stdout: '',
+2026-03-26T21:33:38:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:33:38: }
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38: Node.js v20.19.2
+2026-03-26T21:33:38: Doppler Error: you must provide a token
+2026-03-26T21:33:38: node:child_process:966
+2026-03-26T21:33:38:     throw err;
+2026-03-26T21:33:38:     ^
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38: Error: Command failed: doppler --project orcale-24hrs --config prd secrets download --no-file --format=json
+2026-03-26T21:33:38: Doppler Error: you must provide a token
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38:     at genericNodeError (node:internal/errors:984:15)
+2026-03-26T21:33:38:     at wrappedFn (node:internal/errors:538:14)
+2026-03-26T21:33:38:     at checkExecSyncError (node:child_process:891:11)
+2026-03-26T21:33:38:     at execSync (node:child_process:963:15)
+2026-03-26T21:33:38:     at Object.<anonymous> (/home/ubuntu/Projects/oracle24hrs/doppler-production.cjs:4:3)
+2026-03-26T21:33:38:     at Module._compile (node:internal/modules/cjs/loader:1529:14)
+2026-03-26T21:33:38:     at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+2026-03-26T21:33:38:     at Module.load (node:internal/modules/cjs/loader:1275:32)
+2026-03-26T21:33:38:     at Module._load (node:internal/modules/cjs/loader:1096:12)
+2026-03-26T21:33:38:     at internalRequire (node:internal/modules/cjs/loader:216:19) {
+2026-03-26T21:33:38:   status: 1,
+2026-03-26T21:33:38:   signal: null,
+2026-03-26T21:33:38:   output: [ null, '', 'Doppler Error: you must provide a token\n' ],
+2026-03-26T21:33:38:   pid: 3258207,
+2026-03-26T21:33:38:   stdout: '',
+2026-03-26T21:33:38:   stderr: 'Doppler Error: you must provide a token\n'
+2026-03-26T21:33:38: }
+2026-03-26T21:33:38: 
+2026-03-26T21:33:38: Node.js v20.19.2
+2026-03-27T00:07:18: Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/ubuntu/Projects/oracle24hrs/dist/lib/bullRedis.ts' imported from /home/ubuntu/Projects/oracle24hrs/dist/app/music/workers/demucs.worker.js
+2026-03-27T00:07:18:     at finalizeResolution (node:internal/modules/esm/resolve:283:11)
+2026-03-27T00:07:18:     at moduleResolve (node:internal/modules/esm/resolve:952:10)
+2026-03-27T00:07:18:     at defaultResolve (node:internal/modules/esm/resolve:1188:11)
+2026-03-27T00:07:18:     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:642:12)
+2026-03-27T00:07:18:     at #cachedDefaultResolve (node:internal/modules/esm/loader:591:25)
+2026-03-27T00:07:18:     at ModuleLoader.resolve (node:internal/modules/esm/loader:574:38)
+2026-03-27T00:07:18:     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:236:38)
+2026-03-27T00:07:18:     at ModuleJob._link (node:internal/modules/esm/module_job:130:49) {
+2026-03-27T00:07:18:   code: 'ERR_MODULE_NOT_FOUND',
+2026-03-27T00:07:18:   url: 'file:///home/ubuntu/Projects/oracle24hrs/dist/lib/bullRedis.ts'
+2026-03-27T00:07:18: }
+2026-03-27T00:12:47: Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/ubuntu/Projects/oracle24hrs/dist/lib/bullRedis.ts' imported from /home/ubuntu/Projects/oracle24hrs/dist/app/music/workers/demucs.worker.js
+2026-03-27T00:12:47:     at finalizeResolution (node:internal/modules/esm/resolve:283:11)
+2026-03-27T00:12:47:     at moduleResolve (node:internal/modules/esm/resolve:952:10)
+2026-03-27T00:12:47:     at defaultResolve (node:internal/modules/esm/resolve:1188:11)
+2026-03-27T00:12:47:     at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:642:12)
+2026-03-27T00:12:47:     at #cachedDefaultResolve (node:internal/modules/esm/loader:591:25)
+2026-03-27T00:12:47:     at ModuleLoader.resolve (node:internal/modules/esm/loader:574:38)
+2026-03-27T00:12:47:     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:236:38)
+2026-03-27T00:12:47:     at ModuleJob._link (node:internal/modules/esm/module_job:130:49) {
+2026-03-27T00:12:47:   code: 'ERR_MODULE_NOT_FOUND',
+2026-03-27T00:12:47:   url: 'file:///home/ubuntu/Projects/oracle24hrs/dist/lib/bullRedis.ts'
+2026-03-27T00:12:47: }
