@@ -16,6 +16,7 @@ import shazam from "./controllers/shazam.js";
 import dailyWords from "./controllers/daily-words.js";
 import reelTranscript from "./controllers/reel.js";
 import reelAnalyze from "./controllers/reel-analyze.js";
+import redditSummarize from "./controllers/reddit-summarize.js";
 // Import and start the demucs worker
 import { demucsWorker } from "./workers/demucs.worker.js";
 import dotenv from "dotenv";
@@ -49,6 +50,7 @@ app.use("/ontime", dailyWords);
 /* ---------- API routes ---------- */
 app.use("/api", reelTranscript);
 app.use("/api", reelAnalyze);
+app.use("/api", redditSummarize);
 /* ---------- PM2 restart-all via GET ---------- */
 app.get(`/restart/${RESTART_SECRET}`, (_req, res) => {
     res.json({ message: "Restarting all PM2 processes…" });

@@ -166,3 +166,10 @@ Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/ubuntu/Projects/oracle24
     at ModuleLoader.resolve (node:internal/modules/esm/loader:574:38)
     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:236:38)
     at ModuleJob._link (node:internal/modules/esm/module_job:130:49)
+2026-03-27T19:58:45: [reel-analyze] frame OCR failed: 400 {"error":{"message":"The model `llama-3.2-11b-vision-preview` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.","type":"invalid_request_error","code":"model_decommissioned"}}
+2026-03-27T19:58:45: [reel-analyze] frame OCR failed: 400 {"error":{"message":"The model `llama-3.2-11b-vision-preview` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.","type":"invalid_request_error","code":"model_decommissioned"}}
+2026-03-27T19:58:46: [reel-analyze] frame OCR failed: 400 {"error":{"message":"The model `llama-3.2-11b-vision-preview` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.","type":"invalid_request_error","code":"model_decommissioned"}}
+2026-03-27T19:58:46: [reel-analyze] P2 error: No on-screen text detected in this reel
+2026-03-27T23:28:54: [reddit-summarize] error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro-exp-03-25:generateContent: [404 Not Found] models/gemini-2.5-pro-exp-03-25 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-04-01T00:55:21: [YOUTUBEJS][Player]: Failed to extract signature decipher function.
+2026-04-01T00:55:21: [YOUTUBEJS][Player]: Failed to extract n decipher function.

@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"cat /home/ubuntu/Projects/oracle24hrs/ecosystem.config.cjs\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"doppler secrets --project orcale-24hrs --config prd 2>&1 | grep -i ''groq\\\\|GROQ\\\\|KEY'' | head -10\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"doppler secrets --project orcale-24hrs --config prd 2>&1 | head -30\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"cd /home/ubuntu/Projects/oracle24hrs && npm run build 2>&1\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"cd /home/ubuntu/Projects/oracle24hrs && echo ''=== tsconfig.build.json ==='' && cat tsconfig.build.json && echo ''=== reel.js in dist? ==='' && ls dist/app/music/controllers/ && echo ''=== reel.ts errors? ==='' && npx tsc -p tsconfig.build.json 2>&1 | grep reel\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"nginx -t 2>&1 && echo ''=== nginx config ok, reloading ==='' && nginx -s reload && echo ''nginx reloaded''\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"echo ''=== doppler auth status ==='' && doppler me 2>&1 && echo ''=== doppler token? ==='' && env | grep DOPPLER 2>/dev/null || echo ''no DOPPLER env vars'' && echo ''=== /root/.doppler? ==='' && ls /root/.doppler 2>/dev/null || echo ''no .doppler dir'' && echo ''=== /home/ubuntu/.doppler? ==='' && ls /home/ubuntu/.doppler 2>/dev/null || echo ''none''\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"ls /home/ubuntu/.doppler/ && cat /home/ubuntu/.doppler/fallback 2>/dev/null | head -5\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"file /home/ubuntu/.doppler/fallback && wc -c /home/ubuntu/.doppler/fallback\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"wc -c /home/ubuntu/.doppler/fallback && head -c 200 /home/ubuntu/.doppler/fallback\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"ls -la /home/ubuntu/.doppler/fallback/ && ls -la /home/ubuntu/.doppler/fallback/*\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"cat /home/ubuntu/.doppler/fallback/.secrets-fa1237325496a37918a0a00378e2d9ce910fd3aef9165bfd98d12ec08c74d9ba.json 2>&1 | python3 -c \"\"import sys,json; d=json.load\\(sys.stdin\\); [print\\(k\\) for k in d.keys\\(\\)]\"\"\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"cat /etc/environment 2>/dev/null && cat /etc/profile.d/*.sh 2>/dev/null | grep -i doppler && grep -ri ''DOPPLER_TOKEN\\\\|doppler'' /etc/profile.d/ 2>/dev/null && ls /root/.config/doppler 2>/dev/null && ls /home/ubuntu/.config/doppler 2>/dev/null\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"cat /home/ubuntu/.bashrc | grep -i doppler && cat /home/ubuntu/.profile | grep -i doppler && cat /root/.bashrc | grep -i doppler 2>/dev/null\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"grep -ri ''doppler\\\\|DOPPLER'' /home/ubuntu/ --include=''*.sh'' --include=''*.env'' --include=''.env*'' --include=''*.conf'' 2>/dev/null | grep -v node_modules | head -20\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"cat /home/ubuntu/Projects/oracle24hrs/doppler-production.cjs\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"su - ubuntu -c ''doppler secrets --project orcale-24hrs --config prd 2>&1 | grep -v \"\"^[a-z]\"\" | awk \"\"{print $1}\"\"''\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"cat /home/ubuntu/Projects/oracle24hrs/fix-imports.js\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"grep ''upload-music'' /home/ubuntu/Projects/oracle24hrs/dist/app/music/app.js\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"cd /home/ubuntu/Projects/oracle24hrs && node fix-imports.js && grep ''upload-music'' dist/app/music/app.js\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"grep ''reel\\\\|controllers'' /home/ubuntu/Projects/oracle24hrs/dist/app/music/app.js | head -15\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"curl -s -X POST http://localhost:3000/api/reel/transcript -H ''Content-Type: application/json'' -d ''{\"\"url\"\":\"\"not-valid\"\"}'' | python3 -m json.tool\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"curl -s -X POST http://localhost:3000/api/reel/transcript -H ''Content-Type: application/json'' -d ''{\"\"url\"\":\"\"https://www.instagram.com/reel/ABC123/\"\"}'' | python3 -m json.tool\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"curl -s -X POST https://gigidy.link/api/reel/transcript -H ''Content-Type: application/json'' -d ''{\"\"url\"\":\"\"https://www.youtube.com/watch?v=abc\"\"}'' | python3 -m json.tool\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"curl -sv -X POST https://gigidy.link/api/reel/transcript -H ''Content-Type: application/json'' -d ''{\"\"url\"\":\"\"https://www.youtube.com/watch?v=abc\"\"}'' 2>&1 | tail -20\")",
+      "Bash(ssh -i /Users/kismatkc/.ssh/ssh-key-2025-04-29.key -o StrictHostKeyChecking=no root@129.153.56.219 \"grep -n ''api\\\\|location'' /etc/nginx/sites-enabled/gigidy.link\")",
+      "Bash(xcrun simctl:*)",
+      "Bash(xcode-select -p)",
+      "Bash(xcodebuild -version)",
+      "Bash(xcodebuild -showsdks)",
+      "Bash(xcodebuild -list -destination 'platform=iOS Simulator,name=iPhone 16 Pro Max')",
+      "Bash(xcodebuild -workspace /Users/kismatkc/Desktop/projects/ontime/lifestyle/ios/lifestyle.xcworkspace -scheme lifestyle -showdestinations)",
+      "Bash(xcodebuild -workspace /Users/kismatkc/Desktop/projects/ontime/lifestyle/ios/lifestyle.xcworkspace -scheme lifestyle -configuration Debug -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=18.3,name=iPhone 16 Pro Max' build)"
+    ]
+  }
+}

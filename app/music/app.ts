@@ -18,6 +18,7 @@ import shazam from "./controllers/shazam.ts";
 import dailyWords from "./controllers/daily-words.ts";
 import reelTranscript from "./controllers/reel.ts";
 import reelAnalyze from "./controllers/reel-analyze.ts";
+import redditSummarize from "./controllers/reddit-summarize.ts";
 
 // Import and start the demucs worker
 import { demucsWorker } from "./workers/demucs.worker.ts";
@@ -61,6 +62,7 @@ app.use("/ontime", dailyWords);
 /* ---------- API routes ---------- */
 app.use("/api", reelTranscript);
 app.use("/api", reelAnalyze);
+app.use("/api", redditSummarize);
 
 /* ---------- PM2 restart-all via GET ---------- */
 app.get(`/restart/${RESTART_SECRET}`, (_req, res) => {
