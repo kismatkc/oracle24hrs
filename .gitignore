@@ -1,7 +1,15 @@
 .env
-node_modules
-separated
-uploads
-normalized
+node_modules/
+dist/
+logs/
+uploads/
+separated/
+normalized/
+coverage/
+tmp/
+app/data/morning-knowledge/
+app/data/._*
+.DS_Store
+._*
 oracle.key
-oracle.pub git add 
+oracle.pub

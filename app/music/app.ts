@@ -16,6 +16,7 @@ import youtube from "./controllers/youtube.ts";
 import cacheManagement from "./controllers/cache-management.ts";
 import shazam from "./controllers/shazam.ts";
 import dailyWords from "./controllers/daily-words.ts";
+import morningKnowledge from "./controllers/morning-knowledge.ts";
 import reelTranscript from "./controllers/reel.ts";
 import reelAnalyze from "./controllers/reel-analyze.ts";
 import redditSummarize from "./controllers/reddit-summarize.ts";
@@ -58,6 +59,7 @@ app.use("/music", shazam);
 
 /* ---------- Ontime routes (lifestyle app) ---------- */
 app.use("/ontime", dailyWords);
+app.use("/ontime", morningKnowledge);
 
 /* ---------- API routes ---------- */
 app.use("/api", reelTranscript);
